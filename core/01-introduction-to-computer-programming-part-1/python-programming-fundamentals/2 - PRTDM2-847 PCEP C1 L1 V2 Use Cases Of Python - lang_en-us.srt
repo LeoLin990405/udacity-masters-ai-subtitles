@@ -1,0 +1,164 @@
+1
+
+00:00:00,000  -->  00:00:02,225
+Python is really exciting,
+
+2
+
+00:00:02,225  -->  00:00:04,800
+because you can do so many important operations
+
+3
+
+00:00:04,800  -->  00:00:07,360
+and types of work with this programming language.
+
+4
+
+00:00:07,360  -->  00:00:10,780
+At a high level, Python is an object-oriented programming language,
+
+5
+
+00:00:10,780  -->  00:00:13,320
+meaning you can work with different types of data.
+
+6
+
+00:00:13,320  -->  00:00:15,575
+But what does that actually mean?
+
+7
+
+00:00:15,575  -->  00:00:18,090
+When we think about data science, for example,
+
+8
+
+00:00:18,090  -->  00:00:20,250
+Python comes with numerous libraries and
+
+9
+
+00:00:20,250  -->  00:00:23,910
+packages to help us analyze and visualize datasets.
+
+10
+
+00:00:23,910  -->  00:00:26,510
+We'll be doing that in the project for this course.
+
+11
+
+00:00:26,510  -->  00:00:28,310
+You'll see that in a little bit later.
+
+12
+
+00:00:28,310  -->  00:00:31,970
+This helps us really understand and analyze the world around us,
+
+13
+
+00:00:31,970  -->  00:00:35,230
+like predicting weather patterns or understanding global trends.
+
+14
+
+00:00:35,230  -->  00:00:38,030
+Additionally, machine learning and
+
+15
+
+00:00:38,030  -->  00:00:41,610
+artificial intelligence are two areas that are very exciting,
+
+16
+
+00:00:41,610  -->  00:00:44,330
+and Python is uniquely created to work with them.
+
+17
+
+00:00:44,330  -->  00:00:48,470
+You can work with AI models to predict and classify information.
+
+18
+
+00:00:48,470  -->  00:00:50,960
+Think about autonomous driving cars,
+
+19
+
+00:00:50,960  -->  00:00:54,195
+recommendation systems that suggest movies or products,
+
+20
+
+00:00:54,195  -->  00:00:56,500
+or personalized social media feeds.
+
+21
+
+00:00:56,500  -->  00:00:59,520
+These are all important use cases for AI,
+
+22
+
+00:00:59,520  -->  00:01:02,695
+and Python is optimized for this process.
+
+23
+
+00:01:02,695  -->  00:01:05,640
+App development is also very hot right now.
+
+24
+
+00:01:05,640  -->  00:01:09,160
+There are powerful and popular frameworks like Flask,
+
+25
+
+00:01:09,160  -->  00:01:11,405
+Django, and Streamlit.
+
+26
+
+00:01:11,405  -->  00:01:15,400
+These frameworks provide great ways to build applications.
+
+27
+
+00:01:15,400  -->  00:01:18,340
+For example, you could create a website to display
+
+28
+
+00:01:18,340  -->  00:01:22,260
+your favorite recipes or build a tool to manage your personal finances.
+
+29
+
+00:01:22,260  -->  00:01:26,340
+Python is also great for creating different types of automated tasks.
+
+30
+
+00:01:26,340  -->  00:01:29,860
+For instance, you can set up scripts to back up your photos
+
+31
+
+00:01:29,860  -->  00:01:33,800
+every week or send yourself reminders for important events.
+
+32
+
+00:01:33,800  -->  00:01:36,560
+There are many great use cases for Python,
+
+33
+
+00:01:36,560  -->  00:01:40,160
+and we're going to work on some of those in this course.

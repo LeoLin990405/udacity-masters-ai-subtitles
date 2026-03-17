@@ -1,0 +1,349 @@
+1
+
+00:00:00,000  -->  00:00:01,920
+As we write our Python code,
+
+2
+
+00:00:01,920  -->  00:00:06,540
+we'll need to make sure we avoid errors when going through our calculations.
+
+3
+
+00:00:06,540  -->  00:00:09,060
+Operator precedence tells Python
+
+4
+
+00:00:09,060  -->  00:00:12,820
+the order in which our operations should be performed in our code.
+
+5
+
+00:00:12,820  -->  00:00:15,080
+For example, multiplication and
+
+6
+
+00:00:15,080  -->  00:00:18,620
+division have higher precedents than addition and subtraction.
+
+7
+
+00:00:18,620  -->  00:00:23,800
+This means that they will be done first before any other operations in our code.
+
+8
+
+00:00:23,800  -->  00:00:29,660
+A handy phrase to help you remember these numeric precedence rules is PEMDAS.
+
+9
+
+00:00:29,660  -->  00:00:32,240
+Please excuse my dear Aunt Sally,
+
+10
+
+00:00:32,240  -->  00:00:34,220
+which stands for parentheses,
+
+11
+
+00:00:34,220  -->  00:00:39,850
+exponents, multiplication, division, addition and subtraction.
+
+12
+
+00:00:39,850  -->  00:00:42,000
+In the order of operations,
+
+13
+
+00:00:42,000  -->  00:00:47,200
+P for parentheses means we'll perform these operations first.
+
+14
+
+00:00:47,200  -->  00:00:52,640
+E for exponents includes powers and roots, which we'll do next.
+
+15
+
+00:00:52,640  -->  00:00:58,405
+Multiplication for M goes from left to right.
+
+16
+
+00:00:58,405  -->  00:01:03,080
+Same with the vision. We'll check these operations from left to right.
+
+17
+
+00:01:03,080  -->  00:01:09,700
+Then with addition, we'll check left to right and then subtraction from left to right.
+
+18
+
+00:01:09,700  -->  00:01:11,480
+A handy pneumonic device,
+
+19
+
+00:01:11,480  -->  00:01:13,520
+please excuse my dear Aunt Sally,
+
+20
+
+00:01:13,520  -->  00:01:15,400
+helps us remember this order.
+
+21
+
+00:01:15,400  -->  00:01:21,960
+Remember, use PEMDAS to guide the correct order of calculations in our code.
+
+22
+
+00:01:21,960  -->  00:01:26,120
+Keep this in mind as you go about numeric calculations for these handy strategies,
+
+23
+
+00:01:26,120  -->  00:01:28,160
+so you know the order of operations,
+
+24
+
+00:01:28,160  -->  00:01:30,880
+and so your Python code does too.
+
+25
+
+00:01:30,880  -->  00:01:35,420
+Imagine you're calculating the total cost of items with the discount.
+
+26
+
+00:01:35,420  -->  00:01:38,140
+You'll need to ensure that the multiplication for
+
+27
+
+00:01:38,140  -->  00:01:41,630
+the quantity happens before subtracting the discount.
+
+28
+
+00:01:41,630  -->  00:01:44,240
+Let's write some code that would emulate
+
+29
+
+00:01:44,240  -->  00:01:47,185
+how we would calculate the cost of something like this.
+
+30
+
+00:01:47,185  -->  00:01:49,700
+What we'll do is that we grade a variable,
+
+31
+
+00:01:49,700  -->  00:01:52,540
+and we'll call it price per item,
+
+32
+
+00:01:52,540  -->  00:01:56,060
+and we'll set that equal to 50 for $50.
+
+33
+
+00:01:56,060  -->  00:02:00,660
+We'll then say the quantity equals three for three items,
+
+34
+
+00:02:00,660  -->  00:02:07,330
+and then we'll say that the discount as another variable is set to five for $5.
+
+35
+
+00:02:07,330  -->  00:02:09,980
+Now when we are calculating the total cost,
+
+36
+
+00:02:09,980  -->  00:02:12,220
+we'll say total cost as a variable,
+
+37
+
+00:02:12,220  -->  00:02:15,050
+and we'll set that equal to this function that we're going to write.
+
+38
+
+00:02:15,050  -->  00:02:19,000
+We're going to first put the first part in parentheses,
+
+39
+
+00:02:19,000  -->  00:02:25,260
+and we're going to say price per item times the quantity.
+
+40
+
+00:02:25,260  -->  00:02:28,060
+Given this price per item,
+
+41
+
+00:02:28,060  -->  00:02:31,120
+multiplied by the number of the items that there are,
+
+42
+
+00:02:31,120  -->  00:02:34,560
+and then we're going to subtract the discount from that.
+
+43
+
+00:02:34,560  -->  00:02:39,540
+Then, of course, we'll print our total cost here.
+
+44
+
+00:02:39,540  -->  00:02:45,580
+Now, what is the output of this when you run your total cost function?
+
+45
+
+00:02:45,580  -->  00:02:49,340
+Did you get 1452? If so, you're right.
+
+46
+
+00:02:49,340  -->  00:02:55,890
+Great job. This is because the calculations inside the parentheses go first right here.
+
+47
+
+00:02:55,890  -->  00:02:59,715
+Then outside the parentheses goes next, this part.
+
+48
+
+00:02:59,715  -->  00:03:05,050
+Without proper precedence, which is defined by our parentheses here,
+
+49
+
+00:03:05,050  -->  00:03:07,570
+you might end up with incorrect results.
+
+50
+
+00:03:07,570  -->  00:03:13,330
+For example, if you mistakenly calculate the discount first and then multiply,
+
+51
+
+00:03:13,330  -->  00:03:15,835
+it could look something like this.
+
+52
+
+00:03:15,835  -->  00:03:18,930
+Now if we run this, we'll get -100.
+
+53
+
+00:03:18,930  -->  00:03:21,070
+This is just an example, but this leads to
+
+54
+
+00:03:21,070  -->  00:03:24,805
+an incorrect calculation due to improper precedence.
+
+55
+
+00:03:24,805  -->  00:03:27,990
+If we do not define our parentheses,
+
+56
+
+00:03:27,990  -->  00:03:31,040
+and we try to run this, Sometimes you might get the right answer,
+
+57
+
+00:03:31,040  -->  00:03:32,535
+but also sometimes you won't.
+
+58
+
+00:03:32,535  -->  00:03:34,780
+That's why it's really important to
+
+59
+
+00:03:34,780  -->  00:03:38,920
+define exactly what we want to define with precedence.
+
+60
+
+00:03:38,920  -->  00:03:43,640
+Because in the incorrect example that you saw a moment ago here,
+
+61
+
+00:03:43,640  -->  00:03:48,360
+when we ran this, the discount is subtracted from the quantity first,
+
+62
+
+00:03:48,360  -->  00:03:52,780
+which is here, and this leads to a completely wrong result,
+
+63
+
+00:03:52,780  -->  00:03:56,240
+because now we're subtracting five from three,
+
+64
+
+00:03:56,240  -->  00:04:00,760
+and then multiplying that negative number by the price per item,
+
+65
+
+00:04:00,760  -->  00:04:02,560
+which does not make sense here.
+
+66
+
+00:04:02,560  -->  00:04:06,860
+By understanding and using operator precedence correctly,
+
+67
+
+00:04:06,860  -->  00:04:09,600
+you can ensure your calculations are accurate.
+
+68
+
+00:04:09,600  -->  00:04:11,780
+Can you see why this is so important?
+
+69
+
+00:04:11,780  -->  00:04:14,020
+Because when we do it correctly,
+
+70
+
+00:04:14,020  -->  00:04:20,240
+and we run this, we get the right answer, 145. Great job.

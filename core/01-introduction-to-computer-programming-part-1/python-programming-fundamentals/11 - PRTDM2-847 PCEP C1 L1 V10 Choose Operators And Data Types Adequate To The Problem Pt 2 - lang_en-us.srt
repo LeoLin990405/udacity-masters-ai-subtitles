@@ -1,0 +1,319 @@
+1
+
+00:00:00,000  -->  00:00:02,240
+You might be thinking, Yikes,
+
+2
+
+00:00:02,240  -->  00:00:05,080
+when would I ever need to know something like this?
+
+3
+
+00:00:05,080  -->  00:00:07,560
+Let's take a real world example.
+
+4
+
+00:00:07,560  -->  00:00:10,600
+To make it make sense a bit more clearly.
+
+5
+
+00:00:10,600  -->  00:00:14,400
+Imagine you're writing a Python application to organize a game night,
+
+6
+
+00:00:14,400  -->  00:00:17,715
+and you want to split participants into two teams,
+
+7
+
+00:00:17,715  -->  00:00:20,100
+team A and team B.
+
+8
+
+00:00:20,100  -->  00:00:22,820
+To make the process fair and random,
+
+9
+
+00:00:22,820  -->  00:00:25,960
+you decide that even numbered participants will go to
+
+10
+
+00:00:25,960  -->  00:00:29,685
+team A and odd numbered participants will go to team B.
+
+11
+
+00:00:29,685  -->  00:00:33,750
+To determine if a participant number is even or odd,
+
+12
+
+00:00:33,750  -->  00:00:37,670
+you can use the modulus operator to accomplish this.
+
+13
+
+00:00:37,670  -->  00:00:42,610
+If the participant number divided by two leaves a remainder of zero,
+
+14
+
+00:00:42,610  -->  00:00:44,870
+it is an even numbered participant.
+
+15
+
+00:00:44,870  -->  00:00:48,890
+Otherwise, that participant is an odd numbered participant.
+
+16
+
+00:00:48,890  -->  00:00:51,850
+Let's build out the code for this together.
+
+17
+
+00:00:51,850  -->  00:00:55,320
+First, we're going to list out the participant numbers.
+
+18
+
+00:00:55,320  -->  00:01:00,910
+We'll create a variable called participants in a list or array going
+
+19
+
+00:01:00,910  -->  00:01:06,830
+1-10 to indicate the number of participants that we need to split into groups.
+
+20
+
+00:01:06,830  -->  00:01:10,490
+Next, we'll separate the participants into two teams
+
+21
+
+00:01:10,490  -->  00:01:15,730
+or two lists as a arrays based on their numbers like this.
+
+22
+
+00:01:15,730  -->  00:01:18,110
+Team A will be set to this empty list,
+
+23
+
+00:01:18,110  -->  00:01:20,490
+and team B will be set to this empty list right now.
+
+24
+
+00:01:20,490  -->  00:01:28,210
+Next, we're going to write a four loop to put the participants into each of these groups.
+
+25
+
+00:01:28,210  -->  00:01:33,330
+We'll start this off with saying four item in group,
+
+26
+
+00:01:33,330  -->  00:01:38,450
+so participant in participants.
+
+27
+
+00:01:38,450  -->  00:01:43,410
+For any item in participants right here,
+
+28
+
+00:01:43,410  -->  00:01:46,420
+we're then going to do an even check.
+
+29
+
+00:01:46,420  -->  00:01:51,425
+If part and I'll actually copy this there.
+
+30
+
+00:01:51,425  -->  00:01:59,100
+If participant, we'll use the modulus operator to divide by two and then equals zero,
+
+31
+
+00:01:59,100  -->  00:02:01,960
+then we're going to add them to Team A.
+
+32
+
+00:02:01,960  -->  00:02:06,610
+Team A, and then we'll use the append method.
+
+33
+
+00:02:06,610  -->  00:02:09,650
+Then we're going to take this item, and drop it in there.
+
+34
+
+00:02:09,650  -->  00:02:12,310
+Otherwise, we're going to do the odd check.
+
+35
+
+00:02:12,310  -->  00:02:17,460
+Else, meaning if they're not even, they must be odd.
+
+36
+
+00:02:17,460  -->  00:02:23,040
+If odd, then we're going to add that participant to team B. We'll say team B.
+
+37
+
+00:02:23,040  -->  00:02:24,620
+We'll use append method.
+
+38
+
+00:02:24,620  -->  00:02:27,560
+We'll drop in participant. Close that out.
+
+39
+
+00:02:27,560  -->  00:02:30,640
+Then after we run this loop,
+
+40
+
+00:02:30,640  -->  00:02:34,120
+we'll then say, which in team A, which are in team B.
+
+41
+
+00:02:34,120  -->  00:02:35,780
+So we'll say Team A.
+
+42
+
+00:02:35,780  -->  00:02:41,460
+Do a comma and then we'll write out all the members of Team A.
+
+43
+
+00:02:41,460  -->  00:02:44,435
+Then I just copied that line.
+
+44
+
+00:02:44,435  -->  00:02:47,350
+To do, the odd numbered participants,
+
+45
+
+00:02:47,350  -->  00:02:49,065
+and we're going to change that to Team B.
+
+46
+
+00:02:49,065  -->  00:02:51,750
+Now, when we execute this,
+
+47
+
+00:02:51,750  -->  00:02:53,960
+we see that 2, 4, 6,
+
+48
+
+00:02:53,960  -->  00:02:55,970
+8, 10 are team A,
+
+49
+
+00:02:55,970  -->  00:02:59,815
+which is the even numbered, and team B is odd numbered, 1, 3,
+
+50
+
+00:02:59,815  -->  00:03:01,275
+5, 7, 9,
+
+51
+
+00:03:01,275  -->  00:03:04,405
+which is exactly what we would expect.
+
+52
+
+00:03:04,405  -->  00:03:06,890
+The output is again,
+
+53
+
+00:03:06,890  -->  00:03:11,610
+two lists, but they're sorted by even numbers and odd numbers.
+
+54
+
+00:03:11,610  -->  00:03:17,050
+What we just did was combine the ultra powerful utility of four loops with crafty,
+
+55
+
+00:03:17,050  -->  00:03:20,230
+if else logic, and a handy modulus operator
+
+56
+
+00:03:20,230  -->  00:03:24,310
+to sort a list of participants easily and quickly.
+
+57
+
+00:03:24,310  -->  00:03:26,410
+By using the modulus operator,
+
+58
+
+00:03:26,410  -->  00:03:28,850
+we can easily divide the participants into
+
+59
+
+00:03:28,850  -->  00:03:32,810
+two teams based on whether their numbers are even or odd,
+
+60
+
+00:03:32,810  -->  00:03:35,450
+ensuring a fair and random distribution.
+
+61
+
+00:03:35,450  -->  00:03:40,390
+Sorting and filtering algorithms are some of the most important types of functions,
+
+62
+
+00:03:40,390  -->  00:03:43,530
+such as when we think about returning search results
+
+63
+
+00:03:43,530  -->  00:03:47,365
+or highlighting certain information that a user filters for.
+
+64
+
+00:03:47,365  -->  00:03:51,090
+Now you're well on your way to Python Mastery.

@@ -1,0 +1,509 @@
+1
+
+00:00:00,000  -->  00:00:04,140
+So far, we've only worked with returning a text value or printing a statement.
+
+2
+
+00:00:04,140  -->  00:00:06,240
+As we start to write more Python code,
+
+3
+
+00:00:06,240  -->  00:00:11,300
+we will encounter different types of information that aren't strings like names,
+
+4
+
+00:00:11,300  -->  00:00:13,760
+but could be different types of numbers or
+
+5
+
+00:00:13,760  -->  00:00:17,180
+different data types or different types of information.
+
+6
+
+00:00:17,180  -->  00:00:19,110
+Some of these could be Booleans,
+
+7
+
+00:00:19,110  -->  00:00:21,460
+integers, and floats.
+
+8
+
+00:00:21,460  -->  00:00:26,740
+In Python, literals are fixed values that you can use directly in your code.
+
+9
+
+00:00:26,740  -->  00:00:31,080
+They represent the simplest form of data and can be of various types.
+
+10
+
+00:00:31,080  -->  00:00:32,760
+Let's explore some of these.
+
+11
+
+00:00:32,760  -->  00:00:35,480
+Booleans are the simplest type of data.
+
+12
+
+00:00:35,480  -->  00:00:38,715
+They can only be true or false.
+
+13
+
+00:00:38,715  -->  00:00:41,530
+Think about if you're holding a pencil in your hand.
+
+14
+
+00:00:41,530  -->  00:00:44,785
+You either are or you aren't holding that pencil.
+
+15
+
+00:00:44,785  -->  00:00:46,210
+Think about a light switch.
+
+16
+
+00:00:46,210  -->  00:00:48,530
+It's either on or off.
+
+17
+
+00:00:48,530  -->  00:00:52,515
+One tricky thing to remember about Booleans is that they are case sensitive.
+
+18
+
+00:00:52,515  -->  00:00:58,370
+Always make sure to use a T for true and a F for false.
+
+19
+
+00:00:58,370  -->  00:01:00,980
+When using them, they look like this.
+
+20
+
+00:01:00,980  -->  00:01:06,050
+Booleans are often used to control the flow of a program, such as in loops.
+
+21
+
+00:01:06,050  -->  00:01:10,670
+Let's combine our knowledge of loops with Booleans using an example of keeping
+
+22
+
+00:01:10,670  -->  00:01:15,430
+a browser window awake based on user activity and log in status.
+
+23
+
+00:01:15,430  -->  00:01:18,690
+Think of a browser you are using right now,
+
+24
+
+00:01:18,690  -->  00:01:21,990
+and let's say that your company is developing a browser plug in.
+
+25
+
+00:01:21,990  -->  00:01:27,570
+In order to not waste resources when the user isn't actively using the browser,
+
+26
+
+00:01:27,570  -->  00:01:33,830
+we will want to create some logic around when the plug in is working and make it sleep.
+
+27
+
+00:01:33,830  -->  00:01:39,015
+Really go inactive when the user isn't actively using their browser window.
+
+28
+
+00:01:39,015  -->  00:01:43,740
+Let's see how a while loop can work with Boolean conditions to achieve this.
+
+29
+
+00:01:43,740  -->  00:01:46,510
+In our Jupiter notebook,
+
+30
+
+00:01:46,510  -->  00:01:50,870
+we will import time because we're going to be using
+
+31
+
+00:01:50,870  -->  00:01:55,610
+time to let the while loop know when and when not to run.
+
+32
+
+00:01:55,610  -->  00:01:59,240
+We'll then define three different Boolean values.
+
+33
+
+00:01:59,240  -->  00:02:00,970
+We'll have is active.
+
+34
+
+00:02:00,970  -->  00:02:05,710
+We'll set that to true is logged in,
+
+35
+
+00:02:05,710  -->  00:02:08,650
+set that equal to true, and then run,
+
+36
+
+00:02:08,650  -->  00:02:11,530
+plug in, and we'll set that equal to false.
+
+37
+
+00:02:11,530  -->  00:02:14,020
+Then we're going to start defining our while loop,
+
+38
+
+00:02:14,020  -->  00:02:17,380
+and we'll say it while is logged in.
+
+39
+
+00:02:17,380  -->  00:02:19,015
+While this is the case,
+
+40
+
+00:02:19,015  -->  00:02:22,445
+if is active is true,
+
+41
+
+00:02:22,445  -->  00:02:26,160
+run plug in equals true.
+
+42
+
+00:02:26,160  -->  00:02:27,940
+Then we're going to say print,
+
+43
+
+00:02:27,940  -->  00:02:30,710
+keeping the window awake.
+
+44
+
+00:02:30,710  -->  00:02:37,860
+Then we're just going to create some mock logic around making,
+
+45
+
+00:02:37,860  -->  00:02:39,570
+basically, something check activity.
+
+46
+
+00:02:39,570  -->  00:02:41,960
+I'm just going to write a comment just so that we can remember this.
+
+47
+
+00:02:41,960  -->  00:02:47,055
+We're going to say simulate activity every second.
+
+48
+
+00:02:47,055  -->  00:02:50,200
+We're going to use the time package,
+
+49
+
+00:02:50,200  -->  00:02:54,140
+and we're going to say sleep and set that equals to one for one second.
+
+50
+
+00:02:54,140  -->  00:02:59,480
+Otherwise, with else, run plug in equals false.
+
+51
+
+00:02:59,480  -->  00:03:02,970
+We're going to print, user is inactive,
+
+52
+
+00:03:02,970  -->  00:03:09,300
+putting the window to sleep and then we're going to break and then have it stop.
+
+53
+
+00:03:09,300  -->  00:03:12,940
+Then we're going to add a final print statement. We're going to say browser.
+
+54
+
+00:03:12,940  -->  00:03:18,285
+Window is now a sleep to save resources.
+
+55
+
+00:03:18,285  -->  00:03:21,510
+Let's discuss what's happening here.
+
+56
+
+00:03:21,510  -->  00:03:28,620
+In this example, we start with the is active state to true,
+
+57
+
+00:03:28,620  -->  00:03:31,740
+is logged in, which is set to true,
+
+58
+
+00:03:31,740  -->  00:03:33,280
+and then run plug in,
+
+59
+
+00:03:33,280  -->  00:03:34,815
+which is set to false.
+
+60
+
+00:03:34,815  -->  00:03:41,730
+The while loop continues to run as long as is logged in right here is true.
+
+61
+
+00:03:41,730  -->  00:03:44,780
+Inside the loop, if is active is true,
+
+62
+
+00:03:44,780  -->  00:03:47,860
+the script sets run plug in to true.
+
+63
+
+00:03:47,860  -->  00:03:51,500
+Prints a message to keep the window awake and simulates
+
+64
+
+00:03:51,500  -->  00:03:55,755
+a check every second using time.sleep 1.
+
+65
+
+00:03:55,755  -->  00:03:58,350
+If is active becomes false,
+
+66
+
+00:03:58,350  -->  00:04:01,450
+then the script sets run plug in to false,
+
+67
+
+00:04:01,450  -->  00:04:05,135
+prints a message to the window to sleep and breaks out of the loop.
+
+68
+
+00:04:05,135  -->  00:04:09,240
+Just to note, we are leaving out the logic that would, actually,
+
+69
+
+00:04:09,240  -->  00:04:13,150
+be checking if the user is actively engaged in the browser session,
+
+70
+
+00:04:13,150  -->  00:04:17,705
+as there would be another function that would be changing that is active.
+
+71
+
+00:04:17,705  -->  00:04:21,470
+Right here value when it's no longer true,
+
+72
+
+00:04:21,470  -->  00:04:24,430
+but this helps us get the message across.
+
+73
+
+00:04:24,430  -->  00:04:28,815
+This blends really well with our latest learnings around loops.
+
+74
+
+00:04:28,815  -->  00:04:33,350
+Can you start to think about how the condition of true, for a loop,
+
+75
+
+00:04:33,350  -->  00:04:36,220
+to run makes it actually run,
+
+76
+
+00:04:36,220  -->  00:04:39,870
+and when the statement is no longer true,
+
+77
+
+00:04:39,870  -->  00:04:43,630
+it is false, and therefore, the loop stops.
+
+78
+
+00:04:43,630  -->  00:04:46,630
+This is the underlying data structure.
+
+79
+
+00:04:46,630  -->  00:04:51,400
+Booleans help us accomplish all of this fancy logic behind the scenes,
+
+80
+
+00:04:51,400  -->  00:04:53,590
+and without us really knowing it.
+
+81
+
+00:04:53,590  -->  00:04:55,320
+If we try to execute this,
+
+82
+
+00:04:55,320  -->  00:04:58,990
+we'll see a message pop up on the window.
+
+83
+
+00:04:58,990  -->  00:05:01,340
+This is happening because keeping
+
+84
+
+00:05:01,340  -->  00:05:05,930
+the window awake is set by this active state, which is true.
+
+85
+
+00:05:05,930  -->  00:05:12,060
+That's what's going to keep this polling indefinitely because this state is true.
+
+86
+
+00:05:12,060  -->  00:05:16,300
+Now, if we were to change this to be false, and we set that.
+
+87
+
+00:05:16,300  -->  00:05:18,835
+We'll cancel this. We'll press Stop.
+
+88
+
+00:05:18,835  -->  00:05:20,380
+We rerun this.
+
+89
+
+00:05:20,380  -->  00:05:22,610
+User is inactive, putting the window to sleep.
+
+90
+
+00:05:22,610  -->  00:05:25,525
+Browser Window is now asleep to save resources.
+
+91
+
+00:05:25,525  -->  00:05:33,290
+Now we see that the else clause is fired off if run plug in is false,
+
+92
+
+00:05:33,290  -->  00:05:35,545
+because is active is false.
+
+93
+
+00:05:35,545  -->  00:05:39,085
+Now, we're not logged in anymore. We're not active.
+
+94
+
+00:05:39,085  -->  00:05:41,910
+We're checking if they're logged in,
+
+95
+
+00:05:41,910  -->  00:05:44,220
+and then if they're active.
+
+96
+
+00:05:44,220  -->  00:05:46,585
+Now once that becomes false,
+
+97
+
+00:05:46,585  -->  00:05:49,260
+then the S clause is fired off.
+
+98
+
+00:05:49,260  -->  00:05:52,755
+Then we say run plug in shouldn't be happening.
+
+99
+
+00:05:52,755  -->  00:05:54,615
+Then we're going to break.
+
+100
+
+00:05:54,615  -->  00:05:56,820
+That's why this doesn't keep saying,
+
+101
+
+00:05:56,820  -->  00:05:58,340
+keeping the window awake.
+
+102
+
+00:05:58,340  -->  00:06:04,720
+We see these two messages printed out because the if statement is no longer true.

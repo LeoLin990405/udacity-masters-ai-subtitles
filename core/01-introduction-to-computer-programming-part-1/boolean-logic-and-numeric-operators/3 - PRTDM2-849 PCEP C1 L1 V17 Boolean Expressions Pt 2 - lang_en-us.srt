@@ -1,0 +1,124 @@
+1
+
+00:00:00,000  -->  00:00:03,030
+In this next example of Boolean expressions,
+
+2
+
+00:00:03,030  -->  00:00:06,760
+we're going to check if a number is within a certain range.
+
+3
+
+00:00:06,760  -->  00:00:09,060
+Boolean expressions can be used to check if
+
+4
+
+00:00:09,060  -->  00:00:12,420
+a value falls within a certain range of numbers.
+
+5
+
+00:00:12,420  -->  00:00:16,600
+For instance, let's check if a user's age is within the range
+
+6
+
+00:00:16,600  -->  00:00:21,560
+of 18-65 for eligibility in a certain program.
+
+7
+
+00:00:21,560  -->  00:00:26,060
+We'll first define a variable of age equaling to 25,
+
+8
+
+00:00:26,060  -->  00:00:31,380
+and then we'll write a function to check if the age is within the range that we specify,
+
+9
+
+00:00:31,380  -->  00:00:35,360
+and then write a range for the variable and then check it.
+
+10
+
+00:00:35,360  -->  00:00:42,720
+So we'll say is eligible equals age if that's greater than or equal to
+
+11
+
+00:00:42,720  -->  00:00:51,060
+18 and age is less than or equal to 65 to define our range.
+
+12
+
+00:00:51,060  -->  00:00:55,660
+Then we'll write a print statement to f string,
+
+13
+
+00:00:55,660  -->  00:01:00,605
+and we will check if user is eligible.
+
+14
+
+00:01:00,605  -->  00:01:05,570
+Then we'll put this variable in squiggly brackets.
+
+15
+
+00:01:05,570  -->  00:01:09,675
+We'll then close that up, and then let's review.
+
+16
+
+00:01:09,675  -->  00:01:12,970
+If age is greater than or equal to 18,
+
+17
+
+00:01:12,970  -->  00:01:16,730
+checks if the user's age is 18 or older.
+
+18
+
+00:01:16,730  -->  00:01:20,910
+This part, which is age is less than or equal to 65,
+
+19
+
+00:01:20,910  -->  00:01:24,570
+checks if the user's age is 65 or younger,
+
+20
+
+00:01:24,570  -->  00:01:29,090
+and the keyword combines both of them
+
+21
+
+00:01:29,090  -->  00:01:34,480
+together as an operator to ensure both conditions are true,
+
+22
+
+00:01:34,480  -->  00:01:38,640
+for is eligible to be evaluated.
+
+23
+
+00:01:38,640  -->  00:01:42,210
+What do you think the output of this will be?
+
+24
+
+00:01:42,210  -->  00:01:43,730
+Let's run it and see.
+
+25
+
+00:01:43,730  -->  00:01:47,750
+If you guess true, you're right. Great job.

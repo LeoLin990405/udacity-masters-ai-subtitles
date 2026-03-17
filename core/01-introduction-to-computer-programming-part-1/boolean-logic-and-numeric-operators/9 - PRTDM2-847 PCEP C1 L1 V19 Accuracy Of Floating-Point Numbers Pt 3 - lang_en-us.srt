@@ -1,0 +1,359 @@
+1
+
+00:00:00,000  -->  00:00:03,100
+Let's see an example of what this could look like.
+
+2
+
+00:00:03,100  -->  00:00:06,900
+For example, let's say that we have three different items.
+
+3
+
+00:00:06,900  -->  00:00:09,975
+Item 1 is $19.90,
+
+4
+
+00:00:09,975  -->  00:00:13,005
+item 2 is $5.70,
+
+5
+
+00:00:13,005  -->  00:00:15,760
+and item 3 is $3.50.
+
+6
+
+00:00:15,760  -->  00:00:19,220
+What we want to do is we want to calculate the total price.
+
+7
+
+00:00:19,220  -->  00:00:25,100
+We would say total price equals item 1 price.
+
+8
+
+00:00:25,100  -->  00:00:31,905
+We can copy this plus item 2 price plus item 3 price.
+
+9
+
+00:00:31,905  -->  00:00:33,540
+Then when we print,
+
+10
+
+00:00:33,540  -->  00:00:39,250
+we'll create an F string and we'll say total price is dollars.
+
+11
+
+00:00:39,250  -->  00:00:44,740
+Then what we'll do is we'll say total price with curly brackets,
+
+12
+
+00:00:44,740  -->  00:00:47,275
+and that will be passed in there.
+
+13
+
+00:00:47,275  -->  00:00:48,760
+Based on what you already know,
+
+14
+
+00:00:48,760  -->  00:00:52,995
+will this give us one of those strange repeating fractions?
+
+15
+
+00:00:52,995  -->  00:00:56,295
+What do you think? Absolutely. You got it.
+
+16
+
+00:00:56,295  -->  00:01:02,205
+It will give us 29.0999999 repeating,
+
+17
+
+00:01:02,205  -->  00:01:04,100
+which is not what we're looking for.
+
+18
+
+00:01:04,100  -->  00:01:06,460
+We are looking for 29.1,
+
+19
+
+00:01:06,460  -->  00:01:12,485
+but because of the way binaries are stored for these numbers with single decimals,
+
+20
+
+00:01:12,485  -->  00:01:15,280
+we get this repeating decimal here.
+
+21
+
+00:01:15,280  -->  00:01:21,590
+You may also notice that we're using this F something in quotations,
+
+22
+
+00:01:21,590  -->  00:01:26,025
+which is a method inside of the print statement that we just wrote?
+
+23
+
+00:01:26,025  -->  00:01:28,115
+This is known as an F string,
+
+24
+
+00:01:28,115  -->  00:01:34,310
+a way to embed expressions inside string literals using curly braces like this,
+
+25
+
+00:01:34,310  -->  00:01:36,270
+where we use this for total price,
+
+26
+
+00:01:36,270  -->  00:01:39,385
+making it easier to format strings dynamically.
+
+27
+
+00:01:39,385  -->  00:01:43,250
+This is a very powerful method we will be relying on throughout
+
+28
+
+00:01:43,250  -->  00:01:47,585
+this course for writing a phrase to the terminal that could include variables,
+
+29
+
+00:01:47,585  -->  00:01:51,065
+expressions, in addition to text strings.
+
+30
+
+00:01:51,065  -->  00:01:54,050
+Just know that this is a way to combine text and
+
+31
+
+00:01:54,050  -->  00:01:58,215
+variables together in the same output as one combined string.
+
+32
+
+00:01:58,215  -->  00:02:00,470
+Now we could round the values with
+
+33
+
+00:02:00,470  -->  00:02:04,190
+the round function like we're going to do in a second,
+
+34
+
+00:02:04,190  -->  00:02:08,660
+where we take an input and associate a certain number of decimal places to it,
+
+35
+
+00:02:08,660  -->  00:02:10,800
+such as one, two,
+
+36
+
+00:02:10,800  -->  00:02:12,585
+which we'd want to do in this case,
+
+37
+
+00:02:12,585  -->  00:02:14,580
+three, and so on.
+
+38
+
+00:02:14,580  -->  00:02:19,850
+Let's take our code from the previous cell with Control C,
+
+39
+
+00:02:19,850  -->  00:02:25,050
+and then we'll paste it into the bottom cell with Control V. Now,
+
+40
+
+00:02:25,050  -->  00:02:26,550
+what we can do is,
+
+41
+
+00:02:26,550  -->  00:02:33,390
+we're going to add the round function here around total price.
+
+42
+
+00:02:33,390  -->  00:02:36,670
+We will specify the number of decimal places we want,
+
+43
+
+00:02:36,670  -->  00:02:40,125
+which is two, and we'll keep everything the same.
+
+44
+
+00:02:40,125  -->  00:02:45,630
+While the round function does round a number 2 a specified number of decimal places,
+
+45
+
+00:02:45,630  -->  00:02:47,930
+what we're going to find out is that it doesn't control how
+
+46
+
+00:02:47,930  -->  00:02:50,400
+the number is displayed as a string.
+
+47
+
+00:02:50,400  -->  00:02:52,265
+When you print the rounded number,
+
+48
+
+00:02:52,265  -->  00:02:54,400
+Python automatically formats it,
+
+49
+
+00:02:54,400  -->  00:02:56,885
+and it may omit trailing zeros,
+
+50
+
+00:02:56,885  -->  00:02:58,785
+which we'll see in a second.
+
+51
+
+00:02:58,785  -->  00:03:06,270
+Do you see how now it's 29.1 as opposed to 29.10,
+
+52
+
+00:03:06,270  -->  00:03:08,130
+which is what we would actually want.
+
+53
+
+00:03:08,130  -->  00:03:11,160
+To ensure that the output always displays two dismal places,
+
+54
+
+00:03:11,160  -->  00:03:13,275
+we'll need to use string formatting,
+
+55
+
+00:03:13,275  -->  00:03:14,735
+which we'll see in a second.
+
+56
+
+00:03:14,735  -->  00:03:17,780
+This is an example of a precision issue with
+
+57
+
+00:03:17,780  -->  00:03:21,600
+floating point arithmetic that can surface when dealing with money,
+
+58
+
+00:03:21,600  -->  00:03:26,340
+as we've seen in this example and in this example.
+
+59
+
+00:03:26,340  -->  00:03:30,540
+To ensure the output is formatted to two decimal places,
+
+60
+
+00:03:30,540  -->  00:03:35,020
+we can use the.2f format specifier.
+
+61
+
+00:03:35,020  -->  00:03:39,510
+What we'll do is that we are going to copy our last cell.
+
+62
+
+00:03:39,510  -->  00:03:44,100
+We'll paste that in here, and now we're going to do a couple of things.
+
+63
+
+00:03:44,100  -->  00:03:47,240
+We're going to get rid of the round function.
+
+64
+
+00:03:47,240  -->  00:03:50,775
+Get rid of the specifier.
+
+65
+
+00:03:50,775  -->  00:03:54,110
+What we'll do is that we will take total price.
+
+66
+
+00:03:54,110  -->  00:04:00,150
+We'll do a colon period 2 and f. The
+
+67
+
+00:04:00,150  -->  00:04:06,810
+colon.2f method is a fancy Python formatting method right here.
+
+68
+
+00:04:06,810  -->  00:04:11,550
+That ensures the total price is displayed with two decimal places so that
+
+69
+
+00:04:11,550  -->  00:04:16,670
+we do ultimately get 29.10 as we would expect.
+
+70
+
+00:04:16,670  -->  00:04:21,530
+Even though this example works correctly, as we see here,
+
+71
+
+00:04:21,530  -->  00:04:25,790
+it's essential to be aware of potential and accuracies like we
+
+72
+
+00:04:25,790  -->  00:04:30,890
+just went through when performing many operations with floating point numbers.

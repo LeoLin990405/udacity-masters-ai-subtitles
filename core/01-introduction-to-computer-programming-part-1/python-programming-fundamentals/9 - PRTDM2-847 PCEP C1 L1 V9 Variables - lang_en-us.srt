@@ -1,0 +1,529 @@
+1
+
+00:00:00,000  -->  00:00:03,600
+Through our iterative approach to learning Python,
+
+2
+
+00:00:03,600  -->  00:00:06,240
+you have already been using variables in this course.
+
+3
+
+00:00:06,240  -->  00:00:11,580
+But we haven't quite had a deep dive yet into what a variable actually is.
+
+4
+
+00:00:11,580  -->  00:00:15,040
+You might even remember what a variable is for math class.
+
+5
+
+00:00:15,040  -->  00:00:17,655
+For example, x = 2,
+
+6
+
+00:00:17,655  -->  00:00:19,865
+y = mx + b.
+
+7
+
+00:00:19,865  -->  00:00:21,880
+If these ring a bell, great,
+
+8
+
+00:00:21,880  -->  00:00:23,660
+if not, no worries at all,
+
+9
+
+00:00:23,660  -->  00:00:26,480
+we're going to be going through these together because variables are
+
+10
+
+00:00:26,480  -->  00:00:30,715
+so important to add to our pythonic tool kit.
+
+11
+
+00:00:30,715  -->  00:00:33,990
+Already in this course, we have been using and depending
+
+12
+
+00:00:33,990  -->  00:00:37,070
+on variables to store info for another value.
+
+13
+
+00:00:37,070  -->  00:00:41,210
+Variables are little packets of data used to store information.
+
+14
+
+00:00:41,210  -->  00:00:46,470
+In Python, you can assign a value to a variable using the equal sign.
+
+15
+
+00:00:46,470  -->  00:00:50,210
+They can be created, updated, deleted, recreated,
+
+16
+
+00:00:50,210  -->  00:00:52,910
+and stored across your Python environment so
+
+17
+
+00:00:52,910  -->  00:00:56,225
+that you can keep track of all of the information used.
+
+18
+
+00:00:56,225  -->  00:01:01,280
+Imagine if you were keeping track of items in a cart to check out at the store and you
+
+19
+
+00:01:01,280  -->  00:01:06,320
+had to write the complete list every single time you added a new item to the cart,
+
+20
+
+00:01:06,320  -->  00:01:07,900
+change an item in the cart,
+
+21
+
+00:01:07,900  -->  00:01:09,665
+remove an item from the cart.
+
+22
+
+00:01:09,665  -->  00:01:11,520
+It would take forever, right?
+
+23
+
+00:01:11,520  -->  00:01:15,240
+A variable allows us to store information about our items.
+
+24
+
+00:01:15,240  -->  00:01:18,020
+We can keep track of how many items there are,
+
+25
+
+00:01:18,020  -->  00:01:19,620
+their names, their prices,
+
+26
+
+00:01:19,620  -->  00:01:21,880
+or anything else that we're interested in.
+
+27
+
+00:01:21,880  -->  00:01:24,540
+Then when needed, we can recall that information,
+
+28
+
+00:01:24,540  -->  00:01:27,520
+allowing us to avoid rewriting massive amounts of
+
+29
+
+00:01:27,520  -->  00:01:31,100
+information every time something in our code base or our cart.
+
+30
+
+00:01:31,100  -->  00:01:33,135
+For example, changes.
+
+31
+
+00:01:33,135  -->  00:01:36,620
+Some examples of variables are these,
+
+32
+
+00:01:36,620  -->  00:01:38,020
+which you see on the screen,
+
+33
+
+00:01:38,020  -->  00:01:40,580
+and we can create any number of variables,
+
+34
+
+00:01:40,580  -->  00:01:42,180
+name them however we want,
+
+35
+
+00:01:42,180  -->  00:01:45,420
+and set their value equal to whatever we need them to
+
+36
+
+00:01:45,420  -->  00:01:50,355
+be like x = 100 or user name = PythonExpert,
+
+37
+
+00:01:50,355  -->  00:01:52,930
+or ready_ to_ learn = true.
+
+38
+
+00:01:52,930  -->  00:01:55,260
+When naming variables, it's important to follow
+
+39
+
+00:01:55,260  -->  00:01:59,220
+certain conventions to make your code readable and consistent.
+
+40
+
+00:01:59,220  -->  00:02:04,440
+Python recommends using snake case for variable names with brackets.
+
+41
+
+00:02:04,440  -->  00:02:06,880
+We cannot use spaces for variable names,
+
+42
+
+00:02:06,880  -->  00:02:10,840
+so we need to make the variable name of a string of
+
+43
+
+00:02:10,840  -->  00:02:15,980
+characters with no spaces or certain special characters like this.
+
+44
+
+00:02:15,980  -->  00:02:19,870
+We make a cell, you can take user_name,
+
+45
+
+00:02:20,120  -->  00:02:24,375
+which is Snake case equals PythonExpert.
+
+46
+
+00:02:24,375  -->  00:02:27,390
+Or is student.
+
+47
+
+00:02:27,390  -->  00:02:30,350
+Again, that's in Snake case. Is true.
+
+48
+
+00:02:30,350  -->  00:02:37,830
+We could also put PythonExpert space equals to because that is in between quota marks,
+
+49
+
+00:02:37,830  -->  00:02:40,155
+but since it's a user name, we probably wouldn't do that.
+
+50
+
+00:02:40,155  -->  00:02:45,230
+But something we could not do is say user name space name equals that.
+
+51
+
+00:02:45,230  -->  00:02:48,970
+This needs to be one full concise,
+
+52
+
+00:02:48,970  -->  00:02:53,970
+complete element, and we use underscores instead of spaces.
+
+53
+
+00:02:53,970  -->  00:02:56,910
+This is the best practice for a Python variable.
+
+54
+
+00:02:56,910  -->  00:02:59,870
+Now, here's a little inside tip.
+
+55
+
+00:02:59,870  -->  00:03:01,730
+When I was just starting out programming,
+
+56
+
+00:03:01,730  -->  00:03:04,525
+I thought you needed to put an underscore.
+
+57
+
+00:03:04,525  -->  00:03:07,240
+Every time you declared a variable,
+
+58
+
+00:03:07,240  -->  00:03:09,100
+but this isn't actually true.
+
+59
+
+00:03:09,100  -->  00:03:13,095
+You could get away with writing variables like this,
+
+60
+
+00:03:13,095  -->  00:03:17,140
+readyToLearn with lower case,
+
+61
+
+00:03:17,140  -->  00:03:20,095
+and then mixing that with the uppercase equals true.
+
+62
+
+00:03:20,095  -->  00:03:26,620
+That will work. Or BOOKS = 12345.
+
+63
+
+00:03:26,620  -->  00:03:28,915
+Both of these values will work.
+
+64
+
+00:03:28,915  -->  00:03:34,590
+But Snake case like this is the tried and true method.
+
+65
+
+00:03:34,590  -->  00:03:36,290
+If you're going to write variables,
+
+66
+
+00:03:36,290  -->  00:03:39,175
+make sure to remember Snake case for Python.
+
+67
+
+00:03:39,175  -->  00:03:40,750
+In the Below example,
+
+68
+
+00:03:40,750  -->  00:03:43,570
+do you see how the E is a variable,
+
+69
+
+00:03:43,570  -->  00:03:45,950
+but it's just a single letter?
+
+70
+
+00:03:45,950  -->  00:03:50,910
+Meanwhile, the error message is set to a function string.
+
+71
+
+00:03:50,910  -->  00:03:53,190
+We'll learn about those a little later,
+
+72
+
+00:03:53,190  -->  00:03:58,430
+and we can assume that num1 and num2 will
+
+73
+
+00:03:58,430  -->  00:04:03,910
+be integers or float number values for our divided numbers function.
+
+74
+
+00:04:03,910  -->  00:04:05,730
+Let's say this in action.
+
+75
+
+00:04:05,730  -->  00:04:08,930
+When we define this function,
+
+76
+
+00:04:08,930  -->  00:04:11,530
+we'll use a tri block,
+
+77
+
+00:04:11,530  -->  00:04:17,025
+take a result, and then take num1 / num2,
+
+78
+
+00:04:17,025  -->  00:04:18,860
+and then return the value.
+
+79
+
+00:04:18,860  -->  00:04:23,070
+Otherwise, except there'll be a zero division error.
+
+80
+
+00:04:23,070  -->  00:04:26,930
+Otherwise, a regular exception, we'll overturn that.
+
+81
+
+00:04:26,930  -->  00:04:29,130
+Can you tell what this function is doing?
+
+82
+
+00:04:29,130  -->  00:04:31,110
+Can you see what it will output?
+
+83
+
+00:04:31,110  -->  00:04:32,670
+Let's go through it together.
+
+84
+
+00:04:32,670  -->  00:04:40,360
+The function divide numbers attempts to divide num1 by num2.
+
+85
+
+00:04:40,360  -->  00:04:43,480
+If a zero division error occurs, right here.
+
+86
+
+00:04:43,480  -->  00:04:47,500
+It catches the error and assigns it to the variable E. The variable E
+
+87
+
+00:04:47,500  -->  00:04:51,885
+isn't used to create a more detailed error message right here.
+
+88
+
+00:04:51,885  -->  00:04:54,780
+If any other exception occurs,
+
+89
+
+00:04:54,780  -->  00:04:57,380
+it also catches it and assigns it to E,
+
+90
+
+00:04:57,380  -->  00:05:00,930
+and then creates a general error message. Right here.
+
+91
+
+00:05:00,930  -->  00:05:05,540
+The function then returns the appropriate result or error message.
+
+92
+
+00:05:05,540  -->  00:05:11,160
+Overall, there can be many ways to declare variables and work with data types in Python,
+
+93
+
+00:05:11,160  -->  00:05:13,080
+but it will become second nature,
+
+94
+
+00:05:13,080  -->  00:05:14,820
+the more Python you write.
+
+95
+
+00:05:14,820  -->  00:05:17,830
+You got this. Remember early when we were
+
+96
+
+00:05:17,830  -->  00:05:21,290
+learning about the Lexicon vocabulary and style guide of Python.
+
+97
+
+00:05:21,290  -->  00:05:24,930
+Well, there are additional guidelines for writing clean, complete,
+
+98
+
+00:05:24,930  -->  00:05:30,815
+and concise Python code called the Python enhancement Proposal eight or PEP 8 for short.
+
+99
+
+00:05:30,815  -->  00:05:33,210
+PEP 8 is the style guide for writing Python,
+
+100
+
+00:05:33,210  -->  00:05:39,010
+and such recommendations are use four spaces per indentation level.
+
+101
+
+00:05:39,010  -->  00:05:42,070
+Limit lines to 79 characters.
+
+102
+
+00:05:42,070  -->  00:05:45,770
+Use blank lines to separate functions in classes,
+
+103
+
+00:05:45,770  -->  00:05:49,590
+and use spaces around operators and after commas.
+
+104
+
+00:05:49,590  -->  00:05:52,570
+Keep these in mind when you are writing your Python code,
+
+105
+
+00:05:52,570  -->  00:05:54,250
+so that it can be as optimized,
+
+106
+
+00:05:54,250  -->  00:05:57,290
+readable, and efficient as possible.

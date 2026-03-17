@@ -1,0 +1,114 @@
+1
+
+00:00:00,000  -->  00:00:01,740
+Python is a language,
+
+2
+
+00:00:01,740  -->  00:00:06,620
+so we need to think about the words and the phrases that make up Python's vocabulary.
+
+3
+
+00:00:06,620  -->  00:00:09,260
+These are known as Python's Lexis.
+
+4
+
+00:00:09,260  -->  00:00:11,820
+Think of it as a dictionary that tells you what types
+
+5
+
+00:00:11,820  -->  00:00:14,940
+of tokens or words Python will understand.
+
+6
+
+00:00:14,940  -->  00:00:18,320
+Python has about 30 keyword identifiers,
+
+7
+
+00:00:18,320  -->  00:00:19,850
+such as and,
+
+8
+
+00:00:19,850  -->  00:00:21,425
+is, for,
+
+9
+
+00:00:21,425  -->  00:00:24,100
+while, del, class,
+
+10
+
+00:00:24,100  -->  00:00:28,205
+continue, finally, accept, and many more.
+
+11
+
+00:00:28,205  -->  00:00:31,700
+Don't worry about memorizing all of these right now. There's a lot.
+
+12
+
+00:00:31,700  -->  00:00:36,840
+We'll get more familiar with these through an iterative approach across this course.
+
+13
+
+00:00:36,840  -->  00:00:41,040
+So these will become second nature to you the more that you're reintroduced to them.
+
+14
+
+00:00:41,040  -->  00:00:43,360
+Just know that there are specific keywords that tell
+
+15
+
+00:00:43,360  -->  00:00:47,420
+Python how to do very specific commands and actions.
+
+16
+
+00:00:47,420  -->  00:00:49,840
+Also a fun fact about Python is that
+
+17
+
+00:00:49,840  -->  00:00:52,740
+the print statement was considered a keyword in Python 2,
+
+18
+
+00:00:52,740  -->  00:00:55,095
+but then it became a function in Python 3.
+
+19
+
+00:00:55,095  -->  00:00:57,360
+This shows how languages evolve,
+
+20
+
+00:00:57,360  -->  00:01:00,480
+just like any language, and Python is no exception.
+
+21
+
+00:01:00,480  -->  00:01:03,460
+Usually, when you learn a programming language for the first time,
+
+22
+
+00:01:03,460  -->  00:01:06,080
+you'll write hello world as a fun introduction.
+
+23
+
+00:01:06,080  -->  00:01:09,300
+So we're going to do that in a demo momentarily.

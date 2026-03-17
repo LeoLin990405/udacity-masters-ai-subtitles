@@ -1,0 +1,79 @@
+1
+
+00:00:00,000  -->  00:00:03,420
+With floor division, this divides one number by
+
+2
+
+00:00:03,420  -->  00:00:08,680
+another number and returns the largest whole number less than or equal to the result.
+
+3
+
+00:00:08,680  -->  00:00:11,840
+It's like regular division but without the decimal part.
+
+4
+
+00:00:11,840  -->  00:00:15,380
+We write A, backslash, backslash, B,
+
+5
+
+00:00:15,380  -->  00:00:21,020
+and here, 10/3 equals three without the remainder.
+
+6
+
+00:00:21,020  -->  00:00:24,965
+Three is what is returned rather than the modulus, which would return.
+
+7
+
+00:00:24,965  -->  00:00:28,820
+In addition, this adds two numbers together,
+
+8
+
+00:00:28,820  -->  00:00:30,795
+such as A plus B.
+
+9
+
+00:00:30,795  -->  00:00:34,810
+Here ten plus three equals 13.
+
+10
+
+00:00:34,810  -->  00:00:40,630
+Finally, with subtraction, this operation subtracts one number from another,
+
+11
+
+00:00:40,630  -->  00:00:42,590
+such as A minus B.
+
+12
+
+00:00:42,590  -->  00:00:45,630
+Here, ten minus three equals seven.
+
+13
+
+00:00:45,630  -->  00:00:48,550
+One quick tip, make sure that you're watching
+
+14
+
+00:00:48,550  -->  00:00:51,930
+the demos and actually practicing these exercises.
+
+15
+
+00:00:51,930  -->  00:00:55,490
+It's so critical that you get practice watching the code
+
+16
+
+00:00:55,490  -->  00:01:01,110
+and then writing your own code to succeed in becoming a Python expert.

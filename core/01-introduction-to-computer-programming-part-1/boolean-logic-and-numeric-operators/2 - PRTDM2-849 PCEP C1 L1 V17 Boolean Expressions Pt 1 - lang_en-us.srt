@@ -1,0 +1,204 @@
+1
+
+00:00:00,000  -->  00:00:02,320
+Boolean expressions are used to evaluate
+
+2
+
+00:00:02,320  -->  00:00:06,300
+conditions that control the flow of our Python code programs.
+
+3
+
+00:00:06,300  -->  00:00:08,560
+They're essential for implementing logic,
+
+4
+
+00:00:08,560  -->  00:00:11,780
+such as determining if a user is eligible for a discount,
+
+5
+
+00:00:11,780  -->  00:00:14,400
+if a certain situation is occurring or not,
+
+6
+
+00:00:14,400  -->  00:00:18,550
+or if a certain value is returned to then do a follow up action.
+
+7
+
+00:00:18,550  -->  00:00:21,840
+Let's go through some Boolean expression examples.
+
+8
+
+00:00:21,840  -->  00:00:25,720
+First up, let's check if a user qualifies for a discount.
+
+9
+
+00:00:25,720  -->  00:00:28,540
+Imagine you run an online store and you want to
+
+10
+
+00:00:28,540  -->  00:00:32,180
+offer discounts to customers based on certain conditions.
+
+11
+
+00:00:32,180  -->  00:00:36,240
+Let's say a user qualifies for a discount if they have spent
+
+12
+
+00:00:36,240  -->  00:00:40,640
+more than $100 or if they are a loyalty program member.
+
+13
+
+00:00:40,640  -->  00:00:44,365
+You can use a Boolean expression to check these conditions.
+
+14
+
+00:00:44,365  -->  00:00:50,080
+Let's write some code to express what we would do for something like this.
+
+15
+
+00:00:50,080  -->  00:00:52,835
+We'll define a variable called total_spent,
+
+16
+
+00:00:52,835  -->  00:00:56,820
+and we'll set that equal to 120.50.
+
+17
+
+00:00:56,820  -->  00:01:01,580
+Then we'll do is_loyalty_member set to false, and that'll be our Boolean.
+
+18
+
+00:01:01,580  -->  00:01:03,280
+Now that we've defined our variables,
+
+19
+
+00:01:03,280  -->  00:01:07,680
+let's write a function that will check a certain condition.
+
+20
+
+00:01:07,680  -->  00:01:12,050
+Say qualifies_for_discount = total_spent,
+
+21
+
+00:01:12,050  -->  00:01:19,155
+and that's greater than 100, or is_loyalty_member.
+
+22
+
+00:01:19,155  -->  00:01:24,690
+Then we'll print the value of this function,
+
+23
+
+00:01:24,690  -->  00:01:26,775
+and we'll do an f string.
+
+24
+
+00:01:26,775  -->  00:01:30,620
+We'll say user qualifies for discount.
+
+25
+
+00:01:30,620  -->  00:01:33,290
+Put this in squiggly brackets,
+
+26
+
+00:01:33,290  -->  00:01:34,680
+and then we'll close that out.
+
+27
+
+00:01:34,680  -->  00:01:36,450
+Here, in this function,
+
+28
+
+00:01:36,450  -->  00:01:41,525
+we're going to check if the user qualifies for a discount called qualifies_for_discount,
+
+29
+
+00:01:41,525  -->  00:01:49,005
+where if the total spent is greater than 100,
+
+30
+
+00:01:49,005  -->  00:01:50,640
+then the discount applies,
+
+31
+
+00:01:50,640  -->  00:01:53,425
+and they are a loyalty_member.
+
+32
+
+00:01:53,425  -->  00:01:56,320
+That's the other condition that we'll check.
+
+33
+
+00:01:56,320  -->  00:02:00,240
+In this example, the total_spent is greater than
+
+34
+
+00:02:00,240  -->  00:02:04,465
+100 and checks out if the user has spent more than $100,
+
+35
+
+00:02:04,465  -->  00:02:09,245
+and is_loyalty_member checks if the user is a loyal program member.
+
+36
+
+00:02:09,245  -->  00:02:13,240
+The or operator combines these conditions together,
+
+37
+
+00:02:13,240  -->  00:02:17,240
+meaning the user qualifies for a discount if either condition is true,
+
+38
+
+00:02:17,240  -->  00:02:20,340
+which is evaluated to this value here.
+
+39
+
+00:02:20,340  -->  00:02:23,120
+Can you tell what the output is going to be here?
+
+40
+
+00:02:23,120  -->  00:02:25,395
+Let's find out. If you guess true,
+
+41
+
+00:02:25,395  -->  00:02:27,550
+you're right. Great job.

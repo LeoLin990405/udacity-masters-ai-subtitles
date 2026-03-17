@@ -1,0 +1,249 @@
+1
+
+00:00:00,000  -->  00:00:03,100
+Have you ever wondered how a car drives by itself
+
+2
+
+00:00:03,100  -->  00:00:06,800
+or how you get a list of products suggested to you that you didn't know you needed?
+
+3
+
+00:00:06,800  -->  00:00:11,700
+Maybe you've received an event recommendation that ended up rocking your world.
+
+4
+
+00:00:11,700  -->  00:00:13,980
+If you've ever thought about these topics,
+
+5
+
+00:00:13,980  -->  00:00:17,060
+then this is the absolute best course for you to take.
+
+6
+
+00:00:17,060  -->  00:00:20,840
+In this course, we'll dive into the essentials of Python programming,
+
+7
+
+00:00:20,840  -->  00:00:24,160
+helping you understand the fundamental concepts and skills needed to
+
+8
+
+00:00:24,160  -->  00:00:28,020
+get certified as an entry level Python programmer, PCP.
+
+9
+
+00:00:28,020  -->  00:00:31,000
+Python is amazing because it helps you build all of
+
+10
+
+00:00:31,000  -->  00:00:35,440
+these really cool technologies and systems that we use and rely on.
+
+11
+
+00:00:35,440  -->  00:00:38,060
+You're interacting with Python every single day,
+
+12
+
+00:00:38,060  -->  00:00:39,740
+whether you realize it or not.
+
+13
+
+00:00:39,740  -->  00:00:42,700
+The PCP certification shows that you
+
+14
+
+00:00:42,700  -->  00:00:45,680
+are familiar with universal computer programming concepts,
+
+15
+
+00:00:45,680  -->  00:00:47,720
+like data types, containers,
+
+16
+
+00:00:47,720  -->  00:00:51,340
+functions, conditions, loops, and more.
+
+17
+
+00:00:51,340  -->  00:00:54,220
+It measures your ability to accomplish coding tasks
+
+18
+
+00:00:54,220  -->  00:00:57,220
+related to the essentials of programming in Python,
+
+19
+
+00:00:57,220  -->  00:00:59,480
+ensuring that you are well prepared to start
+
+20
+
+00:00:59,480  -->  00:01:02,240
+your journey in the world of software development.
+
+21
+
+00:01:02,240  -->  00:01:05,320
+By the end of this course, you'll be equipped with the knowledge and
+
+22
+
+00:01:05,320  -->  00:01:08,740
+skills to tackle the PCP exam confidently.
+
+23
+
+00:01:08,740  -->  00:01:11,520
+You'll understand Python's logic and structure,
+
+24
+
+00:01:11,520  -->  00:01:13,160
+be able to work with literals,
+
+25
+
+00:01:13,160  -->  00:01:15,720
+variables, operators, data types,
+
+26
+
+00:01:15,720  -->  00:01:18,190
+collections, like lists, and dictionaries.
+
+27
+
+00:01:18,190  -->  00:01:21,720
+You'll also be comfortable with control flow mechanisms,
+
+28
+
+00:01:21,720  -->  00:01:23,880
+functions, and handling exceptions.
+
+29
+
+00:01:23,880  -->  00:01:25,740
+I'll be guiding you every step of the way.
+
+30
+
+00:01:25,740  -->  00:01:27,005
+My name is Brian Hough.
+
+31
+
+00:01:27,005  -->  00:01:28,805
+I'm an AWS DevTools Hero,
+
+32
+
+00:01:28,805  -->  00:01:30,155
+Full-Stack Software Engineer,
+
+33
+
+00:01:30,155  -->  00:01:31,800
+and Creator of the Tech Stack Playbook.
+
+34
+
+00:01:31,800  -->  00:01:34,560
+I've worked with companies like AWS, Harvard University,
+
+35
+
+00:01:34,560  -->  00:01:36,205
+freeCodeCamp, the Motley Fool,
+
+36
+
+00:01:36,205  -->  00:01:37,805
+Boston University, and more.
+
+37
+
+00:01:37,805  -->  00:01:39,450
+Before I became a software engineer,
+
+38
+
+00:01:39,450  -->  00:01:40,670
+I worked in public relations,
+
+39
+
+00:01:40,670  -->  00:01:42,130
+social media, and marketing,
+
+40
+
+00:01:42,130  -->  00:01:45,690
+and taking a Udacity nanodegree program gave me life changing
+
+41
+
+00:01:45,690  -->  00:01:49,630
+skills that inspired me to actually pursue a career in tech.
+
+42
+
+00:01:49,630  -->  00:01:53,290
+Whether you already have programming skills and you're looking to get certified,
+
+43
+
+00:01:53,290  -->  00:01:55,930
+or if this is your first introduction to programming,
+
+44
+
+00:01:55,930  -->  00:01:57,490
+I want to welcome you here.
+
+45
+
+00:01:57,490  -->  00:01:59,830
+I'm excited to help you learn Python and
+
+46
+
+00:01:59,830  -->  00:02:03,130
+further your career goals and dreams wherever they may lead.
+
+47
+
+00:02:03,130  -->  00:02:06,190
+Becoming PCP certified is your first step toward
+
+48
+
+00:02:06,190  -->  00:02:09,290
+a career in Python programming and related technologies.
+
+49
+
+00:02:09,290  -->  00:02:11,450
+It helps you stand out from other candidates and can
+
+50
+
+00:02:11,450  -->  00:02:15,150
+open doors to junior level jobs in the IT sector.

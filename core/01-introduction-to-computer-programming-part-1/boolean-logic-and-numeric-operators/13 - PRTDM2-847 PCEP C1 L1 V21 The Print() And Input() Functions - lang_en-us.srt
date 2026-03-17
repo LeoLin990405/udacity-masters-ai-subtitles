@@ -1,0 +1,129 @@
+1
+
+00:00:00,000  -->  00:00:01,900
+When you order a meal at a restaurant,
+
+2
+
+00:00:01,900  -->  00:00:03,600
+you give your order, and then you
+
+3
+
+00:00:03,600  -->  00:00:06,080
+expect that the restaurant will give you something in return.
+
+4
+
+00:00:06,080  -->  00:00:08,220
+In this case, your meal.
+
+5
+
+00:00:08,220  -->  00:00:12,860
+But what if the restaurant only took in orders but never gave out a meal?
+
+6
+
+00:00:12,860  -->  00:00:15,145
+That restaurant wouldn't be around for very long.
+
+7
+
+00:00:15,145  -->  00:00:18,710
+In the same way, we need to think about that in our Python code,
+
+8
+
+00:00:18,710  -->  00:00:21,320
+and make sure that it returns the output we
+
+9
+
+00:00:21,320  -->  00:00:24,995
+expect it to and need it to every single time.
+
+10
+
+00:00:24,995  -->  00:00:29,910
+There are two fundamental functions in Python for interacting with the user.
+
+11
+
+00:00:29,910  -->  00:00:33,330
+The print function outputs text to the console,
+
+12
+
+00:00:33,330  -->  00:00:37,550
+while the input function reads a line of text from the user.
+
+13
+
+00:00:37,550  -->  00:00:39,470
+Consider the input function.
+
+14
+
+00:00:39,470  -->  00:00:44,230
+When we need a user to supply the function or program with an input,
+
+15
+
+00:00:44,230  -->  00:00:46,515
+such as your name or email,
+
+16
+
+00:00:46,515  -->  00:00:48,170
+or any other piece of data,
+
+17
+
+00:00:48,170  -->  00:00:50,710
+we're going to use the input function to prompt
+
+18
+
+00:00:50,710  -->  00:00:54,650
+the user to put in some text via an input box.
+
+19
+
+00:00:54,650  -->  00:00:59,920
+In this example, the input function prompts the user to enter their name.
+
+20
+
+00:00:59,920  -->  00:01:02,010
+When you're writing Python code,
+
+21
+
+00:01:02,010  -->  00:01:05,270
+print statements are incredibly helpful for logging,
+
+22
+
+00:01:05,270  -->  00:01:10,890
+and also for tracking what your functions and scripts are doing or maybe not doing.
+
+23
+
+00:01:10,890  -->  00:01:16,110
+This way, we can see what our Python program sees immensely
+
+24
+
+00:01:16,110  -->  00:01:21,550
+helpful for debugging if we're getting unexpected outputs and need to retrace our steps,
+
+25
+
+00:01:21,550  -->  00:01:23,530
+or figure out what's going on.
+
+26
+
+00:01:23,530  -->  00:01:29,190
+In this example, the print function outputs a greeting message.

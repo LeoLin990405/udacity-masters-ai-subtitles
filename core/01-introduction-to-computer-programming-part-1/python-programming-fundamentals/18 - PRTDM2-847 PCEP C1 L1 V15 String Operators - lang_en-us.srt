@@ -1,0 +1,169 @@
+1
+
+00:00:00,000  -->  00:00:02,460
+To add to our growing list of operators,
+
+2
+
+00:00:02,460  -->  00:00:04,400
+in addition to the numeric ones,
+
+3
+
+00:00:04,400  -->  00:00:06,500
+there's also ones for strings.
+
+4
+
+00:00:06,500  -->  00:00:08,720
+If you remember from the previous section,
+
+5
+
+00:00:08,720  -->  00:00:14,620
+strings are packets of text characters surrounded by single or double quotation marks.
+
+6
+
+00:00:14,620  -->  00:00:16,260
+To work with strings, we can,
+
+7
+
+00:00:16,260  -->  00:00:18,080
+of course, declare them as a variable.
+
+8
+
+00:00:18,080  -->  00:00:23,200
+But some other nifty calculations we can do are these two types of operations.
+
+9
+
+00:00:23,200  -->  00:00:28,860
+Concatenation, which uses a plus that unites strings together and repetition,
+
+10
+
+00:00:28,860  -->  00:00:33,380
+which uses an asterisk that repeats a string by a certain number of times.
+
+11
+
+00:00:33,380  -->  00:00:36,840
+Let's look at what this means for our Python code next.
+
+12
+
+00:00:36,840  -->  00:00:42,400
+With concatenation, this operator joins two strings together, effectively adding them.
+
+13
+
+00:00:42,400  -->  00:00:44,875
+For example, if you have two strings,
+
+14
+
+00:00:44,875  -->  00:00:46,415
+Hello and World,
+
+15
+
+00:00:46,415  -->  00:00:49,040
+using the concatenation plus operator,
+
+16
+
+00:00:49,040  -->  00:00:51,685
+will combine them into Hello World.
+
+17
+
+00:00:51,685  -->  00:00:54,100
+Here's how that looks in code.
+
+18
+
+00:00:54,100  -->  00:00:57,315
+Can you tell what this would output?
+
+19
+
+00:00:57,315  -->  00:01:00,480
+If you guessed Hello World, then you're right.
+
+20
+
+00:01:00,480  -->  00:01:02,280
+In this above example,
+
+21
+
+00:01:02,280  -->  00:01:04,410
+String 1 is Hello,
+
+22
+
+00:01:04,410  -->  00:01:06,765
+and String 2 is World.
+
+23
+
+00:01:06,765  -->  00:01:11,905
+The plus operator concatenates them with a space in between,
+
+24
+
+00:01:11,905  -->  00:01:15,060
+resulting in Hello World with a space in the middle.
+
+25
+
+00:01:15,060  -->  00:01:20,575
+The plus operator concatenates them with a space in between,
+
+26
+
+00:01:20,575  -->  00:01:24,040
+resulting in Hello World with a space in the middle.
+
+27
+
+00:01:24,040  -->  00:01:29,220
+With repetition, this operator repeats a string a specified number of times.
+
+28
+
+00:01:29,220  -->  00:01:32,360
+For instance, if you have the string, Hello,
+
+29
+
+00:01:32,360  -->  00:01:34,320
+and you want to repeat it three times,
+
+30
+
+00:01:34,320  -->  00:01:39,840
+you use the asterisk operator to specify number three, like this.
+
+31
+
+00:01:39,840  -->  00:01:42,320
+Can you tell what this will output?
+
+32
+
+00:01:42,320  -->  00:01:46,180
+If you guessed, HelloHelloHello, you got it right.
+
+33
+
+00:01:46,180  -->  00:01:49,340
+Notice that we aren't adding a space in between the strings.
+
+34
+
+00:01:49,340  -->  00:01:54,380
+So it will be Hello times three, quite literally.

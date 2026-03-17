@@ -1,0 +1,239 @@
+1
+
+00:00:00,000  -->  00:00:02,400
+We've just covered Boolean operators.
+
+2
+
+00:00:02,400  -->  00:00:07,760
+Now let's dive into another important set of operators called relational operators.
+
+3
+
+00:00:07,760  -->  00:00:12,060
+These operators compare values and return true or false.
+
+4
+
+00:00:12,060  -->  00:00:16,840
+They are often used in Boolean expressions to help us make decisions in our code.
+
+5
+
+00:00:16,840  -->  00:00:22,900
+Let's explore each one of these new operators with an example of it in action.
+
+6
+
+00:00:22,900  -->  00:00:27,500
+The equal to operator checks if two values are equal.
+
+7
+
+00:00:27,500  -->  00:00:29,720
+If they are, it returns true.
+
+8
+
+00:00:29,720  -->  00:00:32,360
+Otherwise, it returns false.
+
+9
+
+00:00:32,360  -->  00:00:37,320
+In this example, a and b both hold the value five,
+
+10
+
+00:00:37,320  -->  00:00:41,805
+so a == b evaluates to true.
+
+11
+
+00:00:41,805  -->  00:00:46,330
+The not equal to operator checks if two values are not equal.
+
+12
+
+00:00:46,330  -->  00:00:49,090
+If they are not equal, it returns true.
+
+13
+
+00:00:49,090  -->  00:00:51,275
+Otherwise, it returns false.
+
+14
+
+00:00:51,275  -->  00:00:53,685
+Here, a is five,
+
+15
+
+00:00:53,685  -->  00:00:55,485
+and b is three,
+
+16
+
+00:00:55,485  -->  00:01:00,120
+so a does not equal b.
+
+17
+
+00:01:00,120  -->  00:01:02,385
+Here, a is five,
+
+18
+
+00:01:02,385  -->  00:01:03,750
+and b is three,
+
+19
+
+00:01:03,750  -->  00:01:11,230
+so a!= b evaluates to true because they are different values.
+
+20
+
+00:01:11,230  -->  00:01:13,670
+The greater than operator checks if
+
+21
+
+00:01:13,670  -->  00:01:17,470
+a value on the left is greater than the value on the right.
+
+22
+
+00:01:17,470  -->  00:01:19,800
+If it is, it returns true.
+
+23
+
+00:01:19,800  -->  00:01:22,245
+Otherwise, it returns false.
+
+24
+
+00:01:22,245  -->  00:01:24,930
+In this example, a is greater than b,
+
+25
+
+00:01:24,930  -->  00:01:28,810
+so a > b evaluates to true.
+
+26
+
+00:01:28,810  -->  00:01:31,810
+The greater than or equal to operator checks if
+
+27
+
+00:01:31,810  -->  00:01:35,690
+the value on the left is greater than or equal to the value on the right.
+
+28
+
+00:01:35,690  -->  00:01:37,630
+If it is, it returns true,
+
+29
+
+00:01:37,630  -->  00:01:39,970
+otherwise, it returns false.
+
+30
+
+00:01:39,970  -->  00:01:43,095
+Here, a is equal to b,
+
+31
+
+00:01:43,095  -->  00:01:47,385
+so a >= b evaluates to true.
+
+32
+
+00:01:47,385  -->  00:01:50,020
+The less than operator checks if the value
+
+33
+
+00:01:50,020  -->  00:01:52,740
+on the left is less than the value on the right.
+
+34
+
+00:01:52,740  -->  00:01:54,880
+If it is, it returns true.
+
+35
+
+00:01:54,880  -->  00:01:57,060
+Otherwise, it returns false.
+
+36
+
+00:01:57,060  -->  00:02:00,300
+In this example, a is less than b,
+
+37
+
+00:02:00,300  -->  00:02:03,975
+so a < b evaluates to true.
+
+38
+
+00:02:03,975  -->  00:02:07,520
+The less than or equal to operator checks if the value on
+
+39
+
+00:02:07,520  -->  00:02:11,420
+the left is less than or equal to the value on the right.
+
+40
+
+00:02:11,420  -->  00:02:13,520
+If it is, it returns true.
+
+41
+
+00:02:13,520  -->  00:02:15,740
+Otherwise, it returns false.
+
+42
+
+00:02:15,740  -->  00:02:18,030
+Here, a is equal to b,
+
+43
+
+00:02:18,030  -->  00:02:22,225
+so a <= b evaluates to true.
+
+44
+
+00:02:22,225  -->  00:02:25,340
+Congrats, you've just learned a whole new set
+
+45
+
+00:02:25,340  -->  00:02:28,260
+of tools for relational operations in Python.
+
+46
+
+00:02:28,260  -->  00:02:31,060
+These operators are fundamental
+
+47
+
+00:02:31,060  -->  00:02:34,420
+in programming and will help you control the flow of your code.
+
+48
+
+00:02:34,420  -->  00:02:39,500
+Great work and keep it going as we move into the next video ahead.

@@ -1,0 +1,354 @@
+1
+
+00:00:00,000  -->  00:00:02,300
+When you're writing Python, you might want to make
+
+2
+
+00:00:02,300  -->  00:00:05,940
+references in text to what certain parts mean or do.
+
+3
+
+00:00:05,940  -->  00:00:08,440
+Especially as you work on Teams and with
+
+4
+
+00:00:08,440  -->  00:00:11,880
+other engineers who wrote code for various parts of a project,
+
+5
+
+00:00:11,880  -->  00:00:15,840
+certain actions or methods might be unfamiliar to you and others.
+
+6
+
+00:00:15,840  -->  00:00:21,620
+Fortunately for us, Python has a very handy way to let us write text in our code.
+
+7
+
+00:00:21,620  -->  00:00:23,680
+The best part of comments,
+
+8
+
+00:00:23,680  -->  00:00:28,300
+besides letting us provide human readable documentation in our machine code,
+
+9
+
+00:00:28,300  -->  00:00:32,120
+is that comments are ignored when Python actually runs.
+
+10
+
+00:00:32,120  -->  00:00:37,245
+Meaning the comments will have no impact on the execution of the functions themselves.
+
+11
+
+00:00:37,245  -->  00:00:41,700
+If we wanted to add comments to our greater function from earlier,
+
+12
+
+00:00:41,700  -->  00:00:46,060
+we'll use the pound hashtag sign to then
+
+13
+
+00:00:46,060  -->  00:00:51,600
+write out into the function some plain text references, like this.
+
+14
+
+00:00:51,600  -->  00:00:54,080
+We can explain what the function does,
+
+15
+
+00:00:54,080  -->  00:00:58,020
+for example, function to greet a friend.
+
+16
+
+00:00:58,020  -->  00:01:00,500
+Then we could help add some clarity around
+
+17
+
+00:01:00,500  -->  00:01:03,680
+the if statement and let other developers know,
+
+18
+
+00:01:03,680  -->  00:01:06,800
+if a name is provided, then run this.
+
+19
+
+00:01:06,800  -->  00:01:10,200
+We could then also define the L statement and say,
+
+20
+
+00:01:10,200  -->  00:01:15,265
+if a name is not provided, do this instead.
+
+21
+
+00:01:15,265  -->  00:01:19,220
+Then we can add some clarity around the execution of the function.
+
+22
+
+00:01:19,220  -->  00:01:21,450
+Pass in the name,
+
+23
+
+00:01:21,450  -->  00:01:24,010
+getting the function like this.
+
+24
+
+00:01:24,010  -->  00:01:27,490
+Now, let's remove these comments for a moment.
+
+25
+
+00:01:27,490  -->  00:01:33,990
+We can see how this makes our code so much more understandable when we have comments,
+
+26
+
+00:01:33,990  -->  00:01:37,025
+especially if you didn't write this code out yourself.
+
+27
+
+00:01:37,025  -->  00:01:41,465
+Without these comments, our code is much less understandable.
+
+28
+
+00:01:41,465  -->  00:01:46,550
+We probably would need to go and review this code to really understand it.
+
+29
+
+00:01:46,550  -->  00:01:51,930
+Sometimes you might want to write more text than just what can fit on a single line.
+
+30
+
+00:01:51,930  -->  00:01:57,030
+For this, we can use either three quotation marks
+
+31
+
+00:01:57,030  -->  00:02:02,970
+or three large quotation mark blocks to create a block comment, like this.
+
+32
+
+00:02:02,970  -->  00:02:06,075
+We can define it with 1, 2, 3.
+
+33
+
+00:02:06,075  -->  00:02:10,440
+One, two, three, and we could write a note like this,
+
+34
+
+00:02:10,440  -->  00:02:14,640
+and we could help explain the arguments that would be
+
+35
+
+00:02:14,640  -->  00:02:19,040
+expected for this function to run such as the name which is a string,
+
+36
+
+00:02:19,040  -->  00:02:21,040
+or we would expect it to be a string.
+
+37
+
+00:02:21,040  -->  00:02:23,150
+That's the name.
+
+38
+
+00:02:23,200  -->  00:02:28,745
+Great. Then we could help define what is returned to the function.
+
+39
+
+00:02:28,745  -->  00:02:31,020
+What's returned is a print statement.
+
+40
+
+00:02:31,020  -->  00:02:33,510
+But it does not have any return statements.
+
+41
+
+00:02:33,510  -->  00:02:36,780
+It just prints hello name or hello world.
+
+42
+
+00:02:36,780  -->  00:02:38,600
+Also, as you'll see here,
+
+43
+
+00:02:38,600  -->  00:02:43,385
+we could also do 1,2,3 and 1,2,3.
+
+44
+
+00:02:43,385  -->  00:02:45,380
+If we hold out shift and enter,
+
+45
+
+00:02:45,380  -->  00:02:48,640
+we'll see that our function runs and ignores
+
+46
+
+00:02:48,640  -->  00:02:53,540
+the note here that we have as a comment block.
+
+47
+
+00:02:53,540  -->  00:02:56,800
+We can write these comments and they won't be included in our execution.
+
+48
+
+00:02:56,800  -->  00:02:58,320
+As we mentioned before,
+
+49
+
+00:02:58,320  -->  00:03:02,140
+we can also do the double quotes and do three of those,
+
+50
+
+00:03:02,140  -->  00:03:03,820
+and that will also execute.
+
+51
+
+00:03:03,820  -->  00:03:08,440
+The same. The multiple lines of code in between here under
+
+52
+
+00:03:08,440  -->  00:03:13,760
+the function definition is a specific type of multi line comment called a doc string,
+
+53
+
+00:03:13,760  -->  00:03:17,240
+and this is used to describe the purpose of a function,
+
+54
+
+00:03:17,240  -->  00:03:22,060
+method, class, or module right after its initialization,
+
+55
+
+00:03:22,060  -->  00:03:25,860
+definition line, and follow a similar style to this,
+
+56
+
+00:03:25,860  -->  00:03:27,700
+explaining what the function does,
+
+57
+
+00:03:27,700  -->  00:03:32,190
+describing the arguments, and also what is returned from that function.
+
+58
+
+00:03:32,190  -->  00:03:36,420
+Between the first function which does not have any comments and
+
+59
+
+00:03:36,420  -->  00:03:40,900
+the second function which does have comments,
+
+60
+
+00:03:40,900  -->  00:03:42,500
+which one do you like more?
+
+61
+
+00:03:42,500  -->  00:03:48,820
+Which one do you feel is the most helpful for you as an engineer?
+
+62
+
+00:03:48,820  -->  00:03:53,200
+This is the power of comments and explaining
+
+63
+
+00:03:53,200  -->  00:03:57,980
+how code works and why it was written in the way that it was.
+
+64
+
+00:03:57,980  -->  00:03:59,780
+You might be thinking, Well,
+
+65
+
+00:03:59,780  -->  00:04:01,500
+when would I use comments?
+
+66
+
+00:04:01,500  -->  00:04:03,480
+The answer is everywhere.
+
+67
+
+00:04:03,480  -->  00:04:07,300
+Think of comments as your instructions that can help you or
+
+68
+
+00:04:07,300  -->  00:04:11,580
+future engineers understand what is happening in the code and why.
+
+69
+
+00:04:11,580  -->  00:04:14,100
+Now that we have some of the basics down,
+
+70
+
+00:04:14,100  -->  00:04:16,880
+it's time to start taking a look at storing information,
+
+71
+
+00:04:16,880  -->  00:04:21,300
+using variables, and the data types for those variables.

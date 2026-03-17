@@ -1,0 +1,369 @@
+1
+
+00:00:00,000  -->  00:00:03,820
+The decimal module provides decimal floating point
+
+2
+
+00:00:03,820  -->  00:00:08,275
+arithmetic with more precision and control over rounding.
+
+3
+
+00:00:08,275  -->  00:00:12,980
+In this example, we're going to be talking about using that decimal module.
+
+4
+
+00:00:12,980  -->  00:00:16,820
+However, we have to be careful about how we use it,
+
+5
+
+00:00:16,820  -->  00:00:19,900
+as you'll see in these examples here.
+
+6
+
+00:00:19,900  -->  00:00:24,110
+Let's take our original example that we had in the previous demo.
+
+7
+
+00:00:24,110  -->  00:00:27,420
+We'll set A equal to 0.1,
+
+8
+
+00:00:27,420  -->  00:00:30,180
+and we'll set b equal to 0.2.
+
+9
+
+00:00:30,180  -->  00:00:34,340
+When we print the sum of a plus b,
+
+10
+
+00:00:34,340  -->  00:00:39,220
+this unexpectedly will not equal 0.3 as we saw,
+
+11
+
+00:00:39,220  -->  00:00:41,890
+but will equal 0.300000004.
+
+12
+
+00:00:44,460  -->  00:00:48,280
+Which is not what we would want or expect.
+
+13
+
+00:00:48,280  -->  00:00:52,100
+This happens because 0.1 and 0.2 cannot
+
+14
+
+00:00:52,100  -->  00:00:56,120
+be represented exactly as binary floating point numbers.
+
+15
+
+00:00:56,120  -->  00:00:59,720
+Their binary representations are approximations,
+
+16
+
+00:00:59,720  -->  00:01:02,440
+and when you add these approximations together,
+
+17
+
+00:01:02,440  -->  00:01:04,820
+you get a result that is very close to,
+
+18
+
+00:01:04,820  -->  00:01:07,220
+but not exactly 0.3.
+
+19
+
+00:01:07,220  -->  00:01:09,840
+By using the decimal module from Python,
+
+20
+
+00:01:09,840  -->  00:01:12,880
+let's attempt to specify how we will
+
+21
+
+00:01:12,880  -->  00:01:17,575
+work with these decimal numbers in a different way now.
+
+22
+
+00:01:17,575  -->  00:01:21,500
+We will use the decimal module,
+
+23
+
+00:01:21,500  -->  00:01:26,540
+so we'll do from decimal import decimal.
+
+24
+
+00:01:26,540  -->  00:01:29,940
+Then we'll say A equals decimal,
+
+25
+
+00:01:29,940  -->  00:01:35,380
+and we'll do 0.1 B equals decimal,
+
+26
+
+00:01:35,380  -->  00:01:42,460
+0.2, and then we're going to say print A plus B to get the sum of A plus B.
+
+27
+
+00:01:42,460  -->  00:01:49,320
+Will this print 0.3 when we set A and B to the values of 0.1 and 0.2,
+
+28
+
+00:01:49,320  -->  00:01:53,380
+respectively and add them together using the decimal module?
+
+29
+
+00:01:53,380  -->  00:01:58,280
+What do you think? You think that since we are enforcing the decimal module,
+
+30
+
+00:01:58,280  -->  00:02:01,280
+this should now export 0.3,
+
+31
+
+00:02:01,280  -->  00:02:05,280
+but it actually gives us a completely different fraction instead.
+
+32
+
+00:02:05,280  -->  00:02:07,830
+Let's see what this will create.
+
+33
+
+00:02:07,830  -->  00:02:12,580
+This instead creates 0.3 a whole bunch of zeros,
+
+34
+
+00:02:12,580  -->  00:02:17,000
+and then 1665, 33453, so on.
+
+35
+
+00:02:17,000  -->  00:02:19,130
+This is even stranger.
+
+36
+
+00:02:19,130  -->  00:02:22,550
+How do we just add two decimals together?
+
+37
+
+00:02:22,550  -->  00:02:26,470
+This is something that was quite confusing to me when I started working with Python
+
+38
+
+00:02:26,470  -->  00:02:31,265
+since I thought this simple operation would have a simple answer.
+
+39
+
+00:02:31,265  -->  00:02:35,910
+Let's see how working with floats work in Python correctly.
+
+40
+
+00:02:35,910  -->  00:02:41,330
+Remember how we learned about numeric floats as strings that we need to convert.
+
+41
+
+00:02:41,330  -->  00:02:46,470
+Well, when we put the decimals inside of quotes and then use the decimal module,
+
+42
+
+00:02:46,470  -->  00:02:49,390
+this is a way that we can set Python to know
+
+43
+
+00:02:49,390  -->  00:02:53,235
+exactly the limit of the bits we want to work with.
+
+44
+
+00:02:53,235  -->  00:02:59,390
+Let's see an example of this where we'll take this code We'll copy it,
+
+45
+
+00:02:59,390  -->  00:03:00,650
+we'll paste it into here,
+
+46
+
+00:03:00,650  -->  00:03:02,730
+and we're going to make a couple modifications.
+
+47
+
+00:03:02,730  -->  00:03:09,335
+We're going to put single quote around 0.1 and a single quote around 0.2.
+
+48
+
+00:03:09,335  -->  00:03:16,290
+Then we're going to try printing A plus B.. What do you think this will output to?
+
+49
+
+00:03:16,290  -->  00:03:20,050
+This will output our expected 0.3 as expected,
+
+50
+
+00:03:20,050  -->  00:03:24,345
+a very simple fix here to get exactly what we were looking for.
+
+51
+
+00:03:24,345  -->  00:03:27,880
+Something else we can do is set the precision
+
+52
+
+00:03:27,880  -->  00:03:32,500
+with the get context function from the decimal module.
+
+53
+
+00:03:32,500  -->  00:03:34,320
+Let's see how to do this.
+
+54
+
+00:03:34,320  -->  00:03:38,080
+We can copy this previous cell and paste it in,
+
+55
+
+00:03:38,080  -->  00:03:40,260
+and then we're going to add another import,
+
+56
+
+00:03:40,260  -->  00:03:42,680
+and we're going to say, get context.
+
+57
+
+00:03:42,680  -->  00:03:46,920
+Now, in order to set the precision,
+
+58
+
+00:03:46,920  -->  00:03:49,220
+we're going to say get context,
+
+59
+
+00:03:49,220  -->  00:03:54,975
+and then we're going to say open parenthesis close parenthesis dot PREC
+
+60
+
+00:03:54,975  -->  00:03:56,895
+we're going to say equals one.
+
+61
+
+00:03:56,895  -->  00:04:00,565
+We're setting the precision of get context to equal one.
+
+62
+
+00:04:00,565  -->  00:04:03,270
+Now, when we do A equals decimal,
+
+63
+
+00:04:03,270  -->  00:04:08,610
+we can remove these single quotes around our floating points,
+
+64
+
+00:04:08,610  -->  00:04:12,050
+and we can still keep print as A plus B.
+
+65
+
+00:04:12,050  -->  00:04:15,110
+By setting the precision of the float value to one,
+
+66
+
+00:04:15,110  -->  00:04:17,970
+this means that we'll only have one decimal.
+
+67
+
+00:04:17,970  -->  00:04:22,510
+Can you tell what this is going to create and print out for us?
+
+68
+
+00:04:22,510  -->  00:04:24,190
+This leads to 0.3.
+
+69
+
+00:04:24,190  -->  00:04:26,490
+If you said 0.3, you're right.
+
+70
+
+00:04:26,490  -->  00:04:34,350
+Congrats. To expand upon our previous examples with floating point numbers,
+
+71
+
+00:04:34,350  -->  00:04:36,970
+let's expand this to financial calculations,
+
+72
+
+00:04:36,970  -->  00:04:41,890
+where suppose you're calculating the total cost of several items in a shopping cart,
+
+73
+
+00:04:41,890  -->  00:04:44,415
+and the prices are floating point numbers.
+
+74
+
+00:04:44,415  -->  00:04:49,890
+Even small inaccuracies can add up leading to incorrect totals.

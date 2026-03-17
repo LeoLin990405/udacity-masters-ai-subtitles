@@ -1,0 +1,504 @@
+1
+
+00:00:00,000  -->  00:00:04,820
+Now we're going to transition into how we work with numbers in strings in Python.
+
+2
+
+00:00:04,820  -->  00:00:07,160
+The first stop is integers.
+
+3
+
+00:00:07,160  -->  00:00:08,740
+These are whole numbers,
+
+4
+
+00:00:08,740  -->  00:00:12,560
+both positive and negative without any decimal points.
+
+5
+
+00:00:12,560  -->  00:00:15,640
+Think about counting objects like apples or cars.
+
+6
+
+00:00:15,640  -->  00:00:19,540
+If you're counting the cars in a lot or apples in an orchard,
+
+7
+
+00:00:19,540  -->  00:00:21,960
+this doesn't include decimals or fractions.
+
+8
+
+00:00:21,960  -->  00:00:25,160
+We only care about whole apples and whole cars.
+
+9
+
+00:00:25,160  -->  00:00:27,660
+Another great example is counting time,
+
+10
+
+00:00:27,660  -->  00:00:32,180
+such as watch time when you're streaming a movie or TV show.
+
+11
+
+00:00:32,180  -->  00:00:35,520
+When considering minutes watched or hours watched,
+
+12
+
+00:00:35,520  -->  00:00:38,800
+you're only interested in the whole number in this case.
+
+13
+
+00:00:38,800  -->  00:00:42,020
+When you think about integers, think counting numbers.
+
+14
+
+00:00:42,020  -->  00:00:46,220
+Some examples of integers can look like this with age, year, cars,
+
+15
+
+00:00:46,220  -->  00:00:51,450
+and books, and notice the lack of comma where we define the integer of books.
+
+16
+
+00:00:51,450  -->  00:00:55,640
+We don't need to worry about commas when we define our integers in Python.
+
+17
+
+00:00:55,640  -->  00:01:00,345
+These data types are numbers and do contain decimals.
+
+18
+
+00:01:00,345  -->  00:01:03,990
+They are used to represent values that are not whole numbers,
+
+19
+
+00:01:03,990  -->  00:01:06,290
+such as measurements or prices.
+
+20
+
+00:01:06,290  -->  00:01:08,770
+When purchasing a coffee at your local store,
+
+21
+
+00:01:08,770  -->  00:01:11,970
+and you see the price at $4.99,
+
+22
+
+00:01:11,970  -->  00:01:14,015
+that is a floating point number.
+
+23
+
+00:01:14,015  -->  00:01:17,620
+Something important to note is that Python default to
+
+24
+
+00:01:17,620  -->  00:01:21,500
+the integer type when you write a whole number without a decimal point,
+
+25
+
+00:01:21,500  -->  00:01:24,320
+and to the floating point type,
+
+26
+
+00:01:24,320  -->  00:01:26,120
+when you include a decimal point,
+
+27
+
+00:01:26,120  -->  00:01:29,540
+even if the number is a whole number like 5.0.
+
+28
+
+00:01:29,540  -->  00:01:32,500
+In Python, when you work with numbers, the type,
+
+29
+
+00:01:32,500  -->  00:01:34,640
+whether it's an integer or a floating point,
+
+30
+
+00:01:34,640  -->  00:01:36,900
+depends on how the number is written.
+
+31
+
+00:01:36,900  -->  00:01:40,720
+Integers are whole numbers without a decimal point.
+
+32
+
+00:01:40,720  -->  00:01:42,760
+For example, 5 is an integer.
+
+33
+
+00:01:42,760  -->  00:01:46,000
+Floating point numbers are numbers with a decimal point.
+
+34
+
+00:01:46,000  -->  00:01:49,980
+For example, 5.0 is a floating point number.
+
+35
+
+00:01:49,980  -->  00:01:54,030
+Also, something tricky to note is that floats can be negative.
+
+36
+
+00:01:54,030  -->  00:01:59,410
+Here are a few more examples of floats with price, temperature, and length.
+
+37
+
+00:01:59,410  -->  00:02:04,830
+Scientific notation represents very large or small numbers to the power of 10.
+
+38
+
+00:02:04,830  -->  00:02:07,150
+Take, for example, 1 million.
+
+39
+
+00:02:07,150  -->  00:02:09,730
+That is a one with six zeros.
+
+40
+
+00:02:09,730  -->  00:02:13,590
+In scientific notation, that would be 1*10^6.
+
+41
+
+00:02:13,590  -->  00:02:20,490
+In Python, a lower case E is used to signify the 10 to the power of.
+
+42
+
+00:02:20,490  -->  00:02:24,580
+In our example, this would be 1e6.
+
+43
+
+00:02:24,580  -->  00:02:27,520
+These numbers can be negative as well,
+
+44
+
+00:02:27,520  -->  00:02:37,130
+0.0004 would be written as 4*10^(-4) or 4e(-4).
+
+45
+
+00:02:37,130  -->  00:02:46,160
+Quick note, 0.0004 is the same as 0.0004 in Python.
+
+46
+
+00:02:46,160  -->  00:02:50,360
+You've already been using strings in this course, if you can believe it.
+
+47
+
+00:02:50,360  -->  00:02:53,960
+Strings are sequences of characters used to store text.
+
+48
+
+00:02:53,960  -->  00:02:58,010
+For instance, first_name=Alice.
+
+49
+
+00:02:58,010  -->  00:03:00,760
+They can be enclosed in single quotes,
+
+50
+
+00:03:00,760  -->  00:03:04,530
+double quotes or triple quotes for multi line text,
+
+51
+
+00:03:04,530  -->  00:03:08,960
+so whether we are setting something equal to something else in quotation marks,
+
+52
+
+00:03:08,960  -->  00:03:12,570
+that is what we call setting a variable as a string.
+
+53
+
+00:03:12,570  -->  00:03:14,145
+When you see these examples,
+
+54
+
+00:03:14,145  -->  00:03:16,760
+you'll go, oh, yes, I remember seeing this.
+
+55
+
+00:03:16,760  -->  00:03:18,860
+That seems pretty familiar.
+
+56
+
+00:03:18,860  -->  00:03:23,220
+You probably have seen these messages in applications you use or software you download.
+
+57
+
+00:03:23,220  -->  00:03:28,290
+Log in successful, software upgraded to the latest version x.xx.
+
+58
+
+00:03:28,290  -->  00:03:31,740
+Whether you see these types of messages of text or characters,
+
+59
+
+00:03:31,740  -->  00:03:34,140
+remember that these are strings.
+
+60
+
+00:03:34,140  -->  00:03:36,060
+Since this is Python, after all,
+
+61
+
+00:03:36,060  -->  00:03:39,110
+there are methods to write machine readable code.
+
+62
+
+00:03:39,110  -->  00:03:41,620
+Up until this point, we've been going through a lot of
+
+63
+
+00:03:41,620  -->  00:03:46,600
+human readable code methods that help us write the code that we need Python to perform.
+
+64
+
+00:03:46,600  -->  00:03:48,400
+But there are ways to define
+
+65
+
+00:03:48,400  -->  00:03:52,080
+machine readable code that Python will understand at the byte level.
+
+66
+
+00:03:52,080  -->  00:03:55,520
+These are different ways to represent numbers in various bases.
+
+67
+
+00:03:55,520  -->  00:03:57,120
+Let's go through some of them.
+
+68
+
+00:03:57,120  -->  00:04:01,100
+With binary, this method uses digits 0 and 1,
+
+69
+
+00:04:01,100  -->  00:04:06,460
+prefixed with 0b, such as binary_value=0b1010.
+
+70
+
+00:04:09,020  -->  00:04:12,580
+This is binary speak for 10 in decimal.
+
+71
+
+00:04:12,580  -->  00:04:16,865
+With octal, this method uses digits 0-7,
+
+72
+
+00:04:16,865  -->  00:04:22,900
+prefixed with 0o, such as octal_value=0o12.
+
+73
+
+00:04:25,000  -->  00:04:28,820
+This is octal speak for 10 in decimal,
+
+74
+
+00:04:28,820  -->  00:04:31,700
+and of course, decimal base 10.
+
+75
+
+00:04:31,700  -->  00:04:34,620
+This is the standard number system we use
+
+76
+
+00:04:34,620  -->  00:04:38,140
+every day and one that I'm sure you'll recognize.
+
+77
+
+00:04:38,140  -->  00:04:41,780
+Remember, this data type is, what do we call it?
+
+78
+
+00:04:41,780  -->  00:04:43,680
+That's right, an integer,
+
+79
+
+00:04:43,680  -->  00:04:47,175
+such as decimal underscore value equals 10,
+
+80
+
+00:04:47,175  -->  00:04:49,560
+and of course, that means ten.
+
+81
+
+00:04:49,560  -->  00:04:52,930
+Hexadecimal, base 16 is a method that uses digits
+
+82
+
+00:04:52,930  -->  00:04:56,750
+0-9 and letters A to F, prefixed with 0x.
+
+83
+
+00:04:56,750  -->  00:04:59,220
+If you've ever seen block chain or crypto wallets,
+
+84
+
+00:04:59,220  -->  00:05:03,640
+you might see something like this where the wallet has a 0x...,
+
+85
+
+00:05:03,640  -->  00:05:06,620
+followed by a series of random characters,
+
+86
+
+00:05:06,620  -->  00:05:10,300
+or you might see hashes that start with Saw 256,
+
+87
+
+00:05:10,300  -->  00:05:11,880
+which is an encryption algorithm,
+
+88
+
+00:05:11,880  -->  00:05:16,660
+and that leverages hexadecimal numbers to represent values that a computer program
+
+89
+
+00:05:16,660  -->  00:05:22,840
+can understand easily and efficiently, such as hex_value=0xA.
+
+90
+
+00:05:23,470  -->  00:05:27,390
+This is hexadecimal speak for ten decimal.
+
+91
+
+00:05:27,390  -->  00:05:30,480
+It's okay if you don't fully grasp these concepts right now.
+
+92
+
+00:05:30,480  -->  00:05:35,000
+The goal here is just to introduce you to these numeral systems,
+
+93
+
+00:05:35,000  -->  00:05:37,160
+not to necessarily master them at this point.
+
+94
+
+00:05:37,160  -->  00:05:39,100
+As you continue learning and practicing,
+
+95
+
+00:05:39,100  -->  00:05:41,485
+these ideas will become much clearer.
+
+96
+
+00:05:41,485  -->  00:05:44,310
+If binary octal, decimal,
+
+97
+
+00:05:44,310  -->  00:05:47,880
+and hexadecimal seems confusing to you, don't stress out.
+
+98
+
+00:05:47,880  -->  00:05:50,500
+This is something that you will gain exposure to
+
+99
+
+00:05:50,500  -->  00:05:54,040
+if and when you begin programming with these various systems.
+
+100
+
+00:05:54,040  -->  00:05:55,600
+For the PCP exam,
+
+101
+
+00:05:55,600  -->  00:06:01,020
+just make sure that you are aware that they exist and what the value looks like.

@@ -1,0 +1,199 @@
+1
+
+00:00:00,000  -->  00:00:03,400
+Now that we're getting more comfortable with Python and how to structure our code,
+
+2
+
+00:00:03,400  -->  00:00:05,000
+data types and variables.
+
+3
+
+00:00:05,000  -->  00:00:06,880
+Let's dive into operators.
+
+4
+
+00:00:06,880  -->  00:00:09,160
+These are the commands that allow Python to do
+
+5
+
+00:00:09,160  -->  00:00:12,060
+all sorts of numeric and math based actions for us,
+
+6
+
+00:00:12,060  -->  00:00:14,800
+all without needing to break a sweat.
+
+7
+
+00:00:14,800  -->  00:00:20,590
+Operators are symbols that perform operations on variables and values.
+
+8
+
+00:00:20,590  -->  00:00:23,300
+When we add numbers, subtract numbers,
+
+9
+
+00:00:23,300  -->  00:00:25,920
+multiply, divide, and so on,
+
+10
+
+00:00:25,920  -->  00:00:28,720
+we're doing specific operations with these numbers,
+
+11
+
+00:00:28,720  -->  00:00:34,540
+and Python has symbols for performing these numeric operators that we can use.
+
+12
+
+00:00:34,540  -->  00:00:37,460
+I'm sure you've seen many of these numeric operators before.
+
+13
+
+00:00:37,460  -->  00:00:40,880
+But if these are totally new for you, that's great too.
+
+14
+
+00:00:40,880  -->  00:00:43,420
+Let's check out which operators we're going to be
+
+15
+
+00:00:43,420  -->  00:00:46,720
+going through in this section, exponentiation,
+
+16
+
+00:00:46,720  -->  00:00:54,400
+multiplication, division, modulus, floor division, addition and subtraction.
+
+17
+
+00:00:54,400  -->  00:00:57,780
+Let's go through each of these examples one by one together.
+
+18
+
+00:00:57,780  -->  00:01:00,760
+First, we'll define two variables.
+
+19
+
+00:01:00,760  -->  00:01:03,010
+A=10 and b=3.
+
+20
+
+00:01:03,010  -->  00:01:08,560
+Exponentiation raises one of these numbers to the power of another number.
+
+21
+
+00:01:08,560  -->  00:01:13,420
+Such as a**b.
+
+22
+
+00:01:13,420  -->  00:01:17,370
+Here, 10^3=1,000.
+
+23
+
+00:01:17,370  -->  00:01:23,330
+Multiplication. This multiplies two numbers together, such as a*b.
+
+24
+
+00:01:23,330  -->  00:01:29,055
+Here, 10 multiplied by three equals 30 or a*b.
+
+25
+
+00:01:29,055  -->  00:01:33,310
+For division, this divides one number by another,
+
+26
+
+00:01:33,310  -->  00:01:36,230
+resulting in a float or a decimal,
+
+27
+
+00:01:36,230  -->  00:01:40,080
+such as a/b or a divided by b.
+
+28
+
+00:01:40,080  -->  00:01:45,990
+Here, 10/3=3.333 repeating.
+
+29
+
+00:01:45,990  -->  00:01:51,520
+Modulus returns the remainder when one number is divided by another.
+
+30
+
+00:01:51,520  -->  00:01:54,885
+Think of it as what's left over after dividing.
+
+31
+
+00:01:54,885  -->  00:01:58,955
+A and you'll use that percent sign with b.
+
+32
+
+00:01:58,955  -->  00:02:03,170
+Here we see 10/3 leaves a remainder of one,
+
+33
+
+00:02:03,170  -->  00:02:05,290
+so only one will be returned.
+
+34
+
+00:02:05,290  -->  00:02:09,540
+We know this because three goes into 10 3 times 3,
+
+35
+
+00:02:09,540  -->  00:02:13,170
+6, 9, and then ten minus nine equals one.
+
+36
+
+00:02:13,170  -->  00:02:16,095
+So that's how we get the modulus out of that.
+
+37
+
+00:02:16,095  -->  00:02:18,700
+Let's say we have another example,
+
+38
+
+00:02:18,700  -->  00:02:23,915
+c=5 and d=10 we will write c%d.
+
+39
+
+00:02:23,915  -->  00:02:30,120
+Here, the modulus would be zero because five goes into 10 two times evenly,
+
+40
+
+00:02:30,120  -->  00:02:32,920
+and then there's no remaining numbers left.

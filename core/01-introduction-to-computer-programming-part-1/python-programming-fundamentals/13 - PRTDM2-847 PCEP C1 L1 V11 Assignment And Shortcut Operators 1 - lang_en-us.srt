@@ -1,0 +1,344 @@
+1
+
+00:00:00,000  -->  00:00:03,320
+By now you should be familiar with variables and basic operators,
+
+2
+
+00:00:03,320  -->  00:00:05,280
+such as addition and subtraction.
+
+3
+
+00:00:05,280  -->  00:00:09,760
+Now we're going to get a little more advanced and talk about shortcut operators.
+
+4
+
+00:00:09,760  -->  00:00:13,680
+Shortcut operators, also known as compound assignment operators,
+
+5
+
+00:00:13,680  -->  00:00:17,060
+combine an arithmetic operation with an assignment.
+
+6
+
+00:00:17,060  -->  00:00:21,320
+These operators make the code more concise and readable.
+
+7
+
+00:00:21,320  -->  00:00:25,860
+For basic assignment, let's start off with the simplest implementation.
+
+8
+
+00:00:25,860  -->  00:00:29,100
+This operator assigns a value to a variable,
+
+9
+
+00:00:29,100  -->  00:00:31,450
+for example, x = 10.
+
+10
+
+00:00:31,450  -->  00:00:34,820
+This assigns the value 10 to x.
+
+11
+
+00:00:34,820  -->  00:00:36,660
+In the addition assignment,
+
+12
+
+00:00:36,660  -->  00:00:39,620
+this operator adds the right operand to
+
+13
+
+00:00:39,620  -->  00:00:43,500
+the left operand and assigns the result to the left operand.
+
+14
+
+00:00:43,500  -->  00:00:47,255
+Is the equivalent of x = x + 5,
+
+15
+
+00:00:47,255  -->  00:00:52,455
+x = 10, x += 5.
+
+16
+
+00:00:52,455  -->  00:00:56,010
+This is equivalent to x + x + 5.
+
+17
+
+00:00:56,010  -->  00:00:57,980
+X now becomes 15.
+
+18
+
+00:00:57,980  -->  00:01:00,020
+In the subtraction assignment,
+
+19
+
+00:01:00,020  -->  00:01:02,980
+this operator subtracts the right operand from
+
+20
+
+00:01:02,980  -->  00:01:06,840
+the left operand and assigns the result to the left operand.
+
+21
+
+00:01:06,840  -->  00:01:11,050
+This is the equivalent of x = x - 3.
+
+22
+
+00:01:11,050  -->  00:01:13,555
+You have x = 15,
+
+23
+
+00:01:13,555  -->  00:01:16,450
+x -= 3,
+
+24
+
+00:01:16,450  -->  00:01:20,725
+and this is the equivalent of x = x - 3.
+
+25
+
+00:01:20,725  -->  00:01:22,560
+X now becomes 12.
+
+26
+
+00:01:22,560  -->  00:01:25,160
+Now, let's look at how to combine numbers together,
+
+27
+
+00:01:25,160  -->  00:01:28,135
+either individually or by each other.
+
+28
+
+00:01:28,135  -->  00:01:30,310
+In the multiplication assignment,
+
+29
+
+00:01:30,310  -->  00:01:33,010
+this operator multiplies the left operand by
+
+30
+
+00:01:33,010  -->  00:01:36,750
+the right operand and assigns the result to the left operand.
+
+31
+
+00:01:36,750  -->  00:01:40,950
+This is the equivalent of x = x *2.
+
+32
+
+00:01:40,950  -->  00:01:43,170
+We have x = 12,
+
+33
+
+00:01:43,170  -->  00:01:46,110
+x * = 2,
+
+34
+
+00:01:46,110  -->  00:01:50,885
+and this is the equivalent to x = x * 2.
+
+35
+
+00:01:50,885  -->  00:01:53,230
+X now becomes 24.
+
+36
+
+00:01:53,230  -->  00:01:55,690
+In the exponentiation assignment,
+
+37
+
+00:01:55,690  -->  00:01:59,250
+this operator raises the left operand to the power of
+
+38
+
+00:01:59,250  -->  00:02:03,290
+the right operand and assigns the result to the left operand.
+
+39
+
+00:02:03,290  -->  00:02:07,630
+Take note that an exponent is asters asterisk,
+
+40
+
+00:02:07,630  -->  00:02:11,050
+whereas multiplication is just one asterisk.
+
+41
+
+00:02:11,050  -->  00:02:14,275
+An example of exponentiation would be here.
+
+42
+
+00:02:14,275  -->  00:02:19,665
+This is the equivalent of x = x asters asterisk 2.
+
+43
+
+00:02:19,665  -->  00:02:26,535
+X =3, x asters asters equals 2,
+
+44
+
+00:02:26,535  -->  00:02:35,040
+and this is the equivalent of x = x asters asters 2 as x now becomes 9.
+
+45
+
+00:02:35,040  -->  00:02:38,930
+Now, let's look at ways to divide numbers into each other.
+
+46
+
+00:02:38,930  -->  00:02:40,790
+In the division assignment,
+
+47
+
+00:02:40,790  -->  00:02:43,990
+this operator divides the left operand by
+
+48
+
+00:02:43,990  -->  00:02:47,370
+the right operand and assigns the result to the left operand.
+
+49
+
+00:02:47,370  -->  00:02:54,995
+It is the equivalent of x = x / 4 x = 24.
+
+50
+
+00:02:54,995  -->  00:02:58,470
+X / = 4.
+
+51
+
+00:02:58,470  -->  00:03:06,510
+This is equivalent to x = x /4 as x now becomes 6.0.
+
+52
+
+00:03:06,510  -->  00:03:08,580
+In the floor division assignment,
+
+53
+
+00:03:08,580  -->  00:03:11,440
+this operator performs floor division using
+
+54
+
+00:03:11,440  -->  00:03:16,320
+the left and right operands and assigns the result to the left operand.
+
+55
+
+00:03:16,320  -->  00:03:22,745
+It is the equivalent of x = // 3.
+
+56
+
+00:03:22,745  -->  00:03:28,735
+We'll have x = 10, x // =3.
+
+57
+
+00:03:28,735  -->  00:03:36,655
+This is the equivalent of x = x // 3 as x now becomes 3.
+
+58
+
+00:03:36,655  -->  00:03:38,570
+In the modulus assignment,
+
+59
+
+00:03:38,570  -->  00:03:40,890
+this operator takes the modulus using
+
+60
+
+00:03:40,890  -->  00:03:46,170
+the left and right operands and assigns them to the result in the left operand.
+
+61
+
+00:03:46,170  -->  00:03:53,820
+It's the equivalent of x = x % 5, x =6,
+
+62
+
+00:03:53,820  -->  00:03:57,900
+x % = 5,
+
+63
+
+00:03:57,900  -->  00:04:06,895
+and this is the equivalent of x = x % 5 as x now becomes 1.
+
+64
+
+00:04:06,895  -->  00:04:09,660
+That was a lot of new operators to learn.
+
+65
+
+00:04:09,660  -->  00:04:12,260
+Great job. And don't worry if this is still fuzzy.
+
+66
+
+00:04:12,260  -->  00:04:15,400
+By practicing your use of these shortcut operators,
+
+67
+
+00:04:15,400  -->  00:04:18,260
+you will get much more comfortable with them so you can write
+
+68
+
+00:04:18,260  -->  00:04:21,280
+more concise and readable code when you need to
+
+69
+
+00:04:21,280  -->  00:04:25,820
+perform these common arithmetic operations and patterns.

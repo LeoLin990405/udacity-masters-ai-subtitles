@@ -1,0 +1,454 @@
+1
+
+00:00:00,000  -->  00:00:04,480
+Boolean operators are crucial for decision making in Python programming.
+
+2
+
+00:00:04,480  -->  00:00:10,560
+They help control the flow of a program based on conditions using operators such as not,
+
+3
+
+00:00:10,560  -->  00:00:12,690
+and, and or.
+
+4
+
+00:00:12,690  -->  00:00:16,820
+Boolean operators are essential for making decisions in Python.
+
+5
+
+00:00:16,820  -->  00:00:21,280
+They determine the programs flow by evaluating different conditions.
+
+6
+
+00:00:21,280  -->  00:00:24,420
+For example, you might use these operators to check
+
+7
+
+00:00:24,420  -->  00:00:27,960
+multiple conditions before executing certain parts of your code.
+
+8
+
+00:00:27,960  -->  00:00:31,540
+The key operators to know are first,
+
+9
+
+00:00:31,540  -->  00:00:34,980
+which is not in this inverse a Boolean value,
+
+10
+
+00:00:34,980  -->  00:00:38,460
+turning true into false and vice versa,
+
+11
+
+00:00:38,460  -->  00:00:43,200
+and returns true only if conditions are true.
+
+12
+
+00:00:43,200  -->  00:00:47,920
+It's used to ensure that multiple conditions are satisfied simultaneously.
+
+13
+
+00:00:47,920  -->  00:00:49,910
+Last but not least or.
+
+14
+
+00:00:49,910  -->  00:00:53,590
+This returns true if at least one condition is true,
+
+15
+
+00:00:53,590  -->  00:00:59,580
+making it useful when any one of the multiple conditions can trigger a decision.
+
+16
+
+00:00:59,580  -->  00:01:02,725
+When would you use these different operators?
+
+17
+
+00:01:02,725  -->  00:01:07,330
+Boolean operators allow you to combine multiple conditions effectively,
+
+18
+
+00:01:07,330  -->  00:01:12,050
+such as checking if both this and that are both true.
+
+19
+
+00:01:12,050  -->  00:01:15,910
+They make your code logical, clear, and concise,
+
+20
+
+00:01:15,910  -->  00:01:20,570
+allowing others to understand a decision making process much more easily.
+
+21
+
+00:01:20,570  -->  00:01:25,770
+With Boolean operators, you can efficiently evaluate conditions like checking
+
+22
+
+00:01:25,770  -->  00:01:31,395
+if this or that is true without the need for complex if statements.
+
+23
+
+00:01:31,395  -->  00:01:35,700
+You can also manage user permissions dynamically by checking conditions,
+
+24
+
+00:01:35,700  -->  00:01:40,620
+such as whether someone is not a user to restrict access.
+
+25
+
+00:01:40,620  -->  00:01:45,840
+Also, you can easily activate or deactivate features based on conditions,
+
+26
+
+00:01:45,840  -->  00:01:48,780
+allowing for flexible program behavior.
+
+27
+
+00:01:48,780  -->  00:01:53,980
+Boolean operators are used to combine or modify Boolean value is true or false.
+
+28
+
+00:01:53,980  -->  00:01:57,340
+The main Boolean operators in Python are not,
+
+29
+
+00:01:57,340  -->  00:01:59,250
+and, and or.
+
+30
+
+00:01:59,250  -->  00:02:03,720
+With not, the not operator inverts the value of a Boolean expression,
+
+31
+
+00:02:03,720  -->  00:02:05,800
+if the expression is true,
+
+32
+
+00:02:05,800  -->  00:02:08,740
+not makes it false, and vice versa.
+
+33
+
+00:02:08,740  -->  00:02:10,760
+With the and operator,
+
+34
+
+00:02:10,760  -->  00:02:14,120
+this return is true if both operands are true.
+
+35
+
+00:02:14,120  -->  00:02:16,160
+Otherwise, it returns false.
+
+36
+
+00:02:16,160  -->  00:02:18,360
+Did you catch what's going on here?
+
+37
+
+00:02:18,360  -->  00:02:20,320
+The first output is false,
+
+38
+
+00:02:20,320  -->  00:02:22,865
+while the second output is true.
+
+39
+
+00:02:22,865  -->  00:02:24,770
+Let's take the or operator,
+
+40
+
+00:02:24,770  -->  00:02:28,230
+which returns true if at least one of the operands is true.
+
+41
+
+00:02:28,230  -->  00:02:30,190
+Otherwise, it returns false.
+
+42
+
+00:02:30,190  -->  00:02:32,130
+Did you catch what's going on here?
+
+43
+
+00:02:32,130  -->  00:02:33,710
+The first output is true,
+
+44
+
+00:02:33,710  -->  00:02:36,010
+while the second output is false.
+
+45
+
+00:02:36,010  -->  00:02:39,110
+Remember, Boolean operators are used to combine
+
+46
+
+00:02:39,110  -->  00:02:42,290
+or modify Boolean value is true or false.
+
+47
+
+00:02:42,290  -->  00:02:46,545
+The main Boolean operators in Python are not, and, and or.
+
+48
+
+00:02:46,545  -->  00:02:50,250
+Boolean operators are powerful tools in Python,
+
+49
+
+00:02:50,250  -->  00:02:55,470
+helping you create dynamic and efficient code that responds to varying conditions.
+
+50
+
+00:02:55,470  -->  00:02:58,750
+Keep these handy strategies in the back of your mind,
+
+51
+
+00:02:58,750  -->  00:03:02,810
+so that when you're asked about Boolean operators or see them pop up in the exam,
+
+52
+
+00:03:02,810  -->  00:03:04,365
+you'll be ready to go.
+
+53
+
+00:03:04,365  -->  00:03:06,435
+Let's dive into some examples of this.
+
+54
+
+00:03:06,435  -->  00:03:12,150
+An example of this can be a user accessing a restricted area within an application.
+
+55
+
+00:03:12,150  -->  00:03:15,030
+Let's write out some code here.
+
+56
+
+00:03:15,030  -->  00:03:19,080
+We'll set a variable of is admin = true.
+
+57
+
+00:03:19,080  -->  00:03:22,740
+Then we'll have another variable has_access_key,
+
+58
+
+00:03:22,740  -->  00:03:24,720
+and that's set to false.
+
+59
+
+00:03:24,720  -->  00:03:26,985
+Then we will say,
+
+60
+
+00:03:26,985  -->  00:03:33,210
+can_access = is_admin or has_access_key,
+
+61
+
+00:03:33,210  -->  00:03:35,500
+and then we'll print that.
+
+62
+
+00:03:35,500  -->  00:03:39,840
+In this example, a user can access if they are in admin
+
+63
+
+00:03:39,840  -->  00:03:44,400
+or have an access key defined by the or keyword.
+
+64
+
+00:03:44,400  -->  00:03:46,800
+Can you guess what the output is going to be?
+
+65
+
+00:03:46,800  -->  00:03:48,340
+Let's run it and find out.
+
+66
+
+00:03:48,340  -->  00:03:50,420
+If you said true, you're right.
+
+67
+
+00:03:50,420  -->  00:03:54,160
+Now, what if we replaced or with and,
+
+68
+
+00:03:54,160  -->  00:03:56,400
+and we used and instead?
+
+69
+
+00:03:56,400  -->  00:04:02,920
+In this example, now a user can access if they are in admin and have an access key.
+
+70
+
+00:04:02,920  -->  00:04:05,560
+Can you guess the output here?
+
+71
+
+00:04:05,560  -->  00:04:08,930
+Let's run it and find out? If you said false, you're right.
+
+72
+
+00:04:08,930  -->  00:04:12,970
+Now, what if we need to make a case where a user should be denied access to
+
+73
+
+00:04:12,970  -->  00:04:18,385
+a restricted area if they are not an admin and do not have an access key?
+
+74
+
+00:04:18,385  -->  00:04:21,120
+How would we do that? Well, in this example,
+
+75
+
+00:04:21,120  -->  00:04:26,300
+we're going to set is admin to false because the user is not in admin
+
+76
+
+00:04:26,300  -->  00:04:31,860
+and has access key is also set to false because the user does not have an access key.
+
+77
+
+00:04:31,860  -->  00:04:35,985
+Next, we will add a not keyword there,
+
+78
+
+00:04:35,985  -->  00:04:39,090
+and we'll say and not there as well.
+
+79
+
+00:04:39,090  -->  00:04:43,705
+Let's break down the expression can access equals.
+
+80
+
+00:04:43,705  -->  00:04:47,390
+Not is admin and not has access key.
+
+81
+
+00:04:47,390  -->  00:04:51,900
+Not is admin evaluates to not false,
+
+82
+
+00:04:51,900  -->  00:04:54,920
+which in this case is true.
+
+83
+
+00:04:54,920  -->  00:04:57,460
+In addition to this statement,
+
+84
+
+00:04:57,460  -->  00:05:01,700
+not has access key evaluates to not false,
+
+85
+
+00:05:01,700  -->  00:05:03,420
+which is also true.
+
+86
+
+00:05:03,420  -->  00:05:05,760
+The and operator then combines
+
+87
+
+00:05:05,760  -->  00:05:11,460
+these two statements which are true resulting in an output.
+
+88
+
+00:05:11,460  -->  00:05:14,040
+Ultimately, let's see what the output is.
+
+89
+
+00:05:14,040  -->  00:05:17,620
+The output of print can access is true,
+
+90
+
+00:05:17,620  -->  00:05:21,120
+meaning the user is denied access because they
+
+91
+
+00:05:21,120  -->  00:05:25,960
+are neither an admin nor do they have an access key.

@@ -1,0 +1,314 @@
+1
+
+00:00:00,000  -->  00:00:04,080
+Now let's take a look at converting to a floating point number with float.
+
+2
+
+00:00:04,080  -->  00:00:07,040
+Let's say you have numeric data as strings,
+
+3
+
+00:00:07,040  -->  00:00:10,140
+and you need decimals for making precise calculations,
+
+4
+
+00:00:10,140  -->  00:00:12,060
+like prices or measurements.
+
+5
+
+00:00:12,060  -->  00:00:17,400
+For example, $1.50 and $1 are very different numbers.
+
+6
+
+00:00:17,400  -->  00:00:20,845
+Or let's say we're dealing with huge numbers.
+
+7
+
+00:00:20,845  -->  00:00:25,345
+4.9 billion and 49 billion are very different.
+
+8
+
+00:00:25,345  -->  00:00:28,240
+We need to know if we are dealing with a decimal
+
+9
+
+00:00:28,240  -->  00:00:31,790
+or not because the difference could be quite drastic.
+
+10
+
+00:00:31,790  -->  00:00:36,640
+Strings with decimal points can't be used directly in calculations.
+
+11
+
+00:00:36,640  -->  00:00:40,640
+We need to convert them to float to handle these special cases,
+
+12
+
+00:00:40,640  -->  00:00:44,755
+which can be very important depending on the numbers we're dealing with at hand.
+
+13
+
+00:00:44,755  -->  00:00:49,400
+Let's talk about converting to a floating point number with the float function.
+
+14
+
+00:00:49,400  -->  00:00:54,700
+To do this, we'll use the float function to convert a string to a floating point number.
+
+15
+
+00:00:54,700  -->  00:00:58,625
+We'll first start with declaring a variable a,
+
+16
+
+00:00:58,625  -->  00:01:02,620
+and we'll set that equal to a string of 123.45.
+
+17
+
+00:01:02,620  -->  00:01:05,665
+Then we'll set a variable of b = float,
+
+18
+
+00:01:05,665  -->  00:01:09,810
+which is taking the float value of a.
+
+19
+
+00:01:09,810  -->  00:01:12,500
+If we were to print the value of b,
+
+20
+
+00:01:12,500  -->  00:01:14,530
+what do you think this will create?
+
+21
+
+00:01:14,530  -->  00:01:18,630
+If you said 123.45, you're right,
+
+22
+
+00:01:18,630  -->  00:01:22,690
+as this is now a number that Python can use in calculations,
+
+23
+
+00:01:22,690  -->  00:01:27,150
+rather than the original 123.45 string value,
+
+24
+
+00:01:27,150  -->  00:01:30,575
+which cannot be used in numerical calculations.
+
+25
+
+00:01:30,575  -->  00:01:33,360
+When we print the data type of b with type,
+
+26
+
+00:01:33,360  -->  00:01:38,140
+we can confirm the data type is now a float.
+
+27
+
+00:01:38,140  -->  00:01:42,560
+What do you think the output of type b will be?
+
+28
+
+00:01:42,560  -->  00:01:44,500
+If you said class float,
+
+29
+
+00:01:44,500  -->  00:01:46,580
+then you're absolutely right.
+
+30
+
+00:01:46,580  -->  00:01:52,150
+Let's also validate that this did actually change the data type going from a to b.
+
+31
+
+00:01:52,150  -->  00:01:56,310
+If we type this out, we see that a is a string,
+
+32
+
+00:01:56,310  -->  00:01:58,695
+and then that b is now afloat.
+
+33
+
+00:01:58,695  -->  00:02:03,350
+Let's consider a real world scenario where this might be useful and feel more real.
+
+34
+
+00:02:03,350  -->  00:02:07,050
+Suppose you're calculating the total price of items in a shopping cart,
+
+35
+
+00:02:07,050  -->  00:02:09,970
+where prices are input as strings.
+
+36
+
+00:02:09,970  -->  00:02:12,130
+When we calculate prices,
+
+37
+
+00:02:12,130  -->  00:02:14,530
+those can be recorded as strings in a catalog,
+
+38
+
+00:02:14,530  -->  00:02:16,990
+but we'll need to convert them to float data types
+
+39
+
+00:02:16,990  -->  00:02:19,790
+so that we can calculate them together to get the final price.
+
+40
+
+00:02:19,790  -->  00:02:23,030
+We'll create another cell, and we'll start this off with saying that
+
+41
+
+00:02:23,030  -->  00:02:26,940
+the price of a string is $19.99.
+
+42
+
+00:02:26,940  -->  00:02:30,210
+Then when we calculate a price variable,
+
+43
+
+00:02:30,210  -->  00:02:34,510
+we'll say that that is the float value of our price string.
+
+44
+
+00:02:34,510  -->  00:02:40,110
+The total price is then the price times three.
+
+45
+
+00:02:40,110  -->  00:02:45,960
+We're converting the price string from a string to a float using the float function,
+
+46
+
+00:02:45,960  -->  00:02:52,030
+and then we can multiply the price by three to get the total price for three items.
+
+47
+
+00:02:52,030  -->  00:02:55,130
+If we didn't convert the string to a float first,
+
+48
+
+00:02:55,130  -->  00:03:00,750
+Python wouldn't know how to multiply 19.99 as a string by three.
+
+49
+
+00:03:00,750  -->  00:03:09,120
+We need Python to read it as 19.99 as a floating point number times three, like this.
+
+50
+
+00:03:09,120  -->  00:03:11,240
+Then we'll create a print statement,
+
+51
+
+00:03:11,240  -->  00:03:12,880
+and we'll write an f string,
+
+52
+
+00:03:12,880  -->  00:03:18,700
+and we'll say the total price for three items is dollar sign,
+
+53
+
+00:03:18,700  -->  00:03:20,340
+we'll pass in a template literal,
+
+54
+
+00:03:20,340  -->  00:03:22,360
+and we'll pass in the total price.
+
+55
+
+00:03:22,360  -->  00:03:25,660
+We'll close this off with closed quotation marks,
+
+56
+
+00:03:25,660  -->  00:03:28,850
+and then we'll close it out with end [inaudible].
+
+57
+
+00:03:28,850  -->  00:03:32,440
+What would the final price here be? Let's find out.
+
+58
+
+00:03:32,440  -->  00:03:36,040
+If you said $59.97,
+
+59
+
+00:03:36,040  -->  00:03:37,660
+then you would be correct.
+
+60
+
+00:03:37,660  -->  00:03:41,200
+This demonstrates how converting strings to floats can be
+
+61
+
+00:03:41,200  -->  00:03:45,520
+essential for performing accurate calculations with decimal numbers.
+
+62
+
+00:03:45,520  -->  00:03:48,580
+By understanding and using typecasting with float,
+
+63
+
+00:03:48,580  -->  00:03:55,060
+you can ensure your Python programs handle numeric data correctly and efficiently.

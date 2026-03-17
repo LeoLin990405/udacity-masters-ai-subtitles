@@ -1,0 +1,149 @@
+1
+
+00:00:00,000  -->  00:00:04,350
+As we continue to look at Boolean expressions,
+
+2
+
+00:00:04,350  -->  00:00:07,920
+let's look at checking multiple conditions at once.
+
+3
+
+00:00:07,920  -->  00:00:13,200
+You can also combine multiple Boolean expressions to create more complex conditions.
+
+4
+
+00:00:13,200  -->  00:00:16,620
+For example, let's check if a user is eligible for
+
+5
+
+00:00:16,620  -->  00:00:21,265
+a senior discount and whether they have a valid membership card or not.
+
+6
+
+00:00:21,265  -->  00:00:27,950
+To do this, we will define a variable called age and set that equal to 70.
+
+7
+
+00:00:27,950  -->  00:00:32,135
+We'll then set another variable called has membership card as Boolean,
+
+8
+
+00:00:32,135  -->  00:00:33,890
+and we'll set that equal to true.
+
+9
+
+00:00:33,890  -->  00:00:37,460
+Then we'll say qualifies_for_senior_discount,
+
+10
+
+00:00:37,770  -->  00:00:43,750
+and we'll set that equal to if age is greater than or
+
+11
+
+00:00:43,750  -->  00:00:50,170
+equal to 65 and has_membership_card.
+
+12
+
+00:00:50,170  -->  00:00:54,350
+Then we'll write a print statement, then f string,
+
+13
+
+00:00:54,350  -->  00:01:00,670
+and we'll say user qualifies for senior discount.
+
+14
+
+00:01:00,670  -->  00:01:03,650
+And then we'll pass in the value of
+
+15
+
+00:01:03,650  -->  00:01:08,930
+this function expression with squiggly brackets like this.
+
+16
+
+00:01:08,930  -->  00:01:13,790
+In this example, we're going to write a function to check if the user
+
+17
+
+00:01:13,790  -->  00:01:19,405
+qualifies for a senior discount based on a variable of age, which we defined here.
+
+18
+
+00:01:19,405  -->  00:01:23,860
+Now, we're going to check to see what's actually going on in this function.
+
+19
+
+00:01:23,860  -->  00:01:28,130
+Age must be greater than or equal to 65,
+
+20
+
+00:01:28,130  -->  00:01:32,310
+and that checks if the user's age is 65 or older.
+
+21
+
+00:01:32,310  -->  00:01:35,350
+Then has membership card is also used in
+
+22
+
+00:01:35,350  -->  00:01:39,230
+our Boolean expression to check if the user has a valid membership card,
+
+23
+
+00:01:39,230  -->  00:01:41,150
+which we defined up here.
+
+24
+
+00:01:41,150  -->  00:01:45,130
+The end operator is our Boolean expression,
+
+25
+
+00:01:45,130  -->  00:01:48,925
+and combines both of these conditions.
+
+26
+
+00:01:48,925  -->  00:01:51,790
+Meaning, the user qualifies for a senior discount only
+
+27
+
+00:01:51,790  -->  00:01:55,020
+if both conditions are true because we're using int.
+
+28
+
+00:01:55,020  -->  00:01:57,670
+What do you think this will evaluate to?
+
+29
+
+00:01:57,670  -->  00:01:59,890
+Let's find out. If you said true,
+
+30
+
+00:01:59,890  -->  00:02:02,270
+you're right. Great job.

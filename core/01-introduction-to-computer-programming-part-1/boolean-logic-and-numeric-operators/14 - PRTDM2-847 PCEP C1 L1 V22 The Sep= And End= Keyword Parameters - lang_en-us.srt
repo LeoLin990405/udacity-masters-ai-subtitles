@@ -1,0 +1,254 @@
+1
+
+00:00:00,000  -->  00:00:02,620
+Now that we've examined the print function,
+
+2
+
+00:00:02,620  -->  00:00:04,380
+let's expand on this a bit.
+
+3
+
+00:00:04,380  -->  00:00:08,060
+While the print function allows us to write a message to the console.
+
+4
+
+00:00:08,060  -->  00:00:11,680
+There are two additional keyword parameters we can pass into it,
+
+5
+
+00:00:11,680  -->  00:00:14,480
+called sep and end.
+
+6
+
+00:00:14,480  -->  00:00:19,640
+The sep parameter specifies the separator between multiple arguments,
+
+7
+
+00:00:19,640  -->  00:00:23,430
+and the end operator specifies what to print at the end.
+
+8
+
+00:00:23,430  -->  00:00:27,020
+When we think about parameters for a function class or method,
+
+9
+
+00:00:27,020  -->  00:00:31,680
+think of them as settings that we can use to customize the behavior of a certain action.
+
+10
+
+00:00:31,680  -->  00:00:33,920
+Settings can either be required,
+
+11
+
+00:00:33,920  -->  00:00:37,620
+meaning that you must specify what that settings is
+
+12
+
+00:00:37,620  -->  00:00:41,400
+value is or an error will occur or optional,
+
+13
+
+00:00:41,400  -->  00:00:45,380
+meaning that there will be a default value utilized,
+
+14
+
+00:00:45,380  -->  00:00:49,440
+but that can be overwritten by a custom value U pass in.
+
+15
+
+00:00:49,440  -->  00:00:53,335
+Think of it like ordering food at a fast food restaurant.
+
+16
+
+00:00:53,335  -->  00:00:55,750
+When you order a number one,
+
+17
+
+00:00:55,750  -->  00:00:57,990
+maybe that comes with a burger,
+
+18
+
+00:00:57,990  -->  00:00:59,750
+fries and a drink.
+
+19
+
+00:00:59,750  -->  00:01:02,670
+If you don't customize any of these inputs,
+
+20
+
+00:01:02,670  -->  00:01:05,350
+these three items will come with their defaults.
+
+21
+
+00:01:05,350  -->  00:01:07,890
+Perhaps a plain burger with ketchup,
+
+22
+
+00:01:07,890  -->  00:01:10,285
+small fries and a la soda.
+
+23
+
+00:01:10,285  -->  00:01:13,390
+But let's say that there is an optional value to upgrade
+
+24
+
+00:01:13,390  -->  00:01:16,990
+your meal to a number five for only $5 more.
+
+25
+
+00:01:16,990  -->  00:01:22,890
+The meals upgrade could be an optional parameter to either make the meal bigger,
+
+26
+
+00:01:22,890  -->  00:01:26,670
+it's included, or the meal stays the same.
+
+27
+
+00:01:26,670  -->  00:01:30,655
+It's not included, and the default is, don't upgrade.
+
+28
+
+00:01:30,655  -->  00:01:34,970
+When we think about the SEP and end, keyword parameters.
+
+29
+
+00:01:34,970  -->  00:01:38,410
+Let's take a look at an example of this inaction.
+
+30
+
+00:01:38,410  -->  00:01:43,050
+If we want to bring multiple elements together with a custom separator,
+
+31
+
+00:01:43,050  -->  00:01:44,610
+such as two strings.
+
+32
+
+00:01:44,610  -->  00:01:47,825
+This is what we would do. We'll say print,
+
+33
+
+00:01:47,825  -->  00:01:51,250
+Hello, and this will be our first item.
+
+34
+
+00:01:51,250  -->  00:01:53,410
+World, will be our second item.
+
+35
+
+00:01:53,410  -->  00:01:56,050
+We'll declare our sep keyword parameter,
+
+36
+
+00:01:56,050  -->  00:01:58,650
+and we're going to put this in quote,
+
+37
+
+00:01:58,650  -->  00:02:03,570
+and we're going to put a comma in there and then a space. We'll do another comma.
+
+38
+
+00:02:03,570  -->  00:02:07,270
+We'll say end, and then we'll add a exclamation point,
+
+39
+
+00:02:07,270  -->  00:02:08,855
+and then we'll close this out.
+
+40
+
+00:02:08,855  -->  00:02:11,840
+Can you guess what this will print? It prints?
+
+41
+
+00:02:11,840  -->  00:02:14,365
+Hello, comma world, exclamation point.
+
+42
+
+00:02:14,365  -->  00:02:18,060
+What is happening is we have multiple inputs as strings,
+
+43
+
+00:02:18,060  -->  00:02:19,940
+the hello and world,
+
+44
+
+00:02:19,940  -->  00:02:25,660
+and we use a sep parameter right here of comma space
+
+45
+
+00:02:25,660  -->  00:02:29,120
+to unite together both of those strings into
+
+46
+
+00:02:29,120  -->  00:02:32,820
+one single string with that defined character.
+
+47
+
+00:02:32,820  -->  00:02:34,420
+Then the end parameter,
+
+48
+
+00:02:34,420  -->  00:02:37,820
+which is to add an exclamation point to the end of the string.
+
+49
+
+00:02:37,820  -->  00:02:40,720
+Instead of needing to write a function to do all of this logic,
+
+50
+
+00:02:40,720  -->  00:02:43,360
+we can leverage the built in functionality of
+
+51
+
+00:02:43,360  -->  00:02:48,080
+these optional parameters in our print statements. How cool is that?

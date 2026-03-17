@@ -1,0 +1,369 @@
+1
+
+00:00:00,000  -->  00:00:04,660
+In this section, we'll explore the accuracy of floating point numbers,
+
+2
+
+00:00:04,660  -->  00:00:07,680
+a topic that can be crucial for understanding why
+
+3
+
+00:00:07,680  -->  00:00:11,120
+some calculations might not produce the exact results you'd expect.
+
+4
+
+00:00:11,120  -->  00:00:15,480
+Floating point numbers are used to represent real numbers in computing.
+
+5
+
+00:00:15,480  -->  00:00:18,360
+But due to the way they are stored in memory,
+
+6
+
+00:00:18,360  -->  00:00:21,440
+they can sometimes lead to some surprising results.
+
+7
+
+00:00:21,440  -->  00:00:23,205
+Let's go check it out and see.
+
+8
+
+00:00:23,205  -->  00:00:25,770
+When we talk about floating point numbers,
+
+9
+
+00:00:25,770  -->  00:00:28,710
+we're referring to numbers that have decimal points.
+
+10
+
+00:00:28,710  -->  00:00:31,650
+These are used in calculations requiring precision,
+
+11
+
+00:00:31,650  -->  00:00:34,770
+like measurements or financial computations.
+
+12
+
+00:00:34,770  -->  00:00:39,330
+However, floating point numbers are stored in a binary format,
+
+13
+
+00:00:39,330  -->  00:00:40,790
+like we learned about earlier,
+
+14
+
+00:00:40,790  -->  00:00:44,290
+that can only approximate many real numbers,
+
+15
+
+00:00:44,290  -->  00:00:47,220
+leading to small errors in calculations.
+
+16
+
+00:00:47,220  -->  00:00:50,710
+When we think about basic floating point inaccuracy,
+
+17
+
+00:00:50,710  -->  00:00:53,010
+let's start with a simple example.
+
+18
+
+00:00:53,010  -->  00:00:59,950
+You might expect that adding 0.1 and 0.2 would give you 0.3.
+
+19
+
+00:00:59,950  -->  00:01:02,270
+But let's see what happens when we do that.
+
+20
+
+00:01:02,270  -->  00:01:05,960
+When we type print(0.1+0.2),
+
+21
+
+00:01:06,060  -->  00:01:10,980
+and then we set that = 0.3,
+
+22
+
+00:01:10,980  -->  00:01:12,740
+do you think will happen here?
+
+23
+
+00:01:12,740  -->  00:01:17,925
+If we execute this, we see that it evaluates as false.
+
+24
+
+00:01:17,925  -->  00:01:23,260
+In this example, we're adding 0.1 and 0.2 together,
+
+25
+
+00:01:23,260  -->  00:01:26,640
+and we would expect that the output would be 0.3.
+
+26
+
+00:01:26,640  -->  00:01:33,400
+However, the comparison of 0.1+0.2 evaluates to false.
+
+27
+
+00:01:33,400  -->  00:01:36,545
+Why is that? Isn't that so strange?
+
+28
+
+00:01:36,545  -->  00:01:39,930
+Now, let's print the value of this expression to see what
+
+29
+
+00:01:39,930  -->  00:01:45,510
+actually equals between this output here.
+
+30
+
+00:01:45,510  -->  00:01:52,270
+When we say print 0.1+0.2,
+
+31
+
+00:01:52,270  -->  00:01:55,830
+and we also say print 0.3.
+
+32
+
+00:01:55,830  -->  00:01:58,990
+Of course, this will equal 0.3,
+
+33
+
+00:01:58,990  -->  00:02:05,050
+but printing this results in 0.3000000,
+
+34
+
+00:02:05,090  -->  00:02:08,640
+whole bunch of zeros, and then 4.
+
+35
+
+00:02:08,640  -->  00:02:11,660
+Which is very close to 0.3,
+
+36
+
+00:02:11,660  -->  00:02:16,075
+but not exactly so unexpected.
+
+37
+
+00:02:16,075  -->  00:02:20,160
+This small difference arises because 0.1
+
+38
+
+00:02:20,160  -->  00:02:24,740
+and 0.2 cannot be represented precisely in binary,
+
+39
+
+00:02:24,740  -->  00:02:29,205
+which leads to a tiny error when calculating the sum.
+
+40
+
+00:02:29,205  -->  00:02:30,970
+To understand why this happens,
+
+41
+
+00:02:30,970  -->  00:02:34,250
+we need to delve into how computers represent numbers.
+
+42
+
+00:02:34,250  -->  00:02:38,710
+Computers use a binary system base two to represent data,
+
+43
+
+00:02:38,710  -->  00:02:41,490
+which works well for whole numbers,
+
+44
+
+00:02:41,490  -->  00:02:44,190
+like 1,2,3,4 and so on,
+
+45
+
+00:02:44,190  -->  00:02:48,130
+but can introduce inaccuracies for floating point decimal numbers,
+
+46
+
+00:02:48,130  -->  00:02:51,490
+like 0.1, 0.2, and so on.
+
+47
+
+00:02:51,490  -->  00:02:53,290
+In a binary system,
+
+48
+
+00:02:53,290  -->  00:02:55,850
+each digit represents a power of two,
+
+49
+
+00:02:55,850  -->  00:03:01,135
+similar to how each digit in the decimal system represents a power of 10.
+
+50
+
+00:03:01,135  -->  00:03:06,950
+However, some decimal fractions cannot be represented exactly as fractions.
+
+51
+
+00:03:06,950  -->  00:03:11,970
+The decimal number 0.1 is a repeating fraction in binary,
+
+52
+
+00:03:11,970  -->  00:03:14,340
+which is 0.00011001,
+
+53
+
+00:03:17,250  -->  00:03:23,095
+and so on, and it looks something like this.
+
+54
+
+00:03:23,095  -->  00:03:27,100
+Similarly, 0.2 is also a repeating fraction in binary,
+
+55
+
+00:03:27,100  -->  00:03:34,180
+and that's going to be 0.001100110011, and so on.
+
+56
+
+00:03:34,180  -->  00:03:35,980
+I would look something like that.
+
+57
+
+00:03:35,980  -->  00:03:40,220
+Also, these will continue on indefinitely.
+
+58
+
+00:03:40,220  -->  00:03:44,100
+When the computer stores and adds the binary numbers together,
+
+59
+
+00:03:44,100  -->  00:03:49,530
+it must truncate the repeating binary fractions to fit into a fixed number of bits.
+
+60
+
+00:03:49,530  -->  00:03:54,200
+This truncation introduces a small error because the tiny difference between
+
+61
+
+00:03:54,200  -->  00:04:00,420
+the binary representations are not exact leading to a number like this.
+
+62
+
+00:04:00,420  -->  00:04:03,520
+That's why when we add decimals like this,
+
+63
+
+00:04:03,520  -->  00:04:08,870
+it equals falls because it equals 0.3, but not exactly.
+
+64
+
+00:04:08,870  -->  00:04:12,760
+These small inaccuracies can accumulate in calculations,
+
+65
+
+00:04:12,760  -->  00:04:15,620
+especially in fields requiring high precision,
+
+66
+
+00:04:15,620  -->  00:04:19,660
+such as scientific computing, finance, and engineering.
+
+67
+
+00:04:19,660  -->  00:04:25,040
+Understanding this behavior is crucial for writing robust and accurate programs.
+
+68
+
+00:04:25,040  -->  00:04:27,440
+To mitigate floating point inaccuracies,
+
+69
+
+00:04:27,440  -->  00:04:29,840
+consider some of the following approaches.
+
+70
+
+00:04:29,840  -->  00:04:32,400
+Use the decimal module.
+
+71
+
+00:04:32,400  -->  00:04:35,640
+For financial calculations requiring high precision,
+
+72
+
+00:04:35,640  -->  00:04:39,060
+Python's decimal module can be a better choice than
+
+73
+
+00:04:39,060  -->  00:04:42,940
+floating point arithmetic, or try rounding.
+
+74
+
+00:04:42,940  -->  00:04:48,900
+Apply rounding to ensure numbers are rounded to the desired precision needed.

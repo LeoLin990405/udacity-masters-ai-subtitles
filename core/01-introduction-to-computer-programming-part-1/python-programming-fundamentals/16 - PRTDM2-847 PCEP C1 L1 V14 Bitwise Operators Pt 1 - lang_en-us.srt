@@ -1,0 +1,204 @@
+1
+
+00:00:00,000  -->  00:00:03,360
+Bitwise operators are used in low level programming,
+
+2
+
+00:00:03,360  -->  00:00:08,660
+such as manipulating, which means changing or transforming data at the bit level.
+
+3
+
+00:00:08,660  -->  00:00:11,280
+They are important in tasks like setting or checking
+
+4
+
+00:00:11,280  -->  00:00:14,500
+the status of specific bits in a byte.
+
+5
+
+00:00:14,500  -->  00:00:18,580
+This can be useful in scenarios like managing feature flags such as
+
+6
+
+00:00:18,580  -->  00:00:23,080
+make something show or not show in a web application, or device settings.
+
+7
+
+00:00:23,080  -->  00:00:26,840
+Think about the settings that you set for your favorite applications.
+
+8
+
+00:00:26,840  -->  00:00:29,280
+Wow. That's a lot of technical speak.
+
+9
+
+00:00:29,280  -->  00:00:31,520
+Let's think about a real example,
+
+10
+
+00:00:31,520  -->  00:00:35,460
+turning on and off specific features in a device.
+
+11
+
+00:00:35,460  -->  00:00:38,260
+In this example, we're going to write,
+
+12
+
+00:00:38,260  -->  00:00:40,740
+we're going to use the bit wise or operator,
+
+13
+
+00:00:40,740  -->  00:00:45,545
+and that will be used to turn on specific features represented by bits.
+
+14
+
+00:00:45,545  -->  00:00:49,130
+Each bit in a binary number represents a feature.
+
+15
+
+00:00:49,130  -->  00:00:50,850
+By using the or operator,
+
+16
+
+00:00:50,850  -->  00:00:56,030
+we can set a desired bits to one enabling those features.
+
+17
+
+00:00:56,030  -->  00:00:57,990
+Let's see how this would work.
+
+18
+
+00:00:57,990  -->  00:01:00,290
+We'll define a variable called features,
+
+19
+
+00:01:00,290  -->  00:01:05,710
+and we'll set that equal to zero b one, two, three, four.
+
+20
+
+00:01:05,710  -->  00:01:09,450
+And this is going to be for all features off.
+
+21
+
+00:01:09,450  -->  00:01:15,030
+Now, if we want to turn on feature one and three,
+
+22
+
+00:01:15,030  -->  00:01:23,630
+what we could do is that we could say features equals features or 0b01 01.
+
+23
+
+00:01:23,630  -->  00:01:28,750
+Now, if we were to print bin features.
+
+24
+
+00:01:28,750  -->  00:01:34,730
+We're going to get the output of 0b101.
+
+25
+
+00:01:34,730  -->  00:01:37,290
+To review, in this demo example here,
+
+26
+
+00:01:37,290  -->  00:01:40,470
+we're using a bitwise or operator to set
+
+27
+
+00:01:40,470  -->  00:01:47,890
+the variable features to itself combined with 0b01 01,
+
+28
+
+00:01:47,890  -->  00:01:53,800
+which turns on specific bits features one and three without changing the others.
+
+29
+
+00:01:53,800  -->  00:01:57,610
+Bin function, then prints the binary representation
+
+30
+
+00:01:57,610  -->  00:02:01,550
+of features showing which features are on or off.
+
+31
+
+00:02:01,550  -->  00:02:09,030
+Python displays this as 0b10 by removing any leading zeros.
+
+32
+
+00:02:09,030  -->  00:02:13,910
+In binary, 0b01 01 and
+
+33
+
+00:02:13,910  -->  00:02:19,735
+0b101 represent the same number five in decimal.
+
+34
+
+00:02:19,735  -->  00:02:23,380
+As the leading zero doesn't change the numbers value.
+
+35
+
+00:02:23,380  -->  00:02:28,880
+Python automatically removes unnecessary leading zeros when displaying binary numbers,
+
+36
+
+00:02:28,880  -->  00:02:36,180
+so 0b01 01, and is shown as 0b101,
+
+37
+
+00:02:36,180  -->  00:02:38,020
+as they are the same number.
+
+38
+
+00:02:38,020  -->  00:02:42,900
+Bitwise operators are also useful in optimizing performance.
+
+39
+
+00:02:42,900  -->  00:02:46,505
+In systems where memory and processing power are limited.
+
+40
+
+00:02:46,505  -->  00:02:49,560
+They allow efficient data manipulation and storage,
+
+41
+
+00:02:49,560  -->  00:02:56,220
+making them valuable in embedded systems and other resource constrained environments.

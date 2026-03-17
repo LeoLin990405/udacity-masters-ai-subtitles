@@ -1,0 +1,234 @@
+1
+
+00:00:00,000  -->  00:00:02,400
+To understand Python's logic and structure,
+
+2
+
+00:00:02,400  -->  00:00:04,920
+we need to start thinking about Python's lexis
+
+3
+
+00:00:04,920  -->  00:00:08,000
+and keywords that are a part of that vocabulary.
+
+4
+
+00:00:08,000  -->  00:00:10,340
+This will allow Python to know what types of
+
+5
+
+00:00:10,340  -->  00:00:15,040
+specific commands it's baked into and understanding what we want to use those for.
+
+6
+
+00:00:15,040  -->  00:00:18,840
+Think of these as the little blocks that you stack on top of each other.
+
+7
+
+00:00:18,840  -->  00:00:23,365
+These are how you create your functions or your scripts in Python.
+
+8
+
+00:00:23,365  -->  00:00:26,130
+There are several reserved keywords, phrases,
+
+9
+
+00:00:26,130  -->  00:00:28,970
+or words that have special meaning in the Python language,
+
+10
+
+00:00:28,970  -->  00:00:32,370
+and you've already gotten some exposure to some of those from the earlier videos.
+
+11
+
+00:00:32,370  -->  00:00:35,470
+But we're going to dive into what those specifically look like.
+
+12
+
+00:00:35,470  -->  00:00:38,450
+When we start thinking about these types of keywords,
+
+13
+
+00:00:38,450  -->  00:00:40,865
+if is used for conditional statements,
+
+14
+
+00:00:40,865  -->  00:00:45,805
+else specifies a block of code to be executed if the condition is false,
+
+15
+
+00:00:45,805  -->  00:00:49,845
+elif stands for "else if" and is used to check multiple conditions.
+
+16
+
+00:00:49,845  -->  00:00:55,020
+For is used for loops to run a specific action while a condition is true.
+
+17
+
+00:00:55,020  -->  00:00:57,550
+While is used to create a while loop
+
+18
+
+00:00:57,550  -->  00:01:00,370
+where an action will run as long as something is true.
+
+19
+
+00:01:00,370  -->  00:01:02,810
+Def is used to define a function,
+
+20
+
+00:01:02,810  -->  00:01:06,990
+and return is used to return a specific value out of a function.
+
+21
+
+00:01:06,990  -->  00:01:10,350
+You don't need to memorize all 30 of these keywords right now.
+
+22
+
+00:01:10,350  -->  00:01:12,430
+You'll need to know them, but don't feel like you need
+
+23
+
+00:01:12,430  -->  00:01:14,930
+to memorize all of them immediately.
+
+24
+
+00:01:14,930  -->  00:01:19,250
+You want to practice using these keywords in actual implementations like you'll be doing,
+
+25
+
+00:01:19,250  -->  00:01:21,350
+and it will make a whole lot more sense how
+
+26
+
+00:01:21,350  -->  00:01:24,510
+these keywords work together when you write your Python code.
+
+27
+
+00:01:24,510  -->  00:01:27,770
+Just keep that in mind as you continue to learn in this course.
+
+28
+
+00:01:27,770  -->  00:01:30,930
+Let's see an example to understand how syntax and
+
+29
+
+00:01:30,930  -->  00:01:34,510
+lexis work together with keywords in Python.
+
+30
+
+00:01:34,510  -->  00:01:37,050
+We will create a new Notebook,
+
+31
+
+00:01:37,050  -->  00:01:41,030
+and we will say, my_variable = True.
+
+32
+
+00:01:41,030  -->  00:01:47,225
+We'll then write an if statement that checks if my variable is true, so we'll say,
+
+33
+
+00:01:47,225  -->  00:01:51,200
+if my_variable: print ("Hello world."),
+
+34
+
+00:01:51,200  -->  00:01:54,295
+otherwise, it prints "World, Hello."
+
+35
+
+00:01:54,295  -->  00:01:57,370
+If you press Enter with holding down Shift,
+
+36
+
+00:01:57,370  -->  00:02:00,910
+we'll see "Hello world," because my variable is true.
+
+37
+
+00:02:00,910  -->  00:02:04,580
+If we were to change this to false and then hold down Shift,
+
+38
+
+00:02:04,580  -->  00:02:06,600
+then press Enter, we'll see "World,
+
+39
+
+00:02:06,600  -->  00:02:10,610
+Hello," because now the else statement is in effect.
+
+40
+
+00:02:10,610  -->  00:02:14,135
+My variable is now false. It is not true.
+
+41
+
+00:02:14,135  -->  00:02:18,790
+This is basically shorthand for if my variable equals true, do this.
+
+42
+
+00:02:18,790  -->  00:02:20,690
+Otherwise, if it's not true,
+
+43
+
+00:02:20,690  -->  00:02:22,630
+which means that it's false, print this,
+
+44
+
+00:02:22,630  -->  00:02:24,255
+which is why we see this below.
+
+45
+
+00:02:24,255  -->  00:02:28,270
+While we don't want to memorize all of these keywords because there's a lot,
+
+46
+
+00:02:28,270  -->  00:02:32,110
+we're going to include a cheat sheet for you so that as you go through this course,
+
+47
+
+00:02:32,110  -->  00:02:36,550
+you can save this and refer back to it as you write more Python code.
