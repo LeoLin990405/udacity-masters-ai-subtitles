@@ -1,0 +1,1014 @@
+1
+
+00:00:00,000  -->  00:00:04,195
+When we think about working with numbers and for loops,
+
+2
+
+00:00:04,195  -->  00:00:08,360
+let's run an example where we can see exactly how to use
+
+3
+
+00:00:08,360  -->  00:00:12,700
+a for loop to iterate over a sequence of numbers using the range function.
+
+4
+
+00:00:12,700  -->  00:00:15,640
+We'll be going through the range function in an upcoming section,
+
+5
+
+00:00:15,640  -->  00:00:17,920
+so don't worry about memorizing it right now.
+
+6
+
+00:00:17,920  -->  00:00:20,380
+But let's look at why a for loop is
+
+7
+
+00:00:20,380  -->  00:00:24,220
+the best choice when iterating through a range of numbers.
+
+8
+
+00:00:24,220  -->  00:00:26,730
+We'll declare our for loop like this,
+
+9
+
+00:00:26,730  -->  00:00:32,850
+and we'll say for i in range 5,
+
+10
+
+00:00:32,850  -->  00:00:35,925
+and then we'll print i.
+
+11
+
+00:00:35,925  -->  00:00:39,975
+This code outputs the numbers from 0-4,
+
+12
+
+00:00:39,975  -->  00:00:44,350
+the numbers between 0-5 denoted with this range function.
+
+13
+
+00:00:44,350  -->  00:00:47,430
+Using a for loop here is more optimal than
+
+14
+
+00:00:47,430  -->  00:00:50,310
+a while loop for iterating through a range of numbers,
+
+15
+
+00:00:50,310  -->  00:00:52,625
+because once we execute this code,
+
+16
+
+00:00:52,625  -->  00:00:56,150
+we're able to get all of those numbers very easily and
+
+17
+
+00:00:56,150  -->  00:01:00,910
+cleanly using this range function to count up to five.
+
+18
+
+00:01:04,100  -->  00:01:08,470
+Now, let's see how for loops work with strings.
+
+19
+
+00:01:08,470  -->  00:01:14,210
+In this example, we're going to be iterating over each character in the word Python.
+
+20
+
+00:01:14,210  -->  00:01:17,490
+This allows us to handle each character individually within
+
+21
+
+00:01:17,490  -->  00:01:21,415
+a loop through the for loop construction.
+
+22
+
+00:01:21,415  -->  00:01:24,370
+For loops can iterate over each character in a string,
+
+23
+
+00:01:24,370  -->  00:01:30,130
+allowing us to count our way through a list of characters. Let's see how to do that.
+
+24
+
+00:01:30,130  -->  00:01:36,890
+We'll first declare a variable called word and we'll set that equal to a string,
+
+25
+
+00:01:36,890  -->  00:01:40,010
+which we put the Python word in for.
+
+26
+
+00:01:40,010  -->  00:01:44,080
+Then we'll say for letter in word,
+
+27
+
+00:01:44,080  -->  00:01:47,715
+and then we'll print letter.
+
+28
+
+00:01:47,715  -->  00:01:50,975
+What we're doing is we're saying for
+
+29
+
+00:01:50,975  -->  00:01:58,825
+the incrementable item in word print, what its value is.
+
+30
+
+00:01:58,825  -->  00:02:01,850
+Can you guess what the output will be here?
+
+31
+
+00:02:05,440  -->  00:02:09,450
+This will output each letter in the word Python like this.
+
+32
+
+00:02:09,450  -->  00:02:11,730
+And if you guessed that, you're right.
+
+33
+
+00:02:11,730  -->  00:02:15,615
+Great job. Next,
+
+34
+
+00:02:15,615  -->  00:02:18,660
+let's see how for loops work with lists.
+
+35
+
+00:02:18,660  -->  00:02:21,520
+A list in Python is another way to say array,
+
+36
+
+00:02:21,520  -->  00:02:26,920
+which is a fancy word for saying a collection of things put inside of square brackets.
+
+37
+
+00:02:26,920  -->  00:02:33,435
+If we had a list of fruits in an array defined by brackets,
+
+38
+
+00:02:33,435  -->  00:02:36,040
+we could use a for loop to iterate over
+
+39
+
+00:02:36,040  -->  00:02:40,020
+each fruit to tell us which fruits are in that list.
+
+40
+
+00:02:40,020  -->  00:02:42,760
+Let's see an example of how to do this.
+
+41
+
+00:02:42,760  -->  00:02:45,120
+So first, we will create a list,
+
+42
+
+00:02:45,120  -->  00:02:51,200
+which would be a variable set equal to square brackets,
+
+43
+
+00:02:51,200  -->  00:02:52,880
+and then a list of items,
+
+44
+
+00:02:52,880  -->  00:02:54,620
+which we'll put as strings here.
+
+45
+
+00:02:54,620  -->  00:02:58,040
+So apple, banana, cherry, and grape fruit.
+
+46
+
+00:02:58,820  -->  00:03:05,050
+Next, we'll write a for loop to iterate over each of these items in the list.
+
+47
+
+00:03:05,050  -->  00:03:10,120
+We'll say for fruit in fruits,
+
+48
+
+00:03:10,120  -->  00:03:14,595
+and then we'll print each fruit item.
+
+49
+
+00:03:14,595  -->  00:03:18,590
+What we're doing is we're saying for each item,
+
+50
+
+00:03:18,590  -->  00:03:20,600
+and we could call this really anything.
+
+51
+
+00:03:20,600  -->  00:03:22,350
+We could call it i, we could call it item,
+
+52
+
+00:03:22,350  -->  00:03:24,370
+we could call it shopping cart item,
+
+53
+
+00:03:24,370  -->  00:03:27,770
+but we're going to call it fruit in fruits,
+
+54
+
+00:03:27,770  -->  00:03:29,810
+which is the array we set above here,
+
+55
+
+00:03:29,810  -->  00:03:36,090
+and then we're going to print each of those items in the list that it finds.
+
+56
+
+00:03:36,090  -->  00:03:39,330
+Can you guess what the output will be here?
+
+57
+
+00:03:43,130  -->  00:03:45,730
+We get apple, banana, cherry,
+
+58
+
+00:03:45,730  -->  00:03:48,655
+and grape fruit in the same order that is defined in the list.
+
+59
+
+00:03:48,655  -->  00:03:51,850
+If you said this, you're right. Great job.
+
+60
+
+00:03:52,730  -->  00:03:57,750
+Next up, let's see how for loops work with tuples.
+
+61
+
+00:03:57,750  -->  00:04:01,630
+A tuple is similar to a list like what we just saw earlier,
+
+62
+
+00:04:01,630  -->  00:04:04,750
+but data can easily be changeable.
+
+63
+
+00:04:04,750  -->  00:04:07,930
+We could have two fruits or 20 fruits,
+
+64
+
+00:04:07,930  -->  00:04:10,870
+depending on what you put in your shopping cart, for example.
+
+65
+
+00:04:10,870  -->  00:04:14,610
+But what if we had data that couldn't or shouldn't ever change?
+
+66
+
+00:04:14,610  -->  00:04:16,930
+We call that type of data immutable,
+
+67
+
+00:04:16,930  -->  00:04:20,810
+which is a fancy word for saying the data cannot be changed, edited,
+
+68
+
+00:04:20,810  -->  00:04:23,270
+or deleted after it's created,
+
+69
+
+00:04:23,270  -->  00:04:25,990
+and is organized in parentheses,
+
+70
+
+00:04:25,990  -->  00:04:28,570
+not brackets, like a list.
+
+71
+
+00:04:28,570  -->  00:04:33,900
+That being said, we can still iterate over a tuple in the same way as a list above.
+
+72
+
+00:04:33,900  -->  00:04:37,320
+Let's see how we can iterate over a tuple.
+
+73
+
+00:04:37,320  -->  00:04:45,780
+We'll set our coordinates variable equal to a tuple of coordinates.
+
+74
+
+00:04:45,780  -->  00:04:48,555
+We'll say 43, say 62,
+
+75
+
+00:04:48,555  -->  00:04:51,100
+and we'll say 89.
+
+76
+
+00:04:51,470  -->  00:04:57,840
+Then we'll write our for loop and we'll say for coordinate in
+
+77
+
+00:04:57,840  -->  00:05:06,910
+coordinates, we'll print coordinate.
+
+78
+
+00:05:09,170  -->  00:05:15,570
+What we're doing here is that we're setting an immutable set of data,
+
+79
+
+00:05:15,570  -->  00:05:17,370
+which we're calling a tuple here,
+
+80
+
+00:05:17,370  -->  00:05:19,710
+and then we're going to iterate over
+
+81
+
+00:05:19,710  -->  00:05:25,590
+each item in our coordinate tuple, and print that out here.
+
+82
+
+00:05:25,590  -->  00:05:28,430
+Can you guess what the output will be?
+
+83
+
+00:05:30,990  -->  00:05:37,110
+Here, we'll see an output of each coordinate in the tuple: 43,
+
+84
+
+00:05:37,110  -->  00:05:39,390
+right here, 62 right there,
+
+85
+
+00:05:39,390  -->  00:05:41,750
+and 89 right there.
+
+86
+
+00:05:42,350  -->  00:05:46,800
+Now, let's see how for loops work with sets.
+
+87
+
+00:05:46,800  -->  00:05:50,960
+A set is a collection of unique items organized with curly brackets,
+
+88
+
+00:05:50,960  -->  00:05:54,020
+and have some unique properties that make them very different
+
+89
+
+00:05:54,020  -->  00:05:57,520
+from the other data structures we've mentioned previously.
+
+90
+
+00:05:57,520  -->  00:06:01,460
+Sets are unordered, meaning the items do not have a defined order,
+
+91
+
+00:06:01,460  -->  00:06:04,520
+and their sequence may vary each time you use them.
+
+92
+
+00:06:04,520  -->  00:06:10,200
+They're also unindexed, so you cannot access items by their position in a set.
+
+93
+
+00:06:10,200  -->  00:06:12,360
+They are also mutable,
+
+94
+
+00:06:12,360  -->  00:06:14,980
+allowing you to add and remove items.
+
+95
+
+00:06:14,980  -->  00:06:17,580
+Although once an item is added to that set,
+
+96
+
+00:06:17,580  -->  00:06:19,855
+its value cannot be changed.
+
+97
+
+00:06:19,855  -->  00:06:23,080
+Finally, they only contain unique items,
+
+98
+
+00:06:23,080  -->  00:06:26,540
+meaning any duplicate values will be ignored.
+
+99
+
+00:06:26,540  -->  00:06:29,400
+Here's how we can iterate over a set.
+
+100
+
+00:06:29,400  -->  00:06:37,530
+What we'll do is that we will write a set like this and we'll say unique_fruits equal.
+
+101
+
+00:06:37,530  -->  00:06:39,420
+We'll put curly bracket here,
+
+102
+
+00:06:39,420  -->  00:06:45,220
+and then we'll put in a list of fruits like this.
+
+103
+
+00:06:45,470  -->  00:06:47,835
+Then in our for loop,
+
+104
+
+00:06:47,835  -->  00:06:54,090
+we'll say for fruit in unique_fruits right here,
+
+105
+
+00:06:54,090  -->  00:06:59,425
+put a colon and then we'll print fruit.
+
+106
+
+00:06:59,425  -->  00:07:03,180
+This will output each unique fruit in the set.
+
+107
+
+00:07:03,180  -->  00:07:07,460
+Can you guess what the output of this will be once we execute it?
+
+108
+
+00:07:11,480  -->  00:07:14,805
+We see cherry, banana, and apple.
+
+109
+
+00:07:14,805  -->  00:07:16,650
+If you said that, you're right.
+
+110
+
+00:07:16,650  -->  00:07:19,450
+This will output each unique fruit in the set,
+
+111
+
+00:07:19,450  -->  00:07:22,750
+but notice how apple is only printed once,
+
+112
+
+00:07:22,750  -->  00:07:25,370
+as it's right there and right there,
+
+113
+
+00:07:25,370  -->  00:07:27,750
+but it's only printed out once there,
+
+114
+
+00:07:27,750  -->  00:07:29,070
+because it is a duplicate,
+
+115
+
+00:07:29,070  -->  00:07:32,250
+and we will only see unique items in a set,
+
+116
+
+00:07:32,250  -->  00:07:36,070
+and that's why we only see these items here.
+
+117
+
+00:07:36,980  -->  00:07:40,750
+As we continue to work with for loops and sets,
+
+118
+
+00:07:40,750  -->  00:07:44,370
+let's see another example of how we could use a for loop to check
+
+119
+
+00:07:44,370  -->  00:07:48,840
+a membership allow list for multiple items against a set.
+
+120
+
+00:07:48,840  -->  00:07:52,225
+Let's see how to do that. First,
+
+121
+
+00:07:52,225  -->  00:07:56,370
+we'll create a set and declare that as the allowed users.
+
+122
+
+00:07:56,370  -->  00:08:00,000
+And in this set, we have Alice, Bob, and Charlie.
+
+123
+
+00:08:00,000  -->  00:08:03,885
+Next, we'll create a list of users_to_check,
+
+124
+
+00:08:03,885  -->  00:08:06,360
+and we'll define this as a list,
+
+125
+
+00:08:06,360  -->  00:08:08,750
+an array called users_to_check,
+
+126
+
+00:08:08,750  -->  00:08:10,090
+and that has David,
+
+127
+
+00:08:10,090  -->  00:08:13,090
+Alice, Eve, and Bob.
+
+128
+
+00:08:13,790  -->  00:08:19,130
+Then we'll write our for loop to check over each user.
+
+129
+
+00:08:19,130  -->  00:08:25,150
+We'll write for user in users_to_check with a colon,
+
+130
+
+00:08:25,150  -->  00:08:33,360
+and then we'll say if user in allowed_users will print an f statement,
+
+131
+
+00:08:33,740  -->  00:08:35,880
+An f string here,
+
+132
+
+00:08:35,880  -->  00:08:40,960
+and we'll say user is allowed.
+
+133
+
+00:08:40,960  -->  00:08:43,295
+We'll close out that print statement.
+
+134
+
+00:08:43,295  -->  00:08:45,965
+Then we'll say else,
+
+135
+
+00:08:45,965  -->  00:08:49,250
+and then we'll print the else statement,
+
+136
+
+00:08:49,250  -->  00:08:51,180
+and we'll do another f string,
+
+137
+
+00:08:51,180  -->  00:08:59,395
+and we'll say user is not allowed, then we'll close that up.
+
+138
+
+00:08:59,395  -->  00:09:07,980
+In this example, the for loop iterates over each user in the users_to_check list.
+
+139
+
+00:09:07,980  -->  00:09:14,630
+Then checks if that user is in the allowed_users variable,
+
+140
+
+00:09:14,630  -->  00:09:16,590
+which we've declared as a set,
+
+141
+
+00:09:16,590  -->  00:09:18,950
+which is happening right here.
+
+142
+
+00:09:18,950  -->  00:09:21,330
+The result is printed accordingly.
+
+143
+
+00:09:21,330  -->  00:09:24,190
+This approach leverages the efficiency of sets for
+
+144
+
+00:09:24,190  -->  00:09:28,430
+membership testing within a loop that processes multiple items.
+
+145
+
+00:09:28,430  -->  00:09:31,890
+Can you guess what the output is going to be here?
+
+146
+
+00:09:31,950  -->  00:09:35,390
+Let's run this code and find out.
+
+147
+
+00:09:36,660  -->  00:09:41,335
+After running the cell, we see David is not allowed,
+
+148
+
+00:09:41,335  -->  00:09:43,980
+Alice is allowed, Eve is not allowed,
+
+149
+
+00:09:43,980  -->  00:09:45,415
+and Bob is allowed.
+
+150
+
+00:09:45,415  -->  00:09:49,155
+We can see this because in the users_to_check,
+
+151
+
+00:09:49,155  -->  00:09:52,495
+David does not appear in the allowed list of users.
+
+152
+
+00:09:52,495  -->  00:09:55,440
+However, Alice is in that list.
+
+153
+
+00:09:55,440  -->  00:09:59,640
+Eve does not appear in the set of allowed users,
+
+154
+
+00:09:59,640  -->  00:10:02,260
+but Bob is. Bob is there.
+
+155
+
+00:10:02,260  -->  00:10:05,600
+We do see that Charlie is one of the allowed users,
+
+156
+
+00:10:05,600  -->  00:10:10,025
+but does not show up in the users_to_check list.
+
+157
+
+00:10:10,025  -->  00:10:15,145
+Did you notice that only two users are allowed in this user check as well?
+
+158
+
+00:10:15,145  -->  00:10:20,300
+Again, this is because Charlie did not come up in the users_to_check list,
+
+159
+
+00:10:20,300  -->  00:10:23,010
+so we wouldn't have iterated over Charlie
+
+160
+
+00:10:23,010  -->  00:10:26,305
+when we were checking our user and users_to_check.
+
+161
+
+00:10:26,305  -->  00:10:29,890
+As you can see, for loops are very versatile, powerful,
+
+162
+
+00:10:29,890  -->  00:10:32,530
+and can be used to iterate over many different types
+
+163
+
+00:10:32,530  -->  00:10:36,070
+of varied sequences and collections in Python.
+
+164
+
+00:10:36,070  -->  00:10:41,870
+For loops can also iterate over the keys and values of a dictionary.
+
+165
+
+00:10:41,870  -->  00:10:45,210
+Think of a dictionary as a real dictionary book that
+
+166
+
+00:10:45,210  -->  00:10:49,190
+stores a giant alphabetical list of words and their definitions.
+
+167
+
+00:10:49,190  -->  00:10:54,090
+Similarly, a Python dictionary stores data objects as key value pairs.
+
+168
+
+00:10:54,090  -->  00:10:58,150
+In this case, we are defining a data object called person
+
+169
+
+00:10:58,150  -->  00:11:02,890
+with three values: Name, age, and city.
+
+170
+
+00:11:02,890  -->  00:11:05,540
+The name has a string value, age,
+
+171
+
+00:11:05,540  -->  00:11:08,700
+an integer value, and city, a string value.
+
+172
+
+00:11:08,700  -->  00:11:11,320
+These key value pairs have a key,
+
+173
+
+00:11:11,320  -->  00:11:13,940
+the first part, and a value, the second part,
+
+174
+
+00:11:13,940  -->  00:11:18,280
+separated by a colon with the key representing an identifier,
+
+175
+
+00:11:18,280  -->  00:11:21,380
+and the value representing the corresponding data,
+
+176
+
+00:11:21,380  -->  00:11:23,220
+which can be of any data type,
+
+177
+
+00:11:23,220  -->  00:11:25,740
+such as a string or an integer.
+
+178
+
+00:11:25,740  -->  00:11:32,815
+Let's see how we can work with these key value pairs of a dictionary with a for loop.
+
+179
+
+00:11:32,815  -->  00:11:39,300
+To do this, we'll define our person object like this.
+
+180
+
+00:11:39,300  -->  00:11:43,060
+So we'll use squiggly brackets like this,
+
+181
+
+00:11:43,060  -->  00:11:45,580
+and you'll see name set to Alice,
+
+182
+
+00:11:45,580  -->  00:11:47,080
+age is 25,
+
+183
+
+00:11:47,080  -->  00:11:49,895
+and City as New York.
+
+184
+
+00:11:49,895  -->  00:11:53,780
+We can also write this a little bit more cleanly to see,
+
+185
+
+00:11:53,780  -->  00:11:56,500
+and this is something that I will usually do,
+
+186
+
+00:11:56,500  -->  00:12:00,500
+where I'll put each item on a new line so you can clearly see
+
+187
+
+00:12:00,500  -->  00:12:04,965
+which items are the key value pairs of a dictionary.
+
+188
+
+00:12:04,965  -->  00:12:14,800
+Then we'll write our for loop and we'll say for key value in person.items,
+
+189
+
+00:12:14,800  -->  00:12:18,240
+because there's multiple items in person.
+
+190
+
+00:12:18,240  -->  00:12:21,050
+Do a colon, and we'll say print,
+
+191
+
+00:12:21,050  -->  00:12:23,045
+and we'll do another f string,
+
+192
+
+00:12:23,045  -->  00:12:28,990
+and we'll say key, colon, value.
+
+193
+
+00:12:29,450  -->  00:12:33,795
+Then we'll close that out with the double quotes,
+
+194
+
+00:12:33,795  -->  00:12:38,140
+and then we'll close that out with our parenthese.
+
+195
+
+00:12:40,010  -->  00:12:44,420
+This should output each key value pair in the dictionary.
+
+196
+
+00:12:44,420  -->  00:12:49,790
+Can you guess what the output is going to look like when we execute the cell?
+
+197
+
+00:12:49,840  -->  00:12:52,980
+Let's find out what it'll print.
+
+198
+
+00:12:55,730  -->  00:12:59,570
+Here we see name is Alice,
+
+199
+
+00:12:59,570  -->  00:13:02,770
+age is 25, and City is New York,
+
+200
+
+00:13:02,770  -->  00:13:05,680
+exactly as we defined it in the dictionary.
+
+201
+
+00:13:05,680  -->  00:13:08,330
+As you can see, for loops allow you to easily
+
+202
+
+00:13:08,330  -->  00:13:11,270
+iterate over the keys and values in a dictionary,
+
+203
+
+00:13:11,270  -->  00:13:16,190
+making it a powerful tool for working with structured data like this.

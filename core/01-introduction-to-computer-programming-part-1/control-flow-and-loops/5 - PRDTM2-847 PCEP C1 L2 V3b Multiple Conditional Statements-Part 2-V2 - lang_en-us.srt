@@ -1,0 +1,424 @@
+1
+
+00:00:00,000  -->  00:00:03,340
+Nesting conditions is a powerful technique in Python
+
+2
+
+00:00:03,340  -->  00:00:07,420
+that allows us to add layers to our decision making process.
+
+3
+
+00:00:07,420  -->  00:00:10,400
+By placing one if statement inside another,
+
+4
+
+00:00:10,400  -->  00:00:12,500
+we create a hierarchy of checks,
+
+5
+
+00:00:12,500  -->  00:00:17,895
+where each subsequent decision is made only if the previous condition is met.
+
+6
+
+00:00:17,895  -->  00:00:22,690
+This approach is particularly useful when one condition is dependent on another.
+
+7
+
+00:00:22,690  -->  00:00:27,670
+For example, you might check if a user is logged in before verifying their permissions.
+
+8
+
+00:00:27,670  -->  00:00:31,950
+If they're not logged in, there's no need to proceed with the permission check.
+
+9
+
+00:00:31,950  -->  00:00:36,510
+Nesting also helps break down complex logic into manageable parts,
+
+10
+
+00:00:36,510  -->  00:00:39,490
+making it easier to handle intricate scenarios,
+
+11
+
+00:00:39,490  -->  00:00:43,390
+such as validating multiple user inputs in a specific order,
+
+12
+
+00:00:43,390  -->  00:00:47,810
+guiding users through multi set processes or navigating through decision trees.
+
+13
+
+00:00:47,810  -->  00:00:52,840
+Let's look at an example of how nested conditional statements work in practice.
+
+14
+
+00:00:52,840  -->  00:00:56,040
+To see how conditionals work with nesting,
+
+15
+
+00:00:56,040  -->  00:00:59,180
+we're going to refactor our previous python code with
+
+16
+
+00:00:59,180  -->  00:01:03,180
+the weather example that use conditional statements with logical operators
+
+17
+
+00:01:03,180  -->  00:01:06,720
+into new python code that uses a nested structure
+
+18
+
+00:01:06,720  -->  00:01:10,980
+with if else keywords to accomplish the same exact goal.
+
+19
+
+00:01:10,980  -->  00:01:17,040
+We'll start by checking if the temperature is greater than 77 degrees Fahrenheit.
+
+20
+
+00:01:17,040  -->  00:01:20,300
+If it is, we'll then evaluate whether it's sunny or not.
+
+21
+
+00:01:20,300  -->  00:01:21,900
+If both conditions are met,
+
+22
+
+00:01:21,900  -->  00:01:23,440
+we'll print, go to the beach.
+
+23
+
+00:01:23,440  -->  00:01:26,615
+If it's not sunny, we'll print, stay inside.
+
+24
+
+00:01:26,615  -->  00:01:29,680
+What we'll do is we'll remove
+
+25
+
+00:01:29,680  -->  00:01:34,920
+that end component and we'll keep if temperature is greater than 77.
+
+26
+
+00:01:34,920  -->  00:01:38,980
+We're then going to add if and else.
+
+27
+
+00:01:38,980  -->  00:01:42,095
+If is going to be if sunny.
+
+28
+
+00:01:42,095  -->  00:01:46,515
+We're going to take our print statement here and move that up here.
+
+29
+
+00:01:46,515  -->  00:01:49,140
+If it's sunny, print, go to the beach.
+
+30
+
+00:01:49,140  -->  00:01:57,270
+Else we'll print, stay inside.
+
+31
+
+00:01:57,270  -->  00:02:00,390
+Now, we'll write elif,
+
+32
+
+00:02:00,390  -->  00:02:04,065
+and we'll say if elif temperature is greater than 50,
+
+33
+
+00:02:04,065  -->  00:02:07,380
+we'll remove this and not is sunny component,
+
+34
+
+00:02:07,380  -->  00:02:09,160
+and we'll do the same exact thing.
+
+35
+
+00:02:09,160  -->  00:02:11,200
+We'll copy this code here.
+
+36
+
+00:02:11,200  -->  00:02:13,460
+We're going to remove this part.
+
+37
+
+00:02:13,460  -->  00:02:17,420
+We'll paste that in there. Then we're going to say, if is sunny.
+
+38
+
+00:02:17,420  -->  00:02:19,760
+So if it's greater than 50 and is sunny,
+
+39
+
+00:02:19,760  -->  00:02:23,330
+we're going to say, go for a walk.
+
+40
+
+00:02:25,880  -->  00:02:29,790
+Else we'll print, stay inside.
+
+41
+
+00:02:29,790  -->  00:02:34,690
+Else we'll then print, stay inside.
+
+42
+
+00:02:35,830  -->  00:02:41,430
+So if the temperature is not greater than 77 degrees,
+
+43
+
+00:02:41,430  -->  00:02:45,430
+we're going to go down to the elif statement right here,
+
+44
+
+00:02:45,430  -->  00:02:51,330
+and we move further down to the else block to check if it's greater than 50.
+
+45
+
+00:02:51,330  -->  00:02:52,750
+If it's less than 50,
+
+46
+
+00:02:52,750  -->  00:02:56,270
+that's where the else clause will be initiated.
+
+47
+
+00:02:56,270  -->  00:03:00,790
+Within this block, we'll nest another statement to check if it's sunny,
+
+48
+
+00:03:00,790  -->  00:03:02,080
+so that's why we're printing,
+
+49
+
+00:03:02,080  -->  00:03:04,410
+go for a walk here in this nested structure.
+
+50
+
+00:03:04,410  -->  00:03:08,705
+Otherwise, in the nested structure we'll print, stay inside.
+
+51
+
+00:03:08,705  -->  00:03:13,850
+Finally, if the temperature is 50 degrees or below,
+
+52
+
+00:03:13,850  -->  00:03:15,890
+that's this else clause here,
+
+53
+
+00:03:15,890  -->  00:03:17,910
+the program advises us to stay inside
+
+54
+
+00:03:17,910  -->  00:03:21,350
+directly as seen with this else statement at the end.
+
+55
+
+00:03:21,350  -->  00:03:24,920
+Now, let's run some tests as we did before.
+
+56
+
+00:03:24,920  -->  00:03:28,710
+When the temperature is 80 and it's sunny,
+
+57
+
+00:03:28,710  -->  00:03:30,890
+so we'll change that to true.
+
+58
+
+00:03:31,050  -->  00:03:34,430
+What do you think the output will be here?
+
+59
+
+00:03:34,430  -->  00:03:38,150
+If we run this, we'll see, go to the beach.
+
+60
+
+00:03:38,150  -->  00:03:40,190
+So if you said, go to the beach, you're right,
+
+61
+
+00:03:40,190  -->  00:03:42,770
+and that's because the first statement is picking up on both of
+
+62
+
+00:03:42,770  -->  00:03:46,310
+these conditions being true. Right there.
+
+63
+
+00:03:46,310  -->  00:03:50,810
+If the temperature is greater than 77 and is sunny.
+
+64
+
+00:03:51,220  -->  00:03:54,460
+Now, what if the temperature is 20?
+
+65
+
+00:03:54,660  -->  00:03:57,900
+What do you think the output will be here?
+
+66
+
+00:03:57,900  -->  00:04:01,065
+Let's run it and see and find out.
+
+67
+
+00:04:01,065  -->  00:04:03,685
+This says stand side,
+
+68
+
+00:04:03,685  -->  00:04:08,060
+and we see stand side because the else statement is covering everything
+
+69
+
+00:04:08,060  -->  00:04:14,260
+below 50 degrees and including 50 degrees regardless of the sunny part.
+
+70
+
+00:04:14,340  -->  00:04:18,100
+As soon as our temperature reaches 50,
+
+71
+
+00:04:18,100  -->  00:04:25,020
+will this fire off one of these statements here? Let's find out.
+
+72
+
+00:04:29,030  -->  00:04:31,670
+When it's 50 and is sunny,
+
+73
+
+00:04:31,670  -->  00:04:34,080
+we see stay inside,
+
+74
+
+00:04:34,080  -->  00:04:39,175
+and that's because it's not greater than 50. It's exactly 50.
+
+75
+
+00:04:39,175  -->  00:04:43,410
+That's what gets picked up by this else clause here,
+
+76
+
+00:04:43,410  -->  00:04:45,465
+and that's why we see this in the output.
+
+77
+
+00:04:45,465  -->  00:04:49,570
+Ultimately, when the temperature is 51 degrees,
+
+78
+
+00:04:49,570  -->  00:04:55,270
+what do you think will happen with the output now?
+
+79
+
+00:04:56,900  -->  00:05:00,670
+We'll see go for a walk,
+
+80
+
+00:05:00,770  -->  00:05:06,020
+and that's because the third conditional statement where the temperature is
+
+81
+
+00:05:06,020  -->  00:05:11,560
+greater than 50 and is sunny is happening right there.
+
+82
+
+00:05:11,560  -->  00:05:14,820
+By nesting these conditional statements,
+
+83
+
+00:05:14,820  -->  00:05:18,320
+we've added more structure and clarity to our decision making process.
+
+84
+
+00:05:18,320  -->  00:05:21,320
+Each layer of logic is clearly separated,
+
+85
+
+00:05:21,320  -->  00:05:25,400
+making it easier to manage and adapt to changes.

@@ -1,0 +1,214 @@
+1
+
+00:00:00,000  -->  00:00:02,660
+Welcome to Control Flow in Python.
+
+2
+
+00:00:02,660  -->  00:00:07,120
+In this lesson, we're going to be exploring several ways to carefully and
+
+3
+
+00:00:07,120  -->  00:00:13,180
+creatively manage our precise Python programs with crafty statements and logic.
+
+4
+
+00:00:13,180  -->  00:00:18,440
+Think about when you give someone directions or someone gave you directions.
+
+5
+
+00:00:18,440  -->  00:00:20,420
+While you're driving on this road,
+
+6
+
+00:00:20,420  -->  00:00:22,020
+look out for the street lamp.
+
+7
+
+00:00:22,020  -->  00:00:24,015
+Stop, then take a right.
+
+8
+
+00:00:24,015  -->  00:00:30,245
+Or continue on the current road until the end and then park. Something like that.
+
+9
+
+00:00:30,245  -->  00:00:32,590
+When we write our Python programs,
+
+10
+
+00:00:32,590  -->  00:00:36,830
+we will use various statements and keywords to signal our code to run,
+
+11
+
+00:00:36,830  -->  00:00:38,690
+only under certain conditions,
+
+12
+
+00:00:38,690  -->  00:00:40,630
+which we'll call conditional statements,
+
+13
+
+00:00:40,630  -->  00:00:44,490
+or to execute our code for only certain periods of time,
+
+14
+
+00:00:44,490  -->  00:00:47,370
+which will happen with a code format called loops.
+
+15
+
+00:00:47,370  -->  00:00:49,490
+Thanks to control flow and Python,
+
+16
+
+00:00:49,490  -->  00:00:53,010
+we don't have to write code again and again and again.
+
+17
+
+00:00:53,010  -->  00:00:58,225
+Remember, our time is valuable when we're working on important or time critical projects.
+
+18
+
+00:00:58,225  -->  00:01:03,380
+We need code that reflects this urgency when and where it is needed.
+
+19
+
+00:01:03,380  -->  00:01:09,410
+Let's see a very quick example of why we like and rely on control flow with Python.
+
+20
+
+00:01:09,410  -->  00:01:13,930
+Let's say we have a function and we want to greet someone x number of times.
+
+21
+
+00:01:13,930  -->  00:01:16,490
+In this case, let's say four times.
+
+22
+
+00:01:16,490  -->  00:01:18,290
+If we didn't have control flow,
+
+23
+
+00:01:18,290  -->  00:01:20,370
+we would need to do something like this,
+
+24
+
+00:01:20,370  -->  00:01:25,505
+where we would define a function with deaf grit,
+
+25
+
+00:01:25,505  -->  00:01:28,460
+and then we would say print.
+
+26
+
+00:01:28,910  -->  00:01:34,155
+Hello world. We would close out that print statement.
+
+27
+
+00:01:34,155  -->  00:01:36,800
+Then what we would need to do is that we would need to
+
+28
+
+00:01:36,800  -->  00:01:40,295
+call this greet function four times.
+
+29
+
+00:01:40,295  -->  00:01:47,480
+One, 2, 3, 4.
+
+30
+
+00:01:47,480  -->  00:01:48,800
+You might think this makes sense,
+
+31
+
+00:01:48,800  -->  00:01:50,400
+call the function four times.
+
+32
+
+00:01:50,400  -->  00:01:53,400
+But what if you have thousands or millions of
+
+33
+
+00:01:53,400  -->  00:01:56,580
+users and the greeting message could change?
+
+34
+
+00:01:56,580  -->  00:01:58,320
+This would be a huge file.
+
+35
+
+00:01:58,320  -->  00:02:01,000
+There has to be a better way.
+
+36
+
+00:02:01,530  -->  00:02:05,430
+When we run this, this would run four times.
+
+37
+
+00:02:05,430  -->  00:02:10,770
+But the more that we need to run these types of functions,
+
+38
+
+00:02:10,770  -->  00:02:13,970
+we're going to need a more scalable process.
+
+39
+
+00:02:13,970  -->  00:02:16,170
+Enter control flow in Python,
+
+40
+
+00:02:16,170  -->  00:02:17,750
+and we're going to be learning about
+
+41
+
+00:02:17,750  -->  00:02:22,070
+crafty and clever ways to manage this in the subsequent modules.
+
+42
+
+00:02:22,070  -->  00:02:27,450
+If you're ready to use Python to navigate repetitive tasks efficiently and effectively,
+
+43
+
+00:02:27,450  -->  00:02:29,690
+let's dive in together.

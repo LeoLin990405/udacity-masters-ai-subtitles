@@ -1,0 +1,94 @@
+1
+
+00:00:00,000  -->  00:00:03,380
+When you want to execute the same block of code multiple times
+
+2
+
+00:00:03,380  -->  00:00:06,560
+without needing to rewrite the function multiple times,
+
+3
+
+00:00:06,560  -->  00:00:10,560
+Python has a very handy method for handling this called loops.
+
+4
+
+00:00:10,560  -->  00:00:12,360
+You may remember from earlier,
+
+5
+
+00:00:12,360  -->  00:00:15,490
+we discussed a case where you want to greet somebody four times,
+
+6
+
+00:00:15,490  -->  00:00:17,555
+so you could write something like this.
+
+7
+
+00:00:17,555  -->  00:00:19,740
+Now you could totally write this.
+
+8
+
+00:00:19,740  -->  00:00:21,420
+This is reasonable code,
+
+9
+
+00:00:21,420  -->  00:00:24,770
+but it's not practical or scalable code.
+
+10
+
+00:00:24,770  -->  00:00:28,460
+Let's talk about what that means and why. Here's why.
+
+11
+
+00:00:28,460  -->  00:00:32,605
+As we scale this to thousands or millions of users,
+
+12
+
+00:00:32,605  -->  00:00:37,920
+our greater function would then need to be executed thousands or millions of times.
+
+13
+
+00:00:37,920  -->  00:00:40,885
+Meaning we need to write it that number of times.
+
+14
+
+00:00:40,885  -->  00:00:45,125
+Imagine how long a Python file like this would need to be.
+
+15
+
+00:00:45,125  -->  00:00:50,490
+Fortunately, for us, Python has our back and comes with a way for us to
+
+16
+
+00:00:50,490  -->  00:00:56,055
+handle and execute a block of code multiple times called loops with two flavors.
+
+17
+
+00:00:56,055  -->  00:01:01,070
+While loops which run when the specified condition is true,
+
+18
+
+00:01:01,070  -->  00:01:04,750
+and for loops, which run over a sequence.
+
+19
+
+00:01:04,750  -->  00:01:09,330
+Let's dive into what these nuances really mean.

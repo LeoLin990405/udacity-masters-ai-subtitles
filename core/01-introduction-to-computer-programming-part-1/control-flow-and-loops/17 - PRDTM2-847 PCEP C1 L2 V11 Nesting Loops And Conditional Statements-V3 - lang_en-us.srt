@@ -1,0 +1,354 @@
+1
+
+00:00:00,000  -->  00:00:01,820
+Now that we understand loops,
+
+2
+
+00:00:01,820  -->  00:00:04,300
+let's take a look at something slightly more complex.
+
+3
+
+00:00:04,300  -->  00:00:08,300
+Python allows us to add loops within loops. Can you imagine that?
+
+4
+
+00:00:08,300  -->  00:00:11,540
+This is called nesting loops or nested loops,
+
+5
+
+00:00:11,540  -->  00:00:13,760
+and it works a bit like this.
+
+6
+
+00:00:13,760  -->  00:00:16,460
+Let's break down what's happening in our loop.
+
+7
+
+00:00:16,460  -->  00:00:18,900
+We have our array, we have our variable,
+
+8
+
+00:00:18,900  -->  00:00:23,540
+and we have our loop and I is starting with one and goes up to two.
+
+9
+
+00:00:23,540  -->  00:00:26,840
+Now that we understand what's happening in a loop in practice,
+
+10
+
+00:00:26,840  -->  00:00:30,360
+let's pop open our Jupiter notebook and see the interaction.
+
+11
+
+00:00:30,360  -->  00:00:33,240
+Let's talk about nested loops.
+
+12
+
+00:00:33,240  -->  00:00:35,100
+To see this more visually,
+
+13
+
+00:00:35,100  -->  00:00:38,360
+let's start with a simple loop that iterates over a range of
+
+14
+
+00:00:38,360  -->  00:00:42,580
+numbers to get us started thinking about how loops can be nested.
+
+15
+
+00:00:42,580  -->  00:00:45,080
+We'll say four i in range,
+
+16
+
+00:00:45,080  -->  00:00:49,200
+and we'll start with one, and go up to five.
+
+17
+
+00:00:49,200  -->  00:00:51,280
+Clon then we'll say print,
+
+18
+
+00:00:51,280  -->  00:00:54,520
+we'll do an F string, and we'll say iteration.
+
+19
+
+00:00:57,240  -->  00:01:00,460
+Put I in curly brackets,
+
+20
+
+00:01:00,460  -->  00:01:04,000
+we'll close out the F string, and then we'll close out the print statement.
+
+21
+
+00:01:05,800  -->  00:01:10,460
+When we run this, this will print the below when we run it.
+
+22
+
+00:01:10,460  -->  00:01:13,660
+And we know this because we start with a range of
+
+23
+
+00:01:13,660  -->  00:01:18,700
+one and go up to four because we specify the end being five.
+
+24
+
+00:01:18,700  -->  00:01:22,060
+So our loop will print four numbers and stop at five,
+
+25
+
+00:01:22,060  -->  00:01:26,480
+since there are four numbers or positions 1-5.
+
+26
+
+00:01:26,480  -->  00:01:30,080
+That's why we see one, two, three, and four.
+
+27
+
+00:01:32,190  -->  00:01:36,555
+Now, let's add a second loop inside of the first loop.
+
+28
+
+00:01:36,555  -->  00:01:40,710
+This inner loop will iterate over a list of fruits.
+
+29
+
+00:01:40,710  -->  00:01:47,590
+So we will create a list with square brackets,
+
+30
+
+00:01:47,590  -->  00:01:48,870
+and we'll have apple,
+
+31
+
+00:01:48,870  -->  00:01:51,210
+banana, cherry, and grape fruit.
+
+32
+
+00:01:51,210  -->  00:01:55,010
+Then we'll copy our four loop from earlier,
+
+33
+
+00:01:55,010  -->  00:01:58,630
+and we'll control V and paste that into here.
+
+34
+
+00:01:58,630  -->  00:02:03,370
+And what we'll say is, we'll say for in range
+
+35
+
+00:02:03,370  -->  00:02:11,060
+one to 54 fruit in fruit colon.
+
+36
+
+00:02:11,500  -->  00:02:17,100
+And then we'll edit this to say iteration I,
+
+37
+
+00:02:17,100  -->  00:02:19,740
+and then we'll say fruit, colon,
+
+38
+
+00:02:19,740  -->  00:02:25,700
+and then we'll put fruit in curly braces.
+
+39
+
+00:02:25,900  -->  00:02:30,400
+Can you guess what the output of this is going to be when we execute
+
+40
+
+00:02:30,400  -->  00:02:35,560
+this new four loop? Let's find out.
+
+41
+
+00:02:35,560  -->  00:02:37,040
+When we execute the cell,
+
+42
+
+00:02:37,040  -->  00:02:41,740
+we'll see this output below.
+
+43
+
+00:02:43,750  -->  00:02:46,430
+So we'll see iteration one,
+
+44
+
+00:02:46,430  -->  00:02:48,750
+fruit, this, fruit, this,
+
+45
+
+00:02:48,750  -->  00:02:50,510
+fruit, this, fruit, this,
+
+46
+
+00:02:50,510  -->  00:02:53,270
+then iteration two, this fruit,
+
+47
+
+00:02:53,270  -->  00:02:55,990
+this fruit, d fruit, d fruit, iteration three,
+
+48
+
+00:02:55,990  -->  00:02:57,850
+fruit fruit fruit, fruit fruit,
+
+49
+
+00:02:57,850  -->  00:03:02,530
+and then same thing with iteration four with apple banana, cherry, and grape fruit.
+
+50
+
+00:03:02,530  -->  00:03:07,350
+Wait. Why are there so many more outputs when we add a loop inside of it?
+
+51
+
+00:03:07,350  -->  00:03:10,990
+Wouldn't it be more constrained? Not exactly.
+
+52
+
+00:03:10,990  -->  00:03:13,390
+Let's dive into why this is happening.
+
+53
+
+00:03:13,390  -->  00:03:21,130
+First, the outer loop here runs 1-4.
+
+54
+
+00:03:21,130  -->  00:03:23,490
+This has four cycles.
+
+55
+
+00:03:23,490  -->  00:03:25,590
+For each value of i,
+
+56
+
+00:03:25,590  -->  00:03:30,930
+the inner loop then runs through each fruit in the fruits list,
+
+57
+
+00:03:30,930  -->  00:03:34,310
+and this has four cycles.
+
+58
+
+00:03:34,310  -->  00:03:38,150
+This means that for each iteration of the outer loop,
+
+59
+
+00:03:38,150  -->  00:03:40,910
+the inner loop completes its inner cycle as well,
+
+60
+
+00:03:40,910  -->  00:03:43,450
+which is why it creates so many more iterations.
+
+61
+
+00:03:43,450  -->  00:03:45,570
+So when i is one,
+
+62
+
+00:03:45,570  -->  00:03:49,570
+the inner loop runs four times for each fruit in the list.
+
+63
+
+00:03:49,570  -->  00:03:51,070
+Then when I is two,
+
+64
+
+00:03:51,070  -->  00:03:56,170
+the inner loop runs again four more times and so on.
+
+65
+
+00:03:56,640  -->  00:04:00,400
+And this is the construction of nested loops.
+
+66
+
+00:04:00,400  -->  00:04:03,180
+To sum this up, in the above example,
+
+67
+
+00:04:03,180  -->  00:04:06,160
+we are using range to iterate over a sequence of numbers.
+
+68
+
+00:04:06,160  -->  00:04:09,480
+And for each number, we are iterating over a list of fruits.
+
+69
+
+00:04:09,480  -->  00:04:11,940
+This demonstrates how you can combine range with
+
+70
+
+00:04:11,940  -->  00:04:15,520
+nested loops to handle more complex iteration scenarios,
+
+71
+
+00:04:15,520  -->  00:04:19,200
+such as searching for combinations or pairing items.

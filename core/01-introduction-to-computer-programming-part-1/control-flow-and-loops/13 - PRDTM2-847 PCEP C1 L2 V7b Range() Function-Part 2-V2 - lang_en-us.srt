@@ -1,0 +1,1009 @@
+1
+
+00:00:00,000  -->  00:00:01,980
+While the range function is powerful,
+
+2
+
+00:00:01,980  -->  00:00:05,340
+there are situations where it might not be the best tool for the job.
+
+3
+
+00:00:05,340  -->  00:00:10,200
+Let's explore three common scenarios where using range might not be ideal.
+
+4
+
+00:00:10,200  -->  00:00:12,920
+First, when working with large ranges,
+
+5
+
+00:00:12,920  -->  00:00:17,400
+range can consume significant memory and slow down your program.
+
+6
+
+00:00:17,400  -->  00:00:20,985
+Second, range only works with integers.
+
+7
+
+00:00:20,985  -->  00:00:24,160
+If you're dealing with floating point numbers or other types,
+
+8
+
+00:00:24,160  -->  00:00:26,020
+a different approach is needed.
+
+9
+
+00:00:26,020  -->  00:00:29,120
+Third, when your loop needs to run based on
+
+10
+
+00:00:29,120  -->  00:00:32,460
+a condition rather than a fixed number of iterations,
+
+11
+
+00:00:32,460  -->  00:00:35,915
+a loop might be more appropriate here.
+
+12
+
+00:00:35,915  -->  00:00:40,120
+Let's dive into each of these scenarios with Python demos,
+
+13
+
+00:00:40,120  -->  00:00:41,970
+so we can see this firsthand.
+
+14
+
+00:00:41,970  -->  00:00:45,660
+In this first demo, we'll see how using range with
+
+15
+
+00:00:45,660  -->  00:00:50,580
+a very large number can be resource intensive and why,
+
+16
+
+00:00:50,580  -->  00:00:55,640
+there are certain situations where we shouldn't use the range function.
+
+17
+
+00:00:55,640  -->  00:00:59,040
+The code generates a sequence of one million numbers,
+
+18
+
+00:00:59,040  -->  00:01:02,920
+which can consume a lot of memory and slow down your Python program
+
+19
+
+00:01:02,920  -->  00:01:07,920
+when you put in a range that's very high like this.
+
+20
+
+00:01:07,920  -->  00:01:11,220
+So we'll write for I in range.
+
+21
+
+00:01:11,220  -->  00:01:14,960
+And we'll put in a very big number.
+
+22
+
+00:01:15,320  -->  00:01:18,580
+That has, that's one, and then one,
+
+23
+
+00:01:18,580  -->  00:01:22,000
+two, three, four, five, six zeros.
+
+24
+
+00:01:22,000  -->  00:01:27,000
+We're then going to have this print and F string,
+
+25
+
+00:01:27,000  -->  00:01:32,460
+and we're going to say index squiggly brackets I.
+
+26
+
+00:01:32,460  -->  00:01:39,040
+This is resource intensive. We'll close that out.
+
+27
+
+00:01:39,760  -->  00:01:50,230
+When we run this, It's going to say that the data rate has been exceeded,
+
+28
+
+00:01:50,230  -->  00:01:53,970
+and that basically the Jupiter notebook will
+
+29
+
+00:01:53,970  -->  00:01:58,230
+temporarily stop sending output to the client to avoid crashing it.
+
+30
+
+00:01:58,230  -->  00:02:03,830
+We are trying to basically send a whole bunch of data outputs from this,
+
+31
+
+00:02:03,830  -->  00:02:07,170
+and this is going to be counting up to a very big number.
+
+32
+
+00:02:07,170  -->  00:02:09,450
+This would be very resource intensive,
+
+33
+
+00:02:09,450  -->  00:02:12,710
+and it won't allow us to execute this code,
+
+34
+
+00:02:12,710  -->  00:02:15,875
+or it will run, and then it would crash the Jupiter notebook.
+
+35
+
+00:02:15,875  -->  00:02:19,485
+This is a stop gap to prevent that from happening.
+
+36
+
+00:02:19,485  -->  00:02:25,020
+In such cases, consider using more efficient data structures or algorithms.
+
+37
+
+00:02:25,020  -->  00:02:26,960
+While range is convenient,
+
+38
+
+00:02:26,960  -->  00:02:30,940
+it's not always efficient for large sequences like we just saw.
+
+39
+
+00:02:30,940  -->  00:02:34,860
+In such cases, consider using more efficient data structures or
+
+40
+
+00:02:34,860  -->  00:02:39,980
+algorithms such as generators to manage memory and performance better.
+
+41
+
+00:02:39,980  -->  00:02:44,680
+Generators, which you'll learn more about a little later allow you to handle
+
+42
+
+00:02:44,680  -->  00:02:47,400
+large sequences more efficiently by
+
+43
+
+00:02:47,400  -->  00:02:51,400
+generating items on the fly rather than storing them all in memory.
+
+44
+
+00:02:51,400  -->  00:02:55,540
+Did you notice a new kind of print statement above as well?
+
+45
+
+00:02:55,540  -->  00:02:58,280
+It's not specific to print, actually,
+
+46
+
+00:02:58,280  -->  00:03:02,060
+but it's a way that we can format a string with data inside of it.
+
+47
+
+00:03:02,060  -->  00:03:07,560
+This is an example of what we can call an F string in Python right here.
+
+48
+
+00:03:07,680  -->  00:03:13,600
+F strings or formatted string literals are a way to insert expressions, data,
+
+49
+
+00:03:13,600  -->  00:03:16,940
+or other types of inputs inside of a regular string,
+
+50
+
+00:03:16,940  -->  00:03:18,480
+called a string literal,
+
+51
+
+00:03:18,480  -->  00:03:22,870
+using curly braces or curly brackets like you'll see here.
+
+52
+
+00:03:22,870  -->  00:03:29,630
+The letter F before the quotation marks indicates that the string is an F string.
+
+53
+
+00:03:29,630  -->  00:03:33,550
+Here, I in quickly brackets is
+
+54
+
+00:03:33,550  -->  00:03:37,610
+replaced with the current value of I in each iteration of the loop,
+
+55
+
+00:03:37,610  -->  00:03:42,130
+coming from here, resulting in a formatted string that includes the index.
+
+56
+
+00:03:42,130  -->  00:03:46,370
+F strings are a powerful feature in Python because they allow you to create
+
+57
+
+00:03:46,370  -->  00:03:51,730
+strings that include the values of variables and expressions easily.
+
+58
+
+00:03:51,730  -->  00:03:55,110
+This makes your code more readable and concise
+
+59
+
+00:03:55,110  -->  00:03:58,840
+compared to traditional string formatting methods.
+
+60
+
+00:03:58,840  -->  00:04:02,330
+For example, if you wanted to write an expression that greets somebody,
+
+61
+
+00:04:02,330  -->  00:04:05,330
+you'll probably need an F string to write F,
+
+62
+
+00:04:05,330  -->  00:04:06,970
+and then quotation marks,
+
+63
+
+00:04:06,970  -->  00:04:11,290
+Hello there, user name, like this.
+
+64
+
+00:04:19,370  -->  00:04:26,370
+Something like this. And we can do exactly this with F strings in our Python code.
+
+65
+
+00:04:27,220  -->  00:04:31,560
+In this next demo, let's explore why the range function
+
+66
+
+00:04:31,560  -->  00:04:35,740
+isn't suitable for non integer sequences like floating point numbers.
+
+67
+
+00:04:35,740  -->  00:04:40,660
+We'll attempt to use the range function to generate a sequence of floating point numbers.
+
+68
+
+00:04:40,660  -->  00:04:45,000
+If you need to iterate over a sequence of floating point numbers or other types,
+
+69
+
+00:04:45,000  -->  00:04:47,255
+you'll need a different approach.
+
+70
+
+00:04:47,255  -->  00:04:51,125
+Let's write some code and see why this is correct.
+
+71
+
+00:04:51,125  -->  00:04:54,380
+We'll write our four loop like this.
+
+72
+
+00:04:54,380  -->  00:04:57,420
+We'll say four, I in range.
+
+73
+
+00:04:57,420  -->  00:05:02,740
+And then we'll put in a start of 0.0,
+
+74
+
+00:05:02,740  -->  00:05:04,840
+and end of 1.0,
+
+75
+
+00:05:04,840  -->  00:05:08,300
+and a stepper of 0.1.
+
+76
+
+00:05:08,700  -->  00:05:11,620
+Then we'll say print,
+
+77
+
+00:05:11,620  -->  00:05:12,980
+and we'll write an F string,
+
+78
+
+00:05:12,980  -->  00:05:20,620
+and we'll say in correct use of range for floating point numbers.
+
+79
+
+00:05:20,620  -->  00:05:25,720
+We'll close that out. Let's try running this code and seeing what happens.
+
+80
+
+00:05:25,720  -->  00:05:27,360
+But before we run that,
+
+81
+
+00:05:27,360  -->  00:05:29,820
+what do you think the output will be?
+
+82
+
+00:05:33,140  -->  00:05:38,340
+When we run this, we'll get a type error that says,
+
+83
+
+00:05:38,340  -->  00:05:42,205
+float, object cannot be interpreted as an integer.
+
+84
+
+00:05:42,205  -->  00:05:44,790
+Did you get an error as well?
+
+85
+
+00:05:44,790  -->  00:05:49,560
+We see type error float object cannot be interpreted as an integer,
+
+86
+
+00:05:49,560  -->  00:05:54,640
+which is because the range function only works with integers.
+
+87
+
+00:05:54,640  -->  00:05:57,200
+If you try to use it with floating point numbers,
+
+88
+
+00:05:57,200  -->  00:06:01,680
+Python will raise a type error because range expects integer arguments.
+
+89
+
+00:06:01,680  -->  00:06:05,160
+But we're passing in floating point arguments.
+
+90
+
+00:06:05,160  -->  00:06:08,420
+Instead of doing this, we can use a i loop
+
+91
+
+00:06:08,420  -->  00:06:12,820
+instead or a different method to handle non integer sequences.
+
+92
+
+00:06:12,820  -->  00:06:15,780
+Let's see what this looks like in the correct approach
+
+93
+
+00:06:15,780  -->  00:06:19,940
+using L loop to iterate over floating point numbers.
+
+94
+
+00:06:20,370  -->  00:06:27,130
+Let's get rid of that type error so we can iterate over our floating point numbers.
+
+95
+
+00:06:27,130  -->  00:06:29,650
+Instead of a four loop,
+
+96
+
+00:06:29,650  -->  00:06:31,370
+we'll write a y loop.
+
+97
+
+00:06:31,370  -->  00:06:35,150
+We will do this by first creating a variable called start,
+
+98
+
+00:06:35,150  -->  00:06:37,710
+and we'll set that equal to 0.0.
+
+99
+
+00:06:37,710  -->  00:06:42,590
+We'll then create an end variable and we'll set that equal to 1.0,
+
+100
+
+00:06:42,590  -->  00:06:44,970
+and we'll create our steper,
+
+101
+
+00:06:44,970  -->  00:06:47,370
+defined as a step variable,
+
+102
+
+00:06:47,370  -->  00:06:49,970
+and we'll say 0.1.
+
+103
+
+00:06:49,970  -->  00:06:55,500
+We'll then say that current equals start.
+
+104
+
+00:06:55,500  -->  00:07:00,740
+We'll set this variable equal to our start variable, which is 0.0.
+
+105
+
+00:07:00,740  -->  00:07:05,690
+Next up, we'll write our while loop,
+
+106
+
+00:07:05,690  -->  00:07:10,575
+and we'll say while current is less than end,
+
+107
+
+00:07:10,575  -->  00:07:15,295
+and then we will print an f string, and we'll say,
+
+108
+
+00:07:15,295  -->  00:07:23,630
+correct use a while loop for floating point numbers."
+
+109
+
+00:07:26,650  -->  00:07:35,195
+Then we'll use curly braces and we'll say current like this,
+
+110
+
+00:07:35,195  -->  00:07:37,820
+and then we will close out our print statement.
+
+111
+
+00:07:37,820  -->  00:07:43,290
+Then, we'll say current, plus equals step.
+
+112
+
+00:07:46,750  -->  00:07:49,925
+When this runs, this works correctly,
+
+113
+
+00:07:49,925  -->  00:07:52,370
+because we have, first of all,
+
+114
+
+00:07:52,370  -->  00:07:59,045
+initialized the start, the end and the step values and used them in our while loop.
+
+115
+
+00:07:59,045  -->  00:08:02,735
+We've also used a while loop to iterate over
+
+116
+
+00:08:02,735  -->  00:08:08,135
+that start value to just before the end value like this,
+
+117
+
+00:08:08,135  -->  00:08:13,665
+incrementing by the step value each time, like this.
+
+118
+
+00:08:13,665  -->  00:08:19,115
+Ultimately, we correctly handle floating point numbers without causing an error.
+
+119
+
+00:08:19,115  -->  00:08:24,980
+Let's run this, and we'll see here,
+
+120
+
+00:08:25,770  -->  00:08:32,875
+that this counts up until the point where we need it to end,
+
+121
+
+00:08:32,875  -->  00:08:35,355
+which is right before one.
+
+122
+
+00:08:35,355  -->  00:08:40,445
+Now, remember the issues we had with floating point errors that we talked about before.
+
+123
+
+00:08:40,445  -->  00:08:45,725
+How would we fix our code to solve for this? That's right.
+
+124
+
+00:08:45,725  -->  00:08:49,670
+We'll bring back our trustee format specification tool
+
+125
+
+00:08:49,670  -->  00:08:53,975
+:.1f to format the floating point numbers with
+
+126
+
+00:08:53,975  -->  00:08:58,740
+one decimal and avoid the precision issues we just saw here.
+
+127
+
+00:08:58,990  -->  00:09:02,730
+First of all, we'll copy this code.
+
+128
+
+00:09:04,510  -->  00:09:08,195
+We paste it right down here in a new cell,
+
+129
+
+00:09:08,195  -->  00:09:13,190
+and then what we'll do is that we will keep our variables like this.
+
+130
+
+00:09:13,190  -->  00:09:15,545
+But, in our print statement,
+
+131
+
+00:09:15,545  -->  00:09:19,925
+we're going to change the current variable here.
+
+132
+
+00:09:19,925  -->  00:09:24,455
+What we'll do is, inside of the curly brackets,
+
+133
+
+00:09:24,455  -->  00:09:29,005
+we're going to say:.1f,
+
+134
+
+00:09:29,005  -->  00:09:32,140
+and this comes after current,
+
+135
+
+00:09:32,140  -->  00:09:36,505
+all within the curly brackets and we keep everything the same.
+
+136
+
+00:09:36,505  -->  00:09:42,170
+Can you guess what we're going to see when we run this different code now?
+
+137
+
+00:09:48,760  -->  00:09:51,215
+When we execute this code,
+
+138
+
+00:09:51,215  -->  00:09:53,780
+we see 0.0,
+
+139
+
+00:09:53,780  -->  00:09:55,640
+0.1, 0.2, 0.3, 0.4,
+
+140
+
+00:09:55,640  -->  00:09:57,380
+0.5, 0.6, 0.7 0.8,
+
+141
+
+00:09:57,380  -->  00:09:59,645
+0.9 all the way up to 1.0,
+
+142
+
+00:09:59,645  -->  00:10:02,760
+which is exactly what we'd expect.
+
+143
+
+00:10:04,870  -->  00:10:07,595
+Finally, in our last demo,
+
+144
+
+00:10:07,595  -->  00:10:11,525
+let's explore why the range function isn't always the best choice,
+
+145
+
+00:10:11,525  -->  00:10:14,645
+especially when dealing with loops that should run based
+
+146
+
+00:10:14,645  -->  00:10:18,530
+on a condition rather than a fixed number of iterations.
+
+147
+
+00:10:18,530  -->  00:10:21,980
+Let's see an example of using the range function incorrectly
+
+148
+
+00:10:21,980  -->  00:10:25,550
+for a loop that needs to run until a certain condition is met.
+
+149
+
+00:10:25,550  -->  00:10:31,280
+To illustrate this, we'll say for i in range five,
+
+150
+
+00:10:31,280  -->  00:10:37,535
+colon, and we'll say if i is less than three, print i.
+
+151
+
+00:10:37,535  -->  00:10:39,935
+In this incorrect example,
+
+152
+
+00:10:39,935  -->  00:10:43,085
+we're attempting to use the range function to control the loop,
+
+153
+
+00:10:43,085  -->  00:10:47,165
+but then we've added a conditional check inside of the loop right here.
+
+154
+
+00:10:47,165  -->  00:10:53,915
+This causes unnecessary iterations as the loop will run for all values from 0-4,
+
+155
+
+00:10:53,915  -->  00:10:57,950
+even though we only care about the first three iterations.
+
+156
+
+00:10:57,950  -->  00:11:02,450
+This is inefficient and can lead to unnecessary processing.
+
+157
+
+00:11:02,450  -->  00:11:08,130
+Can you guess what the output will be? Let's find out.
+
+158
+
+00:11:11,560  -->  00:11:15,785
+Even though we've declared this range,
+
+159
+
+00:11:15,785  -->  00:11:21,365
+we're then specifying for i to only be printed if it's less than four.
+
+160
+
+00:11:21,365  -->  00:11:24,920
+If we want to use the range function in an accounting mechanism,
+
+161
+
+00:11:24,920  -->  00:11:27,135
+we can do something like this.
+
+162
+
+00:11:27,135  -->  00:11:36,890
+We'll say for i in range three print i.
+
+163
+
+00:11:37,090  -->  00:11:41,310
+Can you guess what this will output when we run it?
+
+164
+
+00:11:43,260  -->  00:11:45,580
+We'll see 0,
+
+165
+
+00:11:45,580  -->  00:11:47,245
+1, 2, printed,
+
+166
+
+00:11:47,245  -->  00:11:50,710
+Meaning it went through the first three iterations as we would expect.
+
+167
+
+00:11:50,710  -->  00:11:52,890
+If you said this, great job.
+
+168
+
+00:11:52,890  -->  00:11:56,585
+Now, let's see another correct approach using a while loop.
+
+169
+
+00:11:56,585  -->  00:12:00,200
+The while loop is better suited for scenarios where the loop should run
+
+170
+
+00:12:00,200  -->  00:12:04,770
+based on a condition rather than a fixed number of iterations.
+
+171
+
+00:12:08,320  -->  00:12:12,995
+We'll declare a variable called count and we'll say count equals zero,
+
+172
+
+00:12:12,995  -->  00:12:16,880
+we'll then say while count is less than 5:
+
+173
+
+00:12:16,880  -->  00:12:24,770
+print (count) and then we're going to increment count by one.
+
+174
+
+00:12:24,770  -->  00:12:27,005
+In this correct example,
+
+175
+
+00:12:27,005  -->  00:12:33,170
+the while loop runs only as long as the condition of count being less than five is true.
+
+176
+
+00:12:33,170  -->  00:12:37,535
+This ensures that the loop stops as soon as the condition is no longer met,
+
+177
+
+00:12:37,535  -->  00:12:41,220
+making the code more efficient and easier to understand.
+
+178
+
+00:12:41,650  -->  00:12:45,960
+Let's run it and see exactly why this will work.
+
+179
+
+00:12:46,630  -->  00:12:48,725
+When we execute this,
+
+180
+
+00:12:48,725  -->  00:12:50,180
+we'll see 0, 1,
+
+181
+
+00:12:50,180  -->  00:12:51,815
+2, 3, 4,
+
+182
+
+00:12:51,815  -->  00:12:53,435
+exactly as we would expect.
+
+183
+
+00:12:53,435  -->  00:12:55,610
+The while loop gives us better control over
+
+184
+
+00:12:55,610  -->  00:12:59,000
+loops that are dependent on changing conditions.
+
+185
+
+00:12:59,000  -->  00:13:03,560
+As we wrap up our deep dive into this new range function.
+
+186
+
+00:13:03,560  -->  00:13:05,465
+let's look back on what we just learned.
+
+187
+
+00:13:05,465  -->  00:13:07,655
+We got to see that the range function is
+
+188
+
+00:13:07,655  -->  00:13:11,300
+a powerful tool for iterating over sequences of numbers,
+
+189
+
+00:13:11,300  -->  00:13:15,725
+whether you're counting iterations, generating indexes,
+
+190
+
+00:13:15,725  -->  00:13:20,675
+or creating custom sequences with specific start and stop points.
+
+191
+
+00:13:20,675  -->  00:13:25,715
+However, it's essential to consider efficiency when working with large ranges.
+
+192
+
+00:13:25,715  -->  00:13:28,685
+Generators might be a better choice in such cases.
+
+193
+
+00:13:28,685  -->  00:13:32,825
+Also, remember that range is limited to integers.
+
+194
+
+00:13:32,825  -->  00:13:36,800
+For non-integer sequences, a while loop will serve you better.
+
+195
+
+00:13:36,800  -->  00:13:40,340
+Finally, when dealing with condition-based loops,
+
+196
+
+00:13:40,340  -->  00:13:43,745
+while loops offer the flexibility you need.
+
+197
+
+00:13:43,745  -->  00:13:46,760
+Feel free to check out the resources below if you'd like to dive
+
+198
+
+00:13:46,760  -->  00:13:50,120
+deeper into these edge cases with the range function.
+
+199
+
+00:13:50,120  -->  00:13:53,090
+Understanding when and how to use range effectively,
+
+200
+
+00:13:53,090  -->  00:13:55,940
+will significantly enhance your coding efficiency
+
+201
+
+00:13:55,940  -->  00:13:59,240
+and adaptability in various programming scenarios.
+
+202
+
+00:13:59,240  -->  00:14:04,500
+Keep practicing, and you'll be a pro with using these functions in no time.

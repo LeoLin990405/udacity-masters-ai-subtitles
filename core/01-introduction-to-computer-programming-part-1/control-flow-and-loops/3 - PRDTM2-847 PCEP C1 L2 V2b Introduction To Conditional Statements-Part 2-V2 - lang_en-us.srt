@@ -1,0 +1,319 @@
+1
+
+00:00:00,000  -->  00:00:02,620
+For a breakdown on conditional statements,
+
+2
+
+00:00:02,620  -->  00:00:05,780
+let's first start with the 'if else' statement.
+
+3
+
+00:00:05,780  -->  00:00:10,290
+Here we're going to check if a student score is greater than or equal to 70.
+
+4
+
+00:00:10,290  -->  00:00:12,285
+You would do that like this.
+
+5
+
+00:00:12,285  -->  00:00:15,765
+We'll define a score as a variable,
+
+6
+
+00:00:15,765  -->  00:00:19,760
+and we'll say that it is 70 for example,
+
+7
+
+00:00:19,760  -->  00:00:25,980
+and we'll say if score is greater than or equal to 70.
+
+8
+
+00:00:25,980  -->  00:00:31,150
+I'll say print, you passed the exam.
+
+9
+
+00:00:32,420  -->  00:00:38,560
+Otherwise, with else, I will different print statement,
+
+10
+
+00:00:38,560  -->  00:00:45,580
+and this will say sorry, you did pass.
+
+11
+
+00:00:45,580  -->  00:00:47,630
+If this condition is true,
+
+12
+
+00:00:47,630  -->  00:00:50,470
+the program prints, you pass the exam.
+
+13
+
+00:00:50,470  -->  00:00:54,110
+Otherwise, it prints, sorry, you didn't pass.
+
+14
+
+00:00:54,110  -->  00:00:57,350
+This simple if else structure allows us to
+
+15
+
+00:00:57,350  -->  00:01:01,290
+handle two possible outcomes based on the condition.
+
+16
+
+00:01:01,290  -->  00:01:06,290
+If we run this, we'll see you passed the exam because it is 70,
+
+17
+
+00:01:06,290  -->  00:01:09,150
+and this indicates it needs to be 70 or higher.
+
+18
+
+00:01:09,150  -->  00:01:11,850
+If we were to put 60,
+
+19
+
+00:01:11,960  -->  00:01:17,825
+we get sorry, you didn't pass because that's the other part of the statement.
+
+20
+
+00:01:17,825  -->  00:01:21,030
+Next, we have the if LF statement,
+
+21
+
+00:01:21,030  -->  00:01:23,790
+which is used to check multiple conditions.
+
+22
+
+00:01:23,790  -->  00:01:30,350
+In this example, we'll check if a score is 90 or above and print the Grade A.
+
+23
+
+00:01:30,350  -->  00:01:32,090
+If the condition isn't met,
+
+24
+
+00:01:32,090  -->  00:01:34,090
+it moves to the next LF condition,
+
+25
+
+00:01:34,090  -->  00:01:38,670
+and we're going to check if there's a score of 80 or above.
+
+26
+
+00:01:38,670  -->  00:01:41,295
+If so, then we'll print the Grade B.
+
+27
+
+00:01:41,295  -->  00:01:44,055
+Let's see what that looks like here.
+
+28
+
+00:01:44,055  -->  00:01:46,910
+We'll copy our score value from before,
+
+29
+
+00:01:46,910  -->  00:01:51,620
+and then we'll say if score is greater than or equal to 90,
+
+30
+
+00:01:51,620  -->  00:01:58,795
+then we'll print Grade A. LF score,
+
+31
+
+00:01:58,795  -->  00:02:01,470
+greater than or equal to 80.
+
+32
+
+00:02:01,470  -->  00:02:05,410
+We'll print that. Then we'll do Score B.
+
+33
+
+00:02:05,410  -->  00:02:08,220
+Now, if we were to run this,
+
+34
+
+00:02:08,220  -->  00:02:11,550
+60 isn't a part of any of these bounds.
+
+35
+
+00:02:11,550  -->  00:02:14,010
+This is only checking if this is greater than or
+
+36
+
+00:02:14,010  -->  00:02:17,480
+equal to 80 or greater than or equal to 90.
+
+37
+
+00:02:17,480  -->  00:02:20,185
+Even if we do 70,
+
+38
+
+00:02:20,185  -->  00:02:23,770
+still won't pass up until we do 80,
+
+39
+
+00:02:23,770  -->  00:02:26,960
+and then we see Grade B,
+
+40
+
+00:02:26,960  -->  00:02:33,840
+85, 95 or higher, even 100.
+
+41
+
+00:02:34,300  -->  00:02:40,800
+We see that. The program stops checking conditions as soon as it finds one that's true,
+
+42
+
+00:02:40,800  -->  00:02:44,460
+making this structure efficient for scenarios with multiple conditions,
+
+43
+
+00:02:44,460  -->  00:02:47,975
+like here where we're checking the score to give a grade.
+
+44
+
+00:02:47,975  -->  00:02:51,900
+Finally, let's look at the if LF else structure,
+
+45
+
+00:02:51,900  -->  00:02:55,900
+which adds an else block to catch all remaining cases.
+
+46
+
+00:02:55,900  -->  00:02:59,730
+We'll take our code block here and we'll recopy that here,
+
+47
+
+00:02:59,730  -->  00:03:05,495
+and then we'll keep the if scores greater than 90 for grade A.
+
+48
+
+00:03:05,495  -->  00:03:10,665
+We do LF score greater than 80 for a Grade B.
+
+49
+
+00:03:10,665  -->  00:03:16,010
+Then what we'll do is we'll say else,
+
+50
+
+00:03:16,850  -->  00:03:20,480
+print Grade F. Here,
+
+51
+
+00:03:20,480  -->  00:03:24,125
+if the score is 90 or above the program, Grades A,
+
+52
+
+00:03:24,125  -->  00:03:26,725
+if the score is between 80 and 89,
+
+53
+
+00:03:26,725  -->  00:03:30,120
+you get a print out of Grade B.
+
+54
+
+00:03:30,120  -->  00:03:33,800
+But if neither of these two conditions are met,
+
+55
+
+00:03:33,800  -->  00:03:38,530
+the else block is executed printing a grade of F.
+
+56
+
+00:03:38,530  -->  00:03:44,160
+This if LF else structure ensures that every possible case is handled,
+
+57
+
+00:03:44,160  -->  00:03:48,880
+including cases where none of the specific conditions are met where
+
+58
+
+00:03:48,880  -->  00:03:54,795
+we return and otherwise do this with the else condition and you'll see that right here.
+
+59
+
+00:03:54,795  -->  00:03:58,060
+If we run score of 100,
+
+60
+
+00:03:58,360  -->  00:04:01,540
+that gives us a grade of A.
+
+61
+
+00:04:01,540  -->  00:04:08,300
+If we do 85, we get B.
+
+62
+
+00:04:08,300  -->  00:04:13,840
+But as soon as we get to 79, we get grade F,
+
+63
+
+00:04:13,840  -->  00:04:21,240
+and that's where if we do all the way down to 30,
+
+64
+
+00:04:21,240  -->  00:04:30,220
+we still get that Grade F. But once we get back to 90 or greater, we get Grade A.

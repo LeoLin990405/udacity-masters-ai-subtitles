@@ -1,0 +1,574 @@
+1
+
+00:00:00,000  -->  00:00:03,780
+As we delve deeper into Python's control flow mechanisms,
+
+2
+
+00:00:03,780  -->  00:00:06,400
+one powerful feature we can use is the ability to
+
+3
+
+00:00:06,400  -->  00:00:09,180
+evaluate multiple conditions simultaneously.
+
+4
+
+00:00:09,180  -->  00:00:11,840
+This allows us to combine several factors within
+
+5
+
+00:00:11,840  -->  00:00:15,840
+a single if statement using logical operators like and,
+
+6
+
+00:00:15,840  -->  00:00:19,855
+or, and not, which we learned about in the previous lesson.
+
+7
+
+00:00:19,855  -->  00:00:21,670
+Think about it like you're a detective,
+
+8
+
+00:00:21,670  -->  00:00:24,030
+and you want to check multiple things at once.
+
+9
+
+00:00:24,030  -->  00:00:26,650
+Instead of needing to ask, is this true?
+
+10
+
+00:00:26,650  -->  00:00:30,390
+Is this false? Isn't this true? Isn't this false?
+
+11
+
+00:00:30,390  -->  00:00:33,350
+You can ask multiple questions at once by asking,
+
+12
+
+00:00:33,350  -->  00:00:35,970
+is this true and is this true,
+
+13
+
+00:00:35,970  -->  00:00:39,310
+or is this true or is that false?
+
+14
+
+00:00:39,310  -->  00:00:42,750
+By combining conditions, we avoid redundancy and
+
+15
+
+00:00:42,750  -->  00:00:46,130
+we can handle more complex logic with ease.
+
+16
+
+00:00:46,130  -->  00:00:49,690
+Instead of writing repetitive code blocks for each condition,
+
+17
+
+00:00:49,690  -->  00:00:52,970
+we can create a streamlined decision making process
+
+18
+
+00:00:52,970  -->  00:00:56,385
+that checks all necessary criteria at once.
+
+19
+
+00:00:56,385  -->  00:01:01,950
+This is particularly useful in scenarios where the outcome depends on multiple variables,
+
+20
+
+00:01:01,950  -->  00:01:03,670
+such as determining permissions,
+
+21
+
+00:01:03,670  -->  00:01:07,685
+evaluating settings, or considering environmental factors like the weather.
+
+22
+
+00:01:07,685  -->  00:01:10,680
+I think visuals are helpful to illustrate the logic going
+
+23
+
+00:01:10,680  -->  00:01:13,890
+on behind the scenes of the control flow mechanism in Python.
+
+24
+
+00:01:13,890  -->  00:01:15,500
+Let's diagram it out.
+
+25
+
+00:01:15,500  -->  00:01:20,020
+This is a flow chart of how multiple condition statements can be used
+
+26
+
+00:01:20,020  -->  00:01:24,920
+to help us make a decision about what we should do today based on the weather.
+
+27
+
+00:01:24,920  -->  00:01:27,220
+The first step is to check the temperature.
+
+28
+
+00:01:27,220  -->  00:01:31,580
+If the temperature is above 77 degrees Fahrenheit on the left,
+
+29
+
+00:01:31,580  -->  00:01:34,340
+we proceed to check if it's sunny.
+
+30
+
+00:01:34,340  -->  00:01:37,480
+If it is, it's a great day to head to the beach.
+
+31
+
+00:01:37,480  -->  00:01:39,920
+If not, it might be better to stay inside.
+
+32
+
+00:01:39,920  -->  00:01:45,260
+If the temperature is between 50 degrees Fahrenheit and 77 degrees Fahrenheit,
+
+33
+
+00:01:45,260  -->  00:01:48,860
+on the right, we still check if it's sunny.
+
+34
+
+00:01:48,860  -->  00:01:51,400
+In this case, if it's sunny,
+
+35
+
+00:01:51,400  -->  00:01:53,535
+it's perfect weather for a walk.
+
+36
+
+00:01:53,535  -->  00:01:56,980
+Otherwise, staying inside remains the best option.
+
+37
+
+00:01:56,980  -->  00:02:04,110
+Remember, we only need to specify greater than 50 to check this bound between 50 and 77.
+
+38
+
+00:02:04,110  -->  00:02:06,480
+As soon as it becomes 77,
+
+39
+
+00:02:06,480  -->  00:02:11,380
+we're using the condition on the left until the temperature drops to 76,
+
+40
+
+00:02:11,380  -->  00:02:13,090
+we're checking the condition on the right.
+
+41
+
+00:02:13,090  -->  00:02:17,700
+Lastly, if the temperature is 50 degrees Fahrenheit or below,
+
+42
+
+00:02:17,700  -->  00:02:20,180
+in the middle, it's too cold to go outside,
+
+43
+
+00:02:20,180  -->  00:02:24,180
+so we'll stay indoors, and as soon as it gets to 50 or below,
+
+44
+
+00:02:24,180  -->  00:02:29,500
+we're checking the condition in the middle completely automatically with python.
+
+45
+
+00:02:29,500  -->  00:02:34,300
+This decision making flow allows us to evaluate multiple conditions in a structured way,
+
+46
+
+00:02:34,300  -->  00:02:37,915
+ensuring that all possible outcomes are considered.
+
+47
+
+00:02:37,915  -->  00:02:40,700
+Now, let's write some code for a weather example with
+
+48
+
+00:02:40,700  -->  00:02:44,000
+logical operators: and, or, not.
+
+49
+
+00:02:44,000  -->  00:02:45,820
+To tighten up our code.
+
+50
+
+00:02:45,820  -->  00:02:47,725
+There are a lot of if,
+
+51
+
+00:02:47,725  -->  00:02:49,760
+if, else, elif,
+
+52
+
+00:02:49,760  -->  00:02:56,480
+ifelse and we can tighten up our code and make it more human readable, and easier to use.
+
+53
+
+00:02:56,480  -->  00:03:00,180
+Let's refactor our code a bit to really show how
+
+54
+
+00:03:00,180  -->  00:03:05,000
+multiple conditions can apply to our conditional logic even more.
+
+55
+
+00:03:05,000  -->  00:03:09,165
+We'll begin by setting the temperature to 80 degrees.
+
+56
+
+00:03:09,165  -->  00:03:16,870
+We'll write temperature equals 80 and is sunny.
+
+57
+
+00:03:16,870  -->  00:03:20,060
+We'll set that equal to true,
+
+58
+
+00:03:20,060  -->  00:03:23,265
+just like we did in the previous example.
+
+59
+
+00:03:23,265  -->  00:03:26,480
+For the first condition, we'll check if the temperature is
+
+60
+
+00:03:26,480  -->  00:03:29,895
+greater than 77 degrees and if it's sunny.
+
+61
+
+00:03:29,895  -->  00:03:37,770
+We'll write if temperature is greater than 77 and is sunny.
+
+62
+
+00:03:37,770  -->  00:03:42,175
+Then we'll print, go to the Beach.
+
+63
+
+00:03:42,175  -->  00:03:45,680
+Both conditions must be true to print, go to the beach,
+
+64
+
+00:03:45,680  -->  00:03:50,090
+denoted with it and operator that we wrote right there.
+
+65
+
+00:03:50,090  -->  00:03:52,990
+For the second condition, we should check if the temperature is
+
+66
+
+00:03:52,990  -->  00:03:56,540
+greater than 50 degrees and it's not sunny.
+
+67
+
+00:03:56,540  -->  00:04:01,485
+Then we'd say print inside as a print statement.
+
+68
+
+00:04:01,485  -->  00:04:06,910
+We'll write elif temperature is
+
+69
+
+00:04:06,910  -->  00:04:13,015
+greater than 50 and not is sunny.
+
+70
+
+00:04:13,015  -->  00:04:17,975
+We'll then print, stay inside.
+
+71
+
+00:04:17,975  -->  00:04:21,840
+The and not operator flips the Boolean value,
+
+72
+
+00:04:21,840  -->  00:04:25,250
+so we enter this block only when it's
+
+73
+
+00:04:25,250  -->  00:04:30,310
+not sunny and when the temperature is greater than 50.
+
+74
+
+00:04:30,310  -->  00:04:33,750
+When is sunny is false.
+
+75
+
+00:04:33,750  -->  00:04:39,570
+In the third condition, we want to check if the temperature is greater than 50 degrees,
+
+76
+
+00:04:39,570  -->  00:04:41,930
+and it is sunny.
+
+77
+
+00:04:41,930  -->  00:04:44,890
+If so, then our code will print, go for a walk.
+
+78
+
+00:04:44,890  -->  00:04:48,510
+This is where we want to see the combination of temperature and weather working
+
+79
+
+00:04:48,510  -->  00:04:52,465
+together using logical operators to string these conditions together.
+
+80
+
+00:04:52,465  -->  00:05:00,830
+We'll write elif temperature is greater than 50 and is sunny.
+
+81
+
+00:05:00,830  -->  00:05:05,155
+Then we'll print, go for a walk.
+
+82
+
+00:05:05,155  -->  00:05:08,400
+Finally, if none of the above conditions are met,
+
+83
+
+00:05:08,400  -->  00:05:11,420
+we default to staying inside with our else block,
+
+84
+
+00:05:11,420  -->  00:05:12,860
+which is basically saying,
+
+85
+
+00:05:12,860  -->  00:05:14,660
+or this other condition.
+
+86
+
+00:05:14,660  -->  00:05:16,980
+The else block is checking for everything,
+
+87
+
+00:05:16,980  -->  00:05:19,330
+50 degrees or below.
+
+88
+
+00:05:19,330  -->  00:05:26,265
+We'll write else and then we'll say print, stay inside.
+
+89
+
+00:05:26,265  -->  00:05:28,510
+Now, let's run some tests.
+
+90
+
+00:05:28,510  -->  00:05:32,570
+When the temperature is 80 and it is sunny,
+
+91
+
+00:05:32,570  -->  00:05:35,020
+what do you think will be the output here?
+
+92
+
+00:05:35,020  -->  00:05:38,630
+When we run this, we see go to the beach because
+
+93
+
+00:05:38,630  -->  00:05:44,390
+the first statement is picking up both of these conditions evaluating to be true.
+
+94
+
+00:05:44,390  -->  00:05:47,530
+Now, when the temperature is 20 degrees,
+
+95
+
+00:05:47,530  -->  00:05:51,650
+and we run this, what do you think the output will be?
+
+96
+
+00:05:53,150  -->  00:05:58,750
+Now, we see stay inside because the else statement is
+
+97
+
+00:05:58,750  -->  00:06:04,330
+covering everything below 50 degrees and including 50 degrees,
+
+98
+
+00:06:04,330  -->  00:06:06,670
+regardless of the sunny part.
+
+99
+
+00:06:06,670  -->  00:06:10,690
+As soon as our temperature reaches 50 degrees,
+
+100
+
+00:06:10,690  -->  00:06:14,050
+what do you think the output will be then?
+
+101
+
+00:06:16,820  -->  00:06:22,570
+Here, we'll still see stay inside because the temperature isn't greater than 50.
+
+102
+
+00:06:22,570  -->  00:06:24,940
+It has to be greater than 50,
+
+103
+
+00:06:24,940  -->  00:06:27,275
+not greater than or equal to.
+
+104
+
+00:06:27,275  -->  00:06:30,880
+It gets picked up by the else clause again, right there.
+
+105
+
+00:06:30,880  -->  00:06:35,160
+Ultimately, when the temperature is 51 degrees,
+
+106
+
+00:06:35,160  -->  00:06:40,055
+this would now result in one of the elif statements being fired off.
+
+107
+
+00:06:40,055  -->  00:06:43,440
+If we write and execute this code,
+
+108
+
+00:06:43,440  -->  00:06:46,550
+we'll see go for a walk.
+
+109
+
+00:06:46,550  -->  00:06:49,695
+If we were to change this to be false,
+
+110
+
+00:06:49,695  -->  00:06:54,210
+and we execute this code we'll see stay
+
+111
+
+00:06:54,210  -->  00:06:59,215
+inside because now it's greater than 50 and is sunny is false.
+
+112
+
+00:06:59,215  -->  00:07:01,390
+By introducing logical operators,
+
+113
+
+00:07:01,390  -->  00:07:05,530
+we can fine tune our conditions to handle even more complex scenarios.
+
+114
+
+00:07:05,530  -->  00:07:09,870
+This approach allows us to layer multiple criteria creating
+
+115
+
+00:07:09,870  -->  00:07:15,010
+a more nuanced decision making process in our Python programs.

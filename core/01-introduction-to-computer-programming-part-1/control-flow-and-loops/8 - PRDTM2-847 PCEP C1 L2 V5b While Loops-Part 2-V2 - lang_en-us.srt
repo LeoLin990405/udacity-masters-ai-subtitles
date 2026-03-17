@@ -1,0 +1,729 @@
+1
+
+00:00:00,000  -->  00:00:01,860
+When working with while loops,
+
+2
+
+00:00:01,860  -->  00:00:05,720
+it's important to be aware of some common pitfalls and considerations.
+
+3
+
+00:00:05,720  -->  00:00:10,760
+Understanding these can help you avoid bugs and write more efficient code.
+
+4
+
+00:00:10,760  -->  00:00:13,160
+We'll explore three key areas,
+
+5
+
+00:00:13,160  -->  00:00:17,640
+infinite loops, when the loop condition never becomes false.
+
+6
+
+00:00:17,640  -->  00:00:21,280
+Off-by-one errors, when the loop runs one
+
+7
+
+00:00:21,280  -->  00:00:25,920
+time too many or too few and ensuring termination,
+
+8
+
+00:00:25,920  -->  00:00:31,620
+so that the loops always progress towards an end and stop when we expect them to.
+
+9
+
+00:00:31,620  -->  00:00:36,650
+One of the most common issues with while loops is the risk of creating an infinite loop.
+
+10
+
+00:00:36,650  -->  00:00:40,070
+This occurs when the loop's condition never becomes false,
+
+11
+
+00:00:40,070  -->  00:00:42,430
+causing the loop to run indefinitely.
+
+12
+
+00:00:42,430  -->  00:00:46,510
+Imagine setting your home heating system to a desired temperature.
+
+13
+
+00:00:46,510  -->  00:00:49,230
+If there's no mechanism to stop the system once
+
+14
+
+00:00:49,230  -->  00:00:52,030
+the temperature is reached that is desired,
+
+15
+
+00:00:52,030  -->  00:00:53,910
+it would keep heating indefinitely,
+
+16
+
+00:00:53,910  -->  00:00:55,750
+potentially causing a disaster.
+
+17
+
+00:00:55,750  -->  00:00:59,030
+In coding terms, we need to ensure that our while loops have
+
+18
+
+00:00:59,030  -->  00:01:03,070
+a condition that will eventually become false.
+
+19
+
+00:01:03,070  -->  00:01:05,685
+Let's write out a function to do just that.
+
+20
+
+00:01:05,685  -->  00:01:07,510
+In our Jupyter notebook,
+
+21
+
+00:01:07,510  -->  00:01:09,510
+we will create two variables,
+
+22
+
+00:01:09,510  -->  00:01:12,410
+one that will be called desired_temperature.
+
+23
+
+00:01:13,090  -->  00:01:16,370
+We'll set that equal to 68,
+
+24
+
+00:01:16,370  -->  00:01:20,430
+and then we'll have another variable called current_temperature,
+
+25
+
+00:01:21,610  -->  00:01:25,350
+and we'll set that equal to 66.
+
+26
+
+00:01:26,180  -->  00:01:35,280
+We'll then write our while loop and we'll write while current_temperature,
+
+27
+
+00:01:35,280  -->  00:01:41,340
+right here is less than the desired_temperature.
+
+28
+
+00:01:41,340  -->  00:01:45,285
+We'll then print in F string,
+
+29
+
+00:01:45,285  -->  00:01:49,455
+and we'll say heating.
+
+30
+
+00:01:49,455  -->  00:01:59,580
+Then current temperature and
+
+31
+
+00:01:59,580  -->  00:02:04,330
+then we'll put in the actual current_temperature in curly braces.
+
+32
+
+00:02:04,330  -->  00:02:07,925
+We'll close that up, and then we'll end the print string,
+
+33
+
+00:02:07,925  -->  00:02:10,290
+the print statement with that F string in there.
+
+34
+
+00:02:10,290  -->  00:02:14,620
+Then we'll increment the current_temperature right here,
+
+35
+
+00:02:14,810  -->  00:02:19,870
+and we'll say +=1,
+
+36
+
+00:02:19,870  -->  00:02:22,950
+which will simulate heating by increasing the temperature by
+
+37
+
+00:02:22,950  -->  00:02:27,365
+one degree since this is just for example purposes.
+
+38
+
+00:02:27,365  -->  00:02:36,015
+Then we'll print desired temperature reached.
+
+39
+
+00:02:36,015  -->  00:02:39,795
+Heating system turned off,
+
+40
+
+00:02:39,795  -->  00:02:44,880
+once the temperature is achieved that we wanted to.
+
+41
+
+00:02:44,880  -->  00:02:46,800
+In this example, here,
+
+42
+
+00:02:46,800  -->  00:02:49,720
+the heating system will listen for an input,
+
+43
+
+00:02:49,720  -->  00:02:52,340
+and say you set the temperature to 68,
+
+44
+
+00:02:52,340  -->  00:02:55,325
+and it is currently 66.
+
+45
+
+00:02:55,325  -->  00:02:58,880
+Right there. The heating system will then ask,
+
+46
+
+00:02:58,880  -->  00:03:02,635
+is the temperature less than or equal to 68?
+
+47
+
+00:03:02,635  -->  00:03:06,530
+Which is there, so then it'll go up to 67.
+
+48
+
+00:03:06,530  -->  00:03:08,690
+If it is less than the heating system,
+
+49
+
+00:03:08,690  -->  00:03:10,610
+it will remain on and working,
+
+50
+
+00:03:10,610  -->  00:03:12,770
+since it'll be a true situation.
+
+51
+
+00:03:12,770  -->  00:03:17,870
+Once a heating system detects the temperature is up until the temperature becomes 68,
+
+52
+
+00:03:17,870  -->  00:03:22,390
+to which we would want the heating system to turn off false.
+
+53
+
+00:03:22,390  -->  00:03:26,050
+In this case, Boolean values will help us to shape
+
+54
+
+00:03:26,050  -->  00:03:31,810
+the while clause so that it would stop after a certain temperature is desired.
+
+55
+
+00:03:31,810  -->  00:03:34,890
+But what if we didn't have a desired temperature?
+
+56
+
+00:03:34,890  -->  00:03:37,510
+This is where our infinite loop comes into play,
+
+57
+
+00:03:37,510  -->  00:03:40,185
+and we could see this in real time.
+
+58
+
+00:03:40,185  -->  00:03:48,110
+If we did not have a desired temperature here, copy this down.
+
+59
+
+00:03:48,950  -->  00:03:52,610
+If we were to remove that, and we just say,
+
+60
+
+00:03:52,610  -->  00:03:59,110
+while current_temperature, and then current temperature is printed out,
+
+61
+
+00:03:59,110  -->  00:04:02,010
+and then we increment the current temperature plus one and then we
+
+62
+
+00:04:02,010  -->  00:04:06,610
+print desired temperature reached heating system turned off,
+
+63
+
+00:04:06,610  -->  00:04:10,750
+what do you think is going to happen to this function now that we don't
+
+64
+
+00:04:10,750  -->  00:04:15,950
+have a limit on what the current temperature can go up to?
+
+65
+
+00:04:23,240  -->  00:04:26,110
+We'll receive this error,
+
+66
+
+00:04:26,110  -->  00:04:29,470
+and it'll say the data rate is exceeded,
+
+67
+
+00:04:29,470  -->  00:04:33,170
+and it'll still keep trying to execute,
+
+68
+
+00:04:33,170  -->  00:04:37,515
+even though it has basically crashed.
+
+69
+
+00:04:37,515  -->  00:04:39,655
+Without a ceiling number to count to,
+
+70
+
+00:04:39,655  -->  00:04:43,350
+Python does not know where we want to stop at hence creating
+
+71
+
+00:04:43,350  -->  00:04:45,450
+an infinite loop because the number
+
+72
+
+00:04:45,450  -->  00:04:48,630
+always exists and continues to climb higher and higher.
+
+73
+
+00:04:48,630  -->  00:04:52,710
+The outputs just keep going and going as you don't see here,
+
+74
+
+00:04:52,710  -->  00:04:54,270
+but it is just running indefinitely,
+
+75
+
+00:04:54,270  -->  00:04:58,370
+and the data rate limit has been exceeded.
+
+76
+
+00:05:00,310  -->  00:05:04,250
+Another common pitfall is the off-by-one error,
+
+77
+
+00:05:04,250  -->  00:05:08,630
+where the loop runs one time too many or too few.
+
+78
+
+00:05:08,630  -->  00:05:11,210
+This usually happens when the loop condition doesn't
+
+79
+
+00:05:11,210  -->  00:05:14,070
+exactly match the intended number of iterations.
+
+80
+
+00:05:14,070  -->  00:05:17,690
+It's important to carefully check your conditions to avoid
+
+81
+
+00:05:17,690  -->  00:05:21,710
+this issue and make sure that it doesn't happen when you write your python code.
+
+82
+
+00:05:21,710  -->  00:05:26,630
+Let's write a counter function to increment up to and including five.
+
+83
+
+00:05:26,630  -->  00:05:28,630
+We'll declare a variable called count,
+
+84
+
+00:05:28,630  -->  00:05:30,680
+and we'll set that equal to zero.
+
+85
+
+00:05:30,680  -->  00:05:32,790
+Then we'll write our while loop.
+
+86
+
+00:05:32,790  -->  00:05:42,015
+We'll say while count is less than or equal to five print count,
+
+87
+
+00:05:42,015  -->  00:05:44,885
+and then we'll do, count,
+
+88
+
+00:05:44,885  -->  00:05:48,240
+print count with the actual value of count,
+
+89
+
+00:05:48,240  -->  00:05:51,020
+and then we'll increment count by plus one,
+
+90
+
+00:05:51,020  -->  00:05:54,120
+which is plus equals one.
+
+91
+
+00:05:55,760  -->  00:06:03,310
+If we were to run this, what do you think will be the output when we execute this cell?
+
+92
+
+00:06:06,240  -->  00:06:13,760
+But hold on a second. Why is it saying that there are six numbers between 0 and 5?
+
+93
+
+00:06:13,760  -->  00:06:15,230
+If we count 1, 2,
+
+94
+
+00:06:15,230  -->  00:06:17,650
+3, 4, 5, 6.
+
+95
+
+00:06:17,650  -->  00:06:25,380
+In this example, this will run one extra iteration than intended by using this less
+
+96
+
+00:06:25,380  -->  00:06:33,200
+than or equals to sign instead of a less than sign counting up until five.
+
+97
+
+00:06:33,200  -->  00:06:35,850
+This is something that we have to look out for.
+
+98
+
+00:06:35,850  -->  00:06:39,420
+We will need to make sure that we know exactly what to expect,
+
+99
+
+00:06:39,420  -->  00:06:44,420
+which means adjusting our count variable from 0-1 so
+
+100
+
+00:06:44,420  -->  00:06:50,400
+that the count starts at one and goes up to and including five like this.
+
+101
+
+00:06:50,520  -->  00:06:54,640
+We switch count equals zero to count equals one,
+
+102
+
+00:06:54,640  -->  00:06:57,595
+and then when we execute this,
+
+103
+
+00:06:57,595  -->  00:07:00,460
+we now see 1, 2, 3,
+
+104
+
+00:07:00,460  -->  00:07:04,250
+4, 5 like so.
+
+105
+
+00:07:06,190  -->  00:07:12,320
+Finally, it's crucial to ensure that your while loop is progressing towards termination.
+
+106
+
+00:07:12,320  -->  00:07:15,030
+We're going to talk about how to ensure progression towards
+
+107
+
+00:07:15,030  -->  00:07:18,250
+termination when we write our while loops in Python.
+
+108
+
+00:07:18,250  -->  00:07:22,510
+This means that a variable involved in the loop's condition should
+
+109
+
+00:07:22,510  -->  00:07:26,490
+be modified within the loop's body so that the loop will eventually stop.
+
+110
+
+00:07:26,490  -->  00:07:28,970
+If you forget to modify this variable,
+
+111
+
+00:07:28,970  -->  00:07:31,550
+you risk creating an infinite loop.
+
+112
+
+00:07:31,550  -->  00:07:34,790
+Let's take our counter example from earlier and see what
+
+113
+
+00:07:34,790  -->  00:07:38,750
+happens when there is no final terminated state.
+
+114
+
+00:07:40,060  -->  00:07:43,640
+If we were to write count equals one,
+
+115
+
+00:07:43,640  -->  00:07:48,520
+we'll say while count is less than or equal to five,
+
+116
+
+00:07:48,520  -->  00:07:54,240
+and then we'll say print, count count,
+
+117
+
+00:07:54,240  -->  00:07:57,540
+and we'll say equal to one.
+
+118
+
+00:08:01,580  -->  00:08:06,960
+With this count plus equals one part,
+
+119
+
+00:08:06,960  -->  00:08:09,980
+if we forget to increment the count with this crucial part,
+
+120
+
+00:08:09,980  -->  00:08:12,660
+this causes an infinite loop.
+
+121
+
+00:08:12,660  -->  00:08:17,200
+If we were to just do this,
+
+122
+
+00:08:19,850  -->  00:08:23,610
+this will just keep running indefinitely,
+
+123
+
+00:08:24,460  -->  00:08:30,000
+and it keeps running and this will error out the Jupyter notebook.
+
+124
+
+00:08:30,760  -->  00:08:39,960
+We're going to need to stop this by stopping the terminal.
+
+125
+
+00:08:40,060  -->  00:08:47,210
+We can restart, and then we can restart it again.
+
+126
+
+00:08:56,480  -->  00:09:07,530
+Wait for that to boot up. Now we have our Jupyter notebook back here.
+
+127
+
+00:09:10,490  -->  00:09:14,500
+The reason why we need to add this plus
+
+128
+
+00:09:14,500  -->  00:09:18,120
+equals one is that so we can count upwards until five,
+
+129
+
+00:09:18,120  -->  00:09:22,435
+and then the loop stops exactly when we expect it to on the five.
+
+130
+
+00:09:22,435  -->  00:09:28,530
+That's why this is a crucial part to prevent the infinite loop from occurring.
+
+131
+
+00:09:29,260  -->  00:09:32,780
+That's why when we execute this,
+
+132
+
+00:09:32,780  -->  00:09:36,020
+now we're counting correctly up to five because the loop is
+
+133
+
+00:09:36,020  -->  00:09:38,720
+set to terminate at that specific ending point.
+
+134
+
+00:09:38,720  -->  00:09:42,000
+This helps us ensure progression towards
+
+135
+
+00:09:42,000  -->  00:09:47,185
+termination and reaching a final state so that it doesn't continue to run indefinitely.
+
+136
+
+00:09:47,185  -->  00:09:49,840
+While loops are a powerful tool for performing
+
+137
+
+00:09:49,840  -->  00:09:53,980
+repetitive tasks until a specified condition is no longer met.
+
+138
+
+00:09:53,980  -->  00:09:59,080
+They are particularly useful when the number of iterations isn't known beforehand.
+
+139
+
+00:09:59,080  -->  00:10:04,100
+By understanding how to use while loops effectively and avoiding common pitfalls,
+
+140
+
+00:10:04,100  -->  00:10:07,900
+you can handle a wide variety of programming scenarios.
+
+141
+
+00:10:07,900  -->  00:10:10,220
+Here's some key points to remember.
+
+142
+
+00:10:10,220  -->  00:10:14,530
+While loops execute as long as a specified condition is true.
+
+143
+
+00:10:14,530  -->  00:10:19,770
+They are useful for tasks where the number of iterations is not known in advance.
+
+144
+
+00:10:19,770  -->  00:10:23,750
+Be cautious of infinite loops and off by one errors,
+
+145
+
+00:10:23,750  -->  00:10:29,270
+and you can use else with while loops for additional functionality.
+
+146
+
+00:10:29,270  -->  00:10:35,110
+You've just added a very powerful tool to your Python toolbox of skills. Great job.

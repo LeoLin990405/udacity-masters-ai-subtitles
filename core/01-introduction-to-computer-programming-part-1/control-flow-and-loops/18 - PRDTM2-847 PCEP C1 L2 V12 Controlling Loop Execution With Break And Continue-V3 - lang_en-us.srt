@@ -1,0 +1,389 @@
+1
+
+00:00:00,000  -->  00:00:02,980
+In order to control our loops, start and stop,
+
+2
+
+00:00:02,980  -->  00:00:07,940
+we can implement break and continue clauses to curb how they operate.
+
+3
+
+00:00:07,940  -->  00:00:12,680
+This becomes incredibly important for preventing our functions from running forever,
+
+4
+
+00:00:12,680  -->  00:00:15,640
+eating up resources, budget, and our time.
+
+5
+
+00:00:15,640  -->  00:00:21,035
+Let's see these two clauses break and continue in action in the next sections.
+
+6
+
+00:00:21,035  -->  00:00:24,340
+Let's start by first taking a look at break.
+
+7
+
+00:00:24,340  -->  00:00:29,840
+If we want to end our looping logic early or under a certain condition,
+
+8
+
+00:00:29,840  -->  00:00:32,800
+we can use a brake statement to do this efficiently.
+
+9
+
+00:00:32,800  -->  00:00:36,520
+The break statement terminates our loop when a specified condition is met,
+
+10
+
+00:00:36,520  -->  00:00:39,325
+preventing the loop from continuing to execute.
+
+11
+
+00:00:39,325  -->  00:00:42,955
+Let's look at an example using the break statement.
+
+12
+
+00:00:42,955  -->  00:00:50,070
+We'll write a four loop and we'll say for in range, colon.
+
+13
+
+00:00:50,070  -->  00:00:52,735
+If I equals five,
+
+14
+
+00:00:52,735  -->  00:00:58,650
+we'll say break. Otherwise, we'll print.
+
+15
+
+00:00:59,850  -->  00:01:04,010
+So in this example, when I equals five,
+
+16
+
+00:01:04,010  -->  00:01:06,630
+the loop will break and stop execution.
+
+17
+
+00:01:06,630  -->  00:01:10,810
+Can you guess what the output will be when we run the cell?
+
+18
+
+00:01:13,360  -->  00:01:17,360
+The output will be zero, one, two, three,
+
+19
+
+00:01:17,360  -->  00:01:21,040
+and four and when I is five,
+
+20
+
+00:01:21,040  -->  00:01:23,820
+that means it will break and stop, like it just did.
+
+21
+
+00:01:23,820  -->  00:01:26,100
+If you guess this. Great work.
+
+22
+
+00:01:26,100  -->  00:01:31,620
+We want and need to close loops efficiently to prevent them from running indefinitely,
+
+23
+
+00:01:31,620  -->  00:01:33,640
+which could lead to endless loops.
+
+24
+
+00:01:33,640  -->  00:01:38,040
+Endless loops occur when the loops terminating condition is never met,
+
+25
+
+00:01:38,040  -->  00:01:42,830
+causing the program to run forever and potentially crash or become unresponsive.
+
+26
+
+00:01:42,830  -->  00:01:46,040
+Remember our example of the heating system for the house.
+
+27
+
+00:01:46,040  -->  00:01:50,940
+If there's no way for the house to know when to stop heating the house,
+
+28
+
+00:01:50,940  -->  00:01:52,640
+it will heat the house indefinitely,
+
+29
+
+00:01:52,640  -->  00:01:55,380
+melting everything and you inside of it.
+
+30
+
+00:01:55,380  -->  00:01:58,460
+Again, not ideal. Thanks to brakes,
+
+31
+
+00:01:58,460  -->  00:02:02,735
+we can tell a function to stop executing when a certain condition is met.
+
+32
+
+00:02:02,735  -->  00:02:09,740
+Let's look at an example of an endless loop using Python and how we can close our loops.
+
+33
+
+00:02:09,740  -->  00:02:12,100
+An endless loop will look something like this,
+
+34
+
+00:02:12,100  -->  00:02:16,780
+where the count will start at zero and just count upwards indefinitely.
+
+35
+
+00:02:16,780  -->  00:02:19,135
+So let's use an example of this.
+
+36
+
+00:02:19,135  -->  00:02:27,395
+We'll say count equals zero and then we'll say le, true, print.
+
+37
+
+00:02:27,395  -->  00:02:33,260
+This loop will run forever and ever and ever.
+
+38
+
+00:02:33,580  -->  00:02:37,780
+Then we'll say count plus equals one.
+
+39
+
+00:02:41,890  -->  00:02:44,450
+So, you don't need to run this.
+
+40
+
+00:02:44,450  -->  00:02:47,090
+This will actually crash your Jupiter notebook.
+
+41
+
+00:02:47,090  -->  00:02:49,850
+So what we won't want to do is run something like this,
+
+42
+
+00:02:49,850  -->  00:02:53,040
+but I'll run it just for example purposes.
+
+43
+
+00:02:53,610  -->  00:02:56,800
+And what this will end up happening is that it will just
+
+44
+
+00:02:56,800  -->  00:02:59,960
+start executing all of these outputs,
+
+45
+
+00:02:59,960  -->  00:03:01,660
+and it'll keep running indefinitely,
+
+46
+
+00:03:01,660  -->  00:03:03,900
+and then your data rate will be exceeded,
+
+47
+
+00:03:03,900  -->  00:03:07,720
+and then the Jupiter notebook will basically temporarily stop,
+
+48
+
+00:03:07,720  -->  00:03:10,700
+and what we'll need to do is we'll need to stop this.
+
+49
+
+00:03:10,700  -->  00:03:15,580
+But we'll see here that this ran an infinite number of times
+
+50
+
+00:03:15,580  -->  00:03:20,900
+and we'll just fill up your entire Jupiter notebook with all of these iterations.
+
+51
+
+00:03:21,340  -->  00:03:25,980
+We'll do is that we will clear outputs of all cells.
+
+52
+
+00:03:28,230  -->  00:03:32,430
+And to fix this, by adding a break statement,
+
+53
+
+00:03:32,430  -->  00:03:34,930
+the break clause will ensure that the loop will
+
+54
+
+00:03:34,930  -->  00:03:37,710
+terminate after 10 iterations like we'll define.
+
+55
+
+00:03:37,710  -->  00:03:39,210
+Without a break statement,
+
+56
+
+00:03:39,210  -->  00:03:41,730
+the loop will run endlessly, like we just saw,
+
+57
+
+00:03:41,730  -->  00:03:46,510
+because the condition while true will always be true.
+
+58
+
+00:03:46,510  -->  00:03:51,290
+So to fix this endless loop or infinite loop issue,
+
+59
+
+00:03:51,290  -->  00:03:54,050
+what we'll do is that we'll say while true will print,
+
+60
+
+00:03:54,050  -->  00:03:56,090
+this loop will run forever.
+
+61
+
+00:03:56,090  -->  00:03:59,790
+But it won't run forever because we're going to stop it.
+
+62
+
+00:03:59,790  -->  00:04:04,050
+Then what we're going to do is that we're going to say count plus equals one,
+
+63
+
+00:04:04,050  -->  00:04:10,870
+and then we're going to say if count is greater than ten, break.
+
+64
+
+00:04:12,430  -->  00:04:17,040
+Can you guess what will happen now when we execute this code?
+
+65
+
+00:04:19,970  -->  00:04:23,590
+This would actually run indefinitely,
+
+66
+
+00:04:23,590  -->  00:04:28,950
+but because we say count greater than ten, if this is true,
+
+67
+
+00:04:28,950  -->  00:04:32,790
+then we break and we stop this while loop from running,
+
+68
+
+00:04:32,790  -->  00:04:34,390
+which is why we get one, two,
+
+69
+
+00:04:34,390  -->  00:04:36,870
+three, four, five, six, seven,
+
+70
+
+00:04:36,870  -->  00:04:40,395
+eight, nine, 10, 11 breaks.
+
+71
+
+00:04:40,395  -->  00:04:43,350
+And then once this finishes,
+
+72
+
+00:04:43,350  -->  00:04:44,910
+because count is zero,
+
+73
+
+00:04:44,910  -->  00:04:47,930
+it's actually zero, one, two,
+
+74
+
+00:04:47,930  -->  00:04:49,890
+three, four, five, six,
+
+75
+
+00:04:49,890  -->  00:04:52,250
+seven, eight, nine, 10.
+
+76
+
+00:04:52,250  -->  00:04:55,310
+So again, we start at index zero,
+
+77
+
+00:04:55,310  -->  00:04:58,130
+and then we count upwards to 10.
+
+78
+
+00:04:58,130  -->  00:05:02,820
+But as soon as 10 is reached, then it stops.

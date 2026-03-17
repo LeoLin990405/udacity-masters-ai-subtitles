@@ -1,0 +1,399 @@
+1
+
+00:00:00,000  -->  00:00:03,600
+For loops are a versatile and powerful tool in Python,
+
+2
+
+00:00:03,600  -->  00:00:05,480
+especially when you know the number of
+
+3
+
+00:00:05,480  -->  00:00:08,920
+iterations or times you need to run your code in advance.
+
+4
+
+00:00:08,920  -->  00:00:12,740
+A for loop is used for iterating over a sequence of items,
+
+5
+
+00:00:12,740  -->  00:00:14,840
+as in a list of things.
+
+6
+
+00:00:14,840  -->  00:00:17,460
+Such groups of things can be called the list,
+
+7
+
+00:00:17,460  -->  00:00:20,800
+tuple, dictionary, set, or string.
+
+8
+
+00:00:20,800  -->  00:00:23,200
+Don't worry if you don't recognize these words.
+
+9
+
+00:00:23,200  -->  00:00:26,060
+They are going to be explained later in the course.
+
+10
+
+00:00:26,060  -->  00:00:31,760
+All you have to know is that loops allow you to execute a block of code for each item in
+
+11
+
+00:00:31,760  -->  00:00:35,040
+the sequence and are particularly useful when
+
+12
+
+00:00:35,040  -->  00:00:38,895
+you need to perform repetitive tasks on a collection of items.
+
+13
+
+00:00:38,895  -->  00:00:41,180
+To see for loops in action,
+
+14
+
+00:00:41,180  -->  00:00:44,600
+let's start with a basic example of a for loop.
+
+15
+
+00:00:44,600  -->  00:00:48,980
+When we have a list of items such as items in a shopping cart,
+
+16
+
+00:00:48,980  -->  00:00:55,260
+we might want to run a specific function where there are items in that list.
+
+17
+
+00:00:55,260  -->  00:01:01,000
+Let's see an example. First, we'll create a variable called cart,
+
+18
+
+00:01:01,000  -->  00:01:06,880
+and we'll set that equal to a list or array of items.
+
+19
+
+00:01:07,420  -->  00:01:09,920
+Which I will put in here.
+
+20
+
+00:01:09,920  -->  00:01:12,240
+These will be a list of fruits.
+
+21
+
+00:01:12,240  -->  00:01:17,425
+Then for each item in cart,
+
+22
+
+00:01:17,425  -->  00:01:19,510
+so we'll say for item in cart,
+
+23
+
+00:01:19,510  -->  00:01:25,045
+we're going to print each item, like so.
+
+24
+
+00:01:25,045  -->  00:01:29,300
+In this example, the for loop iterates over each item in the cart,
+
+25
+
+00:01:29,300  -->  00:01:34,420
+which is a list right here and prints each item.
+
+26
+
+00:01:34,420  -->  00:01:38,040
+The word item is our loop variable,
+
+27
+
+00:01:38,040  -->  00:01:43,520
+a temporary variable placeholder that takes the value of each element in the sequence,
+
+28
+
+00:01:43,520  -->  00:01:47,250
+which for us in this example is cart.
+
+29
+
+00:01:47,250  -->  00:01:49,140
+In this code snippet,
+
+30
+
+00:01:49,140  -->  00:01:51,940
+the first item will be apple,
+
+31
+
+00:01:51,940  -->  00:01:53,740
+which is at index 0.
+
+32
+
+00:01:53,740  -->  00:01:57,335
+Then the second item will be banana, index 1.
+
+33
+
+00:01:57,335  -->  00:02:00,000
+Then the third will be cherry,
+
+34
+
+00:02:00,000  -->  00:02:01,860
+index 2, and finally,
+
+35
+
+00:02:01,860  -->  00:02:09,320
+the last item in the list is grapefruit at index 3 of this array.
+
+36
+
+00:02:09,320  -->  00:02:13,340
+Here's a breakdown of how this for loop works.
+
+37
+
+00:02:13,340  -->  00:02:20,740
+The loop variable item takes on the value of each element in the list cart one by one.
+
+38
+
+00:02:20,740  -->  00:02:23,680
+For each value of item,
+
+39
+
+00:02:23,680  -->  00:02:26,260
+the code block inside the loop executes,
+
+40
+
+00:02:26,260  -->  00:02:28,915
+which we have as printing the item.
+
+41
+
+00:02:28,915  -->  00:02:35,660
+The structure is for item in list,
+
+42
+
+00:02:35,660  -->  00:02:38,960
+and the item part can be anything we want.
+
+43
+
+00:02:38,960  -->  00:02:44,120
+We just need to make sure that it follows the format of for something in a group,
+
+44
+
+00:02:44,120  -->  00:02:50,380
+and that group needs to correspond to a list array of items to iterate over.
+
+45
+
+00:02:50,380  -->  00:02:54,640
+For this example, our list is cart.
+
+46
+
+00:02:55,280  -->  00:03:00,210
+Can you guess what the output is going to be when we execute the cell?
+
+47
+
+00:03:00,210  -->  00:03:06,730
+Let's find out. The output of this loop will be apple,
+
+48
+
+00:03:06,730  -->  00:03:09,170
+banana, cherry, and grape fruit.
+
+49
+
+00:03:09,170  -->  00:03:11,350
+If you said this, you're right.
+
+50
+
+00:03:11,350  -->  00:03:14,490
+So long as there is an item in the cart,
+
+51
+
+00:03:14,490  -->  00:03:17,230
+the for loop will print the item in the cart.
+
+52
+
+00:03:17,230  -->  00:03:19,190
+Once there are no more items,
+
+53
+
+00:03:19,190  -->  00:03:20,930
+there will be nothing left to print,
+
+54
+
+00:03:20,930  -->  00:03:24,995
+and then the for loop would know to stop.
+
+55
+
+00:03:24,995  -->  00:03:28,200
+One of the superpowers of the for loop is that it
+
+56
+
+00:03:28,200  -->  00:03:31,780
+automatically adjusts to the number of items in the list.
+
+57
+
+00:03:31,780  -->  00:03:36,440
+If the list changes should items be added or removed from the group,
+
+58
+
+00:03:36,440  -->  00:03:41,340
+the loop will still work correctly without any changes needed for our Python code.
+
+59
+
+00:03:41,340  -->  00:03:45,000
+This makes our for loops incredibly powerful and
+
+60
+
+00:03:45,000  -->  00:03:49,485
+flexible for handling collections of items when those items are changing.
+
+61
+
+00:03:49,485  -->  00:03:53,620
+Let's explore three common scenarios where for loops shine,
+
+62
+
+00:03:53,620  -->  00:03:55,480
+such as with numbers.
+
+63
+
+00:03:55,480  -->  00:04:00,280
+We often use for loops to iterate over a sequence of numbers.
+
+64
+
+00:04:00,280  -->  00:04:05,680
+This is especially useful when you want to perform an action a specific number of times.
+
+65
+
+00:04:05,680  -->  00:04:08,540
+In this case, using the range function helps
+
+66
+
+00:04:08,540  -->  00:04:12,460
+generate the sequence of numbers for the loop to iterate over.
+
+67
+
+00:04:12,460  -->  00:04:13,980
+Next is with strings.
+
+68
+
+00:04:13,980  -->  00:04:17,720
+For loops can also iterate over each character in a string.
+
+69
+
+00:04:17,720  -->  00:04:21,140
+This allows you to break down a word or sentence into
+
+70
+
+00:04:21,140  -->  00:04:25,105
+its individual characters and perform actions on them one by one.
+
+71
+
+00:04:25,105  -->  00:04:28,905
+Lastly, let's talk about using loops with collections.
+
+72
+
+00:04:28,905  -->  00:04:31,660
+For loops can iterate over various collections,
+
+73
+
+00:04:31,660  -->  00:04:34,080
+such as lists, tuples, and sets.
+
+74
+
+00:04:34,080  -->  00:04:37,900
+This is incredibly useful for processing each item in a collection,
+
+75
+
+00:04:37,900  -->  00:04:40,755
+like printing each fruit in a shopping cart list.
+
+76
+
+00:04:40,755  -->  00:04:43,960
+One important point to note here is,
+
+77
+
+00:04:43,960  -->  00:04:48,980
+remember to use for loops when you know the number of items or iterations ahead of time.
+
+78
+
+00:04:48,980  -->  00:04:50,820
+They are your go to tool for
+
+79
+
+00:04:50,820  -->  00:04:54,760
+repetitive tasks when the sequence or collection is well defined,
+
+80
+
+00:04:54,760  -->  00:04:59,040
+like items in a shopping cart or a specific set of numbers.

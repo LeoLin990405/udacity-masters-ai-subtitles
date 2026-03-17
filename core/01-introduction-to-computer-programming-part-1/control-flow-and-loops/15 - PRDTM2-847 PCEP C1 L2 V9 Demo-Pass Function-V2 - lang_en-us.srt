@@ -1,0 +1,154 @@
+1
+
+00:00:00,000  -->  00:00:02,480
+Let's take a look at how the pass instruction can
+
+2
+
+00:00:02,480  -->  00:00:05,840
+be used in a function alongside other logic.
+
+3
+
+00:00:05,840  -->  00:00:08,740
+In our process numbers function,
+
+4
+
+00:00:08,740  -->  00:00:14,975
+we'll be writing a for loop that iterates over a range of numbers from 0-4.
+
+5
+
+00:00:14,975  -->  00:00:17,140
+We'll first define our function.
+
+6
+
+00:00:17,140  -->  00:00:19,900
+We'll write def process_numbers.
+
+7
+
+00:00:22,040  -->  00:00:30,405
+Then what we'll do, is we'll put a colon and then we'll say for i in range(5): if
+
+8
+
+00:00:30,405  -->  00:00:38,500
+i = 3: we'll say pass else colon,
+
+9
+
+00:00:38,500  -->  00:00:40,860
+we'll say print, and we'll write an F string,
+
+10
+
+00:00:40,860  -->  00:00:44,060
+and we'll say processing number.
+
+11
+
+00:00:44,960  -->  00:00:49,245
+We'll do curly brackets,
+
+12
+
+00:00:49,245  -->  00:00:53,005
+end quotes and then end parentheses.
+
+13
+
+00:00:53,005  -->  00:00:59,380
+Then at the end, we'll run our function with process numbers.
+
+14
+
+00:01:01,040  -->  00:01:06,780
+As this loop runs, it will check if the value of i=3.
+
+15
+
+00:01:06,780  -->  00:01:10,320
+If it does, instead of performing any action,
+
+16
+
+00:01:10,320  -->  00:01:13,440
+we use the pass statement.
+
+17
+
+00:01:13,440  -->  00:01:17,060
+This is a placeholder where we can insert additional logic later,
+
+18
+
+00:01:17,060  -->  00:01:22,095
+but here it will do nothing when this condition is true.
+
+19
+
+00:01:22,095  -->  00:01:25,880
+For all other values of i before and after three,
+
+20
+
+00:01:25,880  -->  00:01:28,360
+the function will print out a message
+
+21
+
+00:01:28,360  -->  00:01:32,820
+indicating the number has been processed right here.
+
+22
+
+00:01:32,820  -->  00:01:38,040
+What do you think will happen here when we execute this cell?
+
+23
+
+00:01:41,390  -->  00:01:44,145
+We'll see processing number 0,
+
+24
+
+00:01:44,145  -->  00:01:47,440
+1, 2, and 4.
+
+25
+
+00:01:47,840  -->  00:01:50,860
+By running the function, we can see how the loop
+
+26
+
+00:01:50,860  -->  00:01:53,800
+behaves with and without the past instruction.
+
+27
+
+00:01:53,800  -->  00:01:57,840
+This approach is particularly useful when you're developing code incrementally,
+
+28
+
+00:01:57,840  -->  00:01:59,780
+allowing you to structure your functions and
+
+29
+
+00:01:59,780  -->  00:02:02,680
+loops while leaving space for future enhancements.
+
+30
+
+00:02:02,680  -->  00:02:05,920
+As we see here, where it will skip over number
+
+31
+
+00:02:05,920  -->  00:02:11,590
+three and proceed to the last number four given a range of five.

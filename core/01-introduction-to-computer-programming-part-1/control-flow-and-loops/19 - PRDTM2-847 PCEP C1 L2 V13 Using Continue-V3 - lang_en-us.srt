@@ -1,0 +1,289 @@
+1
+
+00:00:00,000  -->  00:00:04,160
+If we want to skip a current iteration and go to the next case,
+
+2
+
+00:00:04,160  -->  00:00:06,120
+we can use the continuous statement.
+
+3
+
+00:00:06,120  -->  00:00:09,140
+The continuous statement skips the rest of the code inside
+
+4
+
+00:00:09,140  -->  00:00:13,050
+the loop for the current iteration and moves to the next iteration.
+
+5
+
+00:00:13,050  -->  00:00:17,560
+Let's look at an example of the continuous statement in Python.
+
+6
+
+00:00:17,560  -->  00:00:19,920
+We'll first start with writing a four loop,
+
+7
+
+00:00:19,920  -->  00:00:24,350
+and we'll say four in range ten.
+
+8
+
+00:00:24,350  -->  00:00:29,040
+Then we'll say I, I will use the percent sine,
+
+9
+
+00:00:29,040  -->  00:00:34,230
+and then we'll say the number two equals equals zero.
+
+10
+
+00:00:34,230  -->  00:00:36,555
+Colon continue.
+
+11
+
+00:00:36,555  -->  00:00:44,820
+Then we'll add a print statement below that if and that same indentation.
+
+12
+
+00:00:44,820  -->  00:00:49,520
+In this example, we implement skipping logic for the loop,
+
+13
+
+00:00:49,520  -->  00:00:52,500
+skipping even numbers with this.
+
+14
+
+00:00:52,500  -->  00:00:56,060
+If you remember our use of the percent sign from earlier,
+
+15
+
+00:00:56,060  -->  00:00:59,700
+this is using the Modulo operator,
+
+16
+
+00:00:59,700  -->  00:01:04,685
+which returns the remainder of the division operation.
+
+17
+
+00:01:04,685  -->  00:01:09,360
+I medulo operator two equals equals zero,
+
+18
+
+00:01:09,360  -->  00:01:12,380
+checks if the number is divisible by two,
+
+19
+
+00:01:12,380  -->  00:01:14,920
+meaning, is it an even number?
+
+20
+
+00:01:14,920  -->  00:01:22,850
+Yes or no. What do you expect the output to be when this cell runs? Let's check it out.
+
+21
+
+00:01:23,620  -->  00:01:26,580
+The output will be one, three,
+
+22
+
+00:01:26,580  -->  00:01:28,840
+five, seven, and nine.
+
+23
+
+00:01:28,840  -->  00:01:31,260
+Let's review what's happening here.
+
+24
+
+00:01:31,260  -->  00:01:36,640
+First, we set up the four loop to iterate over the range of zero to nine,
+
+25
+
+00:01:36,640  -->  00:01:38,900
+defined by range ten.
+
+26
+
+00:01:38,900  -->  00:01:42,920
+Next, we use the medulo sign,
+
+27
+
+00:01:42,920  -->  00:01:46,120
+the percent sign, which is the medulo operator,
+
+28
+
+00:01:46,120  -->  00:01:49,200
+and this returns the remainder of the division.
+
+29
+
+00:01:49,200  -->  00:01:56,020
+The expression percent sine two equals equals zero,
+
+30
+
+00:01:56,020  -->  00:01:58,760
+then we'll check if the number is divisible by two.
+
+31
+
+00:01:58,760  -->  00:02:02,020
+If the remainder is zero, the number is even.
+
+32
+
+00:02:02,020  -->  00:02:03,880
+With our continued statement,
+
+33
+
+00:02:03,880  -->  00:02:05,280
+if i is even,
+
+34
+
+00:02:05,280  -->  00:02:08,220
+the continuous statement is executed.
+
+35
+
+00:02:08,220  -->  00:02:12,480
+The continued statement skips the rest of the code inside of
+
+36
+
+00:02:12,480  -->  00:02:17,520
+the loop for the current iteration and moves to the next iteration.
+
+37
+
+00:02:17,520  -->  00:02:20,840
+Ultimately, if it's odd,
+
+38
+
+00:02:20,840  -->  00:02:23,600
+the print statement is executed,
+
+39
+
+00:02:23,600  -->  00:02:25,715
+printing the value of i.
+
+40
+
+00:02:25,715  -->  00:02:32,470
+When I is these even numbers 0246 or eight.
+
+41
+
+00:02:32,470  -->  00:02:34,810
+The continuous statement is executed,
+
+42
+
+00:02:34,810  -->  00:02:37,210
+and the print I statement is skipped,
+
+43
+
+00:02:37,210  -->  00:02:39,610
+so that number is not printed in the console.
+
+44
+
+00:02:39,610  -->  00:02:43,920
+And when I is these numbers, 1, 3, 5,
+
+45
+
+00:02:43,920  -->  00:02:47,570
+7 or 9, the print I statement is executed,
+
+46
+
+00:02:47,570  -->  00:02:50,520
+and the value of I is printed and we'll see the number.
+
+47
+
+00:02:50,520  -->  00:02:55,400
+This example should illustrate how to implement skipping logic in the loop,
+
+48
+
+00:02:55,400  -->  00:02:59,020
+using the continuous statement to skip even numbers.
+
+49
+
+00:02:59,020  -->  00:03:03,580
+The output is all the odd numbers 0-9,
+
+50
+
+00:03:03,580  -->  00:03:06,620
+demonstrating how the continuous statement can be used
+
+51
+
+00:03:06,620  -->  00:03:10,060
+to skip certain iterations based on a condition.
+
+52
+
+00:03:10,060  -->  00:03:13,380
+Are you surprised that we were able to add two words,
+
+53
+
+00:03:13,380  -->  00:03:15,940
+which we call strings together like this?
+
+54
+
+00:03:15,940  -->  00:03:21,380
+Remember, the add numbers together is just the name we put for this function,
+
+55
+
+00:03:21,380  -->  00:03:24,760
+but it doesn't lock it into a specific action.
+
+56
+
+00:03:24,760  -->  00:03:28,280
+This function takes in two arguments, inputs,
+
+57
+
+00:03:28,280  -->  00:03:32,180
+and then returns the first argument plus the second argument.
+
+58
+
+00:03:32,180  -->  00:03:37,380
+They do not need to be numbers necessarily as we saw. Pretty neat.

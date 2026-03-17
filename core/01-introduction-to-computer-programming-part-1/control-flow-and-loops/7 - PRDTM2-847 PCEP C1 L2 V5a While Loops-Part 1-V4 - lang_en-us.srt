@@ -1,0 +1,734 @@
+1
+
+00:00:00,000  -->  00:00:04,780
+A while loop repeats a block of code as long as a specified condition is true.
+
+2
+
+00:00:04,780  -->  00:00:07,620
+If you remember from our section on data types,
+
+3
+
+00:00:07,620  -->  00:00:09,720
+true comes from the Boolean data type,
+
+4
+
+00:00:09,720  -->  00:00:11,800
+which is the opposite of false.
+
+5
+
+00:00:11,800  -->  00:00:15,700
+As such, so long as a condition is true, for example,
+
+6
+
+00:00:15,700  -->  00:00:19,500
+so long as a number is below or equal to 100,
+
+7
+
+00:00:19,500  -->  00:00:21,000
+counting up to 100,
+
+8
+
+00:00:21,000  -->  00:00:22,620
+then the value is true.
+
+9
+
+00:00:22,620  -->  00:00:25,740
+Once the number is one value over 100,
+
+10
+
+00:00:25,740  -->  00:00:27,575
+then the condition is false.
+
+11
+
+00:00:27,575  -->  00:00:31,950
+Let's see while loops in action with an example.
+
+12
+
+00:00:31,950  -->  00:00:34,545
+We're going to create a counter function,
+
+13
+
+00:00:34,545  -->  00:00:38,260
+so we're going to declare a variable called count,
+
+14
+
+00:00:38,260  -->  00:00:41,420
+and we're going to initially set that equal to zero.
+
+15
+
+00:00:41,420  -->  00:00:45,630
+Then we're going to write our while loop.
+
+16
+
+00:00:46,130  -->  00:00:49,710
+To write our while loop, we'll write while,
+
+17
+
+00:00:49,710  -->  00:00:53,295
+and then we'll use the count variable, and then we'll say,
+
+18
+
+00:00:53,295  -->  00:00:58,005
+while that is less than five, we'll print,
+
+19
+
+00:00:58,005  -->  00:01:02,740
+count colon, and then comma,
+
+20
+
+00:01:02,740  -->  00:01:05,860
+write what our count variable is.
+
+21
+
+00:01:05,860  -->  00:01:11,160
+Then we'll increment count by plus one.
+
+22
+
+00:01:12,770  -->  00:01:16,650
+This above is an example of a counter function,
+
+23
+
+00:01:16,650  -->  00:01:19,730
+and the way it works is that you have a number value,
+
+24
+
+00:01:19,730  -->  00:01:21,330
+in this case, count,
+
+25
+
+00:01:21,330  -->  00:01:23,370
+and that is initially set to zero.
+
+26
+
+00:01:23,370  -->  00:01:27,990
+You then write a while loop here,
+
+27
+
+00:01:27,990  -->  00:01:32,720
+where the count is less than but not equal to five.
+
+28
+
+00:01:32,720  -->  00:01:37,730
+Then we will print the value of count with the print statement.
+
+29
+
+00:01:37,730  -->  00:01:46,600
+The fancy plus equal one code just means add plus one to the value of the count,
+
+30
+
+00:01:46,600  -->  00:01:52,280
+which is how it would go from zero to a value that could be up until five,
+
+31
+
+00:01:52,280  -->  00:01:53,620
+but not including five.
+
+32
+
+00:01:53,620  -->  00:01:56,100
+Once the value of count reaches five,
+
+33
+
+00:01:56,100  -->  00:01:58,660
+then the function will no longer return true,
+
+34
+
+00:01:58,660  -->  00:02:02,445
+and then the while loop would stop. Let's review.
+
+35
+
+00:02:02,445  -->  00:02:04,080
+In this while loop example,
+
+36
+
+00:02:04,080  -->  00:02:07,200
+the while loop states a condition that is true.
+
+37
+
+00:02:07,200  -->  00:02:12,890
+The code will loop continue to execute while the value of the condition is true,
+
+38
+
+00:02:12,890  -->  00:02:16,130
+in this case, the count being less than five.
+
+39
+
+00:02:16,130  -->  00:02:17,910
+Each time the loop runs,
+
+40
+
+00:02:17,910  -->  00:02:24,120
+count is incremented by plus one up until but not including five,
+
+41
+
+00:02:24,120  -->  00:02:28,050
+and then the condition becomes false once it hits five,
+
+42
+
+00:02:28,050  -->  00:02:29,710
+and then the while loop stops.
+
+43
+
+00:02:29,710  -->  00:02:33,470
+Let's see what this looks like as we execute it.
+
+44
+
+00:02:33,920  -->  00:02:36,390
+We'll see 0,
+
+45
+
+00:02:36,390  -->  00:02:37,815
+1, 2,
+
+46
+
+00:02:37,815  -->  00:02:39,295
+3, 4,
+
+47
+
+00:02:39,295  -->  00:02:42,150
+and once count reaches five,
+
+48
+
+00:02:42,150  -->  00:02:44,790
+then it stops, so that's why we don't see count five,
+
+49
+
+00:02:44,790  -->  00:02:47,080
+it counts up to four.
+
+50
+
+00:02:47,630  -->  00:02:52,095
+Pretty cool. Where do we use while loops?
+
+51
+
+00:02:52,095  -->  00:02:54,960
+While loops are perfect for situations where
+
+52
+
+00:02:54,960  -->  00:02:58,660
+we don't know how many iterations we need beforehand.
+
+53
+
+00:02:58,660  -->  00:03:01,860
+This makes them incredibly useful for tasks,
+
+54
+
+00:03:01,860  -->  00:03:04,360
+like continuously waiting for user inputs
+
+55
+
+00:03:04,360  -->  00:03:07,440
+or processing data until a specific condition is met.
+
+56
+
+00:03:07,440  -->  00:03:12,000
+Let's explore two practical examples that highlight the power of while loops.
+
+57
+
+00:03:12,000  -->  00:03:15,740
+When we think about handling user inputs, in this example,
+
+58
+
+00:03:15,740  -->  00:03:18,340
+we're going to write a while loop to continually prompt
+
+59
+
+00:03:18,340  -->  00:03:22,340
+the user for an input until they type exit.
+
+60
+
+00:03:22,340  -->  00:03:24,460
+How we'll do that is, we'll declare
+
+61
+
+00:03:24,460  -->  00:03:28,280
+a variable that will be an empty string called user input.
+
+62
+
+00:03:31,550  -->  00:03:34,110
+Then we'll write our while loop,
+
+63
+
+00:03:34,110  -->  00:03:39,270
+and we'll say while user_input.lower
+
+64
+
+00:03:39,270  -->  00:03:45,700
+function does not equal exit,
+
+65
+
+00:03:48,740  -->  00:03:51,360
+we'll set user input equal to
+
+66
+
+00:03:51,360  -->  00:03:57,030
+the input and we
+
+67
+
+00:03:57,030  -->  00:04:03,310
+will write a multi-line comment here,
+
+68
+
+00:04:03,310  -->  00:04:12,600
+and we'll say enter something type exit to quit the colon.
+
+69
+
+00:04:13,960  -->  00:04:19,790
+That's all closed out. Then we will say
+
+70
+
+00:04:19,790  -->  00:04:27,420
+print you entered followed by actually with that user,
+
+71
+
+00:04:27,420  -->  00:04:29,800
+we'll put in right here.
+
+72
+
+00:04:30,680  -->  00:04:36,750
+We'll close that off. The way that this loop will work is that this loop will
+
+73
+
+00:04:36,750  -->  00:04:42,465
+keep asking the user for an input until they type exit into the input field.
+
+74
+
+00:04:42,465  -->  00:04:46,810
+Also, notice how we're using this lower method to
+
+75
+
+00:04:46,810  -->  00:04:52,270
+convert the user's input to a lowercase before comparing it to exit.
+
+76
+
+00:04:52,270  -->  00:04:55,910
+This ensures that no matter how the user types exit,
+
+77
+
+00:04:55,910  -->  00:04:58,150
+whether in upper case or mixed case,
+
+78
+
+00:04:58,150  -->  00:05:00,770
+the loop will recognize it and stop.
+
+79
+
+00:05:00,770  -->  00:05:07,570
+It's like having a built-in spell checker that makes sure the input is always consistent.
+
+80
+
+00:05:07,570  -->  00:05:11,990
+This is very similar to what you will see when you
+
+81
+
+00:05:11,990  -->  00:05:16,510
+start running a Python program or within another programming language.
+
+82
+
+00:05:16,510  -->  00:05:23,090
+There might be a command to control plus C or to simply type exit,
+
+83
+
+00:05:23,090  -->  00:05:25,070
+enter into your terminal,
+
+84
+
+00:05:25,070  -->  00:05:27,195
+and the program will stop.
+
+85
+
+00:05:27,195  -->  00:05:30,550
+Let's see what happens when we run this.
+
+86
+
+00:05:31,010  -->  00:05:35,950
+When we run this, we'll see our comment that we'll say enter something,
+
+87
+
+00:05:35,950  -->  00:05:38,010
+and then it'll say type exit to quit.
+
+88
+
+00:05:38,010  -->  00:05:40,780
+If we said type something,
+
+89
+
+00:05:41,230  -->  00:05:43,830
+we type something, say something else,
+
+90
+
+00:05:43,830  -->  00:05:49,755
+we'll say something else, something else again.
+
+91
+
+00:05:49,755  -->  00:05:55,090
+It's going to continually prompt us to keep writing in something into the input.
+
+92
+
+00:05:55,090  -->  00:05:56,950
+But until we type exit,
+
+93
+
+00:05:56,950  -->  00:06:00,595
+press ''Enter'', then it stops.
+
+94
+
+00:06:00,595  -->  00:06:03,190
+If we were to do this again,
+
+95
+
+00:06:03,190  -->  00:06:10,055
+let's say we even did it in all caps, it'll still exit.
+
+96
+
+00:06:10,055  -->  00:06:16,200
+Let's say we even did some mixed upper and lower case,
+
+97
+
+00:06:16,200  -->  00:06:21,980
+say exit, it will still always turn it to a lower case to then exit.
+
+98
+
+00:06:21,980  -->  00:06:30,105
+That's how we combine and handle multiple user inputs in Python.
+
+99
+
+00:06:30,105  -->  00:06:35,715
+Now, let's talk about processing data until a condition is met.
+
+100
+
+00:06:35,715  -->  00:06:38,550
+We're going to move on to another while
+
+101
+
+00:06:38,550  -->  00:06:42,150
+loop example where we're processing data from a file.
+
+102
+
+00:06:42,150  -->  00:06:45,710
+In this example, the while loop is going to read and process
+
+103
+
+00:06:45,710  -->  00:06:50,670
+each line of the file until there are no more lines left.
+
+104
+
+00:06:50,670  -->  00:06:56,030
+We're going to first create a text file with a few lines of text in it.
+
+105
+
+00:06:57,040  -->  00:07:01,625
+The way that we'll do that is we're going to make a new file,
+
+106
+
+00:07:01,625  -->  00:07:05,765
+we're going to call it text.txt,
+
+107
+
+00:07:05,765  -->  00:07:08,205
+so I right-clicked, and then I created a new file.
+
+108
+
+00:07:08,205  -->  00:07:16,780
+We'll open this up, and then I'm going to copy and paste this into the text file.
+
+109
+
+00:07:16,780  -->  00:07:20,800
+Sometimes you might get a message that says shared a clipboard,
+
+110
+
+00:07:20,800  -->  00:07:22,380
+so I'll say allow,
+
+111
+
+00:07:22,380  -->  00:07:27,160
+and that's where we're able to add all of this text into our text file.
+
+112
+
+00:07:27,160  -->  00:07:32,240
+We'll give this a save and then we're going to write a script that
+
+113
+
+00:07:32,240  -->  00:07:37,920
+will open this file and then use the read line method to fetch one line at a time,
+
+114
+
+00:07:37,920  -->  00:07:41,640
+which are baked in functionalities of Python.
+
+115
+
+00:07:41,640  -->  00:07:43,800
+As each line is processed,
+
+116
+
+00:07:43,800  -->  00:07:49,880
+we'll update our live variable with the next line from each file.
+
+117
+
+00:07:49,880  -->  00:07:53,840
+The loop will continue until read line returns an empty string
+
+118
+
+00:07:53,840  -->  00:07:59,150
+indicating that the end of the file has been met. Let's do that right now.
+
+119
+
+00:07:59,150  -->  00:08:04,550
+What we'll do is that we will open up a new cell,
+
+120
+
+00:08:04,550  -->  00:08:08,825
+and we're going to say with open,
+
+121
+
+00:08:08,825  -->  00:08:13,590
+and we'll say text.txt,
+
+122
+
+00:08:13,590  -->  00:08:17,850
+and we'll put this in quotes because it is a string.
+
+123
+
+00:08:17,850  -->  00:08:23,970
+We're going to use r and put that in quotation marks,
+
+124
+
+00:08:23,970  -->  00:08:27,410
+and then we're going to say as input file.
+
+125
+
+00:08:27,410  -->  00:08:33,540
+We'll do a colon, and then we'll say line = input_file.readline,
+
+126
+
+00:08:37,940  -->  00:08:42,795
+and then while line is true.
+
+127
+
+00:08:42,795  -->  00:08:46,590
+We'll say print, and then in the parentheses,
+
+128
+
+00:08:46,590  -->  00:08:51,970
+we'll say line.strip and this will take each line out,
+
+129
+
+00:08:51,970  -->  00:09:00,740
+and then we will write line = input_file.readline.
+
+130
+
+00:09:00,980  -->  00:09:05,030
+In this example, this while loop reads and processes
+
+131
+
+00:09:05,030  -->  00:09:09,035
+each line in a file until there are no more lines left to read.
+
+132
+
+00:09:09,035  -->  00:09:12,750
+While loops are like your dedicated Pythonic assistants,
+
+133
+
+00:09:12,750  -->  00:09:15,510
+working tirelessly until a task is complete.
+
+134
+
+00:09:15,510  -->  00:09:18,750
+Whether they're waiting for the user to give the magic word like
+
+135
+
+00:09:18,750  -->  00:09:22,290
+exit or diligently reading through a file, one line at a time.
+
+136
+
+00:09:22,290  -->  00:09:26,735
+They're there to get the job done while there is a job to be done.
+
+137
+
+00:09:26,735  -->  00:09:30,270
+Let's run this and see what prints out.
+
+138
+
+00:09:31,190  -->  00:09:33,915
+This has 1, 2,
+
+139
+
+00:09:33,915  -->  00:09:36,015
+3, 4, 5, 6,
+
+140
+
+00:09:36,015  -->  00:09:38,580
+and there are 1, 2, 3, 4,
+
+141
+
+00:09:38,580  -->  00:09:41,685
+5, 6 lines in this text file.
+
+142
+
+00:09:41,685  -->  00:09:45,430
+This worked exactly the way that we would expect.
+
+143
+
+00:09:45,430  -->  00:09:48,190
+With these tools in your coding toolkit,
+
+144
+
+00:09:48,190  -->  00:09:50,995
+you'll be able to handle repetitive tasks like a pro.
+
+145
+
+00:09:50,995  -->  00:09:53,750
+Next time you need to repeat something in your code,
+
+146
+
+00:09:53,750  -->  00:09:56,890
+but don't know how many times it will need to be repeated,
+
+147
+
+00:09:56,890  -->  00:10:00,620
+think of the trusty while loop in your Pythonic toolkit.

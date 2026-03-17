@@ -1,0 +1,729 @@
+1
+
+00:00:00,000  -->  00:00:01,580
+When working with four loops,
+
+2
+
+00:00:01,580  -->  00:00:04,020
+it's important to be aware of the common pitfalls
+
+3
+
+00:00:04,020  -->  00:00:06,700
+that can cause unexpected behavior in your code.
+
+4
+
+00:00:06,700  -->  00:00:10,600
+Let's look at three key issues when it comes to writing our loops and Python.
+
+5
+
+00:00:10,600  -->  00:00:13,320
+The first one, one by one errors
+
+6
+
+00:00:13,320  -->  00:00:17,780
+occur when the loop iterates one too many times or too few.
+
+7
+
+00:00:17,780  -->  00:00:21,505
+This often happens due to a misconfigured loop condition.
+
+8
+
+00:00:21,505  -->  00:00:23,810
+Always ensure that your loops, range,
+
+9
+
+00:00:23,810  -->  00:00:26,990
+or condition matches the number of iterations you expect,
+
+10
+
+00:00:26,990  -->  00:00:29,910
+meaning the number of times you expect your code to run.
+
+11
+
+00:00:29,910  -->  00:00:32,970
+Next step is with editing loop variables.
+
+12
+
+00:00:32,970  -->  00:00:38,230
+Modifying the loop variable within the loop can lead to unexpected behavior.
+
+13
+
+00:00:38,230  -->  00:00:40,970
+This makes the code harder to understand and
+
+14
+
+00:00:40,970  -->  00:00:43,990
+may cause the loop to behave in unintended ways.
+
+15
+
+00:00:43,990  -->  00:00:48,070
+It's best to avoid altering the loop variable directly inside the loop,
+
+16
+
+00:00:48,070  -->  00:00:50,490
+but rather edit it outside of the loop,
+
+17
+
+00:00:50,490  -->  00:00:53,725
+and then just have your loop run the code as expected.
+
+18
+
+00:00:53,725  -->  00:00:56,820
+Finally, let's talk about mutable sequences.
+
+19
+
+00:00:56,820  -->  00:01:00,300
+When iterating over mutable sequences like lists,
+
+20
+
+00:01:00,300  -->  00:01:05,180
+be very cautious if you're modifying the sequence directly during the iteration.
+
+21
+
+00:01:05,180  -->  00:01:07,960
+Doing so can result in skipped items as
+
+22
+
+00:01:07,960  -->  00:01:11,760
+the loop might not account for changes made to the sequence.
+
+23
+
+00:01:11,760  -->  00:01:15,800
+A good practice is to iterate over a copy of the sequence instead.
+
+24
+
+00:01:15,800  -->  00:01:19,000
+This might seem like a lot to grasp at first, but don't worry.
+
+25
+
+00:01:19,000  -->  00:01:22,020
+We're going to go through some examples together.
+
+26
+
+00:01:22,020  -->  00:01:26,620
+In this demo, I'm going to show you an example of a four loop that runs one,
+
+27
+
+00:01:26,620  -->  00:01:28,160
+too many or one,
+
+28
+
+00:01:28,160  -->  00:01:33,485
+too few times due to a misconfigured loop condition.
+
+29
+
+00:01:33,485  -->  00:01:38,730
+This is going to show us how one by one errors occur,
+
+30
+
+00:01:38,730  -->  00:01:42,920
+and we can see how to set up our loops correctly.
+
+31
+
+00:01:42,920  -->  00:01:48,750
+Let's say that we want to execute our code exactly five times. How we do that?
+
+32
+
+00:01:48,750  -->  00:01:52,150
+Something that we might want to do is we could say four,
+
+33
+
+00:01:52,150  -->  00:01:55,990
+in range one, two, six.
+
+34
+
+00:01:55,990  -->  00:01:59,210
+And then we want to print I.
+
+35
+
+00:02:00,140  -->  00:02:04,030
+So if we were to run this, we'll see this.
+
+36
+
+00:02:04,030  -->  00:02:10,520
+1,2,3,4,5 as we wanted to execute our code five times.
+
+37
+
+00:02:10,520  -->  00:02:12,620
+So this is five iterations.
+
+38
+
+00:02:12,620  -->  00:02:17,100
+However, if we make a slight change to the max number and change
+
+39
+
+00:02:17,100  -->  00:02:24,210
+it from six to five like this,
+
+40
+
+00:02:24,500  -->  00:02:27,930
+We'll only see four items.
+
+41
+
+00:02:27,930  -->  00:02:29,870
+In the correct example,
+
+42
+
+00:02:29,870  -->  00:02:32,430
+the loop runs five times as intended,
+
+43
+
+00:02:32,430  -->  00:02:34,070
+but in the incorrect example,
+
+44
+
+00:02:34,070  -->  00:02:36,350
+the loop only runs four times.
+
+45
+
+00:02:36,350  -->  00:02:40,770
+It's really important to be aware of which changes in
+
+46
+
+00:02:40,770  -->  00:02:45,530
+your code could lead to errors or incomplete operations when writing four loops.
+
+47
+
+00:02:45,530  -->  00:02:47,570
+So be on the lookout for this.
+
+48
+
+00:02:47,570  -->  00:02:52,650
+In this next demo, we'll see when working with four loops,
+
+49
+
+00:02:52,650  -->  00:02:57,750
+modifying the loop variable inside the loop can lead to unexpected behavior.
+
+50
+
+00:02:57,750  -->  00:03:01,255
+Let's see an example to understand why this is problematic,
+
+51
+
+00:03:01,255  -->  00:03:03,710
+and how to correct it.
+
+52
+
+00:03:04,060  -->  00:03:08,860
+So we're going to use the range function in another four loop,
+
+53
+
+00:03:08,860  -->  00:03:16,230
+and we're going to say four i in range (5): and we're going to create an incrementor,
+
+54
+
+00:03:16,230  -->  00:03:20,055
+so we'll say, i+ = 1,
+
+55
+
+00:03:20,055  -->  00:03:22,755
+and then print i.
+
+56
+
+00:03:22,755  -->  00:03:28,260
+So this line right here does not affect the loop's iterations.
+
+57
+
+00:03:28,260  -->  00:03:31,060
+And in this incorrect example,
+
+58
+
+00:03:31,060  -->  00:03:35,440
+the loop variable is being incremented within the loop body.
+
+59
+
+00:03:35,440  -->  00:03:38,500
+Although this doesn't affect the number of iterations,
+
+60
+
+00:03:38,500  -->  00:03:42,640
+it can cause confusion and make the loop's behavior harder to predict.
+
+61
+
+00:03:42,640  -->  00:03:48,820
+Loop will still increment five times as defined by our range function here,
+
+62
+
+00:03:49,700  -->  00:03:52,680
+which we'll get to soon,
+
+63
+
+00:03:52,680  -->  00:03:57,200
+but the printed values are not what you might expect.
+
+64
+
+00:03:57,200  -->  00:04:06,400
+Let's see. Instead of printing zero to four,
+
+65
+
+00:04:06,400  -->  00:04:08,500
+it prints one to five,
+
+66
+
+00:04:08,500  -->  00:04:12,140
+for example, let's fix this.
+
+67
+
+00:04:12,740  -->  00:04:16,780
+What we'll do is that instead of using this incrementor,
+
+68
+
+00:04:16,780  -->  00:04:19,000
+we can simply just remove that.
+
+69
+
+00:04:19,000  -->  00:04:24,430
+And then we can say for i in range (5): print (i).
+
+70
+
+00:04:25,280  -->  00:04:33,350
+And this way, we get our iterations 0-2 up until five.
+
+71
+
+00:04:33,350  -->  00:04:36,410
+In this correct example, the loop variable I is
+
+72
+
+00:04:36,410  -->  00:04:40,350
+controlled entirely by the range five function,
+
+73
+
+00:04:40,350  -->  00:04:44,410
+which has no interference of using a counter on the
+
+74
+
+00:04:44,410  -->  00:04:48,890
+incremental i variable because that is what the range function is doing.
+
+75
+
+00:04:48,890  -->  00:04:53,490
+This ensures that the loop iterates naturally 0-4,
+
+76
+
+00:04:53,490  -->  00:04:57,490
+which we see here, which is the expected behavior.
+
+77
+
+00:04:57,490  -->  00:05:00,630
+By keeping the loop variable consistent,
+
+78
+
+00:05:00,630  -->  00:05:02,030
+the code remains clear,
+
+79
+
+00:05:02,030  -->  00:05:04,750
+predictable, and easy to understand.
+
+80
+
+00:05:04,830  -->  00:05:09,450
+In our final demo, let's see why we must be cautious when iterating
+
+81
+
+00:05:09,450  -->  00:05:14,090
+over mutable sequences like lists and modifying them within the loop.
+
+82
+
+00:05:14,090  -->  00:05:19,130
+Mutable sequences are data structures that can be changed after they are created,
+
+83
+
+00:05:19,130  -->  00:05:20,710
+meaning you can add, remove,
+
+84
+
+00:05:20,710  -->  00:05:22,630
+or change items within them.
+
+85
+
+00:05:22,630  -->  00:05:28,730
+This mutability can lead to unexpected results when modifying the sequence inside a loop.
+
+86
+
+00:05:28,730  -->  00:05:37,020
+Let's see an example that will not remove all items as we might expect it to. To start?
+
+87
+
+00:05:37,020  -->  00:05:40,340
+We'll create a list called items.
+
+88
+
+00:05:40,340  -->  00:05:42,880
+We'll use square brackets and we'll have one,
+
+89
+
+00:05:42,880  -->  00:05:45,040
+two, three, four, and five.
+
+90
+
+00:05:45,040  -->  00:05:50,940
+Then we'll write a four loop to iterate over these items and we'll say for item in items
+
+91
+
+00:05:50,940  -->  00:05:57,710
+: and we'll say items.remove(item).
+
+92
+
+00:05:57,710  -->  00:06:04,180
+And then we'll go ahead and print the items.
+
+93
+
+00:06:04,180  -->  00:06:07,780
+What do you expect the output of this to be?
+
+94
+
+00:06:07,780  -->  00:06:11,600
+Let's execute the code and find out.
+
+95
+
+00:06:14,330  -->  00:06:17,445
+Here, we see the output is [ 2,
+
+96
+
+00:06:17,445  -->  00:06:19,650
+4 ] in a list.
+
+97
+
+00:06:19,650  -->  00:06:21,580
+Was that what you expected?
+
+98
+
+00:06:21,580  -->  00:06:25,700
+When you remove an item from the list while iterating over it,
+
+99
+
+00:06:25,700  -->  00:06:28,920
+the loop skips the next item actually.
+
+100
+
+00:06:28,920  -->  00:06:34,100
+This unexpected behavior occurs because the list is being modified during its iteration,
+
+101
+
+00:06:34,100  -->  00:06:36,680
+causing the loop to skip items.
+
+102
+
+00:06:36,680  -->  00:06:40,260
+Let's give a step by step explanation of what is
+
+103
+
+00:06:40,260  -->  00:06:43,830
+going on in our code here so we can see what really is going on.
+
+104
+
+00:06:43,830  -->  00:06:47,170
+The loop starts out with the first item.
+
+105
+
+00:06:47,170  -->  00:06:54,095
+And removes it. The list now becomes 2,3,4,5.
+
+106
+
+00:06:54,095  -->  00:06:57,470
+The loop then moves to the next item three,
+
+107
+
+00:06:57,470  -->  00:07:04,430
+skipping two because it's now in the place of the removed item, and then removes it.
+
+108
+
+00:07:04,430  -->  00:07:08,570
+The list now becomes two, four and five.
+
+109
+
+00:07:08,570  -->  00:07:14,210
+The loop then moves to the fifth item skipping four and removes it.
+
+110
+
+00:07:14,210  -->  00:07:19,120
+The list now becomes two and four and stops.
+
+111
+
+00:07:19,120  -->  00:07:22,670
+Instead, it would be recommended to try a different approach
+
+112
+
+00:07:22,670  -->  00:07:25,830
+to avoid modifying the list while iterating over it,
+
+113
+
+00:07:25,830  -->  00:07:29,690
+such as iterating over a copy of the list.
+
+114
+
+00:07:29,690  -->  00:07:32,330
+Let's try another approach.
+
+115
+
+00:07:33,110  -->  00:07:38,090
+Here, we'll redeclare our items list like this,
+
+116
+
+00:07:38,090  -->  00:07:40,150
+and then we'll write another four loop.
+
+117
+
+00:07:40,150  -->  00:07:43,690
+So we'll say four item in items.
+
+118
+
+00:07:43,690  -->  00:07:46,710
+And we're going to use a special syntax,
+
+119
+
+00:07:46,710  -->  00:07:48,070
+which we'll talk about in a second,
+
+120
+
+00:07:48,070  -->  00:07:52,970
+where we'll put a square bracket and a colon and then close out the square bracket,
+
+121
+
+00:07:52,970  -->  00:07:58,950
+add another colon, and then we'll say items, remove item.
+
+122
+
+00:07:59,550  -->  00:08:05,450
+Then we'll print items at the end.
+
+123
+
+00:08:05,450  -->  00:08:10,120
+Notice this colon inside of square brackets.
+
+124
+
+00:08:10,120  -->  00:08:13,980
+This is Fancy shorthand for creating a copy of the entire list,
+
+125
+
+00:08:13,980  -->  00:08:18,880
+ensuring that the original list can be modified safely during iteration.
+
+126
+
+00:08:18,880  -->  00:08:20,480
+Once we create a copy,
+
+127
+
+00:08:20,480  -->  00:08:27,645
+we can then append all of the items in a remove action over each item in the items list.
+
+128
+
+00:08:27,645  -->  00:08:29,460
+Once our code is run,
+
+129
+
+00:08:29,460  -->  00:08:32,625
+we have removed all of the numbers in the items list,
+
+130
+
+00:08:32,625  -->  00:08:39,720
+1,2,3,4,5 and we do not see any numbers remaining like we did in the previous code.
+
+131
+
+00:08:39,720  -->  00:08:45,700
+Let's run the cell and see if that is actually the output that we would expect.
+
+132
+
+00:08:46,480  -->  00:08:49,840
+And we see exactly that.
+
+133
+
+00:08:49,840  -->  00:08:54,840
+So now there's no more items inside of the items list.
+
+134
+
+00:08:54,840  -->  00:08:58,780
+Hopefully, this is an insightful review of some pitfalls.
+
+135
+
+00:08:58,780  -->  00:09:04,760
+We can and will face win working with four loops in our Python code.
+
+136
+
+00:09:04,760  -->  00:09:09,140
+As we'll see, moving from this code to this code.
+
+137
+
+00:09:09,140  -->  00:09:13,300
+Great job getting through this and keep practicing by using
+
+138
+
+00:09:13,300  -->  00:09:19,120
+four loops and seeing what opportunities you have to work with in your Pythonic tool kit.
+
+139
+
+00:09:19,120  -->  00:09:23,000
+Four loops are yet another powerful type of loop we can now
+
+140
+
+00:09:23,000  -->  00:09:26,820
+add to our toolbox for iterating over sequences of items.
+
+141
+
+00:09:26,820  -->  00:09:29,080
+They are versatile, and they can be used with
+
+142
+
+00:09:29,080  -->  00:09:33,980
+various data structures such as lists, strings, and dictionaries.
+
+143
+
+00:09:33,980  -->  00:09:38,420
+By understanding how to use four loops effectively and avoiding common pitfalls,
+
+144
+
+00:09:38,420  -->  00:09:41,760
+you can handle a wide variety of programming scenarios.
+
+145
+
+00:09:41,760  -->  00:09:44,980
+Great job getting through this section on Four loops,
+
+146
+
+00:09:44,980  -->  00:09:48,240
+and I'm looking forward to seeing you in the next video.

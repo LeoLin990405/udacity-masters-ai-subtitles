@@ -1,0 +1,194 @@
+1
+
+00:00:00,000  -->  00:00:01,930
+Before finishing out this lesson,
+
+2
+
+00:00:01,930  -->  00:00:05,130
+it's important to review a few key concepts
+
+3
+
+00:00:05,130  -->  00:00:08,950
+starting with the practical use of break in continuous statements.
+
+4
+
+00:00:08,950  -->  00:00:11,430
+First, we can search for an item.
+
+5
+
+00:00:11,430  -->  00:00:17,370
+The break statement can be used to exit a loop once a specific item is found.
+
+6
+
+00:00:17,370  -->  00:00:21,970
+In this example here, we have a collection of fruits in a list or in a right.
+
+7
+
+00:00:21,970  -->  00:00:25,805
+And the item we want to search for is cherry.
+
+8
+
+00:00:25,805  -->  00:00:28,330
+When we go through the list of fruits,
+
+9
+
+00:00:28,330  -->  00:00:34,300
+we want to stop when Python finds our desired fruit search item cherry in fruits.
+
+10
+
+00:00:34,300  -->  00:00:38,850
+This will output the below when cherry is found,
+
+11
+
+00:00:38,850  -->  00:00:42,060
+and then stop the function. Found cherry.
+
+12
+
+00:00:42,060  -->  00:00:45,880
+Second, we can use break and continue to filter items.
+
+13
+
+00:00:45,880  -->  00:00:48,640
+The continued statement can be used to skip over
+
+14
+
+00:00:48,640  -->  00:00:51,945
+certain items based on a condition set in your code.
+
+15
+
+00:00:51,945  -->  00:00:55,820
+Let's say that we're looking to go through a series of numbers in a range,
+
+16
+
+00:00:55,820  -->  00:00:58,380
+and we want to only output the odd numbers,
+
+17
+
+00:00:58,380  -->  00:01:02,060
+skipping the even ones. How would we even do that?
+
+18
+
+00:01:02,060  -->  00:01:05,350
+This will be our output. Next up,
+
+19
+
+00:01:05,350  -->  00:01:07,510
+nested loops with break and continue.
+
+20
+
+00:01:07,510  -->  00:01:11,970
+We can use break and continue clauses in our nested loops to control the flow of
+
+21
+
+00:01:11,970  -->  00:01:17,390
+execution and impact how Python processes our requested inputs.
+
+22
+
+00:01:17,390  -->  00:01:20,230
+In this example, for a range of three,
+
+23
+
+00:01:20,230  -->  00:01:23,880
+we have a nested loop inside of i called j,
+
+24
+
+00:01:23,880  -->  00:01:30,860
+and then we use continue and break to affect what ends up getting printed like so.
+
+25
+
+00:01:30,860  -->  00:01:35,590
+This will be our output. When adding these tools to your Python toolbox,
+
+26
+
+00:01:35,590  -->  00:01:37,530
+there are some areas to keep in mind.
+
+27
+
+00:01:37,530  -->  00:01:41,110
+Number 1, unintentional infinite loops.
+
+28
+
+00:01:41,110  -->  00:01:43,710
+Be careful with conditions and ensure that
+
+29
+
+00:01:43,710  -->  00:01:47,500
+brake statements are correctly placed to avoid infinite loops.
+
+30
+
+00:01:47,500  -->  00:01:51,380
+Number 2, skipping critical code with continue.
+
+31
+
+00:01:51,380  -->  00:01:53,800
+Ensure that us and continue does not skip
+
+32
+
+00:01:53,800  -->  00:01:57,560
+necessary operations or cause logical errors in your code.
+
+33
+
+00:01:57,560  -->  00:02:01,880
+By understanding and effectively using break and continue in your Python code,
+
+34
+
+00:02:01,880  -->  00:02:05,360
+you can control the flow of your loops more precisely.
+
+35
+
+00:02:05,360  -->  00:02:09,640
+This helps in optimizing your code and preventing potential issues,
+
+36
+
+00:02:09,640  -->  00:02:12,620
+such as infinite loops or logical errors.
+
+37
+
+00:02:12,620  -->  00:02:16,220
+Your team will also appreciate your diligence to detail,
+
+38
+
+00:02:16,220  -->  00:02:19,840
+especially during the pool review process when your code is
+
+39
+
+00:02:19,840  -->  00:02:24,420
+analyzed before making its way live to your end users.

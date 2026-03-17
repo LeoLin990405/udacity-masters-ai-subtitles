@@ -1,0 +1,534 @@
+1
+
+00:00:00,000  -->  00:00:03,080
+Even though Python is a computer programming language,
+
+2
+
+00:00:03,080  -->  00:00:06,180
+did you know that it can also make decisions?
+
+3
+
+00:00:06,180  -->  00:00:11,240
+It's not so different from how you or I make decisions in our day to day lives.
+
+4
+
+00:00:11,240  -->  00:00:14,220
+If it's rainy outside, wear a raincoat.
+
+5
+
+00:00:14,220  -->  00:00:17,305
+So long as it's Monday to Friday, work.
+
+6
+
+00:00:17,305  -->  00:00:21,950
+Or when it's Saturday or Sunday, rest and recharge.
+
+7
+
+00:00:21,950  -->  00:00:25,430
+We make tons of decisions every single day,
+
+8
+
+00:00:25,430  -->  00:00:28,130
+35,000 per day, in fact,
+
+9
+
+00:00:28,130  -->  00:00:29,850
+according to Harvard Business Review.
+
+10
+
+00:00:29,850  -->  00:00:34,650
+The way we make decisions is similar to Python in using conditions.
+
+11
+
+00:00:34,650  -->  00:00:37,750
+Python calls these conditional statements,
+
+12
+
+00:00:37,750  -->  00:00:41,630
+which you can think of as fact based observations of the world.
+
+13
+
+00:00:41,630  -->  00:00:45,910
+The if statement is the most basic form of a conditional statement.
+
+14
+
+00:00:45,910  -->  00:00:51,710
+Let's start with an example where we want to print the response to the input of age.
+
+15
+
+00:00:51,710  -->  00:00:55,020
+In this function, we want to check if the provided age
+
+16
+
+00:00:55,020  -->  00:00:58,820
+is greater than or equal to a certain integer.
+
+17
+
+00:00:58,820  -->  00:01:02,200
+In this example, if the age is 18 or older,
+
+18
+
+00:01:02,200  -->  00:01:05,980
+our Python program will print that you are eligible to vote.
+
+19
+
+00:01:05,980  -->  00:01:09,460
+Otherwise, it prints that you are not eligible to vote.
+
+20
+
+00:01:09,460  -->  00:01:11,240
+This way, we don't need to write
+
+21
+
+00:01:11,240  -->  00:01:15,320
+two separate functions and then run each of them at the same time.
+
+22
+
+00:01:15,320  -->  00:01:17,480
+We write this if statement,
+
+23
+
+00:01:17,480  -->  00:01:19,840
+and then use a conditional statement while
+
+24
+
+00:01:19,840  -->  00:01:23,325
+leveraging Python's built in logic and reasoning.
+
+25
+
+00:01:23,325  -->  00:01:25,830
+When we think about conditional statements,
+
+26
+
+00:01:25,830  -->  00:01:28,170
+let's see this in another example.
+
+27
+
+00:01:28,170  -->  00:01:30,970
+This time, with a scoring system for exams.
+
+28
+
+00:01:30,970  -->  00:01:34,450
+It would be so draining of our time if we needed to run
+
+29
+
+00:01:34,450  -->  00:01:40,685
+four different functions to check if a score is 0-69 as an F,
+
+30
+
+00:01:40,685  -->  00:01:43,440
+70-79 as a C,
+
+31
+
+00:01:43,440  -->  00:01:45,645
+80-89 as a B,
+
+32
+
+00:01:45,645  -->  00:01:48,090
+and 90-100 as an A.
+
+33
+
+00:01:48,090  -->  00:01:50,690
+Doing this per student would be exhausting.
+
+34
+
+00:01:50,690  -->  00:01:54,510
+Fortunately, for us, we can add more conditions using
+
+35
+
+00:01:54,510  -->  00:01:58,370
+elif and else to check other conditional cases.
+
+36
+
+00:01:58,370  -->  00:02:03,450
+It's much easier to see this as a visual. So check this out.
+
+37
+
+00:02:03,450  -->  00:02:06,110
+We'll first define a variable called score,
+
+38
+
+00:02:06,110  -->  00:02:10,090
+and this will be the score of a given student,
+
+39
+
+00:02:10,090  -->  00:02:12,650
+which will set as 85.
+
+40
+
+00:02:12,650  -->  00:02:18,565
+If this score is greater than or equal to 90,
+
+41
+
+00:02:18,565  -->  00:02:23,350
+we'll say print. Grade is A.
+
+42
+
+00:02:23,390  -->  00:02:32,070
+Then elif, score is greater than or equal to 80.
+
+43
+
+00:02:32,070  -->  00:02:37,795
+We'll say print, grade B.
+
+44
+
+00:02:37,795  -->  00:02:39,960
+We'll do another elif statement,
+
+45
+
+00:02:39,960  -->  00:02:45,170
+and we'll say elif score greater than or equal to 70,
+
+46
+
+00:02:45,170  -->  00:02:47,660
+and then say print,
+
+47
+
+00:02:47,660  -->  00:02:54,410
+Grade C. Then else,
+
+48
+
+00:02:54,410  -->  00:02:58,875
+so all other cases that aren't these.
+
+49
+
+00:02:58,875  -->  00:03:09,420
+Say print, Grade F. The first check is if the score is greater than or equal to 90.
+
+50
+
+00:03:09,420  -->  00:03:15,560
+Then the next band is if it's greater than or equal to 80 after 90 and so on,
+
+51
+
+00:03:15,560  -->  00:03:19,400
+to classify the grade as being between these scoring bands.
+
+52
+
+00:03:19,400  -->  00:03:22,780
+We don't need to write the same function for different times.
+
+53
+
+00:03:22,780  -->  00:03:25,275
+All we have to do is this,
+
+54
+
+00:03:25,275  -->  00:03:28,305
+if, elif, else statement.
+
+55
+
+00:03:28,305  -->  00:03:31,050
+Let's run this to see what happens.
+
+56
+
+00:03:31,050  -->  00:03:35,640
+So when the score is 85, the grade is B.
+
+57
+
+00:03:35,640  -->  00:03:40,650
+Then let's say if we change this to be 75.
+
+58
+
+00:03:40,650  -->  00:03:49,450
+We see that the grade is C. If we made this 99, grade A.
+
+59
+
+00:03:49,460  -->  00:03:56,910
+Of course, if we got score of 50, we get this.
+
+60
+
+00:03:56,910  -->  00:04:00,285
+If we even do 90,
+
+61
+
+00:04:00,285  -->  00:04:06,015
+we get grade A. Pretty neat.
+
+62
+
+00:04:06,015  -->  00:04:09,090
+In the next section, we'll learn how to expand
+
+63
+
+00:04:09,090  -->  00:04:12,375
+upon this conditional logic with some other cases.
+
+64
+
+00:04:12,375  -->  00:04:15,740
+Now that we've introduced the basic concepts of conditional statements,
+
+65
+
+00:04:15,740  -->  00:04:19,280
+let's break them down further into three main types of conditional statements.
+
+66
+
+00:04:19,280  -->  00:04:23,140
+If else, if elif and if elif else.
+
+67
+
+00:04:23,140  -->  00:04:26,480
+Understanding these will be essential as we progress into
+
+68
+
+00:04:26,480  -->  00:04:30,900
+more complex conditional logic that we can use in our Python code.
+
+69
+
+00:04:30,900  -->  00:04:35,040
+The if-else statement is the most straightforward conditional structure.
+
+70
+
+00:04:35,040  -->  00:04:37,560
+It checks a single condition, and if it's true,
+
+71
+
+00:04:37,560  -->  00:04:41,240
+it executes one block of code, the true case.
+
+72
+
+00:04:41,240  -->  00:04:43,260
+If the condition is false,
+
+73
+
+00:04:43,260  -->  00:04:46,930
+it jumps to the else block and executes that instead.
+
+74
+
+00:04:46,930  -->  00:04:50,550
+In this example, if the score is 70 or higher,
+
+75
+
+00:04:50,550  -->  00:04:53,690
+the message, you passed the exam is printed.
+
+76
+
+00:04:53,690  -->  00:04:55,530
+Otherwise, the exam prints,
+
+77
+
+00:04:55,530  -->  00:04:57,210
+sorry, you didn't pass.
+
+78
+
+00:04:57,210  -->  00:05:01,770
+This allows us to handle two mutually exclusive outcomes efficiently,
+
+79
+
+00:05:01,770  -->  00:05:07,690
+where one is either true or if it's not true, it's automatically false.
+
+80
+
+00:05:07,690  -->  00:05:09,510
+In this grading example,
+
+81
+
+00:05:09,510  -->  00:05:11,170
+the conditions are similar,
+
+82
+
+00:05:11,170  -->  00:05:14,230
+but now we've added a default response grade F,
+
+83
+
+00:05:14,230  -->  00:05:17,570
+where if the score doesn't meet any of the previous criteria,
+
+84
+
+00:05:17,570  -->  00:05:19,660
+then a grade F is presented.
+
+85
+
+00:05:19,660  -->  00:05:22,410
+This ensures that all possible cases are
+
+86
+
+00:05:22,410  -->  00:05:26,930
+handled before sending the final default response back.
+
+87
+
+00:05:26,930  -->  00:05:30,180
+Next up, we have the if-elif structure.
+
+88
+
+00:05:30,180  -->  00:05:34,280
+This is very useful when you need to check multiple conditions.
+
+89
+
+00:05:34,280  -->  00:05:37,460
+Python evaluates each condition in sequence and
+
+90
+
+00:05:37,460  -->  00:05:41,120
+executes the block of the first condition that is true.
+
+91
+
+00:05:41,120  -->  00:05:43,220
+Here, we're grading an exam.
+
+92
+
+00:05:43,220  -->  00:05:46,860
+If the score is 90 or higher, the student gets an A.
+
+93
+
+00:05:46,860  -->  00:05:50,660
+If it's 80-89, the student gets a B.
+
+94
+
+00:05:50,660  -->  00:05:54,980
+Notice how the code stops checking once a true condition is found.
+
+95
+
+00:05:54,980  -->  00:05:58,780
+This is the power of Python's conditional logic in using
+
+96
+
+00:05:58,780  -->  00:06:02,880
+our relational operators to create these assessment bands.
+
+97
+
+00:06:02,880  -->  00:06:06,285
+Finally, we have the if-elif-else structure.
+
+98
+
+00:06:06,285  -->  00:06:11,380
+This is a more comprehensive conditional statement where we check multiple conditions,
+
+99
+
+00:06:11,380  -->  00:06:13,120
+and if none of them are true,
+
+100
+
+00:06:13,120  -->  00:06:17,840
+a default action defined by the else block is executed.
+
+101
+
+00:06:17,840  -->  00:06:19,640
+In this grading example,
+
+102
+
+00:06:19,640  -->  00:06:21,100
+the conditions are similar,
+
+103
+
+00:06:21,100  -->  00:06:23,660
+but now we've added a default response, grade F,
+
+104
+
+00:06:23,660  -->  00:06:27,200
+where if the score didn't meet any of the previous criteria,
+
+105
+
+00:06:27,200  -->  00:06:29,320
+then a grade F is presented.
+
+106
+
+00:06:29,320  -->  00:06:32,000
+This ensures that all possible cases are handled
+
+107
+
+00:06:32,000  -->  00:06:35,660
+before setting the final default response back.
