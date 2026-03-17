@@ -8,7 +8,7 @@ Course subtitles organized by the [Udacity Master's Degree in Artificial Intelli
 
 | # | Course | Subtitles |
 |---|--------|-----------|
-| 1 | Introduction to Computer Programming: Part 1 | 36 files |
+| 1 | Introduction to Computer Programming: Part 1 | 56 files |
 | 2 | Introduction to Machine Learning | - |
 | 3 | Applied Data Analytics | - |
 | 4 | Introduction to Deep Learning | - |
@@ -81,6 +81,7 @@ core/
     python-programming-fundamentals/       (18 SRT files)
     boolean-logic-and-numeric-operators/   (15 SRT files)
     welcome-to-ai-programming-with-python/ ( 3 SRT files)
+    control-flow-and-loops/                (20 SRT files)
   02-introduction-to-machine-learning/
   03-applied-data-analytics/
   04-introduction-to-deep-learning/
