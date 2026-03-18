@@ -1,0 +1,64 @@
+1
+
+00:00:00,000  -->  00:00:04,940
+The len function is used to get the length of a list,
+
+2
+
+00:00:04,940  -->  00:00:08,660
+such as the number of elements inside that list.
+
+3
+
+00:00:08,660  -->  00:00:14,620
+Think of len as a quick way to count how many items are currently in your shopping cart,
+
+4
+
+00:00:14,620  -->  00:00:17,340
+regardless of if they are veggies,
+
+5
+
+00:00:17,340  -->  00:00:20,160
+fruits, bread, dessert, etc.
+
+6
+
+00:00:20,160  -->  00:00:24,000
+We might only care about the overall number of items.
+
+7
+
+00:00:24,000  -->  00:00:27,120
+For example, in the express checkout line,
+
+8
+
+00:00:27,120  -->  00:00:30,520
+you might need to have 10 or 15 items or less.
+
+9
+
+00:00:30,520  -->  00:00:35,125
+That is where our trusty len function comes in very handy for us here.
+
+10
+
+00:00:35,125  -->  00:00:39,720
+In this example, let's count how many items are in our list.
+
+11
+
+00:00:39,720  -->  00:00:43,160
+In this case, there are three items in the list,
+
+12
+
+00:00:43,160  -->  00:00:49,160
+so len(fruits) returns the number 3 since there are three items in the list,
+
+13
+
+00:00:49,160  -->  00:00:52,220
+apple, banana, and cherry.

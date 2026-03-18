@@ -1,0 +1,544 @@
+1
+
+00:00:00,000  -->  00:00:02,020
+As we start to build out lists,
+
+2
+
+00:00:02,020  -->  00:00:04,940
+there will come times where we need to duplicate the result,
+
+3
+
+00:00:04,940  -->  00:00:07,780
+while also preserving the original list as well.
+
+4
+
+00:00:07,780  -->  00:00:12,100
+Sometimes when we're working with data and we modify the items inside,
+
+5
+
+00:00:12,100  -->  00:00:15,620
+we will want to keep that updated list the way that it is,
+
+6
+
+00:00:15,620  -->  00:00:20,360
+but then run an experiment or run some computation on it.
+
+7
+
+00:00:20,360  -->  00:00:22,860
+In order to do that in a safe manner,
+
+8
+
+00:00:22,860  -->  00:00:27,375
+we will want to copy that list Number 1 into a list Number 2,
+
+9
+
+00:00:27,375  -->  00:00:31,740
+and then we can use that list Number 2 for a whole bunch of computations.
+
+10
+
+00:00:31,740  -->  00:00:35,475
+Let's say that we update list Number 2,
+
+11
+
+00:00:35,475  -->  00:00:38,505
+and then it turns out we made a mistake.
+
+12
+
+00:00:38,505  -->  00:00:43,050
+Fortunately, for us, we have a whole backup with list Number 1
+
+13
+
+00:00:43,050  -->  00:00:47,450
+that we could copy into a list Number 3 and work with that list now,
+
+14
+
+00:00:47,450  -->  00:00:49,410
+all things to the copy function.
+
+15
+
+00:00:49,410  -->  00:00:54,065
+Let's say some examples of copying and cloning of lists in action.
+
+16
+
+00:00:54,065  -->  00:00:57,430
+In order to see copying and cloning in action,
+
+17
+
+00:00:57,430  -->  00:00:59,710
+when we think about list comprehensions,
+
+18
+
+00:00:59,710  -->  00:01:04,950
+it's helpful to think first about what happens when you assign one list to another.
+
+19
+
+00:01:04,950  -->  00:01:09,750
+When this happens, both lists then refer to the same list in memory.
+
+20
+
+00:01:09,750  -->  00:01:12,890
+Here's an example to see what this means.
+
+21
+
+00:01:12,890  -->  00:01:16,020
+Let's create two lists first,
+
+22
+
+00:01:16,020  -->  00:01:18,765
+one for fruits and one for veggies.
+
+23
+
+00:01:18,765  -->  00:01:22,120
+Our fruits list will look like this.
+
+24
+
+00:01:22,120  -->  00:01:24,760
+Our veggies list will look like this.
+
+25
+
+00:01:24,760  -->  00:01:27,820
+In fruits, we have apple, banana, and cherry,
+
+26
+
+00:01:27,820  -->  00:01:30,040
+and then for veggies, we have spinach,
+
+27
+
+00:01:30,040  -->  00:01:31,805
+lettuce, and bok choy.
+
+28
+
+00:01:31,805  -->  00:01:38,460
+Those are three items that are strings in each list fruits and veggies.
+
+29
+
+00:01:40,210  -->  00:01:45,090
+We'll execute this code so that it creates these two lists.
+
+30
+
+00:01:45,090  -->  00:01:47,890
+If we were to print veggies,
+
+31
+
+00:01:48,930  -->  00:01:51,850
+we'll see the output of spinach,
+
+32
+
+00:01:51,850  -->  00:01:53,790
+lettuce, and bok choy.
+
+33
+
+00:01:53,790  -->  00:01:58,470
+Now, let's at veggies as fruits and print the value of veggies.
+
+34
+
+00:01:58,470  -->  00:02:03,030
+We'll say veggies equal fruits.
+
+35
+
+00:02:03,640  -->  00:02:07,285
+Then we'll print veggies.
+
+36
+
+00:02:07,285  -->  00:02:10,930
+What do you think the output of veggies will now be when we
+
+37
+
+00:02:10,930  -->  00:02:14,265
+execute this code? Let's find out.
+
+38
+
+00:02:14,265  -->  00:02:17,030
+If we execute this code, we'll see,
+
+39
+
+00:02:17,030  -->  00:02:20,790
+veggies is now apple, banana, and cherry,
+
+40
+
+00:02:20,790  -->  00:02:25,050
+and the veggies list has been replaced with what the value of the fruits list is.
+
+41
+
+00:02:25,050  -->  00:02:27,430
+Veggies now refers to the list of fruits,
+
+42
+
+00:02:27,430  -->  00:02:31,730
+which were those three items we had when we initially created the fruits list,
+
+43
+
+00:02:31,730  -->  00:02:34,775
+which is apple, banana, and cherry.
+
+44
+
+00:02:34,775  -->  00:02:39,160
+If this was a mistake, we can't undo or go backwards,
+
+45
+
+00:02:39,160  -->  00:02:43,020
+The list has now been overwritten and changed forever.
+
+46
+
+00:02:43,020  -->  00:02:45,760
+To prevent this from happening,
+
+47
+
+00:02:45,760  -->  00:02:48,440
+we can leverage the copy function.
+
+48
+
+00:02:48,440  -->  00:02:51,880
+Let's recreate these arrays or lists and
+
+49
+
+00:02:51,880  -->  00:02:55,995
+try out our new copy function to see how this can help us.
+
+50
+
+00:02:55,995  -->  00:03:00,740
+We will copy the lists of fruits and veggies,
+
+51
+
+00:03:00,740  -->  00:03:05,900
+and we will execute this code so that we have these lists.
+
+52
+
+00:03:05,900  -->  00:03:08,150
+Now, recreate it,
+
+53
+
+00:03:08,150  -->  00:03:12,660
+and to make a copy of our veggies list, we'll do something like this.
+
+54
+
+00:03:12,660  -->  00:03:20,800
+We'll say veggies, underscore clone equals veggies dot copy,
+
+55
+
+00:03:20,800  -->  00:03:25,620
+and we'll assign the copy function to veggies.
+
+56
+
+00:03:25,620  -->  00:03:30,780
+We'll then print veggies clone,
+
+57
+
+00:03:30,780  -->  00:03:33,200
+and when we run this,
+
+58
+
+00:03:33,200  -->  00:03:37,600
+we can see that it's the same items that are in veggies,
+
+59
+
+00:03:37,600  -->  00:03:39,760
+which is spinach, lettuce,
+
+60
+
+00:03:39,760  -->  00:03:42,610
+and bok choy, as we see up here.
+
+61
+
+00:03:44,070  -->  00:03:47,710
+To give this a bit more context about what cloning is,
+
+62
+
+00:03:47,710  -->  00:03:52,930
+cloning doesn't mean it's a link to the reference of the list. What does that mean?
+
+63
+
+00:03:52,930  -->  00:03:55,850
+Let's see an example where we add a new item to
+
+64
+
+00:03:55,850  -->  00:03:59,820
+the veggies list with our newly learned append utility.
+
+65
+
+00:03:59,820  -->  00:04:04,195
+If we do veggies.append,
+
+66
+
+00:04:04,195  -->  00:04:07,780
+and let's say we add carrot.
+
+67
+
+00:04:07,970  -->  00:04:11,620
+When we print veggies,
+
+68
+
+00:04:12,470  -->  00:04:17,910
+we'll now see a new vegetable in the output added at the end.
+
+69
+
+00:04:17,910  -->  00:04:19,630
+Now it says spinach,
+
+70
+
+00:04:19,630  -->  00:04:22,640
+lettuce, bok choy, and carrot.
+
+71
+
+00:04:22,640  -->  00:04:28,850
+However, does this mean that the veggies clone updates to? What do you think?
+
+72
+
+00:04:28,850  -->  00:04:33,570
+If we were to print veggies clone,
+
+73
+
+00:04:33,570  -->  00:04:36,610
+what do you think the output would be?
+
+74
+
+00:04:39,010  -->  00:04:45,930
+Let's find out. We see here that veggies clone is spinach,
+
+75
+
+00:04:45,930  -->  00:04:47,615
+lettuce, and bok choy.
+
+76
+
+00:04:47,615  -->  00:04:50,130
+If you notice, it's missing the new vegetable
+
+77
+
+00:04:50,130  -->  00:04:52,910
+that was added to veggies, which was carrot.
+
+78
+
+00:04:52,910  -->  00:04:55,070
+This is because when you take a copy,
+
+79
+
+00:04:55,070  -->  00:04:58,790
+the new list is a replicate at that point in time.
+
+80
+
+00:04:58,790  -->  00:05:01,830
+If we had said, for example,
+
+81
+
+00:05:01,830  -->  00:05:06,810
+veggies clone equals veggies.
+
+82
+
+00:05:06,810  -->  00:05:09,650
+Instead of what we had before,
+
+83
+
+00:05:09,650  -->  00:05:13,790
+which was veggies under scare clone equals veggies copy,
+
+84
+
+00:05:13,790  -->  00:05:16,370
+then veggies clone would have been a reference
+
+85
+
+00:05:16,370  -->  00:05:19,850
+to the list and then Carrot would have been included.
+
+86
+
+00:05:19,970  -->  00:05:24,480
+But we cloned the veggies list before we added carrot.
+
+87
+
+00:05:24,480  -->  00:05:28,530
+That's why the veggies clone didn't include that item.
+
+88
+
+00:05:31,520  -->  00:05:36,460
+Another way we can clone a list is with the slice method,
+
+89
+
+00:05:36,460  -->  00:05:41,100
+which we just learned about in the previous section.
+
+90
+
+00:05:41,100  -->  00:05:43,240
+Let's see how this works.
+
+91
+
+00:05:43,240  -->  00:05:46,880
+If we want to make a new list called veggies clone
+
+92
+
+00:05:46,880  -->  00:05:50,950
+2 and set that equal to veggies, we would do something like this.
+
+93
+
+00:05:50,950  -->  00:05:56,100
+We could say veggies_clone2=veggies.
+
+94
+
+00:05:56,690  -->  00:05:59,845
+We'll do a square bracket,
+
+95
+
+00:05:59,845  -->  00:06:03,000
+colon, and then end square bracket.
+
+96
+
+00:06:03,000  -->  00:06:06,710
+When we print veggies_clone2,
+
+97
+
+00:06:08,340  -->  00:06:12,200
+what do you think the output will be?
+
+98
+
+00:06:15,440  -->  00:06:18,260
+If we execute this code,
+
+99
+
+00:06:18,260  -->  00:06:21,000
+we'll see spinach, lettuce,
+
+100
+
+00:06:21,000  -->  00:06:23,000
+bok choy, and carrot.
+
+101
+
+00:06:23,000  -->  00:06:29,650
+Notice how this new clone now includes the carrot item in the list at the end.
+
+102
+
+00:06:29,650  -->  00:06:32,900
+This is because the new cloned list was
+
+103
+
+00:06:32,900  -->  00:06:36,720
+made after this last item was added to the veggies array.
+
+104
+
+00:06:36,720  -->  00:06:41,310
+Instead of putting numbers around the semi-colon,
+
+105
+
+00:06:41,310  -->  00:06:43,140
+which we have here with
+
+106
+
+00:06:43,140  -->  00:06:49,300
+square bracket colon square bracket to limit the start and end of the slice method.
+
+107
+
+00:06:49,300  -->  00:06:52,760
+If we leave it like this, it will include everything in the list.
+
+108
+
+00:06:52,760  -->  00:06:56,875
+This is a crafty shortcut for making a copy in Python.
+
+109
+
+00:06:56,875  -->  00:07:04,140
+Just like that, you've learned two very powerful ways to copy lists in Python. Great job.

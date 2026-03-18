@@ -1,0 +1,584 @@
+1
+
+00:00:00,000  -->  00:00:01,780
+Now that we know how strings work,
+
+2
+
+00:00:01,780  -->  00:00:05,400
+let's check out some of the methods for working with strings in our functions.
+
+3
+
+00:00:05,400  -->  00:00:09,180
+This will involve turning our strings to all lowercase,
+
+4
+
+00:00:09,180  -->  00:00:13,200
+all uppercase replacements, and splits. Let's dive in.
+
+5
+
+00:00:13,200  -->  00:00:15,360
+The first method is lower,
+
+6
+
+00:00:15,360  -->  00:00:18,340
+and this converts the string to all lowercase.
+
+7
+
+00:00:18,340  -->  00:00:23,550
+Imagine you're building a login system where users email addresses are case insensitive,
+
+8
+
+00:00:23,550  -->  00:00:28,800
+meaning JohnCoder, with those capitals @email.com,
+
+9
+
+00:00:28,800  -->  00:00:33,250
+should be treated the same as johncoder@email.com.
+
+10
+
+00:00:33,590  -->  00:00:37,450
+Using the lower method ensures that
+
+11
+
+00:00:37,450  -->  00:00:41,930
+all email inputs are standardized before comparison like this.
+
+12
+
+00:00:41,930  -->  00:00:47,070
+Use lower when you are standardizing text inputs for case insensitive operations,
+
+13
+
+00:00:47,070  -->  00:00:49,630
+such as login systems and searches.
+
+14
+
+00:00:49,630  -->  00:00:51,430
+The second method is upper,
+
+15
+
+00:00:51,430  -->  00:00:55,110
+which does the opposite of the first method we just learned about.
+
+16
+
+00:00:55,110  -->  00:00:58,270
+This converts the string to all uppercase.
+
+17
+
+00:00:58,270  -->  00:01:01,750
+Suppose you're working with an inventory system for a retail store,
+
+18
+
+00:01:01,750  -->  00:01:05,610
+and the product codes need to all be uppercase.
+
+19
+
+00:01:05,610  -->  00:01:09,230
+Using the upper method ensures that codes entered in
+
+20
+
+00:01:09,230  -->  00:01:14,990
+lowercase or mix case are converted to uppercase before being processed, like so.
+
+21
+
+00:01:14,990  -->  00:01:18,990
+Use upper when you're ensuring consistency in product codes,
+
+22
+
+00:01:18,990  -->  00:01:23,750
+reference numbers, or identifiers that must be in uppercase.
+
+23
+
+00:01:23,750  -->  00:01:25,490
+The third method is replace,
+
+24
+
+00:01:25,490  -->  00:01:28,450
+which allows us to replace a chunk of characters or
+
+25
+
+00:01:28,450  -->  00:01:32,535
+sub-string with another chunk of characters or another sub-string.
+
+26
+
+00:01:32,535  -->  00:01:34,570
+Let's say you have an e-commerce website,
+
+27
+
+00:01:34,570  -->  00:01:35,970
+and you're running a promotion.
+
+28
+
+00:01:35,970  -->  00:01:41,925
+You want to dynamically change the displayed currency from dollars to euros.
+
+29
+
+00:01:41,925  -->  00:01:43,670
+Using the replace method,
+
+30
+
+00:01:43,670  -->  00:01:47,550
+you can easily swap one currency symbol for another.
+
+31
+
+00:01:47,550  -->  00:01:50,990
+Use replace when you are replacing dynamic content such
+
+32
+
+00:01:50,990  -->  00:01:54,450
+as formatting prices or handling localization,
+
+33
+
+00:01:54,450  -->  00:01:57,070
+where certain terms need to change.
+
+34
+
+00:01:57,070  -->  00:01:58,970
+The fourth method is split,
+
+35
+
+00:01:58,970  -->  00:02:00,950
+which does exactly what it says.
+
+36
+
+00:02:00,950  -->  00:02:04,655
+It splits the string into a list based on a delimiter,
+
+37
+
+00:02:04,655  -->  00:02:09,700
+otherwise known as a character that we'll use to separate items in two.
+
+38
+
+00:02:09,700  -->  00:02:14,240
+Imagine you're processing customer feedback on a website where users submit comments.
+
+39
+
+00:02:14,240  -->  00:02:17,280
+You need to split sentences into individual words to
+
+40
+
+00:02:17,280  -->  00:02:20,860
+analyze which words are most frequently used.
+
+41
+
+00:02:20,860  -->  00:02:26,100
+The split method helps you break down these sentences into lists of words.
+
+42
+
+00:02:26,100  -->  00:02:31,300
+This turns the comment into this product is amazing.
+
+43
+
+00:02:31,300  -->  00:02:37,860
+I love it. Use the split method when you're tokenizing text for data analysis.
+
+44
+
+00:02:37,860  -->  00:02:40,400
+For example, customer feedback,
+
+45
+
+00:02:40,400  -->  00:02:42,715
+social media posts, and so on.
+
+46
+
+00:02:42,715  -->  00:02:45,630
+Processing CSV data or parsing logs.
+
+47
+
+00:02:45,630  -->  00:02:48,350
+Let's see these in action.
+
+48
+
+00:02:48,350  -->  00:02:52,630
+Let's talk about basic string functions and methods.
+
+49
+
+00:02:52,630  -->  00:02:56,135
+To see these methods for working with strings,
+
+50
+
+00:02:56,135  -->  00:02:58,970
+let's take this starter string here,
+
+51
+
+00:02:58,970  -->  00:03:02,735
+where we'll type text = Hello, World.
+
+52
+
+00:03:02,735  -->  00:03:06,150
+Now, to make all of the characters in this string lower case,
+
+53
+
+00:03:06,150  -->  00:03:11,070
+we can use the lower method. Like this.
+
+54
+
+00:03:11,070  -->  00:03:15,790
+We'll say print(text.lower()),
+
+55
+
+00:03:16,400  -->  00:03:19,600
+and then we'll add parentheses,
+
+56
+
+00:03:19,600  -->  00:03:21,920
+and then when we execute this code,
+
+57
+
+00:03:21,920  -->  00:03:23,590
+this will turn Hello,
+
+58
+
+00:03:23,590  -->  00:03:27,500
+World into all lower case, hello, world.
+
+59
+
+00:03:27,500  -->  00:03:30,200
+Next, we turn all the characters uppercase.
+
+60
+
+00:03:30,200  -->  00:03:32,780
+We'll use the upper method, like this.
+
+61
+
+00:03:32,780  -->  00:03:35,680
+We can copy the previous print statement,
+
+62
+
+00:03:35,680  -->  00:03:38,895
+and instead of lower, we'll say upper.
+
+63
+
+00:03:38,895  -->  00:03:40,830
+If we execute this code,
+
+64
+
+00:03:40,830  -->  00:03:43,730
+this will turn our capitalized Hello,
+
+65
+
+00:03:43,730  -->  00:03:45,550
+World into all uppercase,
+
+66
+
+00:03:45,550  -->  00:03:48,075
+and it'll say HELLO, WORLD in all caps.
+
+67
+
+00:03:48,075  -->  00:03:50,690
+Now, let's say that we wanted to switch out one of
+
+68
+
+00:03:50,690  -->  00:03:53,310
+the characters or one of the words in our string.
+
+69
+
+00:03:53,310  -->  00:03:55,630
+You might remember that I said strings are
+
+70
+
+00:03:55,630  -->  00:03:58,650
+immutable and that we can't replace individual characters.
+
+71
+
+00:03:58,650  -->  00:04:02,010
+Well, there is a way to do this with the replace method.
+
+72
+
+00:04:02,010  -->  00:04:07,830
+If we wanted to change out the word world for Python,
+
+73
+
+00:04:07,830  -->  00:04:11,290
+we could use the replace method like so.
+
+74
+
+00:04:11,290  -->  00:04:16,515
+We'll say print, and then we'll do text.replace,
+
+75
+
+00:04:16,515  -->  00:04:20,205
+then we'll say "world",
+
+76
+
+00:04:20,205  -->  00:04:24,260
+in quotes, and then we'll say "Python".
+
+77
+
+00:04:24,260  -->  00:04:26,150
+That's also in quotes,
+
+78
+
+00:04:26,150  -->  00:04:30,150
+and then we'll close out our parentheses for a replace function,
+
+79
+
+00:04:30,150  -->  00:04:33,870
+and then we will close out print.
+
+80
+
+00:04:34,390  -->  00:04:41,960
+Can you guess what this output is going to be once we execute this code? Let's find out.
+
+81
+
+00:04:41,960  -->  00:04:44,055
+We now see Hello,
+
+82
+
+00:04:44,055  -->  00:04:48,995
+Python, and now our world has been replaced with Python.
+
+83
+
+00:04:48,995  -->  00:04:53,010
+This first input is then replaced by what we put
+
+84
+
+00:04:53,010  -->  00:04:57,800
+in as that second input once it finds this in text.
+
+85
+
+00:04:58,880  -->  00:05:03,400
+There might come a time where we want to split up the text of our string by
+
+86
+
+00:05:03,400  -->  00:05:09,200
+a delimiter or a splitting character into a list or array of parts.
+
+87
+
+00:05:09,200  -->  00:05:16,660
+How could we do this? What we can do is we can say (print(text.split(",")),
+
+88
+
+00:05:16,660  -->  00:05:26,220
+and then we'll close it out of parentheses.
+
+89
+
+00:05:26,220  -->  00:05:30,110
+By running this, our split method will split the string at the coma,
+
+90
+
+00:05:30,110  -->  00:05:32,095
+and it'll create a list.
+
+91
+
+00:05:32,095  -->  00:05:37,610
+Now this will create a list with some strings in there,
+
+92
+
+00:05:37,610  -->  00:05:39,835
+so we'll have 'Hello', ' World! '
+
+93
+
+00:05:39,835  -->  00:05:43,170
+And then in quotes space World, and exclamation point.
+
+94
+
+00:05:43,170  -->  00:05:45,930
+Again, this is all within a list.
+
+95
+
+00:05:46,740  -->  00:05:51,070
+In the example from earlier with an even longer amount of text,
+
+96
+
+00:05:51,070  -->  00:05:53,910
+you will see even more tokenized or broken
+
+97
+
+00:05:53,910  -->  00:05:59,050
+up components from the string into its individual components.
+
+98
+
+00:06:00,380  -->  00:06:05,850
+Let's take a comment and we'll write comment equals,
+
+99
+
+00:06:05,850  -->  00:06:07,200
+so we're setting a variable here.
+
+100
+
+00:06:07,200  -->  00:06:11,980
+We'll set this equal to. This product is amazing. I love it.
+
+101
+
+00:06:12,740  -->  00:06:18,080
+Now, we'll take words and we'll equal comment.split.
+
+102
+
+00:06:18,300  -->  00:06:20,580
+We'll put this in parentheses.
+
+103
+
+00:06:20,580  -->  00:06:27,410
+We'll do a (" ") end parentheses,
+
+104
+
+00:06:27,410  -->  00:06:31,860
+and then we'll print the words.
+
+105
+
+00:06:32,060  -->  00:06:35,940
+Can you guess what this is going to output?
+
+106
+
+00:06:36,520  -->  00:06:44,460
+When we run this, this will turn the comment string into this product is amazing.
+
+107
+
+00:06:44,460  -->  00:06:48,535
+I love it, and this is all in the list.
+
+108
+
+00:06:48,535  -->  00:06:51,925
+We break up the words based on the delimiter of a space,
+
+109
+
+00:06:51,925  -->  00:06:54,050
+which we defined here.
+
+110
+
+00:06:54,180  -->  00:06:59,210
+That is where the space comes in with the split method.
+
+111
+
+00:06:59,210  -->  00:07:01,530
+These methods are simple,
+
+112
+
+00:07:01,530  -->  00:07:04,470
+but extremely powerful tools for
+
+113
+
+00:07:04,470  -->  00:07:08,610
+manipulating and formatting text in real world Python applications,
+
+114
+
+00:07:08,610  -->  00:07:10,370
+all with the power of strings.
+
+115
+
+00:07:10,370  -->  00:07:12,950
+Great job going through all of these methods,
+
+116
+
+00:07:12,950  -->  00:07:17,670
+and hopefully you can see how these methods could be powering the technology,
+
+117
+
+00:07:17,670  -->  00:07:24,390
+apps and websites you use and depend on every single day. Great job.

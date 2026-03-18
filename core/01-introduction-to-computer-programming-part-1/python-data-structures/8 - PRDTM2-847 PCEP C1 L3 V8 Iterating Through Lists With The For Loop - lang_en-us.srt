@@ -1,0 +1,74 @@
+1
+
+00:00:00,000  -->  00:00:04,345
+You can also loop through all the elements of a list using a for loop.
+
+2
+
+00:00:04,345  -->  00:00:07,220
+You'll remember for loops from the previous lessons,
+
+3
+
+00:00:07,220  -->  00:00:12,035
+and now we get to see this powerful skill we learned in a more data-centric manner.
+
+4
+
+00:00:12,035  -->  00:00:17,600
+Using a for loop over a list is like scanning each item in your shopping cart.
+
+5
+
+00:00:17,600  -->  00:00:20,840
+Here, we'll see it print out each item in the loop.
+
+6
+
+00:00:20,840  -->  00:00:23,210
+Remember our format of for loops.
+
+7
+
+00:00:23,210  -->  00:00:27,880
+For tells Python, we want to iterate through a specific item,
+
+8
+
+00:00:27,880  -->  00:00:29,500
+which we can name anything.
+
+9
+
+00:00:29,500  -->  00:00:32,300
+But here we declare a single item called
+
+10
+
+00:00:32,300  -->  00:00:37,930
+fruit in a list of items in a predefined array called fruits.
+
+11
+
+00:00:37,930  -->  00:00:41,770
+The output is apple, banana, and cherry.
+
+12
+
+00:00:41,770  -->  00:00:44,950
+The for loop automatically goes through each element,
+
+13
+
+00:00:44,950  -->  00:00:46,730
+in our case, each fruit,
+
+14
+
+00:00:46,730  -->  00:00:50,050
+and prints each item one at a time,
+
+15
+
+00:00:50,050  -->  00:00:53,030
+iterating through the fruits array.

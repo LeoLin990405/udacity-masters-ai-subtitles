@@ -1,0 +1,109 @@
+1
+
+00:00:00,000  -->  00:00:02,740
+Welcome to data collections in Python.
+
+2
+
+00:00:02,740  -->  00:00:07,860
+In this lesson, we're going to be diving deep into the vast world of data collections.
+
+3
+
+00:00:07,860  -->  00:00:09,640
+Imagine you're at a grocery store,
+
+4
+
+00:00:09,640  -->  00:00:12,020
+and you want to keep track of the items in your cart.
+
+5
+
+00:00:12,020  -->  00:00:18,440
+Maybe you even categorize them into different sections like fruits, veggies, and dairy.
+
+6
+
+00:00:18,440  -->  00:00:21,620
+Python gives us a similar way to group data together,
+
+7
+
+00:00:21,620  -->  00:00:23,000
+allowing us to organize,
+
+8
+
+00:00:23,000  -->  00:00:25,360
+manipulate, and store information.
+
+9
+
+00:00:25,360  -->  00:00:30,460
+We'll explore four major data collections that are incredibly useful;
+
+10
+
+00:00:30,460  -->  00:00:35,380
+lists, tuples, dictionaries, and strings.
+
+11
+
+00:00:35,380  -->  00:00:39,430
+Each collection has its own unique strengths and purposes,
+
+12
+
+00:00:39,430  -->  00:00:43,790
+which you will soon learn about and be able to make decisions about which type
+
+13
+
+00:00:43,790  -->  00:00:48,450
+of data collection to use in different types of situations you come across.
+
+14
+
+00:00:48,450  -->  00:00:50,370
+Whether you're storing information in
+
+15
+
+00:00:50,370  -->  00:00:54,210
+a structured list or organizing data in key value pairs,
+
+16
+
+00:00:54,210  -->  00:00:58,760
+these collections will make your Python programming much more efficient.
+
+17
+
+00:00:58,760  -->  00:01:01,410
+Soon enough, you'll be a data wizard,
+
+18
+
+00:01:01,410  -->  00:01:05,710
+and know exactly which data collections to use, and when?
+
+19
+
+00:01:05,710  -->  00:01:07,450
+By the end of this lesson,
+
+20
+
+00:01:07,450  -->  00:01:10,010
+you'll be comfortable constructing and working with
+
+21
+
+00:01:10,010  -->  00:01:14,300
+these data types to handle more complex data in Python.
+
+22
+
+00:01:14,300  -->  00:01:17,690
+If you're ready, let's dive into it.

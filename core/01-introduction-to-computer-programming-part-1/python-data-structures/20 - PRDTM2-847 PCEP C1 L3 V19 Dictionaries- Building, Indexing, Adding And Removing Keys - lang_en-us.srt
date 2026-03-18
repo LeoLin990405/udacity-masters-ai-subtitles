@@ -1,0 +1,324 @@
+1
+
+00:00:00,000  -->  00:00:05,000
+Dictionaries are built using curly braces with each key value pair in sight.
+
+2
+
+00:00:05,000  -->  00:00:10,120
+For example, a dictionary for books and their genres might look something like this.
+
+3
+
+00:00:10,120  -->  00:00:13,280
+Earlier, we had them all on multiple lines,
+
+4
+
+00:00:13,280  -->  00:00:15,940
+but here we can have them all on one line.
+
+5
+
+00:00:15,940  -->  00:00:19,620
+Both can work, but the first example is much more human readable,
+
+6
+
+00:00:19,620  -->  00:00:20,980
+at least in my opinion.
+
+7
+
+00:00:20,980  -->  00:00:24,200
+Let's see some examples of what this looks like.
+
+8
+
+00:00:24,680  -->  00:00:27,860
+Let's talk about dictionaries and specifically,
+
+9
+
+00:00:27,860  -->  00:00:31,420
+building, indexing, adding, and removing keys with them.
+
+10
+
+00:00:31,420  -->  00:00:37,480
+First, let's build and initialize our dictionary of books, titles, and genres.
+
+11
+
+00:00:37,480  -->  00:00:42,310
+We'll create a variable called library,
+
+12
+
+00:00:42,310  -->  00:00:45,130
+and we'll have a few items in there.
+
+13
+
+00:00:45,130  -->  00:00:48,590
+We'll have pred and prejudice set as romance,
+
+14
+
+00:00:48,590  -->  00:00:53,465
+1984, as dystopia, and Moby Dick as adventure.
+
+15
+
+00:00:53,465  -->  00:00:59,330
+It might be easier to see this if we have these as different lines.
+
+16
+
+00:00:59,490  -->  00:01:02,330
+This is the library dictionary,
+
+17
+
+00:01:02,330  -->  00:01:07,755
+and then we have three items with their own keys and values.
+
+18
+
+00:01:07,755  -->  00:01:10,690
+That's what we talk about when we say key value pairs.
+
+19
+
+00:01:10,690  -->  00:01:15,270
+Now if we were to print this, We'll see this,
+
+20
+
+00:01:15,270  -->  00:01:21,165
+and these will be the items that we have already created in our library dictionary.
+
+21
+
+00:01:21,165  -->  00:01:23,410
+When we think about indexing,
+
+22
+
+00:01:23,410  -->  00:01:26,130
+in order to access data within the dictionary,
+
+23
+
+00:01:26,130  -->  00:01:30,585
+we can do a handy lookup with the key or book title.
+
+24
+
+00:01:30,585  -->  00:01:39,490
+For example, let's say that we want to print the value of
+
+25
+
+00:01:39,490  -->  00:01:48,910
+1984 and we want to see if this item exists in our dictionary.
+
+26
+
+00:01:50,460  -->  00:01:54,500
+If we want to find the value of this book,
+
+27
+
+00:01:54,980  -->  00:01:58,540
+we'll see that it will output dystopia.
+
+28
+
+00:01:58,540  -->  00:02:03,700
+Now, notice that we cannot do the usual indexing method like we usually do like this.
+
+29
+
+00:02:03,700  -->  00:02:08,700
+If we do library, and we do this,
+
+30
+
+00:02:08,700  -->  00:02:12,340
+this will return a key error.
+
+31
+
+00:02:12,340  -->  00:02:20,820
+This tells us that we can't use that as the key to look up an item in our dictionary.
+
+32
+
+00:02:22,150  -->  00:02:26,960
+Now let's talk about adding and modifying key value pairs.
+
+33
+
+00:02:27,680  -->  00:02:31,740
+Thanks to Python, we can add or modify key value pairs
+
+34
+
+00:02:31,740  -->  00:02:35,830
+in our dictionary very easily. We can say library.
+
+35
+
+00:02:35,830  -->  00:02:45,600
+We can say the great gas B and square bracket
+
+36
+
+00:02:45,600  -->  00:02:49,160
+equals classic.
+
+37
+
+00:02:49,280  -->  00:02:51,460
+We are telling the dictionary,
+
+38
+
+00:02:51,460  -->  00:02:54,760
+here's the first item, which is going to be great GASB,
+
+39
+
+00:02:55,040  -->  00:02:57,880
+and that's the key in brackets,
+
+40
+
+00:02:57,880  -->  00:03:00,700
+and then it equals its value,
+
+41
+
+00:03:00,700  -->  00:03:02,960
+which is after the equal sign.
+
+42
+
+00:03:02,960  -->  00:03:09,560
+If we enter this, and now if we print our library,
+
+43
+
+00:03:09,970  -->  00:03:13,930
+We now see that there was a new item added,
+
+44
+
+00:03:13,930  -->  00:03:17,370
+which was the Great Gatsby and classic,
+
+45
+
+00:03:17,370  -->  00:03:21,310
+which is its genre and of course,
+
+46
+
+00:03:21,310  -->  00:03:24,690
+this was added at the very end of our dictionary.
+
+47
+
+00:03:24,690  -->  00:03:30,190
+But what if that genre was incorrectly assigned or needs to be updated? What would we do?
+
+48
+
+00:03:30,190  -->  00:03:34,230
+Fortunately, dictionaries let us modify the value for an existing key,
+
+49
+
+00:03:34,230  -->  00:03:36,125
+which we can do like this.
+
+50
+
+00:03:36,125  -->  00:03:40,930
+We'll say library, and then we'll say
+
+51
+
+00:03:40,930  -->  00:03:48,930
+the great Gatsby, and equal adventure.
+
+52
+
+00:03:52,500  -->  00:03:57,140
+Now if we print library again,
+
+53
+
+00:04:00,140  -->  00:04:04,000
+We'll now say that Great Gatsby is no longer classic.
+
+54
+
+00:04:04,000  -->  00:04:06,320
+It's now adventure.
+
+55
+
+00:04:06,700  -->  00:04:10,180
+Now let's talk about removing key value pairs.
+
+56
+
+00:04:10,180  -->  00:04:15,995
+We can also remove an item from our dictionary very easily as well with a Del statement.
+
+57
+
+00:04:15,995  -->  00:04:20,920
+All we have to do is this, Delbrary,
+
+58
+
+00:04:20,920  -->  00:04:29,010
+and use the key, the Gab.
+
+59
+
+00:04:29,010  -->  00:04:31,280
+Once we execute that cell.
+
+60
+
+00:04:31,280  -->  00:04:34,660
+Then when we print our library,
+
+61
+
+00:04:35,620  -->  00:04:39,560
+we now have the same three items that we started with,
+
+62
+
+00:04:39,560  -->  00:04:42,020
+Pride and Prejudice, which is romance,
+
+63
+
+00:04:42,020  -->  00:04:43,900
+1984, which is dystopia,
+
+64
+
+00:04:43,900  -->  00:04:46,430
+and Moby Dick, which is adventure.
+
+65
+
+00:04:48,180  -->  00:04:54,660
+Of course, the Great Gatsby is nowhere to be found in this dictionary.

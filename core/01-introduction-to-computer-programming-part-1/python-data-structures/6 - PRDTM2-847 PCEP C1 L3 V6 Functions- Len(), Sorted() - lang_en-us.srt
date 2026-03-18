@@ -1,0 +1,299 @@
+1
+
+00:00:00,000  -->  00:00:03,840
+Along with the list methods we saw in the previous lesson,
+
+2
+
+00:00:03,840  -->  00:00:07,420
+Python offers powerful functions to work with lists.
+
+3
+
+00:00:07,420  -->  00:00:11,460
+In this video, we'll take a closer look at len and sorted.
+
+4
+
+00:00:11,460  -->  00:00:14,980
+Len, as we just saw the length function,
+
+5
+
+00:00:14,980  -->  00:00:18,240
+returns the number of elements in a list.
+
+6
+
+00:00:18,240  -->  00:00:22,425
+This is a counter for finding the number of pieces in the collection.
+
+7
+
+00:00:22,425  -->  00:00:26,370
+Sorted, on the other hand, returns a new list with the elements
+
+8
+
+00:00:26,370  -->  00:00:30,470
+sorted in ascending order or descending if specified.
+
+9
+
+00:00:30,470  -->  00:00:34,145
+This helps us sort our organization of items,
+
+10
+
+00:00:34,145  -->  00:00:36,830
+kind of like cleaning our room or putting everything in
+
+11
+
+00:00:36,830  -->  00:00:41,150
+a logical orderly manner for better analysis or review.
+
+12
+
+00:00:41,150  -->  00:00:45,895
+Let's see a demo of how these functions help us with managing our lists.
+
+13
+
+00:00:45,895  -->  00:00:49,790
+Let's look at the len and sorted functions.
+
+14
+
+00:00:49,790  -->  00:00:53,210
+First, let's take another example list,
+
+15
+
+00:00:53,210  -->  00:00:55,170
+this time with a list of numbers.
+
+16
+
+00:00:55,170  -->  00:00:58,190
+If we want to count how many numbers are in the list,
+
+17
+
+00:00:58,190  -->  00:01:01,615
+we'll use the len function like so.
+
+18
+
+00:01:01,615  -->  00:01:04,430
+We'll define our numbers list like this.
+
+19
+
+00:01:04,430  -->  00:01:06,755
+In square brackets, we have 5,
+
+20
+
+00:01:06,755  -->  00:01:08,650
+2, 9, and 1.
+
+21
+
+00:01:08,650  -->  00:01:16,865
+Then we'll write a print statement where we'll take the len or the length of numbers.
+
+22
+
+00:01:16,865  -->  00:01:20,300
+We'll do len in parentheses put in our list,
+
+23
+
+00:01:20,300  -->  00:01:23,820
+close out len and then close out the print statement.
+
+24
+
+00:01:23,820  -->  00:01:26,960
+Now, when we run this,
+
+25
+
+00:01:26,960  -->  00:01:31,500
+we're going to see that the output has some numbers in it.
+
+26
+
+00:01:31,500  -->  00:01:34,040
+What do you think the output will look like?
+
+27
+
+00:01:35,310  -->  00:01:39,690
+When we run this, we see the output is four because there
+
+28
+
+00:01:39,690  -->  00:01:43,255
+are four numbers in the numbers list,
+
+29
+
+00:01:43,255  -->  00:01:46,070
+1, 2, 3, and 4.
+
+30
+
+00:01:46,070  -->  00:01:49,590
+Now, if we want to sort these in numerical order,
+
+31
+
+00:01:49,590  -->  00:01:51,990
+it would take a huge amount of time to do this
+
+32
+
+00:01:51,990  -->  00:01:54,570
+manually if we have a huge amount of numbers.
+
+33
+
+00:01:54,570  -->  00:01:57,270
+As Python developers, we have to move fast.
+
+34
+
+00:01:57,270  -->  00:02:01,270
+So let's leverage the powerful sorted function for this.
+
+35
+
+00:02:03,170  -->  00:02:07,845
+What we'll do is that we will say sorted numbers,
+
+36
+
+00:02:07,845  -->  00:02:11,505
+as a variable name, equals sorted,
+
+37
+
+00:02:11,505  -->  00:02:14,800
+and we'll put our numbers list inside of that.
+
+38
+
+00:02:14,800  -->  00:02:20,260
+Now, when we print our sorted numbers,
+
+39
+
+00:02:25,340  -->  00:02:28,990
+what do you think we'll see as the output?
+
+40
+
+00:02:29,930  -->  00:02:33,210
+When we run this, we now see 1,
+
+41
+
+00:02:33,210  -->  00:02:34,980
+2, 5, and 9.
+
+42
+
+00:02:34,980  -->  00:02:37,730
+And now we see the output of sorted numbers is
+
+43
+
+00:02:37,730  -->  00:02:41,110
+now in complete numerical order, almost by magic.
+
+44
+
+00:02:41,110  -->  00:02:45,630
+And if you thought that it starts and stops with numbers, think again.
+
+45
+
+00:02:45,630  -->  00:02:49,670
+Let's try this by alphabetizing our fruits array.
+
+46
+
+00:02:51,300  -->  00:02:54,340
+Our fruits array looked something like this.
+
+47
+
+00:02:54,340  -->  00:02:58,020
+We had apple, orange, banana, cherry,
+
+48
+
+00:02:58,020  -->  00:03:03,820
+and grape, and that's set to the fruits variable here.
+
+49
+
+00:03:03,820  -->  00:03:07,680
+So we can execute the cell on this that will save our fruits.
+
+50
+
+00:03:07,680  -->  00:03:12,900
+Now if we were to print the value of our fruits array,
+
+51
+
+00:03:12,900  -->  00:03:15,360
+we'll see apple, orange,
+
+52
+
+00:03:15,360  -->  00:03:18,460
+banana, cherry, and grape, right here.
+
+53
+
+00:03:19,320  -->  00:03:26,585
+Now, let's use the sorted function to alphabetize all of these items in our fruits list.
+
+54
+
+00:03:26,585  -->  00:03:31,440
+We'll say print(sorted(fruits)) we'll put in fruits,
+
+55
+
+00:03:31,440  -->  00:03:33,320
+and then we'll close out the print statement.
+
+56
+
+00:03:33,320  -->  00:03:39,480
+So what do you think the output will now be for our fruits list?
+
+57
+
+00:03:41,880  -->  00:03:44,380
+Again, almost by magic,
+
+58
+
+00:03:44,380  -->  00:03:49,690
+we have our fruits array sorted in complete alphabetical order, which is A,
+
+59
+
+00:03:49,690  -->  00:03:52,935
+B, C, and then G and O, so apple,
+
+60
+
+00:03:52,935  -->  00:03:57,960
+banana, cherry, grape, and orange. How cool is that?

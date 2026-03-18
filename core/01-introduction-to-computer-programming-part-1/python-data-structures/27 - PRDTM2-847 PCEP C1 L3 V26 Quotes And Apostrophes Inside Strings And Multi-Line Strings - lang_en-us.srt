@@ -1,0 +1,104 @@
+1
+
+00:00:00,000  -->  00:00:02,340
+To use a quotes inside a string,
+
+2
+
+00:00:02,340  -->  00:00:05,300
+you can either escape them with a backslash,
+
+3
+
+00:00:05,300  -->  00:00:08,080
+like we just learned how to do in the previous lesson,
+
+4
+
+00:00:08,080  -->  00:00:10,860
+or use different types of quotes.
+
+5
+
+00:00:10,860  -->  00:00:14,700
+In this example, the single quotes wrap the entire string,
+
+6
+
+00:00:14,700  -->  00:00:18,760
+and you can put double quotes inside of the string as needed,
+
+7
+
+00:00:18,760  -->  00:00:20,540
+or something like this.
+
+8
+
+00:00:20,540  -->  00:00:23,320
+In this example, we use double quotes to wrap
+
+9
+
+00:00:23,320  -->  00:00:27,560
+the entire string in a single apostrophe shows up inside of the string.
+
+10
+
+00:00:27,560  -->  00:00:30,835
+Both of these are acceptable strings according to Python.
+
+11
+
+00:00:30,835  -->  00:00:34,430
+With regards to apostrophes inside of strings,
+
+12
+
+00:00:34,430  -->  00:00:36,610
+so long as it's a single apostrophe,
+
+13
+
+00:00:36,610  -->  00:00:40,110
+then that will not cause an issue or need to be escaped.
+
+14
+
+00:00:40,110  -->  00:00:43,410
+If you were to have quotation marks inside of quotation marks,
+
+15
+
+00:00:43,410  -->  00:00:46,890
+that is where we would need to have them be escaped,
+
+16
+
+00:00:46,890  -->  00:00:49,205
+like we walked through in the last lesson.
+
+17
+
+00:00:49,205  -->  00:00:53,785
+May remember our use of multi line strings from the previous lessons.
+
+18
+
+00:00:53,785  -->  00:00:58,320
+But let's recap what makes the multi-line string different from a regular string.
+
+19
+
+00:00:58,320  -->  00:01:03,540
+As you'll see here, multi-line strings have triple quotes at the beginning,
+
+20
+
+00:01:03,540  -->  00:01:07,800
+and at the end, and can span across multiple-lines of text.
+
+21
+
+00:01:07,800  -->  00:01:12,940
+Regular strings have the same quotes at the beginning and at the end of the string.

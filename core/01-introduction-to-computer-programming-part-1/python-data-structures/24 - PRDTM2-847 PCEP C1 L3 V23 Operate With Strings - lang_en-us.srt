@@ -1,0 +1,109 @@
+1
+
+00:00:00,000  -->  00:00:03,320
+We've already been working with strings a great deal in this course.
+
+2
+
+00:00:03,320  -->  00:00:06,240
+Let's review them in a bit more detail.
+
+3
+
+00:00:06,240  -->  00:00:10,600
+Let's imagine you're a storyteller crafting a very exciting story.
+
+4
+
+00:00:10,600  -->  00:00:12,180
+In your exciting story,
+
+5
+
+00:00:12,180  -->  00:00:17,420
+every word sentence and paragraph is represented as a sequence of characters.
+
+6
+
+00:00:17,420  -->  00:00:20,920
+In Python, these sequences are known as strings.
+
+7
+
+00:00:20,920  -->  00:00:23,680
+Whether you're working with text in a story,
+
+8
+
+00:00:23,680  -->  00:00:25,220
+a list of commands,
+
+9
+
+00:00:25,220  -->  00:00:27,080
+or even just a user name,
+
+10
+
+00:00:27,080  -->  00:00:31,865
+strings are essential for storing and manipulating text data of characters.
+
+11
+
+00:00:31,865  -->  00:00:35,970
+You'll notice something is a string because it will have quotes around it,
+
+12
+
+00:00:35,970  -->  00:00:39,450
+like you see here, much different than a number,
+
+13
+
+00:00:39,450  -->  00:00:41,110
+which has no quotations.
+
+14
+
+00:00:41,110  -->  00:00:44,930
+You can create a string using either single or double quotes,
+
+15
+
+00:00:44,930  -->  00:00:48,370
+both will do in the world of strings in Python.
+
+16
+
+00:00:48,370  -->  00:00:50,210
+Think of this like writing a note.
+
+17
+
+00:00:50,210  -->  00:00:52,750
+Whether you use single or double quotations,
+
+18
+
+00:00:52,750  -->  00:00:54,150
+doesn't matter very much,
+
+19
+
+00:00:54,150  -->  00:00:55,915
+as long as you're consistent.
+
+20
+
+00:00:55,915  -->  00:00:57,770
+When you're working on a tech team,
+
+21
+
+00:00:57,770  -->  00:01:01,420
+your team will probably adopt a specific style.
+
+22
+
+00:01:01,420  -->  00:01:06,310
+Make sure to subscribe to those types of standards for consistency.

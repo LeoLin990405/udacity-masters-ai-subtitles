@@ -1,0 +1,89 @@
+1
+
+00:00:00,000  -->  00:00:03,140
+List in Python are like dynamic arrays,
+
+2
+
+00:00:03,140  -->  00:00:05,860
+collections of items that you can change,
+
+3
+
+00:00:05,860  -->  00:00:08,940
+expand, or shrink as needed.
+
+4
+
+00:00:08,940  -->  00:00:11,800
+Think of these like a shopping cart of items.
+
+5
+
+00:00:11,800  -->  00:00:13,740
+You can add items to the cart,
+
+6
+
+00:00:13,740  -->  00:00:15,360
+review what's in the cart,
+
+7
+
+00:00:15,360  -->  00:00:17,240
+remove items from the cart,
+
+8
+
+00:00:17,240  -->  00:00:22,780
+and there is a specific order in which you add items to them or remove them.
+
+9
+
+00:00:22,780  -->  00:00:25,240
+Lists are ordered and mutable,
+
+10
+
+00:00:25,240  -->  00:00:28,720
+meaning they keep the order in which elements are added,
+
+11
+
+00:00:28,720  -->  00:00:31,900
+and you can change them after creation.
+
+12
+
+00:00:31,900  -->  00:00:37,390
+Constructing lists or vectors involves putting items inside of square brackets.
+
+13
+
+00:00:37,390  -->  00:00:42,380
+Lists are versatile because they allow you to store multiple related items in one place.
+
+14
+
+00:00:42,380  -->  00:00:47,940
+You can create a list by placing your data in side square brackets separated by commas.
+
+15
+
+00:00:47,940  -->  00:00:50,940
+In this example, we've created a list of fruits.
+
+16
+
+00:00:50,940  -->  00:00:54,240
+Lists are great for storing collections of related data,
+
+17
+
+00:00:54,240  -->  00:00:56,580
+like a shopping cart full of items.
+
+18
+
+00:00:56,580  -->  00:01:03,220
+You can think of a list as a structured and flexible way to group similar data together.

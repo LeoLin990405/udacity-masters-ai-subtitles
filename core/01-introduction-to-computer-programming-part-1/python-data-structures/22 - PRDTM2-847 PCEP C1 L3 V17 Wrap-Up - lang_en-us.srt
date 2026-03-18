@@ -1,0 +1,54 @@
+1
+
+00:00:00,000  -->  00:00:03,800
+Tuples are extremely useful data types in Python when
+
+2
+
+00:00:03,800  -->  00:00:08,220
+you want to ensure that certain collections of data remain immutable,
+
+3
+
+00:00:08,220  -->  00:00:10,240
+unchanged throughout your program,
+
+4
+
+00:00:10,240  -->  00:00:13,120
+script, application, or infrastructure.
+
+5
+
+00:00:13,120  -->  00:00:16,160
+This can be crucial when dealing with geographic data,
+
+6
+
+00:00:16,160  -->  00:00:21,720
+configuration settings, or any other data that shouldn't be altered after it's defined.
+
+7
+
+00:00:21,720  -->  00:00:24,600
+However, when you need flexibility,
+
+8
+
+00:00:24,600  -->  00:00:27,520
+you can incorporate lists within tuples to
+
+9
+
+00:00:27,520  -->  00:00:31,040
+allow certain parts of the data to remain mutable.
+
+10
+
+00:00:31,040  -->  00:00:33,860
+This balance between mutability and
+
+11
+
+00:00:33,860  -->  00:00:39,520
+immutability gives you precise control over your data structures.

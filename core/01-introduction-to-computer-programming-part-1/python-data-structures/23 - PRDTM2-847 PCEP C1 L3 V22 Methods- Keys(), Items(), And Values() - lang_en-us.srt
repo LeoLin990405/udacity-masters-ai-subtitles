@@ -1,0 +1,299 @@
+1
+
+00:00:00,000  -->  00:00:03,920
+We've already started to use some handy strategies for working with Python.
+
+2
+
+00:00:03,920  -->  00:00:06,760
+Let's review what methods we will come
+
+3
+
+00:00:06,760  -->  00:00:10,140
+to use when working with the dictionary data structure.
+
+4
+
+00:00:10,140  -->  00:00:15,440
+First up, keys. This returns a list of all the items in the dictionary.
+
+5
+
+00:00:15,440  -->  00:00:21,545
+Next, values returns a list of all of the values in the dictionary.
+
+6
+
+00:00:21,545  -->  00:00:24,880
+Finally, items, this returns a list of
+
+7
+
+00:00:24,880  -->  00:00:29,270
+the key value pairs as two pools for that dictionary.
+
+8
+
+00:00:29,270  -->  00:00:35,620
+Understanding key value pairs is an essential concept when it comes to data engineering,
+
+9
+
+00:00:35,620  -->  00:00:39,840
+building out databases, working with large data sets, and so on.
+
+10
+
+00:00:39,840  -->  00:00:43,000
+Many databases and storage systems rely on
+
+11
+
+00:00:43,000  -->  00:00:47,920
+key value pairs to organize data in tidy compact formats.
+
+12
+
+00:00:47,920  -->  00:00:52,480
+In data modeling, key value pairs can help you and your team
+
+13
+
+00:00:52,480  -->  00:00:57,960
+coordinate how that information is organized, stored, and accessed.
+
+14
+
+00:00:57,960  -->  00:01:02,160
+If we're defining a user's profile with key value pairs,
+
+15
+
+00:01:02,160  -->  00:01:08,010
+this might look something like this when Alice signs up as a new user on our platform.
+
+16
+
+00:01:08,010  -->  00:01:09,940
+As her profile is built,
+
+17
+
+00:01:09,940  -->  00:01:16,420
+her Alice underscore profile object might consist of her unique ID in our app,
+
+18
+
+00:01:16,420  -->  00:01:18,860
+such as a long number,
+
+19
+
+00:01:18,860  -->  00:01:22,460
+her name, which is Alice Coder, her birthday,
+
+20
+
+00:01:22,460  -->  00:01:24,980
+which is January 1st, 1991,
+
+21
+
+00:01:24,980  -->  00:01:27,420
+her favorite color, which is orange,
+
+22
+
+00:01:27,420  -->  00:01:30,195
+and her favorite food, which is pizza.
+
+23
+
+00:01:30,195  -->  00:01:33,650
+We need to pull out her name to display that in our app,
+
+24
+
+00:01:33,650  -->  00:01:39,050
+we go into the key of name and then out pops Alice Coder.
+
+25
+
+00:01:39,050  -->  00:01:45,610
+This is how key value pairs become very useful in how we work with our data.
+
+26
+
+00:01:45,610  -->  00:01:47,430
+Let's talk about the methods,
+
+27
+
+00:01:47,430  -->  00:01:49,670
+keys, items, and values.
+
+28
+
+00:01:49,670  -->  00:01:51,490
+In order to see this in action,
+
+29
+
+00:01:51,490  -->  00:01:53,830
+let's review what the outputs look like when we
+
+30
+
+00:01:53,830  -->  00:01:56,670
+use these methods on our library dictionary.
+
+31
+
+00:01:56,670  -->  00:01:58,900
+To get the first values,
+
+32
+
+00:01:58,900  -->  00:02:02,590
+we'll use the keys method.
+
+33
+
+00:02:02,990  -->  00:02:06,900
+We'll first declare our dictionary,
+
+34
+
+00:02:06,900  -->  00:02:10,940
+which we have as pride and prejudice with the Romance,
+
+35
+
+00:02:10,940  -->  00:02:15,620
+1984 with the dystopia and Moby Dick with the adventure.
+
+36
+
+00:02:15,620  -->  00:02:20,620
+If we want to get the first values of the dictionary,
+
+37
+
+00:02:20,620  -->  00:02:25,980
+we'll say print library keys,
+
+38
+
+00:02:28,420  -->  00:02:34,135
+and then we'll execute this code.
+
+39
+
+00:02:34,135  -->  00:02:39,330
+Now we'll see dictionary of keys is Pride and Prejudice,
+
+40
+
+00:02:39,330  -->  00:02:41,690
+1984, and Moby Dick.
+
+41
+
+00:02:41,690  -->  00:02:43,730
+Now to get the second values,
+
+42
+
+00:02:43,730  -->  00:02:45,875
+we'll use the dot values method,
+
+43
+
+00:02:45,875  -->  00:02:48,770
+so we'll copy this last print statement.
+
+44
+
+00:02:48,770  -->  00:02:51,950
+But instead of saying keys, we'll say values.
+
+45
+
+00:02:51,950  -->  00:02:54,170
+When we execute this code.
+
+46
+
+00:02:54,170  -->  00:02:59,790
+We'll now see dictionary values is romance, dystopia, and adventure.
+
+47
+
+00:02:59,790  -->  00:03:04,985
+Now to get the key value pairs of all of the items as an immutable triple,
+
+48
+
+00:03:04,985  -->  00:03:07,580
+we'll use the dot items method.
+
+49
+
+00:03:07,580  -->  00:03:10,070
+We'll copy this last print statement,
+
+50
+
+00:03:10,070  -->  00:03:14,130
+and instead of values, we'll say items.
+
+51
+
+00:03:14,510  -->  00:03:19,420
+Now instead of getting the first or just the second items,
+
+52
+
+00:03:19,420  -->  00:03:23,140
+when we execute this, we'll get the whole library,
+
+53
+
+00:03:23,140  -->  00:03:26,170
+which is our entire dictionary inside
+
+54
+
+00:03:26,170  -->  00:03:29,400
+of a tuple and that will have pride and prejudice as romance,
+
+55
+
+00:03:29,400  -->  00:03:32,320
+1984, as dyspa and Moby Dick as adventure.
+
+56
+
+00:03:32,320  -->  00:03:37,580
+And notice how each of these items is a tuple inside of our list.
+
+57
+
+00:03:40,250  -->  00:03:43,810
+Dictionaries give us the ability to manage and
+
+58
+
+00:03:43,810  -->  00:03:47,540
+organize our data very efficiently using keys and values.
+
+59
+
+00:03:47,540  -->  00:03:51,390
+Now your digital library is well organized and easy to manage,
+
+60
+
+00:03:51,390  -->  00:03:56,930
+as well as any large data set you need to organize with Python.

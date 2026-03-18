@@ -1,0 +1,174 @@
+1
+
+00:00:00,000  -->  00:00:05,240
+If you ever need to include special characters like quotation marks or adding a new line,
+
+2
+
+00:00:05,240  -->  00:00:07,960
+such as an Enter, into the string,
+
+3
+
+00:00:07,960  -->  00:00:11,980
+you can use the backslash character as an escape character.
+
+4
+
+00:00:11,980  -->  00:00:16,180
+You might not have ever needed to use this special backslash character before,
+
+5
+
+00:00:16,180  -->  00:00:20,180
+but it is a very handy one to have in your back pocket.
+
+6
+
+00:00:20,180  -->  00:00:24,560
+For example, let's say that you want to break up text into two lines,
+
+7
+
+00:00:24,560  -->  00:00:26,340
+but it is the same string.
+
+8
+
+00:00:26,340  -->  00:00:29,560
+You can use the handy backslash character to put
+
+9
+
+00:00:29,560  -->  00:00:33,440
+the part after the backslash onto a second line.
+
+10
+
+00:00:33,440  -->  00:00:37,700
+Otherwise, it would all be on one line without that special symbol.
+
+11
+
+00:00:37,700  -->  00:00:41,030
+Let's see what this looks like in practice.
+
+12
+
+00:00:41,060  -->  00:00:45,900
+Let's talk about escaping using the backslash character.
+
+13
+
+00:00:45,900  -->  00:00:49,760
+To see how the escape character works or backslash character,
+
+14
+
+00:00:49,760  -->  00:00:52,820
+let's say that we want to print a sentence,
+
+15
+
+00:00:52,820  -->  00:00:56,455
+and it includes a quote from someone, like this.
+
+16
+
+00:00:56,455  -->  00:00:59,415
+Our quote is, "After completing the course,
+
+17
+
+00:00:59,415  -->  00:01:02,725
+you exclaimed: 'I love coding in Python!'"
+
+18
+
+00:01:02,725  -->  00:01:07,180
+Now, you might think we could code this by declaring a variable and making it
+
+19
+
+00:01:07,180  -->  00:01:12,700
+set to the quotes and including the quote inside, like this.
+
+20
+
+00:01:12,700  -->  00:01:15,000
+We'll say quote equals,
+
+21
+
+00:01:15,000  -->  00:01:17,380
+we'll add outside quotes,
+
+22
+
+00:01:17,380  -->  00:01:24,250
+and then we're setting this long string to our quote variable like this.
+
+23
+
+00:01:24,250  -->  00:01:28,900
+But this will cause a syntax error when trying to initialize
+
+24
+
+00:01:28,900  -->  00:01:34,520
+this variable because of the quotes that are inside of the outside quotes.
+
+25
+
+00:01:34,520  -->  00:01:36,580
+When we execute this code,
+
+26
+
+00:01:36,580  -->  00:01:40,965
+we'll see this, and it'll say "SyntaxError: invalid syntax".
+
+27
+
+00:01:40,965  -->  00:01:44,280
+This is because the quotes are missing backslashes.
+
+28
+
+00:01:44,280  -->  00:01:47,920
+To escape the quotes inside of the quotes,
+
+29
+
+00:01:47,920  -->  00:01:53,220
+we'll put the backslash character to the left of the inside quotes, like this.
+
+30
+
+00:01:58,580  -->  00:02:03,460
+Now when we execute this cell, we'll see this printed.
+
+31
+
+00:02:03,620  -->  00:02:07,120
+We'll execute that cell, we'll say print,
+
+32
+
+00:02:07,120  -->  00:02:11,520
+and then we'll execute this code so we can print out what quote is.
+
+33
+
+00:02:11,520  -->  00:02:15,915
+Now we see the full sentence with the quotes.
+
+34
+
+00:02:15,915  -->  00:02:17,175
+After completing the course,
+
+35
+
+00:02:17,175  -->  00:02:22,870
+you exclaimed: "I love coding in Python!" Great job.

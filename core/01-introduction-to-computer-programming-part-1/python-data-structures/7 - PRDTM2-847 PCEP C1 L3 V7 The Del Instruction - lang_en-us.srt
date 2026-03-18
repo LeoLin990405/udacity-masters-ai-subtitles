@@ -1,0 +1,49 @@
+1
+
+00:00:00,000  -->  00:00:05,440
+The del statement allows you to delete an item from a list at a specified index.
+
+2
+
+00:00:05,440  -->  00:00:09,340
+This is like removing an item from your cart by specifying its position.
+
+3
+
+00:00:09,340  -->  00:00:11,280
+For example, let's say that
+
+4
+
+00:00:11,280  -->  00:00:14,480
+the first or second item we added to our cart was too expensive,
+
+5
+
+00:00:14,480  -->  00:00:16,260
+and we don't want to include it.
+
+6
+
+00:00:16,260  -->  00:00:20,620
+Well, we can use this powerful del instruction to remove it.
+
+7
+
+00:00:20,620  -->  00:00:22,280
+In our fruits array,
+
+8
+
+00:00:22,280  -->  00:00:25,900
+let's remove the first index item, the second position.
+
+9
+
+00:00:25,900  -->  00:00:32,050
+Now, we see only two items because we deleted the item at Index 1,
+
+10
+
+00:00:32,050  -->  00:00:37,200
+which is banana, leaving apple and cherry still in our list.

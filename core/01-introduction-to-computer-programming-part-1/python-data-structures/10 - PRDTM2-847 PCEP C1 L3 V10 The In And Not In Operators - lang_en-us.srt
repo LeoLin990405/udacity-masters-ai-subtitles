@@ -1,0 +1,249 @@
+1
+
+00:00:00,000  -->  00:00:03,800
+Sometimes we'll need to know whether an item is in a list or not.
+
+2
+
+00:00:03,800  -->  00:00:09,760
+You can use in and not in to check if an item exists in that list.
+
+3
+
+00:00:09,760  -->  00:00:16,260
+This is like asking, is apple in my cart or is Sam in the list of students?
+
+4
+
+00:00:16,260  -->  00:00:20,600
+These operators allow us the ability to search within
+
+5
+
+00:00:20,600  -->  00:00:25,500
+the data collection and let us know if our item of interest is there or not.
+
+6
+
+00:00:25,500  -->  00:00:29,095
+Sometimes you just need to do a quick check.
+
+7
+
+00:00:29,095  -->  00:00:32,990
+Let's check out an example where in and not in
+
+8
+
+00:00:32,990  -->  00:00:37,870
+operators can come in handy for searching through a list to find an item.
+
+9
+
+00:00:37,870  -->  00:00:41,890
+For example, let's create an array of fruits again,
+
+10
+
+00:00:41,890  -->  00:00:45,670
+where we'll say fruit is our variable name,
+
+11
+
+00:00:45,670  -->  00:00:48,290
+and we'll set that equal to a list of apple,
+
+12
+
+00:00:48,290  -->  00:00:51,310
+banana, and cherry, which are three different strings.
+
+13
+
+00:00:51,310  -->  00:00:55,130
+If we want to check if apple is in our list of fruits,
+
+14
+
+00:00:55,130  -->  00:00:58,650
+we could do this fairly easily if there were only three items in the list,
+
+15
+
+00:00:58,650  -->  00:01:00,885
+because we can just see that it's there.
+
+16
+
+00:01:00,885  -->  00:01:04,260
+And we can also simply count through the items as well.
+
+17
+
+00:01:04,260  -->  00:01:08,680
+But what if there were tens or hundreds of items or even thousands?
+
+18
+
+00:01:08,680  -->  00:01:12,360
+This could take a huge amount of time to manually check through the list.
+
+19
+
+00:01:12,360  -->  00:01:15,460
+This is where we can use our in operator to check
+
+20
+
+00:01:15,460  -->  00:01:18,620
+if apple exists within the fruits array.
+
+21
+
+00:01:18,620  -->  00:01:21,775
+We'll write an if statement and ask if apple
+
+22
+
+00:01:21,775  -->  00:01:25,740
+exists in the fruits list and then print a message.
+
+23
+
+00:01:25,740  -->  00:01:28,295
+We'll do this by writing an if statement,
+
+24
+
+00:01:28,295  -->  00:01:33,245
+and we'll say if apple in fruits,
+
+25
+
+00:01:33,245  -->  00:01:36,300
+then print a string,
+
+26
+
+00:01:36,300  -->  00:01:39,850
+and we'll say apple is in the list with an exclamation point,
+
+27
+
+00:01:39,850  -->  00:01:41,070
+then we'll close out the quotes,
+
+28
+
+00:01:41,070  -->  00:01:42,450
+and then we'll close out the print statement.
+
+29
+
+00:01:42,450  -->  00:01:46,450
+What do you think will happen if we run this code?
+
+30
+
+00:01:46,660  -->  00:01:52,245
+Let's find out. We do see that it's print out apple is in the list.
+
+31
+
+00:01:52,245  -->  00:01:57,090
+Since apple does exist in our fruits list above,
+
+32
+
+00:01:57,090  -->  00:02:00,745
+when our code runs, we in fact see the success message printed out,
+
+33
+
+00:02:00,745  -->  00:02:02,940
+apple is in the list.
+
+34
+
+00:02:02,960  -->  00:02:08,325
+We can also check if something is not in the list with the not in operator.
+
+35
+
+00:02:08,325  -->  00:02:12,460
+Let's check if grape is in the fruits array.
+
+36
+
+00:02:12,460  -->  00:02:17,740
+We'll define another if statement and ask if grape is not in the fruits list.
+
+37
+
+00:02:17,740  -->  00:02:20,840
+Since we've already declared the fruits list above,
+
+38
+
+00:02:20,840  -->  00:02:23,485
+we can then write our if statement here.
+
+39
+
+00:02:23,485  -->  00:02:26,300
+We can say, if grape,
+
+40
+
+00:02:26,300  -->  00:02:33,510
+not in fruits, then print grape is not in the list.
+
+41
+
+00:02:33,510  -->  00:02:36,240
+Then we'll close out that print statement.
+
+42
+
+00:02:36,240  -->  00:02:40,880
+Can you guess what the output of this cell is going to be?
+
+43
+
+00:02:43,740  -->  00:02:47,300
+By running this code, since grape is not in the list,
+
+44
+
+00:02:47,300  -->  00:02:50,060
+we see the message of print,
+
+45
+
+00:02:50,060  -->  00:02:51,720
+grape is not in the list,
+
+46
+
+00:02:51,720  -->  00:02:55,320
+and that's because we only have three items in our fruit list,
+
+47
+
+00:02:55,320  -->  00:02:56,460
+which is apple, banana,
+
+48
+
+00:02:56,460  -->  00:02:58,760
+and cherry, so grape is not in that.
+
+49
+
+00:02:58,760  -->  00:03:02,820
+Now we know a couple of very handy and versatile ways to search
+
+50
+
+00:03:02,820  -->  00:03:08,580
+whether certain items are in our lists or not. Great work.

@@ -1,0 +1,329 @@
+1
+
+00:00:00,000  -->  00:00:02,535
+When using a for loop with lists,
+
+2
+
+00:00:02,535  -->  00:00:08,695
+you can initialize a list beforehand and then build it inside the loop.
+
+3
+
+00:00:08,695  -->  00:00:12,605
+For example, let's say that we want to add items to our cart,
+
+4
+
+00:00:12,605  -->  00:00:17,605
+but we don't know what they will be until the for loop runs.
+
+5
+
+00:00:17,605  -->  00:00:19,920
+When using a for loop with lists,
+
+6
+
+00:00:19,920  -->  00:00:25,005
+you can initialize a list beforehand and then build it inside the loop.
+
+7
+
+00:00:25,005  -->  00:00:28,485
+For example, let's say that we want to add items to our cart,
+
+8
+
+00:00:28,485  -->  00:00:32,910
+but we don't know what they will be until the for loop runs.
+
+9
+
+00:00:32,910  -->  00:00:35,910
+The concept becomes a little bit clearer with a math example.
+
+10
+
+00:00:35,910  -->  00:00:37,790
+Let's say we want to iterate over
+
+11
+
+00:00:37,790  -->  00:00:41,090
+a series of numbers and calculate the square of each one.
+
+12
+
+00:00:41,090  -->  00:00:44,210
+A square is simply a number multiplied by itself.
+
+13
+
+00:00:44,210  -->  00:00:48,250
+For example, the square of 2 is 2*2,
+
+14
+
+00:00:48,760  -->  00:00:51,685
+which we'll see is 4.
+
+15
+
+00:00:51,685  -->  00:00:56,520
+The square of 3 is 3 times itself, 3.
+
+16
+
+00:00:56,520  -->  00:01:00,080
+If we execute this code, we'll see nine.
+
+17
+
+00:01:00,080  -->  00:01:02,920
+When we talk about a list of squares,
+
+18
+
+00:01:02,920  -->  00:01:05,560
+we're referring to a collection of numbers where
+
+19
+
+00:01:05,560  -->  00:01:08,840
+each number is the square of a particular value like 1,
+
+20
+
+00:01:08,840  -->  00:01:10,480
+2, 3, and so on.
+
+21
+
+00:01:10,480  -->  00:01:13,160
+Imagine you're a city planner and you need to
+
+22
+
+00:01:13,160  -->  00:01:16,580
+calculate the area of square shaped plots of land.
+
+23
+
+00:01:16,580  -->  00:01:19,820
+Each plot of land is defined by its side length.
+
+24
+
+00:01:19,820  -->  00:01:23,910
+For example, 1 meter,
+
+25
+
+00:01:23,910  -->  00:01:25,830
+2 meters, or 3 meters.
+
+26
+
+00:01:25,830  -->  00:01:29,930
+The area of a square is found by squaring the side length.
+
+27
+
+00:01:29,930  -->  00:01:33,180
+For example, side length times side length.
+
+28
+
+00:01:33,180  -->  00:01:35,970
+Here's how we could use a list of squares to represent
+
+29
+
+00:01:35,970  -->  00:01:38,730
+the areas of plots with different side lengths.
+
+30
+
+00:01:38,730  -->  00:01:45,335
+For example, a plot with side length of 1 meter has an area of 1*1,
+
+31
+
+00:01:45,335  -->  00:01:48,250
+resulting in 1 square meter.
+
+32
+
+00:01:48,250  -->  00:01:53,340
+A plot with side length of 2 meters has an area of 2*2,
+
+33
+
+00:01:53,340  -->  00:01:56,160
+equaling 4 square meters.
+
+34
+
+00:01:56,160  -->  00:02:07,245
+A plot with side length of 3 meters has an area of 3*3 or 9 square meters, and so on.
+
+35
+
+00:02:07,245  -->  00:02:10,550
+In this case, you might use a loop to calculate
+
+36
+
+00:02:10,550  -->  00:02:14,265
+the area of each plot and store those areas in the list.
+
+37
+
+00:02:14,265  -->  00:02:17,730
+Let's write some code as an example to calculate
+
+38
+
+00:02:17,730  -->  00:02:22,580
+the areas of plots with side lengths from 1-5 meters.
+
+39
+
+00:02:22,580  -->  00:02:28,445
+We'll first create a empty list variable called areas
+
+40
+
+00:02:28,445  -->  00:02:32,270
+and we'll set that equal to an empty list with nothing in it.
+
+41
+
+00:02:32,270  -->  00:02:36,430
+We'll then write our for loop and we'll say side_length
+
+42
+
+00:02:36,430  -->  00:02:42,720
+in range 1-6 because we want it to go from 1-5 meters.
+
+43
+
+00:02:42,720  -->  00:02:48,320
+Then we'll say areas and then we'll use our append function that we just learned about.
+
+44
+
+00:02:48,320  -->  00:02:58,100
+Inside of that, we'll say side length and we'll say ** 2.
+
+45
+
+00:02:58,100  -->  00:03:02,910
+Then we'll print the areas list.
+
+46
+
+00:03:02,910  -->  00:03:07,640
+Can you guess what the output of this will be when we execute this code?
+
+47
+
+00:03:13,010  -->  00:03:17,115
+Here, we'll see an output of 1, 4,
+
+48
+
+00:03:17,115  -->  00:03:22,080
+9, 16, and 25 inside of our areas list.
+
+49
+
+00:03:22,080  -->  00:03:25,210
+Notice how originally areas was an empty list
+
+50
+
+00:03:25,210  -->  00:03:30,700
+here and now it has been populated with lots of numbers here.
+
+51
+
+00:03:31,030  -->  00:03:37,310
+This list of squares represents the areas of plots with side lengths from 1-5.
+
+52
+
+00:03:37,310  -->  00:03:41,210
+Why are these types of calculations useful?
+
+53
+
+00:03:41,210  -->  00:03:45,730
+Well, in geometry and space calculations as shown before,
+
+54
+
+00:03:45,730  -->  00:03:50,070
+squares are useful when calculating areas of square spaces.
+
+55
+
+00:03:50,070  -->  00:03:52,090
+In physics and engineering,
+
+56
+
+00:03:52,090  -->  00:03:55,910
+in certain physical equations like calculating energy or force,
+
+57
+
+00:03:55,910  -->  00:03:58,155
+squaring values is often required.
+
+58
+
+00:03:58,155  -->  00:04:00,610
+In machine learning and statistics,
+
+59
+
+00:04:00,610  -->  00:04:03,730
+squaring numbers is common when calculating errors,
+
+60
+
+00:04:03,730  -->  00:04:06,090
+such as in regression analysis,
+
+61
+
+00:04:06,090  -->  00:04:08,765
+making this concept important in data science.
+
+62
+
+00:04:08,765  -->  00:04:11,400
+Great job learning some new math concepts.
+
+63
+
+00:04:11,400  -->  00:04:13,840
+Hopefully this helps show the power of
+
+64
+
+00:04:13,840  -->  00:04:16,960
+lists and also how we can combine them together with
+
+65
+
+00:04:16,960  -->  00:04:20,000
+real world applications and use cases like
+
+66
+
+00:04:20,000  -->  00:04:24,340
+space calculations as a city planner like we saw here.

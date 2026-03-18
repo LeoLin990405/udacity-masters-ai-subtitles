@@ -1,0 +1,324 @@
+1
+
+00:00:00,000  -->  00:00:05,340
+Lists allow you to access elements using an index, starting from zero.
+
+2
+
+00:00:05,340  -->  00:00:10,720
+Think of an index as the relative position of an item around other things.
+
+3
+
+00:00:10,720  -->  00:00:14,000
+Before your favorite band performs at the Big Stadium,
+
+4
+
+00:00:14,000  -->  00:00:17,580
+attendees file into the stadium in an orderly fashion.
+
+5
+
+00:00:17,580  -->  00:00:21,780
+There's somebody who entered first, second, third,
+
+6
+
+00:00:21,780  -->  00:00:27,880
+fourth, all the way to being the 1,000th or even 10,000th person.
+
+7
+
+00:00:27,880  -->  00:00:30,780
+The order is incredibly important for lists,
+
+8
+
+00:00:30,780  -->  00:00:32,435
+which you will see in a bit.
+
+9
+
+00:00:32,435  -->  00:00:36,430
+Something that can be quite confusing that you should remember is
+
+10
+
+00:00:36,430  -->  00:00:40,565
+that the first index of a position is actually zero.
+
+11
+
+00:00:40,565  -->  00:00:44,510
+While the order might be person 1, 2,
+
+12
+
+00:00:44,510  -->  00:00:46,230
+3, and so on,
+
+13
+
+00:00:46,230  -->  00:00:48,530
+person one's index is zero.
+
+14
+
+00:00:48,530  -->  00:00:50,770
+Person 2 's index is one,
+
+15
+
+00:00:50,770  -->  00:00:53,930
+person 3 's index is two, and so on.
+
+16
+
+00:00:53,930  -->  00:00:58,550
+Make sure to keep that in mind as you go about using indexes.
+
+17
+
+00:00:58,550  -->  00:01:00,670
+Once we have a list of items,
+
+18
+
+00:01:00,670  -->  00:01:03,610
+we might want to select only a subsection of
+
+19
+
+00:01:03,610  -->  00:01:07,595
+that list or pull certain items out of that big list.
+
+20
+
+00:01:07,595  -->  00:01:11,740
+Think of this like a crane going into a basket of prizes.
+
+21
+
+00:01:11,740  -->  00:01:13,760
+When you are slicing a list,
+
+22
+
+00:01:13,760  -->  00:01:19,220
+you can pull out a single item or a collection of items that are next to each other.
+
+23
+
+00:01:19,220  -->  00:01:23,700
+Slicing uses the format, start, colon, end,
+
+24
+
+00:01:23,700  -->  00:01:26,380
+where start is the index to begin at,
+
+25
+
+00:01:26,380  -->  00:01:28,660
+and end is the index up to,
+
+26
+
+00:01:28,660  -->  00:01:30,980
+but not including that number.
+
+27
+
+00:01:30,980  -->  00:01:34,960
+Let's see an example of lists in action with
+
+28
+
+00:01:34,960  -->  00:01:40,105
+our fruit list example from before using indexing, and then slicing.
+
+29
+
+00:01:40,105  -->  00:01:45,090
+Lists allow you to access elements using an index starting with zero.
+
+30
+
+00:01:45,090  -->  00:01:48,550
+We'll define a list with a variable name,
+
+31
+
+00:01:48,550  -->  00:01:50,550
+which we'll call fruits, and then we'll use
+
+32
+
+00:01:50,550  -->  00:01:53,290
+square brackets and then put items inside of it.
+
+33
+
+00:01:53,290  -->  00:01:55,990
+Here we have three strings, apple,
+
+34
+
+00:01:55,990  -->  00:01:59,490
+banana, and cherry, indicating our three fruits.
+
+35
+
+00:01:59,490  -->  00:02:05,810
+If we want to print the first item, how do you think we would do that?
+
+36
+
+00:02:06,290  -->  00:02:11,770
+What do you think the first index would be as an index zero?
+
+37
+
+00:02:12,530  -->  00:02:16,130
+To write this, we'd write fruits.
+
+38
+
+00:02:16,130  -->  00:02:18,550
+We'll use a square bracket.
+
+39
+
+00:02:18,550  -->  00:02:21,410
+We'll put zero for the first item,
+
+40
+
+00:02:21,410  -->  00:02:24,435
+and the square bracket, and then we'll close out our print statement.
+
+41
+
+00:02:24,435  -->  00:02:28,070
+What do you think the index of zero will be?
+
+42
+
+00:02:29,120  -->  00:02:31,610
+If you guess apple, you're right.
+
+43
+
+00:02:31,610  -->  00:02:33,530
+It's the first item in the array,
+
+44
+
+00:02:33,530  -->  00:02:36,050
+and thus index position zero.
+
+45
+
+00:02:36,050  -->  00:02:41,590
+You can also retrieve a slice of a list using the slicing syntax.
+
+46
+
+00:02:41,590  -->  00:02:45,510
+Again, we'll take our list from before,
+
+47
+
+00:02:45,510  -->  00:02:48,210
+and we'll paste that into a new cell.
+
+48
+
+00:02:48,750  -->  00:02:54,350
+If we want to slice out part of our list,
+
+49
+
+00:02:54,350  -->  00:02:58,570
+such as the first index to the third index,
+
+50
+
+00:02:58,570  -->  00:03:01,550
+what do you think the output of this will be?
+
+51
+
+00:03:01,550  -->  00:03:05,690
+If we do fruits, do a square bracket.
+
+52
+
+00:03:05,690  -->  00:03:08,645
+We'll do one colon 3,
+
+53
+
+00:03:08,645  -->  00:03:11,050
+and then we'll close out that statement.
+
+54
+
+00:03:11,050  -->  00:03:13,430
+What do you think the output will be here?
+
+55
+
+00:03:13,430  -->  00:03:16,350
+Let's run it and find out.
+
+56
+
+00:03:16,630  -->  00:03:24,545
+This is going to retrieve the elements from index one up to but not including index 3.
+
+57
+
+00:03:24,545  -->  00:03:29,030
+It will skip apple at index zero, our first element,
+
+58
+
+00:03:29,030  -->  00:03:31,710
+and then we'll print the first index,
+
+59
+
+00:03:31,710  -->  00:03:35,310
+which is banana up to the third index,
+
+60
+
+00:03:35,310  -->  00:03:40,810
+which is cherry, because it will include that,
+
+61
+
+00:03:40,810  -->  00:03:46,170
+and then once it reaches the third index element, then it would stop.
+
+62
+
+00:03:46,170  -->  00:03:48,215
+But we only have 0,
+
+63
+
+00:03:48,215  -->  00:03:51,030
+1, 2 index items.
+
+64
+
+00:03:51,030  -->  00:03:53,190
+But since we said third,
+
+65
+
+00:03:53,190  -->  00:03:55,990
+that's why it includes cherry.

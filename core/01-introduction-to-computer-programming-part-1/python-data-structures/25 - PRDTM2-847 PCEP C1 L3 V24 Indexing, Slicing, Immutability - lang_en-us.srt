@@ -1,0 +1,351 @@
+1
+
+00:00:00,000  -->  00:00:05,100
+Just like the lists rays in tuples we have been learning about.
+
+2
+
+00:00:05,100  -->  00:00:07,520
+Strings can also be indexed and sliced.
+
+3
+
+00:00:07,520  -->  00:00:10,020
+You're probably thinking, how?
+
+4
+
+00:00:10,020  -->  00:00:12,765
+Isn't a string just a single item?
+
+5
+
+00:00:12,765  -->  00:00:14,520
+You'd mostly be right.
+
+6
+
+00:00:14,520  -->  00:00:19,040
+But something that we can think about as we expand our concept of indices and
+
+7
+
+00:00:19,040  -->  00:00:24,960
+slicing is that strings are made up of individual characters,
+
+8
+
+00:00:24,960  -->  00:00:27,360
+and they can be indexed and sliced.
+
+9
+
+00:00:27,360  -->  00:00:30,280
+Let's see an example of this in action.
+
+10
+
+00:00:30,390  -->  00:00:34,850
+Let's talk about indexing, slicing, and immutability.
+
+11
+
+00:00:34,850  -->  00:00:37,110
+When we first construct a string,
+
+12
+
+00:00:37,110  -->  00:00:39,290
+we'll probably do something like this.
+
+13
+
+00:00:39,290  -->  00:00:49,310
+We'll say greeting or any name is equal to list of characters like hello world.
+
+14
+
+00:00:50,410  -->  00:00:53,010
+We'll execute this cell,
+
+15
+
+00:00:53,010  -->  00:00:56,395
+and now greeting is set to our string, hello world.
+
+16
+
+00:00:56,395  -->  00:00:59,270
+To see an example of indexing with strings,
+
+17
+
+00:00:59,270  -->  00:01:05,290
+we can then get the first character Index 0 of this greeting variable,
+
+18
+
+00:01:05,290  -->  00:01:10,590
+which we set as a string in the same way that we can for lists and tuples, like this.
+
+19
+
+00:01:10,590  -->  00:01:14,560
+We'll say print greeting.
+
+20
+
+00:01:14,600  -->  00:01:18,735
+We'll take the first index,
+
+21
+
+00:01:18,735  -->  00:01:21,105
+which is Index 0.
+
+22
+
+00:01:21,105  -->  00:01:23,450
+Then when we execute this,
+
+23
+
+00:01:23,450  -->  00:01:26,490
+can you guess what the output will be?
+
+24
+
+00:01:26,700  -->  00:01:29,215
+If you said H, you're right.
+
+25
+
+00:01:29,215  -->  00:01:35,940
+This will print the letter H. This is the first item in this string,
+
+26
+
+00:01:35,940  -->  00:01:38,025
+which is the Index 0.
+
+27
+
+00:01:38,025  -->  00:01:41,225
+If we try to print the index of one,
+
+28
+
+00:01:41,225  -->  00:01:46,275
+can you guess what the output will be here?
+
+29
+
+00:01:46,275  -->  00:01:50,240
+If you said e, then you're right there because
+
+30
+
+00:01:50,240  -->  00:01:54,740
+this is the second item or Index 1 of our string.
+
+31
+
+00:01:54,740  -->  00:01:58,860
+Now, if we want to slice out a few characters of the string,
+
+32
+
+00:01:58,860  -->  00:02:02,660
+we can do that in a similar way to how we've learned how to do that before.
+
+33
+
+00:02:02,660  -->  00:02:07,045
+Let's say we want to print the characters from Index 0 to Index 7.
+
+34
+
+00:02:07,045  -->  00:02:09,320
+We'll do something like this.
+
+35
+
+00:02:09,320  -->  00:02:12,640
+We can copy this just for speed.
+
+36
+
+00:02:12,680  -->  00:02:17,600
+Then what we can do is we'll say in those square brackets,
+
+37
+
+00:02:17,600  -->  00:02:21,055
+
+38
+0:7 to do a slice.
+
+39
+
+00:02:21,055  -->  00:02:26,240
+Can you guess what the output of this will be when we execute this cell?
+
+40
+
+00:02:28,010  -->  00:02:33,580
+This will print hello w. Now,
+
+41
+
+00:02:33,580  -->  00:02:37,640
+what if we slice well beyond the number of characters in the string?
+
+42
+
+00:02:37,640  -->  00:02:40,300
+This is not a problem at all for Python.
+
+43
+
+00:02:40,300  -->  00:02:44,800
+It will return up to the number of characters of the string and nothing more.
+
+44
+
+00:02:44,800  -->  00:02:48,460
+Let's say that we wanted to do this again,
+
+45
+
+00:02:48,460  -->  00:02:51,165
+but we're going to do it up to 20.
+
+46
+
+00:02:51,165  -->  00:02:57,470
+There's of course, no 20th character here or 20th index for our characters.
+
+47
+
+00:02:57,470  -->  00:03:00,425
+There's 0, 1, 2, 3,
+
+48
+
+00:03:00,425  -->  00:03:02,255
+4, 5, 6,
+
+49
+
+00:03:02,255  -->  00:03:04,835
+7, 8, 9, 10.
+
+50
+
+00:03:04,835  -->  00:03:09,470
+There's Index 10 items for 11 characters,
+
+51
+
+00:03:09,470  -->  00:03:10,750
+and there's 1,
+
+52
+
+00:03:10,750  -->  00:03:12,100
+2, 3, 4, 5,
+
+53
+
+00:03:12,100  -->  00:03:13,390
+6, 7, 8, 9,
+
+54
+
+00:03:13,390  -->  00:03:15,010
+10, 11. So that checks out.
+
+55
+
+00:03:15,010  -->  00:03:17,610
+But if we were to do this over 20,
+
+56
+
+00:03:18,650  -->  00:03:25,250
+this will still print our exact string as hello world, and nothing more.
+
+57
+
+00:03:25,250  -->  00:03:29,010
+Something else to keep in mind with strings is that they are immutable.
+
+58
+
+00:03:29,010  -->  00:03:34,130
+We cannot change a character in the string as each character within the string is set,
+
+59
+
+00:03:34,130  -->  00:03:38,210
+and trying to change one will raise a type error.
+
+60
+
+00:03:38,210  -->  00:03:40,670
+Let's see this in action.
+
+61
+
+00:03:40,670  -->  00:03:44,050
+When we try to change the first character of our greeting string,
+
+62
+
+00:03:44,050  -->  00:03:46,770
+which is hello world with an A character,
+
+63
+
+00:03:46,770  -->  00:03:51,030
+meaning we want to change the H to an A like this.
+
+64
+
+00:03:51,320  -->  00:03:56,670
+We'll say greeting and we'll take the first index,
+
+65
+
+00:03:56,670  -->  00:03:59,030
+and then we try to set that equal to A.
+
+66
+
+00:03:59,030  -->  00:04:04,590
+We're trying to change this character to an A character and we try to execute this code.
+
+67
+
+00:04:04,590  -->  00:04:07,570
+Can you guess what the output is going to be?
+
+68
+
+00:04:09,010  -->  00:04:12,010
+We'll get a type error, and we'll say,
+
+69
+
+00:04:12,010  -->  00:04:15,455
+string object does not support item assignment.
+
+70
+
+00:04:15,455  -->  00:04:18,230
+That means because strings are immutable,
+
+71
+
+00:04:18,230  -->  00:04:23,530
+we cannot assign new items to what has been declared there already.

@@ -1,0 +1,94 @@
+1
+
+00:00:00,000  -->  00:00:02,700
+Dictionaries are yet another data type in
+
+2
+
+00:00:02,700  -->  00:00:05,980
+Python that you'll come to know and use regularly.
+
+3
+
+00:00:05,980  -->  00:00:08,620
+Imagine you're running a library and need to track
+
+4
+
+00:00:08,620  -->  00:00:11,480
+which books belong to which genre or topic,
+
+5
+
+00:00:11,480  -->  00:00:16,880
+or which authors have written specific books in your collection of books.
+
+6
+
+00:00:16,880  -->  00:00:19,380
+The library is huge after all,
+
+7
+
+00:00:19,380  -->  00:00:24,280
+and you don't have time to count through every single book. You'd be there forever.
+
+8
+
+00:00:24,280  -->  00:00:28,200
+How would you organize all of this data efficiently?
+
+9
+
+00:00:28,200  -->  00:00:30,440
+This is where dictionaries come in,
+
+10
+
+00:00:30,440  -->  00:00:31,860
+and fortunately, for us,
+
+11
+
+00:00:31,860  -->  00:00:36,845
+Python has a very unique way of storing data that we call key-value pairs.
+
+12
+
+00:00:36,845  -->  00:00:40,050
+Dictionaries allow you to associate data,
+
+13
+
+00:00:40,050  -->  00:00:45,150
+like matching up book titles with their genres or authors with their own books.
+
+14
+
+00:00:45,150  -->  00:00:48,370
+Let's look at an example of a dictionary like this.
+
+15
+
+00:00:48,370  -->  00:00:51,550
+Here, the keys are the book titles,
+
+16
+
+00:00:51,550  -->  00:00:55,590
+and the values are the genres associated with the books.
+
+17
+
+00:00:55,590  -->  00:00:57,990
+Thanks to this handy data structure,
+
+18
+
+00:00:57,990  -->  00:01:01,630
+we can use the book title key to look up or unlock
+
+19
+
+00:01:01,630  -->  00:01:06,490
+the genre value that the book is associated with.

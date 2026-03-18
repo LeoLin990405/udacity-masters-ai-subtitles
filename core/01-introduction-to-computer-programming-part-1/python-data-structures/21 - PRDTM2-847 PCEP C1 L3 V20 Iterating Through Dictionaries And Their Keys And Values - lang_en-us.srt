@@ -1,0 +1,334 @@
+1
+
+00:00:00,000  -->  00:00:01,910
+If we have a library of books,
+
+2
+
+00:00:01,910  -->  00:00:04,230
+we could be dealing with thousands or
+
+3
+
+00:00:04,230  -->  00:00:08,350
+even tens of thousands or even hundreds of thousands of books,
+
+4
+
+00:00:08,350  -->  00:00:10,130
+articles, and media items.
+
+5
+
+00:00:10,130  -->  00:00:13,370
+There is no way that we have time to individually
+
+6
+
+00:00:13,370  -->  00:00:16,970
+go through each item by hand, would take forever.
+
+7
+
+00:00:16,970  -->  00:00:20,730
+That's where we'll want to iterate through dictionaries like this,
+
+8
+
+00:00:20,730  -->  00:00:26,330
+so that we can go through our key value pairs without spending excessive time and worry.
+
+9
+
+00:00:26,330  -->  00:00:31,870
+If we wanted to loop through all of the key value pairs in a dictionary for our library,
+
+10
+
+00:00:31,870  -->  00:00:35,210
+we can rely on our trusty for loop to help us out.
+
+11
+
+00:00:35,210  -->  00:00:40,270
+We can loop through a dictionary to access its keys, values or both.
+
+12
+
+00:00:40,270  -->  00:00:42,405
+Let's see an example of this.
+
+13
+
+00:00:42,405  -->  00:00:47,460
+Let's talk about iterating through dictionaries and their keys and values.
+
+14
+
+00:00:47,460  -->  00:00:52,370
+First, we'll build out a dictionary which we will set as library,
+
+15
+
+00:00:52,370  -->  00:00:55,970
+and this library will consist of three items.
+
+16
+
+00:00:55,970  -->  00:00:58,190
+There will be pride and prejudice,
+
+17
+
+00:00:58,190  -->  00:01:00,810
+which is set as the romance genre,
+
+18
+
+00:01:00,810  -->  00:01:04,110
+1984, which is the dystopia genre,
+
+19
+
+00:01:04,110  -->  00:01:07,065
+and then Moby Dick, which is the adventure genre.
+
+20
+
+00:01:07,065  -->  00:01:10,005
+It's a list of titles and genres.
+
+21
+
+00:01:10,005  -->  00:01:14,995
+When we print our library,
+
+22
+
+00:01:14,995  -->  00:01:19,650
+we'll see those three items printed here as well on one line.
+
+23
+
+00:01:19,650  -->  00:01:22,270
+If we wanted to loop through all the keys,
+
+24
+
+00:01:22,270  -->  00:01:25,110
+we can do this by looking for book,
+
+25
+
+00:01:25,110  -->  00:01:28,610
+our arbitrary counter element in library,
+
+26
+
+00:01:28,610  -->  00:01:33,770
+the dictionary we just declared and then tell our for loop to print the counter element,
+
+27
+
+00:01:33,770  -->  00:01:38,830
+and we'll do that by saying for book in library.
+
+28
+
+00:01:38,830  -->  00:01:43,190
+Remember this is our increment for item in library,
+
+29
+
+00:01:43,190  -->  00:01:45,850
+which is our dictionary.
+
+30
+
+00:01:45,850  -->  00:01:49,010
+We'll then say print book.
+
+31
+
+00:01:49,080  -->  00:01:52,460
+When we execute this, we'll see all three titles,
+
+32
+
+00:01:52,460  -->  00:01:55,980
+Pride and Prejudice, 1984, and Moby Dick.
+
+33
+
+00:01:56,300  -->  00:02:01,620
+Now, what if we wanted to print out the genres of the library?
+
+34
+
+00:02:01,620  -->  00:02:03,740
+We would do the same thing but for this,
+
+35
+
+00:02:03,740  -->  00:02:06,700
+we can change the arbitrary counter to genre,
+
+36
+
+00:02:06,700  -->  00:02:13,060
+and then we need to use the dot values method off of the library dictionary.
+
+37
+
+00:02:13,060  -->  00:02:15,480
+We'll learn about this in a second,
+
+38
+
+00:02:15,480  -->  00:02:20,540
+but notice how we can now increment with the second value rather than the titles,
+
+39
+
+00:02:20,540  -->  00:02:24,005
+which is the first item and we'll do that by taking
+
+40
+
+00:02:24,005  -->  00:02:27,600
+our for loop from the previous step and modifying it so slightly.
+
+41
+
+00:02:27,600  -->  00:02:30,890
+We can just change this to any name,
+
+42
+
+00:02:30,890  -->  00:02:33,780
+but we'll say genre and then we'll say in
+
+43
+
+00:02:33,780  -->  00:02:39,240
+library dot values because we're looking at the second element.
+
+44
+
+00:02:39,240  -->  00:02:42,240
+This is the key and this is the value.
+
+45
+
+00:02:42,240  -->  00:02:45,195
+Now we're looking at just the values here.
+
+46
+
+00:02:45,195  -->  00:02:50,165
+Then when we print book but genre,
+
+47
+
+00:02:50,165  -->  00:02:55,040
+this will now print out, romance,
+
+48
+
+00:02:55,040  -->  00:03:01,000
+dystopia, and adventure, which are the three genres in our library right now.
+
+49
+
+00:03:01,280  -->  00:03:03,900
+To wrap up incrementing,
+
+50
+
+00:03:03,900  -->  00:03:07,240
+if we wanted to cycle through both the key and the value,
+
+51
+
+00:03:07,240  -->  00:03:10,720
+we can use another method called items which we'll
+
+52
+
+00:03:10,720  -->  00:03:15,340
+also learn about momentarily to go through multiple items.
+
+53
+
+00:03:15,340  -->  00:03:21,960
+For our for loop, we can just string these multiple items together as book genre,
+
+54
+
+00:03:21,960  -->  00:03:27,190
+meaning, for book and genre in our library of items, print the values.
+
+55
+
+00:03:27,190  -->  00:03:30,450
+What we'll do is we'll say, for book,
+
+56
+
+00:03:30,450  -->  00:03:35,630
+genre in library items.
+
+57
+
+00:03:35,630  -->  00:03:37,840
+Colon, we'll say print,
+
+58
+
+00:03:37,840  -->  00:03:40,040
+and we'll use another f string,
+
+59
+
+00:03:40,040  -->  00:03:45,135
+pass in squiggly bracket and say book,
+
+60
+
+00:03:45,135  -->  00:03:50,205
+and then another set of squiggly brackets, and we'll say genre.
+
+61
+
+00:03:50,205  -->  00:03:52,180
+We'll close out that f string,
+
+62
+
+00:03:52,180  -->  00:03:54,120
+close out the parenthesis.
+
+63
+
+00:03:54,120  -->  00:03:58,080
+Now, can you guess what this will output when we run this?
+
+64
+
+00:03:59,000  -->  00:04:02,650
+It will now print out each has a string.
+
+65
+
+00:04:02,650  -->  00:04:04,935
+Pride and prejudice for romance,
+
+66
+
+00:04:04,935  -->  00:04:08,685
+1984 for dystopia, and Moby Dick for adventure.
+
+67
+
+00:04:08,685  -->  00:04:16,440
+We're iterating over the keys and the values of our library. Pretty neat, right?

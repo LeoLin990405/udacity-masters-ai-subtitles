@@ -1,0 +1,424 @@
+1
+
+00:00:00,000  -->  00:00:05,740
+Python provides several built-in methods to make it easier to manage lists.
+
+2
+
+00:00:05,740  -->  00:00:10,485
+Some of the most useful include append, insert, and index.
+
+3
+
+00:00:10,485  -->  00:00:14,320
+Append is where we add an item to the end of the list.
+
+4
+
+00:00:14,320  -->  00:00:18,200
+This is useful when we want to add items into our shopping cart.
+
+5
+
+00:00:18,200  -->  00:00:22,300
+Insert adds an item at a specific index.
+
+6
+
+00:00:22,300  -->  00:00:26,380
+This is useful if we want to add an item to our cart in a specific place,
+
+7
+
+00:00:26,380  -->  00:00:29,800
+such as organizing fruits together or perishable items
+
+8
+
+00:00:29,800  -->  00:00:33,880
+together so that they can go in the same bag for easier organization.
+
+9
+
+00:00:33,880  -->  00:00:39,130
+Index, which finds the index of a specific item in the list.
+
+10
+
+00:00:39,130  -->  00:00:42,970
+Think of this as using a powerful magnifying glass to identify
+
+11
+
+00:00:42,970  -->  00:00:45,670
+the specific placement of an item in the list
+
+12
+
+00:00:45,670  -->  00:00:49,170
+and tells us the index of that item in the collection.
+
+13
+
+00:00:49,170  -->  00:00:52,390
+Just keep these things in mind for now.
+
+14
+
+00:00:52,390  -->  00:00:55,650
+We're going to go through examples of these in some demos,
+
+15
+
+00:00:55,650  -->  00:00:59,820
+so you can see these powerful methods of Python in action.
+
+16
+
+00:00:59,820  -->  00:01:02,925
+Let's see some examples of the append, insert,
+
+17
+
+00:01:02,925  -->  00:01:06,420
+and index functions in action using our fruit array.
+
+18
+
+00:01:06,420  -->  00:01:09,320
+First, let's start off with the append function.
+
+19
+
+00:01:09,320  -->  00:01:13,600
+Let's say we want to add another fruit to our list of fruits.
+
+20
+
+00:01:13,600  -->  00:01:18,040
+How would we do that? Well, we can use the append function like this.
+
+21
+
+00:01:18,040  -->  00:01:21,245
+We'll first create our list of fruits.
+
+22
+
+00:01:21,245  -->  00:01:24,100
+We'll say fruits is equal to and in square brackets,
+
+23
+
+00:01:24,100  -->  00:01:27,955
+apple, banana, and cherry as a list of strings.
+
+24
+
+00:01:27,955  -->  00:01:35,750
+Then what we'll do is we will say fruits.append,
+
+25
+
+00:01:35,750  -->  00:01:38,790
+and then inside of the append function,
+
+26
+
+00:01:38,790  -->  00:01:40,270
+we'll add another fruit,
+
+27
+
+00:01:40,270  -->  00:01:42,110
+which we'll say is grape.
+
+28
+
+00:01:42,110  -->  00:01:47,380
+Then we'll print our updated list of fruits.
+
+29
+
+00:01:47,380  -->  00:01:52,110
+Can you guess what the list of fruits will now look like?
+
+30
+
+00:01:52,830  -->  00:01:57,320
+Now we see apple, banana, cherry, and grape.
+
+31
+
+00:01:57,320  -->  00:02:00,930
+Now we've added grape to our last item in the list,
+
+32
+
+00:02:00,930  -->  00:02:03,710
+and that's why it's at the end of it.
+
+33
+
+00:02:04,270  -->  00:02:08,670
+If we want to add items to a specific location,
+
+34
+
+00:02:08,670  -->  00:02:10,490
+how would we accomplish this?
+
+35
+
+00:02:10,490  -->  00:02:13,950
+This is where our insert function comes into play.
+
+36
+
+00:02:13,950  -->  00:02:18,270
+Now, we already have our fruits list already created.
+
+37
+
+00:02:18,270  -->  00:02:23,770
+If we wanted to insert an item, we'll create a new cell,
+
+38
+
+00:02:23,770  -->  00:02:27,830
+and we will say fruits in
+
+39
+
+00:02:27,830  -->  00:02:33,850
+the position that we want that new item to go into at that index,
+
+40
+
+00:02:33,850  -->  00:02:35,550
+and then we'll add in our new item,
+
+41
+
+00:02:35,550  -->  00:02:37,630
+which we'll say is orange.
+
+42
+
+00:02:37,940  -->  00:02:43,875
+Then we'll print the updated list of fruits.
+
+43
+
+00:02:43,875  -->  00:02:48,105
+Can you guess what this will output?
+
+44
+
+00:02:48,105  -->  00:02:51,310
+Let's run this and find out.
+
+45
+
+00:02:51,920  -->  00:02:57,470
+Now, you'll notice we have grape at the end of our list that we
+
+46
+
+00:02:57,470  -->  00:03:02,310
+added in the previous step and a new item orange as well.
+
+47
+
+00:03:02,310  -->  00:03:04,855
+And this is at Index 1.
+
+48
+
+00:03:04,855  -->  00:03:07,325
+This makes sense because it would be index zero,
+
+49
+
+00:03:07,325  -->  00:03:09,905
+Index 1, and now we have 2, 3,
+
+50
+
+00:03:09,905  -->  00:03:12,850
+4 because now we have one, two, three, four,
+
+51
+
+00:03:12,850  -->  00:03:17,150
+five fruits in our fruits list now.
+
+52
+
+00:03:17,630  -->  00:03:22,490
+Now, if we want to find the specific index of an item in our list,
+
+53
+
+00:03:22,490  -->  00:03:25,150
+we can rely on our trusty index function.
+
+54
+
+00:03:25,150  -->  00:03:29,070
+Let's see this working in an example here.
+
+55
+
+00:03:31,570  -->  00:03:35,730
+If we wanted to check the index of banana,
+
+56
+
+00:03:35,730  -->  00:03:37,330
+we would write something like this.
+
+57
+
+00:03:37,330  -->  00:03:44,300
+We would say print fruits index banana.
+
+58
+
+00:03:44,330  -->  00:03:47,290
+We pass in the item that we want to check,
+
+59
+
+00:03:47,290  -->  00:03:50,690
+and we use the index function over our list,
+
+60
+
+00:03:50,690  -->  00:03:53,730
+and that's the same list that we declared earlier.
+
+61
+
+00:03:53,730  -->  00:03:59,250
+When we run this, we'll see two is the output.
+
+62
+
+00:03:59,250  -->  00:04:02,250
+Here the index of this item is two,
+
+63
+
+00:04:02,250  -->  00:04:05,160
+but originally, it was one.
+
+64
+
+00:04:05,160  -->  00:04:08,530
+This is because we have a lot more items in the array than when we started,
+
+65
+
+00:04:08,530  -->  00:04:10,460
+and we added orange.
+
+66
+
+00:04:10,460  -->  00:04:12,010
+Originally, it was zero,
+
+67
+
+00:04:12,010  -->  00:04:13,585
+one, Index 1,
+
+68
+
+00:04:13,585  -->  00:04:16,600
+but now it's Index 2 as in index zero,
+
+69
+
+00:04:16,600  -->  00:04:19,190
+Index 1, and Index 2.
+
+70
+
+00:04:19,880  -->  00:04:22,580
+Same with grape.
+
+71
+
+00:04:22,580  -->  00:04:24,920
+If we wanted to find the index of grape,
+
+72
+
+00:04:24,920  -->  00:04:31,060
+we would write print index grape.
+
+73
+
+00:04:31,060  -->  00:04:34,240
+Then we would execute that, and we'll see that that's Index 4,
+
+74
+
+00:04:34,240  -->  00:04:36,060
+which makes sense because it's zero,
+
+75
+
+00:04:36,060  -->  00:04:39,360
+one, two, three, four.
+
+76
+
+00:04:39,920  -->  00:04:42,720
+Let's validate this is true.
+
+77
+
+00:04:42,720  -->  00:04:45,560
+We'll write print fruits,
+
+78
+
+00:04:45,560  -->  00:04:47,825
+and then we'll press Enter.
+
+79
+
+00:04:47,825  -->  00:04:52,920
+Can you guess what the output will be for all of the fruits?
+
+80
+
+00:04:53,870  -->  00:04:56,145
+We'll see five items.
+
+81
+
+00:04:56,145  -->  00:04:57,840
+If you guess this, you're right.
+
+82
+
+00:04:57,840  -->  00:04:59,950
+We'll see apple, orange,
+
+83
+
+00:04:59,950  -->  00:05:02,150
+banana, cherry, and grape.
+
+84
+
+00:05:02,150  -->  00:05:05,050
+We can verify that this is Index zero,
+
+85
+
+00:05:05,050  -->  00:05:10,210
+one, two, three, and four. Great job.

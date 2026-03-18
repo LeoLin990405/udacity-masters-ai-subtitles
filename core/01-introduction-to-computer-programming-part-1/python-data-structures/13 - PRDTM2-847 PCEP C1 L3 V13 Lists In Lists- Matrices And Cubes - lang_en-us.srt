@@ -1,0 +1,369 @@
+1
+
+00:00:00,000  -->  00:00:02,340
+As we get more comfortable with lists,
+
+2
+
+00:00:02,340  -->  00:00:04,920
+let's expand our idea of what a list can be.
+
+3
+
+00:00:04,920  -->  00:00:06,700
+A list can, in fact,
+
+4
+
+00:00:06,700  -->  00:00:09,200
+even contain other lists within it.
+
+5
+
+00:00:09,200  -->  00:00:11,765
+What will we need to do this for, though?
+
+6
+
+00:00:11,765  -->  00:00:16,350
+This allows us to create more complex data structures like matrices,
+
+7
+
+00:00:16,350  -->  00:00:17,705
+which are 2D lists,
+
+8
+
+00:00:17,705  -->  00:00:20,110
+or cubes, 3D lists.
+
+9
+
+00:00:20,110  -->  00:00:22,710
+This is useful for representing grids,
+
+10
+
+00:00:22,710  -->  00:00:25,430
+tables, or multi dimensional data.
+
+11
+
+00:00:25,430  -->  00:00:29,630
+Now, the goal is not to teach you how to work with matrices,
+
+12
+
+00:00:29,630  -->  00:00:32,690
+but it's important to get exposure to this now
+
+13
+
+00:00:32,690  -->  00:00:36,370
+so that when you go into further Python work and data engineering work,
+
+14
+
+00:00:36,370  -->  00:00:41,730
+you'll be prepared for more advanced types of Python programming.
+
+15
+
+00:00:41,730  -->  00:00:44,490
+For example, vector embeddings and
+
+16
+
+00:00:44,490  -->  00:00:48,110
+tokenization are very topical to work with machine learning,
+
+17
+
+00:00:48,110  -->  00:00:51,290
+while matrices and 3D data structures are quite
+
+18
+
+00:00:51,290  -->  00:00:55,070
+relevant to video games and multimedia animations.
+
+19
+
+00:00:55,070  -->  00:00:58,150
+In order to see how matrices and cubes work,
+
+20
+
+00:00:58,150  -->  00:01:02,795
+let's check this out with an example next.
+
+21
+
+00:01:02,795  -->  00:01:07,520
+To see lists within lists a bit more clearly,
+
+22
+
+00:01:07,520  -->  00:01:10,430
+let's first code out a 2D matrix,
+
+23
+
+00:01:10,430  -->  00:01:12,625
+known as a list of lists.
+
+24
+
+00:01:12,625  -->  00:01:16,080
+We'll do this by typing something like this.
+
+25
+
+00:01:16,080  -->  00:01:21,200
+We'll say matrix equals and we'll have outside square brackets,
+
+26
+
+00:01:21,200  -->  00:01:26,275
+and then inside, we'll have three specific lists.
+
+27
+
+00:01:26,275  -->  00:01:28,140
+The first one has 1,2,
+
+28
+
+00:01:28,140  -->  00:01:29,445
+and 3 in it.
+
+29
+
+00:01:29,445  -->  00:01:30,930
+The second one has 4,5,
+
+30
+
+00:01:30,930  -->  00:01:34,955
+and 6 in it, and the third one has 7,8, and 9 in it.
+
+31
+
+00:01:34,955  -->  00:01:39,900
+Here we've created our first matrix with three rows and three columns.
+
+32
+
+00:01:39,900  -->  00:01:46,430
+When we go to print this, it will look something like this,
+
+33
+
+00:01:46,430  -->  00:01:50,070
+which is exactly what we just printed into our matrix.
+
+34
+
+00:01:50,070  -->  00:01:54,370
+The output, again, looks exactly like the matrix object definition,
+
+35
+
+00:01:54,370  -->  00:01:56,910
+which we've defined at the top.
+
+36
+
+00:01:56,910  -->  00:02:00,090
+For a more readable output of the matrix,
+
+37
+
+00:02:00,090  -->  00:02:03,910
+we can use a four loop to iterate over each row in
+
+38
+
+00:02:03,910  -->  00:02:08,510
+the matrix or each iterable it over the big collection,
+
+39
+
+00:02:08,510  -->  00:02:13,090
+and then print each row or iterable it like so.
+
+40
+
+00:02:13,090  -->  00:02:20,300
+We'll write four row in matrix, colon print row.
+
+41
+
+00:02:20,750  -->  00:02:31,345
+The output now looks like this with three rows and three columns like that.
+
+42
+
+00:02:31,345  -->  00:02:33,740
+Now we have our matrix defined,
+
+43
+
+00:02:33,740  -->  00:02:37,460
+Let's see what operations we can perform on our matrix.
+
+44
+
+00:02:37,460  -->  00:02:41,200
+First, we can try accessing a specific element.
+
+45
+
+00:02:41,200  -->  00:02:46,360
+If we want to access the element in the third row second column,
+
+46
+
+00:02:46,360  -->  00:02:49,480
+for example, we would use our index locator,
+
+47
+
+00:02:49,480  -->  00:02:54,340
+like we have done in the past with brackets over our matrix object.
+
+48
+
+00:02:55,340  -->  00:03:00,620
+We can do something like this. We'll say print matrix,
+
+49
+
+00:03:00,750  -->  00:03:08,860
+and we'll say 2,1
+
+50
+
+00:03:08,860  -->  00:03:15,990
+because it is the third row or the second index,
+
+51
+
+00:03:15,990  -->  00:03:19,410
+and then the second column or the first index.
+
+52
+
+00:03:19,570  -->  00:03:24,435
+That's how we get eight. Again, that makes sense because it's 1,2,3 row,
+
+53
+
+00:03:24,435  -->  00:03:27,135
+and then 1,2 second column.
+
+54
+
+00:03:27,135  -->  00:03:31,810
+This is the output of eight exactly as we'd expect.
+
+55
+
+00:03:32,680  -->  00:03:38,960
+Second, something we can do is we can access an entire row of a matrix.
+
+56
+
+00:03:38,960  -->  00:03:41,880
+To do this, we can use our index locator over
+
+57
+
+00:03:41,880  -->  00:03:46,280
+the matrix object and get all of the values for a specific row in the matrix,
+
+58
+
+00:03:46,280  -->  00:03:48,320
+like the first row, for example,
+
+59
+
+00:03:48,320  -->  00:03:53,260
+which remember is index zero right here.
+
+60
+
+00:03:53,630  -->  00:04:00,105
+When we print matrix index zero, we get the first row,
+
+61
+
+00:04:00,105  -->  00:04:04,210
+1,2,3, and this prints out exactly what we would
+
+62
+
+00:04:04,210  -->  00:04:09,370
+expect the first elements of the first row of the matrix, 1,2,3.
+
+63
+
+00:04:09,370  -->  00:04:13,150
+Third, if we want to access multiple rows instead
+
+64
+
+00:04:13,150  -->  00:04:16,770
+of printing them all like we just did earlier,
+
+65
+
+00:04:16,770  -->  00:04:19,750
+we could use a for loop to make this more
+
+66
+
+00:04:19,750  -->  00:04:23,690
+compact and only define the rows we want to include.
+
+67
+
+00:04:23,690  -->  00:04:26,570
+For example, let's say we only want to see
+
+68
+
+00:04:26,570  -->  00:04:30,115
+the second and third rows. How would we do that?
+
+69
+
+00:04:30,115  -->  00:04:39,590
+Well, something that we can do so we can write a for loop and we'll say for row in [1,2].
+
+70
+
+00:04:41,060  -->  00:04:48,840
+Then we can say print matrix, and then [row].
+
+71
+
+00:04:49,920  -->  00:04:53,440
+Then when we execute this code,
+
+72
+
+00:04:54,680  -->  00:04:59,520
+this makes sense because we see 4,5,6,
+
+73
+
+00:04:59,520  -->  00:05:06,620
+and 7,8,9 which is exactly what we just define where we want the second and third rows,
+
+74
+
+00:05:06,620  -->  00:05:11,360
+which is index 1 and index 2. That makes sense.
