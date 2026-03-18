@@ -1,0 +1,179 @@
+1
+
+00:00:00,000  -->  00:00:03,980
+Let's plot the relationship between two qualitative variables,
+
+2
+
+00:00:03,980  -->  00:00:07,280
+vehicle class and type of vehicle transmission.
+
+3
+
+00:00:07,280  -->  00:00:10,840
+To simplify things, I'm only going to look at the main type division,
+
+4
+
+00:00:10,840  -->  00:00:16,400
+automatic or manual, which has been stored in the trans_type column.
+
+5
+
+00:00:16,400  -->  00:00:20,660
+One way of depicting this could be with a heat map like we saw before.
+
+6
+
+00:00:20,660  -->  00:00:24,960
+There's actually a seaborne function for this categorical type of heat map,
+
+7
+
+00:00:24,960  -->  00:00:26,640
+the heat map function.
+
+8
+
+00:00:26,640  -->  00:00:29,380
+However, this function takes as an argument
+
+9
+
+00:00:29,380  -->  00:00:33,300
+a 2D array or data frame with the values to be depicted.
+
+10
+
+00:00:33,300  -->  00:00:35,960
+That means that we need to do some summarization
+
+11
+
+00:00:35,960  -->  00:00:38,900
+work ourselves before we can create our plot.
+
+12
+
+00:00:38,900  -->  00:00:42,620
+First, I use the group by and size functions to get the number of
+
+13
+
+00:00:42,620  -->  00:00:47,540
+cars in each combination of the two variables levels as a Panda series.
+
+14
+
+00:00:47,540  -->  00:00:53,160
+Then I use reset index to convert the series into a data frame.
+
+15
+
+00:00:53,160  -->  00:00:58,460
+Finally, I use Pivot to rearrange the data so that I have vehicle class on rows,
+
+16
+
+00:00:58,460  -->  00:01:02,200
+transmission types on columns and values in the cells.
+
+17
+
+00:01:02,200  -->  00:01:04,480
+Now we're ready to plot.
+
+18
+
+00:01:04,480  -->  00:01:07,090
+This is actually disappointing.
+
+19
+
+00:01:07,090  -->  00:01:09,670
+It's actually really hard to compare the counts and
+
+20
+
+00:01:09,670  -->  00:01:12,450
+transmission ratios from the colors alone.
+
+21
+
+00:01:12,450  -->  00:01:15,790
+You can see that manual is less popular than automatic.
+
+22
+
+00:01:15,790  -->  00:01:18,770
+But beyond that, it's hard to tell.
+
+23
+
+00:01:18,770  -->  00:01:22,350
+One option we have is to add annotations with counts to the cells,
+
+24
+
+00:01:22,350  -->  00:01:25,630
+which makes the representation more tabular in nature.
+
+25
+
+00:01:25,630  -->  00:01:32,370
+The FMT parameter set to D ensures that all of the counts are listed as decimal values.
+
+26
+
+00:01:32,370  -->  00:01:34,830
+An alternative way of showing the distribution in
+
+27
+
+00:01:34,830  -->  00:01:37,710
+counts is through the use of a clustered bar chart.
+
+28
+
+00:01:37,710  -->  00:01:39,950
+In the last lesson, you saw how to use
+
+29
+
+00:01:39,950  -->  00:01:44,455
+Seaborn's count plot function to generate a bar chart of one variable.
+
+30
+
+00:01:44,455  -->  00:01:47,280
+To divide each of the individual bars into
+
+31
+
+00:01:47,280  -->  00:01:49,940
+multiple bars for the different transmission types,
+
+32
+
+00:01:49,940  -->  00:01:55,020
+we just need to add a huge parameter pointing to the trans_type variable.
+
+33
+
+00:01:55,020  -->  00:01:56,680
+With the clustered bar chart,
+
+34
+
+00:01:56,680  -->  00:01:59,220
+we can see clearly that many compact cars have
+
+35
+
+00:01:59,220  -->  00:02:02,420
+the closest ratio between automatic and manual transmissions,
+
+36
+
+00:02:02,420  -->  00:02:05,980
+while large cars have the most distant ratio.

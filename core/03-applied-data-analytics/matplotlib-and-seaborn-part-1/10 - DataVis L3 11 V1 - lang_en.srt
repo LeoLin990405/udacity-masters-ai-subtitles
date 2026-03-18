@@ -1,0 +1,64 @@
+1
+00:00:00,000 --> 00:00:04,500
+Let's try creating another histogram of a different Pokemon attribute, height.
+
+2
+00:00:04,500 --> 00:00:07,365
+The units for this variable are in meters.
+
+3
+00:00:07,365 --> 00:00:10,285
+A plot of the statistic shows that it's fairly right-skewed,
+
+4
+00:00:10,285 --> 00:00:13,765
+with relatively few points above six meters in value.
+
+5
+00:00:13,765 --> 00:00:16,269
+It might be worth doing a zoom in of the main bulk
+
+6
+00:00:16,269 --> 00:00:18,804
+of the data through the use of axis limits.
+
+7
+00:00:18,804 --> 00:00:22,030
+We can use the matplotlib function xlim to set
+
+8
+00:00:22,030 --> 00:00:25,270
+the upper and lower bounds of the bins that will be displayed in the plot.
+
+9
+00:00:25,269 --> 00:00:27,879
+This function takes an argument, a list,
+
+10
+00:00:27,879 --> 00:00:30,829
+or tuple of two values specifying these limits.
+
+11
+00:00:30,829 --> 00:00:34,734
+In this case, I've set the axis limits from zero to six.
+
+12
+00:00:34,734 --> 00:00:39,554
+I've also changed the bin size in anticipation of this reduced axis limit.
+
+13
+00:00:39,554 --> 00:00:41,484
+In this case, there's actually not
+
+14
+00:00:41,484 --> 00:00:45,304
+that much additional illumination provided by the trimmed axis limits.
+
+15
+00:00:45,304 --> 00:00:48,710
+Most Pokemon species are human-sized or smaller,
+
+16
+00:00:48,710 --> 00:00:51,670
+with relatively few that are much taller than that.
+

@@ -10,7 +10,7 @@ Course subtitles organized by the [Udacity Master's Degree in Artificial Intelli
 |---|--------|-----------|
 | 1 | Introduction to Computer Programming: Part 1 | 124 files |
 | 2 | Introduction to Machine Learning | - |
-| 3 | Applied Data Analytics | - |
+| 3 | Applied Data Analytics | 93 files |
 | 4 | Introduction to Deep Learning | - |
 | 5 | Introduction to Artificial Intelligence | - |
 | 6 | Intelligent Systems | - |
@@ -88,7 +88,11 @@ core/
     python-functions/                               (16 files)
     python-exceptions/                              (19 files)
   02-introduction-to-machine-learning/
-  03-applied-data-analytics/
+  03-applied-data-analytics/                       (93 SRT files)
+    numpy/                                          (14 files)
+    pandas/                                         (14 files)
+    matplotlib-and-seaborn-part-1/                  (26 files)
+    matplotlib-and-seaborn-part-2/                  (39 files)
   04-introduction-to-deep-learning/
   05-introduction-to-artificial-intelligence/
   06-intelligent-systems/

@@ -1,0 +1,60 @@
+1
+00:00:04,440 --> 00:00:09,179
+The bar charts you saw in the previous concept were all encoded with
+
+2
+00:00:09,179 --> 00:00:13,779
+the absolute frequency or number of data points on the length axis.
+
+3
+00:00:13,779 --> 00:00:15,984
+However, in some cases,
+
+4
+00:00:15,984 --> 00:00:17,460
+you might instead be interested in
+
+5
+00:00:17,460 --> 00:00:22,450
+the relative frequency or what proportion of the data falls in each category.
+
+6
+00:00:22,449 --> 00:00:28,589
+For example; Let's say that we have daily air quality data from three cities for a year.
+
+7
+00:00:28,589 --> 00:00:31,390
+If we are interested in estimating the proportion of
+
+8
+00:00:31,390 --> 00:00:34,234
+days that saw good air quality from our plot,
+
+9
+00:00:34,234 --> 00:00:39,649
+then trying to do this from the plot of counts require us to do some estimation work.
+
+10
+00:00:39,649 --> 00:00:43,310
+We would need to estimate the relative area of the Good bar to
+
+11
+00:00:43,310 --> 00:00:47,895
+all the bars together or have to do some mental calculations of some.
+
+12
+00:00:47,895 --> 00:00:51,609
+Changing the Count axis to relative proportions makes it
+
+13
+00:00:51,609 --> 00:00:56,024
+much easier to see how much each category contributes to the whole.
+
+14
+00:00:56,024 --> 00:00:59,710
+We can just read the height of the Good bar on the vertical axis and
+
+15
+00:00:59,710 --> 00:01:03,799
+find that almost 70 percent of days had good air quality.
+
