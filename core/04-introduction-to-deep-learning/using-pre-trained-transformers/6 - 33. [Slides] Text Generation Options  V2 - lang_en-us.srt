@@ -1,0 +1,589 @@
+1
+
+00:00:00,000  -->  00:00:04,420
+Now we will talk about how we can affect tax generation results using
+
+2
+
+00:00:04,420  -->  00:00:10,800
+various generation parameters that are available in Hugging Face and other libraries.
+
+3
+
+00:00:10,800  -->  00:00:13,280
+To avoid some possible confusion,
+
+4
+
+00:00:13,280  -->  00:00:15,905
+there are two types of parameters.
+
+5
+
+00:00:15,905  -->  00:00:22,570
+Model parameters; these are parameters that were set during a model training,
+
+6
+
+00:00:22,570  -->  00:00:25,345
+and generation parameters;
+
+7
+
+00:00:25,345  -->  00:00:32,415
+these can affect the result of a tax generation when we use a model after it was trained.
+
+8
+
+00:00:32,415  -->  00:00:35,490
+We have already seen one parameter,
+
+9
+
+00:00:35,490  -->  00:00:38,110
+which is the maximum number of tokens,
+
+10
+
+00:00:38,110  -->  00:00:40,690
+tax generation process should return.
+
+11
+
+00:00:40,690  -->  00:00:44,830
+In Hugging Face, it is called max length parameter.
+
+12
+
+00:00:44,830  -->  00:00:48,870
+As you can imagine, the higher this parameter is,
+
+13
+
+00:00:48,870  -->  00:00:53,870
+the longer the output the tax generation process will produce.
+
+14
+
+00:00:53,950  -->  00:00:56,190
+One [inaudible], however,
+
+15
+
+00:00:56,190  -->  00:01:00,010
+is that it defines a maximum number of tokens and
+
+16
+
+00:01:00,010  -->  00:01:05,810
+tax generation can return an output that is shorter than this value.
+
+17
+
+00:01:05,810  -->  00:01:08,670
+During the tax generation process,
+
+18
+
+00:01:08,670  -->  00:01:13,030
+a model can emit a special end of sequence token that will
+
+19
+
+00:01:13,030  -->  00:01:18,250
+stop the generation process even before it reached the specified limit.
+
+20
+
+00:01:18,250  -->  00:01:23,070
+Now, let's talk about how we can generate text using an LLM.
+
+21
+
+00:01:23,070  -->  00:01:26,990
+One simple option is that every time we want to generate
+
+22
+
+00:01:26,990  -->  00:01:32,760
+a new token is to select a token with the highest probability.
+
+23
+
+00:01:33,260  -->  00:01:38,600
+Once our model produces the probabilities from the softmax layer,
+
+24
+
+00:01:38,600  -->  00:01:43,360
+it might be logical to just pick the word with the highest probability.
+
+25
+
+00:01:43,360  -->  00:01:45,220
+Once we select a token,
+
+26
+
+00:01:45,220  -->  00:01:49,800
+we can add it to the input and then generate the new token,
+
+27
+
+00:01:49,800  -->  00:01:54,040
+and then repeat this process again and again.
+
+28
+
+00:01:54,040  -->  00:01:57,720
+This approach, when we always pick a token with
+
+29
+
+00:01:57,720  -->  00:02:01,845
+the highest probability is also called greedy decoding,
+
+30
+
+00:02:01,845  -->  00:02:06,820
+because we are always greedily pick a token with the highest probability.
+
+31
+
+00:02:06,820  -->  00:02:09,620
+There is, however an issue with this approach.
+
+32
+
+00:02:09,620  -->  00:02:12,920
+If we pick a token with the highest probability,
+
+33
+
+00:02:12,920  -->  00:02:17,180
+it can lead to boring and repetitive results.
+
+34
+
+00:02:17,180  -->  00:02:21,080
+One surprising fix for this is to add a little bit of
+
+35
+
+00:02:21,080  -->  00:02:27,440
+randomness and pick less probable tokens when generating output.
+
+36
+
+00:02:27,440  -->  00:02:32,500
+We also have control over how much randomness we want to add.
+
+37
+
+00:02:32,500  -->  00:02:35,760
+We will look into this later and you will be able
+
+38
+
+00:02:35,760  -->  00:02:39,940
+to experiment with this in the upcoming exercise.
+
+39
+
+00:02:39,940  -->  00:02:44,520
+Picking a random token is called multinomial sampling.
+
+40
+
+00:02:44,520  -->  00:02:51,120
+If you recall, we can use the output as a softmax layer as a probability distribution.
+
+41
+
+00:02:51,120  -->  00:02:55,040
+We can pick a token randomly using this distribution,
+
+42
+
+00:02:55,040  -->  00:02:57,880
+and the higher the probability of a token,
+
+43
+
+00:02:57,880  -->  00:03:01,630
+the higher the chance that it will be selected.
+
+44
+
+00:03:01,630  -->  00:03:07,560
+In this case, if an LLM has returned to tokens with this distribution,
+
+45
+
+00:03:07,560  -->  00:03:11,080
+we'll pick powerful in roughly 10% of cases,
+
+46
+
+00:03:11,080  -->  00:03:15,540
+trained in roughly 9% of cases, and so on.
+
+47
+
+00:03:15,540  -->  00:03:17,880
+Once we've picked a token,
+
+48
+
+00:03:17,880  -->  00:03:20,760
+we can repeat the process as before and
+
+49
+
+00:03:20,760  -->  00:03:24,420
+add it to the input and then generate the next token.
+
+50
+
+00:03:24,420  -->  00:03:27,620
+This new input will give us a new distribution,
+
+51
+
+00:03:27,620  -->  00:03:31,775
+and then we can pick the next token randomly, and so on.
+
+52
+
+00:03:31,775  -->  00:03:37,470
+There is however an issue with only looking at one next token at a time.
+
+53
+
+00:03:37,470  -->  00:03:43,290
+It can lead to suboptimal results when selecting the follow up tokens.
+
+54
+
+00:03:43,290  -->  00:03:47,390
+It could be that if we selected a lower probability token.
+
+55
+
+00:03:47,390  -->  00:03:51,170
+First, it could lead to better result sequences.
+
+56
+
+00:03:51,170  -->  00:03:55,470
+A way to fix it is that instead of generating only a single sequence,
+
+57
+
+00:03:55,470  -->  00:04:00,045
+is to try to generate multiple sequences at the same time,
+
+58
+
+00:04:00,045  -->  00:04:03,480
+and then select the best result at the end.
+
+59
+
+00:04:03,480  -->  00:04:06,900
+We can't try all possible token combinations
+
+60
+
+00:04:06,900  -->  00:04:10,680
+on every step since it will quickly become unmanageable.
+
+61
+
+00:04:10,680  -->  00:04:13,220
+To evaluate multiple sequences,
+
+62
+
+00:04:13,220  -->  00:04:16,500
+we can use the algorithm called beam search.
+
+63
+
+00:04:16,500  -->  00:04:19,160
+Instead of generating a single output,
+
+64
+
+00:04:19,160  -->  00:04:24,020
+it tries to generate several sequences using a few different tokens.
+
+65
+
+00:04:24,020  -->  00:04:26,120
+At every step of the algorithm,
+
+66
+
+00:04:26,120  -->  00:04:30,180
+we keep and best sequences so far and we'll try to
+
+67
+
+00:04:30,180  -->  00:04:34,780
+generate new sequences starting from the sequences we have.
+
+68
+
+00:04:34,780  -->  00:04:38,520
+Then we just repeat this process multiple times.
+
+69
+
+00:04:38,520  -->  00:04:41,740
+Here is an example of how this works.
+
+70
+
+00:04:41,740  -->  00:04:46,800
+Instead of generating just one sequence from the initial prompt,
+
+71
+
+00:04:46,800  -->  00:04:52,780
+we try to generate two sequences using two most probable next tokens,
+
+72
+
+00:04:52,780  -->  00:04:56,640
+which are powerful and trained in this case.
+
+73
+
+00:04:56,640  -->  00:05:00,840
+This process produces two more sequences that we again
+
+74
+
+00:05:00,840  -->  00:05:05,550
+pass to our model to get two new probability distributions.
+
+75
+
+00:05:05,550  -->  00:05:09,255
+In this case, we have n = 2,
+
+76
+
+00:05:09,255  -->  00:05:14,790
+which means that we have two sequences we consider on each step.
+
+77
+
+00:05:14,790  -->  00:05:17,440
+Having two sequences, we can pick
+
+78
+
+00:05:17,440  -->  00:05:21,680
+two more tokens that will result in most likely outputs,
+
+79
+
+00:05:21,680  -->  00:05:26,220
+and we will have two more sequences that we can use for the next step.
+
+80
+
+00:05:26,220  -->  00:05:29,160
+When we are randomly selecting the next token given
+
+81
+
+00:05:29,160  -->  00:05:33,550
+the probability distribution returned by the softmax function.
+
+82
+
+00:05:33,550  -->  00:05:39,580
+We also have control over what tokens to pick when selecting the next word.
+
+83
+
+00:05:39,580  -->  00:05:44,635
+There are two related parameters that are called top-K,
+
+84
+
+00:05:44,635  -->  00:05:49,080
+which specifies the number of tokens with the highest probability,
+
+85
+
+00:05:49,080  -->  00:05:54,505
+the generation process should consider when selecting the next token.
+
+86
+
+00:05:54,505  -->  00:05:57,990
+The other parameter is top-P,
+
+87
+
+00:05:57,990  -->  00:06:03,220
+which can specify the total probability of most probable tokens,
+
+88
+
+00:06:03,220  -->  00:06:08,050
+a generation process should consider when selecting the next token.
+
+89
+
+00:06:08,050  -->  00:06:11,310
+Let's take a look at the top-K parameter.
+
+90
+
+00:06:11,310  -->  00:06:13,580
+If we set top-K to three,
+
+91
+
+00:06:13,580  -->  00:06:16,320
+it means that when generating text,
+
+92
+
+00:06:16,320  -->  00:06:22,080
+we will pick the next token from only top three tokens and model has returned.
+
+93
+
+00:06:22,080  -->  00:06:26,520
+In this example, it will randomly select either power, trained,
+
+94
+
+00:06:26,520  -->  00:06:31,540
+or vulnerable, but it won't pick A or few or any other tokens.
+
+95
+
+00:06:31,540  -->  00:06:33,160
+If we set it to six,
+
+96
+
+00:06:33,160  -->  00:06:36,680
+it means that we will pick from top six tokens.
+
+97
+
+00:06:36,680  -->  00:06:42,640
+Selecting the higher number of K means that the result text might get more creative,
+
+98
+
+00:06:42,640  -->  00:06:46,200
+or it might diverge into somewhat unrelated areas.
+
+99
+
+00:06:46,200  -->  00:06:48,620
+But if I set the value too high,
+
+100
+
+00:06:48,620  -->  00:06:50,820
+it can start generating nonsense.
+
+101
+
+00:06:50,820  -->  00:06:56,260
+The final parameter that we can use to control token generation is called T,
+
+102
+
+00:06:56,260  -->  00:07:03,260
+and this parameter affects the probability distribution returned by the softmax layer.
+
+103
+
+00:07:03,260  -->  00:07:06,930
+To use it, we divide the logit values by
+
+104
+
+00:07:06,930  -->  00:07:12,290
+this T parameter before we use these values in the soft max calculations.
+
+105
+
+00:07:12,290  -->  00:07:18,510
+If we set it to one, then the softmax function will just return the regular output.
+
+106
+
+00:07:18,510  -->  00:07:21,990
+However, if we make T parameter smaller,
+
+107
+
+00:07:21,990  -->  00:07:27,750
+then logits with higher values will get significantly higher probability,
+
+108
+
+00:07:27,750  -->  00:07:31,070
+increasing the chance that they will be selected.
+
+109
+
+00:07:31,070  -->  00:07:37,450
+It also decreases the chances that tokens with lower logit values will be selected.
+
+110
+
+00:07:37,450  -->  00:07:42,100
+On the other hand, if we set temperature to a higher value,
+
+111
+
+00:07:42,100  -->  00:07:45,600
+the probability distribution becomes more flat,
+
+112
+
+00:07:45,600  -->  00:07:51,720
+increasing the chance that the value with lower logit values will be selected.
+
+113
+
+00:07:51,720  -->  00:07:53,935
+Using Hugging Face,
+
+114
+
+00:07:53,935  -->  00:07:58,660
+we can provide values for all the parameters we've discussed so far.
+
+115
+
+00:07:58,660  -->  00:08:01,430
+When using the generator function,
+
+116
+
+00:08:01,430  -->  00:08:06,480
+we can provide do sample to enable multinomial sampling,
+
+117
+
+00:08:06,480  -->  00:08:12,615
+specify the number of beams in the beam search and provide top-K,
+
+118
+
+00:08:12,615  -->  00:08:19,240
+top-P or temperature to influence the degree of randomness in the output.

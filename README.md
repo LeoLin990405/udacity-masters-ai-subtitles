@@ -11,7 +11,7 @@ Course subtitles organized by the [Udacity Master's Degree in Artificial Intelli
 | 1 | Introduction to Computer Programming: Part 1 | 124 files |
 | 2 | Introduction to Machine Learning | - |
 | 3 | Applied Data Analytics | 93 files |
-| 4 | Introduction to Deep Learning | 195 files |
+| 4 | Introduction to Deep Learning | 201 files |
 | 5 | Introduction to Artificial Intelligence | - |
 | 6 | Intelligent Systems | - |
 | 7 | Ethical Artificial Intelligence Practices | - |
@@ -100,6 +100,7 @@ core/
     deep-learning-with-pytorch/                     (41 files)
     introduction-to-transformer-neural-networks/    ( 6 files)
     building-transformer-with-pytorch/              (18 files)
+    using-pre-trained-transformers/                 ( 6 files)
   05-introduction-to-artificial-intelligence/
   06-intelligent-systems/
   07-ethical-artificial-intelligence-practices/

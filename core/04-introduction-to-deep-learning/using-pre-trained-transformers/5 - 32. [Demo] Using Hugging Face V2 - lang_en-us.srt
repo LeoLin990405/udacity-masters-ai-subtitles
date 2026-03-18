@@ -1,0 +1,304 @@
+1
+
+00:00:00,000  -->  00:00:02,540
+In this demo, we will see how to use
+
+2
+
+00:00:02,540  -->  00:00:08,860
+the Hugging Face high level API to use some pre trained large language models.
+
+3
+
+00:00:08,860  -->  00:00:14,130
+Specifically, we will go through a few examples of how to use these models.
+
+4
+
+00:00:14,130  -->  00:00:16,510
+We'll see how to summarize text,
+
+5
+
+00:00:16,510  -->  00:00:18,390
+how to generate new text,
+
+6
+
+00:00:18,390  -->  00:00:21,730
+how to classify text samples, and so on.
+
+7
+
+00:00:21,730  -->  00:00:25,745
+First of all, to use the high level API from Hugging Face,
+
+8
+
+00:00:25,745  -->  00:00:30,150
+we need to import the pipeline function from the transformers.
+
+9
+
+00:00:30,150  -->  00:00:33,630
+Having this function, let's see how we can summarize some text.
+
+10
+
+00:00:33,630  -->  00:00:35,710
+To do this, first of all,
+
+11
+
+00:00:35,710  -->  00:00:41,250
+we'll need to create a pipeline and specify the summarization task when we create it.
+
+12
+
+00:00:41,250  -->  00:00:46,705
+This function will return a summarizer that we can then use to summarize our text.
+
+13
+
+00:00:46,705  -->  00:00:48,380
+To use the summarizer,
+
+14
+
+00:00:48,380  -->  00:00:52,600
+we need to provide the text to summarize and call the summarizer with
+
+15
+
+00:00:52,600  -->  00:00:58,035
+some optional parameters such as max_length and min_length,
+
+16
+
+00:00:58,035  -->  00:01:03,560
+which specifies the maximum and the minimum number of tokens in the result summary.
+
+17
+
+00:01:03,560  -->  00:01:08,860
+A single call to a summarizer might return multiple different summaries.
+
+18
+
+00:01:08,860  -->  00:01:11,620
+To get a text of a single summary,
+
+19
+
+00:01:11,620  -->  00:01:16,500
+we need to get the value of the summary text from the first summary.
+
+20
+
+00:01:16,500  -->  00:01:19,735
+Now let's see how we can generate some text.
+
+21
+
+00:01:19,735  -->  00:01:22,180
+The process here is very similar.
+
+22
+
+00:01:22,180  -->  00:01:26,260
+We create a pipeline and then we provide a prompt that will
+
+23
+
+00:01:26,260  -->  00:01:30,700
+be used as a starting point for the model to generate follow up text.
+
+24
+
+00:01:30,700  -->  00:01:33,760
+We can also provide additional parameters here,
+
+25
+
+00:01:33,760  -->  00:01:36,600
+like max_length, as we did before,
+
+26
+
+00:01:36,600  -->  00:01:39,980
+and the maximum number of sequences to return.
+
+27
+
+00:01:39,980  -->  00:01:45,600
+As before, the output that we get from the generator is similar to what we got before.
+
+28
+
+00:01:45,600  -->  00:01:47,520
+To get the generated text,
+
+29
+
+00:01:47,520  -->  00:01:52,040
+we need to get the first sequence and use the generated text field from it.
+
+30
+
+00:01:52,040  -->  00:01:53,440
+If you look at this text,
+
+31
+
+00:01:53,440  -->  00:01:55,060
+it says that the scientists from
+
+32
+
+00:01:55,060  -->  00:01:59,260
+this university created a new drug and so on and so forth.
+
+33
+
+00:01:59,260  -->  00:02:04,160
+It looks like a reasonably generated text about a potential news article.
+
+34
+
+00:02:04,160  -->  00:02:07,200
+The other thing that we will try to do is to classify
+
+35
+
+00:02:07,200  -->  00:02:11,260
+text using so called zero-shot classification.
+
+36
+
+00:02:11,260  -->  00:02:15,840
+A shot in this context means how many examples do we provide
+
+37
+
+00:02:15,840  -->  00:02:20,920
+in a prompt to our model for it to understand what it should do.
+
+38
+
+00:02:20,920  -->  00:02:24,795
+Zero means we don't provide any examples.
+
+39
+
+00:02:24,795  -->  00:02:27,160
+If we have one shot classification,
+
+40
+
+00:02:27,160  -->  00:02:32,540
+it means we provide a single example of how to classify text in a prompt itself,
+
+41
+
+00:02:32,540  -->  00:02:36,365
+and we can use more than one shot classification as well.
+
+42
+
+00:02:36,365  -->  00:02:39,310
+In this case, we again create a pipeline,
+
+43
+
+00:02:39,310  -->  00:02:42,010
+specify the name of the task that we will do,
+
+44
+
+00:02:42,010  -->  00:02:47,190
+and then we'll provide the text and the labels for a classifier to create the prompt.
+
+45
+
+00:02:47,190  -->  00:02:51,470
+We also provide the hypothesis template that will become the part of
+
+46
+
+00:02:51,470  -->  00:02:55,845
+the prompt and will help the model to figure out what are we asking it to do.
+
+47
+
+00:02:55,845  -->  00:03:01,090
+Classifier returned a list of scores for each of the labels we have provided.
+
+48
+
+00:03:01,090  -->  00:03:02,640
+If you look at the result,
+
+49
+
+00:03:02,640  -->  00:03:08,790
+it specifies that this text about transformers is most likely about technology.
+
+50
+
+00:03:08,790  -->  00:03:13,000
+Finally, Hugging Face is not limited to working just with text.
+
+51
+
+00:03:13,000  -->  00:03:15,420
+We can also use it with images.
+
+52
+
+00:03:15,420  -->  00:03:18,180
+For example, if we have an image like this that
+
+53
+
+00:03:18,180  -->  00:03:21,140
+I got from one of the Hugging Face datasets,
+
+54
+
+00:03:21,140  -->  00:03:26,480
+we can create a captioner model that will write a text caption for this image,
+
+55
+
+00:03:26,480  -->  00:03:30,255
+so it will describe what is there on this image.
+
+56
+
+00:03:30,255  -->  00:03:32,820
+To do this, I'll create a pipeline.
+
+57
+
+00:03:32,820  -->  00:03:35,390
+Here I use a different way of creating
+
+58
+
+00:03:35,390  -->  00:03:39,370
+a pipeline where it just provides the name of the model to use.
+
+59
+
+00:03:39,370  -->  00:03:42,030
+If we scroll down and print the result,
+
+60
+
+00:03:42,030  -->  00:03:45,530
+the text says two birds are sitting next to each other,
+
+61
+
+00:03:45,530  -->  00:03:48,310
+which is pretty much spat on.

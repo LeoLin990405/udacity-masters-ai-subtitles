@@ -1,0 +1,264 @@
+1
+
+00:00:00,000  -->  00:00:05,265
+Let's now take a look at how we can use existing LLMs with hugging face.
+
+2
+
+00:00:05,265  -->  00:00:08,295
+When it comes to using hugging face models,
+
+3
+
+00:00:08,295  -->  00:00:10,605
+we have two options.
+
+4
+
+00:00:10,605  -->  00:00:17,210
+First, we can use a high-level API accessible using the pipeline function.
+
+5
+
+00:00:17,210  -->  00:00:22,480
+Or we can use a more flexible but more low-level API,
+
+6
+
+00:00:22,480  -->  00:00:28,960
+which we would use if we want to have more control over how to use a particular model.
+
+7
+
+00:00:28,960  -->  00:00:31,840
+Since this is a beginner-friendly lesson,
+
+8
+
+00:00:31,840  -->  00:00:35,780
+we will focus just on using the high-level API.
+
+9
+
+00:00:35,780  -->  00:00:40,580
+But keep in mind that hugging face API has much more to offer.
+
+10
+
+00:00:40,580  -->  00:00:46,040
+Let's now look at how to use a large language model with a hugging face.
+
+11
+
+00:00:46,040  -->  00:00:52,290
+First, we need to import the pipeline function from the transformers package.
+
+12
+
+00:00:52,290  -->  00:00:54,540
+To use it, we need to call
+
+13
+
+00:00:54,540  -->  00:00:59,115
+the pipeline function and provide the name of the task we wanted to do.
+
+14
+
+00:00:59,115  -->  00:01:03,420
+Here we specify text generation to generate text,
+
+15
+
+00:01:03,420  -->  00:01:08,840
+but there are other tasks we can use such as text summarization and others.
+
+16
+
+00:01:08,840  -->  00:01:10,820
+The pipeline function returns
+
+17
+
+00:01:10,820  -->  00:01:16,180
+another function that we can use to perform the selected task.
+
+18
+
+00:01:16,180  -->  00:01:21,020
+We then need to specify a prompt for tax generation.
+
+19
+
+00:01:21,020  -->  00:01:24,280
+Since we've selected the tax generation task,
+
+20
+
+00:01:24,280  -->  00:01:30,000
+it will continue generating text that continues the selected phrase.
+
+21
+
+00:01:30,300  -->  00:01:33,440
+To generate x using this prompt,
+
+22
+
+00:01:33,440  -->  00:01:36,660
+we need to call the generator function returned by
+
+23
+
+00:01:36,660  -->  00:01:40,040
+the pipeline call and provide a few parameters,
+
+24
+
+00:01:40,040  -->  00:01:44,420
+such as a prompt, the maximum length of the output that it will generate,
+
+25
+
+00:01:44,420  -->  00:01:48,420
+and number of sequences we wanted to generate.
+
+26
+
+00:01:48,700  -->  00:01:51,500
+This will take the provided prompt,
+
+27
+
+00:01:51,500  -->  00:01:53,400
+pass it to the LLM,
+
+28
+
+00:01:53,400  -->  00:01:56,500
+and it will return a response.
+
+29
+
+00:01:57,900  -->  00:02:01,180
+Under the hood, it goes through the steps,
+
+30
+
+00:02:01,180  -->  00:02:03,765
+you should already be pretty familiar with.
+
+31
+
+00:02:03,765  -->  00:02:07,140
+When hugging face receives an input text,
+
+32
+
+00:02:07,140  -->  00:02:12,605
+it splits it into tokens using a tokenizer for the selected model.
+
+33
+
+00:02:12,605  -->  00:02:20,170
+Converts these tokens into IDs and then passes these token IDs to the model.
+
+34
+
+00:02:20,170  -->  00:02:27,005
+Then the model returns a set of logits that are then used to generate an output.
+
+35
+
+00:02:27,005  -->  00:02:31,910
+Hugging phase can do a myriad of different NLP-related tasks.
+
+36
+
+00:02:31,910  -->  00:02:36,650
+It supports tasks like text generation that we've just covered.
+
+37
+
+00:02:36,650  -->  00:02:40,750
+Questions answering, text summarization.
+
+38
+
+00:02:40,750  -->  00:02:44,570
+It allows to translate between different languages,
+
+39
+
+00:02:44,570  -->  00:02:50,550
+and it supports classification of text into one of selected categories.
+
+40
+
+00:02:51,170  -->  00:02:56,130
+We can use hugging face not only for NLP-related tasks.
+
+41
+
+00:02:56,130  -->  00:03:01,015
+It also supports audio-related tasks like audio classification,
+
+42
+
+00:03:01,015  -->  00:03:04,075
+and converting text to audio.
+
+43
+
+00:03:04,075  -->  00:03:08,630
+It also allows us to work with images and videos.
+
+44
+
+00:03:08,630  -->  00:03:13,430
+For example, we can use it to generate an image description,
+
+45
+
+00:03:13,430  -->  00:03:20,150
+classify videos, perform image segmentation, and much more.
+
+46
+
+00:03:20,150  -->  00:03:26,570
+Let's take a look at how to use hugging face for tasks other than generating text.
+
+47
+
+00:03:26,570  -->  00:03:31,425
+Here is an example of how to perform image classification with hugging face.
+
+48
+
+00:03:31,425  -->  00:03:33,910
+Again, we need to use the pipeline function,
+
+49
+
+00:03:33,910  -->  00:03:38,910
+but here we specify a different task called image classification.
+
+50
+
+00:03:38,910  -->  00:03:43,790
+Then we pass an image file or an image URL to classify.
+
+51
+
+00:03:43,790  -->  00:03:47,410
+The output of this score is a list where every element
+
+52
+
+00:03:47,410  -->  00:03:51,890
+contains a label and the probability associated with it.
+
+53
+
+00:03:51,890  -->  00:03:59,090
+In this case, it thinks that the image we've passed to it is likely an image of a cat.

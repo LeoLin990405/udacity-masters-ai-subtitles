@@ -1,0 +1,409 @@
+1
+
+00:00:00,000  -->  00:00:03,220
+We have implemented a particular architecture for
+
+2
+
+00:00:03,220  -->  00:00:07,250
+large language models called decoder-only architecture.
+
+3
+
+00:00:07,250  -->  00:00:10,480
+It turns out that there are other architectures,
+
+4
+
+00:00:10,480  -->  00:00:15,540
+and now we'll briefly cover what they are and how they differ from each other.
+
+5
+
+00:00:15,540  -->  00:00:19,195
+Transformers were initially introduced in a paper called,
+
+6
+
+00:00:19,195  -->  00:00:21,145
+Attention is All You Need.
+
+7
+
+00:00:21,145  -->  00:00:24,640
+This paper described an architecture that is
+
+8
+
+00:00:24,640  -->  00:00:28,360
+more complex comparing to the architecture that we've implemented.
+
+9
+
+00:00:28,360  -->  00:00:32,460
+You see the image of this architecture on the screen right now.
+
+10
+
+00:00:32,460  -->  00:00:35,760
+It also was created for a different purpose.
+
+11
+
+00:00:35,760  -->  00:00:38,580
+Instead of having a goal to generate text,
+
+12
+
+00:00:38,580  -->  00:00:42,040
+the authors of the paper were working on a new way
+
+13
+
+00:00:42,040  -->  00:00:46,740
+of translating text from one language to the other.
+
+14
+
+00:00:47,420  -->  00:00:51,020
+But if you look closely at this diagram,
+
+15
+
+00:00:51,020  -->  00:00:55,650
+you will see that the right part should be somewhat familiar.
+
+16
+
+00:00:55,650  -->  00:00:58,180
+It has the embedding layer,
+
+17
+
+00:00:58,180  -->  00:01:00,395
+the positional encoding,
+
+18
+
+00:01:00,395  -->  00:01:03,260
+the masked multi-head attention,
+
+19
+
+00:01:03,260  -->  00:01:05,160
+and just to remind you,
+
+20
+
+00:01:05,160  -->  00:01:11,695
+masked is referred to a triangular mask we've used to change the attention scores.
+
+21
+
+00:01:11,695  -->  00:01:16,920
+It also has the feed-forward layer with the residual connection,
+
+22
+
+00:01:16,920  -->  00:01:22,340
+and the Nx means that this block is repeated multiple times,
+
+23
+
+00:01:22,340  -->  00:01:25,200
+similar to how we had it in our model.
+
+24
+
+00:01:25,200  -->  00:01:29,220
+What we did not have in our model was this section on the left,
+
+25
+
+00:01:29,220  -->  00:01:35,070
+called encoder, and we also didn't have the connection between these blocks.
+
+26
+
+00:01:35,070  -->  00:01:38,840
+The encoder block on the left was used to
+
+27
+
+00:01:38,840  -->  00:01:43,300
+encode information about an input text for translation.
+
+28
+
+00:01:43,300  -->  00:01:47,840
+The part on the right that we've implemented is called a decoder.
+
+29
+
+00:01:47,840  -->  00:01:52,300
+It receives a part of the translation it has generated so far,
+
+30
+
+00:01:52,300  -->  00:01:57,260
+and given the encoded inputs it generates the next token.
+
+31
+
+00:01:57,260  -->  00:02:02,730
+The encoder is very similar to a decoder with the main difference
+
+32
+
+00:02:02,730  -->  00:02:08,570
+that it uses a multi-head attention instead of a masked multi-head attention,
+
+33
+
+00:02:08,570  -->  00:02:11,960
+meaning that it computes attention scores based on
+
+34
+
+00:02:11,960  -->  00:02:16,780
+all tokens in the input without using the triangular mask.
+
+35
+
+00:02:16,780  -->  00:02:21,200
+When using this model we pass two different inputs.
+
+36
+
+00:02:21,200  -->  00:02:23,000
+Input to the encoder,
+
+37
+
+00:02:23,000  -->  00:02:25,430
+which is a text to translate,
+
+38
+
+00:02:25,430  -->  00:02:30,500
+and decoder's input that contains a partially translated output,
+
+39
+
+00:02:30,500  -->  00:02:36,975
+and the decoder's input that contains a part of the translation generated so far.
+
+40
+
+00:02:36,975  -->  00:02:41,565
+The encoder input goes through all the layers of the encoder,
+
+41
+
+00:02:41,565  -->  00:02:47,370
+and the output from its final layer is sent to every layer of the decoder.
+
+42
+
+00:02:47,370  -->  00:02:50,170
+Decoder layers then use this information from
+
+43
+
+00:02:50,170  -->  00:02:54,550
+the encoder to generate the next token in the translation.
+
+44
+
+00:02:54,550  -->  00:02:58,190
+Because the input to the encoder block does not change,
+
+45
+
+00:02:58,190  -->  00:03:01,070
+we can compute it once and pass it to
+
+46
+
+00:03:01,070  -->  00:03:05,030
+all decoder blocks while generating the output text.
+
+47
+
+00:03:05,030  -->  00:03:08,710
+Let's look at an example of how an encoder-decoder model
+
+48
+
+00:03:08,710  -->  00:03:13,170
+would translate text from English to French.
+
+49
+
+00:03:13,170  -->  00:03:19,290
+We would first tokenize the text we want to translate and convert it into token IDs.
+
+50
+
+00:03:19,290  -->  00:03:22,650
+Then we would pass these IDs to the encoder for
+
+51
+
+00:03:22,650  -->  00:03:26,790
+it to build a representation of a phrase we want to translate.
+
+52
+
+00:03:26,790  -->  00:03:29,790
+To start the translation process we would pass
+
+53
+
+00:03:29,790  -->  00:03:35,250
+a special character called Start of the sequence, to the decoder.
+
+54
+
+00:03:35,250  -->  00:03:39,790
+Decoder will read this input and the encoder's output,
+
+55
+
+00:03:39,790  -->  00:03:44,610
+and will produce the first token ID of the translated phrase,
+
+56
+
+00:03:44,610  -->  00:03:48,050
+which corresponds to the following French word.
+
+57
+
+00:03:48,050  -->  00:03:50,690
+We would then add the generated token ID to
+
+58
+
+00:03:50,690  -->  00:03:54,630
+the input as the decoder and send it to the decoder again.
+
+59
+
+00:03:54,630  -->  00:03:57,230
+Decoder will now receive a new input with
+
+60
+
+00:03:57,230  -->  00:04:03,545
+the same encoder output as on the previous step and generate the new token.
+
+61
+
+00:04:03,545  -->  00:04:07,270
+We then repeat this process again and generate
+
+62
+
+00:04:07,270  -->  00:04:10,550
+more and more output tokens until
+
+63
+
+00:04:10,550  -->  00:04:14,810
+the model generates the special end of the sequence token,
+
+64
+
+00:04:14,810  -->  00:04:19,130
+which means that the model has translated the whole phrase.
+
+65
+
+00:04:19,130  -->  00:04:26,620
+We can then convert token IDs into the human-readable sentence that looks like this.
+
+66
+
+00:04:26,620  -->  00:04:30,570
+Using encoders and decoders as building blocks,
+
+67
+
+00:04:30,570  -->  00:04:34,245
+we can have three different network architectures.
+
+68
+
+00:04:34,245  -->  00:04:40,070
+Decoder-only model that only has a decoder part and no encoder.
+
+69
+
+00:04:40,070  -->  00:04:43,370
+This is what we've implemented in this lesson.
+
+70
+
+00:04:43,370  -->  00:04:47,455
+This architecture is well suited for tax generation tasks,
+
+71
+
+00:04:47,455  -->  00:04:51,850
+and is used by models like GPT and Lama.
+
+72
+
+00:04:51,850  -->  00:04:56,490
+The other option is called encoder-decoder models.
+
+73
+
+00:04:56,490  -->  00:05:00,350
+In this case we have both encoder and decoder blocks.
+
+74
+
+00:05:00,350  -->  00:05:05,250
+These models are good from converting from one sequence to another.
+
+75
+
+00:05:05,250  -->  00:05:10,485
+For example, if we need to translate text into another language.
+
+76
+
+00:05:10,485  -->  00:05:16,210
+Some models implementing this architecture include BART and T5.
+
+77
+
+00:05:16,210  -->  00:05:20,400
+Finally, the last option is encoder-only models.
+
+78
+
+00:05:20,400  -->  00:05:22,890
+These models don't have a decoder,
+
+79
+
+00:05:22,890  -->  00:05:26,240
+and only pass inputs through an encoder.
+
+80
+
+00:05:26,240  -->  00:05:30,240
+This is useful if we want to build a representation for
+
+81
+
+00:05:30,240  -->  00:05:35,515
+text classification like sentiment analysis or spam detection.
+
+82
+
+00:05:35,515  -->  00:05:40,670
+BART is an example of a model using this architecture.
