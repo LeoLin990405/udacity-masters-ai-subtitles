@@ -1,0 +1,44 @@
+=== PCEP Capstone Project: Reflection Questions ===
+Project: A Data-Driven Approach to AI and Python
+Transformational AI - Amazon Reviews Analysis
+
+Q1: Which data analysis method was most helpful for you?
+A1: The pandas DataFrame filtering and boolean indexing was the most helpful method.
+It allowed me to efficiently clean and filter large datasets using conditions like
+rating >= 4.5 and non-null prices, which directly reinforced the boolean logic and
+comparison operators learned in the PCEP course.
+
+Q2: How did exception handling help in this project?
+A2: Exception handling with try-except blocks was crucial when working with the
+metadata dataset. Some products had missing or non-numeric prices, and without
+proper error handling, the program would crash. Using pd.to_numeric(errors='coerce')
+combined with try-except ensured robust data processing.
+
+Q3: How did loops reinforce your PCEP knowledge?
+A3: For loops were used extensively - from loading dataset samples with a counter
+and break statement, to iterating over DataFrame columns, to collecting top-rated
+product titles with append(). This reinforced iteration concepts, loop control
+(break/continue), and list building patterns from the course.
+
+Q4: What Pythonic concepts from the PCEP course did you apply?
+A4: Key concepts applied include:
+- Variables and data types (int, float, str, bool)
+- Boolean operators and comparison operators for filtering
+- For loops with break for controlled iteration
+- Functions with return statements (calculate_percentage)
+- Exception handling with try-except blocks
+- Lists and the append() method
+- String formatting with f-strings
+
+Q5: How would you explain this project in a portfolio context?
+A5: This project demonstrates end-to-end data science workflow: loading large
+datasets via streaming APIs, data cleaning and transformation with pandas,
+statistical filtering, data export in multiple formats (CSV/Parquet), and
+data visualization with matplotlib and seaborn. It showcases practical Python
+skills applied to real-world Amazon product review analysis for ML model preparation.
+
+Q6: What would you do differently or explore further?
+A6: I would explore clustering products by price ranges, perform sentiment analysis
+on review text, create heatmaps showing rating distribution across price brackets,
+and investigate correlation between review count and average rating. Additionally,
+I would expand the sample size beyond 100 items for more statistically significant results.

@@ -1,6 +1,6 @@
-# Udacity Masters in AI - Subtitles
+# Udacity Masters in AI - Subtitles & Projects
 
-Course subtitles organized by the [Udacity Master's Degree in Artificial Intelligence](https://www.udacity.com/masters-artificial-intelligence) curriculum.
+Course subtitles and projects organized by the [Udacity Master's Degree in Artificial Intelligence](https://www.udacity.com/masters-artificial-intelligence) curriculum.
 
 ## Curriculum Structure
 
@@ -85,6 +85,11 @@ core/
     python-data-structures/                (29 SRT files)
     python-functions/                      (16 SRT files)
     python-exceptions/                     (19 SRT files)
+    pcep-capstone-project/                 (Capstone: Amazon Reviews Analysis)
+      PCEP_Capstone_Project.ipynb
+      top_products.csv
+      top_products.parquet
+      user_inputs.txt
   02-introduction-to-machine-learning/
   03-applied-data-analytics/
   04-introduction-to-deep-learning/
