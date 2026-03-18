@@ -1,6 +1,6 @@
-# Udacity Masters in AI - Subtitles & Projects
+# Udacity Masters in AI - Course Subtitles
 
-Course subtitles and projects organized by the [Udacity Master's Degree in Artificial Intelligence](https://www.udacity.com/masters-artificial-intelligence) curriculum.
+Course subtitles organized by the [Udacity Master's Degree in Artificial Intelligence](https://www.udacity.com/masters-artificial-intelligence) curriculum.
 
 ## Curriculum Structure
 
@@ -75,21 +75,18 @@ Course subtitles and projects organized by the [Udacity Master's Degree in Artif
 
 ## Directory Structure
 
+Each core course has its own directory with subtitles organized by module:
+
 ```
 core/
-  01-introduction-to-computer-programming-part-1/
-    python-programming-fundamentals/       (18 SRT files)
-    boolean-logic-and-numeric-operators/   (15 SRT files)
-    welcome-to-ai-programming-with-python/ ( 3 SRT files)
-    control-flow-and-loops/                (20 SRT files)
-    python-data-structures/                (29 SRT files)
-    python-functions/                      (16 SRT files)
-    python-exceptions/                     (19 SRT files)
-    pcep-capstone-project/                 (Capstone: Amazon Reviews Analysis)
-      PCEP_Capstone_Project.ipynb
-      top_products.csv
-      top_products.parquet
-      user_inputs.txt
+  01-introduction-to-computer-programming-part-1/  (120 SRT files)
+    welcome-to-ai-programming-with-python/          ( 3 files)
+    python-programming-fundamentals/                (18 files)
+    boolean-logic-and-numeric-operators/            (15 files)
+    control-flow-and-loops/                         (20 files)
+    python-data-structures/                         (29 files)
+    python-functions/                               (16 files)
+    python-exceptions/                              (19 files)
   02-introduction-to-machine-learning/
   03-applied-data-analytics/
   04-introduction-to-deep-learning/
@@ -98,3 +95,9 @@ core/
   07-ethical-artificial-intelligence-practices/
 capstone/
 ```
+
+## Related Projects
+
+| Project | Repository |
+|---------|-----------|
+| PCEP Capstone: Amazon Reviews Analysis | [pcep-capstone-amazon-reviews](https://github.com/LeoLin990405/pcep-capstone-amazon-reviews) |
