@@ -1,0 +1,124 @@
+1
+
+00:00:00,000  -->  00:00:04,740
+Now, once we've covered the basics of NLP and transformer architecture,
+
+2
+
+00:00:04,740  -->  00:00:09,320
+let's briefly cover what are we going to do for the rest of the lesson.
+
+3
+
+00:00:09,320  -->  00:00:14,880
+In this lesson, we will be working on implementing a transformer model from scratch.
+
+4
+
+00:00:14,880  -->  00:00:17,920
+Instead of generating a text on any topic,
+
+5
+
+00:00:17,920  -->  00:00:24,160
+we'll limit our goals and create a model that can generate Shakespeare like poetry.
+
+6
+
+00:00:24,160  -->  00:00:28,880
+We will train it on the work of William Shakespeare an English poet,
+
+7
+
+00:00:28,880  -->  00:00:33,890
+and it should be able to start generating poetry that looks like his work.
+
+8
+
+00:00:33,890  -->  00:00:37,880
+Our model will have an architecture that is similar to
+
+9
+
+00:00:37,880  -->  00:00:42,180
+the one used in GPT models created by Open AI,
+
+10
+
+00:00:42,180  -->  00:00:46,140
+and we'll see how these models work step by step.
+
+11
+
+00:00:46,140  -->  00:00:51,920
+There will be a few major differences between our model and GPT models.
+
+12
+
+00:00:51,920  -->  00:00:54,930
+First of all, our model will be much smaller.
+
+13
+
+00:00:54,930  -->  00:00:58,820
+It will have a few order of magnitude less parameters,
+
+14
+
+00:00:58,820  -->  00:01:02,380
+but this also means that we will be able to train it
+
+15
+
+00:01:02,380  -->  00:01:06,480
+without spending a fortune on computers and electricity.
+
+16
+
+00:01:06,480  -->  00:01:10,380
+We will use a character level tokenizer instead of using
+
+17
+
+00:01:10,380  -->  00:01:15,060
+a sub-word tokenizer to keep our implementation simpler.
+
+18
+
+00:01:15,060  -->  00:01:18,960
+Finally, the model implementation will be focused
+
+19
+
+00:01:18,960  -->  00:01:23,225
+on understandability rather than performance.
+
+20
+
+00:01:23,225  -->  00:01:28,590
+Once we're done, we will be able to create an instance of our model,
+
+21
+
+00:01:28,590  -->  00:01:32,810
+provide a configuration that will include several parameters,
+
+22
+
+00:01:32,810  -->  00:01:36,090
+like context window size, and so on.
+
+23
+
+00:01:36,090  -->  00:01:42,050
+Then we will be able to generate text using our model and a provided prompt.
+
+24
+
+00:01:42,050  -->  00:01:45,670
+L suggested to write a phrase that Romeo,
+
+25
+
+00:01:45,670  -->  00:01:50,890
+which is one of the characters in the Shakespeare work, could have side.

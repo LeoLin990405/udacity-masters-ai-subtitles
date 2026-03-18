@@ -1,0 +1,279 @@
+1
+
+00:00:00,000  -->  00:00:04,240
+We have already covered how multi-head attention works in a transformer.
+
+2
+
+00:00:04,240  -->  00:00:07,820
+Now we will cover how to implement a transformer's block.
+
+3
+
+00:00:07,820  -->  00:00:10,500
+When we pass a prompt to a model,
+
+4
+
+00:00:10,500  -->  00:00:14,800
+we convert each input token into an embedding vector,
+
+5
+
+00:00:14,800  -->  00:00:19,395
+and then pass these vectors to multi-head attention block.
+
+6
+
+00:00:19,395  -->  00:00:22,380
+The output of the multi-head attention then goes to
+
+7
+
+00:00:22,380  -->  00:00:26,090
+the feed-forward network layer and the output
+
+8
+
+00:00:26,090  -->  00:00:30,210
+of this layer will be sent further to the next transformer block.
+
+9
+
+00:00:30,210  -->  00:00:32,530
+If you recall in one of the previous videos,
+
+10
+
+00:00:32,530  -->  00:00:39,305
+we discussed that a transformer model consists of multiple such blocks chained together.
+
+11
+
+00:00:39,305  -->  00:00:41,810
+Once we have this block implemented,
+
+12
+
+00:00:41,810  -->  00:00:44,750
+we will be almost done with the model implementation.
+
+13
+
+00:00:44,750  -->  00:00:48,680
+Let's now take a look at what happens in the feed-forward layer.
+
+14
+
+00:00:48,680  -->  00:00:52,810
+The feed-forward layer is applied to each embedding vector individually.
+
+15
+
+00:00:52,810  -->  00:00:56,580
+Each embedding vector is passed to a linear layer with
+
+16
+
+00:00:56,580  -->  00:01:00,730
+an output size that is four times larger than the input size.
+
+17
+
+00:01:00,730  -->  00:01:03,930
+To add non linearity to these transformations,
+
+18
+
+00:01:03,930  -->  00:01:09,320
+we will also apply the GELU activation function which we'll cover in a minute.
+
+19
+
+00:01:09,320  -->  00:01:11,620
+We then take this output and shrink
+
+20
+
+00:01:11,620  -->  00:01:14,980
+the output factor down to the original embedding size.
+
+21
+
+00:01:14,980  -->  00:01:20,300
+Now, let's also briefly talk about the GELU activation function that we will use.
+
+22
+
+00:01:20,300  -->  00:01:23,710
+It is similar to the ReLU activation function.
+
+23
+
+00:01:23,710  -->  00:01:27,250
+Here is a chart of the GELU activation function.
+
+24
+
+00:01:27,250  -->  00:01:31,740
+For comparison, here is a chart of the ReLU activation function.
+
+25
+
+00:01:31,740  -->  00:01:38,100
+As you can see, the GELU function has a smooth shape compared to the ReLU's sharp corner,
+
+26
+
+00:01:38,100  -->  00:01:41,980
+and this smooth shape allows to get better training results.
+
+27
+
+00:01:41,980  -->  00:01:45,600
+This is a gist of how a transformer block is organized,
+
+28
+
+00:01:45,600  -->  00:01:48,530
+but there are a few more details that we need to cover.
+
+29
+
+00:01:48,530  -->  00:01:52,000
+First, there are two residual connections in this block.
+
+30
+
+00:01:52,000  -->  00:01:55,800
+A residual connection is when we take an input to a certain block,
+
+31
+
+00:01:55,800  -->  00:02:01,000
+and we then add it to the out-put of the block before we pass the result forward.
+
+32
+
+00:02:01,000  -->  00:02:02,800
+Residual connections help with
+
+33
+
+00:02:02,800  -->  00:02:06,580
+the vanishing gradient problem that we've briefly covered before.
+
+34
+
+00:02:06,580  -->  00:02:08,340
+Just to remind you,
+
+35
+
+00:02:08,340  -->  00:02:10,880
+the vanishing gradient is the issue when
+
+36
+
+00:02:10,880  -->  00:02:14,300
+the gradient becomes very small in deep networks.
+
+37
+
+00:02:14,300  -->  00:02:18,960
+Using residual connections makes training deep neural network more efficient.
+
+38
+
+00:02:18,960  -->  00:02:21,200
+In addition to residual connections,
+
+39
+
+00:02:21,200  -->  00:02:23,580
+we have a few more extra components.
+
+40
+
+00:02:23,580  -->  00:02:29,250
+These include the layer normalization and the dropout layer.
+
+41
+
+00:02:29,250  -->  00:02:32,420
+We've already covered what is a dropout layer.
+
+42
+
+00:02:32,420  -->  00:02:37,025
+Now let's also briefly cover what is a layer normalization.
+
+43
+
+00:02:37,025  -->  00:02:40,160
+The layer normalization scales the output of
+
+44
+
+00:02:40,160  -->  00:02:45,960
+one layer so that the mean or average of the output values become zero,
+
+45
+
+00:02:45,960  -->  00:02:48,500
+and variance becomes equal to one.
+
+46
+
+00:02:48,500  -->  00:02:52,735
+Using layer normalization allows us to achieve faster training.
+
+47
+
+00:02:52,735  -->  00:02:55,770
+This layer is also implemented in Pytorch,
+
+48
+
+00:02:55,770  -->  00:02:59,290
+and we will use a type called layer norm for this.
+
+49
+
+00:02:59,290  -->  00:03:01,450
+This is it, just to recap,
+
+50
+
+00:03:01,450  -->  00:03:05,150
+every layer or block of a transformer model receives
+
+51
+
+00:03:05,150  -->  00:03:10,345
+an input that goes through multi-head attention and the feed-forward network.
+
+52
+
+00:03:10,345  -->  00:03:13,070
+Then to improve the training results,
+
+53
+
+00:03:13,070  -->  00:03:15,770
+we also use layer normalization,
+
+54
+
+00:03:15,770  -->  00:03:18,670
+dropout, and residual connections.
+
+55
+
+00:03:18,670  -->  00:03:21,010
+Now, once we've covered how it works,
+
+56
+
+00:03:21,010  -->  00:03:24,570
+let's go and implement it for our model.

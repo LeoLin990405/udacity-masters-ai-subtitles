@@ -1,0 +1,489 @@
+1
+
+00:00:00,000  -->  00:00:01,960
+Now once we have a single block,
+
+2
+
+00:00:01,960  -->  00:00:04,880
+it's time to implement our transformer model.
+
+3
+
+00:00:04,880  -->  00:00:09,980
+To do this, we will again define a new class that inherits from the module type,
+
+4
+
+00:00:09,980  -->  00:00:11,380
+and to implement it,
+
+5
+
+00:00:11,380  -->  00:00:14,620
+we use all the types we've previously defined.
+
+6
+
+00:00:14,620  -->  00:00:18,820
+We'll start implementing this class with defining its building blocks.
+
+7
+
+00:00:18,820  -->  00:00:21,720
+If we recall to use our transformer model,
+
+8
+
+00:00:21,720  -->  00:00:25,865
+we first need to convert input token IDs into embedding vectors.
+
+9
+
+00:00:25,865  -->  00:00:28,880
+To do this, we'll use this embedding type.
+
+10
+
+00:00:28,880  -->  00:00:33,900
+This type will map each token ID to its own embedding vector.
+
+11
+
+00:00:33,900  -->  00:00:38,000
+The first parameter here is the number of embedding vectors,
+
+12
+
+00:00:38,000  -->  00:00:42,280
+which is the number of token IDs we have in our vocabulary.
+
+13
+
+00:00:42,280  -->  00:00:46,720
+The second parameter is dimensionality of embedding vectors.
+
+14
+
+00:00:46,720  -->  00:00:50,100
+We also need to implement the positional encoding that
+
+15
+
+00:00:50,100  -->  00:00:54,640
+produces embedding vectors for each position in the context window.
+
+16
+
+00:00:54,640  -->  00:00:57,980
+For this, we'll use the embedding type as well.
+
+17
+
+00:00:57,980  -->  00:01:01,780
+But the number of vectors in the stable is different.
+
+18
+
+00:01:01,780  -->  00:01:06,600
+We need a different vector for each position of the context window
+
+19
+
+00:01:06,600  -->  00:01:11,540
+so we pass the context size here for the number of vectors in this table.
+
+20
+
+00:01:11,540  -->  00:01:17,320
+We then create blocks for our model one by one and then combine them in the sequence.
+
+21
+
+00:01:17,320  -->  00:01:21,240
+This will allow us to apply these blocks one after the other.
+
+22
+
+00:01:21,240  -->  00:01:24,200
+We also add a final layer normalization,
+
+23
+
+00:01:24,200  -->  00:01:27,320
+and we also need to add one more component.
+
+24
+
+00:01:27,320  -->  00:01:32,340
+Remember that the output of each block consists of embedding vectors,
+
+25
+
+00:01:32,340  -->  00:01:37,805
+but we need to convert these vectors into predictions for token IDs.
+
+26
+
+00:01:37,805  -->  00:01:43,180
+To do this, we will add a linear layer that converts an embedding vector in
+
+27
+
+00:01:43,180  -->  00:01:48,980
+every position into prediction scores for what token ID should be generated.
+
+28
+
+00:01:48,980  -->  00:01:51,300
+We will pass the vocabulary size here,
+
+29
+
+00:01:51,300  -->  00:01:56,060
+since we need a prediction score for each of the token IDs in our vocabulary.
+
+30
+
+00:01:56,060  -->  00:01:59,020
+Now we need to implement the forward method,
+
+31
+
+00:01:59,020  -->  00:02:02,240
+and we first convert all token IDs into
+
+32
+
+00:02:02,240  -->  00:02:05,640
+embedding vectors and compute the positional encoding.
+
+33
+
+00:02:05,640  -->  00:02:11,720
+To compute it, we create a sequence of numbers from zero to the number of input tokens,
+
+34
+
+00:02:11,720  -->  00:02:14,775
+and then we pass it to this embedding layer.
+
+35
+
+00:02:14,775  -->  00:02:18,910
+We then add positional encoding to the embedding vectors.
+
+36
+
+00:02:18,910  -->  00:02:20,510
+To generate this sequence,
+
+37
+
+00:02:20,510  -->  00:02:24,590
+we need to get the number of input tokens from the input shape.
+
+38
+
+00:02:24,590  -->  00:02:28,090
+We then apply each transformer block one by one,
+
+39
+
+00:02:28,090  -->  00:02:30,230
+then we apply the normalization,
+
+40
+
+00:02:30,230  -->  00:02:33,010
+and finally, we convert embedding vectors into
+
+41
+
+00:02:33,010  -->  00:02:36,570
+logits for every position in the context window.
+
+42
+
+00:02:36,570  -->  00:02:42,675
+Now to test it, let's initialize our DemoGBT model using our configuration.
+
+43
+
+00:02:42,675  -->  00:02:47,420
+I will also move this model to GPU if it is available.
+
+44
+
+00:02:47,420  -->  00:02:48,880
+To test our model,
+
+45
+
+00:02:48,880  -->  00:02:53,900
+we encode a test phrase using our tokenizer and pass it to our model.
+
+46
+
+00:02:53,900  -->  00:02:59,740
+We need to use the unsqueeze method to add an extra dimension to our vector.
+
+47
+
+00:02:59,740  -->  00:03:04,580
+This is because the encode method returns a one dimensional tensor,
+
+48
+
+00:03:04,580  -->  00:03:07,800
+but our model expects a patch of inputs,
+
+49
+
+00:03:07,800  -->  00:03:11,640
+so we need to convert it into a two dimensional tensor,
+
+50
+
+00:03:11,640  -->  00:03:15,720
+and the output from our model will have the following shape.
+
+51
+
+00:03:15,720  -->  00:03:18,780
+In our case, the input had one sequence,
+
+52
+
+00:03:18,780  -->  00:03:21,550
+so we have a patch of Size 1.
+
+53
+
+00:03:21,550  -->  00:03:26,680
+This dimension is equal two because our input had two input tokens.
+
+54
+
+00:03:26,680  -->  00:03:29,300
+For every position, for this input phrase,
+
+55
+
+00:03:29,300  -->  00:03:33,520
+our model returned predictions for the next token ID,
+
+56
+
+00:03:33,520  -->  00:03:38,240
+and it gave prediction scores for every token in our vocabulary.
+
+57
+
+00:03:38,240  -->  00:03:42,600
+To rub this up, we need to define two more helper functions.
+
+58
+
+00:03:42,600  -->  00:03:49,180
+I'll first add a function called generate to create torch sequences using our model.
+
+59
+
+00:03:49,180  -->  00:03:51,880
+This function will receive a model to use,
+
+60
+
+00:03:51,880  -->  00:03:57,460
+a prompt converted to token IDs and the max number of tokens to generate.
+
+61
+
+00:03:57,460  -->  00:03:58,960
+What we'll do in this function,
+
+62
+
+00:03:58,960  -->  00:04:02,620
+we first initialize the output with the prompt IDs,
+
+63
+
+00:04:02,620  -->  00:04:04,820
+and on every iteration,
+
+64
+
+00:04:04,820  -->  00:04:10,360
+we pass the output we generated so far to our model to generate the next token.
+
+65
+
+00:04:10,360  -->  00:04:13,255
+We then get the logits from our model.
+
+66
+
+00:04:13,255  -->  00:04:17,930
+But we're only interested in logits in the latest position,
+
+67
+
+00:04:17,930  -->  00:04:19,870
+since this is the prediction for
+
+68
+
+00:04:19,870  -->  00:04:23,510
+the token that should be generated after the given prompt.
+
+69
+
+00:04:23,510  -->  00:04:25,710
+We only get these logits.
+
+70
+
+00:04:25,710  -->  00:04:28,190
+We then take these logits and we use
+
+71
+
+00:04:28,190  -->  00:04:32,730
+the softmax function to convert logits to probabilities.
+
+72
+
+00:04:32,730  -->  00:04:34,770
+You might think that at this stage,
+
+73
+
+00:04:34,770  -->  00:04:38,075
+we should get a token with the highest probability.
+
+74
+
+00:04:38,075  -->  00:04:43,030
+But it will lead to generating repetitive and boring outputs.
+
+75
+
+00:04:43,030  -->  00:04:48,290
+Instead, we sample the next token based on these probabilities,
+
+76
+
+00:04:48,290  -->  00:04:52,490
+instead of always taking the token with the highest probability.
+
+77
+
+00:04:52,490  -->  00:04:55,950
+This will generate a more interesting output,
+
+78
+
+00:04:55,950  -->  00:05:01,690
+and we will explore this aspect of LLMs in more details in some later videos.
+
+79
+
+00:05:01,690  -->  00:05:04,090
+Now, once we have the next token ID,
+
+80
+
+00:05:04,090  -->  00:05:06,330
+we add it to the output phrase,
+
+81
+
+00:05:06,330  -->  00:05:08,810
+and then we repeat this process.
+
+82
+
+00:05:08,810  -->  00:05:11,755
+Finally, we'll add another helper function.
+
+83
+
+00:05:11,755  -->  00:05:15,260
+This function will be called generate with prompt,
+
+84
+
+00:05:15,260  -->  00:05:19,500
+which will be a higher level of wrapper for the generate function.
+
+85
+
+00:05:19,500  -->  00:05:21,180
+It takes a prompt string,
+
+86
+
+00:05:21,180  -->  00:05:24,920
+and it encodes it using the tokenizer into token IDs.
+
+87
+
+00:05:24,920  -->  00:05:27,380
+It then takes this encoded prompt,
+
+88
+
+00:05:27,380  -->  00:05:30,620
+passes it with the model to the generate function,
+
+89
+
+00:05:30,620  -->  00:05:34,780
+and decode the result token IDs into a string.
+
+90
+
+00:05:34,780  -->  00:05:40,380
+We also call the eval method on our model to switch it into the inference mode.
+
+91
+
+00:05:40,380  -->  00:05:43,700
+Now, let's test our generate with prom function and
+
+92
+
+00:05:43,700  -->  00:05:49,160
+our transformer model and pass this prompt with the tokenizer and the model,
+
+93
+
+00:05:49,160  -->  00:05:50,785
+and see what we'll get.
+
+94
+
+00:05:50,785  -->  00:05:53,100
+As you can see, this function has worked.
+
+95
+
+00:05:53,100  -->  00:05:57,150
+We have the prompt at the beginning of the generated output.
+
+96
+
+00:05:57,150  -->  00:06:01,230
+But the remaining of the output is complete gibberish.
+
+97
+
+00:06:01,230  -->  00:06:04,510
+This is because we have not trained our model yet,
+
+98
+
+00:06:04,510  -->  00:06:07,790
+and this is exactly what we will do next.

@@ -1,0 +1,239 @@
+1
+
+00:00:00,000  -->  00:00:01,860
+Once we have tokenized text,
+
+2
+
+00:00:01,860  -->  00:00:05,900
+we can start building machine learning models using it.
+
+3
+
+00:00:05,900  -->  00:00:11,500
+In this video, we will talk about one of the simplest models we can build.
+
+4
+
+00:00:11,500  -->  00:00:16,780
+We will start with simpler models to learn about their downsides,
+
+5
+
+00:00:16,780  -->  00:00:23,600
+which will help us to better understand the advantages of more sophisticated models.
+
+6
+
+00:00:23,600  -->  00:00:28,070
+In this video, we will start with the bag-of-words model.
+
+7
+
+00:00:28,070  -->  00:00:31,470
+The way it works, it receives a binary vector
+
+8
+
+00:00:31,470  -->  00:00:35,710
+as an input where every value is one or zero,
+
+9
+
+00:00:35,710  -->  00:00:40,690
+and we create this binary vector from input token IDs.
+
+10
+
+00:00:40,690  -->  00:00:42,610
+Let's see how it works.
+
+11
+
+00:00:42,610  -->  00:00:45,010
+To use the bag-of-words model,
+
+12
+
+00:00:45,010  -->  00:00:50,550
+we start with an input sentence and split it into individual tokens.
+
+13
+
+00:00:50,550  -->  00:00:54,655
+We then convert all words to lower case,
+
+14
+
+00:00:54,655  -->  00:00:59,790
+and remove tokens for words that have very little useful information,
+
+15
+
+00:00:59,790  -->  00:01:01,310
+such as a,
+
+16
+
+00:01:01,310  -->  00:01:02,730
+the, and so on.
+
+17
+
+00:01:02,730  -->  00:01:05,965
+These are also called stop words.
+
+18
+
+00:01:05,965  -->  00:01:10,650
+We then convert each token into a corresponding token ID.
+
+19
+
+00:01:10,650  -->  00:01:13,050
+Once we have these IDs,
+
+20
+
+00:01:13,050  -->  00:01:15,950
+we convert them into an input vector.
+
+21
+
+00:01:15,950  -->  00:01:21,910
+The way we do this is that if we have a token ID with values 345,
+
+22
+
+00:01:21,910  -->  00:01:25,380
+we set one in the corresponding position,
+
+23
+
+00:01:25,380  -->  00:01:29,400
+and we do the same for all other input IDs.
+
+24
+
+00:01:29,400  -->  00:01:36,560
+This input vector will have as many elements as we have unique words in our vocabulary.
+
+25
+
+00:01:36,560  -->  00:01:41,860
+If we've decided that our vocabulary will have 65,000 words,
+
+26
+
+00:01:41,860  -->  00:01:46,195
+our input vector will have this number of elements.
+
+27
+
+00:01:46,195  -->  00:01:49,310
+Now, having a binary vector,
+
+28
+
+00:01:49,310  -->  00:01:56,590
+we can pass this input to a neural network or use some other machine learning models.
+
+29
+
+00:01:56,590  -->  00:02:00,150
+If we train the model based on these input vectors,
+
+30
+
+00:02:00,150  -->  00:02:03,230
+our model can learn to classify text.
+
+31
+
+00:02:03,230  -->  00:02:09,870
+For example, by classifying messages into SPAM or non-SPAM messages.
+
+32
+
+00:02:09,870  -->  00:02:14,780
+Bag-of-words model is one of the simplest models we could build.
+
+33
+
+00:02:14,780  -->  00:02:16,990
+It can work in some cases,
+
+34
+
+00:02:16,990  -->  00:02:19,390
+but it has a lot of drawbacks.
+
+35
+
+00:02:19,390  -->  00:02:22,170
+First of all, it ignores the words order,
+
+36
+
+00:02:22,170  -->  00:02:26,450
+which you might imagine is important for understanding language.
+
+37
+
+00:02:26,450  -->  00:02:29,900
+It also ignores grammatical structure of sentences,
+
+38
+
+00:02:29,900  -->  00:02:32,175
+like it ignores punctuation.
+
+39
+
+00:02:32,175  -->  00:02:36,040
+The other issue is that each token representation that
+
+40
+
+00:02:36,040  -->  00:02:39,940
+the model uses has very limited semantic meaning.
+
+41
+
+00:02:39,940  -->  00:02:46,060
+For each token, it just records if a word was present in the input text.
+
+42
+
+00:02:46,060  -->  00:02:50,040
+The final issue we will talk about is that the model
+
+43
+
+00:02:50,040  -->  00:02:54,980
+can't handle words if we didn't see them during training.
+
+44
+
+00:02:54,980  -->  00:02:59,940
+While this model can work reasonably well on some simple tasks,
+
+45
+
+00:02:59,940  -->  00:03:04,220
+in most cases, we need to use more sophisticated models.
+
+46
+
+00:03:04,220  -->  00:03:09,180
+Now we will talk about two improvement for this simple approach.
+
+47
+
+00:03:09,180  -->  00:03:14,600
+First of all, we will talk about a better way to represent words, and second,
+
+48
+
+00:03:14,600  -->  00:03:20,720
+we will talk about more advanced neural network architectures for NLP tasks.

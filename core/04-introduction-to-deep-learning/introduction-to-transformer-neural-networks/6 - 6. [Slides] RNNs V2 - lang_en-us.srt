@@ -1,0 +1,309 @@
+1
+
+00:00:00,000  -->  00:00:05,140
+Now let's talk about another model architecture that was designed
+
+2
+
+00:00:05,140  -->  00:00:10,600
+specifically for processing sequential data like text or audio.
+
+3
+
+00:00:10,600  -->  00:00:17,860
+This model architecture is called recurrent neural network or RNN for short.
+
+4
+
+00:00:17,860  -->  00:00:21,160
+Previously, in all network architectures,
+
+5
+
+00:00:21,160  -->  00:00:25,620
+we were looking into the data was going straight from
+
+6
+
+00:00:25,620  -->  00:00:34,210
+inputs to outputs via one or multiple heating layers in between.
+
+7
+
+00:00:34,210  -->  00:00:38,110
+Also, all input data was processed at once.
+
+8
+
+00:00:38,110  -->  00:00:44,240
+We had to have all input data at once and pass it through the neural network.
+
+9
+
+00:00:44,240  -->  00:00:48,010
+RNNs change both of these constraints.
+
+10
+
+00:00:48,010  -->  00:00:50,430
+With the RNN architecture,
+
+11
+
+00:00:50,430  -->  00:00:55,830
+we take the first input token and pass it through the network.
+
+12
+
+00:00:55,830  -->  00:00:59,470
+Once the first token is processed by the network,
+
+13
+
+00:00:59,470  -->  00:01:05,290
+we take the next token and pass it through the same network again.
+
+14
+
+00:01:05,290  -->  00:01:08,870
+But now in addition to the new token,
+
+15
+
+00:01:08,870  -->  00:01:12,530
+we also take the output of the hidden layer from
+
+16
+
+00:01:12,530  -->  00:01:17,010
+the previous step and use it as an additional input,
+
+17
+
+00:01:17,010  -->  00:01:20,770
+and we do the same thing on the next step.
+
+18
+
+00:01:20,770  -->  00:01:23,920
+We keep the output of the hidden layer from
+
+19
+
+00:01:23,920  -->  00:01:29,510
+the previous step and use it as an input together with the next token.
+
+20
+
+00:01:29,510  -->  00:01:35,300
+The idea here is that the output of the hidden layer that is called the hidden state
+
+21
+
+00:01:35,300  -->  00:01:40,920
+preserves some information about the previous inputs that we've already processed.
+
+22
+
+00:01:40,920  -->  00:01:43,740
+When the model is processing the next token,
+
+23
+
+00:01:43,740  -->  00:01:49,060
+it can access some information about tokens it saw before.
+
+24
+
+00:01:49,060  -->  00:01:52,520
+For this to work, we also need to pass
+
+25
+
+00:01:52,520  -->  00:01:56,655
+some initial empty state when processing the first token.
+
+26
+
+00:01:56,655  -->  00:02:00,400
+RNNs is a great choice if we need to work with text,
+
+27
+
+00:02:00,400  -->  00:02:05,240
+but they can also be used with other sequential data like audio,
+
+28
+
+00:02:05,240  -->  00:02:08,030
+time series, et cetera.
+
+29
+
+00:02:08,030  -->  00:02:12,980
+RNNs are commonly displayed in a compact form like this,
+
+30
+
+00:02:12,980  -->  00:02:16,580
+where we have this recurrent connection.
+
+31
+
+00:02:16,580  -->  00:02:20,980
+Now, here are some ways we can use RNNs.
+
+32
+
+00:02:20,980  -->  00:02:26,480
+For classification purposes, we can ignore outputs from all steps,
+
+33
+
+00:02:26,480  -->  00:02:33,380
+except the last one and use the last output to classify an input text,
+
+34
+
+00:02:33,380  -->  00:02:38,320
+for example, to classify it into spam or non spam.
+
+35
+
+00:02:38,350  -->  00:02:41,180
+We would pass an input text,
+
+36
+
+00:02:41,180  -->  00:02:44,200
+token by token, [inaudible] this network,
+
+37
+
+00:02:44,200  -->  00:02:46,040
+and on the final step,
+
+38
+
+00:02:46,040  -->  00:02:48,120
+we should have some information about
+
+39
+
+00:02:48,120  -->  00:02:54,040
+the previously processed words that we can use to make a classification decision.
+
+40
+
+00:02:54,040  -->  00:02:59,360
+There are also other RNN variations such as one to many RNN,
+
+41
+
+00:02:59,360  -->  00:03:02,280
+where we provide an initial input,
+
+42
+
+00:03:02,280  -->  00:03:06,615
+and then the model generates multiple output tokens.
+
+43
+
+00:03:06,615  -->  00:03:11,675
+This architecture is good for text generation or music generation.
+
+44
+
+00:03:11,675  -->  00:03:15,550
+The other variation is called many to many RNNs,
+
+45
+
+00:03:15,550  -->  00:03:21,790
+where we first read an input sequence that consists of multiple tokens,
+
+46
+
+00:03:21,790  -->  00:03:27,830
+and then the model can generate multiple output tokens one by one.
+
+47
+
+00:03:27,830  -->  00:03:34,490
+This approach can be used to translate text from one language to another.
+
+48
+
+00:03:34,490  -->  00:03:37,680
+RNNs worked for many different tasks,
+
+49
+
+00:03:37,680  -->  00:03:40,390
+however, they have a few issues.
+
+50
+
+00:03:40,390  -->  00:03:45,195
+First of all, RNNs have difficulty accessing previous states.
+
+51
+
+00:03:45,195  -->  00:03:49,740
+We have a single state that we need to update on every iteration,
+
+52
+
+00:03:49,740  -->  00:03:56,560
+and the model will have issues retaining information from tokens it saw long time ago.
+
+53
+
+00:03:56,560  -->  00:04:01,260
+The other issue with RNNs is called diminishing gradient.
+
+54
+
+00:04:01,260  -->  00:04:07,940
+This happens when the gradient during training becomes too small in deep networks,
+
+55
+
+00:04:07,940  -->  00:04:11,360
+which leads to slow training and the network
+
+56
+
+00:04:11,360  -->  00:04:15,440
+can't capture dependencies over large time intervals.
+
+57
+
+00:04:15,440  -->  00:04:20,300
+There were a number of improvements to the basic RNN architecture,
+
+58
+
+00:04:20,300  -->  00:04:24,850
+such as LSTM or long short term memory,
+
+59
+
+00:04:24,850  -->  00:04:28,520
+or GRU, which is gated recurrent unit.
+
+60
+
+00:04:28,520  -->  00:04:33,480
+These architectures help with some of the drawbacks of classic cardan approach.
+
+61
+
+00:04:33,480  -->  00:04:37,620
+However, the next breakthrough in NLP came from using
+
+62
+
+00:04:37,620  -->  00:04:43,320
+the transformers architecture and the attention mechanism it uses.

@@ -1,0 +1,684 @@
+1
+
+00:00:00,000  -->  00:00:04,040
+In this video, we will build the multi head attention block,
+
+2
+
+00:00:04,040  -->  00:00:07,960
+the cornerstone component of our transformer model,
+
+3
+
+00:00:07,960  -->  00:00:11,840
+and we will build it from scratch using PyTorch.
+
+4
+
+00:00:11,840  -->  00:00:18,480
+I have to warn you that this will probably be the most involved part of the whole lesson,
+
+5
+
+00:00:18,480  -->  00:00:23,125
+but the rest of the implementation for our model should be much easier.
+
+6
+
+00:00:23,125  -->  00:00:26,000
+Before we start working on this implementation,
+
+7
+
+00:00:26,000  -->  00:00:29,620
+we need to define a configuration for our model.
+
+8
+
+00:00:29,620  -->  00:00:32,750
+This configuration will contain hyper parameters
+
+9
+
+00:00:32,750  -->  00:00:36,250
+for our model that will define its structure.
+
+10
+
+00:00:36,250  -->  00:00:39,270
+We will put this configuration into this dictionary,
+
+11
+
+00:00:39,270  -->  00:00:42,330
+and here are the parameters that we will define.
+
+12
+
+00:00:42,330  -->  00:00:44,530
+The first one is vocabulary_size,
+
+13
+
+00:00:44,530  -->  00:00:49,010
+which is the size of the vocabulary defined by our tokenizer.
+
+14
+
+00:00:49,010  -->  00:00:53,280
+This is a number of unique token IDs that it supports.
+
+15
+
+00:00:53,280  -->  00:00:56,265
+The second parameter is context_size,
+
+16
+
+00:00:56,265  -->  00:00:59,040
+which is the length of the context window.
+
+17
+
+00:00:59,040  -->  00:01:02,720
+If you recall, this is the maximum number of tokens,
+
+18
+
+00:01:02,720  -->  00:01:04,820
+our mode can see it once.
+
+19
+
+00:01:04,820  -->  00:01:07,250
+The next parameter is embedding_dim,
+
+20
+
+00:01:07,250  -->  00:01:09,950
+which is the size of embedding vectors.
+
+21
+
+00:01:09,950  -->  00:01:15,905
+Each token in the input sequence will be converted to an embedding vector of this size.
+
+22
+
+00:01:15,905  -->  00:01:18,430
+Next, we have the heads_num parameter,
+
+23
+
+00:01:18,430  -->  00:01:22,430
+which is a number of attention heads we will have in our model.
+
+24
+
+00:01:22,430  -->  00:01:25,630
+If you recall, we'll have multiple attention heads,
+
+25
+
+00:01:25,630  -->  00:01:28,945
+and each will be processing input independently.
+
+26
+
+00:01:28,945  -->  00:01:31,945
+Here we define how many of them we will have.
+
+27
+
+00:01:31,945  -->  00:01:36,790
+Layers_num is a number of layers or transformer blocks in our model.
+
+28
+
+00:01:36,790  -->  00:01:42,150
+The drop out rate is to configure how many outputs in drop out layers to set to zero.
+
+29
+
+00:01:42,150  -->  00:01:46,035
+In the last parameter called use_bias is a Boolean flag
+
+30
+
+00:01:46,035  -->  00:01:50,850
+indicating whether the linear transformations should include bias terms.
+
+31
+
+00:01:50,850  -->  00:01:53,950
+We also need to compute the size of the output
+
+32
+
+00:01:53,950  -->  00:01:57,890
+from each head to set dimensions of our model correctly.
+
+33
+
+00:01:57,890  -->  00:02:03,690
+If you recall, every head produces output for only a part of each embedding vector.
+
+34
+
+00:02:03,690  -->  00:02:07,470
+To calculate it, we divide the embedding vector size,
+
+35
+
+00:02:07,470  -->  00:02:09,110
+by the number of heads,
+
+36
+
+00:02:09,110  -->  00:02:15,295
+so all outputs from all heads together will produce a vector of the right size.
+
+37
+
+00:02:15,295  -->  00:02:19,130
+Now, let's see how to implement a single attention head.
+
+38
+
+00:02:19,130  -->  00:02:20,810
+To do this, we will define
+
+39
+
+00:02:20,810  -->  00:02:25,390
+the attention head class that will implement a single attention head.
+
+40
+
+00:02:25,390  -->  00:02:28,390
+To implement it, we need to inherit the module type and
+
+41
+
+00:02:28,390  -->  00:02:32,170
+define a constructor where we define all building blocks.
+
+42
+
+00:02:32,170  -->  00:02:34,625
+We first define matrices Q _weights,
+
+43
+
+00:02:34,625  -->  00:02:36,835
+K_weights, and V_weights,
+
+44
+
+00:02:36,835  -->  00:02:41,350
+and we will use them to convert input embedding vectors into Q,
+
+45
+
+00:02:41,350  -->  00:02:44,255
+K, and V matrices correspondingly.
+
+46
+
+00:02:44,255  -->  00:02:46,570
+We then define the dropout rate,
+
+47
+
+00:02:46,570  -->  00:02:49,380
+and we define the casual attention mask.
+
+48
+
+00:02:49,380  -->  00:02:51,500
+To define the attention mask,
+
+49
+
+00:02:51,500  -->  00:02:55,120
+we first create a square matrix of the context window size,
+
+50
+
+00:02:55,120  -->  00:02:58,065
+and we do it using the torch one function,
+
+51
+
+00:02:58,065  -->  00:03:04,100
+and then we pass it to the true function to only get the values below the main diagonal.
+
+52
+
+00:03:04,100  -->  00:03:07,080
+If you recall, this true function allows us to
+
+53
+
+00:03:07,080  -->  00:03:10,935
+set all values above the main diagonal to zero.
+
+54
+
+00:03:10,935  -->  00:03:16,580
+We then use the registered buffer method to save the casual attention mask.
+
+55
+
+00:03:16,580  -->  00:03:19,090
+This function allows us to register
+
+56
+
+00:03:19,090  -->  00:03:22,770
+a buffer that should not be considered a model parameter.
+
+57
+
+00:03:22,770  -->  00:03:26,530
+But it won't be trained during the model training,
+
+58
+
+00:03:26,530  -->  00:03:29,240
+but it would be part of a model state.
+
+59
+
+00:03:29,240  -->  00:03:31,910
+Now having the constructor implemented,
+
+60
+
+00:03:31,910  -->  00:03:34,510
+we will need to implement the forward method.
+
+61
+
+00:03:34,510  -->  00:03:36,750
+In this method, we'll receive an input,
+
+62
+
+00:03:36,750  -->  00:03:41,240
+which is a mini batch of converted input tokens.
+
+63
+
+00:03:41,240  -->  00:03:44,890
+Throughout this method, I'll write these comments to
+
+64
+
+00:03:44,890  -->  00:03:48,310
+specify the dimensions of different tensors,
+
+65
+
+00:03:48,310  -->  00:03:51,245
+so we can keep track of what is going on.
+
+66
+
+00:03:51,245  -->  00:03:54,390
+The input contains the following dimension.
+
+67
+
+00:03:54,390  -->  00:03:57,050
+B is the size of a mini batch,
+
+68
+
+00:03:57,050  -->  00:03:59,750
+C is the size of a context window,
+
+69
+
+00:03:59,750  -->  00:04:03,270
+and embedding_dim is the size of an embedding vector.
+
+70
+
+00:04:03,270  -->  00:04:07,015
+Using this input, we can compute matrices Q, K,
+
+71
+
+00:04:07,015  -->  00:04:10,130
+and V correspondingly, using our Q_weights,
+
+72
+
+00:04:10,130  -->  00:04:11,865
+K_weights, and V_weights.
+
+73
+
+00:04:11,865  -->  00:04:18,270
+Each of the separation will produce separate tensors of size B by C by head_size.
+
+74
+
+00:04:18,270  -->  00:04:20,700
+Now, having matrices Q and K,
+
+75
+
+00:04:20,700  -->  00:04:24,500
+we need to multiply them to compute attention scores.
+
+76
+
+00:04:24,500  -->  00:04:26,520
+To multiply them, however,
+
+77
+
+00:04:26,520  -->  00:04:29,500
+we first need to transpose matrix Q
+
+78
+
+00:04:29,500  -->  00:04:33,585
+so to make sure that we're doing the.product correctly.
+
+79
+
+00:04:33,585  -->  00:04:35,760
+As a result of this multiplication,
+
+80
+
+00:04:35,760  -->  00:04:38,540
+we will get a new tensor with dimensions P,
+
+81
+
+00:04:38,540  -->  00:04:44,050
+which is specialized by C by C. Then having the attention scores,
+
+82
+
+00:04:44,050  -->  00:04:46,990
+we need to apply the casual attention mask.
+
+83
+
+00:04:46,990  -->  00:04:50,810
+To do so use the mask fill method that will set
+
+84
+
+00:04:50,810  -->  00:04:55,310
+the positions where the mask is zero to negative infinity.
+
+85
+
+00:04:55,310  -->  00:05:00,990
+This will allow us to ignore these positions in the subsequent softmax step.
+
+86
+
+00:05:00,990  -->  00:05:06,220
+Then we also need to scale the attention scores as we've discussed before.
+
+87
+
+00:05:06,220  -->  00:05:09,850
+To do this, we divide it by the square root of the K,
+
+88
+
+00:05:09,850  -->  00:05:12,670
+which is the size of queries and keys.
+
+89
+
+00:05:12,670  -->  00:05:18,220
+The scaling allows us to make sure that attention scores don't become too large.
+
+90
+
+00:05:18,220  -->  00:05:21,150
+Finally, we will apply the softmax function to
+
+91
+
+00:05:21,150  -->  00:05:25,190
+the attention scores to convert the scores to probabilities,
+
+92
+
+00:05:25,190  -->  00:05:27,290
+ensuring they sum up to one.
+
+93
+
+00:05:27,290  -->  00:05:30,010
+We then multiply the attention scores and
+
+94
+
+00:05:30,010  -->  00:05:33,970
+V matrix to calculate new embedding vector values.
+
+95
+
+00:05:33,970  -->  00:05:38,310
+But we also need to apply the dropout to avoid overfitting.
+
+96
+
+00:05:38,310  -->  00:05:41,430
+Now, let's quickly test if it all works together.
+
+97
+
+00:05:41,430  -->  00:05:46,280
+To do this, I'll create a random input tensor with a batch size of 8,
+
+98
+
+00:05:46,280  -->  00:05:48,000
+the context window size,
+
+99
+
+00:05:48,000  -->  00:05:51,180
+and the embedding dimensionality that we will use,
+
+100
+
+00:05:51,180  -->  00:05:54,720
+and we'll use this input to test our attention head.
+
+101
+
+00:05:54,720  -->  00:05:56,220
+Now, to use this input,
+
+102
+
+00:05:56,220  -->  00:06:00,520
+we'll instantiate the attention head class using our configuration,
+
+103
+
+00:06:00,520  -->  00:06:05,460
+and then we'll pass this input tensor through the attention head to get some output.
+
+104
+
+00:06:05,460  -->  00:06:10,960
+Of course, passing random data through an interim model will return gibberish.
+
+105
+
+00:06:10,960  -->  00:06:15,880
+But what we can do, we can test that the outputs have the right dimensions.
+
+106
+
+00:06:15,880  -->  00:06:17,840
+If we look at the dimensions,
+
+107
+
+00:06:17,840  -->  00:06:19,200
+we see that there are eight,
+
+108
+
+00:06:19,200  -->  00:06:25,020
+which is our mini batch size that we selected by the context size by 64,
+
+109
+
+00:06:25,020  -->  00:06:29,220
+and 64 is actually the head size that we've calculated
+
+110
+
+00:06:29,220  -->  00:06:33,440
+here using the embeddings dimensions and the number of heads.
+
+111
+
+00:06:33,440  -->  00:06:37,580
+Now, so far, we only have a single attention head implemented.
+
+112
+
+00:06:37,580  -->  00:06:43,070
+Now we can implement multi head attention that combines multiple heads together.
+
+113
+
+00:06:43,070  -->  00:06:47,310
+To implement it, we again inherit from the module type.
+
+114
+
+00:06:47,310  -->  00:06:53,170
+We then create a list of attention head instances and we store them in this module list.
+
+115
+
+00:06:53,170  -->  00:06:58,645
+We also define an additional linear layer that will apply to each embedding vector.
+
+116
+
+00:06:58,645  -->  00:07:02,780
+Then we add another drop out layer for regularization.
+
+117
+
+00:07:02,780  -->  00:07:06,650
+Now, to implement the forward method, we first of all,
+
+118
+
+00:07:06,650  -->  00:07:09,910
+pass our input through all of our heads,
+
+119
+
+00:07:09,910  -->  00:07:15,030
+and then we get outputs from each one of these heads and store them into heads outputs.
+
+120
+
+00:07:15,030  -->  00:07:18,730
+We then concatenate the outputs along the last dimension,
+
+121
+
+00:07:18,730  -->  00:07:21,510
+and then we pass the results through the linear layer,
+
+122
+
+00:07:21,510  -->  00:07:24,470
+and we apply and drop out to the final output.
+
+123
+
+00:07:24,470  -->  00:07:28,650
+Now, that's it. That's the whole multi head attention block implemented.
+
+124
+
+00:07:28,650  -->  00:07:30,330
+Now we will instantiate
+
+125
+
+00:07:30,330  -->  00:07:34,650
+this multi head attention class using our configuration dictionary,
+
+126
+
+00:07:34,650  -->  00:07:37,450
+and we pass the same input tensor through
+
+127
+
+00:07:37,450  -->  00:07:40,470
+the multi head attention block to get the output.
+
+128
+
+00:07:40,470  -->  00:07:42,990
+Now, if you look at the shape of the output,
+
+129
+
+00:07:42,990  -->  00:07:46,450
+you will see that it looks similar to what we had before,
+
+130
+
+00:07:46,450  -->  00:07:51,010
+but now the size of the last dimension is 768,
+
+131
+
+00:07:51,010  -->  00:07:54,560
+which is also the size of our embedding vectors.
+
+132
+
+00:07:54,560  -->  00:08:00,180
+This means that we were able to create multi head attention with multiple heads,
+
+133
+
+00:08:00,180  -->  00:08:04,310
+pass the inputs through different heads and combine them together.
+
+134
+
+00:08:04,310  -->  00:08:07,130
+Now the size of the output is the same as
+
+135
+
+00:08:07,130  -->  00:08:10,950
+the size of the input we passed to the multi head attention.
+
+136
+
+00:08:10,950  -->  00:08:14,730
+Now, that's it. Now we have implemented multi head attention,
+
+137
+
+00:08:14,730  -->  00:08:18,730
+and now using this, we can build the rest of our model.

@@ -1,0 +1,199 @@
+1
+
+00:00:00,000  -->  00:00:03,400
+Before we dive into the transformer architecture,
+
+2
+
+00:00:03,400  -->  00:00:06,340
+we need to talk about the softmax function,
+
+3
+
+00:00:06,340  -->  00:00:11,000
+since we will use it in a few places when we will implement our model.
+
+4
+
+00:00:11,000  -->  00:00:13,720
+An important observation is that an output of
+
+5
+
+00:00:13,720  -->  00:00:18,460
+a neural network layer can contain pretty much any numerical values.
+
+6
+
+00:00:18,460  -->  00:00:22,140
+These raw output values are also called logits.
+
+7
+
+00:00:22,140  -->  00:00:25,040
+In some cases, we need to convert logits
+
+8
+
+00:00:25,040  -->  00:00:29,440
+produced by a model into a probability distribution.
+
+9
+
+00:00:29,510  -->  00:00:33,610
+To create a probability distribution from logits,
+
+10
+
+00:00:33,610  -->  00:00:39,320
+we need to make sure that every logit value will be converted into a value from
+
+11
+
+00:00:39,320  -->  00:00:47,035
+0-1 and that the sum of all result values should be equal to 1.
+
+12
+
+00:00:47,035  -->  00:00:53,070
+A common way to do this is to use the softmax function. Here is how it works.
+
+13
+
+00:00:53,070  -->  00:00:57,690
+When we want to convert logit to the probabilities, for every logit,
+
+14
+
+00:00:57,690  -->  00:01:04,825
+we need to take this logit value and raise e to the power of this logit value.
+
+15
+
+00:01:04,825  -->  00:01:11,775
+We have e^1.2, e^1.4, and so on.
+
+16
+
+00:01:11,775  -->  00:01:14,885
+Raising e, a positive number,
+
+17
+
+00:01:14,885  -->  00:01:18,310
+to any power will give us a positive number,
+
+18
+
+00:01:18,310  -->  00:01:23,910
+and we've immediately satisfied the first requirement making all outputs positive.
+
+19
+
+00:01:23,910  -->  00:01:29,850
+Now, how do we make sure that all output values of the softmax function sum up to one?
+
+20
+
+00:01:29,850  -->  00:01:34,460
+To do this, we first compute the sum of all these values we've got so
+
+21
+
+00:01:34,460  -->  00:01:40,280
+far that we write in this shorter mathematical notation.
+
+22
+
+00:01:40,280  -->  00:01:42,360
+Then having this sum,
+
+23
+
+00:01:42,360  -->  00:01:46,500
+we need to divide each value by the value of this sum.
+
+24
+
+00:01:46,500  -->  00:01:51,540
+This will make sure that the sum of result values will be equal to one.
+
+25
+
+00:01:51,540  -->  00:01:55,560
+That's it. That's how we compute the softmax function.
+
+26
+
+00:01:55,560  -->  00:01:59,580
+Now, once you are familiar with how softmax is calculated,
+
+27
+
+00:01:59,580  -->  00:02:04,960
+it will be easier to understand the mathematical notation, which looks like this.
+
+28
+
+00:02:04,960  -->  00:02:06,920
+Where for every output value,
+
+29
+
+00:02:06,920  -->  00:02:13,940
+we calculate the exponents and divide each one of them by the sum of all exponents.
+
+30
+
+00:02:14,240  -->  00:02:17,280
+The output of the softmax function is
+
+31
+
+00:02:17,280  -->  00:02:22,215
+a probability distribution that we can represent using a histogram.
+
+32
+
+00:02:22,215  -->  00:02:25,580
+Softmax function has some interesting properties.
+
+33
+
+00:02:25,580  -->  00:02:29,120
+If one input value is much larger than the rest,
+
+34
+
+00:02:29,120  -->  00:02:32,320
+softmax will return a probability that is
+
+35
+
+00:02:32,320  -->  00:02:36,640
+significantly higher than probabilities for other outputs.
+
+36
+
+00:02:36,640  -->  00:02:43,380
+In this case, softmax returns 0.9 for the largest value in the input.
+
+37
+
+00:02:43,380  -->  00:02:45,920
+For all the smaller logit values,
+
+38
+
+00:02:45,920  -->  00:02:49,740
+it will return probabilities that are close to zero.
+
+39
+
+00:02:49,740  -->  00:02:53,720
+If there are several logits with similar values,
+
+40
+
+00:02:53,720  -->  00:02:59,240
+softmax will return similar probability values for each one of them.

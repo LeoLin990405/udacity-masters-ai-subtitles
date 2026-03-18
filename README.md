@@ -11,7 +11,7 @@ Course subtitles organized by the [Udacity Master's Degree in Artificial Intelli
 | 1 | Introduction to Computer Programming: Part 1 | 124 files |
 | 2 | Introduction to Machine Learning | - |
 | 3 | Applied Data Analytics | 93 files |
-| 4 | Introduction to Deep Learning | 171 files |
+| 4 | Introduction to Deep Learning | 195 files |
 | 5 | Introduction to Artificial Intelligence | - |
 | 6 | Intelligent Systems | - |
 | 7 | Ethical Artificial Intelligence Practices | - |
@@ -93,11 +93,13 @@ core/
     pandas/                                         (14 files)
     matplotlib-and-seaborn-part-1/                  (26 files)
     matplotlib-and-seaborn-part-2/                  (39 files)
-  04-introduction-to-deep-learning/                  (171 SRT files)
+  04-introduction-to-deep-learning/                  (195 SRT files)
     introduction-to-neural-networks/                (92 files)
     training-neural-networks/                       (28 files)
     implementing-gradient-descent/                  (10 files)
     deep-learning-with-pytorch/                     (41 files)
+    introduction-to-transformer-neural-networks/    ( 6 files)
+    building-transformer-with-pytorch/              (18 files)
   05-introduction-to-artificial-intelligence/
   06-intelligent-systems/
   07-ethical-artificial-intelligence-practices/

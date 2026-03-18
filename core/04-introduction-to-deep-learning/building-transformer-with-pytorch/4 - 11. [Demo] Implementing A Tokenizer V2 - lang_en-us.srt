@@ -1,0 +1,449 @@
+1
+
+00:00:00,000  -->  00:00:05,520
+Now, in this demo, we will implement a tokenizer for our transformer model.
+
+2
+
+00:00:05,520  -->  00:00:09,700
+As mentioned before, it will be a character based tokenizer,
+
+3
+
+00:00:09,700  -->  00:00:15,720
+which means that it will convert every character in an input string to a separate token.
+
+4
+
+00:00:15,720  -->  00:00:17,600
+Before we start working on it,
+
+5
+
+00:00:17,600  -->  00:00:20,500
+we need to add some Python touch boiler plate.
+
+6
+
+00:00:20,500  -->  00:00:25,540
+First of all, we add Python touch imports that we will use throughout this lesson.
+
+7
+
+00:00:25,540  -->  00:00:28,840
+Then we create a device variable which will be
+
+8
+
+00:00:28,840  -->  00:00:33,200
+assigned to Cuda if we have GPU available on this machine.
+
+9
+
+00:00:33,200  -->  00:00:39,700
+We will use it later to move our tensors and our models to GPU if it is available.
+
+10
+
+00:00:39,700  -->  00:00:42,940
+Now, before we start working on the tokenizer itself,
+
+11
+
+00:00:42,940  -->  00:00:45,340
+we need to load our dataset.
+
+12
+
+00:00:45,340  -->  00:00:50,000
+For the dataset, we will have this file called tiny Shakespeare that
+
+13
+
+00:00:50,000  -->  00:00:55,690
+contains all Shakespeare plays combined together into a single file.
+
+14
+
+00:00:55,690  -->  00:00:59,090
+We use the past type and the read text method,
+
+15
+
+00:00:59,090  -->  00:01:02,050
+we will get the text variable that will be
+
+16
+
+00:01:02,050  -->  00:01:05,690
+a long string that will contain all the Shakespeare play.
+
+17
+
+00:01:05,690  -->  00:01:08,950
+Now, if we look at the 4,000 characters in the string,
+
+18
+
+00:01:08,950  -->  00:01:12,550
+you will see that it contains a part of a Shakespeare play.
+
+19
+
+00:01:12,550  -->  00:01:16,270
+This is just the data that we need to train our model.
+
+20
+
+00:01:16,270  -->  00:01:18,650
+Now we can start building our tokenizer,
+
+21
+
+00:01:18,650  -->  00:01:22,150
+and first, I'll show you the interface that we will implement.
+
+22
+
+00:01:22,150  -->  00:01:25,510
+It will have a constructor that receives a vocabulary,
+
+23
+
+00:01:25,510  -->  00:01:28,110
+and a vocabulary will be just a list of
+
+24
+
+00:01:28,110  -->  00:01:31,990
+characters that our tokenizer will be able to process.
+
+25
+
+00:01:31,990  -->  00:01:35,890
+It will have a method to create a tokenizer from text.
+
+26
+
+00:01:35,890  -->  00:01:38,910
+It will have the encode method that will take
+
+27
+
+00:01:38,910  -->  00:01:42,830
+a string and convert it into a list of token IDs.
+
+28
+
+00:01:42,830  -->  00:01:46,570
+It will also have the decode method that does the opposite,
+
+29
+
+00:01:46,570  -->  00:01:51,850
+it receives a list of token IDs and converts them into a text.
+
+30
+
+00:01:51,850  -->  00:01:56,850
+The final method will return the vocabulary size or our tokenizer.
+
+31
+
+00:01:56,850  -->  00:02:00,050
+Let's start implementing these one by one.
+
+32
+
+00:02:00,220  -->  00:02:03,740
+The train from text method will receive the text
+
+33
+
+00:02:03,740  -->  00:02:06,600
+that we will use to get the list of unique characters.
+
+34
+
+00:02:06,600  -->  00:02:11,435
+It will use the set method to get all the distinct characters in the text.
+
+35
+
+00:02:11,435  -->  00:02:13,720
+It will then convert them into a list,
+
+36
+
+00:02:13,720  -->  00:02:17,680
+sort them and part to the chart tokenizer constructor.
+
+37
+
+00:02:17,680  -->  00:02:19,520
+Now, for the constructor,
+
+38
+
+00:02:19,520  -->  00:02:25,460
+our tokenizer will need to convert from characters to token IDs and vice versa.
+
+39
+
+00:02:25,460  -->  00:02:28,300
+For this, we'll have two different maps.
+
+40
+
+00:02:28,300  -->  00:02:30,080
+To construct these maps,
+
+41
+
+00:02:30,080  -->  00:02:33,105
+we will iterate over the list of characters.
+
+42
+
+00:02:33,105  -->  00:02:35,770
+For every character, we will get the character
+
+43
+
+00:02:35,770  -->  00:02:39,630
+itself and its position in this vocabulary.
+
+44
+
+00:02:39,630  -->  00:02:44,250
+Having these pairs of the position that we will make a token ID and the character,
+
+45
+
+00:02:44,250  -->  00:02:46,250
+we will create both of these maps.
+
+46
+
+00:02:46,250  -->  00:02:49,050
+In one, it will be a character to token ID,
+
+47
+
+00:02:49,050  -->  00:02:52,410
+and in the other one, it will be token ID to the character.
+
+48
+
+00:02:52,410  -->  00:02:53,750
+Now having these maps,
+
+49
+
+00:02:53,750  -->  00:02:56,870
+we can implement the encode and the code methods.
+
+50
+
+00:02:56,870  -->  00:02:58,470
+To implement the encode method,
+
+51
+
+00:02:58,470  -->  00:03:01,950
+we will iterate through every character in the input text,
+
+52
+
+00:03:01,950  -->  00:03:05,710
+and we will get the token ID for this character using our map.
+
+53
+
+00:03:05,710  -->  00:03:09,105
+We will append it to the list of token IDs.
+
+54
+
+00:03:09,105  -->  00:03:10,990
+Having this list of token IDs,
+
+55
+
+00:03:10,990  -->  00:03:15,420
+who will then convert it into a tensor using torch.tensor function.
+
+56
+
+00:03:15,420  -->  00:03:17,790
+The code method will work very similarly.
+
+57
+
+00:03:17,790  -->  00:03:19,990
+We will iterate through token IDs,
+
+58
+
+00:03:19,990  -->  00:03:22,090
+and the token IDs will be a tensor.
+
+59
+
+00:03:22,090  -->  00:03:24,750
+We first need to convert it into a list,
+
+60
+
+00:03:24,750  -->  00:03:26,290
+and then for every token,
+
+61
+
+00:03:26,290  -->  00:03:28,510
+we get the character for this token,
+
+62
+
+00:03:28,510  -->  00:03:30,870
+we append it to a list of characters,
+
+63
+
+00:03:30,870  -->  00:03:32,930
+and then we convert it into a string.
+
+64
+
+00:03:32,930  -->  00:03:34,330
+For the vocabulary size,
+
+65
+
+00:03:34,330  -->  00:03:35,890
+it will be very straightforward.
+
+66
+
+00:03:35,890  -->  00:03:38,890
+We will just get the length of one of these maps,
+
+67
+
+00:03:38,890  -->  00:03:40,450
+and they will have the same lens,
+
+68
+
+00:03:40,450  -->  00:03:44,170
+and both of them will have the same number of characters in now,
+
+69
+
+00:03:44,170  -->  00:03:46,390
+having our tokenizer implementation,
+
+70
+
+00:03:46,390  -->  00:03:52,010
+let's create an instance of our tokenizer and provide the whole training dataset into it,
+
+71
+
+00:03:52,010  -->  00:03:53,530
+we will get our tokenizer.
+
+72
+
+00:03:53,530  -->  00:03:55,090
+Now having a tokenizer,
+
+73
+
+00:03:55,090  -->  00:04:00,890
+let's try to encode the how world string into a list of token IDs.
+
+74
+
+00:04:00,890  -->  00:04:08,030
+If we run it, we get a tensor with different token IDs for this input string.
+
+75
+
+00:04:08,030  -->  00:04:09,910
+If you look closely, you will see that
+
+76
+
+00:04:09,910  -->  00:04:14,510
+character L is now represented as token ID number 50.
+
+77
+
+00:04:14,510  -->  00:04:17,905
+For every position where we had the L character.
+
+78
+
+00:04:17,905  -->  00:04:20,700
+We now have token AD equal to 50.
+
+79
+
+00:04:20,700  -->  00:04:22,390
+Having the list of tokens,
+
+80
+
+00:04:22,390  -->  00:04:25,875
+we can also decode it using the decode method.
+
+81
+
+00:04:25,875  -->  00:04:29,870
+If we pass the result of code into the decode method,
+
+82
+
+00:04:29,870  -->  00:04:31,510
+we will get our string back.
+
+83
+
+00:04:31,510  -->  00:04:34,970
+Now we can also get the vocabulary size, which was 65,
+
+84
+
+00:04:34,970  -->  00:04:39,410
+which means that our input data set only had 65 unique characters.
+
+85
+
+00:04:39,410  -->  00:04:41,950
+Now, one final thing that I'll show to you is I'll
+
+86
+
+00:04:41,950  -->  00:04:44,770
+show you the mapping between characters, and this is it.
+
+87
+
+00:04:44,770  -->  00:04:47,410
+This is our whole tokenizer implementation,
+
+88
+
+00:04:47,410  -->  00:04:49,330
+and having this tokenizer,
+
+89
+
+00:04:49,330  -->  00:04:51,670
+we can start processing our dataset,
+
+90
+
+00:04:51,670  -->  00:04:55,110
+and then we can start building our model.

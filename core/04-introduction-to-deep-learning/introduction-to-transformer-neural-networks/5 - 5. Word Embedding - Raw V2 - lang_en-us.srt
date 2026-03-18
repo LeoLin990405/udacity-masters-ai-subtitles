@@ -1,0 +1,439 @@
+1
+
+00:00:00,000  -->  00:00:01,300
+In the previous videos,
+
+2
+
+00:00:01,300  -->  00:00:07,200
+we've discussed a simple way to represent each token for our machine learning model.
+
+3
+
+00:00:07,200  -->  00:00:13,380
+We were converting each token ID into a vector where all values would be zero,
+
+4
+
+00:00:13,380  -->  00:00:16,380
+except for a position equal to vector ID,
+
+5
+
+00:00:16,380  -->  00:00:18,300
+which would be set to one.
+
+6
+
+00:00:18,300  -->  00:00:22,825
+There is, however, a different way of representing tokens.
+
+7
+
+00:00:22,825  -->  00:00:29,190
+Instead, each word can be represented as a smaller multidimensional vector,
+
+8
+
+00:00:29,190  -->  00:00:31,150
+where every value would represent
+
+9
+
+00:00:31,150  -->  00:00:35,210
+a certain characteristic of a word relevant to our model.
+
+10
+
+00:00:35,210  -->  00:00:37,570
+What are the meaning of these values?
+
+11
+
+00:00:37,570  -->  00:00:39,730
+Well, we don't set them upfront.
+
+12
+
+00:00:39,730  -->  00:00:42,750
+We only decide on what size of vectors we want to
+
+13
+
+00:00:42,750  -->  00:00:46,750
+use and then train a model to create these vectors.
+
+14
+
+00:00:46,750  -->  00:00:50,290
+These vectors are also called embedding vectors.
+
+15
+
+00:00:50,290  -->  00:00:55,290
+The actual meaning of each particular number is not necessarily interpretable.
+
+16
+
+00:00:55,290  -->  00:01:00,490
+However, these vectors have some interesting properties we will discuss later.
+
+17
+
+00:01:00,490  -->  00:01:05,190
+Embedding vectors usually contain hundreds or even thousands of dimensions.
+
+18
+
+00:01:05,190  -->  00:01:11,050
+Unfortunately, we humans are not good at visualizing thousand dimensions vectors.
+
+19
+
+00:01:11,050  -->  00:01:15,410
+Instead, we will display two dimensional vectors in this video,
+
+20
+
+00:01:15,410  -->  00:01:18,030
+but the properties that we will discuss will be
+
+21
+
+00:01:18,030  -->  00:01:21,220
+relevant in real-world embedding vectors as well.
+
+22
+
+00:01:21,220  -->  00:01:25,270
+One interesting property of embedding vectors is that words
+
+23
+
+00:01:25,270  -->  00:01:29,550
+with similar meanings will be represented by similar vectors.
+
+24
+
+00:01:29,550  -->  00:01:33,990
+For example, if we have vectors for words laptop and computer,
+
+25
+
+00:01:33,990  -->  00:01:37,790
+they will have similar values and will be close to
+
+26
+
+00:01:37,790  -->  00:01:42,680
+all other vectors representing words related to computers and tech.
+
+27
+
+00:01:42,680  -->  00:01:47,490
+On the other hand, if we have another group of words like orange and banana,
+
+28
+
+00:01:47,490  -->  00:01:49,330
+they will be close to each other,
+
+29
+
+00:01:49,330  -->  00:01:53,330
+but they will be far away from technology related vectors.
+
+30
+
+00:01:53,330  -->  00:01:56,710
+Given two vectors in a multidimensional space,
+
+31
+
+00:01:56,710  -->  00:01:59,515
+we can compute how similar they are.
+
+32
+
+00:01:59,515  -->  00:02:02,630
+To do this, we can use an operation called
+
+33
+
+00:02:02,630  -->  00:02:06,330
+dot product that works for vectors of any size.
+
+34
+
+00:02:06,330  -->  00:02:11,650
+But we will see how it works using an example of three dimensional vectors.
+
+35
+
+00:02:11,650  -->  00:02:15,090
+Dot product is represented using a dot symbol,
+
+36
+
+00:02:15,090  -->  00:02:17,600
+and it is computed in the following way.
+
+37
+
+00:02:17,600  -->  00:02:19,120
+To calculate dot product,
+
+38
+
+00:02:19,120  -->  00:02:24,580
+we take the first pair of values from both vectors and multiply them together.
+
+39
+
+00:02:24,580  -->  00:02:29,320
+We then take the second pair and multiply them together as well.
+
+40
+
+00:02:29,320  -->  00:02:35,900
+Then the next pair, and then we add the result of these three pairwise multiplications.
+
+41
+
+00:02:35,900  -->  00:02:38,405
+This is a result of the dot product.
+
+42
+
+00:02:38,405  -->  00:02:41,950
+Mathematically, dot product is the final exist.
+
+43
+
+00:02:41,950  -->  00:02:45,460
+We multiply a pair of values for each position,
+
+44
+
+00:02:45,460  -->  00:02:49,380
+and then we sum up these multiplication results together.
+
+45
+
+00:02:49,380  -->  00:02:53,260
+Now, how do we interpret the result of a dot product?
+
+46
+
+00:02:53,260  -->  00:02:55,280
+If the result is positive,
+
+47
+
+00:02:55,280  -->  00:02:59,820
+it means that vectors are similar like on the image on the right,
+
+48
+
+00:02:59,820  -->  00:03:03,560
+which in turn means that the words have similar meaning.
+
+49
+
+00:03:03,560  -->  00:03:05,780
+The greater the value of a dot product,
+
+50
+
+00:03:05,780  -->  00:03:08,590
+the greater the similarity between two words.
+
+51
+
+00:03:08,590  -->  00:03:11,460
+If the dot product result is close to zero,
+
+52
+
+00:03:11,460  -->  00:03:14,400
+it means that the words are unrelated.
+
+53
+
+00:03:14,400  -->  00:03:16,540
+For example, these can be words from
+
+54
+
+00:03:16,540  -->  00:03:20,615
+completely different domains like technology and food.
+
+55
+
+00:03:20,615  -->  00:03:23,410
+If the dot product is negative,
+
+56
+
+00:03:23,410  -->  00:03:28,850
+it means that the words have opposite meanings like words hot and cold.
+
+57
+
+00:03:28,850  -->  00:03:32,990
+Another interesting property of embedding vectors is that we can
+
+58
+
+00:03:32,990  -->  00:03:37,850
+perform mass operation between them and get interesting results.
+
+59
+
+00:03:37,850  -->  00:03:39,950
+A classic example is,
+
+60
+
+00:03:39,950  -->  00:03:46,650
+if we take a vector for the word woman and subtract the vector for the word man from it,
+
+61
+
+00:03:46,650  -->  00:03:50,160
+and then add the result vector to the word king.
+
+62
+
+00:03:50,160  -->  00:03:56,960
+We will get a vector that is very close to the vector that represents the word queen.
+
+63
+
+00:03:56,960  -->  00:03:59,920
+If we reorder this expression a bit,
+
+64
+
+00:03:59,920  -->  00:04:04,380
+we will have an expression that says that the difference between word queen and
+
+65
+
+00:04:04,380  -->  00:04:09,260
+king is similar to the difference between the words woman and man.
+
+66
+
+00:04:09,260  -->  00:04:12,520
+Other vectors have similar relationships.
+
+67
+
+00:04:12,520  -->  00:04:16,480
+For example, difference between mother and father,
+
+68
+
+00:04:16,800  -->  00:04:21,120
+also similar to difference between words women and men.
+
+69
+
+00:04:21,120  -->  00:04:26,120
+Another interesting relationship is if we subtract Rome from Paris,
+
+70
+
+00:04:26,120  -->  00:04:29,560
+it will be similar to the difference between France and Italy,
+
+71
+
+00:04:29,560  -->  00:04:32,750
+and if we subtract Europe from euro,
+
+72
+
+00:04:32,750  -->  00:04:36,715
+It will be similar to the difference between dollar and America.
+
+73
+
+00:04:36,715  -->  00:04:39,470
+There are two ways to get word embeddings.
+
+74
+
+00:04:39,470  -->  00:04:44,310
+One way we can use an independent model that was trained specifically to compute
+
+75
+
+00:04:44,310  -->  00:04:49,930
+word embeddings for a particular vocabulary, unrelated to transformers.
+
+76
+
+00:04:49,930  -->  00:04:53,770
+You can download these models and use them in your applications.
+
+77
+
+00:04:53,770  -->  00:04:56,710
+However, when we're training a transformer model,
+
+78
+
+00:04:56,710  -->  00:05:00,690
+it will learn word embeddings as part of its training process,
+
+79
+
+00:05:00,690  -->  00:05:03,910
+so we don't need a separate library in this case.
+
+80
+
+00:05:03,910  -->  00:05:07,090
+To wrap up our conversation of embedding vectors,
+
+81
+
+00:05:07,090  -->  00:05:11,180
+let's briefly talk about how we could use them in a simple model.
+
+82
+
+00:05:11,180  -->  00:05:13,050
+Having an input sentence,
+
+83
+
+00:05:13,050  -->  00:05:18,150
+we can tokenize it and convert each token into a separate embedding vector.
+
+84
+
+00:05:18,150  -->  00:05:23,830
+We can then flatten this vector and pass it into a feed forward neural network.
+
+85
+
+00:05:23,830  -->  00:05:26,970
+However, instead of using a feed forward network,
+
+86
+
+00:05:26,970  -->  00:05:29,390
+we can also use architectures designed
+
+87
+
+00:05:29,390  -->  00:05:33,430
+specifically for processing sequential data like text.
+
+88
+
+00:05:33,430  -->  00:05:37,910
+This is something that we will look into in the next videos.

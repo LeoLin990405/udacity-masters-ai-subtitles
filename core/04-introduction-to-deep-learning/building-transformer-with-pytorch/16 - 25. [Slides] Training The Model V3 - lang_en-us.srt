@@ -1,0 +1,79 @@
+1
+
+00:00:00,000  -->  00:00:03,480
+Now once we have the Demo GPT model defined,
+
+2
+
+00:00:03,480  -->  00:00:05,920
+let's talk about how to train it.
+
+3
+
+00:00:05,920  -->  00:00:09,460
+It will be very similar to training other models.
+
+4
+
+00:00:09,460  -->  00:00:12,320
+On every iteration, using a data loader,
+
+5
+
+00:00:12,320  -->  00:00:15,680
+we will load a batch of inputs and targets,
+
+6
+
+00:00:15,680  -->  00:00:21,180
+and both inputs and targets will be tensors with token IDs.
+
+7
+
+00:00:21,180  -->  00:00:24,460
+We will then pass a batch of inputs to the model,
+
+8
+
+00:00:24,460  -->  00:00:26,860
+and it will return its predictions.
+
+9
+
+00:00:26,860  -->  00:00:29,000
+We'll use these predictions and use
+
+10
+
+00:00:29,000  -->  00:00:32,925
+the expected targets to calculate the loss for this batch.
+
+11
+
+00:00:32,925  -->  00:00:34,940
+Have any loss for a single batch,
+
+12
+
+00:00:34,940  -->  00:00:37,180
+we can calculate the gradients.
+
+13
+
+00:00:37,180  -->  00:00:39,510
+Using the optimizer instance,
+
+14
+
+00:00:39,510  -->  00:00:42,760
+we will update parameters of our model.
+
+15
+
+00:00:42,760  -->  00:00:46,570
+This is a single iteration for training our model.
+
+16
+
+00:00:46,570  -->  00:00:52,110
+We can now repeat this again and again using different batches of data.

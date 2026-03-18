@@ -1,0 +1,184 @@
+1
+
+00:00:00,000  -->  00:00:02,800
+Now, once we have implemented a single block,
+
+2
+
+00:00:02,800  -->  00:00:07,260
+let's take a look at how we can assemble everything into a single model.
+
+3
+
+00:00:07,260  -->  00:00:10,640
+We'll first walk through all the components of the model,
+
+4
+
+00:00:10,640  -->  00:00:12,060
+and in the next demo,
+
+5
+
+00:00:12,060  -->  00:00:14,640
+we will write it using PyTorch.
+
+6
+
+00:00:14,640  -->  00:00:16,240
+As we've discussed before,
+
+7
+
+00:00:16,240  -->  00:00:18,790
+to pass an input to our model.
+
+8
+
+00:00:18,790  -->  00:00:21,180
+We need to split it into tokens,
+
+9
+
+00:00:21,180  -->  00:00:25,400
+such as words, sub words, or individual characters.
+
+10
+
+00:00:25,400  -->  00:00:29,160
+Then we need to convert tokens into token IDs.
+
+11
+
+00:00:29,160  -->  00:00:33,860
+We then convert the token IDs into embedding vectors.
+
+12
+
+00:00:33,860  -->  00:00:36,940
+Then we add positional encoding values,
+
+13
+
+00:00:36,940  -->  00:00:42,140
+and the result of this sum are the input vectors we are sending to our model.
+
+14
+
+00:00:42,140  -->  00:00:46,220
+We then pass this input to the first layer of our network.
+
+15
+
+00:00:46,220  -->  00:00:51,465
+We then pass the output of this layer to the next layer, and so on.
+
+16
+
+00:00:51,465  -->  00:00:55,550
+The output from each layer has the same shape as the input,
+
+17
+
+00:00:55,550  -->  00:00:59,460
+but the value of embedding vectors change from layer to layer.
+
+18
+
+00:00:59,460  -->  00:01:01,470
+When we are training our model,
+
+19
+
+00:01:01,470  -->  00:01:03,970
+we will not pass just a single input.
+
+20
+
+00:01:03,970  -->  00:01:09,110
+We'll pass a batch of inputs together to use our resources more efficiently.
+
+21
+
+00:01:09,110  -->  00:01:12,050
+Finally, after the final layer of our model,
+
+22
+
+00:01:12,050  -->  00:01:15,830
+we need to convert the output into the next predicted token.
+
+23
+
+00:01:15,830  -->  00:01:20,370
+The output from the last layer will have the same number of embedding vectors,
+
+24
+
+00:01:20,370  -->  00:01:23,150
+and we need to convert it into tokens.
+
+25
+
+00:01:23,150  -->  00:01:25,190
+We do it in two steps.
+
+26
+
+00:01:25,190  -->  00:01:31,000
+First, we use a linear layer to convert each embedding vector into a new vector.
+
+27
+
+00:01:31,000  -->  00:01:35,630
+That contains prediction scores for each of the tokens in our vocabulary.
+
+28
+
+00:01:35,630  -->  00:01:39,530
+For example, 039, in this case is how confident
+
+29
+
+00:01:39,530  -->  00:01:43,990
+are model that it should generate token with 80 in this position.
+
+30
+
+00:01:43,990  -->  00:01:45,730
+The higher the prediction score,
+
+31
+
+00:01:45,730  -->  00:01:50,170
+the higher the model is confidence that it should use this token ID.
+
+32
+
+00:01:50,170  -->  00:01:55,225
+But we then want to convert these values into probability distributions.
+
+33
+
+00:01:55,225  -->  00:01:56,930
+As we've discussed before,
+
+34
+
+00:01:56,930  -->  00:01:59,885
+we can use the softmax function for this.
+
+35
+
+00:01:59,885  -->  00:02:03,220
+The output here will have the same shape as before,
+
+36
+
+00:02:03,220  -->  00:02:08,580
+but now these values will be probabilities our model have assigned for each token,
+
+37
+
+00:02:08,580  -->  00:02:13,440
+and the sum of probabilities for each position is equal to one.

@@ -1,0 +1,159 @@
+1
+
+00:00:00,000  -->  00:00:02,780
+Before we start implementing our model,
+
+2
+
+00:00:02,780  -->  00:00:06,140
+let's talk about how to prepare training data for it.
+
+3
+
+00:00:06,140  -->  00:00:08,860
+We'll first need to implement a tokenizer,
+
+4
+
+00:00:08,860  -->  00:00:12,720
+which will allow us to convert text into token IDs,
+
+5
+
+00:00:12,720  -->  00:00:17,000
+and we will look into how to do this in one of the next demos.
+
+6
+
+00:00:17,000  -->  00:00:20,820
+We'll also need to prepare a training dataset in a way
+
+7
+
+00:00:20,820  -->  00:00:25,220
+that will allow us to train our model to predict next token.
+
+8
+
+00:00:25,220  -->  00:00:30,260
+Remember that the goal of our model is to predict the next token.
+
+9
+
+00:00:30,260  -->  00:00:33,880
+Giving a single part of an input dataset,
+
+10
+
+00:00:33,880  -->  00:00:39,200
+we can generate several prediction tasks for our model at once.
+
+11
+
+00:00:39,200  -->  00:00:41,840
+Let's say we have a phrase.
+
+12
+
+00:00:41,840  -->  00:00:46,600
+The core innovation of transformers is the attention.
+
+13
+
+00:00:46,710  -->  00:00:49,850
+From this phrase, given the word the,
+
+14
+
+00:00:49,850  -->  00:00:52,660
+we want our model to predict core.
+
+15
+
+00:00:52,660  -->  00:00:54,950
+Given the that core,
+
+16
+
+00:00:54,950  -->  00:00:56,990
+we wanted to predict innovation,
+
+17
+
+00:00:56,990  -->  00:01:01,550
+and so on until given all input tokens except the last one,
+
+18
+
+00:01:01,550  -->  00:01:04,630
+we want our model to predict the last word.
+
+19
+
+00:01:04,630  -->  00:01:08,770
+The way we will represent this in our dataset is that inputs and
+
+20
+
+00:01:08,770  -->  00:01:13,565
+targets will be part of the same phrase but shifted by one position.
+
+21
+
+00:01:13,565  -->  00:01:17,970
+Of course, our model won't see words or tokens themselves.
+
+22
+
+00:01:17,970  -->  00:01:22,250
+Instead, we will convert tokens into token IDs.
+
+23
+
+00:01:22,250  -->  00:01:25,455
+Our training examples will look like this.
+
+24
+
+00:01:25,455  -->  00:01:27,500
+But when visualizing it,
+
+25
+
+00:01:27,500  -->  00:01:31,760
+it is easier to talk about the words rather than token IDs.
+
+26
+
+00:01:31,760  -->  00:01:35,120
+Now, when we perform a single training iteration,
+
+27
+
+00:01:35,120  -->  00:01:38,960
+we don't just send a single training example.
+
+28
+
+00:01:39,960  -->  00:01:47,300
+We will instead pick multiple random training examples and run our model on a set,
+
+29
+
+00:01:47,300  -->  00:01:50,580
+or, as it is usually called a training batch.
+
+30
+
+00:01:50,580  -->  00:01:55,480
+This allows to better utilize GPU resources during training.
+
+31
+
+00:01:55,480  -->  00:01:57,240
+In the next few videos,
+
+32
+
+00:01:57,240  -->  00:02:01,270
+we will talk about how to do this in Python.

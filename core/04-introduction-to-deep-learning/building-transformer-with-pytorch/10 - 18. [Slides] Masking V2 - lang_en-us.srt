@@ -1,0 +1,89 @@
+1
+
+00:00:00,000  -->  00:00:04,400
+If you recall how we handle training data for transformers,
+
+2
+
+00:00:04,400  -->  00:00:11,520
+we convert a single part of the training dataset into multiple training examples.
+
+3
+
+00:00:11,520  -->  00:00:16,080
+One issue is that since a model sees the whole input,
+
+4
+
+00:00:16,080  -->  00:00:19,515
+it can sheet when predicting the next word.
+
+5
+
+00:00:19,515  -->  00:00:24,980
+To fix this problem, we need to change the attention scores we are calculating to
+
+6
+
+00:00:24,980  -->  00:00:31,235
+ensure that our model can't look at the next token when it tries to predict it.
+
+7
+
+00:00:31,235  -->  00:00:35,290
+To make sure that our model can sheet during training,
+
+8
+
+00:00:35,290  -->  00:00:42,380
+we need to update the attention matrix and set all the highlighted values to 0.
+
+9
+
+00:00:42,380  -->  00:00:46,730
+How would we do this? A simple way is to assign
+
+10
+
+00:00:46,730  -->  00:00:51,830
+all values below this diagonal to the negative infinity.
+
+11
+
+00:00:52,030  -->  00:00:56,170
+If you recall the properties of the softmax function,
+
+12
+
+00:00:56,170  -->  00:01:00,435
+it converts small values into values close to 0.
+
+13
+
+00:01:00,435  -->  00:01:05,780
+In this case, it will convert negative infinity values to 0s.
+
+14
+
+00:01:06,520  -->  00:01:11,960
+Going back to our diagram of operations in the multi-head attention,
+
+15
+
+00:01:11,960  -->  00:01:17,380
+we will add the masking step after the matrix multiplication,
+
+16
+
+00:01:17,380  -->  00:01:21,260
+and we will apply softmax afterwards.
+
+17
+
+00:01:21,260  -->  00:01:27,980
+This approach when we are using a triangular mask is called masked multi-head attention,
+
+18
+
+00:01:27,980  -->  00:01:34,320
+and it is used in many transformer models, including GPT models.

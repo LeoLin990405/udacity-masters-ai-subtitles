@@ -1,0 +1,279 @@
+1
+
+00:00:00,000  -->  00:00:03,800
+Before we start working on the transformer implementation,
+
+2
+
+00:00:03,800  -->  00:00:05,540
+we'll have a quick demo,
+
+3
+
+00:00:05,540  -->  00:00:09,785
+where we will cover PyTorch functions that we will use.
+
+4
+
+00:00:09,785  -->  00:00:15,160
+The goal of this demo is not to give you a comprehensive overview of PyTorch,
+
+5
+
+00:00:15,160  -->  00:00:18,020
+but it is to refresh your PyTorch knowledge.
+
+6
+
+00:00:18,020  -->  00:00:21,200
+In case if you don't know some of these functions,
+
+7
+
+00:00:21,200  -->  00:00:24,360
+it will make it easier for you to follow it later.
+
+8
+
+00:00:24,360  -->  00:00:27,065
+If you're already proficient with PyTorch,
+
+9
+
+00:00:27,065  -->  00:00:29,060
+you can just skip this section.
+
+10
+
+00:00:29,060  -->  00:00:32,380
+First, we'll see how we can create some random tensors,
+
+11
+
+00:00:32,380  -->  00:00:34,420
+which we will use for testing,
+
+12
+
+00:00:34,420  -->  00:00:38,130
+and we can do this using the torch rand function.
+
+13
+
+00:00:38,130  -->  00:00:40,320
+When we create a random tensor,
+
+14
+
+00:00:40,320  -->  00:00:44,600
+we can provide dimensions of a tensor that we want to create.
+
+15
+
+00:00:44,600  -->  00:00:47,820
+If we provide a single number like in this case,
+
+16
+
+00:00:47,820  -->  00:00:50,040
+it will create a random vector.
+
+17
+
+00:00:50,040  -->  00:00:52,430
+If we provide two numbers,
+
+18
+
+00:00:52,430  -->  00:00:56,145
+it will create a random tensor 5*5.
+
+19
+
+00:00:56,145  -->  00:00:59,280
+The other function the two will use is called ones,
+
+20
+
+00:00:59,280  -->  00:01:05,400
+and it allows us to create a tensor of specified dimensions that is filled with ones.
+
+21
+
+00:01:05,400  -->  00:01:08,300
+Just as with rant, if we provide a single number,
+
+22
+
+00:01:08,300  -->  00:01:11,720
+it will create a vector of size five as in this case,
+
+23
+
+00:01:11,720  -->  00:01:13,840
+or if we provide two numbers,
+
+24
+
+00:01:13,840  -->  00:01:17,415
+it will create a multi-dimensional tensor filled with ones.
+
+25
+
+00:01:17,415  -->  00:01:20,600
+If we need to create a tensor with a sequence of numbers,
+
+26
+
+00:01:20,600  -->  00:01:23,480
+we need to use the arrange function.
+
+27
+
+00:01:23,480  -->  00:01:29,270
+In this case, it will return a sequence of numbers from 0-9.
+
+28
+
+00:01:29,270  -->  00:01:32,590
+One interesting operation that we will need for
+
+29
+
+00:01:32,590  -->  00:01:36,250
+transformers is to create a triangular matrix,
+
+30
+
+00:01:36,250  -->  00:01:41,650
+where we have values only in the lower triangle of a square matrix.
+
+31
+
+00:01:41,650  -->  00:01:44,910
+To do this, we will use the trial function.
+
+32
+
+00:01:44,910  -->  00:01:48,750
+The way we need to use this function is we first of all need to create
+
+33
+
+00:01:48,750  -->  00:01:53,135
+another tensor and pass this tensor into the trill function.
+
+34
+
+00:01:53,135  -->  00:01:59,290
+What it will do, it will set zeros to all positions above the main diagonal.
+
+35
+
+00:01:59,290  -->  00:02:03,870
+While implementing transformers will also have to take multiple tensors
+
+36
+
+00:02:03,870  -->  00:02:09,470
+and create another tensor that joins values from existing tensors.
+
+37
+
+00:02:09,470  -->  00:02:12,070
+We can do this using the CAT function,
+
+38
+
+00:02:12,070  -->  00:02:14,330
+which stands for concatenation.
+
+39
+
+00:02:14,330  -->  00:02:17,030
+For example, in this particular case,
+
+40
+
+00:02:17,030  -->  00:02:19,550
+I have two tensors 2*2,
+
+41
+
+00:02:19,550  -->  00:02:24,830
+and I can either concatenate them along the rows or along the columns.
+
+42
+
+00:02:24,830  -->  00:02:27,050
+To concatenate them along the rows,
+
+43
+
+00:02:27,050  -->  00:02:32,960
+I need to pass them to the CAT function and specify dimension equal to zero.
+
+44
+
+00:02:32,960  -->  00:02:35,140
+Or if I do the same thing,
+
+45
+
+00:02:35,140  -->  00:02:37,620
+but specify dimension equal to one,
+
+46
+
+00:02:37,620  -->  00:02:41,320
+it will concatenate these tensors along the columns.
+
+47
+
+00:02:41,320  -->  00:02:45,480
+Now the last transformation that we will cover is called view.
+
+48
+
+00:02:45,480  -->  00:02:50,280
+What it allows us to do is to change the shape of a tensor that we have.
+
+49
+
+00:02:50,280  -->  00:02:52,340
+For example, in this case,
+
+50
+
+00:02:52,340  -->  00:02:54,660
+we have a vector with 12 numbers.
+
+51
+
+00:02:54,660  -->  00:02:56,240
+Using the view function,
+
+52
+
+00:02:56,240  -->  00:02:59,440
+we can transform it into 3*4 tensor,
+
+53
+
+00:02:59,440  -->  00:03:04,905
+all we need to do is to call the view function and specify the new dimensions.
+
+54
+
+00:03:04,905  -->  00:03:11,070
+We can also use a view to convert this two-dimensional tensor back into a vector.
+
+55
+
+00:03:11,070  -->  00:03:13,690
+In to do this, we need to call the view function
+
+56
+
+00:03:13,690  -->  00:03:17,550
+and specify the size of a vector we want to get.

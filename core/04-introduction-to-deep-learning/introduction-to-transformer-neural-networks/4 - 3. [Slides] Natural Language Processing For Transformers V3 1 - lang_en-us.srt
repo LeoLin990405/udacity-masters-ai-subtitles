@@ -1,0 +1,494 @@
+1
+
+00:00:00,000  -->  00:00:03,300
+Before we dive into how transformer models the work,
+
+2
+
+00:00:03,300  -->  00:00:05,800
+we will cover the basics of NLP.
+
+3
+
+00:00:05,800  -->  00:00:08,980
+NLP stands for natural language processing,
+
+4
+
+00:00:08,980  -->  00:00:12,220
+which is a branch of AI that aims at
+
+5
+
+00:00:12,220  -->  00:00:16,720
+understanding and communicating using human language.
+
+6
+
+00:00:16,720  -->  00:00:22,620
+Transformers is of course a part of a much larger NLP field.
+
+7
+
+00:00:22,620  -->  00:00:28,480
+Since transformers were not created in a vacuum to understand how they work,
+
+8
+
+00:00:28,480  -->  00:00:33,680
+we would need to have some prior knowledge in the area of NLP.
+
+9
+
+00:00:33,760  -->  00:00:35,880
+In the next few videos,
+
+10
+
+00:00:35,880  -->  00:00:39,920
+we'll cover a few topics that include tokenization,
+
+11
+
+00:00:39,920  -->  00:00:42,960
+which is a process of converting a text into
+
+12
+
+00:00:42,960  -->  00:00:48,020
+smaller parts that machine learning model can process, embeddings,
+
+13
+
+00:00:48,020  -->  00:00:54,280
+which is a way to represent words of a text as a multi-dimensional vectors,
+
+14
+
+00:00:54,280  -->  00:00:59,720
+and we'll also look into some simpler models that preceded transformers.
+
+15
+
+00:00:59,720  -->  00:01:03,990
+First, let's talk about how AI models can process text.
+
+16
+
+00:01:03,990  -->  00:01:07,560
+All machine learning models work with numbers,
+
+17
+
+00:01:07,560  -->  00:01:11,540
+so we need to convert a text into numbers first.
+
+18
+
+00:01:11,540  -->  00:01:15,940
+If we have a text like this for a machine learning model to handle it,
+
+19
+
+00:01:15,940  -->  00:01:19,740
+we first need to split it into individual chunks.
+
+20
+
+00:01:19,740  -->  00:01:27,030
+For example, we can split it into individual awards and convert each award into a number.
+
+21
+
+00:01:27,030  -->  00:01:30,480
+We need to do this consistently so that
+
+22
+
+00:01:30,480  -->  00:01:34,685
+the same word is always converted into the same number.
+
+23
+
+00:01:34,685  -->  00:01:41,460
+For example, we can decide that the word welcome is always represented as number 11,
+
+24
+
+00:01:41,460  -->  00:01:46,740
+and that the word course is represented as number 45, and so on.
+
+25
+
+00:01:46,740  -->  00:01:49,580
+These numbers are called token IDs,
+
+26
+
+00:01:49,580  -->  00:01:54,600
+and this is what our models will work with instead of working with words.
+
+27
+
+00:01:54,600  -->  00:01:59,020
+It doesn't matter what numbers were assigned to each word as
+
+28
+
+00:01:59,020  -->  00:02:03,645
+long as the same word is always converted into the same number.
+
+29
+
+00:02:03,645  -->  00:02:05,950
+If we have another sentence,
+
+30
+
+00:02:05,950  -->  00:02:10,190
+the way we convert words into numbers should be consistent.
+
+31
+
+00:02:10,190  -->  00:02:14,190
+The same words should be converted into the same IDs,
+
+32
+
+00:02:14,190  -->  00:02:18,290
+like the word course is converted into number 45.
+
+33
+
+00:02:18,290  -->  00:02:21,350
+In order for our model to process any sentence,
+
+34
+
+00:02:21,350  -->  00:02:24,250
+we need to know the words we can encounter
+
+35
+
+00:02:24,250  -->  00:02:28,050
+and decide what IDs we will assign to each one of them.
+
+36
+
+00:02:28,050  -->  00:02:29,650
+To get the list of words,
+
+37
+
+00:02:29,650  -->  00:02:35,125
+we need to get a large collection of text and find all distinct words in it.
+
+38
+
+00:02:35,125  -->  00:02:37,260
+To demonstrate this process,
+
+39
+
+00:02:37,260  -->  00:02:40,080
+I've shown here a small text sample,
+
+40
+
+00:02:40,080  -->  00:02:44,740
+but in reality, we need to have a much larger set of text.
+
+41
+
+00:02:44,740  -->  00:02:51,520
+We need to split this text into individual words and find all unique words in this text.
+
+42
+
+00:02:51,520  -->  00:02:55,545
+Each unique word will get its own unique ID.
+
+43
+
+00:02:55,545  -->  00:02:58,320
+This table is called a vocabulary,
+
+44
+
+00:02:58,320  -->  00:03:04,020
+and we can now use it to convert a new input text into a sequence of IDs,
+
+45
+
+00:03:04,020  -->  00:03:07,275
+our model would be able to process.
+
+46
+
+00:03:07,275  -->  00:03:10,770
+Then if we want to process a new sentence,
+
+47
+
+00:03:10,770  -->  00:03:17,125
+we need to split it into tokens and find a corresponding ID for each word.
+
+48
+
+00:03:17,125  -->  00:03:19,800
+For example, the word large,
+
+49
+
+00:03:19,800  -->  00:03:24,875
+has ID 1, the word on has ID 5, and so on.
+
+50
+
+00:03:24,875  -->  00:03:27,960
+In practice to build a good vocabulary,
+
+51
+
+00:03:27,960  -->  00:03:30,340
+we need to process a lot of text,
+
+52
+
+00:03:30,340  -->  00:03:33,520
+like all Wikipedia articles, for example.
+
+53
+
+00:03:33,520  -->  00:03:37,460
+This will give us a list of all English words,
+
+54
+
+00:03:37,460  -->  00:03:39,660
+as well as misspelled words,
+
+55
+
+00:03:39,660  -->  00:03:42,040
+any words that are rarely used,
+
+56
+
+00:03:42,040  -->  00:03:46,060
+words in languages we don't intend to process, and so on.
+
+57
+
+00:03:46,060  -->  00:03:49,260
+We would end up with an enormous vocabulary,
+
+58
+
+00:03:49,260  -->  00:03:55,770
+so to handle it, we will limit our vocabulary to the list of most common words.
+
+59
+
+00:03:55,770  -->  00:04:01,290
+Say we would only use the most common 100,000 words or so.
+
+60
+
+00:04:01,290  -->  00:04:05,150
+The downside of this approach is that some input text
+
+61
+
+00:04:05,150  -->  00:04:09,130
+might include words that are not in our vocabulary.
+
+62
+
+00:04:09,130  -->  00:04:13,470
+It can be because we've limited our vocabulary size or
+
+63
+
+00:04:13,470  -->  00:04:18,855
+because we simply didn't see a particular word when we were creating one.
+
+64
+
+00:04:18,855  -->  00:04:24,480
+For example, if we don't have words from the physics domain in our vocabulary,
+
+65
+
+00:04:24,480  -->  00:04:28,785
+our model might have issues processing a sentence like this.
+
+66
+
+00:04:28,785  -->  00:04:33,440
+A common way to handle it is to replace unknown words with
+
+67
+
+00:04:33,440  -->  00:04:39,240
+a special token that represents an unknown word with its own unique ID,
+
+68
+
+00:04:39,240  -->  00:04:43,080
+and pass this as an input to our model.
+
+69
+
+00:04:43,080  -->  00:04:45,400
+The downside of this is that
+
+70
+
+00:04:45,400  -->  00:04:50,955
+an unknown token does not provide a lot of information for our model.
+
+71
+
+00:04:50,955  -->  00:04:56,210
+Splitting an input text into words is not the only option.
+
+72
+
+00:04:56,210  -->  00:05:00,250
+We can split an input text into individual characters.
+
+73
+
+00:05:00,250  -->  00:05:03,090
+In this case, the process will be the same,
+
+74
+
+00:05:03,090  -->  00:05:06,150
+but instead of building a vocabulary of words,
+
+75
+
+00:05:06,150  -->  00:05:08,910
+we'll build a vocabulary of characters,
+
+76
+
+00:05:08,910  -->  00:05:11,690
+and every character will have an ID,
+
+77
+
+00:05:11,690  -->  00:05:14,130
+we will convert it into.
+
+78
+
+00:05:14,410  -->  00:05:17,270
+Then when tokenizing a sentence,
+
+79
+
+00:05:17,270  -->  00:05:20,150
+we will split it into individual characters,
+
+80
+
+00:05:20,150  -->  00:05:24,120
+and each character is converted into its own ID.
+
+81
+
+00:05:24,120  -->  00:05:30,110
+Character level tokenization is a simple and useful technique that we'll also use.
+
+82
+
+00:05:30,110  -->  00:05:34,870
+One benefit of character level tokenization is that it will be able
+
+83
+
+00:05:34,870  -->  00:05:39,950
+to handle new words because it just splits them into individual characters.
+
+84
+
+00:05:39,950  -->  00:05:44,970
+However, the main downside is that each individual token is much
+
+85
+
+00:05:44,970  -->  00:05:50,690
+less meaningful compared to a token in the world level tokenization process.
+
+86
+
+00:05:50,690  -->  00:05:55,795
+The last approach we will look into is called a subword tokenization.
+
+87
+
+00:05:55,795  -->  00:05:59,930
+In this case, the input vocabulary consists of full words,
+
+88
+
+00:05:59,930  -->  00:06:02,670
+as well as chunks of words.
+
+89
+
+00:06:02,880  -->  00:06:05,800
+For example, in this sentence,
+
+90
+
+00:06:05,800  -->  00:06:12,480
+similar words like pairs or involves are individual tokens with their own IDs.
+
+91
+
+00:06:12,480  -->  00:06:16,880
+While the word quantum is split into two tokens,
+
+92
+
+00:06:16,880  -->  00:06:19,380
+each with its own ID.
+
+93
+
+00:06:19,380  -->  00:06:24,450
+Using subword tokenization helps with handling unknown words.
+
+94
+
+00:06:24,450  -->  00:06:27,050
+If our model finds an unknown word,
+
+95
+
+00:06:27,050  -->  00:06:31,810
+it can still split it into multiple tokens and make sense out of it.
+
+96
+
+00:06:31,810  -->  00:06:37,090
+This approach is used by real world LLMs, such as GPT.
+
+97
+
+00:06:37,090  -->  00:06:41,290
+If you want to experiment with it and if you want to try how it works,
+
+98
+
+00:06:41,290  -->  00:06:43,970
+you can use the tiktoken library,
+
+99
+
+00:06:43,970  -->  00:06:49,230
+a library that GPT is using to tokenize input sentences.

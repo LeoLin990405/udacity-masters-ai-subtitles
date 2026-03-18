@@ -1,0 +1,469 @@
+1
+
+00:00:00,000  -->  00:00:04,680
+In this video, we will talk about transformer architecture,
+
+2
+
+00:00:04,680  -->  00:00:09,715
+which is the core innovation behind the Generative AI boom.
+
+3
+
+00:00:09,715  -->  00:00:12,980
+It allows [inaudible] models to process,
+
+4
+
+00:00:12,980  -->  00:00:16,080
+understand, and generate text.
+
+5
+
+00:00:16,170  -->  00:00:22,325
+This architecture was first presented in the Attention is All You Need paper,
+
+6
+
+00:00:22,325  -->  00:00:28,190
+and was originally designed to translate text from one language to the other.
+
+7
+
+00:00:28,190  -->  00:00:34,310
+But in this course, we won't implement the architecture presented in the original paper.
+
+8
+
+00:00:34,310  -->  00:00:40,695
+Instead, we will cover a different architecture used by models like GPT,
+
+9
+
+00:00:40,695  -->  00:00:43,915
+LLaMA, and other similar models.
+
+10
+
+00:00:43,915  -->  00:00:47,420
+In addition to being used by these popular models,
+
+11
+
+00:00:47,420  -->  00:00:50,340
+it will be easier to understand and implement,
+
+12
+
+00:00:50,340  -->  00:00:52,580
+but closer to the end of this lesson,
+
+13
+
+00:00:52,580  -->  00:00:57,960
+we will compare it to the original architecture and learn how does it differ.
+
+14
+
+00:00:57,960  -->  00:01:04,705
+Now, let's start with a 10,000-feet overview of how transformer model works.
+
+15
+
+00:01:04,705  -->  00:01:07,030
+When we have an input prompt,
+
+16
+
+00:01:07,030  -->  00:01:09,750
+we first split it into separate tokens.
+
+17
+
+00:01:09,750  -->  00:01:12,910
+We convert each token into token ID
+
+18
+
+00:01:12,910  -->  00:01:17,550
+and then convert each token ID into its own embedding vector.
+
+19
+
+00:01:17,550  -->  00:01:22,070
+I made here a few details on how the wording embeddings are processed,
+
+20
+
+00:01:22,070  -->  00:01:27,280
+but for now, I want to focus just on the core aspects of how it works.
+
+21
+
+00:01:27,280  -->  00:01:33,550
+One thing to note here is that the same token ID will produce the same embedding vector.
+
+22
+
+00:01:33,550  -->  00:01:39,670
+This is just a simple mapping from a token ID to a corresponding embedding vector.
+
+23
+
+00:01:39,670  -->  00:01:42,450
+Once we have the input wording beddings,
+
+24
+
+00:01:42,450  -->  00:01:48,210
+we pass them to the attention block that updates embeddings to refine their meaning.
+
+25
+
+00:01:48,210  -->  00:01:51,870
+Here is an example of why it might be useful.
+
+26
+
+00:01:51,870  -->  00:01:54,710
+Let's consider two sentences.
+
+27
+
+00:01:54,710  -->  00:01:59,690
+One is her favorite fruit is a date and the other one,
+
+28
+
+00:01:59,690  -->  00:02:02,475
+Kate and Josh went on a date.
+
+29
+
+00:02:02,475  -->  00:02:05,780
+Both of these sentences have word date,
+
+30
+
+00:02:05,780  -->  00:02:09,230
+but it has different meaning in both sentences.
+
+31
+
+00:02:09,230  -->  00:02:11,960
+In the first sentence, it is the name of a fruit,
+
+32
+
+00:02:11,960  -->  00:02:13,620
+and in the second sentence,
+
+33
+
+00:02:13,620  -->  00:02:16,040
+it is an appointment to meet someone.
+
+34
+
+00:02:16,040  -->  00:02:19,820
+However, after we convert input to embedding vectors,
+
+35
+
+00:02:19,820  -->  00:02:25,240
+we will end up with the same embedding vectors for the word date in both sentences.
+
+36
+
+00:02:25,240  -->  00:02:30,340
+To fix this, the attention mechanism in transformer architecture will update
+
+37
+
+00:02:30,340  -->  00:02:33,240
+the embedding vectors based on the context
+
+38
+
+00:02:33,240  -->  00:02:36,560
+of the other embedding vectors forming the input.
+
+39
+
+00:02:36,560  -->  00:02:40,660
+In the first sentence, it might use the word fruit to update the meaning of
+
+40
+
+00:02:40,660  -->  00:02:46,140
+the vector for word date to represent that this is a fruit that you can eat.
+
+41
+
+00:02:46,140  -->  00:02:50,680
+In the second sentence, it can use some other words to update the meaning of
+
+42
+
+00:02:50,680  -->  00:02:55,680
+the embedding vector to represent that this is an appointment to meet.
+
+43
+
+00:02:55,680  -->  00:03:00,520
+The process of interaction between embedding vectors is called attention,
+
+44
+
+00:03:00,520  -->  00:03:05,560
+and each embedding vector is influenced by other embedding vectors in the text,
+
+45
+
+00:03:05,560  -->  00:03:08,820
+depending on the context of the text.
+
+46
+
+00:03:08,820  -->  00:03:12,325
+To update the values of embedding vectors,
+
+47
+
+00:03:12,325  -->  00:03:15,660
+the attention block calculates the attention scores.
+
+48
+
+00:03:15,660  -->  00:03:19,500
+We will cover how these values are calculated in more details,
+
+49
+
+00:03:19,500  -->  00:03:23,860
+but it shows the attention scores between each pair of input tokens.
+
+50
+
+00:03:23,860  -->  00:03:26,660
+These attention scores are then used to
+
+51
+
+00:03:26,660  -->  00:03:30,080
+update embedding vectors for all tokens in the input.
+
+52
+
+00:03:30,080  -->  00:03:32,880
+Once we run the input through the attention block,
+
+53
+
+00:03:32,880  -->  00:03:36,140
+we get updated embedding vectors that should better
+
+54
+
+00:03:36,140  -->  00:03:40,240
+represent the meaning of each token in the context of the input.
+
+55
+
+00:03:40,240  -->  00:03:43,060
+Once we run the input through the attention block,
+
+56
+
+00:03:43,060  -->  00:03:46,200
+we get updated embedding vectors that should better
+
+57
+
+00:03:46,200  -->  00:03:51,115
+represent the meaning of each token in the context of the input.
+
+58
+
+00:03:51,115  -->  00:03:56,340
+The attention mechanism is the most important part of the transformer architecture.
+
+59
+
+00:03:56,340  -->  00:03:58,910
+After we get an output from an attention block,
+
+60
+
+00:03:58,910  -->  00:04:01,960
+we pass it to the feed-forward network.
+
+61
+
+00:04:01,960  -->  00:04:04,960
+This combination of the attention block and
+
+62
+
+00:04:04,960  -->  00:04:08,060
+the feed-forward network form a transformer block,
+
+63
+
+00:04:08,060  -->  00:04:12,260
+or how it is also called a layer of a transformer model.
+
+64
+
+00:04:12,260  -->  00:04:15,280
+We then chain multiple layers together when
+
+65
+
+00:04:15,280  -->  00:04:19,000
+output from one layer becomes the input into another layer.
+
+66
+
+00:04:19,000  -->  00:04:22,060
+Then we repeat the process again and again until we get
+
+67
+
+00:04:22,060  -->  00:04:25,300
+the output from the last layer, and then at the end,
+
+68
+
+00:04:25,300  -->  00:04:28,720
+we get the probability distribution for what our model
+
+69
+
+00:04:28,720  -->  00:04:33,560
+considers to be the next token you should generate given its input.
+
+70
+
+00:04:34,020  -->  00:04:40,560
+Here it gives 68% probability for a token with a particular token ID.
+
+71
+
+00:04:40,560  -->  00:04:44,720
+If you're not familiar with the softmax function, don't worry.
+
+72
+
+00:04:44,720  -->  00:04:50,560
+We will cover how it works and what is the rationale behind it just a bit later.
+
+73
+
+00:04:50,560  -->  00:04:55,280
+Transformers have a few benefits comparing to other models.
+
+74
+
+00:04:55,280  -->  00:04:58,720
+First, transformers can process input in parallel.
+
+75
+
+00:04:58,720  -->  00:05:02,605
+They can process the whole input prompt all at once.
+
+76
+
+00:05:02,605  -->  00:05:06,020
+They can access information in longer text much more
+
+77
+
+00:05:06,020  -->  00:05:12,040
+efficiently and they're much easier to train comparing to RNN models.
+
+78
+
+00:05:12,040  -->  00:05:17,860
+Most importantly, they perform amazingly well on real-world tasks.
+
+79
+
+00:05:17,860  -->  00:05:24,000
+One other thing that we need to cover regarding LLMs is the concept of a context window.
+
+80
+
+00:05:24,000  -->  00:05:27,280
+Context window is the maximum number of tokens,
+
+81
+
+00:05:27,280  -->  00:05:29,600
+a model can handle at once,
+
+82
+
+00:05:29,600  -->  00:05:36,120
+and it includes an input prompt and the output that model has generated so far.
+
+83
+
+00:05:36,120  -->  00:05:40,780
+If we have a text that is longer than the context window of our model,
+
+84
+
+00:05:40,780  -->  00:05:45,500
+then our model won't be able to see all of it at once.
+
+85
+
+00:05:45,620  -->  00:05:50,360
+The size of the context window depends on the model we use.
+
+86
+
+00:05:50,360  -->  00:05:51,920
+In a smaller model,
+
+87
+
+00:05:51,920  -->  00:05:54,640
+it is limited to just 2,000 tokens,
+
+88
+
+00:05:54,640  -->  00:05:57,670
+like in the first version of GPT3.
+
+89
+
+00:05:57,670  -->  00:06:01,340
+But there are models with the context window that is greater than
+
+90
+
+00:06:01,340  -->  00:06:05,880
+1.5 million tokens like recent Gemini models.
+
+91
+
+00:06:05,880  -->  00:06:10,680
+Keep in mind that one word is not equal to one token since
+
+92
+
+00:06:10,680  -->  00:06:15,430
+tokenizers can split a single word into several tokens.
+
+93
+
+00:06:15,430  -->  00:06:17,920
+For example, in GPT model,
+
+94
+
+00:06:17,920  -->  00:06:23,220
+on average, it takes four tokens to represent three words.

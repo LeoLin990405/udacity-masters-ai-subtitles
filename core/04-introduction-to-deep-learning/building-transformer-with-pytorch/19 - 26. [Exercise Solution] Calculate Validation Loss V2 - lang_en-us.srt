@@ -1,0 +1,224 @@
+1
+
+00:00:00,000  -->  00:00:02,715
+Now let's take a look at how we can calculate
+
+2
+
+00:00:02,715  -->  00:00:06,360
+validation_loss for our model during training.
+
+3
+
+00:00:06,360  -->  00:00:12,670
+To do this, we first need to split our dataset into training and validation_dataset.
+
+4
+
+00:00:12,670  -->  00:00:15,180
+For this, we tokenize input text,
+
+5
+
+00:00:15,180  -->  00:00:16,760
+just as we did before,
+
+6
+
+00:00:16,760  -->  00:00:22,620
+and then we calculate how many tokens we want to use for training given this ratio.
+
+7
+
+00:00:22,620  -->  00:00:25,820
+We take this number of tokens as a training data,
+
+8
+
+00:00:25,820  -->  00:00:29,415
+and then we use the rest as validation_data.
+
+9
+
+00:00:29,415  -->  00:00:31,935
+Having training and validation_data,
+
+10
+
+00:00:31,935  -->  00:00:34,245
+we then create a validation_dataset,
+
+11
+
+00:00:34,245  -->  00:00:37,115
+and then we create a validation_dataloader.
+
+12
+
+00:00:37,115  -->  00:00:41,490
+Now we need to implement a function to calculate a validation_loss.
+
+13
+
+00:00:41,490  -->  00:00:43,350
+For this, we, first of all,
+
+14
+
+00:00:43,350  -->  00:00:47,410
+switch our model from training into the evaluation mode.
+
+15
+
+00:00:47,410  -->  00:00:51,430
+We should do this to run our model for inference, and this,
+
+16
+
+00:00:51,430  -->  00:00:56,990
+for example, deactivates the dropout layers we've added to our model.
+
+17
+
+00:00:56,990  -->  00:01:00,150
+Keep in mind that then we switch our model to
+
+18
+
+00:01:00,150  -->  00:01:04,170
+the training mode at the beginning of every training iteration.
+
+19
+
+00:01:04,170  -->  00:01:08,330
+We then create an iterator from our validation_dataset.
+
+20
+
+00:01:08,330  -->  00:01:11,920
+Then we run the loop for the specified number of batches,
+
+21
+
+00:01:11,920  -->  00:01:13,150
+and for every batch,
+
+22
+
+00:01:13,150  -->  00:01:17,845
+we do similar steps comparing to what we've done for the training.
+
+23
+
+00:01:17,845  -->  00:01:20,670
+We, first of all, get the inputs and targets.
+
+24
+
+00:01:20,670  -->  00:01:25,050
+We then pass these inputs to the model and get logits.
+
+25
+
+00:01:25,050  -->  00:01:27,870
+Then we reshape logits and targets,
+
+26
+
+00:01:27,870  -->  00:01:32,830
+and calculate the validation_loss using the cross_entropy function.
+
+27
+
+00:01:32,830  -->  00:01:38,330
+After this, we add the loss to the validation_loss on every iteration.
+
+28
+
+00:01:38,330  -->  00:01:39,770
+When the loop is finished,
+
+29
+
+00:01:39,770  -->  00:01:42,810
+we compute the average_loss by dividing
+
+30
+
+00:01:42,810  -->  00:01:46,250
+the total_loss by the number of batches we went through,
+
+31
+
+00:01:46,250  -->  00:01:48,730
+and then we return the average_loss.
+
+32
+
+00:01:48,730  -->  00:01:54,295
+Finally, we need to update our code to draw a chart of training and validation_losses.
+
+33
+
+00:01:54,295  -->  00:01:59,550
+First, we need to append training loss and training step to these two arrays,
+
+34
+
+00:01:59,550  -->  00:02:04,400
+and we need to use the item method to convert a tensor to a number,
+
+35
+
+00:02:04,400  -->  00:02:07,195
+and we do it for every training step.
+
+36
+
+00:02:07,195  -->  00:02:10,765
+Then we need to do the same for the validation_loss.
+
+37
+
+00:02:10,765  -->  00:02:16,080
+The reason why we need to store step number with loss values is because we calculate
+
+38
+
+00:02:16,080  -->  00:02:21,635
+training loss on every step and validation_loss only every 10 steps,
+
+39
+
+00:02:21,635  -->  00:02:24,240
+and we need to preserve step numbers for
+
+40
+
+00:02:24,240  -->  00:02:29,405
+the Matplotlib to correctly plot these charts and align values correctly.
+
+41
+
+00:02:29,405  -->  00:02:31,320
+I'll now rerun this notebook.
+
+42
+
+00:02:31,320  -->  00:02:35,600
+As you can see, we've got our training and validation_loss chart,
+
+43
+
+00:02:35,600  -->  00:02:38,620
+and if we wait for a few dozen iterations,
+
+44
+
+00:02:38,620  -->  00:02:41,040
+we will now see two lines on the chart,
+
+45
+
+00:02:41,040  -->  00:02:46,280
+one for the train loss and another for the validation_loss.

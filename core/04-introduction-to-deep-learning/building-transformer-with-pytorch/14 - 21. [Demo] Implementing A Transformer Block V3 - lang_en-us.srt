@@ -1,0 +1,219 @@
+1
+
+00:00:00,000  -->  00:00:03,180
+Let's see how to implement a transformer block.
+
+2
+
+00:00:03,180  -->  00:00:06,080
+We've already implemented the attention block,
+
+3
+
+00:00:06,080  -->  00:00:07,720
+and now as you recall,
+
+4
+
+00:00:07,720  -->  00:00:12,225
+we now need to implement the feed-forward part of this block.
+
+5
+
+00:00:12,225  -->  00:00:14,180
+Once we have both of these blocks,
+
+6
+
+00:00:14,180  -->  00:00:15,940
+we can combine them together.
+
+7
+
+00:00:15,940  -->  00:00:17,940
+To define a feed-forward block,
+
+8
+
+00:00:17,940  -->  00:00:22,700
+we need to define a new class and inherit from the nn module type.
+
+9
+
+00:00:22,700  -->  00:00:26,340
+In this module, we define a sequence of linear layers.
+
+10
+
+00:00:26,340  -->  00:00:32,800
+First, we have a linear layer that projects the input dimension to four times its size.
+
+11
+
+00:00:32,800  -->  00:00:35,195
+We then have the activation function.
+
+12
+
+00:00:35,195  -->  00:00:42,420
+We then have another linear layer that projects the dimension back to the original size.
+
+13
+
+00:00:42,420  -->  00:00:46,490
+Then we add the dropout layer to prevent overfitting,
+
+14
+
+00:00:46,490  -->  00:00:48,750
+which I've included in this class.
+
+15
+
+00:00:48,750  -->  00:00:51,990
+All we need to do in the forward method is to pass
+
+16
+
+00:00:51,990  -->  00:00:55,710
+the input through all the linear layers we've just defined.
+
+17
+
+00:00:55,710  -->  00:00:57,490
+Now, let's run a quick test.
+
+18
+
+00:00:57,490  -->  00:01:00,640
+We will create an instance of the feed-forward block.
+
+19
+
+00:01:00,640  -->  00:01:04,030
+We will create a random input of the same size we've done
+
+20
+
+00:01:04,030  -->  00:01:07,490
+before and we will pass this input through this block.
+
+21
+
+00:01:07,490  -->  00:01:09,950
+If the print is the shape of the output,
+
+22
+
+00:01:09,950  -->  00:01:12,010
+it looks just as we expected.
+
+23
+
+00:01:12,010  -->  00:01:13,850
+It contains the batch size,
+
+24
+
+00:01:13,850  -->  00:01:15,390
+the context window size,
+
+25
+
+00:01:15,390  -->  00:01:18,230
+and the dimensionality of our embedding vectors.
+
+26
+
+00:01:18,230  -->  00:01:21,890
+Now having the feed-forward block and the multi-head attention block,
+
+27
+
+00:01:21,890  -->  00:01:25,870
+we can finally implement the transformer block, and to implement it,
+
+28
+
+00:01:25,870  -->  00:01:30,550
+I'll define the class called the block that will again inherit from the module class.
+
+29
+
+00:01:30,550  -->  00:01:33,770
+To implement it, I'll need to use the multi-head attention we've just
+
+30
+
+00:01:33,770  -->  00:01:37,630
+defined and the feed-forward block we've implemented in this demo.
+
+31
+
+00:01:37,630  -->  00:01:42,760
+We also need to add two normalization layers that we will use in this block.
+
+32
+
+00:01:42,760  -->  00:01:44,880
+In the forward method of this block,
+
+33
+
+00:01:44,880  -->  00:01:49,640
+we first normalize the input and we pass it through the multi-head attention layer.
+
+34
+
+00:01:49,640  -->  00:01:53,820
+We then add the original input to the output of the attention layer.
+
+35
+
+00:01:53,820  -->  00:01:58,300
+We then normalize this result and pass it to the feed-forward block.
+
+36
+
+00:01:58,300  -->  00:02:02,280
+Then we implement another residual connection when we add the output
+
+37
+
+00:02:02,280  -->  00:02:06,330
+of this block to the output of the feed-forward block. That's it.
+
+38
+
+00:02:06,330  -->  00:02:09,960
+Now let's try to pass some test data through
+
+39
+
+00:02:09,960  -->  00:02:15,090
+this transformer block and see if the dimensions of the outputs are still correct.
+
+40
+
+00:02:15,090  -->  00:02:17,640
+We create an instance of a transformer block.
+
+41
+
+00:02:17,640  -->  00:02:21,200
+We again create a test input of the same size as before.
+
+42
+
+00:02:21,200  -->  00:02:23,980
+We pass the input through the transformer block,
+
+43
+
+00:02:23,980  -->  00:02:25,900
+and then we look at the shape of the output,
+
+44
+
+00:02:25,900  -->  00:02:28,760
+which is exactly what we've expected.
