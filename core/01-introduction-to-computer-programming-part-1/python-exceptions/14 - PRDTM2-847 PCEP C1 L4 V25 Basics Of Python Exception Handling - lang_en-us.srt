@@ -1,0 +1,159 @@
+1
+
+00:00:00,000  -->  00:00:05,620
+Exception handling is one of the best ways we can ensure our code is complete,
+
+2
+
+00:00:05,620  -->  00:00:07,480
+handles various edge cases,
+
+3
+
+00:00:07,480  -->  00:00:13,540
+and is also explainable should anyone else be working on or with the code we write.
+
+4
+
+00:00:13,540  -->  00:00:16,400
+Now, imagine your back managing your theme park,
+
+5
+
+00:00:16,400  -->  00:00:19,460
+keeping everything running smoothly is very popular
+
+6
+
+00:00:19,460  -->  00:00:22,960
+and there is high traffic going into your theme park throughout the day.
+
+7
+
+00:00:22,960  -->  00:00:28,150
+But no matter how well things are planned, sometimes issues arise.
+
+8
+
+00:00:28,150  -->  00:00:30,000
+Big issues can pop up,
+
+9
+
+00:00:30,000  -->  00:00:33,300
+like ride malfunctions, tickets getting misplaced,
+
+10
+
+00:00:33,300  -->  00:00:35,080
+or food orders going wrong.
+
+11
+
+00:00:35,080  -->  00:00:37,960
+In Python, we have a very powerful tool called
+
+12
+
+00:00:37,960  -->  00:00:42,400
+Exception Handling that helps us address unexpected issues in our code,
+
+13
+
+00:00:42,400  -->  00:00:47,015
+much like having contingency plans in the park for every possible scenario.
+
+14
+
+00:00:47,015  -->  00:00:51,640
+Throughout this course, you have been already using exception handling,
+
+15
+
+00:00:51,640  -->  00:00:53,200
+whether you've known it or not.
+
+16
+
+00:00:53,200  -->  00:00:59,500
+This is how we've handled edge cases like try X Y Z or accept A B C,
+
+17
+
+00:00:59,500  -->  00:01:03,105
+which means, run this X Y Z code first.
+
+18
+
+00:01:03,105  -->  00:01:05,775
+If there's no errors, that's fine,
+
+19
+
+00:01:05,775  -->  00:01:07,060
+but if there are errors,
+
+20
+
+00:01:07,060  -->  00:01:08,385
+run the exception case,
+
+21
+
+00:01:08,385  -->  00:01:10,320
+A B C. This is,
+
+22
+
+00:01:10,320  -->  00:01:13,000
+if else that we learned about previously,
+
+23
+
+00:01:13,000  -->  00:01:16,745
+except this is related to whether the code runs correctly or not.
+
+24
+
+00:01:16,745  -->  00:01:20,510
+For example, if there's a bug exception, so on.
+
+25
+
+00:01:20,510  -->  00:01:25,150
+Now that we know all of the different exceptions that could pop up, in this section,
+
+26
+
+00:01:25,150  -->  00:01:29,010
+we'll dive into the core concepts of Exception Handling with Python,
+
+27
+
+00:01:29,010  -->  00:01:33,810
+learning how to manage unexpected events in our code with Finesse and Ease.
+
+28
+
+00:01:33,810  -->  00:01:35,970
+We'll cover the tri accept block,
+
+29
+
+00:01:35,970  -->  00:01:38,550
+ordering exception branches for precision,
+
+30
+
+00:01:38,550  -->  00:01:41,130
+propagating exceptions to other functions,
+
+31
+
+00:01:41,130  -->  00:01:44,410
+and delegating exception handling responsibilities.
+
+32
+
+00:01:44,410  -->  00:01:48,730
+If you're ready to dive into this, let's get started.

@@ -1,0 +1,94 @@
+1
+
+00:00:00,000  -->  00:00:04,180
+Great job going through all of these exceptions and examples.
+
+2
+
+00:00:04,180  -->  00:00:05,980
+Like managing a theme park,
+
+3
+
+00:00:05,980  -->  00:00:09,140
+knowing how to handle different types of exceptions
+
+4
+
+00:00:09,140  -->  00:00:13,200
+ensures that your code stays functional and responsive,
+
+5
+
+00:00:13,200  -->  00:00:15,840
+even when unexpected issues arise.
+
+6
+
+00:00:15,840  -->  00:00:19,160
+Each category of exception has its own role.
+
+7
+
+00:00:19,160  -->  00:00:21,020
+Much like the specific protocols
+
+8
+
+00:00:21,020  -->  00:00:24,210
+a park manager would have in place for different incidents.
+
+9
+
+00:00:24,210  -->  00:00:28,040
+Understanding and utilizing this exception hierarchy,
+
+10
+
+00:00:28,040  -->  00:00:31,360
+you write more and more Python code.
+
+11
+
+00:00:31,360  -->  00:00:37,600
+You gain the ability to respond to a wide range of potential issues in your programs.
+
+12
+
+00:00:37,600  -->  00:00:40,100
+From handling user interruptions with keyboard
+
+13
+
+00:00:40,100  -->  00:00:43,700
+interrupt to managing unexpected data types with type error.
+
+14
+
+00:00:43,700  -->  00:00:48,600
+Each exception type helps you diagnose specific issues systematically,
+
+15
+
+00:00:48,600  -->  00:00:52,235
+making your code more stable and reliable.
+
+16
+
+00:00:52,235  -->  00:00:56,290
+With this knowledge, you're now equipped to gracefully handle errors and
+
+17
+
+00:00:56,290  -->  00:01:00,610
+create Python code that can stand up to real world scenarios,
+
+18
+
+00:01:00,610  -->  00:01:02,750
+keeping everything running smoothly.
+
+19
+
+00:01:02,750  -->  00:01:07,010
+Great job and keep it going into this next section.

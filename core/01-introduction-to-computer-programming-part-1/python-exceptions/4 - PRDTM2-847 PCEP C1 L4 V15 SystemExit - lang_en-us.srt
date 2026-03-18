@@ -1,0 +1,44 @@
+1
+
+00:00:00,000  -->  00:00:02,680
+System exit is an exception that Python
+
+2
+
+00:00:02,680  -->  00:00:06,000
+raises when we want to stop the interpreter gracefully.
+
+3
+
+00:00:06,000  -->  00:00:08,880
+Imagine you're closing the park at the end of the day.
+
+4
+
+00:00:08,880  -->  00:00:10,620
+You're not dealing with a problem,
+
+5
+
+00:00:10,620  -->  00:00:13,200
+just signaling that it's time to wrap things up.
+
+6
+
+00:00:13,200  -->  00:00:18,500
+We don't often handle system exit because it's typically meant to be left alone,
+
+7
+
+00:00:18,500  -->  00:00:21,060
+allowing Python to close smoothly.
+
+8
+
+00:00:21,060  -->  00:00:24,050
+This will be a bit easier to see in an example.
+
+9
+
+00:00:24,050  -->  00:00:26,250
+Let's dive into a demo.

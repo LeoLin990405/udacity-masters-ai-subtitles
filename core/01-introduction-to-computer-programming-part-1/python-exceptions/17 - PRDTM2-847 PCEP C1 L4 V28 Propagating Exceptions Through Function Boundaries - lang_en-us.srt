@@ -1,0 +1,139 @@
+1
+
+00:00:00,000  -->  00:00:04,340
+Sometimes an error in one part of your code affects other parts,
+
+2
+
+00:00:04,340  -->  00:00:06,220
+much like a malfunctioning ride at
+
+3
+
+00:00:06,220  -->  00:00:09,340
+the theme park impacting other areas of the park as well.
+
+4
+
+00:00:09,340  -->  00:00:11,660
+Components can often be interconnected,
+
+5
+
+00:00:11,660  -->  00:00:16,200
+and the effect from one is felt in one or more places elsewhere.
+
+6
+
+00:00:16,200  -->  00:00:19,880
+Python allows exceptions to be passed or propagated to
+
+7
+
+00:00:19,880  -->  00:00:24,160
+higher levels in the code where they can be handled more broadly.
+
+8
+
+00:00:24,160  -->  00:00:28,320
+This way, an error in a specific function can bubble up and be
+
+9
+
+00:00:28,320  -->  00:00:32,780
+managed by a function at a higher level. That's a lot.
+
+10
+
+00:00:32,780  -->  00:00:36,955
+What exactly does that mean when we're writing Python code?
+
+11
+
+00:00:36,955  -->  00:00:39,530
+Imagine we have a ticket purchasing function
+
+12
+
+00:00:39,530  -->  00:00:42,730
+that relies on another function to verify funds.
+
+13
+
+00:00:42,730  -->  00:00:46,510
+If an exception occurs in the funds checking function,
+
+14
+
+00:00:46,510  -->  00:00:49,950
+it can propagate up to the ticket purchasing function.
+
+15
+
+00:00:49,950  -->  00:00:53,210
+This can be a helpful way to make interrelated functions,
+
+16
+
+00:00:53,210  -->  00:00:56,450
+while also making sure that if any errors occur,
+
+17
+
+00:00:56,450  -->  00:00:58,495
+they can still be found.
+
+18
+
+00:00:58,495  -->  00:01:02,260
+Also, since we are decompartmentalizing our code,
+
+19
+
+00:01:02,260  -->  00:01:06,300
+instead of making a monolith function with everything in it,
+
+20
+
+00:01:06,300  -->  00:01:09,000
+we can make individual functions and
+
+21
+
+00:01:09,000  -->  00:01:12,500
+handle them separately rather than all in the same place.
+
+22
+
+00:01:12,500  -->  00:01:18,105
+If we run this function such as passing a -10 into purchase ticket -10,
+
+23
+
+00:01:18,105  -->  00:01:20,640
+this will return ticket purchase failed.
+
+24
+
+00:01:20,640  -->  00:01:22,260
+Funds cannot be negative.
+
+25
+
+00:01:22,260  -->  00:01:24,360
+The value error raised in
+
+26
+
+00:01:24,360  -->  00:01:29,600
+the check funds function propagates up to purchase ticket where we handle it.
+
+27
+
+00:01:29,600  -->  00:01:33,480
+This flow ensures that the ticket purchasing process is robust,
+
+28
+
+00:01:33,480  -->  00:01:38,080
+catching any underlying issues and handling them appropriately.

@@ -1,0 +1,419 @@
+1
+
+00:00:00,000  -->  00:00:03,390
+One of the last exceptions to cover is the typeError.
+
+2
+
+00:00:03,390  -->  00:00:05,140
+Suppose you're at the ticket counter,
+
+3
+
+00:00:05,140  -->  00:00:08,580
+and someone tries to pay with a photo instead of money.
+
+4
+
+00:00:08,580  -->  00:00:11,420
+Python raises a typeError when an operation
+
+5
+
+00:00:11,420  -->  00:00:14,360
+is applied to an object of an inappropriate type,
+
+6
+
+00:00:14,360  -->  00:00:15,855
+which is Python's way of saying,
+
+7
+
+00:00:15,855  -->  00:00:17,595
+hey, we can't do that.
+
+8
+
+00:00:17,595  -->  00:00:23,690
+Let's see how typeErrors can help us with ensuring tickets are purchased correctly.
+
+9
+
+00:00:23,690  -->  00:00:26,970
+Now, let's talk about typeError.
+
+10
+
+00:00:26,970  -->  00:00:29,740
+Our example of ticket purchasing,
+
+11
+
+00:00:29,740  -->  00:00:34,445
+we'll define the ticket price as 50 for $50.
+
+12
+
+00:00:34,445  -->  00:00:36,840
+Then there will be two cases to check.
+
+13
+
+00:00:36,840  -->  00:00:39,800
+The first is if the payment amount provided by
+
+14
+
+00:00:39,800  -->  00:00:43,625
+the user is only an integer or a floating point number.
+
+15
+
+00:00:43,625  -->  00:00:51,225
+Two, if the payment amount equals 50 or $50, specifically 50.00.
+
+16
+
+00:00:51,225  -->  00:00:53,940
+If both of these are true,
+
+17
+
+00:00:53,940  -->  00:00:58,570
+then it returns a key error or a message of invalid amount.
+
+18
+
+00:00:58,570  -->  00:01:01,220
+Let's build a function to do just that.
+
+19
+
+00:01:01,220  -->  00:01:06,200
+We'll define the ticket price as $50 equals 50,
+
+20
+
+00:01:06,200  -->  00:01:09,395
+and then we'll create a function called calculate ticket price.
+
+21
+
+00:01:09,395  -->  00:01:13,110
+I'll say def calculate_ticket_price.
+
+22
+
+00:01:13,110  -->  00:01:16,415
+We'll pass in a parameter of payment amount.
+
+23
+
+00:01:16,415  -->  00:01:19,275
+Then in our try case, we'll say,
+
+24
+
+00:01:19,275  -->  00:01:24,310
+if not isinstance of payment amount,
+
+25
+
+00:01:24,310  -->  00:01:28,820
+and in parentheses, we'll say int, float.
+
+26
+
+00:01:28,820  -->  00:01:31,905
+We'll close that out, and then we'll close out isinstance.
+
+27
+
+00:01:31,905  -->  00:01:33,465
+We'll do colon,
+
+28
+
+00:01:33,465  -->  00:01:36,510
+and then we'll say raise typeError.
+
+29
+
+00:01:36,510  -->  00:01:40,230
+We'll say payment must be a number.
+
+30
+
+00:01:40,230  -->  00:01:41,970
+We'll have another if statement,
+
+31
+
+00:01:41,970  -->  00:01:47,985
+and we'll say if payment_amount == the ticket_price.
+
+32
+
+00:01:47,985  -->  00:01:50,150
+That's an equal equals.
+
+33
+
+00:01:50,150  -->  00:01:53,610
+Then we'll say print, we'll say purchase,
+
+34
+
+00:01:53,610  -->  00:01:55,510
+meaning that the purchase went through,
+
+35
+
+00:01:55,510  -->  00:01:58,680
+then we'll have else print,
+
+36
+
+00:01:58,680  -->  00:02:01,860
+we'll say invalid amount.
+
+37
+
+00:02:01,860  -->  00:02:04,205
+Now, the same level as try,
+
+38
+
+00:02:04,205  -->  00:02:07,010
+we'll have our except case,
+
+39
+
+00:02:07,010  -->  00:02:12,705
+we'll say except typeError as E. We'll say print.
+
+40
+
+00:02:12,705  -->  00:02:15,330
+Then this is where we printed f string,
+
+41
+
+00:02:15,330  -->  00:02:18,450
+and we'll say typeError occurred,
+
+42
+
+00:02:18,450  -->  00:02:22,670
+we'll pass in our E with squiggly brackets,
+
+43
+
+00:02:22,670  -->  00:02:23,930
+close out our f string,
+
+44
+
+00:02:23,930  -->  00:02:25,450
+close out our print statement,
+
+45
+
+00:02:25,450  -->  00:02:29,620
+and now we can start testing this function.
+
+46
+
+00:02:29,620  -->  00:02:36,030
+We can save this function to our Jupyter notebook cell. Pass that there.
+
+47
+
+00:02:36,030  -->  00:02:40,580
+Then now, if a customer tried to pass in photo as a payment method,
+
+48
+
+00:02:40,580  -->  00:02:43,215
+let's see what would happen if we tried to do this.
+
+49
+
+00:02:43,215  -->  00:02:45,420
+If we try to run this function,
+
+50
+
+00:02:45,420  -->  00:02:47,940
+and we pass in the payment amount as photo,
+
+51
+
+00:02:47,940  -->  00:02:51,655
+a string, what do you think the output will be for us?
+
+52
+
+00:02:51,655  -->  00:02:53,515
+Let's go ahead and try it and see.
+
+53
+
+00:02:53,515  -->  00:02:55,015
+We'll get a typeError,
+
+54
+
+00:02:55,015  -->  00:02:56,540
+and we'll say typeError occurred,
+
+55
+
+00:02:56,540  -->  00:02:58,100
+payment must be a number,
+
+56
+
+00:02:58,100  -->  00:03:01,020
+which makes sense because we're defining it as an integer or
+
+57
+
+00:03:01,020  -->  00:03:05,545
+a float as it must be an instance of one of these two data types.
+
+58
+
+00:03:05,545  -->  00:03:12,080
+That's again, because we need the number to be able to calculate this numerically,
+
+59
+
+00:03:12,080  -->  00:03:14,365
+and we can't work with strings.
+
+60
+
+00:03:14,365  -->  00:03:18,960
+Now, if we were to update this and pass in 10 like this,
+
+61
+
+00:03:18,960  -->  00:03:21,450
+what do you think the output of this is going to be?
+
+62
+
+00:03:21,450  -->  00:03:26,460
+Well, 10 is not equal to 50 or 50.00.
+
+63
+
+00:03:26,460  -->  00:03:29,610
+This will return an invalid amount.
+
+64
+
+00:03:29,610  -->  00:03:32,890
+If you said invalid amount, great job.
+
+65
+
+00:03:32,890  -->  00:03:37,330
+Now, if we pass in 50 right here,
+
+66
+
+00:03:37,330  -->  00:03:42,570
+what do you think the output of this is going to be when we run this cell?
+
+67
+
+00:03:42,570  -->  00:03:44,205
+Well, let's run it and see.
+
+68
+
+00:03:44,205  -->  00:03:46,330
+If you said purchased, you're right,
+
+69
+
+00:03:46,330  -->  00:03:51,590
+because 50 is exactly the ticket price that we defined up here.
+
+70
+
+00:03:51,590  -->  00:03:55,605
+Same thing if we were to pass 50.00.
+
+71
+
+00:03:55,605  -->  00:04:00,840
+If we do this, this also will work because 50 and
+
+72
+
+00:04:00,840  -->  00:04:07,720
+50.00 is covered by integer and float as the instance type for the data structure.
+
+73
+
+00:04:07,720  -->  00:04:13,040
+Overall, when we are using the isinstance built-in Python function,
+
+74
+
+00:04:13,040  -->  00:04:16,940
+we are type checking whether the payment amount is a number,
+
+75
+
+00:04:16,940  -->  00:04:19,320
+which we see up here.
+
+76
+
+00:04:19,320  -->  00:04:25,505
+If it's not, like if someone enters a string like photo, which we saw here,
+
+77
+
+00:04:25,505  -->  00:04:29,040
+it raises a typeError with a custom message that we
+
+78
+
+00:04:29,040  -->  00:04:34,640
+defined to ensure only integers or floating point numbers are entered in.
+
+79
+
+00:04:34,640  -->  00:04:40,420
+Then we added some extra logic where if the payment amount passes our type check,
+
+80
+
+00:04:40,420  -->  00:04:44,780
+the function then checks if it matches the ticket price right there.
+
+81
+
+00:04:44,780  -->  00:04:47,520
+If it does, it prints purchased.
+
+82
+
+00:04:47,520  -->  00:04:50,735
+If it doesn't match, it prints invalid amount.
+
+83
+
+00:04:50,735  -->  00:04:54,400
+This way, your functions can handle various types of
+
+84
+
+00:04:54,400  -->  00:04:59,300
+incorrect inputs and respond appropriately. Great work.

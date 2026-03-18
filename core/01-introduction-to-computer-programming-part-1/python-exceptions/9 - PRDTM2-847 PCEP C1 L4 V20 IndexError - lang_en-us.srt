@@ -1,0 +1,259 @@
+1
+
+00:00:00,000  -->  00:00:05,900
+Index error is one of the types of look up errors in the Python exception hierarchy.
+
+2
+
+00:00:05,900  -->  00:00:07,860
+To understand the index error,
+
+3
+
+00:00:07,860  -->  00:00:11,040
+let's say you're looking for a specific rides maintenance record,
+
+4
+
+00:00:11,040  -->  00:00:15,820
+but you mistakenly check for the record at a non existent position in the database.
+
+5
+
+00:00:15,820  -->  00:00:19,440
+An index error is raised when you try to access
+
+6
+
+00:00:19,440  -->  00:00:23,600
+an index that doesn't exist in a list or other ordered collection.
+
+7
+
+00:00:23,600  -->  00:00:26,100
+What does this look like in practice?
+
+8
+
+00:00:26,100  -->  00:00:30,620
+Let's say an example. Let's talk about index error.
+
+9
+
+00:00:30,620  -->  00:00:34,120
+To use our maintenance record check example,
+
+10
+
+00:00:34,120  -->  00:00:37,600
+let's see we have maintenance records for three rides, A,
+
+11
+
+00:00:37,600  -->  00:00:41,840
+B and C, defined in our maintenance records list.
+
+12
+
+00:00:41,840  -->  00:00:45,720
+If we wanted to check the record for the ride at Index five,
+
+13
+
+00:00:45,720  -->  00:00:51,125
+like we do when we write check ride maintenance record check record equals five,
+
+14
+
+00:00:51,125  -->  00:00:53,530
+this will fail and cause an error.
+
+15
+
+00:00:53,530  -->  00:00:56,010
+Let's see exactly what I mean.
+
+16
+
+00:00:56,010  -->  00:00:59,290
+When we create a list like this,
+
+17
+
+00:00:59,290  -->  00:01:01,610
+and we'll say maintenance records equals,
+
+18
+
+00:01:01,610  -->  00:01:03,730
+and then a list with square brackets,
+
+19
+
+00:01:03,730  -->  00:01:06,030
+ride A, ride B, and write C,
+
+20
+
+00:01:06,030  -->  00:01:09,070
+we'll then write a function that says,
+
+21
+
+00:01:09,070  -->  00:01:12,905
+check, ride, maintenance record.
+
+22
+
+00:01:12,905  -->  00:01:16,870
+We'll then pass in a check record parameter here.
+
+23
+
+00:01:16,870  -->  00:01:22,760
+And then we'll try and we'll say print maintenance records.
+
+24
+
+00:01:22,760  -->  00:01:26,620
+Here. Copying this up here.
+
+25
+
+00:01:26,620  -->  00:01:30,390
+Then we'll check the check record,
+
+26
+
+00:01:30,390  -->  00:01:35,130
+and we'll use that as the index to check against that list.
+
+27
+
+00:01:35,130  -->  00:01:40,170
+Otherwise, we'll say accept index error as E. We'll
+
+28
+
+00:01:40,170  -->  00:01:45,570
+then print in F string and we'll say index ever occurred.
+
+29
+
+00:01:45,570  -->  00:01:49,610
+We'll then use curly brackets.
+
+30
+
+00:01:49,610  -->  00:01:52,450
+We'll close that out, we'll close out our print statement,
+
+31
+
+00:01:52,450  -->  00:01:55,980
+and we'll then run this function.
+
+32
+
+00:01:55,980  -->  00:01:59,450
+Specifically, we can pass in an argument here,
+
+33
+
+00:01:59,450  -->  00:02:02,850
+and we'll say check record equals five.
+
+34
+
+00:02:02,850  -->  00:02:05,675
+We want to check at index five.
+
+35
+
+00:02:05,675  -->  00:02:10,480
+Now, what do you think the output will be when we execute this code?
+
+36
+
+00:02:10,480  -->  00:02:12,400
+Let's find out we'll run it,
+
+37
+
+00:02:12,400  -->  00:02:17,400
+and we'll see index error code list index out of range.
+
+38
+
+00:02:17,400  -->  00:02:23,580
+In this case, we're trying to access an invalid index which raises an index error,
+
+39
+
+00:02:23,580  -->  00:02:28,380
+similar to someone looking up a ride record that doesn't exist in the database.
+
+40
+
+00:02:28,380  -->  00:02:32,240
+However, if we wanted to check the record at index zero,
+
+41
+
+00:02:32,240  -->  00:02:36,140
+remember, this is the first item in the list, we could do this.
+
+42
+
+00:02:36,140  -->  00:02:38,280
+We could copy this,
+
+43
+
+00:02:38,280  -->  00:02:41,460
+and we could write Check record of zero.
+
+44
+
+00:02:41,460  -->  00:02:44,080
+What do you think the output of this will be?
+
+45
+
+00:02:44,080  -->  00:02:46,040
+When we run this cell,
+
+46
+
+00:02:46,040  -->  00:02:47,940
+we now see Ride A,
+
+47
+
+00:02:47,940  -->  00:02:50,940
+and that's printed out because there are three rides,
+
+48
+
+00:02:50,940  -->  00:02:55,770
+and zero is in the scope of Index 022,
+
+49
+
+00:02:55,770  -->  00:02:57,525
+which is Index 0,
+
+50
+
+00:02:57,525  -->  00:02:59,475
+Index 1, and Index 2.
+
+51
+
+00:02:59,475  -->  00:03:01,165
+We're looking for Index 0,
+
+52
+
+00:03:01,165  -->  00:03:05,380
+which is the first item, and that's why we see A right there.

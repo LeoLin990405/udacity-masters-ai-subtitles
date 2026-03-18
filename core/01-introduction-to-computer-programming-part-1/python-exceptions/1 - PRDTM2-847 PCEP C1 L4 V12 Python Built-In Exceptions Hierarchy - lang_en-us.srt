@@ -1,0 +1,154 @@
+1
+
+00:00:00,000  -->  00:00:06,665
+Welcome to this next section on the PCP course on Python's built-in exceptions hierarchy.
+
+2
+
+00:00:06,665  -->  00:00:09,780
+This is quite an important section of the course,
+
+3
+
+00:00:09,780  -->  00:00:13,120
+because we'll be talking about how to write our functions in a way
+
+4
+
+00:00:13,120  -->  00:00:16,980
+where if an error pops up or if something unexpected happens,
+
+5
+
+00:00:16,980  -->  00:00:19,420
+we'll have a way to gracefully handle
+
+6
+
+00:00:19,420  -->  00:00:23,550
+those circumstances dynamically and automatically within our code.
+
+7
+
+00:00:23,550  -->  00:00:28,630
+To get started, let's imagine you're the manager of a theme park overseeing rides,
+
+8
+
+00:00:28,630  -->  00:00:32,550
+ticketing, food stalls, staff, and guest services.
+
+9
+
+00:00:32,550  -->  00:00:35,370
+Everything runs smoothly until a problem occurs.
+
+10
+
+00:00:35,370  -->  00:00:38,010
+Maybe a ride malfunctions, a ticketing,
+
+11
+
+00:00:38,010  -->  00:00:39,580
+error causes a mix-up,
+
+12
+
+00:00:39,580  -->  00:00:42,610
+or concession stands run out of different supplies or food.
+
+13
+
+00:00:42,610  -->  00:00:48,530
+Each of these incidents requires a specific response and plan to handle the situation.
+
+14
+
+00:00:48,530  -->  00:00:54,870
+Similarly, in Python, exceptions help us handle unexpected events in a controlled way.
+
+15
+
+00:00:54,870  -->  00:01:00,380
+They're like predefined responses to issues that arise while your code is running.
+
+16
+
+00:01:00,380  -->  00:01:04,870
+This becomes incredibly important for our functions because just like a theme park,
+
+17
+
+00:01:04,870  -->  00:01:08,650
+if you have a ride that requires an inspection several times a day,
+
+18
+
+00:01:08,650  -->  00:01:11,430
+you would ideally need to know that the ride is
+
+19
+
+00:01:11,430  -->  00:01:14,570
+clear to run before accepting people onto that ride.
+
+20
+
+00:01:14,570  -->  00:01:16,110
+An exception, in this case,
+
+21
+
+00:01:16,110  -->  00:01:19,080
+would tell us that the ride is not ready to run because
+
+22
+
+00:01:19,080  -->  00:01:23,430
+dot dot dot to let us know that we need to fix something,
+
+23
+
+00:01:23,430  -->  00:01:27,090
+You might think of errors as bad things, but they are, in fact,
+
+24
+
+00:01:27,090  -->  00:01:33,650
+very helpful in guiding us away from errors that could occur from various edge cases.
+
+25
+
+00:01:33,650  -->  00:01:38,110
+In summary, don't forget the hierarchy of Python's built in exceptions,
+
+26
+
+00:01:38,110  -->  00:01:42,910
+which serve as the foundation for error handling as we are coding.
+
+27
+
+00:01:42,910  -->  00:01:46,015
+Just as a theme park manager categorizes incidents,
+
+28
+
+00:01:46,015  -->  00:01:48,130
+write issues, ticketing problems,
+
+29
+
+00:01:48,130  -->  00:01:49,770
+missing inventory, and so on.
+
+30
+
+00:01:49,770  -->  00:01:52,490
+Python too categorizes exceptions into
+
+31
+
+00:01:52,490  -->  00:01:57,350
+a hierarchy to help developers manage errors effectively.

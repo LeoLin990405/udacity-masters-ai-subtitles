@@ -1,0 +1,29 @@
+1
+
+00:00:00,000  -->  00:00:04,780
+Arithmetic error serves as a base for errors related to mathematical operations,
+
+2
+
+00:00:04,780  -->  00:00:09,200
+similar to how a theme park handling issues around tickets and pricing.
+
+3
+
+00:00:09,200  -->  00:00:13,460
+Specific errors under arithmetic error include zero division error,
+
+4
+
+00:00:13,460  -->  00:00:15,515
+where we cannot divide by zero,
+
+5
+
+00:00:15,515  -->  00:00:18,080
+overflow error, and floating point error.
+
+6
+
+00:00:18,080  -->  00:00:21,920
+Let's take a closer look at each of these errors together.

@@ -1,0 +1,249 @@
+1
+
+00:00:00,000  -->  00:00:04,300
+The cornerstone of exception handling in Python is the try-except block.
+
+2
+
+00:00:04,300  -->  00:00:08,440
+Pictured as a safety net under a high wire act at the theme park.
+
+3
+
+00:00:08,440  -->  00:00:13,800
+We wrap the potentially risky code like a daring stunt in a try block.
+
+4
+
+00:00:13,800  -->  00:00:16,660
+Then use an except block to catch
+
+5
+
+00:00:16,660  -->  00:00:20,360
+any exceptions that might occur and handle them gracefully,
+
+6
+
+00:00:20,360  -->  00:00:23,180
+just like catching a performer who misses a step.
+
+7
+
+00:00:23,180  -->  00:00:25,985
+Let's see this in action with a simple example.
+
+8
+
+00:00:25,985  -->  00:00:28,900
+Let's talk about try and except.
+
+9
+
+00:00:28,900  -->  00:00:31,615
+To see an example of try and except,
+
+10
+
+00:00:31,615  -->  00:00:35,050
+let's make a function that would serve somewhat a snack.
+
+11
+
+00:00:35,050  -->  00:00:37,710
+But in our function, it only serves popcorn
+
+12
+
+00:00:37,710  -->  00:00:40,925
+since this is a function for the popcorn food stand.
+
+13
+
+00:00:40,925  -->  00:00:46,475
+We'll define the function as serve popcorn that passes in an argument of a snack.
+
+14
+
+00:00:46,475  -->  00:00:50,050
+The function will first try to run the code with the
+
+15
+
+00:00:50,050  -->  00:00:54,290
+if clause checking if the snack is not popcorn.
+
+16
+
+00:00:54,290  -->  00:00:57,030
+If it's not popcorn, we'll get a value error,
+
+17
+
+00:00:57,030  -->  00:01:01,450
+and this will trigger the except or exception case.
+
+18
+
+00:01:01,450  -->  00:01:05,035
+Otherwise, we'll get a response about serving the snack.
+
+19
+
+00:01:05,035  -->  00:01:06,690
+Let's do this right now.
+
+20
+
+00:01:06,690  -->  00:01:08,270
+We'll define our function,
+
+21
+
+00:01:08,270  -->  00:01:10,950
+so def serve popcorn,
+
+22
+
+00:01:10,950  -->  00:01:14,000
+and we'll pass in snack as our parameter.
+
+23
+
+00:01:14,000  -->  00:01:16,610
+Then we'll try, so it'll be the first thing that we do,
+
+24
+
+00:01:16,610  -->  00:01:21,010
+and we'll say if snack does not equal popcorn,
+
+25
+
+00:01:21,010  -->  00:01:23,610
+then we'll raise a value error,
+
+26
+
+00:01:23,610  -->  00:01:27,130
+and we'll say, we only serve popcorn.
+
+27
+
+00:01:27,130  -->  00:01:30,420
+Then we'll print our string,
+
+28
+
+00:01:30,420  -->  00:01:33,375
+and we'll say serving snack,
+
+29
+
+00:01:33,375  -->  00:01:35,380
+close out our s string,
+
+30
+
+00:01:35,380  -->  00:01:37,270
+and then we'll close out our print statement.
+
+31
+
+00:01:37,270  -->  00:01:40,390
+Otherwise, in the except case,
+
+32
+
+00:01:40,390  -->  00:01:41,910
+we'll send the value error,
+
+33
+
+00:01:41,910  -->  00:01:43,830
+and we'll say value r as E,
+
+34
+
+00:01:43,830  -->  00:01:47,670
+and we'll print an F string of an error,
+
+35
+
+00:01:47,670  -->  00:01:50,950
+and then we'll pass in that error with the squiggly brackets,
+
+36
+
+00:01:50,950  -->  00:01:53,420
+and we'll close out that print statement.
+
+37
+
+00:01:53,420  -->  00:01:58,770
+If we were to try and send in the snack of candy into our function such as this,
+
+38
+
+00:01:58,770  -->  00:02:04,910
+serve popcorn candy, can you guess what the output of this code is going to be?
+
+39
+
+00:02:04,910  -->  00:02:07,550
+When we run this code, we'll see error.
+
+40
+
+00:02:07,550  -->  00:02:09,290
+We only serve popcorn.
+
+41
+
+00:02:09,290  -->  00:02:14,750
+Here we are attempting to serve a snack that isn't on our menu at the popcorn stand,
+
+42
+
+00:02:14,750  -->  00:02:17,535
+so the value error is raised.
+
+43
+
+00:02:17,535  -->  00:02:20,360
+The try-except block catches it and
+
+44
+
+00:02:20,360  -->  00:02:24,620
+prints a custom message instead of letting the program crash.
+
+45
+
+00:02:24,620  -->  00:02:29,920
+However, if we attempted to serve the snack popcorn that is on the menu,
+
+46
+
+00:02:29,920  -->  00:02:31,520
+and we did something like this.
+
+47
+
+00:02:31,520  -->  00:02:34,120
+Can you guess what we'll see when we run this?
+
+48
+
+00:02:34,120  -->  00:02:36,680
+We'll see serving popcorn.
+
+49
+
+00:02:36,680  -->  00:02:39,940
+The try-except allows us to handle errors
+
+50
+
+00:02:39,940  -->  00:02:45,620
+gracefully and keep the park running smoothly. Great work.

@@ -1,0 +1,254 @@
+1
+
+00:00:00,000  -->  00:00:03,020
+Let's talk about base exception.
+
+2
+
+00:00:03,020  -->  00:00:05,640
+A great way to show this type of exception in
+
+3
+
+00:00:05,640  -->  00:00:09,120
+action is with writing a function that handles division.
+
+4
+
+00:00:09,120  -->  00:00:13,940
+In our function, we'll use the built in input function from Python to
+
+5
+
+00:00:13,940  -->  00:00:16,020
+allow a user to enter something that will be
+
+6
+
+00:00:16,020  -->  00:00:19,020
+used as an input value to run the function with.
+
+7
+
+00:00:19,020  -->  00:00:22,360
+We'll first define a function called division function.
+
+8
+
+00:00:22,360  -->  00:00:27,370
+We'll say def division_function,
+
+9
+
+00:00:27,370  -->  00:00:29,900
+and then we will try,
+
+10
+
+00:00:29,900  -->  00:00:32,080
+we'll put value equals,
+
+11
+
+00:00:32,080  -->  00:00:35,300
+and we'll use the end function to turn into an integer,
+
+12
+
+00:00:35,300  -->  00:00:37,980
+and we'll say input, then in parentheses,
+
+13
+
+00:00:37,980  -->  00:00:40,595
+and we'll say enter a number,
+
+14
+
+00:00:40,595  -->  00:00:42,255
+put a space, end quote,
+
+15
+
+00:00:42,255  -->  00:00:45,790
+and then we have those two parentheses to close everything out,
+
+16
+
+00:00:45,790  -->  00:00:50,120
+and then we'll say result equals 10 divided by value.
+
+17
+
+00:00:50,120  -->  00:00:52,960
+We'll say print, and then we'll write an F string,
+
+18
+
+00:00:52,960  -->  00:00:58,190
+and we'll say the result is and squiggly brackets result.
+
+19
+
+00:00:58,190  -->  00:01:00,740
+We'll do end quote to close out the F string,
+
+20
+
+00:01:00,740  -->  00:01:03,600
+and then we have that end parentheses to close out the print statement.
+
+21
+
+00:01:03,600  -->  00:01:07,280
+Then we'll have an accept statement that we'll say accept
+
+22
+
+00:01:07,280  -->  00:01:11,900
+base exception as E. And then we'll say print,
+
+23
+
+00:01:11,900  -->  00:01:15,740
+we'll have another F string, and we'll say an error occurred.
+
+24
+
+00:01:15,740  -->  00:01:18,760
+Again, we'll put in squiggly brackets E for error.
+
+25
+
+00:01:18,760  -->  00:01:20,240
+We'll close out the quote,
+
+26
+
+00:01:20,240  -->  00:01:23,405
+and then we'll close out the print statement.
+
+27
+
+00:01:23,405  -->  00:01:28,300
+Now when we run our division function below,
+
+28
+
+00:01:28,300  -->  00:01:30,740
+let's see what will happen.
+
+29
+
+00:01:30,740  -->  00:01:33,160
+This will now run, an input field will
+
+30
+
+00:01:33,160  -->  00:01:35,640
+pop up and then we'll be prompted to enter a number.
+
+31
+
+00:01:35,640  -->  00:01:37,590
+Let's say that we put in 10,
+
+32
+
+00:01:37,590  -->  00:01:41,160
+we'll press enter, the output is 1.0,
+
+33
+
+00:01:41,160  -->  00:01:47,795
+and that makes sense because 10 divided by the value which we put in as 10 is one,
+
+34
+
+00:01:47,795  -->  00:01:51,620
+so this is 1.0, which makes sense.
+
+35
+
+00:01:51,620  -->  00:01:53,470
+Now we know that it's working,
+
+36
+
+00:01:53,470  -->  00:01:58,780
+but what if we were to execute the cell and then we put in zero?
+
+37
+
+00:01:58,780  -->  00:02:01,300
+Can you guess what the output is going to be now?
+
+38
+
+00:02:01,300  -->  00:02:05,340
+We get an error, and it says an error occurred division by zero.
+
+39
+
+00:02:05,340  -->  00:02:09,220
+Also, what if we put in Hello World?
+
+40
+
+00:02:09,220  -->  00:02:12,580
+We'll press enter, and we'll say Hello World,
+
+41
+
+00:02:12,580  -->  00:02:14,105
+now we get an error occurred,
+
+42
+
+00:02:14,105  -->  00:02:18,245
+invalid literal four integer with base 10, Hello World.
+
+43
+
+00:02:18,245  -->  00:02:21,370
+This code will catch any error that might arise,
+
+44
+
+00:02:21,370  -->  00:02:24,260
+whether it's a division by zero which you just saw,
+
+45
+
+00:02:24,260  -->  00:02:27,490
+or an invalid input like a string right here,
+
+46
+
+00:02:27,490  -->  00:02:33,190
+when we should only enter a number or an unexpected interruption.
+
+47
+
+00:02:33,190  -->  00:02:35,790
+Here, we can see that the base exception covers
+
+48
+
+00:02:35,790  -->  00:02:39,305
+all possible exceptions in Python with this.
+
+49
+
+00:02:39,305  -->  00:02:41,360
+We use the variable E,
+
+50
+
+00:02:41,360  -->  00:02:46,920
+like so in the error message to let us know that first an error occurred and then to tell
+
+51
+
+00:02:46,920  -->  00:02:54,240
+us what exactly that error message was with E when we passed that into the error message.

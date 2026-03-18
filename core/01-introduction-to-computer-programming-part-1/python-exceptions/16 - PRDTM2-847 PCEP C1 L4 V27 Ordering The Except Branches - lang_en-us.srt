@@ -1,0 +1,319 @@
+1
+
+00:00:00,000  -->  00:00:01,840
+One important concept to note about
+
+2
+
+00:00:01,840  -->  00:00:05,260
+Python is that not all exceptions work in the same way,
+
+3
+
+00:00:05,260  -->  00:00:08,300
+and some might need to be handled in a specific order.
+
+4
+
+00:00:08,300  -->  00:00:12,700
+Think of this as prioritizing responses to various incidents at the theme park.
+
+5
+
+00:00:12,700  -->  00:00:14,440
+If a ride breaks down,
+
+6
+
+00:00:14,440  -->  00:00:17,700
+you would want to address that before a spilled drink
+
+7
+
+00:00:17,700  -->  00:00:22,600
+or running out of one of the 10 many flavors of soda.
+
+8
+
+00:00:22,600  -->  00:00:28,400
+Python, ordering our except branches correctly allows us to handle specific exceptions,
+
+9
+
+00:00:28,400  -->  00:00:31,020
+first, second, third, fourth,
+
+10
+
+00:00:31,020  -->  00:00:36,160
+and so on ensuring that the most critical issues are caught early,
+
+11
+
+00:00:36,160  -->  00:00:38,420
+Let's enhance our popcorn serving
+
+12
+
+00:00:38,420  -->  00:00:41,765
+function to handle multiple different types of exceptions.
+
+13
+
+00:00:41,765  -->  00:00:45,295
+Now let's talk about ordering the except branches.
+
+14
+
+00:00:45,295  -->  00:00:50,460
+To enhance our snack serving function that makes popcorn at the popcorn stand,
+
+15
+
+00:00:50,460  -->  00:00:53,660
+we can mix in a few different except clauses,
+
+16
+
+00:00:53,660  -->  00:00:57,860
+such as one for different types of errors we might expect to encounter.
+
+17
+
+00:00:57,860  -->  00:01:00,780
+So, how would we go about doing this?
+
+18
+
+00:01:00,780  -->  00:01:05,240
+Well, we can define our function with def serve snack,
+
+19
+
+00:01:05,240  -->  00:01:09,040
+and we can pass in a snack and also a quantity,
+
+20
+
+00:01:09,040  -->  00:01:11,580
+depending on what we might expect that we would need.
+
+21
+
+00:01:11,580  -->  00:01:15,920
+So, in our tri case, we will say,
+
+22
+
+00:01:15,920  -->  00:01:19,420
+if quantity is less than zero,
+
+23
+
+00:01:19,420  -->  00:01:25,540
+we're going to raise a value error and say quantity can't be negative.
+
+24
+
+00:01:25,540  -->  00:01:29,945
+We'll also say if snack is not equal to
+
+25
+
+00:01:29,945  -->  00:01:36,680
+popcorn will raise a type error and say unknown snack type.
+
+26
+
+00:01:36,680  -->  00:01:39,060
+Then we'll print an F string,
+
+27
+
+00:01:39,060  -->  00:01:44,240
+and we'll say serving, and we'll put quantity in squigly brackets.
+
+28
+
+00:01:44,240  -->  00:01:50,320
+And we'll say serving quantity portions of and then put snack in squigy braces,
+
+29
+
+00:01:50,320  -->  00:01:52,610
+close out our f string,
+
+30
+
+00:01:52,610  -->  00:01:54,310
+close out our print statement, and then we're going to say
+
+31
+
+00:01:54,310  -->  00:01:56,850
+serving quantity portions of snack.
+
+32
+
+00:01:56,850  -->  00:02:02,070
+Otherwise, we're going to have and except type error.
+
+33
+
+00:02:02,070  -->  00:02:04,390
+So in this except case,
+
+34
+
+00:02:04,390  -->  00:02:09,110
+we're going to say te for type error and then we're going to say print f string,
+
+35
+
+00:02:09,110  -->  00:02:14,320
+we're going to say type error then to put it in squiggly brackets,
+
+36
+
+00:02:14,320  -->  00:02:16,950
+te, close out the string,
+
+37
+
+00:02:16,950  -->  00:02:18,430
+close out the print statement.
+
+38
+
+00:02:18,430  -->  00:02:23,690
+And we're going to do another one of these except cases.
+
+39
+
+00:02:23,690  -->  00:02:27,150
+Where this is going to be a value error.
+
+40
+
+00:02:27,150  -->  00:02:29,350
+And we're going to say that's ve.
+
+41
+
+00:02:29,350  -->  00:02:32,870
+Pass that in, and then this will change to be value error.
+
+42
+
+00:02:32,870  -->  00:02:35,870
+So we have these different except branches after
+
+43
+
+00:02:35,870  -->  00:02:41,970
+our tri case branch to check for different errors that could come up.
+
+44
+
+00:02:41,970  -->  00:02:44,370
+Now, if we try to run this function by passing in
+
+45
+
+00:02:44,370  -->  00:02:48,930
+a non popcorn snack and a negative number,
+
+46
+
+00:02:48,930  -->  00:02:51,495
+what would that give us.
+
+47
+
+00:02:51,495  -->  00:02:53,500
+So if we try to do something like this,
+
+48
+
+00:02:53,500  -->  00:02:55,520
+where we say serve snack,
+
+49
+
+00:02:55,520  -->  00:02:58,520
+pass in Candy and pass in minus one,
+
+50
+
+00:02:58,520  -->  00:03:00,600
+what is the output of this going to be?
+
+51
+
+00:03:00,600  -->  00:03:04,570
+Well, first, let's save this function to our Jupiter notebook.
+
+52
+
+00:03:04,570  -->  00:03:05,880
+And then if we try to run this,
+
+53
+
+00:03:05,880  -->  00:03:08,240
+we're going to get a value error that says,
+
+54
+
+00:03:08,240  -->  00:03:10,100
+quantity can't be negative.
+
+55
+
+00:03:10,100  -->  00:03:14,100
+However, if we try to run this next one,
+
+56
+
+00:03:14,100  -->  00:03:16,280
+which is serve snack popcorn.
+
+57
+
+00:03:16,280  -->  00:03:19,080
+And four, all the conditions are valid.
+
+58
+
+00:03:19,080  -->  00:03:21,780
+So can you guess what we're going to see when we run this?
+
+59
+
+00:03:21,780  -->  00:03:25,165
+We'll see serving four portions of popcorn.
+
+60
+
+00:03:25,165  -->  00:03:27,900
+By ordering our except blocks accordingly,
+
+61
+
+00:03:27,900  -->  00:03:31,000
+we prioritize catching specific issues.
+
+62
+
+00:03:31,000  -->  00:03:35,920
+Here, we catch value error for a negative number or
+
+63
+
+00:03:35,920  -->  00:03:42,320
+a negative quantity of that snack and type error for an incorrect snack type,
+
+64
+
+00:03:42,320  -->  00:03:46,840
+ensuring that each issue gets appropriate responses.

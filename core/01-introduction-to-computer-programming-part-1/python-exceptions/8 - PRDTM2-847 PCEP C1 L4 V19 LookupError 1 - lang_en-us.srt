@@ -1,0 +1,299 @@
+1
+
+00:00:00,000  -->  00:00:03,400
+Next type of exception we'll look at is the look up error.
+
+2
+
+00:00:03,400  -->  00:00:06,640
+Imagine you're at the theme parks Lost and Found.
+
+3
+
+00:00:06,640  -->  00:00:10,620
+Someone comes up looking for a lost item, but it's not in the system.
+
+4
+
+00:00:10,620  -->  00:00:15,000
+This doesn't always mean that it's the system or your park's fault.
+
+5
+
+00:00:15,000  -->  00:00:18,900
+Perhaps someone believes they left their bag at your park,
+
+6
+
+00:00:18,900  -->  00:00:21,700
+but in reality, they never brought it to the park,
+
+7
+
+00:00:21,700  -->  00:00:24,540
+and it's in fact still in their car in the parking lot.
+
+8
+
+00:00:24,540  -->  00:00:27,520
+But if they request a search through your Lost and found,
+
+9
+
+00:00:27,520  -->  00:00:30,460
+it would make sense that the item would not be found.
+
+10
+
+00:00:30,460  -->  00:00:32,300
+Not only is it not in the system,
+
+11
+
+00:00:32,300  -->  00:00:34,940
+but it was never in the park to begin with.
+
+12
+
+00:00:34,940  -->  00:00:38,120
+Look up error acts as a general error
+
+13
+
+00:00:38,120  -->  00:00:41,160
+that Python raises when it can't find what it's looking for,
+
+14
+
+00:00:41,160  -->  00:00:44,800
+whether it's an item in a list or a key in a dictionary.
+
+15
+
+00:00:44,800  -->  00:00:50,760
+This look up error based class covers specific errors like index error and key error,
+
+16
+
+00:00:50,760  -->  00:00:52,305
+which we'll explore next.
+
+17
+
+00:00:52,305  -->  00:00:54,540
+Let's talk about look up error.
+
+18
+
+00:00:54,540  -->  00:00:56,700
+To see this in action,
+
+19
+
+00:00:56,700  -->  00:01:00,600
+let's continue with our Lost and Found example from earlier.
+
+20
+
+00:01:00,600  -->  00:01:03,025
+In our Lost and Found checker function,
+
+21
+
+00:01:03,025  -->  00:01:06,190
+globally define our lost and found dictionary,
+
+22
+
+00:01:06,190  -->  00:01:08,490
+where we have one pair of sunglasses,
+
+23
+
+00:01:08,490  -->  00:01:11,310
+two hats, and three water bottles.
+
+24
+
+00:01:11,310  -->  00:01:15,510
+If somebody were to come up to your Lost and Found asking for a bag,
+
+25
+
+00:01:15,510  -->  00:01:18,490
+this item in question of bag would be
+
+26
+
+00:01:18,490  -->  00:01:22,010
+an argument sent into our Check Lost and Found function.
+
+27
+
+00:01:22,010  -->  00:01:24,630
+So let's write some code to illustrate this.
+
+28
+
+00:01:24,630  -->  00:01:26,470
+We'll define our dictionary like this,
+
+29
+
+00:01:26,470  -->  00:01:28,610
+where we'll say Lost and Found equals,
+
+30
+
+00:01:28,610  -->  00:01:31,110
+and then in squiggly brackets,
+
+31
+
+00:01:31,110  -->  00:01:33,485
+we'll say sunglasses with one,
+
+32
+
+00:01:33,485  -->  00:01:36,740
+hat with two and water bottle with three,
+
+33
+
+00:01:36,740  -->  00:01:41,800
+indicating how many items there are of each of these categories of items.
+
+34
+
+00:01:41,800  -->  00:01:45,200
+Next, we'll define our check lost and found function,
+
+35
+
+00:01:45,200  -->  00:01:48,925
+or we'll say deaf, check, lost,
+
+36
+
+00:01:48,925  -->  00:01:53,050
+and found and then we'll say item in
+
+37
+
+00:01:53,050  -->  00:02:00,175
+question as a parameter to pass into our function then try,
+
+38
+
+00:02:00,175  -->  00:02:04,530
+and this will say print, lost and found.
+
+39
+
+00:02:04,530  -->  00:02:12,690
+Then we will look for the key of item in question for the index.
+
+40
+
+00:02:12,690  -->  00:02:19,090
+Then, otherwise, we're going to have a look up error as E,
+
+41
+
+00:02:19,090  -->  00:02:21,850
+and then we'll say print F string,
+
+42
+
+00:02:21,850  -->  00:02:26,205
+we'll say item, not found in lost and found.
+
+43
+
+00:02:26,205  -->  00:02:28,810
+We'll have a E to return that error,
+
+44
+
+00:02:28,810  -->  00:02:30,370
+we'll close out our string,
+
+45
+
+00:02:30,370  -->  00:02:34,790
+close out our print statement and then what we'll do is we'll copy this function,
+
+46
+
+00:02:34,790  -->  00:02:37,090
+and then as an argument,
+
+47
+
+00:02:37,090  -->  00:02:40,550
+we'll pass in bag because this is the item that we want to
+
+48
+
+00:02:40,550  -->  00:02:43,950
+check if this is in our check lost and found function,
+
+49
+
+00:02:43,950  -->  00:02:46,670
+which then checks our lost and found object,
+
+50
+
+00:02:46,670  -->  00:02:48,310
+which is our dictionary there.
+
+51
+
+00:02:48,310  -->  00:02:51,660
+If we run this function, What do you think we'll see?
+
+52
+
+00:02:51,660  -->  00:02:53,320
+When we run this function,
+
+53
+
+00:02:53,320  -->  00:02:58,160
+we will see item not found in lost and found bag.
+
+54
+
+00:02:58,160  -->  00:03:01,020
+This error is actually a key error,
+
+55
+
+00:03:01,020  -->  00:03:05,000
+which we will learn about in a moment as a type of look up error.
+
+56
+
+00:03:05,000  -->  00:03:08,180
+But most importantly, the look up error is fired off
+
+57
+
+00:03:08,180  -->  00:03:12,360
+because the item bag is not found in the dictionary, Lost and Found.
+
+58
+
+00:03:12,360  -->  00:03:15,440
+There's only sunglasses, hat, and water bottle.
+
+59
+
+00:03:15,440  -->  00:03:19,900
+Using look up in this way provides us with flexibility for handling
+
+60
+
+00:03:19,900  -->  00:03:26,580
+both key error and index error without needing separate except clauses for each.

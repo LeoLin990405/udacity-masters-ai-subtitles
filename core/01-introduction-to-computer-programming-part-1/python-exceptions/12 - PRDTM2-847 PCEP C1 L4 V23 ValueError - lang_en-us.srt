@@ -1,0 +1,299 @@
+1
+
+00:00:00,000  -->  00:00:02,040
+All right, you're doing great.
+
+2
+
+00:00:02,040  -->  00:00:05,815
+The last exception for us to look at here is the ValueError.
+
+3
+
+00:00:05,815  -->  00:00:08,280
+For this one, let's say a guest tries to
+
+4
+
+00:00:08,280  -->  00:00:11,500
+pay using coins that aren't recognized by the machine.
+
+5
+
+00:00:11,500  -->  00:00:14,580
+A ValueError is raised when a function receives
+
+6
+
+00:00:14,580  -->  00:00:18,200
+an argument of the right type but an inappropriate value.
+
+7
+
+00:00:18,200  -->  00:00:23,180
+Let's run through one more example to see where ValueError can help us.
+
+8
+
+00:00:23,180  -->  00:00:25,890
+Now, let's talk about ValueError.
+
+9
+
+00:00:25,890  -->  00:00:29,500
+With ValueErrors, we might get the right data type,
+
+10
+
+00:00:29,500  -->  00:00:33,440
+but the value could be wrong. What does that mean?
+
+11
+
+00:00:33,440  -->  00:00:36,000
+Well, let's continue with our example from earlier,
+
+12
+
+00:00:36,000  -->  00:00:39,540
+where we're trying to process a payment at your theme park.
+
+13
+
+00:00:39,540  -->  00:00:44,700
+It would make sense to use the int built in Python function to turn
+
+14
+
+00:00:44,700  -->  00:00:47,820
+a user's amount submitted into an integer to
+
+15
+
+00:00:47,820  -->  00:00:51,690
+process a ticket payment or a food stall payment.
+
+16
+
+00:00:51,690  -->  00:00:55,140
+But what if the actual payment itself doesn't have
+
+17
+
+00:00:55,140  -->  00:01:01,380
+that type checking is instance payment amount int float like we had earlier.
+
+18
+
+00:01:01,380  -->  00:01:05,020
+Just because we turn an input into an integer,
+
+19
+
+00:01:05,020  -->  00:01:07,500
+doesn't mean that it does, in fact,
+
+20
+
+00:01:07,500  -->  00:01:12,540
+become a real integer or floating point or whatever type we're trying to turn it into?
+
+21
+
+00:01:12,540  -->  00:01:14,880
+In our function process payment,
+
+22
+
+00:01:14,880  -->  00:01:20,020
+the user submits an amount submitted like this and we'll print the amount,
+
+23
+
+00:01:20,020  -->  00:01:21,925
+like what we're going to do right now.
+
+24
+
+00:01:21,925  -->  00:01:26,255
+We're going to say, def process_payment,
+
+25
+
+00:01:26,255  -->  00:01:29,690
+and we'll say amount_submitted,
+
+26
+
+00:01:29,690  -->  00:01:31,875
+then in our try case,
+
+27
+
+00:01:31,875  -->  00:01:36,645
+we'll say amount = int amount_submitted.
+
+28
+
+00:01:36,645  -->  00:01:39,230
+Then we'll print the amount.
+
+29
+
+00:01:39,230  -->  00:01:42,070
+Otherwise, we have our accept case,
+
+30
+
+00:01:42,070  -->  00:01:50,040
+and we'll say accept ValueError as e. Then we'll print an f string,
+
+31
+
+00:01:50,040  -->  00:01:55,365
+and we'll say ValueError occurred and pass in the e,
+
+32
+
+00:01:55,365  -->  00:01:56,690
+and the f string,
+
+33
+
+00:01:56,690  -->  00:01:58,470
+and then we'll close out the print statement.
+
+34
+
+00:01:58,470  -->  00:02:01,795
+Now, if a user submitted fifty,
+
+35
+
+00:02:01,795  -->  00:02:05,805
+all spelled out F-I-F-T-Y, well, yes,
+
+36
+
+00:02:05,805  -->  00:02:09,630
+that does spell out 50 the number,
+
+37
+
+00:02:09,630  -->  00:02:12,250
+but that doesn't get treated as a number in Python,
+
+38
+
+00:02:12,250  -->  00:02:14,500
+and we'll get a ValueError.
+
+39
+
+00:02:14,500  -->  00:02:17,040
+Let's see exactly what that means.
+
+40
+
+00:02:17,040  -->  00:02:19,530
+If we were to run something like this,
+
+41
+
+00:02:19,530  -->  00:02:24,510
+where we say process_payment amount_submitted fifty and fifty is a string,
+
+42
+
+00:02:24,510  -->  00:02:27,845
+and if we run this, we will get a ValueError.
+
+43
+
+00:02:27,845  -->  00:02:34,070
+It'll say ValueError occurred invalid literal for integer with base 10 fifty.
+
+44
+
+00:02:34,070  -->  00:02:38,370
+However, if we were to put in the actual number 50 like this,
+
+45
+
+00:02:38,370  -->  00:02:42,215
+we'll then see it print out the number 50.
+
+46
+
+00:02:42,215  -->  00:02:45,600
+Now, because we're using the int function,
+
+47
+
+00:02:45,600  -->  00:02:50,480
+if we were to pass in a floating point such as this,
+
+48
+
+00:02:50,480  -->  00:02:53,540
+what do you think the output of this would be?
+
+49
+
+00:02:53,540  -->  00:02:55,200
+Let's run it and find out.
+
+50
+
+00:02:55,200  -->  00:02:56,940
+If we execute the cell,
+
+51
+
+00:02:56,940  -->  00:02:59,355
+we'll see that it'll output 50.
+
+52
+
+00:02:59,355  -->  00:03:03,000
+This two will output 50 and not 50.00.
+
+53
+
+00:03:03,000  -->  00:03:07,620
+ValueErrors help us make sure what we submit into a function or
+
+54
+
+00:03:07,620  -->  00:03:12,020
+process in a function will be what we expect to recognize.
+
+55
+
+00:03:12,020  -->  00:03:16,430
+In this case, converting the string fifty, F-I-F-T-Y,
+
+56
+
+00:03:16,430  -->  00:03:19,095
+two integer causes a ValueError,
+
+57
+
+00:03:19,095  -->  00:03:23,350
+which is like feeding unrecognized coins into a vending machine.
+
+58
+
+00:03:23,350  -->  00:03:25,250
+The machine can accept coins,
+
+59
+
+00:03:25,250  -->  00:03:27,030
+but not these particular ones,
+
+60
+
+00:03:27,030  -->  00:03:33,390
+hence the error, and hence why we see ValueError specifically.

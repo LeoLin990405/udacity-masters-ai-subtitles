@@ -1,0 +1,59 @@
+1
+
+00:00:00,000  -->  00:00:02,860
+Continuing along Python's exception hierarchy.
+
+2
+
+00:00:02,860  -->  00:00:05,100
+There are abstract exceptions.
+
+3
+
+00:00:05,100  -->  00:00:07,860
+Think of them as foundational guidelines that help
+
+4
+
+00:00:07,860  -->  00:00:11,440
+create more specific types of exceptions we could encounter,
+
+5
+
+00:00:11,440  -->  00:00:15,160
+and those we should look out for in our Python code.
+
+6
+
+00:00:15,160  -->  00:00:18,700
+Abstract exceptions aren't typically raised on their own,
+
+7
+
+00:00:18,700  -->  00:00:24,000
+but rather they serve as a base framework for more detailed error classes.
+
+8
+
+00:00:24,000  -->  00:00:28,680
+Examples of abstract exceptions include arithmetic error,
+
+9
+
+00:00:28,680  -->  00:00:32,760
+which deals with numeric calculation errors and lookup error,
+
+10
+
+00:00:32,760  -->  00:00:35,005
+which deals with issues when accessing
+
+11
+
+00:00:35,005  -->  00:00:39,260
+non-existent entities like indices or dictionary keys.
+
+12
+
+00:00:39,260  -->  00:00:44,990
+Next, we'll explore index error and key error as they relate to lookup error.

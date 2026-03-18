@@ -1,0 +1,329 @@
+1
+
+00:00:00,000  -->  00:00:04,900
+Just as a theme park manager might delegate tasks to staff members throughout the park,
+
+2
+
+00:00:04,900  -->  00:00:10,340
+Python allows you to delegate error handling to the parts of the code best suited for it.
+
+3
+
+00:00:10,340  -->  00:00:16,080
+This is very useful when multiple functions in a program can encounter similar errors,
+
+4
+
+00:00:16,080  -->  00:00:19,260
+and we want a higher-level function to take care of them.
+
+5
+
+00:00:19,260  -->  00:00:26,355
+In a sense, we ask Python to escalate up to make an executive decision about what to do.
+
+6
+
+00:00:26,355  -->  00:00:30,910
+Let's talk about delegating responsibility for handling exceptions.
+
+7
+
+00:00:30,910  -->  00:00:35,910
+Imagine that each attraction at the park might break down.
+
+8
+
+00:00:35,910  -->  00:00:39,490
+But we want a central team to handle repairs.
+
+9
+
+00:00:39,490  -->  00:00:42,170
+We'll create a function to simulate this where
+
+10
+
+00:00:42,170  -->  00:00:46,850
+the attractions pass on the error to a repair team.
+
+11
+
+00:00:46,850  -->  00:00:49,370
+First, we'll write a function,
+
+12
+
+00:00:49,370  -->  00:00:52,995
+and we'll say def ride_operation.
+
+13
+
+00:00:52,995  -->  00:00:56,810
+We'll then pass in a ride as a parameter.
+
+14
+
+00:00:56,810  -->  00:00:58,630
+We'll say if ride,
+
+15
+
+00:00:58,630  -->  00:01:03,685
+not in roller coaster or ferris wheel,
+
+16
+
+00:01:03,685  -->  00:01:05,460
+this will be our list.
+
+17
+
+00:01:05,460  -->  00:01:08,560
+Then we will raise a value error,
+
+18
+
+00:01:08,560  -->  00:01:11,040
+and that will return an F string,
+
+19
+
+00:01:11,040  -->  00:01:19,820
+and it'll say ride the input into the function as an argument is not a valid ride.
+
+20
+
+00:01:19,820  -->  00:01:23,865
+Once it's checked against the list that we define there,
+
+21
+
+00:01:23,865  -->  00:01:26,560
+we'll then close out our value error,
+
+22
+
+00:01:26,560  -->  00:01:30,120
+and that rounds out our ride operation function.
+
+23
+
+00:01:30,120  -->  00:01:33,780
+Now what we'll do is we'll define a managed park function,
+
+24
+
+00:01:33,780  -->  00:01:36,215
+so we'll say def manage_park,
+
+25
+
+00:01:36,215  -->  00:01:38,960
+also passing in ride as a parameter.
+
+26
+
+00:01:38,960  -->  00:01:43,330
+We'll say try and we'll say ride_operation,
+
+27
+
+00:01:43,330  -->  00:01:47,280
+which is the same function that we have up here.
+
+28
+
+00:01:47,280  -->  00:01:49,780
+We pass in ride similarly,
+
+29
+
+00:01:49,780  -->  00:01:52,795
+and then we'll print an F statement.
+
+30
+
+00:01:52,795  -->  00:01:59,770
+F string, and we'll say the ride is running smoothly.
+
+31
+
+00:01:59,770  -->  00:02:01,515
+Close out our print statement.
+
+32
+
+00:02:01,515  -->  00:02:05,605
+Then we'll have an except case branch,
+
+33
+
+00:02:05,605  -->  00:02:08,675
+where we'll say ValueError as E,
+
+34
+
+00:02:08,675  -->  00:02:10,870
+and we'll say print F,
+
+35
+
+00:02:10,870  -->  00:02:13,230
+and we'll say maintenance team.
+
+36
+
+00:02:13,230  -->  00:02:17,500
+We have an issue ride,
+
+37
+
+00:02:17,500  -->  00:02:20,540
+and that's in squiggly brackets,
+
+38
+
+00:02:20,540  -->  00:02:22,380
+and then we'll pass in the error,
+
+39
+
+00:02:22,380  -->  00:02:24,875
+also in squiggly brackets.
+
+40
+
+00:02:24,875  -->  00:02:29,840
+We'll close the F string with the end quote.
+
+41
+
+00:02:29,840  -->  00:02:32,510
+Then we'll close out the print statement like that.
+
+42
+
+00:02:32,510  -->  00:02:35,960
+Now, if we were to run this,
+
+43
+
+00:02:35,960  -->  00:02:38,500
+where we say manage_park water slide,
+
+44
+
+00:02:38,500  -->  00:02:42,435
+notice how we're going to invoke this function.
+
+45
+
+00:02:42,435  -->  00:02:44,440
+Once we pass and ride,
+
+46
+
+00:02:44,440  -->  00:02:48,310
+this is the argument here because we have a parameter here.
+
+47
+
+00:02:48,310  -->  00:02:53,600
+This is going to call the ride operation function, which is here.
+
+48
+
+00:02:53,600  -->  00:02:56,090
+Then that passes in that same input.
+
+49
+
+00:02:56,090  -->  00:03:03,100
+This is going to return information that we can then use in the manage park function.
+
+50
+
+00:03:03,100  -->  00:03:06,210
+If we were to pass this into manage park,
+
+51
+
+00:03:06,210  -->  00:03:08,850
+can you guess what the output of this is going to be?
+
+52
+
+00:03:08,850  -->  00:03:12,390
+When we run this, we're going to see maintenance team.
+
+53
+
+00:03:12,390  -->  00:03:14,690
+We have an issue with the water slide error.
+
+54
+
+00:03:14,690  -->  00:03:17,110
+Water slide is not a valid ride,
+
+55
+
+00:03:17,110  -->  00:03:20,430
+which makes sense because it's not in this list.
+
+56
+
+00:03:20,430  -->  00:03:24,050
+But since roller coaster and ferris wheel are both valid rides,
+
+57
+
+00:03:24,050  -->  00:03:26,410
+if we were to run something like this,
+
+58
+
+00:03:26,410  -->  00:03:29,610
+where we say manage ride roller coaster,
+
+59
+
+00:03:29,610  -->  00:03:32,970
+we will see the roller coaster is running smoothly.
+
+60
+
+00:03:32,970  -->  00:03:40,485
+Here, the ride operation function checks if the ride is valid in this list here.
+
+61
+
+00:03:40,485  -->  00:03:43,775
+If not, it raises a value error,
+
+62
+
+00:03:43,775  -->  00:03:49,070
+this exception is then caught by the manage park function in here,
+
+63
+
+00:03:49,070  -->  00:03:52,870
+which handles it by alerting the maintenance team because this will
+
+64
+
+00:03:52,870  -->  00:03:57,915
+cause the except ValueError as E branch to be invoked.
+
+65
+
+00:03:57,915  -->  00:04:02,670
+This method lets us centralize our error handling across our Python code,
+
+66
+
+00:04:02,670  -->  00:04:07,170
+making the code cleaner and more manageable. Great work.

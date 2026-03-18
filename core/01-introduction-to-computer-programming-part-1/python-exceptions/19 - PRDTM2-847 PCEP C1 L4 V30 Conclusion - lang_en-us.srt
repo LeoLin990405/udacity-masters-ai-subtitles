@@ -1,0 +1,179 @@
+1
+
+00:00:00,000  -->  00:00:03,025
+Fantastic job completing Lesson 4.
+
+2
+
+00:00:03,025  -->  00:00:06,480
+To me, this is one of the most exciting parts of the course,
+
+3
+
+00:00:06,480  -->  00:00:09,060
+because we got to dive into functions,
+
+4
+
+00:00:09,060  -->  00:00:11,640
+exceptions, and error handling.
+
+5
+
+00:00:11,640  -->  00:00:16,340
+These concepts are the true Powerhouse behind writing efficient,
+
+6
+
+00:00:16,340  -->  00:00:19,460
+reusable, and reliable Python code.
+
+7
+
+00:00:19,460  -->  00:00:21,360
+With these skills under your belt,
+
+8
+
+00:00:21,360  -->  00:00:25,640
+you're well on your way to building incredible Python applications,
+
+9
+
+00:00:25,640  -->  00:00:27,920
+scripts, and workloads that handle
+
+10
+
+00:00:27,920  -->  00:00:32,430
+complex logic and gracefully deal with unexpected errors.
+
+11
+
+00:00:32,430  -->  00:00:34,760
+As we wrap up this final module,
+
+12
+
+00:00:34,760  -->  00:00:40,260
+here are some key takeaways to help you prepare for your upcoming PCP exam.
+
+13
+
+00:00:40,260  -->  00:00:42,680
+First of all, practice regularly.
+
+14
+
+00:00:42,680  -->  00:00:46,220
+Functions and exceptions are at the heart of Python programming.
+
+15
+
+00:00:46,220  -->  00:00:48,580
+Make sure to practice writing user
+
+16
+
+00:00:48,580  -->  00:00:53,280
+defined functions and using tri accept blocks to handle errors.
+
+17
+
+00:00:53,280  -->  00:00:55,860
+Second, memorize key concepts.
+
+18
+
+00:00:55,860  -->  00:00:59,620
+Understand the syntax for defining and calling functions.
+
+19
+
+00:00:59,620  -->  00:01:04,270
+Get familiar with how generators work using the yield keyword,
+
+20
+
+00:01:04,270  -->  00:01:07,220
+and learn the difference between returning a value with
+
+21
+
+00:01:07,220  -->  00:01:11,000
+return and yielding results one at a time with yield.
+
+22
+
+00:01:11,000  -->  00:01:14,910
+Third, familiarize yourself with Python's built in exceptions.
+
+23
+
+00:01:14,910  -->  00:01:18,020
+Learn the hierarchy of exceptions starting from
+
+24
+
+00:01:18,020  -->  00:01:22,500
+base exception to more specific ones like type error and value error,
+
+25
+
+00:01:22,500  -->  00:01:25,100
+and practice using the tri accept block
+
+26
+
+00:01:25,100  -->  00:01:27,850
+to handle different types of exceptions in your code.
+
+27
+
+00:01:27,850  -->  00:01:29,900
+Lastly, stay organized.
+
+28
+
+00:01:29,900  -->  00:01:33,240
+Python's indentation and structure are crucial.
+
+29
+
+00:01:33,240  -->  00:01:38,020
+Pay attention to how your function and exception handling are organized to avoid errors.
+
+30
+
+00:01:38,020  -->  00:01:43,260
+Again, fantastic job completing this course and going through all of the modules.
+
+31
+
+00:01:43,260  -->  00:01:46,160
+With these tools, you are now ready to tackle
+
+32
+
+00:01:46,160  -->  00:01:50,320
+even more complex Python tasks and work to come.
+
+33
+
+00:01:50,320  -->  00:01:57,470
+I wish you the very best of luck on your PCP exam and future Python development ahead.
+
+34
+
+00:01:57,470  -->  00:02:00,900
+Be sure to give a shout on social media with how the exam goes
+
+35
+
+00:02:00,900  -->  00:02:04,640
+for you and feel free to share what you end up building in the days,
+
+36
+
+00:02:04,640  -->  00:02:06,940
+weeks and months ahead.

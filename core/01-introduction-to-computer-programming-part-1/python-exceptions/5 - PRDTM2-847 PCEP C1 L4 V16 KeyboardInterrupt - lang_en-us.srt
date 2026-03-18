@@ -1,0 +1,274 @@
+1
+
+00:00:00,000  -->  00:00:02,080
+Next up in our hierarchy of exceptions,
+
+2
+
+00:00:02,080  -->  00:00:03,800
+we have keyboard interrupt.
+
+3
+
+00:00:03,800  -->  00:00:08,380
+Picture yourself in the theme park and suddenly you hit an emergency stop button.
+
+4
+
+00:00:08,380  -->  00:00:12,340
+Keyboard interrupt is raised when a user manually interrupts the program,
+
+5
+
+00:00:12,340  -->  00:00:15,440
+usually by pressing control C. It's handy
+
+6
+
+00:00:15,440  -->  00:00:19,120
+for halting a running script when you need to stop immediately.
+
+7
+
+00:00:19,120  -->  00:00:23,440
+Imagine you need to stop a ride from going further or to close a ride.
+
+8
+
+00:00:23,440  -->  00:00:27,080
+There are many times where a user's input could be necessary,
+
+9
+
+00:00:27,080  -->  00:00:32,340
+and we'd want Python to handle the rest for us after a human initiates a stop sequence.
+
+10
+
+00:00:32,340  -->  00:00:36,205
+This one will also be a bit easier to see in an example.
+
+11
+
+00:00:36,205  -->  00:00:38,405
+Let's dive into one right now.
+
+12
+
+00:00:38,405  -->  00:00:40,830
+Let's talk about keyboard interrupt.
+
+13
+
+00:00:40,830  -->  00:00:44,790
+For your theme park, let's say that the rides need to have a switch to
+
+14
+
+00:00:44,790  -->  00:00:49,230
+turn them on and also have a human override to stop them at any time.
+
+15
+
+00:00:49,230  -->  00:00:52,210
+We'll create a run theme park ride function,
+
+16
+
+00:00:52,210  -->  00:00:53,570
+and once it's running,
+
+17
+
+00:00:53,570  -->  00:00:56,430
+it will need a user input to write stop.
+
+18
+
+00:00:56,430  -->  00:00:58,650
+If a user does write stop,
+
+19
+
+00:00:58,650  -->  00:01:02,010
+then this raises a keyboard interrupt exception,
+
+20
+
+00:01:02,010  -->  00:01:06,760
+and then this will shut down the ride our code from running.
+
+21
+
+00:01:06,760  -->  00:01:12,605
+Let's write an example of this function and see this exception in action.
+
+22
+
+00:01:12,605  -->  00:01:15,540
+We will define this function, we'll say define,
+
+23
+
+00:01:15,540  -->  00:01:19,140
+def run, theme park, ride,
+
+24
+
+00:01:19,140  -->  00:01:21,800
+then we'll do tr for a tri case,
+
+25
+
+00:01:21,800  -->  00:01:24,000
+and we'll say,
+
+26
+
+00:01:24,000  -->  00:01:27,820
+this is true, user input equals input.
+
+27
+
+00:01:27,820  -->  00:01:33,460
+We'll say type, stop to stop the ride colon space,
+
+28
+
+00:01:33,460  -->  00:01:34,955
+and then we'll do quotes.
+
+29
+
+00:01:34,955  -->  00:01:38,365
+Then we'll close out that parenthesis for the input.
+
+30
+
+00:01:38,365  -->  00:01:42,040
+Then we'll say if g user input dot
+
+31
+
+00:01:42,040  -->  00:01:46,780
+lower because we want to convert it into lower case equals, stop.
+
+32
+
+00:01:46,780  -->  00:01:49,115
+It's not case specific.
+
+33
+
+00:01:49,115  -->  00:01:52,860
+Then we'll raise a keyboard interrupt.
+
+34
+
+00:01:52,860  -->  00:01:54,960
+We'll go back to the same level of try.
+
+35
+
+00:01:54,960  -->  00:01:56,480
+We'll now write our except case,
+
+36
+
+00:01:56,480  -->  00:01:59,980
+and we'll say except, keyboard interrupt.
+
+37
+
+00:01:59,980  -->  00:02:03,260
+Then we'll say, Colin here, we'll say print,
+
+38
+
+00:02:03,260  -->  00:02:09,795
+say you interrupted and stopped the ride. Close out that print statement.
+
+39
+
+00:02:09,795  -->  00:02:12,980
+Then, if we were to run this function,
+
+40
+
+00:02:12,980  -->  00:02:15,760
+can you guess what the output is going to look like?
+
+41
+
+00:02:15,760  -->  00:02:17,560
+Let's run this code and find out.
+
+42
+
+00:02:17,560  -->  00:02:20,160
+When we run this, we'll see an input field,
+
+43
+
+00:02:20,160  -->  00:02:22,830
+and it'll say type stop to stop the ride.
+
+44
+
+00:02:22,830  -->  00:02:25,620
+Inside this box, we will need to write the word
+
+45
+
+00:02:25,620  -->  00:02:29,740
+stop to end this ride and stop our code from running.
+
+46
+
+00:02:29,740  -->  00:02:33,960
+Will continue to stay running and continuously prompt you for an input.
+
+47
+
+00:02:33,960  -->  00:02:35,780
+If we were to type stop,
+
+48
+
+00:02:35,780  -->  00:02:38,540
+this raises a keyboard exception,
+
+49
+
+00:02:38,540  -->  00:02:44,200
+which then causes us to execute an end to the function.
+
+50
+
+00:02:44,200  -->  00:02:47,060
+This stops the program and then triggers the accept block,
+
+51
+
+00:02:47,060  -->  00:02:48,910
+which is why we see this print statement here.
+
+52
+
+00:02:48,910  -->  00:02:50,960
+It says, you interrupted and stop the ride,
+
+53
+
+00:02:50,960  -->  00:02:52,340
+which is why we see that here.
+
+54
+
+00:02:52,340  -->  00:02:54,380
+Otherwise, the code will keep running,
+
+55
+
+00:02:54,380  -->  00:03:00,700
+or should I say our theme park ride continuing to operate as expected?

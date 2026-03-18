@@ -1,0 +1,59 @@
+1
+
+00:00:00,000  -->  00:00:03,220
+Just below base exception is the exception class,
+
+2
+
+00:00:03,220  -->  00:00:07,020
+which is like a senior manager overseeing most errors we encounter.
+
+3
+
+00:00:07,020  -->  00:00:09,480
+When we refer to handling exceptions,
+
+4
+
+00:00:09,480  -->  00:00:12,920
+we usually mean those derived from exception.
+
+5
+
+00:00:12,920  -->  00:00:18,240
+It covers a wide range of errors from value error to type error,
+
+6
+
+00:00:18,240  -->  00:00:22,940
+and is a great catch all for general issues that don't need special handling.
+
+7
+
+00:00:22,940  -->  00:00:24,620
+Similar to base exception,
+
+8
+
+00:00:24,620  -->  00:00:30,220
+we can write our except statement and switch base exception to just exception.
+
+9
+
+00:00:30,220  -->  00:00:33,740
+Using exception as the default catch in our code is often
+
+10
+
+00:00:33,740  -->  00:00:37,940
+recommended because it won't interfere with our system exiting exceptions,
+
+11
+
+00:00:37,940  -->  00:00:40,640
+like system exit or keyboard interrupt,
+
+12
+
+00:00:40,640  -->  00:00:44,260
+which we will learn about in a little bit.
