@@ -1,0 +1,279 @@
+1
+
+00:00:00,000  -->  00:00:03,480
+Welcome to lesson 4 on functions and exceptions.
+
+2
+
+00:00:03,480  -->  00:00:06,280
+The last lesson in our PCP course,
+
+3
+
+00:00:06,280  -->  00:00:10,420
+where we'll be diving into the methodologies and patterns for making
+
+4
+
+00:00:10,420  -->  00:00:15,040
+our Python code come to life almost as if by magic.
+
+5
+
+00:00:15,040  -->  00:00:18,380
+Imagine after a long day of coding in Python,
+
+6
+
+00:00:18,380  -->  00:00:21,240
+you become quite hungry and wander over to
+
+7
+
+00:00:21,240  -->  00:00:25,020
+the kitchen to cook yourself some food in order to refuel.
+
+8
+
+00:00:25,020  -->  00:00:29,970
+You pull up a recipe on your phone and start following each step one by one.
+
+9
+
+00:00:29,970  -->  00:00:34,160
+Perhaps, you'll need to add in some ingredients,
+
+10
+
+00:00:34,160  -->  00:00:35,780
+sprinkle in some spices,
+
+11
+
+00:00:35,780  -->  00:00:38,740
+mix in vegetables, or combine other mix ins.
+
+12
+
+00:00:38,740  -->  00:00:40,640
+Bring them all together in certain ways,
+
+13
+
+00:00:40,640  -->  00:00:42,980
+prepare the wet and dry ingredients separately,
+
+14
+
+00:00:42,980  -->  00:00:48,340
+and/or together, put certain foods on the grill or into the oven to bake,
+
+15
+
+00:00:48,340  -->  00:00:50,085
+and so on and so forth.
+
+16
+
+00:00:50,085  -->  00:00:51,850
+To give another example,
+
+17
+
+00:00:51,850  -->  00:00:53,590
+imagine you're assembling a car,
+
+18
+
+00:00:53,590  -->  00:00:57,125
+and you need to put a lot of various pieces together.
+
+19
+
+00:00:57,125  -->  00:01:02,110
+Instead in doing each step manually every single time.
+
+20
+
+00:01:02,110  -->  00:01:08,130
+You have a machine that knows how to do the assembly once you give it instructions.
+
+21
+
+00:01:08,130  -->  00:01:10,770
+The machine can follow the instructions with
+
+22
+
+00:01:10,770  -->  00:01:14,010
+near perfect precision and accuracy every time,
+
+23
+
+00:01:14,010  -->  00:01:18,740
+ensuring each car in the assembly line comes out the same.
+
+24
+
+00:01:18,740  -->  00:01:21,100
+In the world of Python programming,
+
+25
+
+00:01:21,100  -->  00:01:24,080
+we have something similar to recipes called functions.
+
+26
+
+00:01:24,080  -->  00:01:28,180
+Functions are like those detailed steps in a recipe,
+
+27
+
+00:01:28,180  -->  00:01:33,140
+allowing us to break down complex problems into manageable pieces.
+
+28
+
+00:01:33,140  -->  00:01:34,980
+They help us write clearer,
+
+29
+
+00:01:34,980  -->  00:01:38,120
+reusable and more organized code.
+
+30
+
+00:01:38,120  -->  00:01:43,120
+They can also help us follow a specific flow or layout of, if this,
+
+31
+
+00:01:43,120  -->  00:01:46,540
+then that or if this or that,
+
+32
+
+00:01:46,540  -->  00:01:50,480
+helping us stay logical, precise, and methodical.
+
+33
+
+00:01:50,480  -->  00:01:53,820
+Functions and Python act as these machines.
+
+34
+
+00:01:53,820  -->  00:01:57,200
+Once created, they allow you to reuse code,
+
+35
+
+00:01:57,200  -->  00:01:59,040
+break your programs into smaller,
+
+36
+
+00:01:59,040  -->  00:02:02,570
+manageable pieces, and even handle complex logic.
+
+37
+
+00:02:02,570  -->  00:02:05,660
+But what happens if your machine encounters an issue,
+
+38
+
+00:02:05,660  -->  00:02:08,600
+like a missing part for the car in the assembly line?
+
+39
+
+00:02:08,600  -->  00:02:12,500
+Or you're missing an ingredient for your delicious dinner.
+
+40
+
+00:02:12,500  -->  00:02:16,300
+If a recipe is missing an ingredient or a crucial baking step,
+
+41
+
+00:02:16,300  -->  00:02:19,040
+this can spell disaster for the meal.
+
+42
+
+00:02:19,040  -->  00:02:21,560
+Or if the car is not assembled correctly,
+
+43
+
+00:02:21,560  -->  00:02:24,980
+because the assembly line forgot to include different crucial steps,
+
+44
+
+00:02:24,980  -->  00:02:27,235
+the car might not come out correctly.
+
+45
+
+00:02:27,235  -->  00:02:30,240
+This is where exceptions come into play.
+
+46
+
+00:02:30,240  -->  00:02:35,460
+Python allows you to detect and manage unexpected situations ensuring that
+
+47
+
+00:02:35,460  -->  00:02:41,520
+your program continues running smoothly or handles errors gracefully?
+
+48
+
+00:02:41,520  -->  00:02:45,960
+In this lesson, we're going to take a deep dive into functions,
+
+49
+
+00:02:45,960  -->  00:02:48,460
+how they interact with the environment around them,
+
+50
+
+00:02:48,460  -->  00:02:53,920
+and how we handle those annoying little bugs that pop up, known as exceptions.
+
+51
+
+00:02:53,920  -->  00:02:55,480
+By the end of this lesson,
+
+52
+
+00:02:55,480  -->  00:02:59,380
+you will define and invoke your own user defined functions,
+
+53
+
+00:02:59,380  -->  00:03:02,060
+understand how arguments and parameters work,
+
+54
+
+00:03:02,060  -->  00:03:05,640
+and learn how Python handles exceptions and errors.
+
+55
+
+00:03:05,640  -->  00:03:09,740
+If you're ready to take your Python skills to the next level,
+
+56
+
+00:03:09,740  -->  00:03:14,400
+let's dive into the world of functions and exceptions.

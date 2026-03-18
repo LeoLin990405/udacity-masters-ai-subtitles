@@ -1,0 +1,449 @@
+1
+
+00:00:00,000  -->  00:00:04,780
+Imagine you're working on a puzzle where each piece is interconnected and solving
+
+2
+
+00:00:04,780  -->  00:00:10,420
+one piece helps you get closer to solving the next part of the puzzle and so on.
+
+3
+
+00:00:10,420  -->  00:00:13,380
+Recursion in Python work similarly to this.
+
+4
+
+00:00:13,380  -->  00:00:16,000
+It's a technique where a function calls itself,
+
+5
+
+00:00:16,000  -->  00:00:19,680
+allowing you to break down complex problems into smaller,
+
+6
+
+00:00:19,680  -->  00:00:22,265
+more manageable steps automatically.
+
+7
+
+00:00:22,265  -->  00:00:24,650
+Let's say you have a mountain of books that need
+
+8
+
+00:00:24,650  -->  00:00:27,950
+sorting one by one into an ordered stack.
+
+9
+
+00:00:27,950  -->  00:00:30,670
+Instead of tackling the entire pile at once,
+
+10
+
+00:00:30,670  -->  00:00:32,090
+you pick up one book,
+
+11
+
+00:00:32,090  -->  00:00:36,450
+organize it, then hand the rest of the pile back to yourself to continue sorting.
+
+12
+
+00:00:36,450  -->  00:00:40,730
+This process repeats until there are no more books left to sort.
+
+13
+
+00:00:40,730  -->  00:00:46,570
+In Python, recursion can help you with tasks that involve repetitive patterns or steps,
+
+14
+
+00:00:46,570  -->  00:00:49,130
+especially when the problem can be broken down
+
+15
+
+00:00:49,130  -->  00:00:52,210
+into smaller sub problems of the same kind.
+
+16
+
+00:00:52,210  -->  00:00:54,175
+So when should we use recursion?
+
+17
+
+00:00:54,175  -->  00:00:58,200
+Recursion is particularly useful in compartmentalization,
+
+18
+
+00:00:58,200  -->  00:01:00,160
+where the problem can be divided into
+
+19
+
+00:01:00,160  -->  00:01:03,535
+smaller sub problems that mirror the larger problem.
+
+20
+
+00:01:03,535  -->  00:01:07,500
+In simplification, when you want to simplify code that
+
+21
+
+00:01:07,500  -->  00:01:12,420
+involves repeated tasks by letting each task built on the previous one,
+
+22
+
+00:01:12,420  -->  00:01:14,540
+and in mathematical operations,
+
+23
+
+00:01:14,540  -->  00:01:17,960
+where you are tackling problems like tree traversal,
+
+24
+
+00:01:17,960  -->  00:01:21,980
+sequence generation, or mathematical operations such as factorials,
+
+25
+
+00:01:21,980  -->  00:01:25,360
+that naturally lend themselves to recursive solutions.
+
+26
+
+00:01:25,360  -->  00:01:27,765
+When shouldn't we use recursion?
+
+27
+
+00:01:27,765  -->  00:01:31,410
+Recursion can be inefficient or problematic when there are
+
+28
+
+00:01:31,410  -->  00:01:36,890
+memory constraints because each recursive call adds a new layer to the call stack,
+
+29
+
+00:01:36,890  -->  00:01:40,610
+which can quickly exhaust memory and lead to stack overflow errors,
+
+30
+
+00:01:40,610  -->  00:01:43,250
+especially for deep or infinite recursions.
+
+31
+
+00:01:43,250  -->  00:01:46,970
+Performance concerns, as recursion can be slower than
+
+32
+
+00:01:46,970  -->  00:01:51,010
+iterative approaches due to the overhead of multiple function calls,
+
+33
+
+00:01:51,010  -->  00:01:55,570
+particularly for tasks that require a large number of iterations.
+
+34
+
+00:01:55,570  -->  00:01:58,025
+Or there is great complexity.
+
+35
+
+00:01:58,025  -->  00:02:02,480
+Such as if the problem doesn't inherently break down into smaller sub problems,
+
+36
+
+00:02:02,480  -->  00:02:06,260
+recursion might add unnecessary complexity to your code.
+
+37
+
+00:02:06,260  -->  00:02:11,390
+Let's see some examples where we see recursion in action to add more clarity.
+
+38
+
+00:02:11,390  -->  00:02:14,790
+In this demo, we're going to be talking about recursion.
+
+39
+
+00:02:14,790  -->  00:02:20,390
+Let's see an example of recursion in action by calculating the factorial of a number.
+
+40
+
+00:02:20,390  -->  00:02:24,810
+The factorial of a number n written as n with
+
+41
+
+00:02:24,810  -->  00:02:31,190
+an exclamation point is the product of all positive integers leading up to that number.
+
+42
+
+00:02:31,190  -->  00:02:34,070
+The factorial of a number will look like that.
+
+43
+
+00:02:34,070  -->  00:02:40,100
+For example, five factorial is really this.
+
+44
+
+00:02:40,350  -->  00:02:47,960
+It's 5*4*3*2*1 which equals 120,
+
+45
+
+00:02:47,960  -->  00:02:53,840
+and we can make sure that this is true because if we do this,
+
+46
+
+00:02:53,840  -->  00:02:59,720
+we'll change these xs to asterisks to indicate times.
+
+47
+
+00:02:59,720  -->  00:03:07,900
+What can say is five factorial equals this times this times this,
+
+48
+
+00:03:07,900  -->  00:03:11,400
+and then we can print the value of this.
+
+49
+
+00:03:12,430  -->  00:03:15,190
+We'll see that this is in fact,
+
+50
+
+00:03:15,190  -->  00:03:19,030
+120 or five factorial equals 120.
+
+51
+
+00:03:19,030  -->  00:03:24,450
+But imagine if we wanted to get the factorial of 100 or 1,000 or 10,000.
+
+52
+
+00:03:24,450  -->  00:03:27,010
+This would be way too much work to do by hand,
+
+53
+
+00:03:27,010  -->  00:03:29,830
+so we'll want to leverage recursion in Python to help
+
+54
+
+00:03:29,830  -->  00:03:33,175
+automate this process for us. How would we do this?
+
+55
+
+00:03:33,175  -->  00:03:36,480
+First, we'll define the function of factorial
+
+56
+
+00:03:36,480  -->  00:03:40,200
+n where n is the number we want to calculate the factorial of.
+
+57
+
+00:03:40,200  -->  00:03:43,340
+Next, we'll set up the base case to stop the recursion.
+
+58
+
+00:03:43,340  -->  00:03:48,180
+If n is one, we return a one because the factorial of one is itself.
+
+59
+
+00:03:48,180  -->  00:03:50,520
+This is how we will prevent infinite recursion,
+
+60
+
+00:03:50,520  -->  00:03:54,180
+which is a type of infinite loop like we learned about earlier in the course.
+
+61
+
+00:03:54,180  -->  00:03:57,680
+We need to escape the function from running forever.
+
+62
+
+00:03:57,680  -->  00:04:01,030
+This is how we'll do that. For n values greater than one,
+
+63
+
+00:04:01,030  -->  00:04:05,970
+we multiply n by the result of factorial n minus one.
+
+64
+
+00:04:05,970  -->  00:04:09,230
+This pattern repeats until n equals one.
+
+65
+
+00:04:09,230  -->  00:04:10,730
+When the base case is met,
+
+66
+
+00:04:10,730  -->  00:04:14,130
+which will stop the recursion loop from continuing.
+
+67
+
+00:04:14,130  -->  00:04:16,810
+When the base case is reached,
+
+68
+
+00:04:16,810  -->  00:04:21,510
+our function begins to return results back up the chain of calls,
+
+69
+
+00:04:21,510  -->  00:04:23,730
+multiplying each returned value by n,
+
+70
+
+00:04:23,730  -->  00:04:27,510
+and this is how the full factorial is calculated with Python.
+
+71
+
+00:04:27,510  -->  00:04:30,570
+Let's write a function to illustrate this.
+
+72
+
+00:04:30,570  -->  00:04:36,220
+We'll write def factorial and we'll put n for the placeholder of the input.
+
+73
+
+00:04:36,220  -->  00:04:39,640
+Then we'll say if n equals equals one,
+
+74
+
+00:04:39,640  -->  00:04:44,640
+then return one, and this is to prevent our infinite loop like we talked about before.
+
+75
+
+00:04:44,640  -->  00:04:48,180
+Otherwise, we'll continue with our recursive loop,
+
+76
+
+00:04:48,180  -->  00:04:51,880
+and we'll say, else, colon return.
+
+77
+
+00:04:52,520  -->  00:04:58,840
+N times factorial n minus one.
+
+78
+
+00:04:58,840  -->  00:05:01,860
+We'll save this function to our Jupiter notebook,
+
+79
+
+00:05:01,860  -->  00:05:04,320
+and will this actually work?
+
+80
+
+00:05:04,320  -->  00:05:06,280
+Well, let's test it out and find out.
+
+81
+
+00:05:06,280  -->  00:05:09,180
+If we were to print the factorial,
+
+82
+
+00:05:09,180  -->  00:05:10,880
+which we copy from here,
+
+83
+
+00:05:10,880  -->  00:05:13,560
+and we put in five into our input.
+
+84
+
+00:05:13,560  -->  00:05:17,985
+Can you guess what the output is going to be when we run our function?
+
+85
+
+00:05:17,985  -->  00:05:20,260
+It prints out 120,
+
+86
+
+00:05:20,260  -->  00:05:24,740
+which means that our factorial function worked.
+
+87
+
+00:05:24,740  -->  00:05:28,180
+Recursion is a powerful tool for solving
+
+88
+
+00:05:28,180  -->  00:05:33,040
+complex problems by breaking them into manageable steps just like this.
+
+89
+
+00:05:33,040  -->  00:05:37,020
+Remember to always define a base case to prevent infinite loops and be
+
+90
+
+00:05:37,020  -->  00:05:41,800
+mindful of memory usage when dealing with deep recursion. Great job.

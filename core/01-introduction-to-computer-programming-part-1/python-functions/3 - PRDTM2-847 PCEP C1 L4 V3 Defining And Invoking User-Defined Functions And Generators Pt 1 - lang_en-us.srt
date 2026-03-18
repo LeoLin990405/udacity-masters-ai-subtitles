@@ -1,0 +1,514 @@
+1
+
+00:00:00,000  -->  00:00:03,880
+A function Python is like a mini program inside your program.
+
+2
+
+00:00:03,880  -->  00:00:06,600
+You define a function using the def keyword
+
+3
+
+00:00:06,600  -->  00:00:10,080
+followed by the function name and parentheses.
+
+4
+
+00:00:10,080  -->  00:00:13,780
+Think of defining a function like writing down a recipe in your restaurant.
+
+5
+
+00:00:13,780  -->  00:00:16,300
+You list out the ingredients, inputs,
+
+6
+
+00:00:16,300  -->  00:00:19,940
+and steps, making it easy to follow and repeat.
+
+7
+
+00:00:19,940  -->  00:00:22,260
+When you're ready to use this recipe,
+
+8
+
+00:00:22,260  -->  00:00:25,940
+you simply use Python to invoke or call the function,
+
+9
+
+00:00:25,940  -->  00:00:28,100
+just like you would when cooking a meal,
+
+10
+
+00:00:28,100  -->  00:00:30,965
+following those steps to your recipe.
+
+11
+
+00:00:30,965  -->  00:00:34,910
+Earlier in the course, we learned about various methods that Python comes
+
+12
+
+00:00:34,910  -->  00:00:39,790
+prepared with or pre-baked with that are called built-in functions.
+
+13
+
+00:00:39,790  -->  00:00:42,650
+Python is very powerful because right out of the box,
+
+14
+
+00:00:42,650  -->  00:00:46,090
+it can do many incredible processes that we've looked at,
+
+15
+
+00:00:46,090  -->  00:00:49,750
+such as print, outputs text to the console.
+
+16
+
+00:00:49,750  -->  00:00:54,370
+Len returns the length of an object like a string or a list.
+
+17
+
+00:00:54,370  -->  00:00:57,985
+Sum adds all items in an iterable together,
+
+18
+
+00:00:57,985  -->  00:01:02,280
+such as a list and type returns the data type of an object.
+
+19
+
+00:01:02,280  -->  00:01:03,800
+These functions are part of
+
+20
+
+00:01:03,800  -->  00:01:07,720
+Python's standard library and don't require you to define them yourself.
+
+21
+
+00:01:07,720  -->  00:01:11,560
+They're highly optimized and designed to handle a variety of
+
+22
+
+00:01:11,560  -->  00:01:16,955
+common tasks that you will use regularly in your day-to-day Python programming.
+
+23
+
+00:01:16,955  -->  00:01:19,480
+User-defined functions, on the other hand,
+
+24
+
+00:01:19,480  -->  00:01:21,900
+are those that you create to preform
+
+25
+
+00:01:21,900  -->  00:01:26,385
+specific tasks that are not covered by Python's built-in functions.
+
+26
+
+00:01:26,385  -->  00:01:28,130
+These are functions you,
+
+27
+
+00:01:28,130  -->  00:01:32,150
+as the programmer, create to perform specific tasks.
+
+28
+
+00:01:32,150  -->  00:01:35,850
+They allow you to define steps tailored to your specific needs,
+
+29
+
+00:01:35,850  -->  00:01:40,370
+so you aren't limited to the built-in functions Python provides alone.
+
+30
+
+00:01:40,370  -->  00:01:44,670
+This way, you can reuse your own code whenever needed,
+
+31
+
+00:01:44,670  -->  00:01:47,990
+saving time and keeping things organized.
+
+32
+
+00:01:47,990  -->  00:01:52,050
+You define these functions using the def keyword like this.
+
+33
+
+00:01:52,050  -->  00:01:54,010
+In this user-defined function,
+
+34
+
+00:01:54,010  -->  00:01:57,100
+we write our own custom function called say_hi.
+
+35
+
+00:01:57,100  -->  00:01:58,530
+That will do exactly that.
+
+36
+
+00:01:58,530  -->  00:02:00,160
+Print the phrase we define.
+
+37
+
+00:02:00,160  -->  00:02:02,730
+"Hi there", with a return statement.
+
+38
+
+00:02:02,730  -->  00:02:08,155
+Defining a function like this allows us to reuse the code anytime we need a greeting,
+
+39
+
+00:02:08,155  -->  00:02:11,890
+without having to retype the print statement over and over again.
+
+40
+
+00:02:11,890  -->  00:02:13,630
+We can just do this,
+
+41
+
+00:02:13,630  -->  00:02:19,725
+and it will remember the print statement and any logic we add to our functions.
+
+42
+
+00:02:19,725  -->  00:02:22,390
+User-defined functions work really well for
+
+43
+
+00:02:22,390  -->  00:02:26,390
+executing a block of code all at once after being called.
+
+44
+
+00:02:26,390  -->  00:02:31,810
+But what if we need to handle a large amount of data or sequences one step at a time?
+
+45
+
+00:02:31,810  -->  00:02:35,470
+You might think that we could write a normal function,
+
+46
+
+00:02:35,470  -->  00:02:38,350
+but there is another more efficient way to
+
+47
+
+00:02:38,350  -->  00:02:42,250
+handle big datasets and sequences called generators.
+
+48
+
+00:02:42,250  -->  00:02:45,630
+Generators are a special type of function in Python,
+
+49
+
+00:02:45,630  -->  00:02:47,890
+similarly to regular functions,
+
+50
+
+00:02:47,890  -->  00:02:50,890
+but using the yield keyword instead of return.
+
+51
+
+00:02:50,890  -->  00:02:55,010
+They produce items one at a time and only when asked,
+
+52
+
+00:02:55,010  -->  00:02:59,070
+making the memory efficient for handling large amounts of data.
+
+53
+
+00:02:59,070  -->  00:03:02,245
+Imagine that your restaurant, you're baking cookies.
+
+54
+
+00:03:02,245  -->  00:03:03,860
+Over the course of the day,
+
+55
+
+00:03:03,860  -->  00:03:07,430
+you might bake hundreds or even thousands of cookies.
+
+56
+
+00:03:07,430  -->  00:03:10,160
+If you bake 1,000 cookies at once,
+
+57
+
+00:03:10,160  -->  00:03:15,280
+you might have cookies getting cold or still if they're left out all day long.
+
+58
+
+00:03:15,280  -->  00:03:18,280
+You don't need to bake all of the cookies at once.
+
+59
+
+00:03:18,280  -->  00:03:21,220
+Instead, you can produce a batch of cookies,
+
+60
+
+00:03:21,220  -->  00:03:25,180
+serve them, then bake the next batch when it's needed, and so on.
+
+61
+
+00:03:25,180  -->  00:03:30,870
+Generator functions operate in a very similar way to this cooking baking example.
+
+62
+
+00:03:30,870  -->  00:03:34,160
+They yield one item at a time,
+
+63
+
+00:03:34,160  -->  00:03:36,740
+pausing until the next item is requested.
+
+64
+
+00:03:36,740  -->  00:03:39,200
+This makes them incredibly useful when dealing with
+
+65
+
+00:03:39,200  -->  00:03:43,500
+large sequences of data or when you don't need everything at once.
+
+66
+
+00:03:43,500  -->  00:03:46,220
+They can be difficult to grasp at first.
+
+67
+
+00:03:46,220  -->  00:03:50,240
+But do not worry once you see an example in action,
+
+68
+
+00:03:50,240  -->  00:03:53,190
+it will make a whole lot more sense.
+
+69
+
+00:03:53,190  -->  00:03:55,590
+Let's take a look at functions,
+
+70
+
+00:03:55,590  -->  00:03:59,490
+and we'll look at a simple example of generators for context.
+
+71
+
+00:03:59,490  -->  00:04:02,130
+We can define a function with a few elements.
+
+72
+
+00:04:02,130  -->  00:04:04,640
+We'll start with a def keyword,
+
+73
+
+00:04:04,640  -->  00:04:08,170
+def, a function name, which in this case,
+
+74
+
+00:04:08,170  -->  00:04:11,450
+is count_up_to, and we can pass in
+
+75
+
+00:04:11,450  -->  00:04:15,885
+arguments such as Max to set an upper limit to count_up_to.
+
+76
+
+00:04:15,885  -->  00:04:22,370
+We can then use the yield keyword instead of return to produce values one at a time,
+
+77
+
+00:04:22,370  -->  00:04:25,750
+pausing the function while keeping its state or
+
+78
+
+00:04:25,750  -->  00:04:31,250
+memory of where it lasts was in the generation process after each yield.
+
+79
+
+00:04:38,900  -->  00:04:43,750
+Often generators will include a loop like while or
+
+80
+
+00:04:43,750  -->  00:04:47,780
+for to repeatedly yield values until a condition is met,
+
+81
+
+00:04:47,780  -->  00:04:49,820
+like reaching our upper limit.
+
+82
+
+00:04:49,820  -->  00:04:59,290
+We'll then create a generator object like this counter equals count_up_to 3.
+
+83
+
+00:04:59,960  -->  00:05:02,960
+Which doesn't run the function right away,
+
+84
+
+00:05:02,960  -->  00:05:05,500
+but returns a special generator object that
+
+85
+
+00:05:05,500  -->  00:05:08,760
+we can iterate over to get values one at a time.
+
+86
+
+00:05:08,760  -->  00:05:11,860
+To use our generator, we'll use next,
+
+87
+
+00:05:11,860  -->  00:05:18,220
+which retrieves the next value each time next is called on the generator object,
+
+88
+
+00:05:18,220  -->  00:05:22,120
+continuing until the generator is exhausted.
+
+89
+
+00:05:22,120  -->  00:05:24,260
+We'll execute the cell block,
+
+90
+
+00:05:24,260  -->  00:05:27,760
+and then each run will print outputs like this.
+
+91
+
+00:05:27,760  -->  00:05:31,975
+Once we run print next counter,
+
+92
+
+00:05:31,975  -->  00:05:34,990
+we then get one.
+
+93
+
+00:05:35,300  -->  00:05:38,930
+We'll run this again, and we'll get two.
+
+94
+
+00:05:38,930  -->  00:05:42,315
+We'll run this one more time. We'll get three.
+
+95
+
+00:05:42,315  -->  00:05:44,100
+We'll run this once more,
+
+96
+
+00:05:44,100  -->  00:05:47,780
+and then we'll get a stop iteration error.
+
+97
+
+00:05:47,780  -->  00:05:49,520
+Once the limit is reached,
+
+98
+
+00:05:49,520  -->  00:05:53,860
+which is defined as three in our function here,
+
+99
+
+00:05:53,860  -->  00:05:59,600
+our generator is told to go up to and include the max, which is three.
+
+100
+
+00:05:59,600  -->  00:06:02,335
+Then we cannot run the generator, again.
+
+101
+
+00:06:02,335  -->  00:06:06,700
+What makes a function a function in a generator generator?
+
+102
+
+00:06:06,700  -->  00:06:09,345
+Let's dive into the differences of each.
+
+103
+
+00:06:09,345  -->  00:06:12,130
+Then what makes them similar.

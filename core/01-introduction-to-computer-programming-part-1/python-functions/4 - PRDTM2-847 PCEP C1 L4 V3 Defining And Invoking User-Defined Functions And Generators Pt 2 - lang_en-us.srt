@@ -1,0 +1,109 @@
+1
+
+00:00:00,000  -->  00:00:04,000
+Functions use return to output a single result,
+
+2
+
+00:00:04,000  -->  00:00:07,120
+execute all at once when called.
+
+3
+
+00:00:07,120  -->  00:00:09,600
+Store all data and memory at once,
+
+4
+
+00:00:09,600  -->  00:00:13,360
+can be memory intensive with large datasets.
+
+5
+
+00:00:13,360  -->  00:00:17,500
+Typically use for one time calculations for single actions
+
+6
+
+00:00:17,500  -->  00:00:22,360
+and do not retain state between calls as each call is independent.
+
+7
+
+00:00:22,360  -->  00:00:24,380
+Generators, on the other hand,
+
+8
+
+00:00:24,380  -->  00:00:28,300
+use yield to produce a sequence of results one at a time.
+
+9
+
+00:00:28,300  -->  00:00:31,340
+Execute in a pause state, resuming,
+
+10
+
+00:00:31,340  -->  00:00:34,480
+where it left off are memory efficient,
+
+11
+
+00:00:34,480  -->  00:00:37,320
+especially for handling large datasets,
+
+12
+
+00:00:37,320  -->  00:00:44,480
+are ideal for processing data in chunks or streams and retain state between yields,
+
+13
+
+00:00:44,480  -->  00:00:47,940
+picking up where it left off with each next call.
+
+14
+
+00:00:47,940  -->  00:00:53,550
+The things they both have in common are they both are defined using the dev keyword.
+
+15
+
+00:00:53,550  -->  00:00:56,560
+They're reusable for repeated tasks.
+
+16
+
+00:00:56,560  -->  00:00:58,740
+They can take parameters.
+
+17
+
+00:00:58,740  -->  00:01:04,020
+They can be looped over specifically generators with next and functions with loops
+
+18
+
+00:01:04,020  -->  00:01:09,900
+inside and are used to break down complex tasks into manageable steps.
+
+19
+
+00:01:09,900  -->  00:01:12,600
+If this still feels a bit complicated,
+
+20
+
+00:01:12,600  -->  00:01:14,335
+do not worry at all.
+
+21
+
+00:01:14,335  -->  00:01:16,580
+We'll dive into some demo examples,
+
+22
+
+00:01:16,580  -->  00:01:20,200
+so you can see exactly what we're working with here.

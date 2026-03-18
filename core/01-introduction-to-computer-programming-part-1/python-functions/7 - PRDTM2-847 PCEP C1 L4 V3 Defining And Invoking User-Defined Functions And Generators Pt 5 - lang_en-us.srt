@@ -1,0 +1,264 @@
+1
+
+00:00:00,000  -->  00:00:02,605
+Which makes sense up there.
+
+2
+
+00:00:02,605  -->  00:00:08,200
+This is like fulfilling a small order where you know exactly how many cookies you need.
+
+3
+
+00:00:08,200  -->  00:00:13,260
+Sometimes however, you may not know how many batches of cookies you'll need to bake.
+
+4
+
+00:00:13,260  -->  00:00:16,360
+Maybe orders keep coming in throughout the day,
+
+5
+
+00:00:16,360  -->  00:00:18,080
+and you just need to keep baking,
+
+6
+
+00:00:18,080  -->  00:00:20,920
+but keep track of how many cookies you're baking.
+
+7
+
+00:00:20,920  -->  00:00:23,940
+In this case, you can skip specifying a limit,
+
+8
+
+00:00:23,940  -->  00:00:26,500
+allowing the generator to run indefinitely.
+
+9
+
+00:00:26,500  -->  00:00:31,580
+This time, we'll initialize a new generator object that has a batch size of 100,
+
+10
+
+00:00:31,580  -->  00:00:36,400
+but no Max batches parameter as the input like this,
+
+11
+
+00:00:36,400  -->  00:00:47,410
+which you'll see right here, unlimited_cookie_batches = bake_cookies(100).
+
+12
+
+00:00:48,800  -->  00:00:53,070
+This will allow us to run this generator function as many times
+
+13
+
+00:00:53,070  -->  00:00:56,970
+as we'd like to. We'll initialize this.
+
+14
+
+00:00:56,970  -->  00:01:00,770
+Then every time we run the generator on this new generator object,
+
+15
+
+00:01:00,770  -->  00:01:05,590
+we get outputs that count upwards beyond 300.
+
+16
+
+00:01:05,590  -->  00:01:09,990
+For example, taking the unlimited_cookie_batches with next,
+
+17
+
+00:01:09,990  -->  00:01:13,800
+we'll run the cell, and we see 100.
+
+18
+
+00:01:13,800  -->  00:01:18,920
+Next, we see 200, next, we see 300,
+
+19
+
+00:01:18,920  -->  00:01:21,130
+and now we see past 300,
+
+20
+
+00:01:21,130  -->  00:01:25,180
+400, 500, and so on.
+
+21
+
+00:01:25,180  -->  00:01:31,390
+With no limit. You control when to stop by simply deciding when to
+
+22
+
+00:01:31,390  -->  00:01:37,790
+stop calling the next function on our unlimited_cookie_batches generator object.
+
+23
+
+00:01:37,790  -->  00:01:40,590
+This is useful if you want to keep the bakery
+
+24
+
+00:01:40,590  -->  00:01:44,455
+running until you decide to close shop for the day.
+
+25
+
+00:01:44,455  -->  00:01:48,440
+Let's quickly review what we learned about functions and generators.
+
+26
+
+00:01:48,440  -->  00:01:51,300
+Functions are versatile tools that allow us
+
+27
+
+00:01:51,300  -->  00:01:54,400
+to execute a block of code with a specific purpose.
+
+28
+
+00:01:54,400  -->  00:01:56,080
+They can take in parameters,
+
+29
+
+00:01:56,080  -->  00:01:58,940
+perform actions, and return a result.
+
+30
+
+00:01:58,940  -->  00:02:03,420
+Functions are great for performing one off tasks or calculations all at once.
+
+31
+
+00:02:03,420  -->  00:02:05,900
+However, they return a single result and
+
+32
+
+00:02:05,900  -->  00:02:08,685
+don't retain any state after they finish executing.
+
+33
+
+00:02:08,685  -->  00:02:13,830
+Some examples can be built-in functions that Python all ready comes preloaded with,
+
+34
+
+00:02:13,830  -->  00:02:19,730
+or we can write our own self defined functions to handle our own custom logic.
+
+35
+
+00:02:19,730  -->  00:02:21,370
+Generators, on the other hand,
+
+36
+
+00:02:21,370  -->  00:02:24,330
+are a special type of function that lets you control
+
+37
+
+00:02:24,330  -->  00:02:27,890
+the flow of production in a more gradual way.
+
+38
+
+00:02:27,890  -->  00:02:30,250
+By using yield instead of return,
+
+39
+
+00:02:30,250  -->  00:02:33,910
+generators produce values one at a time,
+
+40
+
+00:02:33,910  -->  00:02:37,830
+pausing between each until they're needed again.
+
+41
+
+00:02:37,830  -->  00:02:40,310
+This is like baking cookies in batches.
+
+42
+
+00:02:40,310  -->  00:02:44,650
+You only bake what you need when you need it, which saves resources.
+
+43
+
+00:02:44,650  -->  00:02:47,340
+Generators are ideal for handling
+
+44
+
+00:02:47,340  -->  00:02:51,920
+large sequences or ongoing tasks without overloading memory.
+
+45
+
+00:02:51,920  -->  00:02:54,660
+Instead of holding all the data at once,
+
+46
+
+00:02:54,660  -->  00:02:57,020
+they create each piece as requested.
+
+47
+
+00:02:57,020  -->  00:03:00,960
+This is incredibly useful for scenarios where you might not know
+
+48
+
+00:03:00,960  -->  00:03:05,505
+the total size of the data or want to process it in chunks.
+
+49
+
+00:03:05,505  -->  00:03:11,955
+In summary, functions are great for one off or repeatable execution of the same code,
+
+50
+
+00:03:11,955  -->  00:03:15,530
+while generators give you flexibility and efficiency,
+
+51
+
+00:03:15,530  -->  00:03:17,490
+yielding items on demand.
+
+52
+
+00:03:17,490  -->  00:03:22,830
+This makes them perfect for tasks where you want to manage resources carefully and work
+
+53
+
+00:03:22,830  -->  00:03:29,220
+with large or continuous data streams one manageable batch at a time.

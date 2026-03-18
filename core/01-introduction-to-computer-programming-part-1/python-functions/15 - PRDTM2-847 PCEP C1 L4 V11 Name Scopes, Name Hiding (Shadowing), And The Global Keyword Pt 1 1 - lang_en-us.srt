@@ -1,0 +1,134 @@
+1
+
+00:00:00,000  -->  00:00:02,480
+Now it's time to explore name scopes,
+
+2
+
+00:00:02,480  -->  00:00:05,040
+name hiding, and the global keyword.
+
+3
+
+00:00:05,040  -->  00:00:07,520
+These topics relate to how Python manages
+
+4
+
+00:00:07,520  -->  00:00:10,500
+names and variables within different parts of your program.
+
+5
+
+00:00:10,500  -->  00:00:14,040
+Let's start with a look at name scopes.
+
+6
+
+00:00:14,040  -->  00:00:17,520
+A scope defines where a variable can be accessed.
+
+7
+
+00:00:17,520  -->  00:00:19,900
+Different variables have different levels of access
+
+8
+
+00:00:19,900  -->  00:00:22,890
+based on where they are located in our Python code.
+
+9
+
+00:00:22,890  -->  00:00:25,120
+It has a few different types of scope.
+
+10
+
+00:00:25,120  -->  00:00:26,880
+For example, local scope,
+
+11
+
+00:00:26,880  -->  00:00:29,580
+which is where variables defined inside
+
+12
+
+00:00:29,580  -->  00:00:32,750
+a function are only accessible within that function.
+
+13
+
+00:00:32,750  -->  00:00:35,300
+That's very different from global scope,
+
+14
+
+00:00:35,300  -->  00:00:38,420
+which are the variables defined outside of
+
+15
+
+00:00:38,420  -->  00:00:42,060
+any function are accessible from anywhere in your code.
+
+16
+
+00:00:42,060  -->  00:00:44,480
+When we're writing our variables and functions,
+
+17
+
+00:00:44,480  -->  00:00:47,220
+scope is incredibly important to think about in Python.
+
+18
+
+00:00:47,220  -->  00:00:48,890
+Let's consider this example.
+
+19
+
+00:00:48,890  -->  00:00:53,030
+In this example, we declare a global variable called global_var,
+
+20
+
+00:00:53,030  -->  00:00:55,000
+and inside our print function,
+
+21
+
+00:00:55,000  -->  00:00:58,830
+we are making a local_var equal to the global_var.
+
+22
+
+00:00:58,830  -->  00:01:00,760
+If we run this function,
+
+23
+
+00:01:00,760  -->  00:01:05,020
+this will print our global_var because the local_var is equal to that.
+
+24
+
+00:01:05,020  -->  00:01:08,880
+We can reference global_var anywhere else in our code,
+
+25
+
+00:01:08,880  -->  00:01:11,960
+but we cannot reference local_var anywhere else,
+
+26
+
+00:01:11,960  -->  00:01:14,080
+only inside of that function.
+
+27
+
+00:01:14,080  -->  00:01:17,440
+Let's see some examples of scope in action.

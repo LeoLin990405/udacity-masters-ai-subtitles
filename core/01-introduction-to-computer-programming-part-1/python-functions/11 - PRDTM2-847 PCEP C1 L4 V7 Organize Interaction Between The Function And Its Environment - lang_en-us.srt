@@ -1,0 +1,119 @@
+1
+
+00:00:00,000  -->  00:00:01,620
+In this next video,
+
+2
+
+00:00:01,620  -->  00:00:05,740
+we're going to talk about organizing the interaction between Python functions
+
+3
+
+00:00:05,740  -->  00:00:10,200
+and the Python environment where they run. That's a mouthful.
+
+4
+
+00:00:10,200  -->  00:00:13,440
+Let's unpack exactly what all of that means.
+
+5
+
+00:00:13,440  -->  00:00:16,180
+Imagine you're organizing a small dinner party.
+
+6
+
+00:00:16,180  -->  00:00:19,060
+You'll need to set up various parts of the event,
+
+7
+
+00:00:19,060  -->  00:00:20,680
+like inviting the guests,
+
+8
+
+00:00:20,680  -->  00:00:23,360
+choosing the menu, preparing the dishes,
+
+9
+
+00:00:23,360  -->  00:00:26,940
+making name tags, taking guest coats, and so on.
+
+10
+
+00:00:26,940  -->  00:00:32,580
+For each task, there are specific details or inputs that guide how you approach it.
+
+11
+
+00:00:32,580  -->  00:00:35,260
+Do you have dietary preferences to consider?
+
+12
+
+00:00:35,260  -->  00:00:38,145
+Are you expecting a formal or casual buy?
+
+13
+
+00:00:38,145  -->  00:00:40,410
+Just like organizing a dinner party,
+
+14
+
+00:00:40,410  -->  00:00:43,550
+interacting with functions involves passing in details
+
+15
+
+00:00:43,550  -->  00:00:47,090
+and setting the stage for how they operate within your code.
+
+16
+
+00:00:47,090  -->  00:00:48,510
+In the last module,
+
+17
+
+00:00:48,510  -->  00:00:49,970
+we dove into functions,
+
+18
+
+00:00:49,970  -->  00:00:52,350
+generators, and how they work in our code.
+
+19
+
+00:00:52,350  -->  00:00:55,530
+In this module, we'll explore the dynamics of
+
+20
+
+00:00:55,530  -->  00:00:59,370
+how functions receive and handle data from the rest of your code.
+
+21
+
+00:00:59,370  -->  00:01:03,390
+We'll cover the difference between parameters and arguments,
+
+22
+
+00:01:03,390  -->  00:01:06,290
+different ways to pass arguments into functions,
+
+23
+
+00:01:06,290  -->  00:01:09,335
+using default values to make functions more flexible,
+
+24
+
+00:01:09,335  -->  00:01:14,850
+and how Python manages names and sculpts within our functions that we write.

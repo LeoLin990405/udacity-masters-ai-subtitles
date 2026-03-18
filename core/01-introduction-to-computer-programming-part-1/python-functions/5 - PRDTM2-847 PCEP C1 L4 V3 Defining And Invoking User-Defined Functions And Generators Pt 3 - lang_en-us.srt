@@ -1,0 +1,214 @@
+1
+
+00:00:00,000  -->  00:00:03,600
+User defined functions are well defined by you.
+
+2
+
+00:00:03,600  -->  00:00:08,280
+This means that we can write almost anything that we can imagine to accomplish our goals.
+
+3
+
+00:00:08,280  -->  00:00:11,380
+Let's say that we want to print a greeting to a user and say,
+
+4
+
+00:00:11,380  -->  00:00:14,765
+Hello World, every time a certain function runs.
+
+5
+
+00:00:14,765  -->  00:00:18,500
+Python does not come pre installed with a function to do this,
+
+6
+
+00:00:18,500  -->  00:00:24,490
+but it does come with pre installed abilities for us to write a function to do this.
+
+7
+
+00:00:24,490  -->  00:00:26,740
+We will do this by writing a function called
+
+8
+
+00:00:26,740  -->  00:00:30,000
+greet that will then print the message Hello World.
+
+9
+
+00:00:30,000  -->  00:00:32,280
+This combines the use of the built in
+
+10
+
+00:00:32,280  -->  00:00:36,520
+function print inside of our user defined function called greet.
+
+11
+
+00:00:36,520  -->  00:00:38,680
+Let's test this out by writing it.
+
+12
+
+00:00:38,680  -->  00:00:42,655
+We'll write def greet,
+
+13
+
+00:00:42,655  -->  00:00:48,520
+and then we'll say print Hello World.
+
+14
+
+00:00:48,520  -->  00:00:53,320
+We'll end quote there and then we'll end the print C. When we run this function,
+
+15
+
+00:00:53,320  -->  00:00:57,880
+we should see our message that looks like this.
+
+16
+
+00:00:57,880  -->  00:01:01,610
+We'll define this function and we'll call it.
+
+17
+
+00:01:01,610  -->  00:01:05,300
+Just like that, we see our message Hello World.
+
+18
+
+00:01:05,300  -->  00:01:08,270
+But this is impersonal and generic.
+
+19
+
+00:01:08,270  -->  00:01:12,170
+If we wanted to make this more customized and dynamic to the user,
+
+20
+
+00:01:12,170  -->  00:01:14,430
+how can we update our user defined
+
+21
+
+00:01:14,430  -->  00:01:18,270
+greet function to greet an actual user with their name?
+
+22
+
+00:01:18,270  -->  00:01:19,950
+If you remember from earlier,
+
+23
+
+00:01:19,950  -->  00:01:22,930
+functions allow us to pass in an optional input,
+
+24
+
+00:01:22,930  -->  00:01:28,350
+which could be one or more values that we can use to customize how our functions run.
+
+25
+
+00:01:28,350  -->  00:01:33,410
+We can pass in a name value into our function in order to make a customized greeting.
+
+26
+
+00:01:33,410  -->  00:01:35,830
+Let's see how to do that here.
+
+27
+
+00:01:35,830  -->  00:01:41,660
+We'll take our base of our greet function.
+
+28
+
+00:01:41,970  -->  00:01:44,350
+We'll pop open a new cell,
+
+29
+
+00:01:44,350  -->  00:01:47,605
+and we'll say def greet input.
+
+30
+
+00:01:47,605  -->  00:01:52,850
+Then we'll pass in name as an input,
+
+31
+
+00:01:52,850  -->  00:01:56,630
+we'll say return, and then we'll return in F string,
+
+32
+
+00:01:56,630  -->  00:01:59,170
+and we'll say hello,
+
+33
+
+00:01:59,170  -->  00:02:01,710
+and then in curly brackets,
+
+34
+
+00:02:01,710  -->  00:02:07,710
+name exclamation point, and then closed quotation marks.
+
+35
+
+00:02:07,950  -->  00:02:13,795
+Then we'll call our function, greet input.
+
+36
+
+00:02:13,795  -->  00:02:18,280
+Then we'll pass in Python coder.
+
+37
+
+00:02:18,280  -->  00:02:21,950
+Now, because we are using an F string to
+
+38
+
+00:02:21,950  -->  00:02:27,310
+define a string with a dynamic input of the name value,
+
+39
+
+00:02:27,310  -->  00:02:30,720
+can you guess what the output of this will be?
+
+40
+
+00:02:30,720  -->  00:02:33,490
+Let's run this and find out.
+
+41
+
+00:02:33,950  -->  00:02:37,530
+You should see hello Python coder,
+
+42
+
+00:02:37,530  -->  00:02:41,930
+and that's because we pass this in as an input into our input function,
+
+43
+
+00:02:41,930  -->  00:02:47,070
+which passes that into this output. Pretty cool, right?

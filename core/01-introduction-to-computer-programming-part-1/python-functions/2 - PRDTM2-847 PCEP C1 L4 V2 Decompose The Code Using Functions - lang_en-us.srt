@@ -1,0 +1,114 @@
+1
+
+00:00:00,000  -->  00:00:04,280
+Imagine you're a chef in one of the busiest restaurant kitchens in the city.
+
+2
+
+00:00:04,280  -->  00:00:07,980
+You have an order for your signature dish and you could make
+
+3
+
+00:00:07,980  -->  00:00:13,200
+each component from scratch every time an order comes in from a hungry customer.
+
+4
+
+00:00:13,200  -->  00:00:15,140
+But that would be exhausting,
+
+5
+
+00:00:15,140  -->  00:00:17,365
+tedious, and time consuming.
+
+6
+
+00:00:17,365  -->  00:00:22,515
+You think to yourself, there has to be a better way to do this.
+
+7
+
+00:00:22,515  -->  00:00:26,790
+Instead, you've carefully prepped ingredients and created
+
+8
+
+00:00:26,790  -->  00:00:31,890
+steps that you could repeat for each dish ensuring consistency and speed.
+
+9
+
+00:00:31,890  -->  00:00:36,890
+In fact, your steps are so well defined and repeatable that you started to allow
+
+10
+
+00:00:36,890  -->  00:00:39,870
+other staff members to cook the special dish
+
+11
+
+00:00:39,870  -->  00:00:43,750
+following the recipe because everything is all accounted for.
+
+12
+
+00:00:43,750  -->  00:00:45,870
+It works like clockwork.
+
+13
+
+00:00:45,870  -->  00:00:50,090
+In Python, functions are like these prepped steps.
+
+14
+
+00:00:50,090  -->  00:00:53,150
+They allow us to break down our code into
+
+15
+
+00:00:53,150  -->  00:00:58,070
+smaller repeatable recipes that we can call on anytime we need them.
+
+16
+
+00:00:58,070  -->  00:01:01,610
+Instead of writing the same code over and over again,
+
+17
+
+00:01:01,610  -->  00:01:07,245
+we can create a function once and use it whenever and wherever we want.
+
+18
+
+00:01:07,245  -->  00:01:10,950
+This not only makes our programming more efficient,
+
+19
+
+00:01:10,950  -->  00:01:14,240
+but also keeps our code organized and easy to manage.
+
+20
+
+00:01:14,240  -->  00:01:19,850
+Anyone could run the prepared steps and get the same output each time.
+
+21
+
+00:01:19,850  -->  00:01:23,350
+In this section, we'll explore the basics of functions,
+
+22
+
+00:01:23,350  -->  00:01:26,690
+seeing how they can transform our coding process just as
+
+23
+
+00:01:26,690  -->  00:01:31,850
+a chef's prep work transforms the process of cooking in a busy kitchen.

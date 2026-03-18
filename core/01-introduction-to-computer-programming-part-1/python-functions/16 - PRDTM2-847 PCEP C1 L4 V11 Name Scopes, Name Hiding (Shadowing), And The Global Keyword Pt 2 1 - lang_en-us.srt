@@ -1,0 +1,619 @@
+1
+
+00:00:00,000  -->  00:00:02,685
+Let's talk about name scopes.
+
+2
+
+00:00:02,685  -->  00:00:05,240
+To see an example of this in action,
+
+3
+
+00:00:05,240  -->  00:00:09,325
+we're going to write a function that's called print function.
+
+4
+
+00:00:09,325  -->  00:00:13,160
+We'll say def print_function and then we'll
+
+5
+
+00:00:13,160  -->  00:00:20,480
+say local_var_in_function = I am a local variable.
+
+6
+
+00:00:20,480  -->  00:00:22,400
+That will be set as a string.
+
+7
+
+00:00:22,400  -->  00:00:26,275
+Then we'll print that variable right here.
+
+8
+
+00:00:26,275  -->  00:00:29,875
+Then we'll execute our function below.
+
+9
+
+00:00:29,875  -->  00:00:32,600
+When we run this function,
+
+10
+
+00:00:32,600  -->  00:00:34,500
+we'll see a print out,
+
+11
+
+00:00:34,500  -->  00:00:36,170
+I am a local variable.
+
+12
+
+00:00:36,170  -->  00:00:41,390
+But if we were to try and print the variable inside of the function, which is this one,
+
+13
+
+00:00:41,390  -->  00:00:45,835
+and we try to do this, we say print_local_var_in_function,
+
+14
+
+00:00:45,835  -->  00:00:48,335
+can you guess what's going to happen when we do this?
+
+15
+
+00:00:48,335  -->  00:00:51,350
+When we run this, we'll see a NameError,
+
+16
+
+00:00:51,350  -->  00:00:53,045
+and it will say name,
+
+17
+
+00:00:53,045  -->  00:00:56,150
+local_var_in_function is not defined.
+
+18
+
+00:00:56,150  -->  00:01:01,510
+This is because local var and function only exists within the print function.
+
+19
+
+00:01:01,510  -->  00:01:04,430
+Trying to access it outside of the function
+
+20
+
+00:01:04,430  -->  00:01:07,745
+will result in an error because it's out of scope.
+
+21
+
+00:01:07,745  -->  00:01:11,795
+What does a global scope for a variable look like instead?
+
+22
+
+00:01:11,795  -->  00:01:13,470
+Let's use another example.
+
+23
+
+00:01:13,470  -->  00:01:18,345
+We'll say global_var = I am global.
+
+24
+
+00:01:18,345  -->  00:01:19,870
+That'll be set as a string,
+
+25
+
+00:01:19,870  -->  00:01:24,045
+and then we'll define a print_global function
+
+26
+
+00:01:24,045  -->  00:01:29,480
+where we'll print that variable that we've defined up at the top called global_var,
+
+27
+
+00:01:29,480  -->  00:01:35,730
+then we'll execute our print_global_function below.
+
+28
+
+00:01:35,730  -->  00:01:39,250
+When we run this, can you guess what the output of this is going to be?
+
+29
+
+00:01:39,250  -->  00:01:40,790
+When we execute this cell,
+
+30
+
+00:01:40,790  -->  00:01:43,020
+we'll see I am global.
+
+31
+
+00:01:43,020  -->  00:01:47,350
+Also, if we try and print global_var like this,
+
+32
+
+00:01:47,350  -->  00:01:50,950
+can you guess what we'll be able to see when we just do this?
+
+33
+
+00:01:50,950  -->  00:01:53,100
+If you said, I am global, you're right.
+
+34
+
+00:01:53,100  -->  00:01:57,560
+We'll also see the same variable string printed out.
+
+35
+
+00:01:57,560  -->  00:02:02,640
+This works because we've defined this global variable outside of the function,
+
+36
+
+00:02:02,640  -->  00:02:06,960
+and then it's able to pull from this global environment.
+
+37
+
+00:02:06,960  -->  00:02:11,180
+But here, because this is locked within the function,
+
+38
+
+00:02:11,180  -->  00:02:15,540
+we cannot access it outside of the scope of the function.
+
+39
+
+00:02:15,540  -->  00:02:21,580
+But here, because the global variable exists outside of the function scope,
+
+40
+
+00:02:21,580  -->  00:02:23,080
+it's now in a global scope,
+
+41
+
+00:02:23,080  -->  00:02:26,945
+so we're able to call that from within the function and outside of the function.
+
+42
+
+00:02:26,945  -->  00:02:30,590
+Now, let's talk about name hiding and shadowing.
+
+43
+
+00:02:30,590  -->  00:02:34,930
+Sometimes local variables can have the same name as global variables.
+
+44
+
+00:02:34,930  -->  00:02:37,790
+This is called name hiding or shadowing,
+
+45
+
+00:02:37,790  -->  00:02:41,630
+and the local variable takes precedence within its scope.
+
+46
+
+00:02:41,630  -->  00:02:44,190
+Basically, what's happening here is that we're
+
+47
+
+00:02:44,190  -->  00:02:47,710
+declaring a globally accessible variable at the top,
+
+48
+
+00:02:47,710  -->  00:02:50,350
+which we're going to see in a second called name,
+
+49
+
+00:02:50,350  -->  00:02:52,595
+and that has a global scope.
+
+50
+
+00:02:52,595  -->  00:02:55,010
+Inside, the print name function,
+
+51
+
+00:02:55,010  -->  00:02:56,490
+which you'll also see next,
+
+52
+
+00:02:56,490  -->  00:02:59,410
+will declare a variable, also called name,
+
+53
+
+00:02:59,410  -->  00:03:02,925
+but this has a local scope. Let's do that right now.
+
+54
+
+00:03:02,925  -->  00:03:07,800
+We're going to say name = I am a global name.
+
+55
+
+00:03:07,800  -->  00:03:11,830
+Name is set as a string and then we're going to define
+
+56
+
+00:03:11,830  -->  00:03:16,950
+a print name_function with def print_name and then we're
+
+57
+
+00:03:16,950  -->  00:03:21,960
+going to say name = I am a local (name).
+
+58
+
+00:03:21,960  -->  00:03:23,820
+Then we're going to print(name),
+
+59
+
+00:03:23,820  -->  00:03:25,725
+and then we're going to run
+
+60
+
+00:03:25,725  -->  00:03:33,355
+our print name_function and then we're also going to print the variable of name.
+
+61
+
+00:03:33,355  -->  00:03:37,060
+Can you guess what these two outputs are going to be?
+
+62
+
+00:03:37,060  -->  00:03:40,740
+They're going to print two different things or maybe two of the same things.
+
+63
+
+00:03:40,740  -->  00:03:44,140
+But can you guess what the output of print_name will
+
+64
+
+00:03:44,140  -->  00:03:47,820
+be and print variable of name will be?
+
+65
+
+00:03:47,820  -->  00:03:49,720
+When we execute this code,
+
+66
+
+00:03:49,720  -->  00:03:52,710
+we'll see the first statement,
+
+67
+
+00:03:52,710  -->  00:03:53,870
+which is print_name,
+
+68
+
+00:03:53,870  -->  00:03:57,320
+which is printing the name says I am a local name,
+
+69
+
+00:03:57,320  -->  00:04:01,500
+and then print variable name right here,
+
+70
+
+00:04:01,500  -->  00:04:03,800
+says I am a global name.
+
+71
+
+00:04:03,800  -->  00:04:07,240
+Although there is a global variable name at the top,
+
+72
+
+00:04:07,240  -->  00:04:10,380
+the function defines a local variable
+
+73
+
+00:04:10,380  -->  00:04:16,500
+here within the same name shadowing the global variable.
+
+74
+
+00:04:16,500  -->  00:04:18,480
+Outside of the function,
+
+75
+
+00:04:18,480  -->  00:04:21,425
+the global variable remains unchanged.
+
+76
+
+00:04:21,425  -->  00:04:24,680
+When we redeclare a variable called name,
+
+77
+
+00:04:24,680  -->  00:04:26,960
+even though it has a global scope,
+
+78
+
+00:04:26,960  -->  00:04:31,620
+the function will take this to be what we want name to be,
+
+79
+
+00:04:31,620  -->  00:04:37,820
+and then it will assume that we are writing name as a variable within that function,
+
+80
+
+00:04:37,820  -->  00:04:40,760
+and we only want to call that not the global scope,
+
+81
+
+00:04:40,760  -->  00:04:42,900
+if they have the same name.
+
+82
+
+00:04:42,900  -->  00:04:47,340
+But when we call this outside of the function scope with print(name),
+
+83
+
+00:04:47,340  -->  00:04:49,810
+that's why it prints I am a global name,
+
+84
+
+00:04:49,810  -->  00:04:51,550
+as opposed to I am a local name,
+
+85
+
+00:04:51,550  -->  00:04:53,490
+which is function specific.
+
+86
+
+00:04:53,490  -->  00:04:56,750
+Finally, let's talk about the global keyword.
+
+87
+
+00:04:56,750  -->  00:05:02,030
+Expanding upon our local and global scope knowledge from the previous sections,
+
+88
+
+00:05:02,030  -->  00:05:05,650
+let's say we want to modify a global variable from within a function.
+
+89
+
+00:05:05,650  -->  00:05:12,515
+You might be wondering, how do we do that since global and local are separate scopes?
+
+90
+
+00:05:12,515  -->  00:05:15,615
+We can use something called the global keyword to accomplish this.
+
+91
+
+00:05:15,615  -->  00:05:17,720
+But just a word of caution.
+
+92
+
+00:05:17,720  -->  00:05:22,040
+Be very cautious and careful with this approach as it can make
+
+93
+
+00:05:22,040  -->  00:05:27,560
+debugging harder mixing global and local scopes like you're going to see in a second.
+
+94
+
+00:05:27,560  -->  00:05:32,040
+First, let's see an example where we're going to be
+
+95
+
+00:05:32,040  -->  00:05:36,660
+declaring a globally scoped variable that will be a counter variable,
+
+96
+
+00:05:36,660  -->  00:05:41,420
+and then we're going to be writing an increment function that will overwrite
+
+97
+
+00:05:41,420  -->  00:05:43,260
+the counter variable by using
+
+98
+
+00:05:43,260  -->  00:05:47,820
+the global keyword on the counter variable and incrementing it by plus one.
+
+99
+
+00:05:47,820  -->  00:05:50,565
+Let's see what that looks like in action.
+
+100
+
+00:05:50,565  -->  00:05:53,020
+We'll declare a variable called counter,
+
+101
+
+00:05:53,020  -->  00:05:55,695
+and we'll set that equal initially to zero.
+
+102
+
+00:05:55,695  -->  00:06:00,120
+Then we'll define a function called increment and then
+
+103
+
+00:06:00,120  -->  00:06:04,645
+we're going to declare a global variable called counter.
+
+104
+
+00:06:04,645  -->  00:06:08,700
+Then we're going to say counter += 1.
+
+105
+
+00:06:08,700  -->  00:06:14,565
+Then we will call this function and execute it.
+
+106
+
+00:06:14,565  -->  00:06:19,475
+We'll run this function by calling the increment and run this whole operation.
+
+107
+
+00:06:19,475  -->  00:06:24,425
+Once we execute this, if we were to then print(counter),
+
+108
+
+00:06:24,425  -->  00:06:27,275
+can you guess what the output of counter will be?
+
+109
+
+00:06:27,275  -->  00:06:29,655
+Counter is now one.
+
+110
+
+00:06:29,655  -->  00:06:31,470
+If you said one, you're right.
+
+111
+
+00:06:31,470  -->  00:06:34,675
+Notice how it now is no longer zero.
+
+112
+
+00:06:34,675  -->  00:06:38,020
+By declaring counter as a global variable
+
+113
+
+00:06:38,020  -->  00:06:42,580
+here within the global keyword inside of the increment function,
+
+114
+
+00:06:42,580  -->  00:06:46,320
+which is within this, any changes made inside
+
+115
+
+00:06:46,320  -->  00:06:50,360
+of increment affect the global counter variable above,
+
+116
+
+00:06:50,360  -->  00:06:53,940
+even though counter would otherwise be a locally scoped variable.
+
+117
+
+00:06:53,940  -->  00:06:55,840
+If you remember from earlier,
+
+118
+
+00:06:55,840  -->  00:06:58,520
+if we were working with variables inside the function,
+
+119
+
+00:06:58,520  -->  00:07:00,200
+that would be function specific.
+
+120
+
+00:07:00,200  -->  00:07:03,580
+But because we use this global keyword that then tells
+
+121
+
+00:07:03,580  -->  00:07:07,160
+Python to look outward to the global scope,
+
+122
+
+00:07:07,160  -->  00:07:09,920
+and then to increment
+
+123
+
+00:07:09,920  -->  00:07:13,160
+the actual globally scoped counter variable and
+
+124
+
+00:07:13,160  -->  00:07:17,780
+not a locally scoped variable within the function.

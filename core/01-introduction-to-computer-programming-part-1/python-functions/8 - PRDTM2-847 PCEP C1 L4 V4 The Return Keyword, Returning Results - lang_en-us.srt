@@ -1,0 +1,379 @@
+1
+
+00:00:00,000  -->  00:00:04,620
+We just learned about the return keyword in the last lesson on functions.
+
+2
+
+00:00:04,620  -->  00:00:06,260
+But let's dive into
+
+3
+
+00:00:06,260  -->  00:00:11,680
+a bit more detail about what it does and what it's used for in Python.
+
+4
+
+00:00:11,680  -->  00:00:14,480
+The return keyword allows a function to send
+
+5
+
+00:00:14,480  -->  00:00:18,000
+back a result after processing some Python code.
+
+6
+
+00:00:18,000  -->  00:00:21,920
+Think of it as getting a finished product from an assembly line.
+
+7
+
+00:00:21,920  -->  00:00:23,580
+Once the steps are complete,
+
+8
+
+00:00:23,580  -->  00:00:27,040
+it's sent back ready for further use or consumption.
+
+9
+
+00:00:27,040  -->  00:00:31,520
+Let's see some examples of how the return statement works and how we can write
+
+10
+
+00:00:31,520  -->  00:00:36,880
+code that ensures we know what will be returned each time our code runs.
+
+11
+
+00:00:36,880  -->  00:00:39,460
+Let's talk about the return keyword.
+
+12
+
+00:00:39,460  -->  00:00:43,500
+For example, let's say we have a function that adds two numbers together.
+
+13
+
+00:00:43,500  -->  00:00:47,840
+By using return, we can send back the result of that addition,
+
+14
+
+00:00:47,840  -->  00:00:50,800
+which then can be used elsewhere in our code.
+
+15
+
+00:00:50,800  -->  00:00:53,720
+Here, we're going to write an add function that
+
+16
+
+00:00:53,720  -->  00:00:57,495
+completes its task and sends back the sum of a and b,
+
+17
+
+00:00:57,495  -->  00:01:02,200
+which we then store in the result variable for further use.
+
+18
+
+00:01:02,200  -->  00:01:07,270
+We'll do this by declaring def add(a,
+
+19
+
+00:01:08,480  -->  00:01:13,170
+b): return a + b.
+
+20
+
+00:01:13,170  -->  00:01:21,300
+Now, result is set to add (3, 5).
+
+21
+
+00:01:21,300  -->  00:01:23,650
+When we print result,
+
+22
+
+00:01:23,650  -->  00:01:26,685
+can you guess what the output is going to be?
+
+23
+
+00:01:26,685  -->  00:01:29,235
+If you said eight, you're right,
+
+24
+
+00:01:29,235  -->  00:01:32,085
+because 5, 6, 7, 8,
+
+25
+
+00:01:32,085  -->  00:01:34,140
+so 5 + 3 is 8,
+
+26
+
+00:01:34,140  -->  00:01:37,910
+which makes sense and that means that we wrote our add function correctly.
+
+27
+
+00:01:37,910  -->  00:01:39,790
+But be careful though,
+
+28
+
+00:01:39,790  -->  00:01:42,230
+because the return value will literally
+
+29
+
+00:01:42,230  -->  00:01:45,110
+return what you tell it to. What do I mean by this?
+
+30
+
+00:01:45,110  -->  00:01:50,925
+Well, let's say that you have this add function and you mistakenly put in add(3,
+
+31
+
+00:01:50,925  -->  00:01:55,540
+'Python') in which case you added a number and a string together.
+
+32
+
+00:01:55,540  -->  00:01:59,150
+This would look something like this.
+
+33
+
+00:02:00,650  -->  00:02:05,030
+If you were to do this, you might think that this would create (3,
+
+34
+
+00:02:05,030  -->  00:02:10,410
+'Python'), but can you guess what this will create instead? Let's find out.
+
+35
+
+00:02:10,550  -->  00:02:13,060
+This will create a type error,
+
+36
+
+00:02:13,060  -->  00:02:19,800
+and it'll say unsupported operand types for integer and string when we add them together.
+
+37
+
+00:02:19,800  -->  00:02:21,800
+When you're working on a team,
+
+38
+
+00:02:21,800  -->  00:02:27,220
+a great convention to practice is defining the types of the inputs so that it's very
+
+39
+
+00:02:27,220  -->  00:02:32,680
+clear what goes in the parameters and what comes out via the return statement,
+
+40
+
+00:02:32,680  -->  00:02:35,480
+or yield if you're writing a generator function.
+
+41
+
+00:02:35,480  -->  00:02:40,300
+We would define our parameters with the colon and then the data type,
+
+42
+
+00:02:40,300  -->  00:02:46,300
+which in this case, we want whole number integers. Let's do that right now.
+
+43
+
+00:02:50,770  -->  00:02:53,530
+We'll take our function from earlier,
+
+44
+
+00:02:53,530  -->  00:03:02,300
+and we will say (a: int, b: int).
+
+45
+
+00:03:02,300  -->  00:03:07,650
+We can also enter our inputs like this so
+
+46
+
+00:03:07,650  -->  00:03:09,830
+that we can see our parameters a little bit more
+
+47
+
+00:03:09,830  -->  00:03:13,590
+clearly in case this is a little bit easier for you to see.
+
+48
+
+00:03:13,590  -->  00:03:17,320
+This will work and this will also work together.
+
+49
+
+00:03:17,320  -->  00:03:20,200
+What if we wanted to combine strings together
+
+50
+
+00:03:20,200  -->  00:03:23,680
+rather than integers like in a greeting to someone?
+
+51
+
+00:03:23,680  -->  00:03:28,180
+How do we do this? We do this in a very similar way to the last function,
+
+52
+
+00:03:28,180  -->  00:03:31,180
+but instead of int, we're using string.
+
+53
+
+00:03:31,180  -->  00:03:34,060
+We're going to write a function to greet someone and we can
+
+54
+
+00:03:34,060  -->  00:03:37,220
+customize the greeting by passing in two parameters.
+
+55
+
+00:03:37,220  -->  00:03:38,740
+The first as a greeting,
+
+56
+
+00:03:38,740  -->  00:03:40,795
+and the second as the name.
+
+57
+
+00:03:40,795  -->  00:03:43,220
+We'll use an f string to combine these together
+
+58
+
+00:03:43,220  -->  00:03:46,490
+into a single string. Let's do that right now.
+
+59
+
+00:03:46,490  -->  00:03:52,870
+We'll say, def say_greeting(greeting
+
+60
+
+00:03:52,870  -->  00:03:57,490
+: str,
+
+61
+
+00:03:57,490  -->  00:04:02,110
+name: str): and we'll say return,
+
+62
+
+00:04:02,110  -->  00:04:03,750
+and we'll write an f string,
+
+63
+
+00:04:03,750  -->  00:04:12,530
+and we'll do squiggly brackets for greeting and then we'll do squiggly brackets for name.
+
+64
+
+00:04:12,530  -->  00:04:17,200
+We'll then use an exclamation point and we'll close out our f statement.
+
+65
+
+00:04:17,200  -->  00:04:22,975
+Next, we'll set a variable called greeting_result,
+
+66
+
+00:04:22,975  -->  00:04:27,670
+and we'll set that equal to say_greeting and we'll pass in
+
+67
+
+00:04:27,670  -->  00:04:37,100
+"Howdy" as the first argument and "Python Coder", as the second argument.
+
+68
+
+00:04:37,100  -->  00:04:40,980
+Now we'll print greeting result.
+
+69
+
+00:04:40,980  -->  00:04:43,660
+Can you guess what this output will be?
+
+70
+
+00:04:43,660  -->  00:04:46,540
+Let's run this code and find out.
+
+71
+
+00:04:46,670  -->  00:04:50,180
+If you said, Howdy, Python Coder, you're right,
+
+72
+
+00:04:50,180  -->  00:04:53,920
+because that's what we see when we run this code and this is the output.
+
+73
+
+00:04:53,920  -->  00:04:57,200
+The colon data type, such as this,
+
+74
+
+00:04:57,200  -->  00:05:04,200
+or this or this or this
+
+75
+
+00:05:04,200  -->  00:05:08,060
+helps us identify what the inputs to the function are so that we can
+
+76
+
+00:05:08,060  -->  00:05:13,040
+get a sense of how they will be used for the output. Great work.

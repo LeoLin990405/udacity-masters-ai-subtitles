@@ -1,0 +1,324 @@
+1
+
+00:00:00,000  -->  00:00:02,980
+Now let's talk more about default parameter values,
+
+2
+
+00:00:02,980  -->  00:00:05,600
+which are a backup plan for your functions.
+
+3
+
+00:00:05,600  -->  00:00:08,860
+When you define a parameter with a default value,
+
+4
+
+00:00:08,860  -->  00:00:11,080
+you don't have to pass an argument for it,
+
+5
+
+00:00:11,080  -->  00:00:14,980
+as Python will use a default if nothing is provided for it.
+
+6
+
+00:00:14,980  -->  00:00:18,480
+Think of default parameter values as a default setting,
+
+7
+
+00:00:18,480  -->  00:00:22,360
+such as the default color for a car during checkout.
+
+8
+
+00:00:22,360  -->  00:00:27,540
+If you specify that you want your car to have metallic red or night blue,
+
+9
+
+00:00:27,540  -->  00:00:31,680
+that is a selection that will be an argument put into your function.
+
+10
+
+00:00:31,680  -->  00:00:34,000
+But if you don't specify a color,
+
+11
+
+00:00:34,000  -->  00:00:37,560
+the default value could be set as shiny silver,
+
+12
+
+00:00:37,560  -->  00:00:40,570
+which will mean the car will be made with
+
+13
+
+00:00:40,570  -->  00:00:44,610
+this default color value instead of a specific color.
+
+14
+
+00:00:44,610  -->  00:00:49,850
+This feature of having a default makes functions more flexible and reduces the need for
+
+15
+
+00:00:49,850  -->  00:00:52,430
+repetitive arguments because it will always be
+
+16
+
+00:00:52,430  -->  00:00:56,330
+a fallback option that will be dynamically used automatically.
+
+17
+
+00:00:56,330  -->  00:01:00,050
+Just remember that parameters with default values should be placed
+
+18
+
+00:01:00,050  -->  00:01:04,130
+after those with defaults in the function signature.
+
+19
+
+00:01:04,130  -->  00:01:08,285
+Let's see this more clearly in an example next.
+
+20
+
+00:01:08,285  -->  00:01:11,640
+Let's look at default parameter values.
+
+21
+
+00:01:11,640  -->  00:01:14,140
+Imagine you're building a car generator function,
+
+22
+
+00:01:14,140  -->  00:01:19,460
+and one of the parts allows a user to customize the color of the car before checkout.
+
+23
+
+00:01:19,460  -->  00:01:24,720
+We could define something like this where we define a choose_car_color function,
+
+24
+
+00:01:24,720  -->  00:01:27,570
+and it takes a parameter of selected_color.
+
+25
+
+00:01:27,570  -->  00:01:29,920
+If we return an F string telling us what
+
+26
+
+00:01:29,920  -->  00:01:34,020
+color the car will be based on what the user selected,
+
+27
+
+00:01:34,020  -->  00:01:35,740
+we might write something like this.
+
+28
+
+00:01:35,740  -->  00:01:39,400
+We could say def choose_car_color,
+
+29
+
+00:01:40,490  -->  00:01:42,720
+and then as a parameter,
+
+30
+
+00:01:42,720  -->  00:01:47,475
+we'll say selected_color as an input,
+
+31
+
+00:01:47,475  -->  00:01:51,940
+and then we'll return an F string, and we'll say,
+
+32
+
+00:01:51,940  -->  00:01:55,570
+the car color will be, colon,
+
+33
+
+00:01:55,570  -->  00:02:03,840
+and we'll pass in selected color and squiggly brackets, and we'll close that out.
+
+34
+
+00:02:03,840  -->  00:02:06,990
+Now, if we press "Shift" and "Enter",
+
+35
+
+00:02:06,990  -->  00:02:10,195
+we'll save this function to our Jupyter Notebook.
+
+36
+
+00:02:10,195  -->  00:02:12,520
+However, this doesn't have a backup plan.
+
+37
+
+00:02:12,520  -->  00:02:17,120
+If the user didn't select the color and the function is run like this,
+
+38
+
+00:02:17,120  -->  00:02:20,190
+where we say, choose_car_color,
+
+39
+
+00:02:20,190  -->  00:02:22,160
+and we try to execute this code,
+
+40
+
+00:02:22,160  -->  00:02:25,135
+can you guess what will happen when we run this?
+
+41
+
+00:02:25,135  -->  00:02:28,790
+Let's find out. When we run this,
+
+42
+
+00:02:28,790  -->  00:02:32,340
+we'll get an error that's a type error, and it will say,
+
+43
+
+00:02:32,340  -->  00:02:37,720
+choose_car_color missing one required positional argument, selected_color.
+
+44
+
+00:02:37,720  -->  00:02:40,510
+This is because we are referencing an input parameter,
+
+45
+
+00:02:40,510  -->  00:02:42,330
+but no argument was passed in,
+
+46
+
+00:02:42,330  -->  00:02:45,410
+hence the error of the missing positional argument.
+
+47
+
+00:02:45,410  -->  00:02:49,050
+We can avoid this error by adding a default parameter value
+
+48
+
+00:02:49,050  -->  00:02:52,870
+for selected_color so that even if a user doesn't select a color,
+
+49
+
+00:02:52,870  -->  00:02:55,300
+the car will still have a pre-loaded default,
+
+50
+
+00:02:55,300  -->  00:02:57,275
+such as metallic red.
+
+51
+
+00:02:57,275  -->  00:03:01,500
+What we can do is that we can pass in this default value
+
+52
+
+00:03:01,500  -->  00:03:10,100
+here so that choose_car_color given this parameter,
+
+53
+
+00:03:10,100  -->  00:03:13,260
+if we pass it in as an argument or not,
+
+54
+
+00:03:13,260  -->  00:03:16,620
+it will have a default metallic red setting.
+
+55
+
+00:03:16,620  -->  00:03:21,670
+Now if we save this cell to our Jupyter Notebook as a function,
+
+56
+
+00:03:21,670  -->  00:03:24,540
+now if we run choose_car_color,
+
+57
+
+00:03:24,540  -->  00:03:29,280
+the output will now say, the car color will be metallic red.
+
+58
+
+00:03:29,280  -->  00:03:33,000
+If the user chooses a color like this,
+
+59
+
+00:03:33,650  -->  00:03:37,570
+such as night blue,
+
+60
+
+00:03:39,050  -->  00:03:43,530
+we'll now see the car color will be night blue.
+
+61
+
+00:03:43,530  -->  00:03:46,750
+It's a good practice to get into the habit
+
+62
+
+00:03:46,750  -->  00:03:49,570
+of adding in default parameter values if there is
+
+63
+
+00:03:49,570  -->  00:03:52,530
+a system or program default or returning
+
+64
+
+00:03:52,530  -->  00:03:55,690
+an error via an exception if no input is provided,
+
+65
+
+00:03:55,690  -->  00:03:59,150
+and that is important to consider. Great work.

@@ -1,0 +1,439 @@
+1
+
+00:00:00,000  -->  00:00:03,580
+In Python, if a function doesn't explicitly return a value,
+
+2
+
+00:00:03,580  -->  00:00:05,720
+it automatically returns none.
+
+3
+
+00:00:05,720  -->  00:00:07,560
+This is Python's way of saying,
+
+4
+
+00:00:07,560  -->  00:00:11,040
+I have no output for you and is especially useful
+
+5
+
+00:00:11,040  -->  00:00:15,080
+when a function is meant to perform an action without needing to give anything back.
+
+6
+
+00:00:15,080  -->  00:00:18,500
+If you remember from our generator example was baking cookies,
+
+7
+
+00:00:18,500  -->  00:00:23,255
+we actually used none to create a default value of nothing for a parameter.
+
+8
+
+00:00:23,255  -->  00:00:27,870
+If we use this function and don't pass in a second parameter for baked cookies,
+
+9
+
+00:00:27,870  -->  00:00:29,590
+like baked cookies 100,
+
+10
+
+00:00:29,590  -->  00:00:33,190
+it will make batches of 100 cookies every time it runs,
+
+11
+
+00:00:33,190  -->  00:00:35,090
+but could be invoked forever.
+
+12
+
+00:00:35,090  -->  00:00:37,850
+That's because the function expects to have two inputs,
+
+13
+
+00:00:37,850  -->  00:00:42,550
+but we can use the none keyword to stand in place as a value of nothing.
+
+14
+
+00:00:42,550  -->  00:00:45,995
+Let's see some examples of the none keyword in action.
+
+15
+
+00:00:45,995  -->  00:00:48,670
+Now let's talk about the none keyword.
+
+16
+
+00:00:48,670  -->  00:00:52,670
+If you create a function that performs a simple task like printing a message,
+
+17
+
+00:00:52,670  -->  00:00:54,950
+but doesn't need to return a result,
+
+18
+
+00:00:54,950  -->  00:00:57,430
+it will implicitly return none.
+
+19
+
+00:00:57,430  -->  00:01:01,825
+To see an example of this, we're going to write a function called no return value,
+
+20
+
+00:01:01,825  -->  00:01:05,850
+and what's interesting is that we're going to have the function print a statement,
+
+21
+
+00:01:05,850  -->  00:01:08,970
+but we will not include a return keyword.
+
+22
+
+00:01:08,970  -->  00:01:14,720
+Let's see how to do this. We'll say def no_return_value,
+
+23
+
+00:01:15,060  -->  00:01:23,975
+and then we'll say print("This function does not return anything at all").
+
+24
+
+00:01:23,975  -->  00:01:28,685
+We'll end the quote, and then close out the print statement.
+
+25
+
+00:01:28,685  -->  00:01:34,495
+Now, result is going to equal no_return_value(),
+
+26
+
+00:01:34,495  -->  00:01:37,595
+and then we're going to print the result.
+
+27
+
+00:01:37,595  -->  00:01:40,660
+Can you guess what the output is going to be?
+
+28
+
+00:01:40,660  -->  00:01:42,800
+Let's run it and find out.
+
+29
+
+00:01:42,800  -->  00:01:45,780
+When we run this, when the function runs,
+
+30
+
+00:01:45,780  -->  00:01:48,180
+it will print to the console the phrase,
+
+31
+
+00:01:48,180  -->  00:01:51,080
+this function does not return anything at all!.
+
+32
+
+00:01:51,080  -->  00:01:54,020
+But if we make set a variable of
+
+33
+
+00:01:54,020  -->  00:01:59,420
+result equal to the value of what the function returns when it runs,
+
+34
+
+00:01:59,420  -->  00:02:03,360
+the value of the result itself is none.
+
+35
+
+00:02:03,360  -->  00:02:08,880
+Let's see a more practical example of the none value being used in an everyday scenario,
+
+36
+
+00:02:08,880  -->  00:02:10,920
+like finding items in your refrigerator.
+
+37
+
+00:02:10,920  -->  00:02:12,660
+If you have a smart refrigerator,
+
+38
+
+00:02:12,660  -->  00:02:16,200
+you might want to be able to look up if an item is in there or not.
+
+39
+
+00:02:16,200  -->  00:02:18,180
+If there is an item found,
+
+40
+
+00:02:18,180  -->  00:02:20,260
+we want to have our Python code let us know.
+
+41
+
+00:02:20,260  -->  00:02:23,160
+Otherwise, we would not want to return anything.
+
+42
+
+00:02:23,160  -->  00:02:27,320
+First, we'll define a list of items that are in our smart refrigerator,
+
+43
+
+00:02:27,320  -->  00:02:31,200
+and then we'll make our own function called find item that takes in
+
+44
+
+00:02:31,200  -->  00:02:35,740
+a target that we want to find if it's in there.
+
+45
+
+00:02:35,740  -->  00:02:40,800
+Our for loop of item in items will iterate over the list of fruits,
+
+46
+
+00:02:40,800  -->  00:02:43,020
+and if our target is found in the list,
+
+47
+
+00:02:43,020  -->  00:02:46,440
+it will return a statement that says found XYZ.
+
+48
+
+00:02:46,440  -->  00:02:49,520
+Otherwise, if the target isn't found in the list of items,
+
+49
+
+00:02:49,520  -->  00:02:54,320
+then we return nothing with return none. Let's do that right now.
+
+50
+
+00:02:54,320  -->  00:02:58,820
+First, we'll define our list of items, which is an apple,
+
+51
+
+00:02:58,820  -->  00:03:01,830
+banana, and a cherry as a few fruits,
+
+52
+
+00:03:01,830  -->  00:03:03,480
+then we're going to write a function.
+
+53
+
+00:03:03,480  -->  00:03:08,130
+We'll say def find_item, and we'll say target.
+
+54
+
+00:03:08,130  -->  00:03:11,660
+That will be the value that we check inside of this function,
+
+55
+
+00:03:11,660  -->  00:03:17,640
+and then we're going to say for item in items for our for loop construction,
+
+56
+
+00:03:17,640  -->  00:03:22,520
+we'll say if item == target:, return,
+
+57
+
+00:03:22,520  -->  00:03:25,520
+and then we'll print an F string and we'll say Found
+
+58
+
+00:03:25,520  -->  00:03:31,120
+: {target} and target will be in squiggly braces,
+
+59
+
+00:03:31,120  -->  00:03:35,645
+and then we'll put an exclamation point, and then we'll close that out.
+
+60
+
+00:03:35,645  -->  00:03:39,510
+Now, on the same level of the for loop,
+
+61
+
+00:03:39,510  -->  00:03:41,370
+we'll return none,
+
+62
+
+00:03:41,370  -->  00:03:44,660
+and that will be if the loop completes without finding the item,
+
+63
+
+00:03:44,660  -->  00:03:46,320
+then none will be returned.
+
+64
+
+00:03:46,320  -->  00:03:50,640
+Otherwise, we'll return found with that item.
+
+65
+
+00:03:50,640  -->  00:03:55,160
+We'll execute this code to save this function to our notebook.
+
+66
+
+00:03:55,160  -->  00:03:58,140
+Then if we do find item,
+
+67
+
+00:03:58,140  -->  00:04:01,040
+and let's say that we look for banana,
+
+68
+
+00:04:01,040  -->  00:04:05,740
+and we execute this, what do you think the output will be here?
+
+69
+
+00:04:05,740  -->  00:04:07,330
+Let's run it and find out.
+
+70
+
+00:04:07,330  -->  00:04:09,835
+We'll see 'Found: banana!'
+
+71
+
+00:04:09,835  -->  00:04:13,440
+and that makes sense because banana is in our list of items.
+
+72
+
+00:04:13,440  -->  00:04:19,660
+However, if we were to run this same exact code except to switch out banana for orange,
+
+73
+
+00:04:19,660  -->  00:04:23,180
+what do you think the output is going to be now?
+
+74
+
+00:04:25,730  -->  00:04:29,120
+There is actually no response at all
+
+75
+
+00:04:29,120  -->  00:04:32,300
+since orange is nowhere to be found in our list of items,
+
+76
+
+00:04:32,300  -->  00:04:35,080
+since there's only apple, banana, and cherry.
+
+77
+
+00:04:35,080  -->  00:04:40,960
+To confirm this, we can set a variable of result to the orange look up.
+
+78
+
+00:04:40,960  -->  00:04:46,435
+What we'll do is we'll say result = find_item,
+
+79
+
+00:04:46,435  -->  00:04:49,670
+and then we'll put in orange,
+
+80
+
+00:04:49,880  -->  00:04:53,630
+and then we'll print result.
+
+81
+
+00:04:53,630  -->  00:04:56,255
+Can you guess what the output of this will be?
+
+82
+
+00:04:56,255  -->  00:04:59,200
+We'll see none, and if you said none, you're right,
+
+83
+
+00:04:59,200  -->  00:05:03,560
+and this is because orange is not in our smart refrigerator.
+
+84
+
+00:05:03,560  -->  00:05:06,710
+The for loop checks over all the items,
+
+85
+
+00:05:06,710  -->  00:05:08,950
+does not find it, and then returns none,
+
+86
+
+00:05:08,950  -->  00:05:11,570
+and that's exactly what happens here, because again,
+
+87
+
+00:05:11,570  -->  00:05:13,750
+banana is in our list of items,
+
+88
+
+00:05:13,750  -->  00:05:16,720
+but orange is not. Great work.

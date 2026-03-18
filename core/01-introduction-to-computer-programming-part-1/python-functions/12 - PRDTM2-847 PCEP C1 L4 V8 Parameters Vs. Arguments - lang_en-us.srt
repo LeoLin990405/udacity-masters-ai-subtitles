@@ -1,0 +1,114 @@
+1
+
+00:00:00,000  -->  00:00:05,280
+In this course so far, we've already touched briefly on parameters and arguments.
+
+2
+
+00:00:05,280  -->  00:00:08,400
+You've already been using these concepts in your Python code,
+
+3
+
+00:00:08,400  -->  00:00:09,940
+whether you realize it or not.
+
+4
+
+00:00:09,940  -->  00:00:12,400
+Let's dive a bit deeper into these concepts and
+
+5
+
+00:00:12,400  -->  00:00:15,140
+start by distinguishing parameters from arguments.
+
+6
+
+00:00:15,140  -->  00:00:17,600
+Although they're often used interchangeably,
+
+7
+
+00:00:17,600  -->  00:00:20,540
+they actually refer to different concepts in programming.
+
+8
+
+00:00:20,540  -->  00:00:23,340
+Parameters are like placeholders that you
+
+9
+
+00:00:23,340  -->  00:00:26,900
+define in the function signature when you set up the function.
+
+10
+
+00:00:26,900  -->  00:00:31,140
+They are the names you give to data that your function will use,
+
+11
+
+00:00:31,140  -->  00:00:35,140
+much like empty plates ready to be filled with food at the dinner table.
+
+12
+
+00:00:35,140  -->  00:00:39,410
+Think of these as the placeholder inputs that a function will consume.
+
+13
+
+00:00:39,410  -->  00:00:41,460
+Arguments, on the other hand,
+
+14
+
+00:00:41,460  -->  00:00:46,160
+are the actual values or data that you pass into the function when you call it.
+
+15
+
+00:00:46,160  -->  00:00:50,280
+They're like the food you serve on those plates at the dinner party.
+
+16
+
+00:00:50,280  -->  00:00:54,765
+These arguments are what the function uses to perform its task.
+
+17
+
+00:00:54,765  -->  00:00:59,860
+Think of these as the actual value inputs that a function will use and run with.
+
+18
+
+00:00:59,860  -->  00:01:04,140
+Understanding this distinction helps us when it comes to debugging
+
+19
+
+00:01:04,140  -->  00:01:08,570
+or reading our code or someone else's code that we didn't write.
+
+20
+
+00:01:08,570  -->  00:01:12,220
+When you see a function definition, look for parameters.
+
+21
+
+00:01:12,220  -->  00:01:15,380
+When you see a function call, look for arguments.
+
+22
+
+00:01:15,380  -->  00:01:17,500
+They represent the bridge between what
+
+23
+
+00:01:17,500  -->  00:01:22,680
+the function needs to know and the actual data it works with.

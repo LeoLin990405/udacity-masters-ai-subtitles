@@ -1,0 +1,579 @@
+1
+
+00:00:00,000  -->  00:00:04,140
+In Python, there are several ways to pass arguments into functions,
+
+2
+
+00:00:04,140  -->  00:00:06,755
+each with its own advantages and trade-offs.
+
+3
+
+00:00:06,755  -->  00:00:08,875
+Let's explore these one-by-one;
+
+4
+
+00:00:08,875  -->  00:00:12,680
+positional, keyword, and mixed argument passing.
+
+5
+
+00:00:12,680  -->  00:00:16,060
+Positional arguments are passed in a specific order,
+
+6
+
+00:00:16,060  -->  00:00:19,890
+matching the order of parameters in the function definition.
+
+7
+
+00:00:19,890  -->  00:00:24,120
+Here, the function uses the values based on their positions.
+
+8
+
+00:00:24,120  -->  00:00:25,940
+In mixed argument passing,
+
+9
+
+00:00:25,940  -->  00:00:29,980
+this is a mix of positional and keyword arguments in a single function call.
+
+10
+
+00:00:29,980  -->  00:00:32,100
+An important note about this one,
+
+11
+
+00:00:32,100  -->  00:00:35,260
+is that positional arguments must come before keyword arguments,
+
+12
+
+00:00:35,260  -->  00:00:36,720
+or there will be an error.
+
+13
+
+00:00:36,720  -->  00:00:39,400
+Finally, we have keyword arguments where we
+
+14
+
+00:00:39,400  -->  00:00:42,440
+specify the parameter name along with the value,
+
+15
+
+00:00:42,440  -->  00:00:45,740
+allowing you to pass arguments in any order.
+
+16
+
+00:00:45,740  -->  00:00:49,160
+This is my personal favorite method for defining arguments.
+
+17
+
+00:00:49,160  -->  00:00:54,590
+Let's see some examples of these different ways to pass in arguments into our functions.
+
+18
+
+00:00:54,590  -->  00:00:56,300
+Let's talk about positional,
+
+19
+
+00:00:56,300  -->  00:00:58,970
+keyword, and mixed argument passing.
+
+20
+
+00:00:58,970  -->  00:01:01,700
+First, positional arguments.
+
+21
+
+00:01:01,700  -->  00:01:04,020
+When it comes to positional arguments,
+
+22
+
+00:01:04,020  -->  00:01:08,640
+the order of the parameters to be used by the function are extremely important,
+
+23
+
+00:01:08,640  -->  00:01:10,985
+as we'll see in this function.
+
+24
+
+00:01:10,985  -->  00:01:13,580
+We'll write a function called describe_trip,
+
+25
+
+00:01:13,580  -->  00:01:17,260
+and we'll see why positional arguments are so important.
+
+26
+
+00:01:17,260  -->  00:01:20,800
+When we write def describe_trip,
+
+27
+
+00:01:21,290  -->  00:01:27,960
+we'll pass in city and days into the function as parameters,
+
+28
+
+00:01:27,960  -->  00:01:29,870
+and then we'll say return,
+
+29
+
+00:01:29,870  -->  00:01:32,710
+and we'll return an f string and say,
+
+30
+
+00:01:32,710  -->  00:01:43,160
+we'll spend in squiggly brackets days in city.
+
+31
+
+00:01:45,410  -->  00:01:50,430
+You'll spend days in blank, which would be the city.
+
+32
+
+00:01:50,430  -->  00:01:58,710
+By calling this function with describe_trip, we'll say Paris,
+
+33
+
+00:01:58,740  -->  00:02:02,680
+five, this will place Paris into
+
+34
+
+00:02:02,680  -->  00:02:09,260
+the city position and five into the days position, as we'll see here.
+
+35
+
+00:02:09,260  -->  00:02:12,825
+Our output will say, you'll spend five days in Paris.
+
+36
+
+00:02:12,825  -->  00:02:18,045
+However, what if we were to reverse the argument order like this?
+
+37
+
+00:02:18,045  -->  00:02:22,850
+Now our arguments are in reverse order like this.
+
+38
+
+00:02:22,850  -->  00:02:25,410
+Can you guess what the output of this is going to be?
+
+39
+
+00:02:25,410  -->  00:02:30,150
+When we run this, we'll see you'll spend Paris days in five.
+
+40
+
+00:02:30,150  -->  00:02:32,370
+Now the output is reversed.
+
+41
+
+00:02:32,370  -->  00:02:34,970
+As you can see, order matters a lot here,
+
+42
+
+00:02:34,970  -->  00:02:37,170
+because if you switch the arguments around,
+
+43
+
+00:02:37,170  -->  00:02:39,230
+you'll get a completely different result,
+
+44
+
+00:02:39,230  -->  00:02:43,110
+perhaps even one that's unintentional or full of errors,
+
+45
+
+00:02:43,110  -->  00:02:45,590
+like we just saw in the second example,
+
+46
+
+00:02:45,590  -->  00:02:47,240
+going from here to here.
+
+47
+
+00:02:47,240  -->  00:02:50,220
+Next up is keyword arguments.
+
+48
+
+00:02:50,220  -->  00:02:54,840
+Keyword arguments specify the parameter name along with the value,
+
+49
+
+00:02:54,840  -->  00:02:57,980
+allowing you to pass arguments in any order.
+
+50
+
+00:02:57,980  -->  00:03:02,120
+This is personally my favorite way to define parameters for my functions,
+
+51
+
+00:03:02,120  -->  00:03:05,180
+because while it is more verbose and requires more writing,
+
+52
+
+00:03:05,180  -->  00:03:07,480
+it helps to add a layer of structure and
+
+53
+
+00:03:07,480  -->  00:03:11,840
+accountability to how functions should be defined and how they should work.
+
+54
+
+00:03:11,840  -->  00:03:15,340
+You never have to worry about the order of the inputs because
+
+55
+
+00:03:15,340  -->  00:03:19,240
+you explicitly define what they are right from the get go.
+
+56
+
+00:03:19,240  -->  00:03:21,820
+For example, this is how we would assign
+
+57
+
+00:03:21,820  -->  00:03:25,200
+keyword arguments to our described trip function.
+
+58
+
+00:03:25,990  -->  00:03:30,000
+We'll write this function, and then what we'll do is,
+
+59
+
+00:03:30,000  -->  00:03:32,680
+we'll re-declare this function.
+
+60
+
+00:03:35,220  -->  00:03:39,720
+Now what we'll do is when we are defining our arguments,
+
+61
+
+00:03:39,720  -->  00:03:46,370
+we'll say days equal five and city equals Paris.
+
+62
+
+00:03:46,370  -->  00:03:50,540
+Now, even though these are reversed in the previous example,
+
+63
+
+00:03:50,540  -->  00:03:53,310
+when we print this, we'll now see,
+
+64
+
+00:03:53,310  -->  00:03:55,950
+you'll spend five days in Paris.
+
+65
+
+00:03:55,950  -->  00:03:59,820
+We can also assign default to our function as well to make sure that
+
+66
+
+00:03:59,820  -->  00:04:03,900
+our functions parameters always have a default value.
+
+67
+
+00:04:03,900  -->  00:04:06,320
+We'll learn more about this in the next section,
+
+68
+
+00:04:06,320  -->  00:04:09,725
+but here's a quick introduction to this concept.
+
+69
+
+00:04:09,725  -->  00:04:13,000
+What we can do is that we can take our function like this,
+
+70
+
+00:04:13,000  -->  00:04:17,190
+and we could say city equals Paris,
+
+71
+
+00:04:17,190  -->  00:04:21,765
+and days equals five.
+
+72
+
+00:04:21,765  -->  00:04:26,585
+Our two parameters now have default inputs, Paris, and five.
+
+73
+
+00:04:26,585  -->  00:04:30,985
+Even if we were to print just a simple describe_trip,
+
+74
+
+00:04:30,985  -->  00:04:32,380
+we'll execute this code.
+
+75
+
+00:04:32,380  -->  00:04:37,840
+We'll then not pass in any arguments into the described trip function but if we run this,
+
+76
+
+00:04:37,840  -->  00:04:41,440
+we'll now see you'll spend five days in Paris.
+
+77
+
+00:04:41,440  -->  00:04:43,920
+So we didn't need to input
+
+78
+
+00:04:43,920  -->  00:04:48,240
+those values because they are the defaults if we do not pass anything into them.
+
+79
+
+00:04:48,240  -->  00:04:50,660
+Now, we could still define whatever we want.
+
+80
+
+00:04:50,660  -->  00:04:55,120
+For example, let's say that we copy this from earlier,
+
+81
+
+00:04:55,120  -->  00:05:01,960
+and we say days is 10, and city is Norway.
+
+82
+
+00:05:02,750  -->  00:05:06,795
+Now we see you'll spend 10 days in Norway.
+
+83
+
+00:05:06,795  -->  00:05:13,630
+But, we still have those default values attached to the parameters as backups,
+
+84
+
+00:05:13,630  -->  00:05:16,815
+just in case we were to not include a keyword argument.
+
+85
+
+00:05:16,815  -->  00:05:25,240
+If we were to write describe_trip days equals 10,
+
+86
+
+00:05:25,240  -->  00:05:27,570
+the output will be,
+
+87
+
+00:05:27,570  -->  00:05:29,850
+you'll spend 10 days in Paris,
+
+88
+
+00:05:29,850  -->  00:05:32,910
+because Paris is still the default value for city,
+
+89
+
+00:05:32,910  -->  00:05:38,335
+but we've updated the days from what the default is of five to now 10.
+
+90
+
+00:05:38,335  -->  00:05:41,170
+Now let's talk about mixed argument passing.
+
+91
+
+00:05:41,170  -->  00:05:45,870
+You can also mix positional and keyword arguments in a single function call.
+
+92
+
+00:05:45,870  -->  00:05:50,605
+However, positional arguments must come before keyword arguments.
+
+93
+
+00:05:50,605  -->  00:05:55,770
+Let's re-initialize this function again with no default argument values.
+
+94
+
+00:05:55,770  -->  00:05:58,610
+We'll just take our code from before,
+
+95
+
+00:05:58,610  -->  00:06:02,605
+and we will re-run the cell,
+
+96
+
+00:06:02,605  -->  00:06:10,260
+and then now if we were to say describe trip,
+
+97
+
+00:06:10,260  -->  00:06:12,740
+and we pass in again,
+
+98
+
+00:06:12,740  -->  00:06:15,780
+our original input, which was Paris,
+
+99
+
+00:06:15,880  -->  00:06:19,765
+and days equal five,
+
+100
+
+00:06:19,765  -->  00:06:23,580
+now we'll see, you'll spend five days in Paris.
+
+101
+
+00:06:23,580  -->  00:06:28,700
+But this will not work if we were to do this in reverse.
+
+102
+
+00:06:28,700  -->  00:06:33,245
+If we were to take days and put this before Paris,
+
+103
+
+00:06:33,245  -->  00:06:36,780
+since they are mixed arguments,
+
+104
+
+00:06:36,780  -->  00:06:38,820
+we'll get a syntax error,
+
+105
+
+00:06:38,820  -->  00:06:42,500
+and it'll say positional argument follows keyword argument.
+
+106
+
+00:06:42,500  -->  00:06:46,700
+This will not work. Always be careful to define
+
+107
+
+00:06:46,700  -->  00:06:51,480
+the positional arguments with no argument equals something first,
+
+108
+
+00:06:51,480  -->  00:06:53,800
+and then include the keyword arguments.
+
+109
+
+00:06:53,800  -->  00:06:56,790
+Argument equals a value after.
+
+110
+
+00:06:56,790  -->  00:06:59,800
+Using mixed arguments offers flexibility
+
+111
+
+00:06:59,800  -->  00:07:03,645
+while ensuring that required positional arguments are provided first.
+
+112
+
+00:07:03,645  -->  00:07:06,440
+Personally, I find this one a bit more confusing,
+
+113
+
+00:07:06,440  -->  00:07:09,640
+but it's important to know how to work with this method.
+
+114
+
+00:07:09,640  -->  00:07:11,460
+If you end up seeing this in code,
+
+115
+
+00:07:11,460  -->  00:07:13,560
+you get from your team or are working on
+
+116
+
+00:07:13,560  -->  00:07:17,220
+functions where this method works for you. Great work.
