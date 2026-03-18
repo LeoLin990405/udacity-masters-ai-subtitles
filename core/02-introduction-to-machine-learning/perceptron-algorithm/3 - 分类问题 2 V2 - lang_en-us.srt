@@ -1,0 +1,114 @@
+1
+
+00:00:00,000  -->  00:00:04,120
+Correct. Well, it seems that this data can be nicely separated by a line,
+
+2
+
+00:00:04,120  -->  00:00:05,500
+which is this line over here,
+
+3
+
+00:00:05,500  -->  00:00:08,580
+and it seems that most students over the line get
+
+4
+
+00:00:08,580  -->  00:00:12,220
+accepted and most students under the line get rejected.
+
+5
+
+00:00:12,220  -->  00:00:15,175
+This line is going to be our model.
+
+6
+
+00:00:15,175  -->  00:00:18,280
+The model makes a couple of mistakes since there are
+
+7
+
+00:00:18,280  -->  00:00:22,000
+a few blue points that are under the line and a few red points over the line.
+
+8
+
+00:00:22,000  -->  00:00:23,960
+But we're not going to care about those.
+
+9
+
+00:00:23,960  -->  00:00:28,180
+We'll say that it's safe to predict that if a point is over the line,
+
+10
+
+00:00:28,180  -->  00:00:29,680
+the student gets accepted,
+
+11
+
+00:00:29,680  -->  00:00:31,260
+and if it's under the line,
+
+12
+
+00:00:31,260  -->  00:00:33,260
+then the student gets rejected.
+
+13
+
+00:00:33,260  -->  00:00:36,420
+Based on this model, we look at the new student and we see that
+
+14
+
+00:00:36,420  -->  00:00:39,560
+they're over here at the 0.76, which is above the line.
+
+15
+
+00:00:39,560  -->  00:00:43,060
+We can assume with some confidence that the student gets accepted.
+
+16
+
+00:00:43,060  -->  00:00:46,455
+If you answer, yes, that's the correct answer.
+
+17
+
+00:00:46,455  -->  00:00:48,660
+Now a question arises.
+
+18
+
+00:00:48,660  -->  00:00:51,600
+The question is, how do we find this line?
+
+19
+
+00:00:51,600  -->  00:00:53,400
+We can eyeball it,
+
+20
+
+00:00:53,400  -->  00:00:54,940
+but the computer can't.
+
+21
+
+00:00:54,940  -->  00:00:59,720
+We'll dedicate the rest of the section to show you algorithms that will find this line,
+
+22
+
+00:00:59,720  -->  00:01:01,140
+not only for this example,
+
+23
+
+00:01:01,140  -->  00:01:04,560
+but for much more general and complicated cases.

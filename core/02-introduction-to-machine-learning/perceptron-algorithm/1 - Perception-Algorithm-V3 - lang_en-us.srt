@@ -1,0 +1,44 @@
+1
+
+00:00:00,000  -->  00:00:02,280
+Hello. In the last section,
+
+2
+
+00:00:02,280  -->  00:00:05,850
+we learned regression in which our goal is to predict values.
+
+3
+
+00:00:05,850  -->  00:00:07,120
+In the next few sections,
+
+4
+
+00:00:07,120  -->  00:00:09,765
+we'll focus on classification algorithms.
+
+5
+
+00:00:09,765  -->  00:00:15,300
+Classification algorithms are those that answer questions that have answers yes or no.
+
+6
+
+00:00:15,300  -->  00:00:18,735
+For example, is this email spam or not?
+
+7
+
+00:00:18,735  -->  00:00:21,555
+Will this user download an app or not?
+
+8
+
+00:00:21,555  -->  00:00:23,640
+Is this patient is sick or not?
+
+9
+
+00:00:23,640  -->  00:00:28,630
+The first one of these algorithms that we'll learn is the perceptron algorithm.

@@ -1,0 +1,154 @@
+1
+
+00:00:00,000  -->  00:00:02,490
+Let's start with one classification example.
+
+2
+
+00:00:02,490  -->  00:00:04,130
+Let's say we are the admissions office at
+
+3
+
+00:00:04,130  -->  00:00:07,130
+a university and our job is to accept or reject students.
+
+4
+
+00:00:07,130  -->  00:00:08,790
+In order to evaluate students,
+
+5
+
+00:00:08,790  -->  00:00:10,270
+we have two pieces of information,
+
+6
+
+00:00:10,270  -->  00:00:13,990
+the results of a test and their grades in school.
+
+7
+
+00:00:13,990  -->  00:00:16,870
+Let's take a look at some sample students.
+
+8
+
+00:00:16,870  -->  00:00:21,790
+We'll start with student 1 who got 9/10 in the test and 8/10 in the grades.
+
+9
+
+00:00:21,790  -->  00:00:24,490
+That student did quite well and got accepted.
+
+10
+
+00:00:24,490  -->  00:00:29,510
+Then we have student 2 who got 3/10 in the test and 4/10 in the grades,
+
+11
+
+00:00:29,510  -->  00:00:31,690
+and that student got rejected.
+
+12
+
+00:00:31,690  -->  00:00:36,890
+Now we have a new student 3 who got 7/10 in the test and 6/10 in the grades,
+
+13
+
+00:00:36,890  -->  00:00:40,275
+and we're wondering if the student gets accepted or not.
+
+14
+
+00:00:40,275  -->  00:00:44,560
+Our first way to find this out is to plot students in a graph with
+
+15
+
+00:00:44,560  -->  00:00:47,080
+the horizontal axis corresponding to the score and
+
+16
+
+00:00:47,080  -->  00:00:50,940
+the test and the vertical axis corresponding to the grades,
+
+17
+
+00:00:50,940  -->  00:00:52,940
+and the students would fit here.
+
+18
+
+00:00:52,940  -->  00:00:58,160
+The students who got three and four gets located in the point that coordinates 3, 4,
+
+19
+
+00:00:58,160  -->  00:01:04,630
+and the student who got nine and eight gets located in the point which coordinates 9,8.
+
+20
+
+00:01:04,630  -->  00:01:07,630
+Now we'll do what we do in most of our algorithms,
+
+21
+
+00:01:07,630  -->  00:01:09,650
+which is to look at the previous data.
+
+22
+
+00:01:09,650  -->  00:01:11,870
+This is how the previous data looks.
+
+23
+
+00:01:11,870  -->  00:01:15,090
+These are all the previous students that got accepted or rejected.
+
+24
+
+00:01:15,090  -->  00:01:17,130
+The blue points correspond to students that got
+
+25
+
+00:01:17,130  -->  00:01:20,750
+accepted and the red points to students that got rejected.
+
+26
+
+00:01:20,750  -->  00:01:23,150
+We can see in this diagram that the students who
+
+27
+
+00:01:23,150  -->  00:01:25,130
+did well in the test and grades are more likely to
+
+28
+
+00:01:25,130  -->  00:01:29,530
+get accepted and the students who did poorly on both are more likely to get rejected.
+
+29
+
+00:01:29,530  -->  00:01:31,230
+Let's start with a quiz.
+
+30
+
+00:01:31,230  -->  00:01:34,910
+The quiz says, does the student 3 get accepted or rejected.
+
+31
+
+00:01:34,910  -->  00:01:38,510
+What do you think? Enter your answer below.
