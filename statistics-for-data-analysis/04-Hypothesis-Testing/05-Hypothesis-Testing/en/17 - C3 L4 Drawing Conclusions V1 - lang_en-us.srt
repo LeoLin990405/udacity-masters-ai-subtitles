@@ -1,0 +1,654 @@
+1
+
+00:00:00,000  -->  00:00:05,940
+Here we are going to go through the solution for this calculating errors notebook.
+
+2
+
+00:00:05,940  -->  00:00:09,840
+The first thing that we're going to do is just read in our Q data sets here,
+
+3
+
+00:00:09,840  -->  00:00:12,625
+and we can take a look at each of those.
+
+4
+
+00:00:12,625  -->  00:00:18,320
+You can see the judicial data set has a bunch of defendants,
+
+5
+
+00:00:18,320  -->  00:00:21,440
+and then whether they're truly innocent
+
+6
+
+00:00:21,440  -->  00:00:24,720
+or guilty and then our prediction of whether they're innocent or guilty.
+
+7
+
+00:00:24,720  -->  00:00:27,245
+Then this parachute one is very similar.
+
+8
+
+00:00:27,245  -->  00:00:30,710
+Each row as a parachute and then whether it actually opens,
+
+9
+
+00:00:30,710  -->  00:00:33,235
+and then whether we predict it opens.
+
+10
+
+00:00:33,235  -->  00:00:42,870
+This first part is just to look at different proportions of our types of errors.
+
+11
+
+00:00:42,870  -->  00:00:50,810
+First, we are looking at the proportion of errors in the judicial data set.
+
+12
+
+00:00:50,810  -->  00:00:55,670
+An error happens anytime that the actual column,
+
+13
+
+00:00:55,670  -->  00:00:57,770
+this actual column in either of these,
+
+14
+
+00:00:57,770  -->  00:01:00,675
+but here we're looking at the judicial data set,
+
+15
+
+00:01:00,675  -->  00:01:02,650
+anytime this actual column,
+
+16
+
+00:01:02,650  -->  00:01:05,760
+the value doesn't match the predicted column,
+
+17
+
+00:01:05,760  -->  00:01:08,770
+we are going to count that.
+
+18
+
+00:01:08,770  -->  00:01:11,170
+Basically what this says is,
+
+19
+
+00:01:11,170  -->  00:01:13,430
+go through and look at the actual column,
+
+20
+
+00:01:13,430  -->  00:01:15,590
+compare that to the predicted,
+
+21
+
+00:01:15,590  -->  00:01:19,655
+and then this exclamation point equals as a not equal to.
+
+22
+
+00:01:19,655  -->  00:01:23,470
+It says, look at when the actual doesn't equal the predicted,
+
+23
+
+00:01:23,470  -->  00:01:26,570
+and then this shape zero just says, count the rows.
+
+24
+
+00:01:26,570  -->  00:01:29,210
+Shape gives back the rows and the columns,
+
+25
+
+00:01:29,210  -->  00:01:33,110
+and then this zero is just grabbing back the row part.
+
+26
+
+00:01:33,110  -->  00:01:35,310
+Similarly, this is just saying,
+
+27
+
+00:01:35,310  -->  00:01:38,930
+grab all the rows in the judicial data set to get the proportion.
+
+28
+
+00:01:38,930  -->  00:01:43,405
+We could break this out a little bit if we want to see each of the parts,
+
+29
+
+00:01:43,405  -->  00:01:47,870
+but the idea is that this first part is just finding all of the errors,
+
+30
+
+00:01:47,870  -->  00:01:51,500
+so this is anytime the actual doesn't match the predicted.
+
+31
+
+00:01:51,500  -->  00:01:54,360
+Here we see a bunch of guilty matched with innocent,
+
+32
+
+00:01:54,360  -->  00:01:56,760
+but it also could be innocent matched with guilty,
+
+33
+
+00:01:56,760  -->  00:01:58,080
+and those would show up here too.
+
+34
+
+00:01:58,080  -->  00:02:01,240
+Then the shape gives back the number
+
+35
+
+00:02:01,240  -->  00:02:05,620
+of rows where that happens and the number of columns, which we can see as three.
+
+36
+
+00:02:05,620  -->  00:02:10,230
+There's the defendant, the actual and the predicted columns.
+
+37
+
+00:02:10,230  -->  00:02:14,170
+The zero is just grabbing back the number of rows.
+
+38
+
+00:02:14,170  -->  00:02:18,660
+This is the total number of rows where these two things don't match,
+
+39
+
+00:02:18,660  -->  00:02:21,090
+and then similarly with this jud_data.shape,
+
+40
+
+00:02:21,090  -->  00:02:25,460
+this is the total number of rows in the data set,
+
+41
+
+00:02:25,460  -->  00:02:27,130
+and this is the total number of columns,
+
+42
+
+00:02:27,130  -->  00:02:30,380
+and so the zero is just grabbing back the number of rows.
+
+43
+
+00:02:30,380  -->  00:02:34,000
+This is saying the total number of rows where these don't
+
+44
+
+00:02:34,000  -->  00:02:39,060
+match over the total number of rows in the data set is the total number of errors.
+
+45
+
+00:02:39,060  -->  00:02:44,575
+We can see that that happens about 4% of the time.
+
+46
+
+00:02:44,575  -->  00:02:50,110
+Similarly, if we want to look at each different type of error,
+
+47
+
+00:02:50,110  -->  00:02:55,710
+one set is where the innocent is the truth and we predict they're guilty,
+
+48
+
+00:02:55,710  -->  00:03:01,070
+and the other is when they're truly guilty and we predict they're innocent.
+
+49
+
+00:03:01,070  -->  00:03:04,830
+The first one is a Type 1 error,
+
+50
+
+00:03:04,830  -->  00:03:07,380
+and the second one is a Type 2 error.
+
+51
+
+00:03:07,380  -->  00:03:11,835
+Here, this count is basically doing the same thing as shape.
+
+52
+
+00:03:11,835  -->  00:03:14,430
+It's a little different in that,
+
+53
+
+00:03:14,430  -->  00:03:16,440
+if there were null values,
+
+54
+
+00:03:16,440  -->  00:03:18,520
+the count would not count those.
+
+55
+
+00:03:18,520  -->  00:03:20,600
+Whereas, if there were null values,
+
+56
+
+00:03:20,600  -->  00:03:22,245
+the shape would count them.
+
+57
+
+00:03:22,245  -->  00:03:25,240
+Sometimes it can be useful to use count instead of shape,
+
+58
+
+00:03:25,240  -->  00:03:27,280
+but in general, they're doing the same thing.
+
+59
+
+00:03:27,280  -->  00:03:29,520
+We could go back to shape here,
+
+60
+
+00:03:29,520  -->  00:03:32,300
+and these would give the same answer.
+
+61
+
+00:03:32,300  -->  00:03:34,080
+Here you can see that,
+
+62
+
+00:03:34,080  -->  00:03:35,500
+or if we use count,
+
+63
+
+00:03:35,500  -->  00:03:37,060
+this is just another way to do this,
+
+64
+
+00:03:37,060  -->  00:03:39,220
+they give the exact same answer.
+
+65
+
+00:03:39,220  -->  00:03:44,985
+But it just depends on if there's null values in your data set. We could check.
+
+66
+
+00:03:44,985  -->  00:03:55,210
+If we wanted to, we could look at jud_data and then do isnull and sum.
+
+67
+
+00:03:55,210  -->  00:03:59,370
+You can see there's no null values in this data set at all,
+
+68
+
+00:03:59,370  -->  00:04:02,530
+so whether you shape or count, it doesn't really matter.
+
+69
+
+00:04:02,530  -->  00:04:07,930
+Then this is the total number of Type 1 errors we make, and then similarly,
+
+70
+
+00:04:07,930  -->  00:04:12,270
+if we're just matching the actual as guilty and the predicted as innocent,
+
+71
+
+00:04:12,270  -->  00:04:13,860
+then that's our Type 2 error rate.
+
+72
+
+00:04:13,860  -->  00:04:16,330
+You can see that's quite a bit higher here.
+
+73
+
+00:04:16,330  -->  00:04:22,940
+In general, this query method is really useful for any and,
+
+74
+
+00:04:22,940  -->  00:04:25,150
+or or logic that you might want to do.
+
+75
+
+00:04:25,150  -->  00:04:30,060
+You could say, is guilty versus
+
+76
+
+00:04:30,060  -->  00:04:38,160
+predicted guilty or you can use or statements, you type in or.
+
+77
+
+00:04:38,160  -->  00:04:41,680
+But this query method is really useful.
+
+78
+
+00:04:41,680  -->  00:04:45,740
+You just wrap your logic in a string and pass it into it.
+
+79
+
+00:04:45,740  -->  00:04:47,820
+I really like this query method.
+
+80
+
+00:04:47,820  -->  00:04:54,780
+Hopefully you can make use of it in lots of situations you might find yourself in.
+
+81
+
+00:04:55,640  -->  00:05:00,060
+Then a question is, if everyone was predicted to be guilty,
+
+82
+
+00:05:00,060  -->  00:05:04,980
+then every actual innocent person would be a Type 1 error.
+
+83
+
+00:05:04,980  -->  00:05:08,300
+Basically, this situation where we want to
+
+84
+
+00:05:08,300  -->  00:05:12,460
+know the total possible Type 1 error rate, which is basically like,
+
+85
+
+00:05:12,460  -->  00:05:18,360
+we predict everyone to be guilty is basically just like,
+
+86
+
+00:05:18,360  -->  00:05:23,150
+well, all the innocent people would be calculated wrong.
+
+87
+
+00:05:23,150  -->  00:05:25,260
+This is looking at that proportion.
+
+88
+
+00:05:25,260  -->  00:05:28,935
+Basically, this is the highest possible Type 1 error rate we could commit.
+
+89
+
+00:05:28,935  -->  00:05:33,390
+The fact that we're only committing a 0.0015 rate,
+
+90
+
+00:05:33,390  -->  00:05:38,940
+when the total possible Type 1 errors that we could commit is about 45%,
+
+91
+
+00:05:38,940  -->  00:05:43,060
+this the total number of innocent people that we could get wrong,
+
+92
+
+00:05:43,060  -->  00:05:45,735
+seems like we're doing pretty good.
+
+93
+
+00:05:45,735  -->  00:05:47,460
+Then the next part is,
+
+94
+
+00:05:47,460  -->  00:05:50,660
+if everyone was predicted to be guilty,
+
+95
+
+00:05:50,870  -->  00:05:56,025
+then what's the total Type 2 errors?
+
+96
+
+00:05:56,025  -->  00:05:58,730
+Basically, if everyone is predicted to be guilty,
+
+97
+
+00:05:58,730  -->  00:06:01,860
+we'll never commit a Type 2 error.
+
+98
+
+00:06:02,120  -->  00:06:05,970
+Because if everyone is predicted to be guilty,
+
+99
+
+00:06:05,970  -->  00:06:09,390
+then all of the guilty people are marked correctly.
+
+100
+
+00:06:09,390  -->  00:06:12,380
+Never will there be an error in that case.
+
+101
+
+00:06:12,380  -->  00:06:16,050
+Great. This next part is just doing the same thing,
+
+102
+
+00:06:16,050  -->  00:06:17,750
+but with the parachute data,
+
+103
+
+00:06:17,750  -->  00:06:19,715
+you can see it's very similar logic.
+
+104
+
+00:06:19,715  -->  00:06:22,760
+We're matching whether these are equal.
+
+105
+
+00:06:22,760  -->  00:06:27,620
+Also note, this could also be done with the query method if we wanted to.
+
+106
+
+00:06:27,620  -->  00:06:29,780
+It would look very similar to this down here.
+
+107
+
+00:06:29,780  -->  00:06:32,660
+You would put the actual in a string and you'd say,
+
+108
+
+00:06:32,660  -->  00:06:36,660
+actual doesn't equal predicted.
+
+109
+
+00:06:36,660  -->  00:06:40,660
+In any case, we can use
+
+110
+
+00:06:40,660  -->  00:06:45,830
+the same logic as up here and calculate the Type 1 and Type 2 error rates.
+
+111
+
+00:06:45,830  -->  00:06:48,870
+Here it's just noting that the Type 1 error is,
+
+112
+
+00:06:48,870  -->  00:06:50,370
+if we say it opens,
+
+113
+
+00:06:50,370  -->  00:06:51,510
+and it actually doesn't,
+
+114
+
+00:06:51,510  -->  00:06:54,190
+and a Type 2 error is saying that it doesn't open,
+
+115
+
+00:06:54,190  -->  00:06:56,065
+but it actually does.
+
+116
+
+00:06:56,065  -->  00:07:00,390
+Similarly, if every parachute is predicted to fail,
+
+117
+
+00:07:00,390  -->  00:07:04,595
+what's the total number of Type 1 errors? There wouldn't be any.
+
+118
+
+00:07:04,595  -->  00:07:06,960
+But if all of them are predicted to fail,
+
+119
+
+00:07:06,960  -->  00:07:10,850
+basically everyone that truly opens would be a Type 2 error,
+
+120
+
+00:07:10,850  -->  00:07:12,835
+and so we can calculate that here.
+
+121
+
+00:07:12,835  -->  00:07:16,040
+Basically anytime that the actual isn't open,
+
+122
+
+00:07:16,040  -->  00:07:19,340
+that would be a Type 2 error if we just said, hey, none of them work.
+
+123
+
+00:07:19,340  -->  00:07:22,435
+It probably wouldn't be a good way to run your business,
+
+124
+
+00:07:22,435  -->  00:07:26,120
+because you would never hand out a parachute then,
+
+125
+
+00:07:26,120  -->  00:07:30,760
+in which case, if you were a sky diving company,
+
+126
+
+00:07:30,760  -->  00:07:32,650
+it would basically just mean that no one would
+
+127
+
+00:07:32,650  -->  00:07:38,140
+ever jump because you would just say they're all failures.
+
+128
+
+00:07:38,140  -->  00:07:40,975
+Don't give anybody any of them.
+
+129
+
+00:07:40,975  -->  00:07:46,035
+Hopefully, this is a really good example of these Type 1 and Type 2 errors,
+
+130
+
+00:07:46,035  -->  00:07:49,940
+and it shows you a little bit of the code that you can use to
+
+131
+
+00:07:49,940  -->  00:07:57,260
+determine these different errors and how you can calculate them directly in Python.

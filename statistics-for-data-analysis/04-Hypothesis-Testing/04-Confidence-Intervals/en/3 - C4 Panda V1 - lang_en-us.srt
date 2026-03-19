@@ -1,0 +1,239 @@
+1
+
+00:00:00,000  -->  00:00:04,560
+Pandas is a powerful tool for data analysis and manipulation.
+
+2
+
+00:00:04,560  -->  00:00:11,820
+One of the most popular formats used to store data is CSV or comma-separated values.
+
+3
+
+00:00:11,820  -->  00:00:17,585
+We can load CSV files into data frames using the read.csv() function.
+
+4
+
+00:00:17,585  -->  00:00:21,000
+Let's load Google stock data into a data frame.
+
+5
+
+00:00:21,000  -->  00:00:27,195
+This file was taken from Yahoo Finances and contains Google stock data from August 19th,
+
+6
+
+00:00:27,195  -->  00:00:31,055
+2004 to October 13th, 2017.
+
+7
+
+00:00:31,055  -->  00:00:36,710
+The data frame consists of 3,313 rows and seven columns.
+
+8
+
+00:00:36,710  -->  00:00:38,650
+Let's look at the stock data.
+
+9
+
+00:00:38,650  -->  00:00:41,550
+We can see it's a pretty large dataset and that
+
+10
+
+00:00:41,550  -->  00:00:46,070
+pandas automatically assign numerical row indices to the data frame.
+
+11
+
+00:00:46,070  -->  00:00:51,790
+Pandas also used the names that appeared in the CSV file to assign the column labels.
+
+12
+
+00:00:51,790  -->  00:00:54,630
+When dealing with large datasets like this one,
+
+13
+
+00:00:54,630  -->  00:00:57,250
+it's often useful to just take a look at
+
+14
+
+00:00:57,250  -->  00:01:00,540
+the first few rows of data instead of the whole dataset.
+
+15
+
+00:01:00,540  -->  00:01:04,470
+We can take a look at the first five rows using the HEAD method.
+
+16
+
+00:01:04,470  -->  00:01:09,520
+We can also take a look at the last five rows of data using the TAIL method.
+
+17
+
+00:01:09,520  -->  00:01:12,460
+Both of these accept an integer as an argument
+
+18
+
+00:01:12,460  -->  00:01:15,880
+if you want to specify a different number of rows to return.
+
+19
+
+00:01:15,880  -->  00:01:21,400
+For example, I can get the last eight rows like this or the first two rows like this.
+
+20
+
+00:01:21,400  -->  00:01:26,220
+Let's do a quick check to see whether we have any non-values in this data set.
+
+21
+
+00:01:26,220  -->  00:01:29,960
+To do so, we will use the ISNULL() method followed by
+
+22
+
+00:01:29,960  -->  00:01:34,305
+the any() method to check whether any of the columns contain non-values.
+
+23
+
+00:01:34,305  -->  00:01:36,980
+This shows us that we have no missing data.
+
+24
+
+00:01:36,980  -->  00:01:39,100
+When dealing with large datasets,
+
+25
+
+00:01:39,100  -->  00:01:42,600
+it's often useful to get statistical information from them.
+
+26
+
+00:01:42,600  -->  00:01:46,020
+Pandas provides a described method which returns
+
+27
+
+00:01:46,020  -->  00:01:49,700
+descriptive statistics on each column of the data frame.
+
+28
+
+00:01:49,700  -->  00:01:54,145
+We can access elements in a data frame in different ways.
+
+29
+
+00:01:54,145  -->  00:01:57,945
+In general, we can access rows, columns,
+
+30
+
+00:01:57,945  -->  00:02:02,480
+or individual elements by using the row and column labels.
+
+31
+
+00:02:02,480  -->  00:02:04,300
+Let's see some examples.
+
+32
+
+00:02:04,300  -->  00:02:07,900
+We can access the bikes column using the column label like
+
+33
+
+00:02:07,900  -->  00:02:13,400
+this and use a list of the column labels to access multiple columns.
+
+34
+
+00:02:13,400  -->  00:02:15,680
+We can access a row using
+
+35
+
+00:02:15,680  -->  00:02:21,080
+the row index label and the value at a specific row and column like this.
+
+36
+
+00:02:21,080  -->  00:02:25,820
+It's important to know that when accessing individual elements in a data frame,
+
+37
+
+00:02:25,820  -->  00:02:27,680
+like in this last example,
+
+38
+
+00:02:27,680  -->  00:02:31,840
+the column label always comes first and then the row label.
+
+39
+
+00:02:31,840  -->  00:02:35,875
+If you provide the row label first, you'll get an error.
+
+40
+
+00:02:35,875  -->  00:02:40,670
+We can also modify our data frames by adding rows or columns.
+
+41
+
+00:02:40,670  -->  00:02:44,450
+Suppose we decided to add a shirts column to our data frame.
+
+42
+
+00:02:44,450  -->  00:02:47,630
+To do this, we can define a shirts column containing
+
+43
+
+00:02:47,630  -->  00:02:51,350
+the quantity for each of the two store rows like this.
+
+44
+
+00:02:51,350  -->  00:02:55,055
+This added a new column to the end of our data frame.
+
+45
+
+00:02:55,055  -->  00:02:57,250
+We can also add new columns using
+
+46
+
+00:02:57,250  -->  00:03:01,270
+arithmetic operations on other columns of our data frame.
+
+47
+
+00:03:01,270  -->  00:03:04,530
+For example, we can create a new column called
+
+48
+
+00:03:04,530  -->  00:03:09,370
+suits by computing the sum of the shirts and pants column.

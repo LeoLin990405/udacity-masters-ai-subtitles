@@ -1,0 +1,199 @@
+1
+
+00:00:00,000  -->  00:00:01,950
+In the last programming video,
+
+2
+
+00:00:01,950  -->  00:00:05,340
+you saw how we could simulate draws from the null hypothesis,
+
+3
+
+00:00:05,340  -->  00:00:09,130
+and that if our statistic was in the bulk of the distribution,
+
+4
+
+00:00:09,130  -->  00:00:13,485
+this suggested that the statistic was likely from that null.
+
+5
+
+00:00:13,485  -->  00:00:17,649
+However, if the statistic was farther out from the bulk of the distribution,
+
+6
+
+00:00:17,649  -->  00:00:22,765
+this suggested that the null wasn't likely to have generated our statistic.
+
+7
+
+00:00:22,765  -->  00:00:28,000
+Then you saw that we can calculate p-values based on the shaded region starting at
+
+8
+
+00:00:28,000  -->  00:00:32,927
+the value of our observed statistic through the tail of the distribution,
+
+9
+
+00:00:32,927  -->  00:00:36,490
+where the shaded region is dependent on our alternative.
+
+10
+
+00:00:36,490  -->  00:00:38,740
+Based on the previous video,
+
+11
+
+00:00:38,740  -->  00:00:43,690
+you had simulated values of the sampling distribution from the null, like this.
+
+12
+
+00:00:43,690  -->  00:00:45,850
+Imagine that we have the alternative hypothesis
+
+13
+
+00:00:45,850  -->  00:00:48,586
+that the population mean is greater than 70,
+
+14
+
+00:00:48,586  -->  00:00:51,580
+then we could calculate the p-value as the proportion
+
+15
+
+00:00:51,580  -->  00:00:55,375
+of the simulated draws that are larger than our sample mean.
+
+16
+
+00:00:55,375  -->  00:00:59,580
+Here, you can see that that would give us a p-value of one.
+
+17
+
+00:00:59,580  -->  00:01:04,770
+Remember, large p-value suggests that we shouldn't move away from the null hypothesis.
+
+18
+
+00:01:04,770  -->  00:01:10,724
+In this case, that suggests that we should stay with the mean being less than 70.
+
+19
+
+00:01:10,724  -->  00:01:15,080
+Here, we've calculated the null values that are greater than our sample mean.
+
+20
+
+00:01:15,080  -->  00:01:16,700
+Since this is one,
+
+21
+
+00:01:16,700  -->  00:01:21,260
+our p-value is large and therefore we wouldn't move away from the null hypothesis
+
+22
+
+00:01:21,260  -->  00:01:26,905
+that suggests that our population mean is truly less than or equal to 70.
+
+23
+
+00:01:26,905  -->  00:01:31,265
+If our new null and alternative hypotheses look like this instead,
+
+24
+
+00:01:31,265  -->  00:01:33,995
+we would calculate our p-value a little differently.
+
+25
+
+00:01:33,995  -->  00:01:37,384
+Here, because our alternative is less than 70,
+
+26
+
+00:01:37,384  -->  00:01:41,505
+we would now look at the shaded region to the left of our statistic.
+
+27
+
+00:01:41,505  -->  00:01:44,140
+This would change our p-value to the following.
+
+28
+
+00:01:44,140  -->  00:01:45,870
+Now that our p-value is zero,
+
+29
+
+00:01:45,870  -->  00:01:50,848
+this suggests that we reject the null hypothesis in favor of an alternative,
+
+30
+
+00:01:50,848  -->  00:01:55,400
+suggesting that the population mean is less than 70.
+
+31
+
+00:01:55,400  -->  00:01:57,905
+So if this was our null and alternative hypothesis,
+
+32
+
+00:01:57,905  -->  00:02:01,820
+we would now want to look at the values that are more extreme
+
+33
+
+00:02:01,820  -->  00:02:06,124
+than our sample mean in either direction away from the null hypothesis.
+
+34
+
+00:02:06,124  -->  00:02:08,355
+That looks like this equation here.
+
+35
+
+00:02:08,355  -->  00:02:12,625
+Let's take a look at where these values fall on the above histogram.
+
+36
+
+00:02:12,625  -->  00:02:16,325
+You can see that if we were to shade more extreme than either of these regions,
+
+37
+
+00:02:16,325  -->  00:02:18,320
+there are essentially no data points from
+
+38
+
+00:02:18,320  -->  00:02:21,345
+our null hypothesis that fall outside of this region.
+
+39
+
+00:02:21,345  -->  00:02:23,780
+Again, we would have evidence to suggest that
+
+40
+
+00:02:23,780  -->  00:02:29,030
+the null hypothesized value did not generate our sample statistic.

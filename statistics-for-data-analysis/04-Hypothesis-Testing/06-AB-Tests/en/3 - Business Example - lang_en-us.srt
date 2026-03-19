@@ -1,0 +1,129 @@
+1
+
+00:00:02,440  -->  00:00:04,565
+In this case study,
+
+2
+
+00:00:04,565  -->  00:00:10,090
+you'll be analyzing AB test results for an online education company called Audacity,
+
+3
+
+00:00:10,090  -->  00:00:13,805
+that offers courses on finance.
+
+4
+
+00:00:13,805  -->  00:00:18,379
+Let's first see what a typical user flow might look like on Audacity site.
+
+5
+
+00:00:18,379  -->  00:00:21,123
+New users would land on the home page,
+
+6
+
+00:00:21,123  -->  00:00:22,639
+and if they're interested,
+
+7
+
+00:00:22,639  -->  00:00:24,860
+they would click to explore courses.
+
+8
+
+00:00:24,860  -->  00:00:26,959
+As they browse the course list,
+
+9
+
+00:00:26,959  -->  00:00:28,505
+a course may catch their eye,
+
+10
+
+00:00:28,505  -->  00:00:30,805
+and they click on it to learn more.
+
+11
+
+00:00:30,805  -->  00:00:32,900
+Once they're on the course overview page,
+
+12
+
+00:00:32,900  -->  00:00:34,814
+they may decide to enroll.
+
+13
+
+00:00:34,814  -->  00:00:37,835
+After enrolling, they'd hopefully complete the course.
+
+14
+
+00:00:37,835  -->  00:00:40,995
+In this flow, commonly called the customer funnel,
+
+15
+
+00:00:40,995  -->  00:00:44,825
+users lose interest, and leave at different stages of the funnel,
+
+16
+
+00:00:44,825  -->  00:00:46,800
+and few make it to the end.
+
+17
+
+00:00:46,800  -->  00:00:48,905
+Of course, this is a simplistic model,
+
+18
+
+00:00:48,905  -->  00:00:51,825
+and isn't how all user experiences would play out.
+
+19
+
+00:00:51,825  -->  00:00:54,620
+But it does capture pretty well the main steps from
+
+20
+
+00:00:54,620  -->  00:00:59,300
+an initial exposure to course completion in order of decreasing probability.
+
+21
+
+00:00:59,300  -->  00:01:01,610
+To increase student engagement,
+
+22
+
+00:01:01,610  -->  00:01:05,225
+Audacity wants to perform AB tests to try out changes,
+
+23
+
+00:01:05,225  -->  00:01:07,460
+at different points in this funnel.
+
+24
+
+00:01:07,460  -->  00:01:08,685
+In this case study,
+
+25
+
+00:01:08,685  -->  00:01:12,605
+we'll analyze test results for two particular changes they have in mind,
+
+26
+
+00:01:12,605  -->  00:01:17,490
+and then make a recommendation on whether they should launch each change.

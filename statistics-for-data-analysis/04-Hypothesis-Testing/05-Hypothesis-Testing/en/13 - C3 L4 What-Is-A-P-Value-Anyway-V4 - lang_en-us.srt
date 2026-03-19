@@ -1,0 +1,244 @@
+1
+
+00:00:01,680  -->  00:00:03,920
+In the previous video,
+
+2
+
+00:00:03,920  -->  00:00:08,140
+you saw two methods for how we might choose between competing hypotheses.
+
+3
+
+00:00:08,140  -->  00:00:10,860
+In the second method, we asked the question,
+
+4
+
+00:00:10,860  -->  00:00:13,280
+if the null hypothesis is true,
+
+5
+
+00:00:13,280  -->  00:00:16,080
+what is the probability of obtaining the statistic we observed in
+
+6
+
+00:00:16,080  -->  00:00:20,420
+our data or one more extreme in favor of the alternative hypothesis?
+
+7
+
+00:00:20,420  -->  00:00:23,645
+This probability is what is called a p-value.
+
+8
+
+00:00:23,645  -->  00:00:27,680
+Finding the p-value involves a mix of ideas that you've learned about,
+
+9
+
+00:00:27,680  -->  00:00:31,340
+sampling distributions, and conditional probability.
+
+10
+
+00:00:31,340  -->  00:00:35,225
+Imagine we have a null that a population mean is equal to zero.
+
+11
+
+00:00:35,225  -->  00:00:36,980
+Then we collect sample data,
+
+12
+
+00:00:36,980  -->  00:00:39,360
+and we find the sample mean to be five,
+
+13
+
+00:00:39,360  -->  00:00:42,180
+and the sample standard deviation to be two.
+
+14
+
+00:00:42,180  -->  00:00:47,005
+Assuming the sampling distribution of your statistic follows the null hypothesis,
+
+15
+
+00:00:47,005  -->  00:00:49,300
+what is the probability of observing
+
+16
+
+00:00:49,300  -->  00:00:54,060
+the actual value of the statistic from your data in this distribution?
+
+17
+
+00:00:54,060  -->  00:00:56,120
+If we want to know the probability that the
+
+18
+
+00:00:56,120  -->  00:00:58,620
+population mean is actually greater than zero,
+
+19
+
+00:00:58,620  -->  00:01:00,980
+you could update the hypothesis.
+
+20
+
+00:01:00,980  -->  00:01:03,300
+Values like 6, 7,
+
+21
+
+00:01:03,300  -->  00:01:06,820
+10 all fall out here and are even more of
+
+22
+
+00:01:06,820  -->  00:01:11,890
+an indication that the alternative is true that our population mean is greater than zero.
+
+23
+
+00:01:11,890  -->  00:01:14,440
+Additionally, what is the probability you
+
+24
+
+00:01:14,440  -->  00:01:17,840
+observe something even more in favor of the alternative hypothesis?
+
+25
+
+00:01:17,840  -->  00:01:22,870
+This shaded region here provides that probability, the p-value.
+
+26
+
+00:01:22,870  -->  00:01:25,780
+Notice, the p-value is dependent on
+
+27
+
+00:01:25,780  -->  00:01:30,895
+your alternative hypothesis as it determines what is considered more extreme.
+
+28
+
+00:01:30,895  -->  00:01:34,900
+If your alternative hypothesis is that your parameter is greater than zero,
+
+29
+
+00:01:34,900  -->  00:01:38,045
+then we shade greater than the statistic as shown here.
+
+30
+
+00:01:38,045  -->  00:01:42,370
+However, if we change our null and alternative to look like this,
+
+31
+
+00:01:42,370  -->  00:01:45,090
+then we shade to the left of our statistic.
+
+32
+
+00:01:45,090  -->  00:01:48,150
+Our shading for the p-value would now look like this.
+
+33
+
+00:01:48,150  -->  00:01:52,090
+Notice, that this would create a very large probability in this case,
+
+34
+
+00:01:52,090  -->  00:01:54,790
+as almost the entire distribution is shaded.
+
+35
+
+00:01:54,790  -->  00:01:57,250
+If you have a not equal sign in the alternative,
+
+36
+
+00:01:57,250  -->  00:01:59,770
+then your shading is associated with extremes
+
+37
+
+00:01:59,770  -->  00:02:03,010
+that are just far from the null in either direction.
+
+38
+
+00:02:03,010  -->  00:02:05,370
+In these cases, we just care about
+
+39
+
+00:02:05,370  -->  00:02:09,210
+statistics that are far from the null in either direction.
+
+40
+
+00:02:09,210  -->  00:02:11,870
+We end up marking on both sides and
+
+41
+
+00:02:11,870  -->  00:02:15,405
+shading away from the null hypothesis to find our p-value.
+
+42
+
+00:02:15,405  -->  00:02:18,430
+This often takes people a while to wrap their heads around,
+
+43
+
+00:02:18,430  -->  00:02:20,770
+and there are two parts to understand.
+
+44
+
+00:02:20,770  -->  00:02:25,410
+First, you have to fully conceptualize the definition of a p-value,
+
+45
+
+00:02:25,410  -->  00:02:31,090
+which is the conditional probability of your data given that the null hypothesis is true.
+
+46
+
+00:02:31,090  -->  00:02:34,070
+Then, you need to figure out what to compute,
+
+47
+
+00:02:34,070  -->  00:02:37,250
+which is visually summarized by these three images.
+
+48
+
+00:02:37,250  -->  00:02:40,470
+You will get some practice with both of these before moving
+
+49
+
+00:02:40,470  -->  00:02:44,450
+on and applying the ideas of a p-value to make decisions.
