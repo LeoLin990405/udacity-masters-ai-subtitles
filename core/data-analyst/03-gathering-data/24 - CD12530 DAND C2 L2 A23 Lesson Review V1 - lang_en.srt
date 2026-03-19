@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:02,250
+In the first few sections of this lesson,
+
+2
+00:00:02,250 --> 00:00:05,160
+we explore data gathering fundamentals including obtaining
+
+3
+00:00:05,160 --> 00:00:08,715
+data through downloading files and extracting data from flat files.
+
+4
+00:00:08,715 --> 00:00:12,330
+We then covered popular data gathering methods and data formats,
+
+5
+00:00:12,330 --> 00:00:15,090
+looking at alternative methods for obtaining data beyond
+
+6
+00:00:15,090 --> 00:00:18,015
+downloading such as APIs and web scraping.
+
+7
+00:00:18,015 --> 00:00:22,590
+We also learned how to extract data from some popular data formats like text,
+
+8
+00:00:22,590 --> 00:00:24,915
+JSON, HTML files.
+
+9
+00:00:24,915 --> 00:00:27,225
+In the last few sections of this lesson,
+
+10
+00:00:27,225 --> 00:00:28,890
+we talked about how to work with
+
+11
+00:00:28,890 --> 00:00:34,270
+relational and non-relational databases and different data formats such as images.
+

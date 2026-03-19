@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:02,820
+The Hypertext Markup Language or HTML,
+
+2
+00:00:02,820 --> 00:00:06,000
+is the language used to create documents for the worldwide web,
+
+3
+00:00:06,000 --> 00:00:09,660
+and you've likely encountered it hundreds of thousands of times without knowing.
+
+4
+00:00:09,660 --> 00:00:12,510
+Let's dive into the structure of an HTML file to better
+
+5
+00:00:12,510 --> 00:00:16,245
+understand how data wranglers extract value from these files.
+
+6
+00:00:16,245 --> 00:00:18,780
+HTML is just a collection of tags.
+
+7
+00:00:18,780 --> 00:00:22,905
+The label inside the angle brackets indicates the type of elements,
+
+8
+00:00:22,905 --> 00:00:26,635
+for example, in the highlighted box this is a title tag.
+
+9
+00:00:26,635 --> 00:00:31,010
+The content between the tags is generally what people will see in the browser.
+
+10
+00:00:31,010 --> 00:00:32,360
+The title of this webpage,
+
+11
+00:00:32,360 --> 00:00:34,615
+for example, is HTML structure.
+
+12
+00:00:34,615 --> 00:00:38,090
+Note how the first mention of the title tag is an angled brackets,
+
+13
+00:00:38,090 --> 00:00:42,680
+but the second mention after the HTML structure texts has an angle bracket,
+
+14
+00:00:42,680 --> 00:00:44,600
+a slash, the word title,
+
+15
+00:00:44,600 --> 00:00:46,400
+and then a closing angle bracket.
+
+16
+00:00:46,400 --> 00:00:50,780
+This second mention of title with a slash indicates that this is the end of the tag.
+
+17
+00:00:50,780 --> 00:00:53,680
+So the rest of the HTML isn't the full title,
+
+18
+00:00:53,680 --> 00:00:56,695
+it's just the words between the title tags.
+
+19
+00:00:56,695 --> 00:00:59,465
+There are different types of HTML elements.
+
+20
+00:00:59,465 --> 00:01:02,510
+Heading elements are used for section heading tags,
+
+21
+00:01:02,510 --> 00:01:05,480
+such as H1, H2, H3, and H4.
+
+22
+00:01:05,480 --> 00:01:09,155
+Paragraph elements are used for standard blocks of texts.
+
+23
+00:01:09,155 --> 00:01:13,175
+Image elements are used to embed images in a webpage,
+
+24
+00:01:13,175 --> 00:01:15,380
+and span elements are used to
+
+25
+00:01:15,380 --> 00:01:18,575
+group text within another block of texts, often for styling.
+
+26
+00:01:18,575 --> 00:01:20,585
+Let's take a look at two examples.
+
+27
+00:01:20,585 --> 00:01:24,080
+The first example you can see that this is a span texts looks
+
+28
+00:01:24,080 --> 00:01:27,770
+just like as if it had been placed in a P or a paragraph tag,
+
+29
+00:01:27,770 --> 00:01:30,895
+but without the extra blank line before and after.
+
+30
+00:01:30,895 --> 00:01:32,735
+For the second span tag,
+
+31
+00:01:32,735 --> 00:01:35,900
+we can change the style of the another span text.
+
+32
+00:01:35,900 --> 00:01:38,510
+We can define the color as red in hexadecimal.
+
+33
+00:01:38,510 --> 00:01:41,270
+Now, you can see in the webpage snippet on the right,
+
+34
+00:01:41,270 --> 00:01:43,760
+the another span text is red.
+
+35
+00:01:43,760 --> 00:01:47,525
+The head element contains metadata about the webpage,
+
+36
+00:01:47,525 --> 00:01:49,580
+like the page's title or its encoding,
+
+37
+00:01:49,580 --> 00:01:51,920
+in this case, UTF-8.
+
+38
+00:01:51,920 --> 00:01:55,040
+The body element contains the actual HTML,
+
+39
+00:01:55,040 --> 00:01:56,300
+which is where all the tags,
+
+40
+00:01:56,300 --> 00:01:58,775
+such as heading in paragraph tags take place.
+
+41
+00:01:58,775 --> 00:02:04,745
+The HTML tag is a container for all other HTML elements except for the doc-type tag.
+
+42
+00:02:04,745 --> 00:02:07,430
+All HTML files must start with
+
+43
+00:02:07,430 --> 00:02:09,470
+this doctype HTML tag to give
+
+44
+00:02:09,470 --> 00:02:12,905
+information to the browser that they should expect an HTML file.
+
+45
+00:02:12,905 --> 00:02:18,245
+Let's compare HTML files with a couple of popular file formats, starting with JSON.
+
+46
+00:02:18,245 --> 00:02:22,940
+JSON and HTML are similar in that you can have elements inside of elements,
+
+47
+00:02:22,940 --> 00:02:24,995
+but that's where the similarities end.
+
+48
+00:02:24,995 --> 00:02:29,720
+We can create a tree structure in HTML by putting elements inside elements.
+
+49
+00:02:29,720 --> 00:02:33,545
+To do this, we often use a div element as a container.
+
+50
+00:02:33,545 --> 00:02:38,510
+Div elements are used to group chunks of content together such as these H1 and P tags.
+
+51
+00:02:38,510 --> 00:02:40,040
+As you write HTML code,
+
+52
+00:02:40,040 --> 00:02:44,890
+the hierarchy that you can create can grow as wide or as deep as you need them to be.
+
+53
+00:02:44,890 --> 00:02:48,375
+HTML and JSON are used for different purposes.
+
+54
+00:02:48,375 --> 00:02:50,375
+HTML is used for building websites,
+
+55
+00:02:50,375 --> 00:02:53,165
+whereas JSON is used for communicating information,
+
+56
+00:02:53,165 --> 00:02:54,815
+for example through APIs.
+
+57
+00:02:54,815 --> 00:02:57,755
+JSON is capable of handling more complex data,
+
+58
+00:02:57,755 --> 00:03:00,475
+whereas HTML has a simpler structure.
+
+59
+00:03:00,475 --> 00:03:05,090
+HTML files have a much more complicated structure though compared to flat files.
+
+60
+00:03:05,090 --> 00:03:09,470
+For example, consider a short review written for the archive.org book item.
+
+61
+00:03:09,470 --> 00:03:14,090
+You can see how on the left the content is nestled within the different HTML elements,
+
+62
+00:03:14,090 --> 00:03:15,605
+including the reviewer name,
+
+63
+00:03:15,605 --> 00:03:19,865
+the stars, the subject of the review, and the content.
+
+64
+00:03:19,865 --> 00:03:23,705
+On the right, take a look at a flat file with the same content with the columns,
+
+65
+00:03:23,705 --> 00:03:26,525
+reviewer, stars, subject, and texts.
+
+66
+00:03:26,525 --> 00:03:29,570
+We would need to pass the HTML file on the left and
+
+67
+00:03:29,570 --> 00:03:34,410
+extract the information accordingly to get it into the format on the right.
+

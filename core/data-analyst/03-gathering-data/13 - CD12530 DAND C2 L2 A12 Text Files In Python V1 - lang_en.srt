@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:04,070
+In this demo, I'm going to show you how to read a few review text files in a folder.
+
+2
+00:00:04,070 --> 00:00:07,995
+We're going to go ahead and read each file line by line to extract the title,
+
+3
+00:00:07,995 --> 00:00:09,855
+URL, and text of each review.
+
+4
+00:00:09,855 --> 00:00:12,975
+We're going to then store this information in a Pandas DataFrame.
+
+5
+00:00:12,975 --> 00:00:15,270
+Now we have three Roger Ebert reviews
+
+6
+00:00:15,270 --> 00:00:17,490
+programmatically downloaded and we're going to use them.
+
+7
+00:00:17,490 --> 00:00:19,035
+They're in this directory here.
+
+8
+00:00:19,035 --> 00:00:23,805
+Note how if we double-click into one txt file with each dot txt file,
+
+9
+00:00:23,805 --> 00:00:25,560
+the first line is the title,
+
+10
+00:00:25,560 --> 00:00:27,645
+the second line is the URL,
+
+11
+00:00:27,645 --> 00:00:30,915
+and the third line and onwards is the review text.
+
+12
+00:00:30,915 --> 00:00:37,295
+Let's get started. We'll start with importing Pandas' and Python built-in glob module,
+
+13
+00:00:37,295 --> 00:00:40,975
+a library that helps with Unix style pathname pattern expansion.
+
+14
+00:00:40,975 --> 00:00:44,300
+This essentially means that we can use glob patterns to specify
+
+15
+00:00:44,300 --> 00:00:47,750
+sets of filenames using wildcard characters like asterisk,
+
+16
+00:00:47,750 --> 00:00:50,350
+which can be used to patch a string of any length.
+
+17
+00:00:50,350 --> 00:00:51,920
+It is a lot of information,
+
+18
+00:00:51,920 --> 00:00:55,280
+but you only need to remember the glob.glob.
+
+19
+00:00:55,280 --> 00:00:58,120
+The pattern ebert reviews 2017,
+
+20
+00:00:58,120 --> 00:01:01,985
+slash asterisk dot txt will find any file within
+
+21
+00:01:01,985 --> 00:01:06,640
+our reviews folder that has a dot txt extension regardless of the file's name.
+
+22
+00:01:06,640 --> 00:01:09,140
+The asterisk is a wildcard character.
+
+23
+00:01:09,140 --> 00:01:11,690
+It allows you to find and process all text files in
+
+24
+00:01:11,690 --> 00:01:15,145
+the directory without specifying each filename individually.
+
+25
+00:01:15,145 --> 00:01:18,640
+Now, let's go ahead and start our implementation.
+
+26
+00:01:18,640 --> 00:01:20,950
+First, we're going to go ahead and create an empty list,
+
+27
+00:01:20,950 --> 00:01:24,400
+text list to store information from each file in the directory.
+
+28
+00:01:24,400 --> 00:01:27,785
+Now what we're going to do is iterate through files in our directory.
+
+29
+00:01:27,785 --> 00:01:30,070
+We'll iterate through all the text files in
+
+30
+00:01:30,070 --> 00:01:33,415
+our reviews directory using the glob.glob function.
+
+31
+00:01:33,415 --> 00:01:37,210
+Next, we're going to go ahead and open the text file with
+
+32
+00:01:37,210 --> 00:01:41,815
+open ebert review encoding equals UTFE as file.
+
+33
+00:01:41,815 --> 00:01:44,065
+In Python 3, when opening texts to read,
+
+34
+00:01:44,065 --> 00:01:45,610
+you should always use open with
+
+35
+00:01:45,610 --> 00:01:49,495
+an encoding parameter to ensure that you get correctly decoded unicode,
+
+36
+00:01:49,495 --> 00:01:51,215
+or an error message.
+
+37
+00:01:51,215 --> 00:01:54,460
+Here we opened each text file using a path generated
+
+38
+00:01:54,460 --> 00:01:57,985
+from glob and pass it into a file handle called file.
+
+39
+00:01:57,985 --> 00:02:02,255
+Then we read the first line of the file, which is the title.
+
+40
+00:02:02,255 --> 00:02:06,250
+Since text files are separated by new line characters and
+
+41
+00:02:06,250 --> 00:02:10,740
+the file object returned from with open this file is an iterator,
+
+42
+00:02:10,740 --> 00:02:15,350
+we can read the file line by line using file dot readline.
+
+43
+00:02:15,350 --> 00:02:17,095
+In our text files,
+
+44
+00:02:17,095 --> 00:02:19,375
+the title is followed by a bit of whitespace,
+
+45
+00:02:19,375 --> 00:02:22,990
+which is actually the backslash end or the new line character.
+
+46
+00:02:22,990 --> 00:02:27,325
+We can get rid of that by slicing it off at the end of the string using
+
+47
+00:02:27,325 --> 00:02:32,470
+indexing by minus one which basically means keep everything but the last character.
+
+48
+00:02:32,470 --> 00:02:34,950
+Now we've got the movie title.
+
+49
+00:02:34,950 --> 00:02:38,125
+Next, we're going to go ahead and grab the URL,
+
+50
+00:02:38,125 --> 00:02:39,355
+which is the second line.
+
+51
+00:02:39,355 --> 00:02:41,560
+You're going to use dot readline
+
+52
+00:02:41,560 --> 00:02:46,565
+again to catch the second line and remove that newline character at the end.
+
+53
+00:02:46,565 --> 00:02:49,075
+Now, next with file dot read
+
+54
+00:02:49,075 --> 00:02:51,970
+everything from the third line and onwards is the review text,
+
+55
+00:02:51,970 --> 00:02:55,565
+so we can just read the rest of the file using the dot read function.
+
+56
+00:02:55,565 --> 00:02:58,570
+Now, it's time to get this into a DataFrame.
+
+57
+00:02:58,570 --> 00:03:01,435
+We add the title, review URL,
+
+58
+00:03:01,435 --> 00:03:03,955
+and review text that we just read
+
+59
+00:03:03,955 --> 00:03:08,000
+to a list of dictionaries and we give them proper names.
+
+60
+00:03:08,000 --> 00:03:11,695
+Next, what we're going to do is after iterating through all the files,
+
+61
+00:03:11,695 --> 00:03:13,855
+convert our text list,
+
+62
+00:03:13,855 --> 00:03:18,430
+or list of dictionaries into a Pandas DataFrame called df.
+
+63
+00:03:18,430 --> 00:03:20,455
+Here, as you can see, we're specifically
+
+64
+00:03:20,455 --> 00:03:23,035
+denoting the column names in the order of title,
+
+65
+00:03:23,035 --> 00:03:25,310
+review URL, and review text and
+
+66
+00:03:25,310 --> 00:03:28,945
+basically converting our list of dictionaries into a DataFrame.
+
+67
+00:03:28,945 --> 00:03:34,460
+Let's use df.head to print the first few rows of our DataFrame after running this code,
+
+68
+00:03:34,460 --> 00:03:36,800
+and we see that the title, URL,
+
+69
+00:03:36,800 --> 00:03:39,110
+and the review text columns are all populated
+
+70
+00:03:39,110 --> 00:03:43,290
+correctly with the data from our text files in our directory.
+

@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:02,055
+To understand dirty data,
+
+2
+00:00:02,055 --> 00:00:04,800
+let's consider the idea of data-driven farming,
+
+3
+00:00:04,800 --> 00:00:08,190
+which ultimately helps the agricultural value chain.
+
+4
+00:00:08,190 --> 00:00:12,660
+Suppose we're gathering GPS data on crop yields at the beginning of a quarter,
+
+5
+00:00:12,660 --> 00:00:15,360
+this data is then going to be used to forecast
+
+6
+00:00:15,360 --> 00:00:18,210
+the equipments and resources needed for the quarter.
+
+7
+00:00:18,210 --> 00:00:20,910
+However, due to atmospheric interference,
+
+8
+00:00:20,910 --> 00:00:23,340
+the GPS data is inaccurate.
+
+9
+00:00:23,340 --> 00:00:27,225
+Without identifying this data issue and assessing its impact on the data,
+
+10
+00:00:27,225 --> 00:00:32,265
+we will make incorrect forecasts from the inaccurate data leading to losses.
+
+11
+00:00:32,265 --> 00:00:36,630
+Inaccurate data represents just one example of a data quality issue.
+
+12
+00:00:36,630 --> 00:00:41,850
+Low data quality or dirty data hinders data from being used for its intended purposes.
+
+13
+00:00:41,850 --> 00:00:44,750
+Ensuring high data quality is crucial for obtaining
+
+14
+00:00:44,750 --> 00:00:48,230
+reliable insights and driving informed decision-making.
+
+15
+00:00:48,230 --> 00:00:51,700
+Let's draw the same example to talk about messy data.
+
+16
+00:00:51,700 --> 00:00:55,760
+Our data gathering device is gathering GPS and geospacial data.
+
+17
+00:00:55,760 --> 00:00:57,275
+But when it stores this data,
+
+18
+00:00:57,275 --> 00:01:00,575
+it just jumbles all the information into one long line.
+
+19
+00:01:00,575 --> 00:01:02,105
+Here we have the latitude,
+
+20
+00:01:02,105 --> 00:01:04,850
+longitude, and date data all at once.
+
+21
+00:01:04,850 --> 00:01:07,520
+If we had 100 of different records
+
+22
+00:01:07,520 --> 00:01:10,100
+of this kind of data and just wanted to look at the dates.
+
+23
+00:01:10,100 --> 00:01:12,860
+It could be really hard to apply any kind of code to
+
+24
+00:01:12,860 --> 00:01:16,130
+this data because all the information is in one line.
+
+25
+00:01:16,130 --> 00:01:20,540
+A better way to organize this data is adapting it to a tabular format.
+
+26
+00:01:20,540 --> 00:01:23,405
+I could then have my latitude, longitude,
+
+27
+00:01:23,405 --> 00:01:27,725
+and date be individual columns and then focus only on the date column,
+
+28
+00:01:27,725 --> 00:01:30,080
+like performing additional assessment and cleaning
+
+29
+00:01:30,080 --> 00:01:33,400
+without having to deal with latitude and longitude.
+
+30
+00:01:33,400 --> 00:01:35,110
+Messy data, ie,
+
+31
+00:01:35,110 --> 00:01:39,755
+data with bad structure can be a roadblock for initial data inspection and assessment.
+
+32
+00:01:39,755 --> 00:01:43,130
+It's important to adapt and fix messy data into a structure
+
+33
+00:01:43,130 --> 00:01:46,655
+that your tools are compatible with so that the rest of the assessment;
+
+34
+00:01:46,655 --> 00:01:50,820
+cleaning and using of the data is much easier for you.
+

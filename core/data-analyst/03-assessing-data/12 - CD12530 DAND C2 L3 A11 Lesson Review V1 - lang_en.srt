@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:02,175
+Let's briefly review what we covered.
+
+2
+00:00:02,175 --> 00:00:04,890
+We first talked about the what data assessment is
+
+3
+00:00:04,890 --> 00:00:07,950
+and identified and distinguished between dirty and messy data.
+
+4
+00:00:07,950 --> 00:00:10,455
+Next, we looked at dealing with dirty data,
+
+5
+00:00:10,455 --> 00:00:12,210
+which is data with poor quality.
+
+6
+00:00:12,210 --> 00:00:15,090
+We discussed how to categorize data quality issues,
+
+7
+00:00:15,090 --> 00:00:17,520
+data quality dimensions, and assessing
+
+8
+00:00:17,520 --> 00:00:20,955
+data quality visually and programmatically using pandas.
+
+9
+00:00:20,955 --> 00:00:23,145
+Finally, we looked at messy data,
+
+10
+00:00:23,145 --> 00:00:25,050
+which is data with poor structure.
+
+11
+00:00:25,050 --> 00:00:27,165
+We learned about the rules of tidy data,
+
+12
+00:00:27,165 --> 00:00:29,010
+how to design analytical datasets,
+
+13
+00:00:29,010 --> 00:00:33,460
+and how to assess data structure visually and programmatically.
+

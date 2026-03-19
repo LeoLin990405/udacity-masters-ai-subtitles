@@ -1,0 +1,168 @@
+1
+00:00:00,000 --> 00:00:04,560
+Let's now walk through a short demo of how to work with flat files i.e.
+
+2
+00:00:04,560 --> 00:00:07,215
+tsv and csv files in Python.
+
+3
+00:00:07,215 --> 00:00:09,900
+I have a very tiny synthetic dataset on
+
+4
+00:00:09,900 --> 00:00:13,260
+individuals taking intelligence and emotional quotient tests.
+
+5
+00:00:13,260 --> 00:00:15,795
+My data consists of just three variables,
+
+6
+00:00:15,795 --> 00:00:17,130
+the rank of a test-taker,
+
+7
+00:00:17,130 --> 00:00:20,265
+their name, and their test type, IQ and EQ.
+
+8
+00:00:20,265 --> 00:00:23,745
+First, we'll go ahead and import the pandas library.
+
+9
+00:00:23,745 --> 00:00:25,635
+We'll then take a look at opening
+
+10
+00:00:25,635 --> 00:00:30,135
+a tab-separated file with this data using Python's native open function.
+
+11
+00:00:30,135 --> 00:00:33,160
+Here we define an empty list.
+
+12
+00:00:33,160 --> 00:00:37,685
+Then we open the file using Python context manager.
+
+13
+00:00:37,685 --> 00:00:42,135
+With a line, with open tiny_tsv.tsv as tsv file,
+
+14
+00:00:42,135 --> 00:00:45,290
+the width statement is opening the tsv file named
+
+15
+00:00:45,290 --> 00:00:49,760
+tiny_tsv.tsv in read mode which is the default mode,
+
+16
+00:00:49,760 --> 00:00:52,930
+and creates a file object called tsv file.
+
+17
+00:00:52,930 --> 00:00:57,385
+Inside the loop, the current line is processed as follows.
+
+18
+00:00:57,385 --> 00:01:00,845
+We go ahead and use the Rstrip function in order to
+
+19
+00:01:00,845 --> 00:01:04,685
+remove the newline character backslash n from the end of the line.
+
+20
+00:01:04,685 --> 00:01:09,440
+We then also use the split method which takes a delimiter, in this case,
+
+21
+00:01:09,440 --> 00:01:15,560
+the tab character T and splits this line into a list of values based on this delimiter.
+
+22
+00:01:15,560 --> 00:01:19,550
+Tiny_tsv_list.append is going ahead and
+
+23
+00:01:19,550 --> 00:01:23,485
+appending the resulting list of values to the tiny_tsv_list.
+
+24
+00:01:23,485 --> 00:01:25,710
+Now after this loop completes,
+
+25
+00:01:25,710 --> 00:01:29,400
+tiny_tsv_list contains the data from the tsv file.
+
+26
+00:01:29,400 --> 00:01:30,965
+If we print the list,
+
+27
+00:01:30,965 --> 00:01:36,460
+we can now see our tsv is parsed with Python and nicely formatted as a list of lists.
+
+28
+00:01:36,460 --> 00:01:39,770
+Each inner list represents a row of data and
+
+29
+00:01:39,770 --> 00:01:44,290
+each value within the inner list corresponds to a column value.
+
+30
+00:01:44,290 --> 00:01:49,130
+However, the popular way of doing this is simply using the pandas library.
+
+31
+00:01:49,130 --> 00:01:51,605
+Here we're importing the pandas library.
+
+32
+00:01:51,605 --> 00:01:54,605
+Pandas is a popular data manipulation library in Python,
+
+33
+00:01:54,605 --> 00:01:57,650
+providing powerful data structures like DataFrames.
+
+34
+00:01:57,650 --> 00:02:04,905
+Next we're using the pd.read_csv function on the tiny_tsv.tsv file.
+
+35
+00:02:04,905 --> 00:02:07,620
+Although the function is named read_csv,
+
+36
+00:02:07,620 --> 00:02:12,145
+it can also read tsv files by specifying the separator or delimiter.
+
+37
+00:02:12,145 --> 00:02:15,110
+In this case, the separator is set to the tab character
+
+38
+00:02:15,110 --> 00:02:18,385
+indicating that the file uses tabs, to separate values.
+
+39
+00:02:18,385 --> 00:02:23,360
+This function is returning a DataFrame object containing the data from the tsv file,
+
+40
+00:02:23,360 --> 00:02:26,395
+which has been assigned to the variable df_tsv.
+
+41
+00:02:26,395 --> 00:02:29,010
+Let's see what df_tsv looks like.
+
+42
+00:02:29,010 --> 00:02:33,660
+This data is now displayed nicely in this type of tabular format.
+

@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:03,705
+Let's take a look at a demo on how to set up your range programmatically,
+
+2
+00:00:03,705 --> 00:00:06,400
+identify outliers and remove them using Pandas,
+
+3
+00:00:06,400 --> 00:00:09,390
+and finally, we will see the impact on summary statistics.
+
+4
+00:00:09,390 --> 00:00:14,760
+We start by importing pandas and reading in our data set into a DataFrame.
+
+5
+00:00:14,760 --> 00:00:17,505
+Next, we're going to use the.describe function.
+
+6
+00:00:17,505 --> 00:00:19,815
+With this dataset, we have two columns,
+
+7
+00:00:19,815 --> 00:00:21,210
+student ID, and age,
+
+8
+00:00:21,210 --> 00:00:23,430
+corresponding to middle and high-school students,
+
+9
+00:00:23,430 --> 00:00:26,925
+which means our age range is about 11-18.
+
+10
+00:00:26,925 --> 00:00:29,865
+The dataset has 527 rows.
+
+11
+00:00:29,865 --> 00:00:33,950
+Now, let's focus on the age column for the outlier detection for this demo.
+
+12
+00:00:33,950 --> 00:00:36,170
+From the results of.describe,
+
+13
+00:00:36,170 --> 00:00:41,330
+we immediately see the minimum value for the age column is three and the max is 75,
+
+14
+00:00:41,330 --> 00:00:45,200
+which is clearly out of our age range of 11-18.
+
+15
+00:00:45,200 --> 00:00:48,930
+Applying the sort values method,
+
+16
+00:00:49,600 --> 00:00:54,590
+we can actually start to see that there are many values below
+
+17
+00:00:54,590 --> 00:00:58,955
+11 and above 18 as part of our age column in this dataset.
+
+18
+00:00:58,955 --> 00:01:02,460
+Let's go through how to manually create a range for identifying the outliers.
+
+19
+00:01:02,460 --> 00:01:06,590
+In this case, since we know that the range of ages should be 11-18.
+
+20
+00:01:06,590 --> 00:01:11,885
+What we can do is go ahead and use indexing to get the list of rows violating our range.
+
+21
+00:01:11,885 --> 00:01:15,200
+We can use df.loc to access the rows and
+
+22
+00:01:15,200 --> 00:01:19,370
+specify our conditions as values and the age column being less than 18,
+
+23
+00:01:19,370 --> 00:01:22,310
+where we can see here there's a small number of outliers.
+
+24
+00:01:22,310 --> 00:01:25,625
+We can also do the same thing for ages greater than 18,
+
+25
+00:01:25,625 --> 00:01:29,875
+where we can see there's a larger number of outliers present in the DataFrame.
+
+26
+00:01:29,875 --> 00:01:34,280
+What if we didn't know this age range should be 11-18?
+
+27
+00:01:34,280 --> 00:01:38,570
+Let's use standard deviation to figure out our upper and lower outlier boundaries.
+
+28
+00:01:38,570 --> 00:01:40,580
+We're going to pull the information we need for
+
+29
+00:01:40,580 --> 00:01:42,815
+the calculation from the.describe function.
+
+30
+00:01:42,815 --> 00:01:45,410
+Again,.describe as returning a DataFrame,
+
+31
+00:01:45,410 --> 00:01:50,730
+so we can actually access the mean and standard deviation values from it using.loc.
+
+32
+00:01:50,960 --> 00:01:53,525
+Now, to calculate the upper bound,
+
+33
+00:01:53,525 --> 00:01:56,915
+I'm using here the mean plus 1 standard deviation.
+
+34
+00:01:56,915 --> 00:02:00,755
+For the lower bound, I'm using the mean minus 1 standard deviation.
+
+35
+00:02:00,755 --> 00:02:04,685
+Notice how here, if we print the values of the upper and lower bound,
+
+36
+00:02:04,685 --> 00:02:08,045
+since we're assuming we don't know the actual age range,
+
+37
+00:02:08,045 --> 00:02:11,390
+the upper and lower bound values are slightly off.
+
+38
+00:02:11,390 --> 00:02:13,100
+The upper bound is about 25,
+
+39
+00:02:13,100 --> 00:02:15,560
+and the lower bound is about seven.
+
+40
+00:02:15,560 --> 00:02:18,170
+Again, we can retrieve the rows that are
+
+41
+00:02:18,170 --> 00:02:21,320
+violating or outside of this boundary using indexing.
+
+42
+00:02:21,320 --> 00:02:26,150
+Note here how we're using the OR operator or the OR Boolean operator
+
+43
+00:02:26,150 --> 00:02:31,445
+so we can get rows both below the lower bound and above the upper bound at the same time.
+
+44
+00:02:31,445 --> 00:02:34,765
+Let's run this to get a list of these violating rows.
+
+45
+00:02:34,765 --> 00:02:36,605
+To drop these outliers,
+
+46
+00:02:36,605 --> 00:02:39,755
+we need to first get the index of the outlier rows that meet
+
+47
+00:02:39,755 --> 00:02:43,300
+or just identifying here and then pass it to Pandas drop function.
+
+48
+00:02:43,300 --> 00:02:44,740
+Let's take a look at how to do this.
+
+49
+00:02:44,740 --> 00:02:48,480
+Here, we're getting the index of these rows.
+
+50
+00:02:48,530 --> 00:02:53,420
+Then next we're going ahead and passing them to Pandas.drop function,
+
+51
+00:02:53,420 --> 00:02:56,270
+specifying the index parameter as the index of
+
+52
+00:02:56,270 --> 00:02:59,870
+the violating rows and then assigning this to a new variable newdf.
+
+53
+00:02:59,870 --> 00:03:01,895
+If we run.describe on this,
+
+54
+00:03:01,895 --> 00:03:03,260
+we can start to see that
+
+55
+00:03:03,260 --> 00:03:08,105
+our min value is at 10 after dropping the rows and the max is at 17.
+
+56
+00:03:08,105 --> 00:03:09,800
+The mean is about 14,
+
+57
+00:03:09,800 --> 00:03:13,355
+and the standard deviation at approximately two, whereas previously,
+
+58
+00:03:13,355 --> 00:03:15,185
+if we look at our original DataFrame,
+
+59
+00:03:15,185 --> 00:03:21,020
+we can see that the mean was about 16 and the standard deviation was about nine.
+
+60
+00:03:21,020 --> 00:03:23,330
+We can see the dramatic and obvious influence
+
+61
+00:03:23,330 --> 00:03:26,770
+our outliers had on this standard deviation calculation.
+
+62
+00:03:26,770 --> 00:03:30,575
+I'd like to revisit one last thing on pandas drop function.
+
+63
+00:03:30,575 --> 00:03:35,680
+Note how we directly assign the result of the drop function to newdf.
+
+64
+00:03:35,680 --> 00:03:40,430
+If we specified a argument called in-place equals true when doing the drop,
+
+65
+00:03:40,430 --> 00:03:44,945
+it would automatically overwrite the values in our original DataFrame df.
+
+66
+00:03:44,945 --> 00:03:47,245
+We wouldn't even need to assign it to a value.
+
+67
+00:03:47,245 --> 00:03:50,270
+Let's do that here, where we specify the dark drop function and
+
+68
+00:03:50,270 --> 00:03:54,230
+the index and have in place equal to true without assigning it to a variable.
+
+69
+00:03:54,230 --> 00:03:55,790
+As you can see here,
+
+70
+00:03:55,790 --> 00:03:58,910
+the results from describe on this df variable,
+
+71
+00:03:58,910 --> 00:04:00,230
+which is the original DataFrame,
+
+72
+00:04:00,230 --> 00:04:04,760
+are now the same as what we got as part of our newdf variable.
+
+73
+00:04:04,760 --> 00:04:07,130
+While in-place equals true can simplify
+
+74
+00:04:07,130 --> 00:04:09,740
+your implementation because it allows you to minimize the amount
+
+75
+00:04:09,740 --> 00:04:14,485
+of new variables you create and just directly replace values in your original DataFrame,
+
+76
+00:04:14,485 --> 00:04:18,215
+it can be dangerous because it overwrites your original data.
+
+77
+00:04:18,215 --> 00:04:21,390
+Be cautious and frugal with its use.
+

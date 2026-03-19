@@ -1,0 +1,380 @@
+1
+00:00:00,000 --> 00:00:04,050
+Now let's briefly go over each of the options to deal with these anions.
+
+2
+00:00:04,050 --> 00:00:07,710
+You can consider dropping the rows in your data set if there are
+
+3
+00:00:07,710 --> 00:00:12,435
+only a few rows with missing values and it won't impact your data analysis significantly.
+
+4
+00:00:12,435 --> 00:00:17,250
+As you made these 96 rows won't have a severe impact on your statistics like
+
+5
+00:00:17,250 --> 00:00:19,770
+the average and standard deviation and if you see
+
+6
+00:00:19,770 --> 00:00:22,575
+that they're not absolutely crucial to answer your problem,
+
+7
+00:00:22,575 --> 00:00:23,890
+you can safely drop them.
+
+8
+00:00:23,890 --> 00:00:26,000
+In this case, I'd like to drop the rows that have
+
+9
+00:00:26,000 --> 00:00:28,570
+NA values no matter what column they belong to.
+
+10
+00:00:28,570 --> 00:00:33,700
+We can quickly do this by using the drop NA function on our DataFrame df.
+
+11
+00:00:33,700 --> 00:00:36,380
+If we check the results using the.describe function,
+
+12
+00:00:36,380 --> 00:00:39,065
+we can see the number of rows have reduced.
+
+13
+00:00:39,065 --> 00:00:41,030
+We can also check using
+
+14
+00:00:41,030 --> 00:00:45,910
+the clean df isna sum function to confirm that there are zero Na cell.
+
+15
+00:00:45,910 --> 00:00:50,150
+Consider dropping an entire column when almost all of the values,
+
+16
+00:00:50,150 --> 00:00:53,675
+like 95 to 98% of the values are missing in a column.
+
+17
+00:00:53,675 --> 00:00:57,170
+At that point, the values that are present in the column are most likely not
+
+18
+00:00:57,170 --> 00:01:01,165
+significant for any downstream analysis so the column can safely be dropped.
+
+19
+00:01:01,165 --> 00:01:03,290
+For example, take a look at this new DataFrame,
+
+20
+00:01:03,290 --> 00:01:05,840
+which is also consisting of 10,000 rows.
+
+21
+00:01:05,840 --> 00:01:09,800
+The second column consists of almost entirely missing values.
+
+22
+00:01:09,800 --> 00:01:12,275
+Using the isna.sum method,
+
+23
+00:01:12,275 --> 00:01:17,195
+we find that almost 9,900 values of our data had NA values.
+
+24
+00:01:17,195 --> 00:01:18,890
+At this point, we may determine
+
+25
+00:01:18,890 --> 00:01:22,520
+the little remaining data that's actually there as part of the second column,
+
+26
+00:01:22,520 --> 00:01:24,330
+doesn't even add value to us.
+
+27
+00:01:24,330 --> 00:01:27,440
+We can use the pandas drop function specifying the name of
+
+28
+00:01:27,440 --> 00:01:31,265
+the column that we want to drop in setting the axis parameter to one,
+
+29
+00:01:31,265 --> 00:01:35,320
+where zero typically indicates rows and one indicates columns.
+
+30
+00:01:35,320 --> 00:01:40,070
+Now, with the second column assessment score to being dropped from the DataFrame,
+
+31
+00:01:40,070 --> 00:01:43,280
+we can see that there are no more NA values with
+
+32
+00:01:43,280 --> 00:01:48,460
+our DataFrame that's coming in from the first column for this particular dataset.
+
+33
+00:01:48,460 --> 00:01:52,340
+What if you don't want to drop the existing data just because there are
+
+34
+00:01:52,340 --> 00:01:56,435
+some missing values or the values are actually important to your question.
+
+35
+00:01:56,435 --> 00:01:59,270
+You can fill an empty cell in a column with the mean,
+
+36
+00:01:59,270 --> 00:02:01,805
+median, or mode of that column as an example.
+
+37
+00:02:01,805 --> 00:02:04,115
+This is also known as imputing.
+
+38
+00:02:04,115 --> 00:02:08,485
+We can impute NAN values by using pandas fill Na function.
+
+39
+00:02:08,485 --> 00:02:10,790
+For example, let's revisit the dataset with
+
+40
+00:02:10,790 --> 00:02:14,735
+four missing values in column one and 92 missing values in column two.
+
+41
+00:02:14,735 --> 00:02:19,145
+We can impute all missing values in our DataFrame with the mean of
+
+42
+00:02:19,145 --> 00:02:23,855
+each column using the df.mean and df.fillna functions.
+
+43
+00:02:23,855 --> 00:02:28,355
+Here what we're doing is providing df.mean to the filename method as input,
+
+44
+00:02:28,355 --> 00:02:30,755
+which will calculate the mean of each column.
+
+45
+00:02:30,755 --> 00:02:35,165
+Now if we run the sum of the NA after applying the fill Na function,
+
+46
+00:02:35,165 --> 00:02:36,395
+that does the imputing,
+
+47
+00:02:36,395 --> 00:02:39,680
+we can see that there's no more missing values in our dataset.
+
+48
+00:02:39,680 --> 00:02:44,155
+It's strongly recommended to only impute NAN values when needed, though.
+
+49
+00:02:44,155 --> 00:02:48,170
+It makes more sense to targetly impute NANs on columns for
+
+50
+00:02:48,170 --> 00:02:49,910
+efficiency reasons rather than on
+
+51
+00:02:49,910 --> 00:02:52,790
+the whole dataframe for columns and may not even need it.
+
+52
+00:02:52,790 --> 00:02:54,740
+To impute one specific column,
+
+53
+00:02:54,740 --> 00:02:56,000
+we use the same syntax,
+
+54
+00:02:56,000 --> 00:03:01,090
+but in this case we replace with df indexed on our column for example,
+
+55
+00:03:01,090 --> 00:03:03,215
+here we're doing it on assessment score too.
+
+56
+00:03:03,215 --> 00:03:05,690
+Here you can see only the missing values from
+
+57
+00:03:05,690 --> 00:03:09,305
+the assessment score two column is replaced or filled in with the mean value.
+
+58
+00:03:09,305 --> 00:03:13,165
+Whereas the missing values for assessment score one is still there.
+
+59
+00:03:13,165 --> 00:03:15,770
+It's also critical to perform a quick analysis
+
+60
+00:03:15,770 --> 00:03:17,990
+of your data after imputing missing values,
+
+61
+00:03:17,990 --> 00:03:21,185
+like get the average of the column for which you impute and then ask,
+
+62
+00:03:21,185 --> 00:03:24,140
+does the mean change significantly beyond what I'm comfortable with,
+
+63
+00:03:24,140 --> 00:03:26,240
+due to imputing the data values?
+
+64
+00:03:26,240 --> 00:03:30,230
+Here's another thing to keep in mind as it can get really confusing.
+
+65
+00:03:30,230 --> 00:03:32,510
+The only reason that we're able to apply
+
+66
+00:03:32,510 --> 00:03:34,970
+the describe function on a dataset that still has
+
+67
+00:03:34,970 --> 00:03:39,725
+NANs and Pandas is because in Pandas describe ignores missing values.
+
+68
+00:03:39,725 --> 00:03:42,530
+This means if you're trying to compute the mean of
+
+69
+00:03:42,530 --> 00:03:46,040
+a dataset before and after dropping rows for comparisons,
+
+70
+00:03:46,040 --> 00:03:48,410
+you're going to get the same result because it describe as
+
+71
+00:03:48,410 --> 00:03:50,915
+actually doing just that behind the scenes.
+
+72
+00:03:50,915 --> 00:03:53,300
+We are using describe here when imputing because
+
+73
+00:03:53,300 --> 00:03:55,670
+we're changing the data samples rather than just
+
+74
+00:03:55,670 --> 00:03:58,100
+dropping them so we would like to observe
+
+75
+00:03:58,100 --> 00:04:00,895
+a change in the summary statistics if there is one.
+
+76
+00:04:00,895 --> 00:04:05,795
+Here because we only have 96 rows with missing values out of 10,000 rows,
+
+77
+00:04:05,795 --> 00:04:07,400
+the change is not significant in
+
+78
+00:04:07,400 --> 00:04:10,280
+the statistics between the cleaned and the original DataFrame.
+
+79
+00:04:10,280 --> 00:04:12,095
+But when you have more missing values,
+
+80
+00:04:12,095 --> 00:04:15,145
+you're more likely to see more significant changes.
+
+81
+00:04:15,145 --> 00:04:19,175
+Now another option is to actually just convert your data into categories.
+
+82
+00:04:19,175 --> 00:04:23,045
+You can also bin values in your columns to create fewer categories.
+
+83
+00:04:23,045 --> 00:04:27,485
+For many cases, this may not lend you specific advantage when dealing with missing data,
+
+84
+00:04:27,485 --> 00:04:29,750
+but it's just up to the data wrangler judgment
+
+85
+00:04:29,750 --> 00:04:32,645
+on whether categories are the best option for your data.
+
+86
+00:04:32,645 --> 00:04:36,110
+For example, here we're using the pd.cut method to bin
+
+87
+00:04:36,110 --> 00:04:39,895
+variables in both our columns into four bins each.
+
+88
+00:04:39,895 --> 00:04:43,565
+Let's take a look at the bins for our second column using value counts.
+
+89
+00:04:43,565 --> 00:04:46,580
+Note that now in this case we now have four bins that were
+
+90
+00:04:46,580 --> 00:04:50,750
+created in a fifth bin that's actually still reserved for NAN values.
+
+91
+00:04:50,750 --> 00:04:54,080
+As we can see when we retrieved the rows that have NaN values
+
+92
+00:04:54,080 --> 00:04:59,070
+using DF indexed by df.is null.any on axis equals to one.
+
+93
+00:04:59,070 --> 00:05:01,205
+Now, in order to deal with this further,
+
+94
+00:05:01,205 --> 00:05:03,815
+you could then apply one of the earlier techniques we just covered,
+
+95
+00:05:03,815 --> 00:05:08,550
+such as removing the rows that have the NA values on top of this binned data.
+

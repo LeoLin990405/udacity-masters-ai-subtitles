@@ -1,0 +1,116 @@
+1
+00:00:00,000 --> 00:00:01,965
+What is a text file?
+
+2
+00:00:01,965 --> 00:00:06,910
+Text files are files with text in them that use a specific character-set,
+
+3
+00:00:06,910 --> 00:00:11,280
+contain no rules for structure and no formatting like italics or bowling,
+
+4
+00:00:11,280 --> 00:00:13,995
+have no media like images or video,
+
+5
+00:00:13,995 --> 00:00:16,470
+and have lines of texts that are separated by
+
+6
+00:00:16,470 --> 00:00:19,530
+newline characters or backslash ends in Python.
+
+7
+00:00:19,530 --> 00:00:24,150
+Now, these characters are typically invisible in most software applications,
+
+8
+00:00:24,150 --> 00:00:28,080
+and it can be viewed and edited in simple text editors.
+
+9
+00:00:28,080 --> 00:00:29,900
+As we've talked about before,
+
+10
+00:00:29,900 --> 00:00:33,530
+flat files can be text files that have a specific tabular structure.
+
+11
+00:00:33,530 --> 00:00:35,900
+Whereas text files that fall out of
+
+12
+00:00:35,900 --> 00:00:39,740
+the flat file category can be either structured or unstructured.
+
+13
+00:00:39,740 --> 00:00:43,265
+Let's take a look at an example of a very popular corpus or
+
+14
+00:00:43,265 --> 00:00:46,790
+a collection of texts made up of individual text files.
+
+15
+00:00:46,790 --> 00:00:48,425
+The 20 newsgroup data,
+
+16
+00:00:48,425 --> 00:00:52,355
+which has about 20,000 documents partitioned across 20 newsgroups,
+
+17
+00:00:52,355 --> 00:00:56,950
+including topics like space or Mideast politics or computer graphics.
+
+18
+00:00:56,950 --> 00:01:01,550
+Here we have an example of the.TXT file for the computer graphics newsgroup,
+
+19
+00:01:01,550 --> 00:01:04,580
+which has about 975 messages in it.
+
+20
+00:01:04,580 --> 00:01:06,395
+Assuming this data is cleaned,
+
+21
+00:01:06,395 --> 00:01:09,745
+one cool thing that we can do is create a word cloud.
+
+22
+00:01:09,745 --> 00:01:11,345
+Take a look at this word cloud,
+
+23
+00:01:11,345 --> 00:01:14,660
+which is serving as a visual representation of the texts in our data-set.
+
+24
+00:01:14,660 --> 00:01:17,510
+A word cloud is showing us how frequently words are occurring
+
+25
+00:01:17,510 --> 00:01:20,380
+within the text by displaying them in different font sizes.
+
+26
+00:01:20,380 --> 00:01:24,050
+For example in a subset of the comp graphics newsgroup data-set,
+
+27
+00:01:24,050 --> 00:01:28,475
+we can see that the words graphics and subject are two very popular words.
+
+28
+00:01:28,475 --> 00:01:30,920
+This gives us an immediate understanding of
+
+29
+00:01:30,920 --> 00:01:34,290
+the dominant themes present in the text data-set.
+

@@ -1,0 +1,100 @@
+1
+00:00:00,000 --> 00:00:04,395
+We've arrived at the final stage of data wrangling; data cleaning.
+
+2
+00:00:04,395 --> 00:00:08,490
+By now you've already gathered your data and assessed it for any issues.
+
+3
+00:00:08,490 --> 00:00:11,040
+In this lesson we're going to be talking about remediating
+
+4
+00:00:11,040 --> 00:00:14,490
+these issues so that the data is then cleaned and good to go,
+
+5
+00:00:14,490 --> 00:00:18,180
+ready to pass the downstream stakeholders for tasks like making
+
+6
+00:00:18,180 --> 00:00:22,350
+visualizations or training machine learning models out of the data that you've gotten.
+
+7
+00:00:22,350 --> 00:00:24,360
+Data cleaning is often one of
+
+8
+00:00:24,360 --> 00:00:28,005
+the most time-consuming steps of the data wrangling process.
+
+9
+00:00:28,005 --> 00:00:30,390
+Why? Well, there are a number of reasons.
+
+10
+00:00:30,390 --> 00:00:35,175
+First, it's impossible to clean all the identified issues simultaneously.
+
+11
+00:00:35,175 --> 00:00:38,840
+You need to methodologically address each dimension of issues in
+
+12
+00:00:38,840 --> 00:00:40,700
+your dataset and then reassess
+
+13
+00:00:40,700 --> 00:00:44,050
+those issues to confirm that you've resolved them appropriately.
+
+14
+00:00:44,050 --> 00:00:46,880
+Once issues in one-dimension is resolved,
+
+15
+00:00:46,880 --> 00:00:50,650
+you can proceed to tackle the next one in a systematic manner.
+
+16
+00:00:50,650 --> 00:00:55,205
+Second, many of the issues may surface during the data cleaning phase,
+
+17
+00:00:55,205 --> 00:00:58,190
+and require you to go back and reassess the data to
+
+18
+00:00:58,190 --> 00:01:01,505
+ensure that you can address and resolve these problems appropriately.
+
+19
+00:01:01,505 --> 00:01:03,980
+This iterative process is time-consuming,
+
+20
+00:01:03,980 --> 00:01:07,290
+but it helps maintain data quality throughout the analysis.
+
+21
+00:01:07,290 --> 00:01:11,375
+The different types of data can complicate things further.
+
+22
+00:01:11,375 --> 00:01:14,000
+In this lesson, we'll be going over how to clean
+
+23
+00:01:14,000 --> 00:01:17,000
+data for tabular time series and text data.
+
+24
+00:01:17,000 --> 00:01:20,090
+So you can understand how to generalize and apply
+
+25
+00:01:20,090 --> 00:01:24,450
+considerations for cleaning data to different datatypes.
+

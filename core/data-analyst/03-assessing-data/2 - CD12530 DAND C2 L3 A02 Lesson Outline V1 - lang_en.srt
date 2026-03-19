@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:01,395
+In the first section,
+
+2
+00:00:01,395 --> 00:00:04,710
+you'll learn how to describe the data assessment phase.
+
+3
+00:00:04,710 --> 00:00:10,245
+You will then be able to identify and distinguish between dirty and messy data.
+
+4
+00:00:10,245 --> 00:00:13,470
+Next, we'll take a look at how to deal with dirty data.
+
+5
+00:00:13,470 --> 00:00:17,340
+We'll look at how to identify and categorize data quality issues.
+
+6
+00:00:17,340 --> 00:00:22,215
+How to assess data quality visually and programmatically using Pandas.
+
+7
+00:00:22,215 --> 00:00:25,740
+Finally, we'll explore how to handle messy data,
+
+8
+00:00:25,740 --> 00:00:28,650
+including learning about what tidy data is,
+
+9
+00:00:28,650 --> 00:00:31,530
+how to design analytical datasets and how
+
+10
+00:00:31,530 --> 00:00:35,350
+to assess data structure visually and programmatically.
+

@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:04,020
+All the data gathering is the first step of a Data Wrangler workflow.
+
+2
+00:00:04,020 --> 00:00:08,370
+It can actually be incredibly complicated in order to get the data that you need,
+
+3
+00:00:08,370 --> 00:00:10,500
+and involves a number of different steps that you'll
+
+4
+00:00:10,500 --> 00:00:13,035
+need to identify as part of your workflows.
+
+5
+00:00:13,035 --> 00:00:16,575
+Why? Well, even if you're only working with files on hand,
+
+6
+00:00:16,575 --> 00:00:20,325
+you may have multiple data files from different sources,
+
+7
+00:00:20,325 --> 00:00:23,040
+multiple data files from the same source,
+
+8
+00:00:23,040 --> 00:00:26,160
+files dedicated to explain the variables in your data,
+
+9
+00:00:26,160 --> 00:00:29,325
+sometimes known as data dictionaries, and more.
+
+10
+00:00:29,325 --> 00:00:32,600
+Zip files, and.tar.gz files
+
+11
+00:00:32,600 --> 00:00:35,630
+for Unix systems are a popular way to compress multiple files,
+
+12
+00:00:35,630 --> 00:00:37,915
+and are useful for data gathering workflows.
+
+13
+00:00:37,915 --> 00:00:43,200
+Being able to programmatically unzip files is great for reproducible data workflows.
+
+14
+00:00:43,200 --> 00:00:48,140
+So another analyst doesn't have to perform many manual steps when reproducing your work.
+
+15
+00:00:48,140 --> 00:00:52,340
+Let's now take a look at how to programmatically unzip the file via Python.
+
+16
+00:00:52,340 --> 00:00:54,920
+Let's take a brief look at how to programmatically
+
+17
+00:00:54,920 --> 00:00:58,390
+unzip files with Python using the zip file module.
+
+18
+00:00:58,390 --> 00:01:01,520
+First, we start with importing the zip file module.
+
+19
+00:01:01,520 --> 00:01:05,465
+Then we're using a Python Context Manager to open the zip file,
+
+20
+00:01:05,465 --> 00:01:10,415
+which is a popular way in Python to efficiently manage resources that your programs need.
+
+21
+00:01:10,415 --> 00:01:15,880
+The width statement opens a zip file called file.zip in read mode,
+
+22
+00:01:15,880 --> 00:01:19,370
+and creates a zip file object called a zip_ref.
+
+23
+00:01:19,370 --> 00:01:23,900
+Then the extract all method is called on the zip_ref object to
+
+24
+00:01:23,900 --> 00:01:29,310
+extract all the files from the zip archive into a directory named targetdir.
+

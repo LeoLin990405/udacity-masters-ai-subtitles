@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:03,900
+In the first section, we'll begin with understanding what is data cleaning,
+
+2
+00:00:03,900 --> 00:00:06,810
+covering how to describe the cleaning phase,
+
+3
+00:00:06,810 --> 00:00:10,725
+and identifying each stage of the process from an expert's perspective.
+
+4
+00:00:10,725 --> 00:00:13,260
+We'll also go over why programmatic cleaning is
+
+5
+00:00:13,260 --> 00:00:16,395
+much more strongly preferred compared to manual cleaning.
+
+6
+00:00:16,395 --> 00:00:19,350
+Next, we'll dive into tasks like how to solve
+
+7
+00:00:19,350 --> 00:00:24,180
+common data structure issues programmatically and dealing with outliers and missing data.
+
+8
+00:00:24,180 --> 00:00:26,370
+Following that, we'll look at how to clean
+
+9
+00:00:26,370 --> 00:00:29,325
+dirty and messy data with Python for different types of data,
+
+10
+00:00:29,325 --> 00:00:33,870
+including tabular data, time-series data, and text data.
+
+11
+00:00:33,870 --> 00:00:37,120
+Finally, we'll look at how to test our cleaning operations.
+
+12
+00:00:37,120 --> 00:00:39,905
+We'll cover testing implementations visually,
+
+13
+00:00:39,905 --> 00:00:43,390
+which in a sense requires revisiting the assessment stage to do so.
+
+14
+00:00:43,390 --> 00:00:46,055
+We'll then take a look at how to do this programmatically.
+
+15
+00:00:46,055 --> 00:00:48,410
+Finally, to wrap up the entire process,
+
+16
+00:00:48,410 --> 00:00:51,500
+how to store our clean data using flat files so
+
+17
+00:00:51,500 --> 00:00:55,590
+it's ready to be handed over and used for downstream tasks.
+

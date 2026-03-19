@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:05,145
+Data science experts and data analysts often approach data wrangling is a flexible,
+
+2
+00:00:05,145 --> 00:00:08,265
+multi-step process that offers various options.
+
+3
+00:00:08,265 --> 00:00:11,565
+For example, depending on the use case and the data itself,
+
+4
+00:00:11,565 --> 00:00:14,280
+some data wranglers choose to gather data from
+
+5
+00:00:14,280 --> 00:00:17,640
+many sources and combine their data before moving on to
+
+6
+00:00:17,640 --> 00:00:20,505
+the assessment and cleaning stages whereas
+
+7
+00:00:20,505 --> 00:00:24,165
+others choose to combine data after the cleaning stage.
+
+8
+00:00:24,165 --> 00:00:27,780
+There are a number of skills that you can learn to help you build this type of
+
+9
+00:00:27,780 --> 00:00:31,350
+decision-making expertise when presented with these choices.
+
+10
+00:00:31,350 --> 00:00:36,360
+Experts in this space also typically access different types of reliable data sources,
+
+11
+00:00:36,360 --> 00:00:38,860
+i.e, data sources that can be trusted.
+
+12
+00:00:38,860 --> 00:00:42,755
+Some examples of the sources used in industry include surveys,
+
+13
+00:00:42,755 --> 00:00:44,555
+data provided by governments,
+
+14
+00:00:44,555 --> 00:00:46,265
+data gathered by hospitals,
+
+15
+00:00:46,265 --> 00:00:50,940
+marketing data, and data gathered by Internet of Things devices.
+

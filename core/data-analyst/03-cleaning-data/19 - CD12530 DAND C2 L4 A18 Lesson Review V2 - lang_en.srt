@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:02,235
+We've reached the end of our lesson.
+
+2
+00:00:02,235 --> 00:00:05,715
+In the final lesson, you gained an understanding of what data cleaning is.
+
+3
+00:00:05,715 --> 00:00:08,040
+You're now able to describe the data cleaning
+
+4
+00:00:08,040 --> 00:00:10,695
+phase and identify each stage of the process.
+
+5
+00:00:10,695 --> 00:00:14,070
+Then we looked at how to handle typical data cleaning tasks.
+
+6
+00:00:14,070 --> 00:00:16,140
+We did a deep dive on how to remediate
+
+7
+00:00:16,140 --> 00:00:20,130
+popular data quality and structural issues and techniques that you can apply.
+
+8
+00:00:20,130 --> 00:00:23,070
+As part of this, we also discussed how to deal with outliers,
+
+9
+00:00:23,070 --> 00:00:25,095
+duplicated data, and missing data.
+
+10
+00:00:25,095 --> 00:00:27,300
+Following that, we looked at how to clean
+
+11
+00:00:27,300 --> 00:00:30,375
+dirty and messy data with Python for tabular data,
+
+12
+00:00:30,375 --> 00:00:32,860
+bad time-series, and text data.
+
+13
+00:00:32,860 --> 00:00:37,625
+Finally, we looked at how to test our cleaning operations and how to store
+
+14
+00:00:37,625 --> 00:00:40,280
+our cleaned data using font files so it's
+
+15
+00:00:40,280 --> 00:00:43,645
+ready to be handed over and used for downstream tasks.
+
+16
+00:00:43,645 --> 00:00:46,430
+Congratulations on finishing this course.
+
+17
+00:00:46,430 --> 00:00:49,025
+Throughout this course, you've mastered skills that are
+
+18
+00:00:49,025 --> 00:00:51,650
+in demand around critical problem-solving and
+
+19
+00:00:51,650 --> 00:00:55,010
+decision-making for dealing with data in a world where
+
+20
+00:00:55,010 --> 00:00:59,660
+the size and complexity of data is growing at an amazing speed every day.
+
+21
+00:00:59,660 --> 00:01:03,395
+I'm sure you recognize by now that data wrangling is quite the journey.
+
+22
+00:01:03,395 --> 00:01:05,870
+There's a lot of steps from just recognizing
+
+23
+00:01:05,870 --> 00:01:08,750
+the value in data to then being able to gather it,
+
+24
+00:01:08,750 --> 00:01:10,130
+assess it, clean it,
+
+25
+00:01:10,130 --> 00:01:12,320
+and store it so that you're able to unlock
+
+26
+00:01:12,320 --> 00:01:15,215
+the value and the insights that you want to get out of that data.
+
+27
+00:01:15,215 --> 00:01:17,600
+That way, data is then ready to change the world
+
+28
+00:01:17,600 --> 00:01:20,300
+after it's cleaned and finished with the data wrangling process,
+
+29
+00:01:20,300 --> 00:01:24,290
+or at least able to answer some interesting questions for you and your team.
+
+30
+00:01:24,290 --> 00:01:27,305
+Now, it's your time to put your skills to the test,
+
+31
+00:01:27,305 --> 00:01:30,140
+solving an interesting problem with your choice and wrangling
+
+32
+00:01:30,140 --> 00:01:35,070
+real-world data as part of the final project for this course. Good luck.
+

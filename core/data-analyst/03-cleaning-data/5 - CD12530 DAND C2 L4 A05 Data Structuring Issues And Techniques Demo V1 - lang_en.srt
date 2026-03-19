@@ -1,0 +1,440 @@
+1
+00:00:00,000 --> 00:00:04,920
+Let's take a look at now how to implement these data structure and techniques in pandas.
+
+2
+00:00:04,920 --> 00:00:10,960
+We'll start with importing pandas and reading an Excel file that I created for this demo.
+
+3
+00:00:11,060 --> 00:00:14,430
+This Excel file has multiple sheets that contain
+
+4
+00:00:14,430 --> 00:00:17,100
+the multiple datasets that we'll be needing for this demo.
+
+5
+00:00:17,100 --> 00:00:20,220
+I used pandas, read Excel function and specify
+
+6
+00:00:20,220 --> 00:00:24,510
+the argument sheet name equals none to reading all of these sheets all at once.
+
+7
+00:00:24,510 --> 00:00:28,275
+I'm then going to assign the result to example data.
+
+8
+00:00:28,275 --> 00:00:32,280
+Let's go ahead and start with a demo of unpivoting or melting.
+
+9
+00:00:32,280 --> 00:00:35,370
+I'm going to access the unpivot example sheet in
+
+10
+00:00:35,370 --> 00:00:38,850
+the example data variable using the sheets name unpivot example.
+
+11
+00:00:38,850 --> 00:00:42,620
+Then I'm going to make a copy of the DataFrame which we just reviewed as having
+
+12
+00:00:42,620 --> 00:00:47,820
+column headers as values rather than variable names as the issue for this dataset.
+
+13
+00:00:49,310 --> 00:00:52,925
+Remember again that the numerical values in the header,
+
+14
+00:00:52,925 --> 00:00:56,510
+like less than 50 or 50-70 are binned test scores and
+
+15
+00:00:56,510 --> 00:01:00,335
+the values in the DataFrame are the number of tests that students have taken.
+
+16
+00:01:00,335 --> 00:01:03,020
+We have the names of the students in the name column.
+
+17
+00:01:03,020 --> 00:01:05,545
+Here's how we can unpivot this using pandas.
+
+18
+00:01:05,545 --> 00:01:09,495
+We'll use the melt function with three arguments.
+
+19
+00:01:09,495 --> 00:01:14,135
+Id_vars is the column to use as the identifier variable.
+
+20
+00:01:14,135 --> 00:01:18,410
+All columns other than this column are unpivoted to the row axis.
+
+21
+00:01:18,410 --> 00:01:23,425
+In this example, the name column is the identifier and we want to unpivot the variable,
+
+22
+00:01:23,425 --> 00:01:26,195
+which is the binned score, and the value,
+
+23
+00:01:26,195 --> 00:01:30,325
+which is how many tests taken by a student falls within each score range.
+
+24
+00:01:30,325 --> 00:01:33,980
+Getting to that var_name is how you want to call the new column with
+
+25
+00:01:33,980 --> 00:01:37,540
+the variables from the original table before the unpivoting.
+
+26
+00:01:37,540 --> 00:01:40,720
+In this case, we want to call our new variable binned score.
+
+27
+00:01:40,720 --> 00:01:43,895
+Value_name is how you want to call the new column
+
+28
+00:01:43,895 --> 00:01:46,880
+with the values from the original table before unpivoting.
+
+29
+00:01:46,880 --> 00:01:50,285
+In this case, we want to call these types of values frequency.
+
+30
+00:01:50,285 --> 00:01:52,850
+Let's go ahead and run this piece of code.
+
+31
+00:01:52,850 --> 00:01:56,310
+The result here is our unpivoted DataFrame with three columns,
+
+32
+00:01:56,310 --> 00:01:57,890
+one of them being the name of the students,
+
+33
+00:01:57,890 --> 00:01:59,330
+the second being the binned score,
+
+34
+00:01:59,330 --> 00:02:01,085
+and the third being the frequency.
+
+35
+00:02:01,085 --> 00:02:03,170
+Let's move to pivoting.
+
+36
+00:02:03,170 --> 00:02:07,370
+I'm loading my dataset from the pivot example sheet from the same Excel.
+
+37
+00:02:07,370 --> 00:02:11,615
+Again, recall with this example we have a DataFrame with details on products,
+
+38
+00:02:11,615 --> 00:02:13,940
+revenue, and the years that we want to have
+
+39
+00:02:13,940 --> 00:02:16,790
+a better visualization of to understand the groupings.
+
+40
+00:02:16,790 --> 00:02:18,880
+What do we do here? Well,
+
+41
+00:02:18,880 --> 00:02:21,950
+what we can do is go ahead and use pandas dot pivot method.
+
+42
+00:02:21,950 --> 00:02:24,440
+We want to produce groupings for two variables here,
+
+43
+00:02:24,440 --> 00:02:27,140
+the product classification and the product.
+
+44
+00:02:27,140 --> 00:02:31,160
+These two variables are what we're specifying as part of our index argument.
+
+45
+00:02:31,160 --> 00:02:34,820
+Next, we want to see the revenue values per year.
+
+46
+00:02:34,820 --> 00:02:37,895
+We want the years to be our columns and the values
+
+47
+00:02:37,895 --> 00:02:41,695
+inside the DataFrame to actually be the actual revenue values.
+
+48
+00:02:41,695 --> 00:02:44,630
+Take a look at the output here that we get after running this block of
+
+49
+00:02:44,630 --> 00:02:48,985
+code that we're able to easily interpret through the groupings.
+
+50
+00:02:48,985 --> 00:02:52,745
+Next, let's go ahead and move on to transposing.
+
+51
+00:02:52,745 --> 00:02:56,195
+Here, again, I'm loading my dataset from the right Excel spreadsheet.
+
+52
+00:02:56,195 --> 00:02:58,070
+As we just covered previously,
+
+53
+00:02:58,070 --> 00:03:00,780
+the student IDs with this dataset are in the header and
+
+54
+00:03:00,780 --> 00:03:04,010
+subsequent rows have info on students and their test scores.
+
+55
+00:03:04,010 --> 00:03:08,840
+Let's go ahead and simply transpose the DataFrame using the.T method.
+
+56
+00:03:08,840 --> 00:03:12,990
+Notice a few things have happened after we're able to do this.
+
+57
+00:03:13,880 --> 00:03:18,635
+The ID header has actually now become the DataFrame's index.
+
+58
+00:03:18,635 --> 00:03:23,060
+We also see that students and test score are unfortunately part of the values,
+
+59
+00:03:23,060 --> 00:03:25,130
+but these should actually be our headers.
+
+60
+00:03:25,130 --> 00:03:29,225
+How can we keep the ID as our index but reset our header?
+
+61
+00:03:29,225 --> 00:03:33,005
+We can actually use the.set index on our original DataFrame
+
+62
+00:03:33,005 --> 00:03:37,255
+with the ID column and then transpose the DataFrame.
+
+63
+00:03:37,255 --> 00:03:39,610
+Now, the ID, students,
+
+64
+00:03:39,610 --> 00:03:44,885
+and test score variables are in our header and the ID variable is still our index.
+
+65
+00:03:44,885 --> 00:03:47,470
+Next, let's go over merging.
+
+66
+00:03:47,470 --> 00:03:49,485
+With this use case, I first load in
+
+67
+00:03:49,485 --> 00:03:52,460
+two data tables from two Excel sheets for my example,
+
+68
+00:03:52,460 --> 00:03:54,620
+data variable around movie reviews.
+
+69
+00:03:54,620 --> 00:03:56,990
+Again, recall that both tables here have
+
+70
+00:03:56,990 --> 00:03:59,660
+the same observational unit in individual movie,
+
+71
+00:03:59,660 --> 00:04:02,080
+but were kept separate due to poor planning.
+
+72
+00:04:02,080 --> 00:04:06,720
+We can merge these two DataFrames using pandas merge method.
+
+73
+00:04:07,060 --> 00:04:12,740
+Now we can see that the two tables have been merged and we have our review ID,
+
+74
+00:04:12,740 --> 00:04:14,750
+movie title, viewer, review,
+
+75
+00:04:14,750 --> 00:04:17,320
+and rating columns all in one table.
+
+76
+00:04:17,320 --> 00:04:22,715
+By default, merge performs an inner join using intersection of keys from both frames,
+
+77
+00:04:22,715 --> 00:04:26,705
+in this case the ID column and preserving the order of the left keys,
+
+78
+00:04:26,705 --> 00:04:32,035
+in this case the ID column from the merging ex_1 table or our first table here.
+
+79
+00:04:32,035 --> 00:04:35,405
+Let's take a look at another use case for appending.
+
+80
+00:04:35,405 --> 00:04:39,905
+In this case again, I'm loading in two tables from two Excel sheets.
+
+81
+00:04:39,905 --> 00:04:44,180
+We want to append the rows of the second table to the first.
+
+82
+00:04:44,180 --> 00:04:48,330
+We can use pandas concat method specifying the two DataFrames.
+
+83
+00:04:48,330 --> 00:04:51,275
+We also specify the parameter ignore index
+
+84
+00:04:51,275 --> 00:04:54,995
+equals true to make sure that the index is labeled 0^n-1,
+
+85
+00:04:54,995 --> 00:04:57,770
+where n is the total number of rows.
+
+86
+00:04:57,770 --> 00:05:00,200
+This is so that we don't end up using
+
+87
+00:05:00,200 --> 00:05:05,630
+the index values along the concatenation access that can be jumbled up during append.
+
+88
+00:05:05,630 --> 00:05:07,385
+For example, if we run this operation here,
+
+89
+00:05:07,385 --> 00:05:10,855
+we see a very clean index and both of our two tables appended.
+
+90
+00:05:10,855 --> 00:05:13,590
+If we don't specify ignore index is equal to true,
+
+91
+00:05:13,590 --> 00:05:17,300
+we can see here with this example of the index value 0,
+
+92
+00:05:17,300 --> 00:05:21,605
+1, 2 repeating as we have appended the two tables.
+
+93
+00:05:21,605 --> 00:05:26,150
+Finally, let's conclude this with a group by aggregation example.
+
+94
+00:05:26,150 --> 00:05:30,770
+We're going to conclude by loading a very simple dataset with the date and score columns.
+
+95
+00:05:30,770 --> 00:05:35,450
+We're then going to use pandas groupby function to group our dataset by date
+
+96
+00:05:35,450 --> 00:05:37,760
+while setting this to work parameter to
+
+97
+00:05:37,760 --> 00:05:40,505
+false so that the order of the DataFrame is preserved.
+
+98
+00:05:40,505 --> 00:05:42,665
+We want it to be March followed by April,
+
+99
+00:05:42,665 --> 00:05:47,335
+rather than sorting the group keys so that April comes before March by default.
+
+100
+00:05:47,335 --> 00:05:49,125
+Now comes the aggregation.
+
+101
+00:05:49,125 --> 00:05:51,560
+We want to get the sum and mean of values
+
+102
+00:05:51,560 --> 00:05:54,820
+in this score column when we group our dataset by date.
+
+103
+00:05:54,820 --> 00:05:56,655
+Let's go ahead and run this.
+
+104
+00:05:56,655 --> 00:05:59,300
+Here we get our result where we can see the sum of
+
+105
+00:05:59,300 --> 00:06:02,450
+our values in the score column for March and April,
+
+106
+00:06:02,450 --> 00:06:05,080
+and the mean of these values as well.
+
+107
+00:06:05,080 --> 00:06:07,550
+This is a foundational example of a groupby,
+
+108
+00:06:07,550 --> 00:06:10,040
+but there are more parameters and inputs that you can specify
+
+109
+00:06:10,040 --> 00:06:13,670
+the groupbys and aggregation functions depending on your use case.
+
+110
+00:06:13,670 --> 00:06:18,510
+This method has a lot of potential to help you better understand your dataset.
+

@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:05,175
+Experts typically approach data cleaning by following a three-step process.
+
+2
+00:00:05,175 --> 00:00:07,365
+Before kick-starting this process,
+
+3
+00:00:07,365 --> 00:00:10,905
+it's critical to make a copy of your original dataset.
+
+4
+00:00:10,905 --> 00:00:14,970
+All of the cleaning operations are typically conducted on the copy,
+
+5
+00:00:14,970 --> 00:00:19,140
+so you can still view the original dirty and/or messy dataset later.
+
+6
+00:00:19,140 --> 00:00:21,270
+If you're working with DataFrames and Pandas,
+
+7
+00:00:21,270 --> 00:00:23,295
+you can do this by using the copy method
+
+8
+00:00:23,295 --> 00:00:25,575
+on your dataframe and assigning it to a variable,
+
+9
+00:00:25,575 --> 00:00:28,230
+for example, in this case, df_clean.
+
+10
+00:00:28,230 --> 00:00:32,835
+The next step is the definition where we define a data cleaning plan.
+
+11
+00:00:32,835 --> 00:00:35,220
+We do this by converting our assessments into
+
+12
+00:00:35,220 --> 00:00:37,920
+cleaning tasks by writing little how-to guides.
+
+13
+00:00:37,920 --> 00:00:42,450
+This plan also serves as documentation so that your work can be reproduced.
+
+14
+00:00:42,450 --> 00:00:47,855
+For example, a cleaning task can be removing unnecessary hyphens and variables.
+
+15
+00:00:47,855 --> 00:00:52,225
+Then we'll actually implement these actions into code and run them.
+
+16
+00:00:52,225 --> 00:00:55,040
+Finally, you'll test your dataset visually and
+
+17
+00:00:55,040 --> 00:00:57,575
+programmatically to make sure you're cleaning code worked.
+
+18
+00:00:57,575 --> 00:01:00,650
+For example, you may inspect the first few rows of the DataFrame
+
+19
+00:01:00,650 --> 00:01:04,100
+using the dot head method to confirm the hyphens are removed.
+
+20
+00:01:04,100 --> 00:01:06,800
+In this step, we often revisit assessment to
+
+21
+00:01:06,800 --> 00:01:09,985
+compare the results before and after cleaning.
+
+22
+00:01:09,985 --> 00:01:14,195
+Programmatic cleaning is referring to using code or automated scripts in
+
+23
+00:01:14,195 --> 00:01:18,565
+order to clean your data and it's actually preferred over manual cleaning,
+
+24
+00:01:18,565 --> 00:01:22,180
+so let's look at a couple of differences between these two methods.
+
+25
+00:01:22,180 --> 00:01:23,945
+When you manually clean data,
+
+26
+00:01:23,945 --> 00:01:26,990
+you might typically be retyping data or copying and
+
+27
+00:01:26,990 --> 00:01:30,410
+pasting columns and rows to correct the issues by hand.
+
+28
+00:01:30,410 --> 00:01:35,585
+This type of cleaning is inefficient and as datasets grow larger and more complex,
+
+29
+00:01:35,585 --> 00:01:39,820
+it becomes increasingly challenging to maintain data quality manually.
+
+30
+00:01:39,820 --> 00:01:41,625
+It's also error-prone.
+
+31
+00:01:41,625 --> 00:01:44,360
+You might accidentally miss some incorrect values or
+
+32
+00:01:44,360 --> 00:01:47,765
+introduce new errors while typing or copying data.
+
+33
+00:01:47,765 --> 00:01:52,370
+On the other hand, programmatic data cleaning uses code to fix data quality issues.
+
+34
+00:01:52,370 --> 00:01:55,160
+It allows work faster and more efficient handling of
+
+35
+00:01:55,160 --> 00:02:00,215
+large datasets as the cleaning process can be automated and performed on a massive scale.
+
+36
+00:02:00,215 --> 00:02:03,365
+It also involves using code or scripts to clean the data,
+
+37
+00:02:03,365 --> 00:02:06,140
+which ensures a consistent approach and reduces
+
+38
+00:02:06,140 --> 00:02:09,320
+the risk of human error which can occur during manual cleaning.
+
+39
+00:02:09,320 --> 00:02:13,805
+This consistency leads to more reliable and accurate results in the analysis.
+
+40
+00:02:13,805 --> 00:02:17,630
+Programmatic cleaning also enables you to create reusable scripts or
+
+41
+00:02:17,630 --> 00:02:22,510
+functions that can be applied to similar datasets or future data cleaning tasks.
+
+42
+00:02:22,510 --> 00:02:26,420
+This makes the process more transparent and allows other researchers or
+
+43
+00:02:26,420 --> 00:02:30,580
+team members to reproduce the cleaning steps and validate the results.
+
+44
+00:02:30,580 --> 00:02:34,910
+Data wrangling is taking a tremendous amount of time for data professionals,
+
+45
+00:02:34,910 --> 00:02:39,930
+so programmatic data cleaning is strongly preferred compared to the manual process.
+

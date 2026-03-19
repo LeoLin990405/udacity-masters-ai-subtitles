@@ -1,0 +1,540 @@
+1
+00:00:00,000 --> 00:00:02,490
+In this demo, we'll introduce a few scikit-learn
+
+2
+00:00:02,490 --> 00:00:05,670
+preprocessing tools for key parts of the data cleaning process;
+
+3
+00:00:05,670 --> 00:00:08,730
+scaling, encoding, and imputing missing values.
+
+4
+00:00:08,730 --> 00:00:12,090
+Let's start our demo by importing the sklearn package.
+
+5
+00:00:12,090 --> 00:00:16,050
+I'm also going to import a couple of methods from sklearn and NumPy.
+
+6
+00:00:16,050 --> 00:00:19,050
+I'm also going to import the set config function
+
+7
+00:00:19,050 --> 00:00:22,110
+from sklearn setting transform output equals
+
+8
+00:00:22,110 --> 00:00:27,960
+Pandas so that outputs from the sklearn package of transform and fit transform functions,
+
+9
+00:00:27,960 --> 00:00:29,115
+which we'll look at in a moment,
+
+10
+00:00:29,115 --> 00:00:31,380
+will be in the Pandas DataFrame format.
+
+11
+00:00:31,380 --> 00:00:33,780
+We'll see what this looks like in just a moment.
+
+12
+00:00:33,780 --> 00:00:36,450
+Let's now turn to one of the fundamental steps to
+
+13
+00:00:36,450 --> 00:00:38,950
+do for cleaning your data, standardizing it.
+
+14
+00:00:38,950 --> 00:00:40,955
+In many real-world cases,
+
+15
+00:00:40,955 --> 00:00:45,895
+the scale or range that applies for one variable in our dataset doesn't apply to others.
+
+16
+00:00:45,895 --> 00:00:48,290
+For example, one column in your data can contain
+
+17
+00:00:48,290 --> 00:00:51,020
+values around blood pressure measurements like ranging from
+
+18
+00:00:51,020 --> 00:00:54,500
+120-150 systolic and another column contains values
+
+19
+00:00:54,500 --> 00:00:58,295
+around patients income ranging 20,000-100,000.
+
+20
+00:00:58,295 --> 00:01:00,770
+The large differences in the scale of values for
+
+21
+00:01:00,770 --> 00:01:03,095
+these variables can make many tasks challenging,
+
+22
+00:01:03,095 --> 00:01:04,955
+especially machine learning tasks.
+
+23
+00:01:04,955 --> 00:01:06,620
+We should ensure our data follows
+
+24
+00:01:06,620 --> 00:01:10,070
+a standard scale and can be easily used to train ML models.
+
+25
+00:01:10,070 --> 00:01:12,545
+We call this scaling data.
+
+26
+00:01:12,545 --> 00:01:17,060
+A a popular form of being able to scale data for a given data sample
+
+27
+00:01:17,060 --> 00:01:21,080
+is removing the mean and scaling the distribution to unit variance.
+
+28
+00:01:21,080 --> 00:01:23,030
+Take a look at a short snippet here that's
+
+29
+00:01:23,030 --> 00:01:25,430
+borrowed from one of sklearn's create tutorials.
+
+30
+00:01:25,430 --> 00:01:29,840
+Here we create an array using NumPy with some random numbers in it.
+
+31
+00:01:29,840 --> 00:01:33,290
+Now we can apply sklearn's standard scaler to
+
+32
+00:01:33,290 --> 00:01:36,815
+scale the data and we fit it on our tiny dataset.
+
+33
+00:01:36,815 --> 00:01:41,620
+Fitting computes the mean and standard deviation to be used for later scaling.
+
+34
+00:01:41,620 --> 00:01:43,635
+Let's go ahead and run this.
+
+35
+00:01:43,635 --> 00:01:46,340
+Now we can go ahead and print the mean and
+
+36
+00:01:46,340 --> 00:01:48,410
+the standard deviation that were generated
+
+37
+00:01:48,410 --> 00:01:50,720
+for the data using the corresponding attributes.
+
+38
+00:01:50,720 --> 00:01:53,570
+Finally, we can apply the transform function,
+
+39
+00:01:53,570 --> 00:01:55,400
+which is actually performing the scaling
+
+40
+00:01:55,400 --> 00:01:58,010
+using the values prepared during the bidding stage.
+
+41
+00:01:58,010 --> 00:02:03,245
+There's also a way to fit and transform in one command called fit_transform.
+
+42
+00:02:03,245 --> 00:02:05,780
+Now, after doing the transform function,
+
+43
+00:02:05,780 --> 00:02:09,400
+we see that the scale data has zero mean and unit variance.
+
+44
+00:02:09,400 --> 00:02:12,755
+There are additional types of scalers that sklearn is offering,
+
+45
+00:02:12,755 --> 00:02:15,020
+like the minmax scaler to scale variables to
+
+46
+00:02:15,020 --> 00:02:17,450
+lie between a given minimum and maximum value,
+
+47
+00:02:17,450 --> 00:02:19,370
+often between zero and one.
+
+48
+00:02:19,370 --> 00:02:22,885
+There's also methods to scale values that have outliers.
+
+49
+00:02:22,885 --> 00:02:26,120
+Encoding is a popular technique for many reasons,
+
+50
+00:02:26,120 --> 00:02:29,885
+including transforming categorical data into numerical data.
+
+51
+00:02:29,885 --> 00:02:32,360
+One of these techniques is ordinal encoding,
+
+52
+00:02:32,360 --> 00:02:35,990
+which encodes data and categorical features as an integer array.
+
+53
+00:02:35,990 --> 00:02:39,440
+Let's consider this really tiny dataset with three words;
+
+54
+00:02:39,440 --> 00:02:40,730
+data, wrangling, rocks.
+
+55
+00:02:40,730 --> 00:02:45,955
+We can define an ordinal encoder and apply a fit transform to this tiny dataset.
+
+56
+00:02:45,955 --> 00:02:49,960
+We can see it assigned the value of zero to the word data,
+
+57
+00:02:49,960 --> 00:02:51,170
+two to the word wrangling,
+
+58
+00:02:51,170 --> 00:02:52,790
+and one to the word rocks.
+
+59
+00:02:52,790 --> 00:02:55,370
+Now there's another option for encoding these types of
+
+60
+00:02:55,370 --> 00:02:57,930
+variables that's popular and that's known as one-hot encoding.
+
+61
+00:02:57,930 --> 00:03:02,395
+This actually encodes categorical features as a one-hot numeric array.
+
+62
+00:03:02,395 --> 00:03:05,385
+On our same simple dataset, data, wrangling, rocks,
+
+63
+00:03:05,385 --> 00:03:08,545
+note how three columns now created for each of the three words.
+
+64
+00:03:08,545 --> 00:03:11,415
+The word data is represented as 100,
+
+65
+00:03:11,415 --> 00:03:14,470
+the word wrangling is represented as 010,
+
+66
+00:03:14,470 --> 00:03:17,555
+and the word rocks is represented as 001.
+
+67
+00:03:17,555 --> 00:03:22,150
+This makes it easier for computers to understand categorical data and text data.
+
+68
+00:03:22,150 --> 00:03:24,590
+Finally, after scaling and encoding,
+
+69
+00:03:24,590 --> 00:03:27,250
+let's look at how to impute missing values in scikit-learn.
+
+70
+00:03:27,250 --> 00:03:30,980
+This code block is written in Python and uses the scikit-learn library.
+
+71
+00:03:30,980 --> 00:03:32,540
+We fetched the Titanic dataset from
+
+72
+00:03:32,540 --> 00:03:36,410
+the open ML repository using the function fetch_openml,
+
+73
+00:03:36,410 --> 00:03:39,510
+which downloads datasets from our open ML repo.
+
+74
+00:03:39,510 --> 00:03:43,160
+In this case, our code snippet is actually downloading the Titanic dataset with
+
+75
+00:03:43,160 --> 00:03:48,055
+Version 1 as a Pandas DataFrame and storing it in variables x and y.
+
+76
+00:03:48,055 --> 00:03:50,570
+We're then going to use the function train_test_split,
+
+77
+00:03:50,570 --> 00:03:53,390
+which is used to split data into training and test sets that are
+
+78
+00:03:53,390 --> 00:03:56,960
+typically used to train and test machine learning models respectively.
+
+79
+00:03:56,960 --> 00:04:00,080
+The stratify parameter ensures that the proportion of classes
+
+80
+00:04:00,080 --> 00:04:03,400
+in the original data is preserved in both training and test sets.
+
+81
+00:04:03,400 --> 00:04:07,490
+Let's briefly understand what this data is taking a peek at the first few rows.
+
+82
+00:04:07,490 --> 00:04:11,735
+The Titanic dataset is a popular dataset used in machine learning and data science.
+
+83
+00:04:11,735 --> 00:04:15,500
+The x dataframe here is containing info about passengers on the Titanic,
+
+84
+00:04:15,500 --> 00:04:17,450
+like their name, age, and gender.
+
+85
+00:04:17,450 --> 00:04:22,595
+The data series in y is containing info on whether or not these individuals survived.
+
+86
+00:04:22,595 --> 00:04:26,060
+Zero means they didn't survive and one means they did survive.
+
+87
+00:04:26,060 --> 00:04:30,185
+Notice how the variables are of different datatypes somewhere numbers,
+
+88
+00:04:30,185 --> 00:04:34,400
+continuous variables other represent categories like categorical variables.
+
+89
+00:04:34,400 --> 00:04:39,320
+Now let's look at a number of missing values in each column of the x_test DataFrame.
+
+90
+00:04:39,320 --> 00:04:43,220
+We can skip over to the isnull function which returns a Boolean DataFrame
+
+91
+00:04:43,220 --> 00:04:47,075
+with true values for missing values and false values for non missing values.
+
+92
+00:04:47,075 --> 00:04:50,450
+The sum value is again going ahead and summing up the true values for
+
+93
+00:04:50,450 --> 00:04:54,145
+each column to give us the total number of missing values in each column.
+
+94
+00:04:54,145 --> 00:04:59,300
+Our second line of code only selects columns that have more than zero missing values and
+
+95
+00:04:59,300 --> 00:05:01,640
+then sorts them in the descending order of
+
+96
+00:05:01,640 --> 00:05:04,705
+the number of missing values so that we can view them easily.
+
+97
+00:05:04,705 --> 00:05:06,320
+If we print the result of that,
+
+98
+00:05:06,320 --> 00:05:10,530
+we can see many missing values in different columns of the dataset like body,
+
+99
+00:05:10,530 --> 00:05:12,560
+cabin, boat, age, embarked, etc.
+
+100
+00:05:12,560 --> 00:05:15,860
+Let's focus on the age and body columns and look at how to impute
+
+101
+00:05:15,860 --> 00:05:20,230
+these values for numerical variables using an sklearn solution, simple imputer.
+
+102
+00:05:20,230 --> 00:05:22,910
+Here we create an instance of the simple imputer class.
+
+103
+00:05:22,910 --> 00:05:28,265
+We define the missing value placeholders as np.nans and set the strategy to mean,
+
+104
+00:05:28,265 --> 00:05:32,035
+which means we want to replace the missing values with the mean value of the column.
+
+105
+00:05:32,035 --> 00:05:35,300
+Then we apply it to the age and body columns of
+
+106
+00:05:35,300 --> 00:05:38,795
+the x_test DataFrame using the fit transform method,
+
+107
+00:05:38,795 --> 00:05:43,205
+where we're fitting and transforming all in one and store the result in simple imputed.
+
+108
+00:05:43,205 --> 00:05:46,190
+Next what I'm going to do to make it easier for us to look at this,
+
+109
+00:05:46,190 --> 00:05:48,500
+I'm going to replace the age and body columns in
+
+110
+00:05:48,500 --> 00:05:51,410
+the original x_test DataFrame with the imputed values.
+
+111
+00:05:51,410 --> 00:05:54,710
+This way we can actually just repeat our earlier block of code
+
+112
+00:05:54,710 --> 00:05:57,920
+on getting the number of missing values on the x_test DataFrame,
+
+113
+00:05:57,920 --> 00:06:01,025
+and you can see once we repeat the exact same code,
+
+114
+00:06:01,025 --> 00:06:05,060
+that the age and body columns are no longer appearing here because there's no
+
+115
+00:06:05,060 --> 00:06:09,820
+longer any na values that we can see that were generated for these columns.
+
+116
+00:06:09,820 --> 00:06:12,590
+Let's actually go ahead and put this all together in
+
+117
+00:06:12,590 --> 00:06:15,320
+an efficient way through something called an sklearn pipeline.
+
+118
+00:06:15,320 --> 00:06:17,720
+Again, pulling from a short sklearn tutorial.
+
+119
+00:06:17,720 --> 00:06:20,480
+Pipelines are really handy way of assembling a bunch of
+
+120
+00:06:20,480 --> 00:06:23,735
+sklearn operations altogether and determine flow.
+
+121
+00:06:23,735 --> 00:06:25,280
+Here this time we're reusing
+
+122
+00:06:25,280 --> 00:06:28,900
+our Titanic dataset but the subset that we put aside for the training.
+
+123
+00:06:28,900 --> 00:06:32,375
+We going to go ahead and define a sklearn pipeline
+
+124
+00:06:32,375 --> 00:06:35,900
+where we use the simple imputer to impute the missing values,
+
+125
+00:06:35,900 --> 00:06:38,750
+standard scaler to scale our continuous variables,
+
+126
+00:06:38,750 --> 00:06:41,900
+and the one-hot encoder for encoding our categorical variables.
+
+127
+00:06:41,900 --> 00:06:46,600
+Finally, we can also add in a machine-learning model logistic regression to our pipeline.
+
+128
+00:06:46,600 --> 00:06:51,700
+We can then fit our sklearn pipeline onto the training dataset, as we've done here.
+
+129
+00:06:51,700 --> 00:06:53,500
+After that, you can do many things.
+
+130
+00:06:53,500 --> 00:06:56,885
+You can get the performance of your model on the dataset.
+
+131
+00:06:56,885 --> 00:07:00,080
+You can also remove the logistic regression model and fit
+
+132
+00:07:00,080 --> 00:07:04,085
+the scaling or encoding and imputing pipeline on our test dataset as well.
+
+133
+00:07:04,085 --> 00:07:07,895
+This means whatever operations that we performed to get the training dataset ready,
+
+134
+00:07:07,895 --> 00:07:09,530
+we're now also able to perform on
+
+135
+00:07:09,530 --> 00:07:13,530
+the test dataset after removing the logistic regression model.
+

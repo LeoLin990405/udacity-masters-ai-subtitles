@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:05,075
+There are two types or styles of assessing your data, visual and programmatic.
+
+2
+00:00:05,075 --> 00:00:08,370
+Visual assessment is just opening your data and looking through it in
+
+3
+00:00:08,370 --> 00:00:11,955
+its entirety in Jupyter Notebook or via pandas,
+
+4
+00:00:11,955 --> 00:00:15,835
+a text editor, or a spreadsheet application, for example.
+
+5
+00:00:15,835 --> 00:00:18,540
+Programmatic assessment, like its name suggests,
+
+6
+00:00:18,540 --> 00:00:21,120
+uses code to view specific parts of the data,
+
+7
+00:00:21,120 --> 00:00:24,135
+like using functions or methods to summarize the data.
+
+8
+00:00:24,135 --> 00:00:26,415
+Like the df.info method, for example.
+
+9
+00:00:26,415 --> 00:00:28,245
+You can even plot the data.
+
+10
+00:00:28,245 --> 00:00:31,265
+When we assess data both visually and programmatically,
+
+11
+00:00:31,265 --> 00:00:35,150
+we'll get into the habit of identifying and documenting issues.
+
+12
+00:00:35,150 --> 00:00:39,040
+We can revisit whatever issues we found at the end of our assessment.
+
+13
+00:00:39,040 --> 00:00:44,330
+There are two primary types of visual assessment, directed visual assessment,
+
+14
+00:00:44,330 --> 00:00:47,210
+which involves systematically looking through each DataTable in
+
+15
+00:00:47,210 --> 00:00:51,580
+a Jupyter Notebook or spreadsheet application like Google Sheets or MS Excel.
+
+16
+00:00:51,580 --> 00:00:55,625
+Direct visual assessment can help detect issues such as missing values,
+
+17
+00:00:55,625 --> 00:00:58,405
+outliers, or inconsistencies in the data.
+
+18
+00:00:58,405 --> 00:01:00,710
+Suppose you are given a dataset in
+
+19
+00:01:00,710 --> 00:01:04,205
+a spreadsheet containing students test scores, names, and ages.
+
+20
+00:01:04,205 --> 00:01:07,135
+You can directly observe the data in the spreadsheet.
+
+21
+00:01:07,135 --> 00:01:10,580
+You may spot a student's age as 120,
+
+22
+00:01:10,580 --> 00:01:13,235
+which is likely an error that needs correcting.
+
+23
+00:01:13,235 --> 00:01:15,815
+In this case, you're directly looking at the raw data
+
+24
+00:01:15,815 --> 00:01:18,740
+and identifying potential issues or patterns.
+
+25
+00:01:18,740 --> 00:01:21,710
+Unfortunately, some datasets are so large that
+
+26
+00:01:21,710 --> 00:01:24,470
+spreadsheet programs will crash when trying to open them.
+
+27
+00:01:24,470 --> 00:01:28,055
+Sometimes you may need to truncate the data for viewing purposes,
+
+28
+00:01:28,055 --> 00:01:31,120
+for example, only view the first few rows.
+
+29
+00:01:31,120 --> 00:01:35,705
+Non-directed visual assessment is when you look at different portions of tables closely,
+
+30
+00:01:35,705 --> 00:01:39,425
+such as scrolling through the data in search of intriguing and relevant issues.
+
+31
+00:01:39,425 --> 00:01:41,180
+Upon spawning something noteworthy,
+
+32
+00:01:41,180 --> 00:01:45,805
+you can then narrow your focus to investigate that particular aspect in greater detail.
+
+33
+00:01:45,805 --> 00:01:47,445
+Take the previous example.
+
+34
+00:01:47,445 --> 00:01:49,820
+You begin scrolling through the student's data casually,
+
+35
+00:01:49,820 --> 00:01:52,820
+observing any patterns or anomalies that catch your eye.
+
+36
+00:01:52,820 --> 00:01:55,340
+While scrolling, you noticed several instances where
+
+37
+00:01:55,340 --> 00:01:58,615
+students have the same name and age but different test scores.
+
+38
+00:01:58,615 --> 00:02:00,170
+Intrigued by this auditing,
+
+39
+00:02:00,170 --> 00:02:02,990
+you decide to investigate further to determine whether these are
+
+40
+00:02:02,990 --> 00:02:05,995
+genuine cases of students with the same name and age,
+
+41
+00:02:05,995 --> 00:02:09,480
+or if there are data quality issues such as duplicate entries,
+
+42
+00:02:09,480 --> 00:02:11,870
+or inaccuracy that need to be addressed.
+
+43
+00:02:11,870 --> 00:02:15,730
+In this case, you are now focusing on particular issues or errors.
+
+44
+00:02:15,730 --> 00:02:19,535
+Let's take a look at a dataset example with the data of students names,
+
+45
+00:02:19,535 --> 00:02:22,715
+ages, and scores on a test that I'm calling testing.
+
+46
+00:02:22,715 --> 00:02:25,390
+Let's do some simple visual assessments.
+
+47
+00:02:25,390 --> 00:02:27,215
+After reading the CSV file,
+
+48
+00:02:27,215 --> 00:02:32,510
+I use the dot head function with the value 10 to show the first 10 rows of the DataFrame.
+
+49
+00:02:32,510 --> 00:02:34,310
+Truncating my view of the dataframe,
+
+50
+00:02:34,310 --> 00:02:37,360
+so I don't display 200 rows all at once.
+
+51
+00:02:37,360 --> 00:02:39,770
+Now let's take a look at the DataFrame starting with
+
+52
+00:02:39,770 --> 00:02:42,415
+direct visual assessment with the name column.
+
+53
+00:02:42,415 --> 00:02:46,970
+One of the first things that we can notice is this question mark character in Roway for
+
+54
+00:02:46,970 --> 00:02:50,270
+Liem Gibson's name that was most likely caused by an issue with
+
+55
+00:02:50,270 --> 00:02:53,990
+an accent character not being supported by the encoding format.
+
+56
+00:02:53,990 --> 00:02:56,080
+This is an accuracy issue.
+
+57
+00:02:56,080 --> 00:03:00,620
+We also see the case of a student's age in Row 7 being 120,
+
+58
+00:03:00,620 --> 00:03:04,490
+which is inaccurate and most likely due to a data entry error.
+
+59
+00:03:04,490 --> 00:03:09,620
+Let's now take a look at the Test A score column showing students scores on Test A.
+
+60
+00:03:09,620 --> 00:03:14,645
+Note how each data point is documented as numbers followed by an apostrophe.
+
+61
+00:03:14,645 --> 00:03:18,890
+This means that pandas will interpret this data as a string rather than a number,
+
+62
+00:03:18,890 --> 00:03:22,210
+which means we won't be able to use this data for calculations.
+
+63
+00:03:22,210 --> 00:03:24,710
+This is a validity issue and is likely due to
+
+64
+00:03:24,710 --> 00:03:27,695
+poor planning by whoever is recording this information.
+
+65
+00:03:27,695 --> 00:03:30,815
+Let me direct you to another issue in Row 6.
+
+66
+00:03:30,815 --> 00:03:34,880
+Note how the numbers for the age and test score columns are not numerical,
+
+67
+00:03:34,880 --> 00:03:36,440
+but are instead strings.
+
+68
+00:03:36,440 --> 00:03:38,960
+Whereas all of the other numbers in these columns are written
+
+69
+00:03:38,960 --> 00:03:41,995
+with integer digits like 14 and 95.
+
+70
+00:03:41,995 --> 00:03:43,950
+This is a consistency issue.
+
+71
+00:03:43,950 --> 00:03:46,160
+This will be a big problem downstream,
+
+72
+00:03:46,160 --> 00:03:48,470
+since the Row 7 may not be considered when we get
+
+73
+00:03:48,470 --> 00:03:51,535
+summary statistics like the average age of the test taker.
+
+74
+00:03:51,535 --> 00:03:55,305
+We can find another issue using non-directed visual assessment.
+
+75
+00:03:55,305 --> 00:03:59,455
+The missing NaN values showing us that our data is not complete.
+
+76
+00:03:59,455 --> 00:04:03,680
+One final issue I'd like to pinpoint is some students have the same name and
+
+77
+00:04:03,680 --> 00:04:08,120
+age but different test scores like Amy Linn reported for the same test.
+
+78
+00:04:08,120 --> 00:04:10,685
+We should only have one row for each student,
+
+79
+00:04:10,685 --> 00:04:13,230
+which is a uniqueness issue.
+

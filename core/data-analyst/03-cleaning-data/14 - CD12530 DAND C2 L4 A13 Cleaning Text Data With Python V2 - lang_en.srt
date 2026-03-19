@@ -1,0 +1,428 @@
+1
+00:00:00,000 --> 00:00:02,295
+Test data is all around us,
+
+2
+00:00:02,295 --> 00:00:04,080
+for example in the form of email,
+
+3
+00:00:04,080 --> 00:00:06,510
+social media posts, and more.
+
+4
+00:00:06,510 --> 00:00:09,225
+Let's take a look at how we clean data,
+
+5
+00:00:09,225 --> 00:00:12,750
+and this type of process is actually even typically used by gigabyte layers to,
+
+6
+00:00:12,750 --> 00:00:15,990
+for example, transmission lines. Let's dive in.
+
+7
+00:00:15,990 --> 00:00:19,410
+Here's a simplified overview of the process to clean text data.
+
+8
+00:00:19,410 --> 00:00:21,585
+The first step is called normalization,
+
+9
+00:00:21,585 --> 00:00:25,395
+which allows us to bring messy raw text data to a needed standard.
+
+10
+00:00:25,395 --> 00:00:27,330
+As you'll see as part of this step,
+
+11
+00:00:27,330 --> 00:00:29,640
+we may convert sentences into lowercase.
+
+12
+00:00:29,640 --> 00:00:31,460
+As part of the additional cleaning,
+
+13
+00:00:31,460 --> 00:00:35,195
+we may remove unnecessary words like The and a.
+
+14
+00:00:35,195 --> 00:00:37,340
+The next step is tokenization,
+
+15
+00:00:37,340 --> 00:00:40,850
+where you divide your text into individual tokens from your dataset.
+
+16
+00:00:40,850 --> 00:00:44,345
+The final step is vectorization,
+
+17
+00:00:44,345 --> 00:00:48,020
+where you convert these tokens into a machine readable format so that they can then,
+
+18
+00:00:48,020 --> 00:00:51,155
+for example be used to train machine learning models.
+
+19
+00:00:51,155 --> 00:00:54,250
+Let's now look at each step in detail.
+
+20
+00:00:54,250 --> 00:00:59,695
+To understand normalization, take a look at the very simple dataset on the screen.
+
+21
+00:00:59,695 --> 00:01:04,440
+In this dataset, we have two columns.
+
+22
+00:01:04,440 --> 00:01:08,705
+The post column indicating a short social media posts about technology,
+
+23
+00:01:08,705 --> 00:01:11,690
+and the sentiment column showing us whether the text is a positive,
+
+24
+00:01:11,690 --> 00:01:14,000
+neutral, or negative sentiment.
+
+25
+00:01:14,000 --> 00:01:16,280
+The first step towards getting this data to
+
+26
+00:01:16,280 --> 00:01:19,555
+a machine-readable format is to get it into a standard format,
+
+27
+00:01:19,555 --> 00:01:21,900
+for example, all characters in lowercase.
+
+28
+00:01:21,900 --> 00:01:25,735
+This is a popular form of normalization called case normalization.
+
+29
+00:01:25,735 --> 00:01:30,245
+In Pandas, we can accomplish this using series.string.capitalize,
+
+30
+00:01:30,245 --> 00:01:34,070
+where series here is our post column in our tiny DataFrame.
+
+31
+00:01:34,070 --> 00:01:36,095
+Now notice, I've been doing this, how?
+
+32
+00:01:36,095 --> 00:01:39,235
+All of the texts and the post column is now in lowercase.
+
+33
+00:01:39,235 --> 00:01:41,870
+Another thing that we can do is remove punctuation,
+
+34
+00:01:41,870 --> 00:01:45,700
+because punctuation is related more to the tone and not to the actual words.
+
+35
+00:01:45,700 --> 00:01:48,875
+We want to focus on the ladder during our text analysis.
+
+36
+00:01:48,875 --> 00:01:53,270
+So we can actually remove punctuation using a regular expression or rejects again,
+
+37
+00:01:53,270 --> 00:01:56,530
+which is a character sequence allowing us to match items in text.
+
+38
+00:01:56,530 --> 00:01:59,180
+This string here is for matching different types of
+
+39
+00:01:59,180 --> 00:02:01,745
+punctuation like periods and exclamation marks.
+
+40
+00:02:01,745 --> 00:02:06,170
+We're going to use the string.replace method to take in the regular expression and then
+
+41
+00:02:06,170 --> 00:02:10,770
+replace any punctuation that's being caught by this with an empty string,
+
+42
+00:02:10,770 --> 00:02:13,995
+as you can see here, for our post column.
+
+43
+00:02:13,995 --> 00:02:16,240
+Let's go ahead and do that right now.
+
+44
+00:02:16,580 --> 00:02:21,035
+Perfect. Now, take a look at the output of the post column,
+
+45
+00:02:21,035 --> 00:02:25,405
+which is all lowercase n does not have any more punctuation like commas.
+
+46
+00:02:25,405 --> 00:02:28,490
+I'd like to take a moment to show you one other cool thing we can do with
+
+47
+00:02:28,490 --> 00:02:31,460
+the pandas string method called str.contains.
+
+48
+00:02:31,460 --> 00:02:35,890
+Let's say we want to create another column based on the texts from our post column.
+
+49
+00:02:35,890 --> 00:02:37,750
+Here with this command,
+
+50
+00:02:37,750 --> 00:02:41,410
+we can first access our texts a DataFrame through.loc,
+
+51
+00:02:41,410 --> 00:02:44,790
+and check if a string in the post column contains data science.
+
+52
+00:02:44,790 --> 00:02:46,975
+If it does, we can create a new column called
+
+53
+00:02:46,975 --> 00:02:50,020
+topic and assign the value of that row as data science.
+
+54
+00:02:50,020 --> 00:02:51,590
+Let's go ahead and run this.
+
+55
+00:02:51,590 --> 00:02:55,570
+Take a look at the updated DataFrame that has new column topic.
+
+56
+00:02:55,570 --> 00:03:00,685
+Now, anytime a social media posts in the post column is mentioning the word data science,
+
+57
+00:03:00,685 --> 00:03:03,040
+this will get populated in the topic column.
+
+58
+00:03:03,040 --> 00:03:08,135
+We can use similar code to automatically extract character sequences in other texts.
+
+59
+00:03:08,135 --> 00:03:10,450
+Now, there's a number of other things outside of this
+
+60
+00:03:10,450 --> 00:03:12,520
+that we would need to do to fully clean the text,
+
+61
+00:03:12,520 --> 00:03:16,000
+including removing stop words that aren't relevant to us like a,
+
+62
+00:03:16,000 --> 00:03:19,890
+d, and is which don't really hold any value.
+
+63
+00:03:19,890 --> 00:03:21,890
+Reducing words, they're rule base,
+
+64
+00:03:21,890 --> 00:03:24,710
+like turning all mentions of gone to go,
+
+65
+00:03:24,710 --> 00:03:26,285
+which is called stemming.
+
+66
+00:03:26,285 --> 00:03:29,065
+Let's skip ahead to tokenization.
+
+67
+00:03:29,065 --> 00:03:31,970
+Here, we're going to import the nltk library,
+
+68
+00:03:31,970 --> 00:03:33,650
+a popular library for performing,
+
+69
+00:03:33,650 --> 00:03:36,110
+cleaning, and manipulation of texts in Python.
+
+70
+00:03:36,110 --> 00:03:39,890
+We're going to start by indexing or post column with a txt_ data dataframe,
+
+71
+00:03:39,890 --> 00:03:42,920
+and then using the apply function to apply nltk is
+
+72
+00:03:42,920 --> 00:03:46,640
+word tokenize method to divide strings into lesser substrings,
+
+73
+00:03:46,640 --> 00:03:49,600
+allowing us to extract the vocabulary from our dataset.
+
+74
+00:03:49,600 --> 00:03:54,065
+We then create a new column in our DataFrame called token in our text_ data,
+
+75
+00:03:54,065 --> 00:03:56,130
+dataframe. Here we go.
+
+76
+00:03:56,130 --> 00:04:02,645
+Now, we can see that the column now has our neatly tokenized text as a list of strings.
+
+77
+00:04:02,645 --> 00:04:04,910
+Let's finally talk about vectorizing
+
+78
+00:04:04,910 --> 00:04:07,790
+the final step to take our tokens and make them machine readable.
+
+79
+00:04:07,790 --> 00:04:09,605
+For this part, we'll use scikit-learn,
+
+80
+00:04:09,605 --> 00:04:12,740
+a popular data analysis in science library that's containing a lot of
+
+81
+00:04:12,740 --> 00:04:16,295
+great preprocessing tools for different types of data as we've already seen.
+
+82
+00:04:16,295 --> 00:04:21,010
+In particular, scikit-learn or SK learn provides tools from vectorizing text documents,
+
+83
+00:04:21,010 --> 00:04:24,100
+and this actually takes care of tokenizing under the hood.
+
+84
+00:04:24,100 --> 00:04:25,590
+Let's take a look at this.
+
+85
+00:04:25,590 --> 00:04:27,050
+We're going to vectorize the texts in
+
+86
+00:04:27,050 --> 00:04:31,055
+our post column using SK learns count vectorizer functionality,
+
+87
+00:04:31,055 --> 00:04:34,865
+which converts a collection of text documents to a matrix of token counts.
+
+88
+00:04:34,865 --> 00:04:38,555
+We'll first start by creating an instance of count vectorizer.
+
+89
+00:04:38,555 --> 00:04:41,525
+Then we will call the fit transform function on it,
+
+90
+00:04:41,525 --> 00:04:42,670
+which does two things.
+
+91
+00:04:42,670 --> 00:04:46,835
+It first builds the vocabulary based on the input text data, which is the fit.
+
+92
+00:04:46,835 --> 00:04:49,160
+Then it converts the input text data into
+
+93
+00:04:49,160 --> 00:04:53,120
+a numerical representation based on the learn vocabulary which is the transform.
+
+94
+00:04:53,120 --> 00:04:57,185
+Note that since this automatically does tokenization and then vectorization,
+
+95
+00:04:57,185 --> 00:05:02,320
+we can directly use it on the post column which contains our normalized strings.
+
+96
+00:05:02,320 --> 00:05:05,855
+Now, let's take a look at the output of the encoded vector,
+
+97
+00:05:05,855 --> 00:05:09,310
+also known as a sparse matrix using the two-array function.
+
+98
+00:05:09,310 --> 00:05:13,460
+Here's a prettier formatted version of this by taking this vector into
+
+99
+00:05:13,460 --> 00:05:19,320
+a DataFrame and using vectorizer.get feature names to actually get the feature names.
+
+100
+00:05:20,240 --> 00:05:24,350
+You can now see that the posts are encoded with the vocabulary of the texts,
+
+101
+00:05:24,350 --> 00:05:26,330
+and now we have to count and integers for
+
+102
+00:05:26,330 --> 00:05:28,780
+the number of times each word appeared in the document.
+
+103
+00:05:28,780 --> 00:05:32,990
+These words matrix array can be directly pass to a machine-learning model,
+
+104
+00:05:32,990 --> 00:05:36,850
+for example, to train it to predict the sentiments in relation to the sentiment column.
+
+105
+00:05:36,850 --> 00:05:40,325
+The vocabulary attribute also shows us the indices of
+
+106
+00:05:40,325 --> 00:05:43,715
+each word in our vocabulary for our DataFrame across columns.
+
+107
+00:05:43,715 --> 00:05:49,380
+Essentially, each word is assigned a unique integer index in the output vector.
+

@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:02,070
+Why do we wrangle data?
+
+2
+00:00:02,070 --> 00:00:04,530
+Data is everywhere in the world offering
+
+3
+00:00:04,530 --> 00:00:08,850
+invaluable insights such as daily step counts for fitness app developers,
+
+4
+00:00:08,850 --> 00:00:11,475
+website engagement metrics for marketers,
+
+5
+00:00:11,475 --> 00:00:15,315
+and national health data for governments to address health crises.
+
+6
+00:00:15,315 --> 00:00:20,295
+All of them are examples of transforming raw information into actionable knowledge.
+
+7
+00:00:20,295 --> 00:00:23,865
+One of the first steps to making sense of data is gathering it.
+
+8
+00:00:23,865 --> 00:00:28,940
+Meaningful data that you can use right away is often hard to find in the real world.
+
+9
+00:00:28,940 --> 00:00:34,560
+You need to obtain and extract data so it can then be assessed for issues and cleaned.
+
+10
+00:00:34,560 --> 00:00:38,860
+Then you can finally start to answer questions with the clean data.
+
+11
+00:00:38,860 --> 00:00:42,150
+Sometimes we may gather data right from the source,
+
+12
+00:00:42,150 --> 00:00:44,600
+like gathering logs in the smartwatch in order to
+
+13
+00:00:44,600 --> 00:00:47,780
+figure out how many steps that we've been walking through out the day.
+
+14
+00:00:47,780 --> 00:00:50,600
+Other times data is provided to us, for example,
+
+15
+00:00:50,600 --> 00:00:56,105
+by the US Census Bureau or a state's health departments services portal.
+
+16
+00:00:56,105 --> 00:00:58,010
+We can use this information then to make
+
+17
+00:00:58,010 --> 00:01:01,990
+reliable conclusions regarding data and answer some interesting questions.
+
+18
+00:01:01,990 --> 00:01:05,690
+One of the most exciting things about data wrangling is the breadth of techniques that we
+
+19
+00:01:05,690 --> 00:01:09,740
+can use to be able to gather this data and to put it into actual code.
+
+20
+00:01:09,740 --> 00:01:12,950
+We've talked about how gathering is the first step towards data
+
+21
+00:01:12,950 --> 00:01:16,670
+wrangling and ultimately unlocking valuable insights from your data.
+
+22
+00:01:16,670 --> 00:01:20,375
+There are two key aspects of data gathering techniques.
+
+23
+00:01:20,375 --> 00:01:23,150
+One, the first step of data gathering is
+
+24
+00:01:23,150 --> 00:01:26,435
+obtaining data from different sources, like from APIs.
+
+25
+00:01:26,435 --> 00:01:29,240
+For example, imagine an organization that's
+
+26
+00:01:29,240 --> 00:01:32,030
+looking to analyze user groups for market insights.
+
+27
+00:01:32,030 --> 00:01:34,145
+They need data on competitors,
+
+28
+00:01:34,145 --> 00:01:36,855
+customer interests, pricing, and more.
+
+29
+00:01:36,855 --> 00:01:41,620
+We can't expect all this data to come from one neatly formatted source.
+
+30
+00:01:41,620 --> 00:01:44,855
+Then the second step is extracting the obtained data,
+
+31
+00:01:44,855 --> 00:01:51,325
+such as from.TXT and.CSV files into a format suitable for assessment and cleaning.
+
+32
+00:01:51,325 --> 00:01:55,250
+After that, we can then use this data to answer questions like
+
+33
+00:01:55,250 --> 00:02:00,870
+identifying top market opportunities for our hypothetical organization to invest in.
+

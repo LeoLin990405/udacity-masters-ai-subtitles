@@ -1,0 +1,488 @@
+1
+00:00:00,000 --> 00:00:04,395
+Now let's go ahead and start looking for data quality issues programmatically.
+
+2
+00:00:04,395 --> 00:00:08,025
+I'm going to go ahead and start by calling the dot info method
+
+3
+00:00:08,025 --> 00:00:12,105
+to print a concise summary of a DataFrame of the treatments table.
+
+4
+00:00:12,105 --> 00:00:14,730
+This function is going to return values,
+
+5
+00:00:14,730 --> 00:00:18,270
+information on the number of entries, number of columns,
+
+6
+00:00:18,270 --> 00:00:21,045
+number of entries that are not null for each column,
+
+7
+00:00:21,045 --> 00:00:25,545
+the datatypes of each column and memory usage for the entire DataFrame.
+
+8
+00:00:25,545 --> 00:00:28,840
+Let's start with looking at a completeness data quality issue.
+
+9
+00:00:28,840 --> 00:00:32,295
+Looking at the summary of the information that's returned by dot info,
+
+10
+00:00:32,295 --> 00:00:38,040
+we can see that there's only 171 HBA1C change entries
+
+11
+00:00:38,040 --> 00:00:41,330
+while there are 280 entries for the other columns.
+
+12
+00:00:41,330 --> 00:00:43,685
+This indicates a completeness issue.
+
+13
+00:00:43,685 --> 00:00:45,325
+We're missing some data.
+
+14
+00:00:45,325 --> 00:00:49,700
+Let's actually now go ahead and look at a validity issue instead.
+
+15
+00:00:49,700 --> 00:00:52,940
+Erroneous data types are validity issues because they don't
+
+16
+00:00:52,940 --> 00:00:56,380
+conform to the defined schema of what the table should be.
+
+17
+00:00:56,380 --> 00:01:00,080
+Pay attention to the datatypes or D types of columns and check
+
+18
+00:01:00,080 --> 00:01:03,975
+whether each variable has the correct datatype. Let's look at this here.
+
+19
+00:01:03,975 --> 00:01:07,370
+What is immediately notable is the auralin and novodra columns.
+
+20
+00:01:07,370 --> 00:01:09,605
+Their datatype is object.
+
+21
+00:01:09,605 --> 00:01:11,630
+If we scroll up to the data table,
+
+22
+00:01:11,630 --> 00:01:13,730
+we actually see here that they are formatted in
+
+23
+00:01:13,730 --> 00:01:17,155
+this interesting two digits plus character u format.
+
+24
+00:01:17,155 --> 00:01:20,210
+Ideally, the values for these two columns would be formatted
+
+25
+00:01:20,210 --> 00:01:23,345
+as integers to make it easier to access this information,
+
+26
+00:01:23,345 --> 00:01:25,525
+which makes it a validity issue.
+
+27
+00:01:25,525 --> 00:01:28,265
+Let's now take a look at an accuracy issue.
+
+28
+00:01:28,265 --> 00:01:31,685
+We'll identify this by using the dot described method,
+
+29
+00:01:31,685 --> 00:01:36,005
+which generates descriptive stats for the numerical data types in your pandas DataFrame,
+
+30
+00:01:36,005 --> 00:01:39,335
+including the count, mean, standard deviation,
+
+31
+00:01:39,335 --> 00:01:40,920
+minimum value, 20,
+
+32
+00:01:40,920 --> 00:01:42,740
+50 and 75% quartiles,
+
+33
+00:01:42,740 --> 00:01:44,810
+and the maximum value in your data.
+
+34
+00:01:44,810 --> 00:01:50,635
+Recall that our HBA1C change variable determines the effectiveness of our insulin.
+
+35
+00:01:50,635 --> 00:01:52,745
+In terms of controlling blood sugar,
+
+36
+00:01:52,745 --> 00:01:57,140
+this variable's value of around 0.4 is considered a success,
+
+37
+00:01:57,140 --> 00:02:02,750
+so 0.9 is a really big change that we're seeing here that is somewhat implausible,
+
+38
+00:02:02,750 --> 00:02:07,060
+especially given that the 75th percentile is at 0.92.
+
+39
+00:02:07,060 --> 00:02:13,325
+The gap between the 25th and 50 percentile is only 0.04,
+
+40
+00:02:13,325 --> 00:02:18,310
+while it's nearly 0.6 between the 50th and 75th percentile.
+
+41
+00:02:18,310 --> 00:02:20,750
+What's going on here? If we look at
+
+42
+00:02:20,750 --> 00:02:24,320
+our visual assessment of the treatments table, which we have here,
+
+43
+00:02:24,320 --> 00:02:27,695
+we'll see that this HBA1C change variable for this
+
+44
+00:02:27,695 --> 00:02:33,680
+0.97 entry for Elliot Richardson is actually calculated incorrectly.
+
+45
+00:02:33,680 --> 00:02:42,240
+How? Well, 7.56 in our start column minus 7.09 in our end column is 0.47 not 0.97.
+
+46
+00:02:42,240 --> 00:02:46,010
+This is an accuracy issue that is actually skewing our values
+
+47
+00:02:46,010 --> 00:02:50,325
+for the 75th percentile or quartile and our max values.
+
+48
+00:02:50,325 --> 00:02:52,185
+How could this have happened?
+
+49
+00:02:52,185 --> 00:02:54,680
+It could be that the healthcare professional who recorded
+
+50
+00:02:54,680 --> 00:02:59,015
+this change variable had bad penmanship and therefore was read as a nine.
+
+51
+00:02:59,015 --> 00:03:00,980
+This sometimes happens, especially if
+
+52
+00:03:00,980 --> 00:03:03,215
+Optical Character Recognition Software was
+
+53
+00:03:03,215 --> 00:03:06,415
+used for transferring paper records to electronic records.
+
+54
+00:03:06,415 --> 00:03:09,335
+This data and accuracy is important to clean because
+
+55
+00:03:09,335 --> 00:03:13,100
+HBA1C changes the key metric for our clinical trial,
+
+56
+00:03:13,100 --> 00:03:18,025
+the deemed success or failure of this oral insulin hinges on this variable.
+
+57
+00:03:18,025 --> 00:03:20,930
+While missing data is typically a completeness issue,
+
+58
+00:03:20,930 --> 00:03:24,520
+there's also one other hint validity issue that we need to diagnose.
+
+59
+00:03:24,520 --> 00:03:29,935
+We can actually use the dot is now function to identify NA values in our dataset.
+
+60
+00:03:29,935 --> 00:03:34,730
+We can get the sum of this result to get the number of NA values.
+
+61
+00:03:34,730 --> 00:03:39,470
+However, the output of this function using someone dot is now on our auralin
+
+62
+00:03:39,470 --> 00:03:43,990
+and novodra columns is showing that there is zero null entries for both of these columns.
+
+63
+00:03:43,990 --> 00:03:47,050
+But if we scroll up to our treatments visual assessment,
+
+64
+00:03:47,050 --> 00:03:51,795
+the entries with these dashes that we're seeing here should actually be null values.
+
+65
+00:03:51,795 --> 00:03:54,955
+This is revealing a common error in datasets.
+
+66
+00:03:54,955 --> 00:04:00,355
+Misrepresenting missing values is something else like a dash just slash NA or none.
+
+67
+00:04:00,355 --> 00:04:04,180
+These dashes aren't being picked up as null or non-values,
+
+68
+00:04:04,180 --> 00:04:07,295
+which can be problematic when doing calculations on the data.
+
+69
+00:04:07,295 --> 00:04:10,700
+Misrepresenting missing values is a validity issue.
+
+70
+00:04:10,700 --> 00:04:13,985
+For the last few methods I'd like to show you,
+
+71
+00:04:13,985 --> 00:04:18,890
+I'm going to switch over to our patient's table for more complex example of consistency,
+
+72
+00:04:18,890 --> 00:04:22,060
+uniqueness and completeness, and validity issues.
+
+73
+00:04:22,060 --> 00:04:24,870
+Let's get started with consistency.
+
+74
+00:04:24,870 --> 00:04:30,040
+Let's narrow down on the weight column in the patient's table using the describe method.
+
+75
+00:04:30,040 --> 00:04:33,155
+Notice how the minimum weight is 48 pounds,
+
+76
+00:04:33,155 --> 00:04:34,775
+which looks pretty low.
+
+77
+00:04:34,775 --> 00:04:39,235
+See the average value here seems to be about 173 lbs.
+
+78
+00:04:39,235 --> 00:04:42,250
+To identify this further and figure out what's going on,
+
+79
+00:04:42,250 --> 00:04:45,415
+we can use the sort values method to sort values.
+
+80
+00:04:45,415 --> 00:04:49,190
+Here we go ahead and do this for the weight column from low to high weight.
+
+81
+00:04:49,190 --> 00:04:52,880
+We can see a value of 48 lbs is the minimum here,
+
+82
+00:04:52,880 --> 00:04:57,680
+but it seems to be an outlier as the next value starts from 102 and onwards.
+
+83
+00:04:57,680 --> 00:05:02,350
+Let's now get this exact row from the database by using the min function on
+
+84
+00:05:02,350 --> 00:05:04,790
+this column and then identifying the row in
+
+85
+00:05:04,790 --> 00:05:08,315
+the DataFrame where the column value is at its min.
+
+86
+00:05:08,315 --> 00:05:10,610
+Here using pandas indexing,
+
+87
+00:05:10,610 --> 00:05:12,995
+we can go ahead and get this exact row,
+
+88
+00:05:12,995 --> 00:05:16,870
+including the patient ID and the weight of this patient.
+
+89
+00:05:16,870 --> 00:05:20,605
+Let's go ahead now and check this strange anomaly by making an assumption.
+
+90
+00:05:20,605 --> 00:05:23,180
+Maybe for this patient the weight is being locked in
+
+91
+00:05:23,180 --> 00:05:26,495
+kilograms instead of pounds. Let's test that.
+
+92
+00:05:26,495 --> 00:05:28,580
+Here we convert the weight of the patient from
+
+93
+00:05:28,580 --> 00:05:31,190
+kilograms into pounds using the conversion factor,
+
+94
+00:05:31,190 --> 00:05:35,960
+we then get the height of the patient and calculate the BMI using the formula for It,
+
+95
+00:05:35,960 --> 00:05:38,800
+703 times weight by height squared.
+
+96
+00:05:38,800 --> 00:05:41,375
+After doing all of these calculations,
+
+97
+00:05:41,375 --> 00:05:44,720
+the BMI is coming up to 19.055.
+
+98
+00:05:44,720 --> 00:05:46,775
+Take a look at the reported BMI,
+
+99
+00:05:46,775 --> 00:05:50,230
+which we can access by indexing for this particular row.
+
+100
+00:05:50,230 --> 00:05:52,580
+Here we can see that rounded up,
+
+101
+00:05:52,580 --> 00:05:54,160
+the value is pretty much equivalent.
+
+102
+00:05:54,160 --> 00:05:59,045
+This means that this anomaly of the patient's weight was actually recorded in kilograms,
+
+103
+00:05:59,045 --> 00:06:03,110
+whereas the rest of the dataset is actually indicating weight in pounds.
+
+104
+00:06:03,110 --> 00:06:07,070
+This is a consistency issue with the unit measurement of weight data.
+
+105
+00:06:07,070 --> 00:06:10,580
+It's important to clean because we need to report average metrics like weight,
+
+106
+00:06:10,580 --> 00:06:14,765
+height, and more in terms of each treatment arm of the clinical trial.
+
+107
+00:06:14,765 --> 00:06:16,805
+As part of our final issues,
+
+108
+00:06:16,805 --> 00:06:21,030
+let's take a look at uniqueness and validity on our patients DataFrame.
+
+109
+00:06:21,030 --> 00:06:24,650
+Here we're going to apply a method called value counts to get
+
+110
+00:06:24,650 --> 00:06:28,595
+the number of unique values in our surname and address columns.
+
+111
+00:06:28,595 --> 00:06:32,405
+Note how there are six duplicates for the last name Doe,
+
+112
+00:06:32,405 --> 00:06:38,240
+and six duplicates for 123 Main Street as a patient's address. What's going on here?
+
+113
+00:06:38,240 --> 00:06:41,560
+We can check the details using.duplicated.
+
+114
+00:06:41,560 --> 00:06:44,390
+Here we define the subset parameter as input to
+
+115
+00:06:44,390 --> 00:06:48,500
+this pandas function as the subset equals surname address.
+
+116
+00:06:48,500 --> 00:06:50,720
+We're only looking to retrieve rows that have
+
+117
+00:06:50,720 --> 00:06:54,275
+duplicate surnames and addresses from our patient's table.
+
+118
+00:06:54,275 --> 00:06:59,120
+Now we find that there are several John Does that are living at 123 Main Street in
+
+119
+00:06:59,120 --> 00:07:04,795
+New York with the zipcode 12345.0 and the email johndoe@email.com.
+
+120
+00:07:04,795 --> 00:07:09,410
+This is a uniqueness issue because we have multiple duplicated rows in the dataset and
+
+121
+00:07:09,410 --> 00:07:12,080
+a validity issue because this data doesn't conform to
+
+122
+00:07:12,080 --> 00:07:15,930
+the defined schema of one record per patient.
+

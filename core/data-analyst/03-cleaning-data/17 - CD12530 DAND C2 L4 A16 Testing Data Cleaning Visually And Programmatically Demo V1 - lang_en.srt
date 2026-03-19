@@ -1,0 +1,388 @@
+1
+00:00:00,000 --> 00:00:04,340
+In this demo, we'll first take a look at how we can assess the impact of data cleaning.
+
+2
+00:00:04,340 --> 00:00:06,280
+We've already covered ways to do this using
+
+3
+00:00:06,280 --> 00:00:09,340
+visual inspection with methods like.head and.tail.
+
+4
+00:00:09,340 --> 00:00:11,200
+But what about visualizations?
+
+5
+00:00:11,200 --> 00:00:14,490
+While we briefly covered boxplots as a way to visualize outliers,
+
+6
+00:00:14,490 --> 00:00:16,350
+let's look at heatmaps and histograms as
+
+7
+00:00:16,350 --> 00:00:19,600
+two other visualizations that data sprinklers typically use.
+
+8
+00:00:19,600 --> 00:00:22,000
+Here I've loaded my PUMS dataset.
+
+9
+00:00:22,000 --> 00:00:24,920
+I'm trying to test if I handle the missing data correctly.
+
+10
+00:00:24,920 --> 00:00:29,260
+First, we have a code block where we take care of a couple of cleaning operations,
+
+11
+00:00:29,260 --> 00:00:31,360
+starting with making copy of the DataFrame,
+
+12
+00:00:31,360 --> 00:00:35,200
+dealing with a tidiness issue by defining the zeroth row as our header,
+
+13
+00:00:35,200 --> 00:00:36,855
+keeping our WRK, SEX,
+
+14
+00:00:36,855 --> 00:00:40,960
+and SCOP variables and dealing with a data quality issue by
+
+15
+00:00:40,960 --> 00:00:46,595
+replacing zero values in the word column with np.nan to deal with the completeness issue.
+
+16
+00:00:46,595 --> 00:00:48,860
+Now that all of the cleaning code is complete,
+
+17
+00:00:48,860 --> 00:00:50,045
+let's skip over to say,
+
+18
+00:00:50,045 --> 00:00:53,345
+how do we visualize the missing values in our semi cleaned data?
+
+19
+00:00:53,345 --> 00:00:57,515
+Take a look at this heatmap visualization that I generated using the Seaborne library,
+
+20
+00:00:57,515 --> 00:00:59,900
+where we visualize the patterns of missing data
+
+21
+00:00:59,900 --> 00:01:02,330
+for some variables from the PUMS dataset,
+
+22
+00:01:02,330 --> 00:01:04,835
+including the occupational code variable,
+
+23
+00:01:04,835 --> 00:01:06,375
+the SOCP variable,
+
+24
+00:01:06,375 --> 00:01:08,600
+the gender, and whether or not an individual
+
+25
+00:01:08,600 --> 00:01:11,345
+worked in the last week indicated by the WRK variable.
+
+26
+00:01:11,345 --> 00:01:13,085
+Here, in order to create the heatmap,
+
+27
+00:01:13,085 --> 00:01:16,220
+I'm using the.isna method and transposing
+
+28
+00:01:16,220 --> 00:01:19,955
+this and then providing it as input to the Seaborne heatmap function,
+
+29
+00:01:19,955 --> 00:01:24,950
+while also specifying the label for the missing data legend at the side.
+
+30
+00:01:24,950 --> 00:01:27,470
+The white vertical bars in this heatmap are
+
+31
+00:01:27,470 --> 00:01:29,760
+representing missing values for a particular variable.
+
+32
+00:01:29,760 --> 00:01:34,085
+In this case we can actually see a number of missing values for the WRK column.
+
+33
+00:01:34,085 --> 00:01:37,220
+I'm going to go ahead now and use the Drop NA function
+
+34
+00:01:37,220 --> 00:01:40,415
+on this PUMS dataset to get rid of those NA values.
+
+35
+00:01:40,415 --> 00:01:42,035
+Now if we re-run the heatmap,
+
+36
+00:01:42,035 --> 00:01:45,730
+there's no white lines and the color indicates there isn't any missing data.
+
+37
+00:01:45,730 --> 00:01:50,630
+Another way to visualize data is plotting a histogram of the distribution of data values.
+
+38
+00:01:50,630 --> 00:01:52,400
+Let's go ahead and load another dataset,
+
+39
+00:01:52,400 --> 00:01:56,045
+the OEWS wage data set and similarly do some cleaning.
+
+40
+00:01:56,045 --> 00:01:58,565
+I'm making a copy of the DataFrame down here,
+
+41
+00:01:58,565 --> 00:02:01,850
+replacing alphanumeric characters with NAs,
+
+42
+00:02:01,850 --> 00:02:05,210
+filtering the DataFrame to only contain specific data variables
+
+43
+00:02:05,210 --> 00:02:09,185
+and filtering to only contain values that are corresponding to California.
+
+44
+00:02:09,185 --> 00:02:11,760
+Finally, I also drop NA values.
+
+45
+00:02:11,760 --> 00:02:14,915
+Here now what I'm going to do is plot the age mean or
+
+46
+00:02:14,915 --> 00:02:17,480
+hourly mean numeric variable in my dataset
+
+47
+00:02:17,480 --> 00:02:21,230
+indicating the hourly mean wage from my cleaned wage DataFrame.
+
+48
+00:02:21,230 --> 00:02:24,005
+I'm using the simple plot.hist function for this,
+
+49
+00:02:24,005 --> 00:02:27,440
+defining the number of bins for my histogram as 12 and
+
+50
+00:02:27,440 --> 00:02:31,040
+the transparency value for the plot to be 0.5 for aesthetic reasons.
+
+51
+00:02:31,040 --> 00:02:34,225
+The plot.hist function is from the Matplotlib library.
+
+52
+00:02:34,225 --> 00:02:35,960
+Now, with this visualization,
+
+53
+00:02:35,960 --> 00:02:39,065
+I can quickly grasp the range of values for this variable.
+
+54
+00:02:39,065 --> 00:02:43,685
+For example, ranging from about $10-160 at quick glance.
+
+55
+00:02:43,685 --> 00:02:46,060
+This seems to be the typical range of the data.
+
+56
+00:02:46,060 --> 00:02:48,620
+I can also identify if there are any outliers or data
+
+57
+00:02:48,620 --> 00:02:51,905
+points that seem anomalous in relation to the larger chunk of data.
+
+58
+00:02:51,905 --> 00:02:55,015
+Like some of these data points here at the far right of the plot.
+
+59
+00:02:55,015 --> 00:02:59,960
+This can help me with identifying potential validity issues as well and accuracy issues.
+
+60
+00:02:59,960 --> 00:03:02,780
+How can we test data programmatically including whether
+
+61
+00:03:02,780 --> 00:03:05,665
+we successfully dropped the NAs for both datasets?
+
+62
+00:03:05,665 --> 00:03:08,420
+We can actually use Python assert statements to
+
+63
+00:03:08,420 --> 00:03:11,780
+check if certain conditions we know should hold true for our datasets.
+
+64
+00:03:11,780 --> 00:03:13,535
+Those are indeed true.
+
+65
+00:03:13,535 --> 00:03:17,440
+For example, we can use it to check whether our column datatypes are accurate.
+
+66
+00:03:17,440 --> 00:03:19,865
+In this case, let's say we've determined that we want
+
+67
+00:03:19,865 --> 00:03:24,400
+all the variables to be at the object's data type in the PUMS dataset.
+
+68
+00:03:24,400 --> 00:03:28,310
+We can actually go ahead and do that and using the assert statement by accessing
+
+69
+00:03:28,310 --> 00:03:30,290
+the datatype using the dtype method for each of
+
+70
+00:03:30,290 --> 00:03:32,630
+the columns and asserting that they're all objects.
+
+71
+00:03:32,630 --> 00:03:34,820
+Similarly for the OEWS dataset,
+
+72
+00:03:34,820 --> 00:03:37,925
+we want to check if the datatype of each mean is a float.
+
+73
+00:03:37,925 --> 00:03:41,065
+Because it's a numerical variable we can do the same thing here.
+
+74
+00:03:41,065 --> 00:03:43,580
+We can also check if the number of NA values and
+
+75
+00:03:43,580 --> 00:03:45,800
+our code is set to zero for both datasets.
+
+76
+00:03:45,800 --> 00:03:49,040
+Here we use isnull.sum.sum in order to calculate the number
+
+77
+00:03:49,040 --> 00:03:52,840
+of NA values and check that it's zero for both datasets.
+
+78
+00:03:52,840 --> 00:03:57,590
+We can see that since these assert statements have successfully run and no issues there,
+
+79
+00:03:57,590 --> 00:03:59,390
+everything is good and there really are
+
+80
+00:03:59,390 --> 00:04:03,265
+no NA values in this dataset when we use this programmatic check.
+
+81
+00:04:03,265 --> 00:04:06,590
+What happens if the cleaning code didn't work and the data didn't meet
+
+82
+00:04:06,590 --> 00:04:09,560
+the condition we specified in the assert statements though?
+
+83
+00:04:09,560 --> 00:04:11,240
+For example, let's say that I determined that
+
+84
+00:04:11,240 --> 00:04:16,670
+the hourly mean wage values in the data should be smaller than or equal to 150.
+
+85
+00:04:16,670 --> 00:04:18,770
+Because any value greater than 150,
+
+86
+00:04:18,770 --> 00:04:20,800
+as an example, is an outlier to me.
+
+87
+00:04:20,800 --> 00:04:23,575
+I use the assert statement to test this condition.
+
+88
+00:04:23,575 --> 00:04:26,990
+You can see now that the assert statement is throwing us an error because we
+
+89
+00:04:26,990 --> 00:04:31,235
+never removed these outliers that we identified earlier through the histogram.
+
+90
+00:04:31,235 --> 00:04:35,660
+Assert statements are indeed useful when you need to modify earlier cleaning code to
+
+91
+00:04:35,660 --> 00:04:37,460
+address new data problems and want to
+
+92
+00:04:37,460 --> 00:04:40,190
+ensure that previously solved issues remain resolved.
+
+93
+00:04:40,190 --> 00:04:43,610
+For example, if you want to verify that these NA values
+
+94
+00:04:43,610 --> 00:04:46,985
+for the two datasets remain at zero as you're addressing other data issues,
+
+95
+00:04:46,985 --> 00:04:48,605
+you can use assert statements.
+
+96
+00:04:48,605 --> 00:04:53,060
+These single line statements allow you to confirm that your cleaning code is working as
+
+97
+00:04:53,060 --> 00:04:58,290
+expected by re-running them whenever you make changes to your implementation.
+

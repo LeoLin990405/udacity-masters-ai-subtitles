@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:05,880
+Data on the Internet is not always accessible via APIs or a final neatly provided to you.
+
+2
+00:00:05,880 --> 00:00:07,590
+To get data on the Internet,
+
+3
+00:00:07,590 --> 00:00:10,380
+oftentimes data wrangler is needed to do web scraping,
+
+4
+00:00:10,380 --> 00:00:13,575
+which allows us to extract data from websites using code.
+
+5
+00:00:13,575 --> 00:00:15,120
+Often when web scraping,
+
+6
+00:00:15,120 --> 00:00:18,870
+you will gather HTML or HyperText Markup Language Files
+
+7
+00:00:18,870 --> 00:00:21,395
+which use tags to structure the page,
+
+8
+00:00:21,395 --> 00:00:24,675
+we'll be exploring this in more detail in an upcoming lesson.
+
+9
+00:00:24,675 --> 00:00:27,420
+In this demo, I'm going to show the fundamentals of
+
+10
+00:00:27,420 --> 00:00:30,285
+web scraping on how to gather HTML files.
+
+11
+00:00:30,285 --> 00:00:34,110
+Let's return to our archive.org example with our book entry.
+
+12
+00:00:34,110 --> 00:00:39,095
+The quick way to get HTML data is by saving the HTML file to your computer manually,
+
+13
+00:00:39,095 --> 00:00:42,850
+you can do this by clicking Save in your browser on the HTML page.
+
+14
+00:00:42,850 --> 00:00:45,215
+Now, when I load the file from my local system,
+
+15
+00:00:45,215 --> 00:00:49,265
+note that I can see many of the elements on my webpage.
+
+16
+00:00:49,265 --> 00:00:51,440
+Let's take a brief look at the source code up
+
+17
+00:00:51,440 --> 00:00:53,720
+the HTML file through the sublime text editor,
+
+18
+00:00:53,720 --> 00:00:56,060
+we can see that it's a very large file.
+
+19
+00:00:56,060 --> 00:00:58,250
+I'm going to go try searching for one of
+
+20
+00:00:58,250 --> 00:01:01,205
+the reviews that this book has using the subject title,
+
+21
+00:01:01,205 --> 00:01:03,020
+no color illustrations here,
+
+22
+00:01:03,020 --> 00:01:07,445
+so we can find it nestled within a bunch of HTML tags.
+
+23
+00:01:07,445 --> 00:01:11,240
+Let's take a look at how we can actually extract this type of information,
+
+24
+00:01:11,240 --> 00:01:14,660
+including the book's title programmatically as its preferred for scalability,
+
+25
+00:01:14,660 --> 00:01:18,305
+and reproducibility when dealing with these types of complex files.
+
+26
+00:01:18,305 --> 00:01:21,280
+Let's go ahead and switch over to our Jupyter notebook.
+
+27
+00:01:21,280 --> 00:01:23,660
+By now, you're familiar with how we can use
+
+28
+00:01:23,660 --> 00:01:26,130
+the request library to create an HTTP get request,
+
+29
+00:01:26,130 --> 00:01:29,705
+so let's go over how to download the HTML file programmatically.
+
+30
+00:01:29,705 --> 00:01:32,840
+First, we're going to go ahead and import our requests library,
+
+31
+00:01:32,840 --> 00:01:37,190
+then we'll create a variable specifying the URL of the book that we've been leveraging.
+
+32
+00:01:37,190 --> 00:01:42,430
+Next, let's go ahead and create an HTTP get request through the requests library.
+
+33
+00:01:42,430 --> 00:01:45,515
+Next, to Save the HTML to a file,
+
+34
+00:01:45,515 --> 00:01:47,120
+we're going to open the file path,
+
+35
+00:01:47,120 --> 00:01:50,675
+language-of-flowers.html in right binary mode,
+
+36
+00:01:50,675 --> 00:01:52,865
+specifying the file as the file object.
+
+37
+00:01:52,865 --> 00:01:57,440
+We're then going to write the response.content to the file, again,
+
+38
+00:01:57,440 --> 00:02:01,505
+we use the right binary mode because response.content is a binary string,
+
+39
+00:02:01,505 --> 00:02:03,880
+as we can see below here.
+
+40
+00:02:03,880 --> 00:02:06,420
+Now, let's open up the HTML again,
+
+41
+00:02:06,420 --> 00:02:10,690
+here you can see that most of the elements are clearly preserved as part of the webpage.
+
+42
+00:02:10,690 --> 00:02:12,730
+The complicated items such as archives,
+
+43
+00:02:12,730 --> 00:02:13,740
+book pages preview,
+
+44
+00:02:13,740 --> 00:02:16,085
+are missing though after we've saved the file.
+
+45
+00:02:16,085 --> 00:02:18,610
+We can also see that some of the thumbnail images,
+
+46
+00:02:18,610 --> 00:02:23,145
+and things like this are missing for which we may need to download additional files.
+
+47
+00:02:23,145 --> 00:02:26,410
+Now it's worth noting that websites are increasingly
+
+48
+00:02:26,410 --> 00:02:29,715
+using JavaScript in ways that may make web scraping more difficult,
+
+49
+00:02:29,715 --> 00:02:31,690
+there are more advanced tools outside of
+
+50
+00:02:31,690 --> 00:02:35,185
+the request library that may be needed but are out of scope for this course.
+
+51
+00:02:35,185 --> 00:02:36,480
+One such scraper,
+
+52
+00:02:36,480 --> 00:02:39,150
+MARCXML is a great web scraping tool that can, for example,
+
+53
+00:02:39,150 --> 00:02:43,525
+use WebDrivers is to switch the browsers that you use for your web scraping.
+
+54
+00:02:43,525 --> 00:02:47,540
+In the next section, we'll talk about parsing HTML files.
+

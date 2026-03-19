@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:03,165
+You're at the final stage of the data wrangling process.
+
+2
+00:00:03,165 --> 00:00:04,545
+You've gathered your data,
+
+3
+00:00:04,545 --> 00:00:06,480
+assessed it, cleaned it,
+
+4
+00:00:06,480 --> 00:00:08,910
+and now it's time to store your good work so
+
+5
+00:00:08,910 --> 00:00:11,415
+that you can hand it over to other stakeholders.
+
+6
+00:00:11,415 --> 00:00:13,560
+Let's look into how to do this.
+
+7
+00:00:13,560 --> 00:00:18,990
+There are some simple ways of updating a local datastore with clean data for example,
+
+8
+00:00:18,990 --> 00:00:22,605
+saving data using the Pandas.csv function.
+
+9
+00:00:22,605 --> 00:00:25,650
+Here we see how we can directly
+
+10
+00:00:25,650 --> 00:00:29,685
+specify the path and the filename as an input to the.csv function.
+
+11
+00:00:29,685 --> 00:00:33,570
+It's also sometimes typical to specify index equals false to
+
+12
+00:00:33,570 --> 00:00:37,350
+not store the index column so that when you load your.csv again,
+
+13
+00:00:37,350 --> 00:00:40,375
+you don't get an unnecessary duplicated index column.
+
+14
+00:00:40,375 --> 00:00:43,475
+There's also a number of other arguments that you can specify,
+
+15
+00:00:43,475 --> 00:00:47,810
+such as the encoding in order to ensure your data is stored in the right format.
+
+16
+00:00:47,810 --> 00:00:50,195
+You can also write data to a database.
+
+17
+00:00:50,195 --> 00:00:54,485
+For example, with sql light through Pandas to sql function with sql alchemy.
+
+18
+00:00:54,485 --> 00:00:57,320
+Here, foe example we can specify the table name,
+
+19
+00:00:57,320 --> 00:00:59,660
+our sql alchemy engine connection,
+
+20
+00:00:59,660 --> 00:01:02,900
+and additional arguments such as if_exists='append',
+
+21
+00:01:02,900 --> 00:01:05,210
+where here we insert new values to
+
+22
+00:01:05,210 --> 00:01:08,910
+an existing table if the table we're trying to create already exists.
+
+23
+00:01:08,910 --> 00:01:14,225
+Another argument is index label to specify the column or columns to use as the index,
+
+24
+00:01:14,225 --> 00:01:16,665
+which in this case we want to use ID.
+
+25
+00:01:16,665 --> 00:01:21,460
+It's critical to also maintain different instances where versions of the data.
+
+26
+00:01:21,460 --> 00:01:22,880
+At the very minimum,
+
+27
+00:01:22,880 --> 00:01:24,905
+you should have two versions of your data.
+
+28
+00:01:24,905 --> 00:01:28,580
+One version should be your raw data stored directly after the gathering stage,
+
+29
+00:01:28,580 --> 00:01:30,515
+and one should be your clean data.
+
+30
+00:01:30,515 --> 00:01:32,645
+When storing your cleaned data,
+
+31
+00:01:32,645 --> 00:01:35,510
+you may create a structure around this data as well.
+
+32
+00:01:35,510 --> 00:01:38,360
+You may have a location for storing your documentation of
+
+33
+00:01:38,360 --> 00:01:40,430
+the design decisions and strategies that you
+
+34
+00:01:40,430 --> 00:01:42,755
+take along the way to assess and clean your data,
+
+35
+00:01:42,755 --> 00:01:44,590
+as well as your raw data
+
+36
+00:01:44,590 --> 00:01:49,145
+your source code including your Jupyter Notebooks and the cleaned data files.
+
+37
+00:01:49,145 --> 00:01:52,160
+This all will make it easier when you decide to create
+
+38
+00:01:52,160 --> 00:01:56,720
+additional visualizations or analyses on top of your clean data and publish it.
+
+39
+00:01:56,720 --> 00:01:59,360
+It will also help downstream stakeholders to
+
+40
+00:01:59,360 --> 00:02:02,910
+understand the process and reproduce your work.
+

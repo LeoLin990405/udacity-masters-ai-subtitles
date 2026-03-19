@@ -1,0 +1,452 @@
+1
+00:00:00,000 --> 00:00:03,510
+I'd like to now walk you through how to gather JSON data using
+
+2
+00:00:03,510 --> 00:00:07,425
+the request library and access data within JSON files in Python.
+
+3
+00:00:07,425 --> 00:00:10,950
+We'll be looking at the JSON from the archive.org.item.
+
+4
+00:00:10,950 --> 00:00:13,470
+First, let's take a look at how we can use
+
+5
+00:00:13,470 --> 00:00:17,640
+Python's built-in json module to extract JSON data from a request.
+
+6
+00:00:17,640 --> 00:00:21,540
+We'll start with importing our request in JSON libraries and then making
+
+7
+00:00:21,540 --> 00:00:26,710
+an HTTP GET Request to the book on archive.org using the requests library.
+
+8
+00:00:26,810 --> 00:00:32,400
+Perfect. Now we want to access the output of this request which contains the json.
+
+9
+00:00:32,400 --> 00:00:35,445
+If I use the method book.content,
+
+10
+00:00:35,445 --> 00:00:38,115
+note how I get a byte string.
+
+11
+00:00:38,115 --> 00:00:41,105
+If I want the output of the request in Unicode,
+
+12
+00:00:41,105 --> 00:00:47,030
+I can go ahead and use the.text method so I can see the texts better.
+
+13
+00:00:47,030 --> 00:00:51,120
+Note how if we use the.text method,
+
+14
+00:00:52,580 --> 00:00:55,800
+the output is in a string format.
+
+15
+00:00:55,800 --> 00:00:58,755
+See the apostrophe before the curly braces.
+
+16
+00:00:58,755 --> 00:01:03,260
+How do we convert this string with a JSON object in it to just a Python object?
+
+17
+00:01:03,260 --> 00:01:07,355
+Here we're going to go ahead, scroll down and use the json.loads function,
+
+18
+00:01:07,355 --> 00:01:10,370
+which does just that, to de-serialize the string
+
+19
+00:01:10,370 --> 00:01:13,765
+that we're getting from the.text method into a Python dictionary.
+
+20
+00:01:13,765 --> 00:01:16,620
+Here using json.loads on book.text,
+
+21
+00:01:16,620 --> 00:01:18,705
+we have now a Python dictionary.
+
+22
+00:01:18,705 --> 00:01:23,915
+We'll take a moment to get back to inspecting the output of this in a bit.
+
+23
+00:01:23,915 --> 00:01:25,545
+I want to note a quick thing.
+
+24
+00:01:25,545 --> 00:01:30,705
+You can actually also use json.loads on the outputs of the.content method as well.
+
+25
+00:01:30,705 --> 00:01:33,350
+This is because you can also use.loads to
+
+26
+00:01:33,350 --> 00:01:36,940
+de-serialize bytes or byte arrays in addition to strings.
+
+27
+00:01:36,940 --> 00:01:38,195
+As we can see here,
+
+28
+00:01:38,195 --> 00:01:41,950
+it works just fine on our byte output as well.
+
+29
+00:01:41,950 --> 00:01:46,700
+Now, let's take a look at another option that is much more popular and simpler.
+
+30
+00:01:46,700 --> 00:01:51,305
+Here I'm making my HTTP GET Request again and using the.json
+
+31
+00:01:51,305 --> 00:01:56,540
+method of a response object from the request library to extract the JSON data.
+
+32
+00:01:56,540 --> 00:01:59,240
+Now we can see after just using.json,
+
+33
+00:01:59,240 --> 00:02:01,165
+it's ready to use.
+
+34
+00:02:01,165 --> 00:02:06,395
+Next let's actually inspect this data regarding metadata about the book more closely.
+
+35
+00:02:06,395 --> 00:02:10,160
+We have a lot of data and nesting that's taking place in this JSON.
+
+36
+00:02:10,160 --> 00:02:13,460
+Some data includes the number of files associated with the book,
+
+37
+00:02:13,460 --> 00:02:15,410
+like this thumbnail file.
+
+38
+00:02:15,410 --> 00:02:19,400
+In addition, we can also scroll down all the way here and
+
+39
+00:02:19,400 --> 00:02:23,255
+see additional information about the camera that was used for capturing the book,
+
+40
+00:02:23,255 --> 00:02:25,625
+the publisher, the date, etc.
+
+41
+00:02:25,625 --> 00:02:28,435
+Let's see now how to access some of this data.
+
+42
+00:02:28,435 --> 00:02:32,435
+Let's start with accessing one of the first attributes, the directory.
+
+43
+00:02:32,435 --> 00:02:35,090
+Scrolling up here, we can see that we have that
+
+44
+00:02:35,090 --> 00:02:39,430
+as one of our first attributes as part of the JSON file.
+
+45
+00:02:39,430 --> 00:02:45,065
+Note how I use the brackets to do so in order to access the dir key.
+
+46
+00:02:45,065 --> 00:02:48,260
+Let's actually move on to something a bit more complicated,
+
+47
+00:02:48,260 --> 00:02:51,440
+now that we can see that we can print the result in value for that key.
+
+48
+00:02:51,440 --> 00:02:55,085
+I want to show you how we can access the review title.
+
+49
+00:02:55,085 --> 00:03:00,055
+Here first, I have to access the metadata attribute as part of this huge JSON.
+
+50
+00:03:00,055 --> 00:03:02,885
+Now note that the metadata attribute is actually
+
+51
+00:03:02,885 --> 00:03:06,335
+a JSON object containing many key value pairs.
+
+52
+00:03:06,335 --> 00:03:08,600
+See the title key here, for example,
+
+53
+00:03:08,600 --> 00:03:10,735
+which is nestled within the metadata attribute.
+
+54
+00:03:10,735 --> 00:03:12,885
+That's what we need. To access it,
+
+55
+00:03:12,885 --> 00:03:15,860
+I need to use metadata and then title.
+
+56
+00:03:15,860 --> 00:03:17,945
+Let's look at what that looks like.
+
+57
+00:03:17,945 --> 00:03:22,075
+Now I'm able to get the full title of the book pro-grammatically.
+
+58
+00:03:22,075 --> 00:03:25,660
+Let's take a look at some of the reviews data for the book.
+
+59
+00:03:25,660 --> 00:03:31,100
+First, let's go ahead and use a similar methodology of accessing the reviews attribute.
+
+60
+00:03:31,100 --> 00:03:34,480
+Now the reviews key is containing a JSON array,
+
+61
+00:03:34,480 --> 00:03:36,440
+as you can see with the square brackets here,
+
+62
+00:03:36,440 --> 00:03:39,755
+with exactly one JSON object or element in it.
+
+63
+00:03:39,755 --> 00:03:45,545
+Let's access the only JSON object in this JSON array using the indexing value of zero.
+
+64
+00:03:45,545 --> 00:03:48,860
+Notice now how the square brackets are now disappeared from
+
+65
+00:03:48,860 --> 00:03:52,415
+our output since this is the only element in the list.
+
+66
+00:03:52,415 --> 00:03:55,565
+Now with JSON object reviews zero,
+
+67
+00:03:55,565 --> 00:03:58,925
+we now have one JSON object with many key value pairs.
+
+68
+00:03:58,925 --> 00:04:01,325
+Now one of these keys is review body.
+
+69
+00:04:01,325 --> 00:04:03,695
+Let's go ahead and see if we can access this.
+
+70
+00:04:03,695 --> 00:04:06,665
+I can access this by doing json_book_text,
+
+71
+00:04:06,665 --> 00:04:07,790
+indexing by reviews,
+
+72
+00:04:07,790 --> 00:04:12,560
+zero, and reviewbody to get the content of my review.
+
+73
+00:04:12,560 --> 00:04:16,270
+Now finally, I want to show you something really complicated.
+
+74
+00:04:16,270 --> 00:04:17,735
+Check out the files attribute,
+
+75
+00:04:17,735 --> 00:04:19,640
+which contains information about a number of
+
+76
+00:04:19,640 --> 00:04:23,240
+different file download options that archive.org provides for the book,
+
+77
+00:04:23,240 --> 00:04:25,430
+including the thumbnail, as we saw earlier,
+
+78
+00:04:25,430 --> 00:04:28,175
+options to download as a PDF,
+
+79
+00:04:28,175 --> 00:04:30,940
+and a zip file, etc.
+
+80
+00:04:30,940 --> 00:04:35,420
+Similarly, the structure of the files attribute in a JSON array is
+
+81
+00:04:35,420 --> 00:04:39,800
+now having multiple JSON objects in it rather than just one JSON object.
+
+82
+00:04:39,800 --> 00:04:45,995
+Let's task ourselves with finding out the size the Raw Cornell book Zip download option.
+
+83
+00:04:45,995 --> 00:04:49,560
+Here's where it is in the files attribute.
+
+84
+00:04:50,680 --> 00:04:56,840
+I want to access the size key to get the size of this particular zip file,
+
+85
+00:04:56,840 --> 00:04:58,855
+which is all the way over here.
+
+86
+00:04:58,855 --> 00:05:03,470
+Because this JSON array has multiple JSON objects or elements in it,
+
+87
+00:05:03,470 --> 00:05:07,730
+I need to actually go ahead and find the index of the element for the zip file first.
+
+88
+00:05:07,730 --> 00:05:11,620
+Let's go ahead to the top of this JSON and count.
+
+89
+00:05:11,620 --> 00:05:15,705
+For example, we'd be counting our index 0, 1,
+
+90
+00:05:15,705 --> 00:05:20,120
+2, 3, 4, 5, and 6.
+
+91
+00:05:20,120 --> 00:05:22,640
+We can see this is actually the sixth element.
+
+92
+00:05:22,640 --> 00:05:25,955
+Now that I've done this and I got this specific JSON object
+
+93
+00:05:25,955 --> 00:05:29,525
+for the Raw Cornell Book Zip using the integer index,
+
+94
+00:05:29,525 --> 00:05:33,995
+I can now access the size key then in order to get the size of the zip file.
+
+95
+00:05:33,995 --> 00:05:36,020
+Altogether the command is looking like this,
+
+96
+00:05:36,020 --> 00:05:38,780
+where we have our json_book_text indexing
+
+97
+00:05:38,780 --> 00:05:41,615
+by the files attribute and then indexing by the integer six,
+
+98
+00:05:41,615 --> 00:05:44,795
+giving us the data for the Raw Cornell Book Zip download option.
+
+99
+00:05:44,795 --> 00:05:49,735
+Then we have to index by the size attribute and then get the actual size of this file.
+
+100
+00:05:49,735 --> 00:05:55,300
+Finally, let's now compare JSON notation and Python dictionary notation.
+
+101
+00:05:55,300 --> 00:05:57,300
+Here I've got a dictionary.
+
+102
+00:05:57,300 --> 00:06:00,860
+Firstly, we see how accessing attributes in JSON and dictionaries,
+
+103
+00:06:00,860 --> 00:06:02,165
+it's actually pretty similar.
+
+104
+00:06:02,165 --> 00:06:04,430
+Look at how we can access the value hello in
+
+105
+00:06:04,430 --> 00:06:06,800
+this dictionary using the key in the bracket.
+
+106
+00:06:06,800 --> 00:06:10,250
+However, keys in JSON can only be strings, as you may recall,
+
+107
+00:06:10,250 --> 00:06:14,285
+whereas Python dictionary keys can be any hashable object, like a number.
+
+108
+00:06:14,285 --> 00:06:17,615
+How do you convert a Python dictionary to a JSON object?
+
+109
+00:06:17,615 --> 00:06:20,660
+You can use the json.dumps function,
+
+110
+00:06:20,660 --> 00:06:23,510
+which takes an object and produces a JSON string,
+
+111
+00:06:23,510 --> 00:06:25,855
+or in other words, serializes it.
+
+112
+00:06:25,855 --> 00:06:29,630
+Here, note how we are serializing our dictionary object.
+
+113
+00:06:29,630 --> 00:06:35,670
+Note that this is the opposite of what json.loads does with de-serializing.
+

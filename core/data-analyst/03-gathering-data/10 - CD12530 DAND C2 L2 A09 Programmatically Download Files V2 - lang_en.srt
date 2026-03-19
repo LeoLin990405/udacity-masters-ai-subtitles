@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:03,870
+There are times when a data cleric can't download files from the Internet
+
+2
+00:00:03,870 --> 00:00:07,800
+manually or wants a way to do this more efficiently programmatically.
+
+3
+00:00:07,800 --> 00:00:10,470
+Let's take a look at a couple of methods where we can use
+
+4
+00:00:10,470 --> 00:00:14,175
+programmatic approaches towards data gathering to make this more efficient.
+
+5
+00:00:14,175 --> 00:00:16,245
+We're going to use the Request Library,
+
+6
+00:00:16,245 --> 00:00:21,105
+which is an HTTP library in Python that allows you to send HTTP requests easily.
+
+7
+00:00:21,105 --> 00:00:23,925
+Let's see an example of an HTTP request.
+
+8
+00:00:23,925 --> 00:00:25,570
+This is a GET request,
+
+9
+00:00:25,570 --> 00:00:27,980
+which is used to request data from a source,
+
+10
+00:00:27,980 --> 00:00:30,195
+like a URL from Wikipedia.
+
+11
+00:00:30,195 --> 00:00:34,605
+How do we know whether or not our request to get data from a URL has succeeded?
+
+12
+00:00:34,605 --> 00:00:37,195
+There are status codes that help us with that.
+
+13
+00:00:37,195 --> 00:00:40,250
+Codes between 200 and 299 indicate that
+
+14
+00:00:40,250 --> 00:00:43,475
+the request was successful and we got the data that we needed.
+
+15
+00:00:43,475 --> 00:00:48,160
+On the other hand, codes between 400-599 indicate errors.
+
+16
+00:00:48,160 --> 00:00:51,290
+You've probably encountered the infamous 404 error
+
+17
+00:00:51,290 --> 00:00:54,080
+when trying to access a website that no longer exists.
+
+18
+00:00:54,080 --> 00:00:57,140
+The requests library enables us to catch these errors to
+
+19
+00:00:57,140 --> 00:01:00,925
+understand when and why our programmatic requests fail.
+
+20
+00:01:00,925 --> 00:01:04,235
+Let's now take a look at how to do this in Python.
+
+21
+00:01:04,235 --> 00:01:07,850
+Let's take a brief look at how to use the request library to make an
+
+22
+00:01:07,850 --> 00:01:11,825
+HTTP get request to programmatically download files from the Internet.
+
+23
+00:01:11,825 --> 00:01:17,105
+For this demo, we're leveraging some movie reviews written by Roger Ebert in 2017.
+
+24
+00:01:17,105 --> 00:01:21,460
+Our first step is import the libraries that we're going to be using, requests and os.
+
+25
+00:01:21,460 --> 00:01:24,875
+Then we're going to go ahead and create a directory using
+
+26
+00:01:24,875 --> 00:01:29,860
+os.makedirs where we can store the files that we're going to programmatically download.
+
+27
+00:01:29,860 --> 00:01:33,410
+Note that we're going to create this directory if it doesn't already exist by
+
+28
+00:01:33,410 --> 00:01:37,900
+using os.path.exists to check whether or not the file path already exists.
+
+29
+00:01:37,900 --> 00:01:43,685
+Next, we've predefined a list of URLs of existing reviews.
+
+30
+00:01:43,685 --> 00:01:46,855
+Let's dive into the requests code.
+
+31
+00:01:46,855 --> 00:01:49,350
+For each of the URLs in this list,
+
+32
+00:01:49,350 --> 00:01:53,720
+we're going to go ahead and create a HTTP GET request using the
+
+33
+00:01:53,720 --> 00:01:57,230
+request.get(url) and then use the raise_for_status function to
+
+34
+00:01:57,230 --> 00:02:00,790
+raise an exception if this GET request is resulting in an error.
+
+35
+00:02:00,790 --> 00:02:04,940
+Then we're going to construct the file path for saving the content we'll download.
+
+36
+00:02:04,940 --> 00:02:07,415
+We're going to combine the folder name that we defined
+
+37
+00:02:07,415 --> 00:02:10,265
+earlier and the last part of the URL.
+
+38
+00:02:10,265 --> 00:02:13,205
+For example, for this first URL that we've got here,
+
+39
+00:02:13,205 --> 00:02:20,630
+the file path would be ebert_reviews_2017/1-the-wizard-of-oz-1939-film.txt.
+
+40
+00:02:20,630 --> 00:02:23,900
+Then here we're simply using Python's open function
+
+41
+00:02:23,900 --> 00:02:28,430
+to open the file specified by the file path in the binary write mode.
+
+42
+00:02:28,430 --> 00:02:30,845
+Why WB or binary mode?
+
+43
+00:02:30,845 --> 00:02:34,280
+Because the content of the response object that we're writing
+
+44
+00:02:34,280 --> 00:02:37,940
+here to the file retrieved from the URL is in bytes.
+
+45
+00:02:37,940 --> 00:02:43,410
+Finally, this file.write function is actually writing the binary content to the file.
+
+46
+00:02:44,210 --> 00:02:47,505
+It suceeded on the first three URLs,
+
+47
+00:02:47,505 --> 00:02:49,740
+but our code is failing on our fourth URL.
+
+48
+00:02:49,740 --> 00:02:51,195
+This is intentional.
+
+49
+00:02:51,195 --> 00:02:56,675
+Note how our URL here is erroneously specifying Bumblebee as part of the URL.
+
+50
+00:02:56,675 --> 00:03:02,285
+We can see how the requests library is immediately raising a 403 client error,
+
+51
+00:03:02,285 --> 00:03:05,735
+indicating the client is forbidden from accessing a valid URL.
+
+52
+00:03:05,735 --> 00:03:09,830
+For the other three URLs that we were able to save successfully,
+
+53
+00:03:09,830 --> 00:03:11,660
+through the os.listdir command,
+
+54
+00:03:11,660 --> 00:03:15,775
+we can actually check to see that these were successfully saved to our directory.
+
+55
+00:03:15,775 --> 00:03:19,760
+We can also use the built-in so-called magic command to actually load one of
+
+56
+00:03:19,760 --> 00:03:21,710
+these reviews into the current cell in
+
+57
+00:03:21,710 --> 00:03:24,900
+our Jupyter notebook to see that we were successful.
+

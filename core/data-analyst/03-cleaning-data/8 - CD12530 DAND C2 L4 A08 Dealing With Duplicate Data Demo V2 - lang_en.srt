@@ -1,0 +1,464 @@
+1
+00:00:00,000 --> 00:00:02,430
+Duplicates are typically handled by finding
+
+2
+00:00:02,430 --> 00:00:04,980
+the row with the right information that we want to keep.
+
+3
+00:00:04,980 --> 00:00:07,140
+Let's take a look at a simple way of detecting
+
+4
+00:00:07,140 --> 00:00:10,140
+duplicated rows for Pandas DataFrames in Python.
+
+5
+00:00:10,140 --> 00:00:14,235
+First, we import Pandas and Numpy and load a small test scores data-set.
+
+6
+00:00:14,235 --> 00:00:17,445
+We then make a copy of our original DataFrame using dot copy.
+
+7
+00:00:17,445 --> 00:00:20,250
+You can see the first few rows of the DataFrame here.
+
+8
+00:00:20,250 --> 00:00:25,200
+We can then access the duplicated rows for only the name and age columns by
+
+9
+00:00:25,200 --> 00:00:30,285
+using the duplicated method on the clean scores DataFrame and indexing by these columns.
+
+10
+00:00:30,285 --> 00:00:34,170
+The method returns a Boolean series denoting if a row is duplicated.
+
+11
+00:00:34,170 --> 00:00:36,840
+Here, we see false means the row is not duplicated,
+
+12
+00:00:36,840 --> 00:00:41,025
+and true means the row is duplicated here.
+
+13
+00:00:41,025 --> 00:00:44,120
+An important thing to note about the duplicated method is that
+
+14
+00:00:44,120 --> 00:00:46,895
+by default for each set of duplicated values,
+
+15
+00:00:46,895 --> 00:00:50,390
+the first occurrence is set on false and all others on true.
+
+16
+00:00:50,390 --> 00:00:53,900
+For example, when we retrieve duplicated data entries
+
+17
+00:00:53,900 --> 00:00:57,395
+using this boolean series and applying the.log function,
+
+18
+00:00:57,395 --> 00:01:00,350
+we're not going to see the first occurrence of the value.
+
+19
+00:01:00,350 --> 00:01:05,700
+For example, Amy Linn has three test A scores as you can see here.
+
+20
+00:01:05,700 --> 00:01:10,040
+But, only the first entry with the test score of 95 is not showing
+
+21
+00:01:10,040 --> 00:01:14,930
+up when we try to look at the duplicated grows. Here's an additional tip.
+
+22
+00:01:14,930 --> 00:01:17,315
+If there are duplicate rows and you want to drop them,
+
+23
+00:01:17,315 --> 00:01:19,325
+keep a record of two things.
+
+24
+00:01:19,325 --> 00:01:23,210
+One, the number of duplicate rows in the original dataset.
+
+25
+00:01:23,210 --> 00:01:27,805
+We can get the number of duplicated rows by running df.duplicated.sum.
+
+26
+00:01:27,805 --> 00:01:30,125
+Second, you want to keep in mind
+
+27
+00:01:30,125 --> 00:01:33,085
+additional data around where the duplicates are occurring.
+
+28
+00:01:33,085 --> 00:01:35,270
+For example, with this data we can make
+
+29
+00:01:35,270 --> 00:01:39,155
+some informative assumptions around how prone the data is having two duplicates.
+
+30
+00:01:39,155 --> 00:01:42,560
+For example, using visual inspection of this entire small DataFrame,
+
+31
+00:01:42,560 --> 00:01:43,835
+we can ask the question,
+
+32
+00:01:43,835 --> 00:01:46,820
+are all students that are 15 somehow having
+
+33
+00:01:46,820 --> 00:01:49,940
+duplicate entries compared to students who are 14?
+
+34
+00:01:49,940 --> 00:01:51,410
+Perhaps this may be because
+
+35
+00:01:51,410 --> 00:01:54,050
+all the 15-year-olds are in a different class than the 14-year-olds,
+
+36
+00:01:54,050 --> 00:01:57,500
+and there were data entry issues for the 15-year-old's classroom.
+
+37
+00:01:57,500 --> 00:01:59,455
+However, there is a question.
+
+38
+00:01:59,455 --> 00:02:00,815
+In the first scenario,
+
+39
+00:02:00,815 --> 00:02:03,710
+if the duplicated rows are entirely the same,
+
+40
+00:02:03,710 --> 00:02:07,780
+including the test score like the first and last row that we can see here,
+
+41
+00:02:07,780 --> 00:02:10,550
+we know that the same data was probably entered
+
+42
+00:02:10,550 --> 00:02:14,290
+twice and we can safely keep one row and remove the others.
+
+43
+00:02:14,290 --> 00:02:16,100
+But in this case,
+
+44
+00:02:16,100 --> 00:02:18,860
+Amy has different scores on test A.
+
+45
+00:02:18,860 --> 00:02:22,340
+How do you determine which row to delete?
+
+46
+00:02:22,340 --> 00:02:26,060
+In these scenarios with duplicated rows containing different values,
+
+47
+00:02:26,060 --> 00:02:28,810
+we need additional information to help make the decision.
+
+48
+00:02:28,810 --> 00:02:32,465
+For example, we may need to check with the data providers like their teachers
+
+49
+00:02:32,465 --> 00:02:36,335
+to understand what rows are incorrect and if they need to be removed,
+
+50
+00:02:36,335 --> 00:02:40,265
+then you can remove the data if it is incorrect or keep the data if it is correct.
+
+51
+00:02:40,265 --> 00:02:43,010
+For example, in this case, seeing how Amy has a score
+
+52
+00:02:43,010 --> 00:02:46,480
+of 95 and 85 on test A at the same time.
+
+53
+00:02:46,480 --> 00:02:49,730
+Sometimes, the scenario can get even more complicated.
+
+54
+00:02:49,730 --> 00:02:53,690
+For example, take a look at this new column that popped up test B score,
+
+55
+00:02:53,690 --> 00:02:58,070
+which contains students scores now on a different test in addition to test A.
+
+56
+00:02:58,070 --> 00:03:03,895
+They're duplicated rows with different values in both test A and test B square columns.
+
+57
+00:03:03,895 --> 00:03:06,110
+To make the decision on how to deal with this,
+
+58
+00:03:06,110 --> 00:03:08,600
+we also need to check the data providers again.
+
+59
+00:03:08,600 --> 00:03:11,270
+Let's say after checking with data providers,
+
+60
+00:03:11,270 --> 00:03:14,030
+we confirm that the duplicated data in some of
+
+61
+00:03:14,030 --> 00:03:18,425
+the test A scores column values are incorrect and we should remove them,
+
+62
+00:03:18,425 --> 00:03:22,355
+but the test B score column has correct values.
+
+63
+00:03:22,355 --> 00:03:27,050
+The data has duplicated rows because the students did take test b multiple times,
+
+64
+00:03:27,050 --> 00:03:30,010
+and all scores should be kept in the table.
+
+65
+00:03:30,010 --> 00:03:35,420
+In order to do this, you may consider marking the incorrect duplicate values that
+
+66
+00:03:35,420 --> 00:03:40,435
+we know for the test A score are there as NaNs and treating them as such.
+
+67
+00:03:40,435 --> 00:03:43,880
+You may also consider simplifying your data structure, for example,
+
+68
+00:03:43,880 --> 00:03:47,600
+creating a separate table for the repeated values in test B score if
+
+69
+00:03:47,600 --> 00:03:49,430
+the structure is significantly different from
+
+70
+00:03:49,430 --> 00:03:52,210
+the test A square and the rest of the columns.
+
+71
+00:03:52,210 --> 00:03:56,440
+Let's talk about how to implement the code to remove the duplicated rows.
+
+72
+00:03:56,440 --> 00:03:59,405
+For the data frame with only the test A score column,
+
+73
+00:03:59,405 --> 00:04:01,190
+in order to drop the duplicated rows,
+
+74
+00:04:01,190 --> 00:04:02,225
+you can use pandas,
+
+75
+00:04:02,225 --> 00:04:03,650
+drop duplicates function,
+
+76
+00:04:03,650 --> 00:04:08,255
+specifying the subset parameter as the columns we want to use to identify the duplicates.
+
+77
+00:04:08,255 --> 00:04:10,940
+By default, this parameter is set to all columns,
+
+78
+00:04:10,940 --> 00:04:14,040
+but here we'd like to narrow it down to name and age.
+
+79
+00:04:14,040 --> 00:04:18,260
+By default, this function will drop all duplicates except for the first occurrence.
+
+80
+00:04:18,260 --> 00:04:23,675
+For example, the first entry where anyone's test score is 95 where the index is zero,
+
+81
+00:04:23,675 --> 00:04:28,085
+will be kept but all later entries of hers will be deleted as we see here.
+
+82
+00:04:28,085 --> 00:04:33,610
+We can also set the key parameter to last four drop duplicates to,
+
+83
+00:04:33,610 --> 00:04:38,320
+for example, drop duplicates except for the last occurrence of a value in our dataset.
+
+84
+00:04:38,320 --> 00:04:42,790
+As you can see here, Amy Linn's first entry with index 0 is deleted,
+
+85
+00:04:42,790 --> 00:04:45,965
+but the last entry with index 11 is kept.
+
+86
+00:04:45,965 --> 00:04:48,910
+As we can see here now using the.sum method,
+
+87
+00:04:48,910 --> 00:04:53,345
+the number of duplicated rows after applying drop duplicates is zero.
+
+88
+00:04:53,345 --> 00:04:58,630
+What if the value you want to keep is neither the first occurrence nor the last?
+
+89
+00:04:58,630 --> 00:05:01,065
+Drop duplicates is not going to help you here.
+
+90
+00:05:01,065 --> 00:05:03,040
+For example, consider that we want to keep
+
+91
+00:05:03,040 --> 00:05:05,710
+the first and last occurrences of Amy's data,
+
+92
+00:05:05,710 --> 00:05:09,555
+but we don't want to keep the middle row with the index 5.
+
+93
+00:05:09,555 --> 00:05:13,870
+In this case, you can actually remove this row using the drop method,
+
+94
+00:05:13,870 --> 00:05:16,535
+and specifying the index of the row,
+
+95
+00:05:16,535 --> 00:05:18,310
+which in this case is five.
+
+96
+00:05:18,310 --> 00:05:21,320
+Note how the middle duplicated is gone from
+
+97
+00:05:21,320 --> 00:05:25,195
+the DataFrame we specifically retrieved Amy Linn's scores.
+
+98
+00:05:25,195 --> 00:05:30,345
+For this DataFrame that had both the test A and test B scores,
+
+99
+00:05:30,345 --> 00:05:36,200
+let's say we want to replace the incorrect test A value on duplicated rows as NaN values.
+
+100
+00:05:36,200 --> 00:05:41,050
+We can first access the index of the duplicated rows using.index to do this.
+
+101
+00:05:41,050 --> 00:05:44,800
+Here, we see the duplicated rows are indexes 5, 9 and 10.
+
+102
+00:05:44,800 --> 00:05:49,890
+Then we can locate these incorrect test A values by using the.loc
+
+103
+00:05:49,890 --> 00:05:52,710
+method and specifying this dupe index variable
+
+104
+00:05:52,710 --> 00:05:55,430
+as our rows and the test A scores our column.
+
+105
+00:05:55,430 --> 00:05:57,680
+We then want to set these values that are in
+
+106
+00:05:57,680 --> 00:06:00,095
+the test A score column that we know are incorrect,
+
+107
+00:06:00,095 --> 00:06:05,440
+and are belonging to the duplicated rows to a numpy.nan value.
+
+108
+00:06:05,440 --> 00:06:08,370
+Let's now look at this DataFrame result again
+
+109
+00:06:08,370 --> 00:06:11,265
+with the test A score and the test B values.
+
+110
+00:06:11,265 --> 00:06:18,245
+Note how there aren't any ends now in the test A score column for rows 5, 9 and 10.
+
+111
+00:06:18,245 --> 00:06:20,105
+But the first occurrences of the data,
+
+112
+00:06:20,105 --> 00:06:22,685
+like Amy Linn's record, is kept intact.
+
+113
+00:06:22,685 --> 00:06:24,950
+Now we can meaningfully balance between
+
+114
+00:06:24,950 --> 00:06:27,710
+the NaN and incorrect values in the test A score,
+
+115
+00:06:27,710 --> 00:06:30,080
+and the meaningful values that we want to keep as
+
+116
+00:06:30,080 --> 00:06:33,510
+part of the test B score as part of this DataFrame.
+

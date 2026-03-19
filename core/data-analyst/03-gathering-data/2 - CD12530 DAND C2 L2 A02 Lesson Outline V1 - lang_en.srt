@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:02,355
+In the first few sections of this lesson,
+
+2
+00:00:02,355 --> 00:00:04,200
+we'll explore obtaining data through
+
+3
+00:00:04,200 --> 00:00:07,455
+downloading files and extracting data from flat files,
+
+4
+00:00:07,455 --> 00:00:09,315
+which contains tabular data.
+
+5
+00:00:09,315 --> 00:00:12,270
+We'll discuss the data gathering phase,
+
+6
+00:00:12,270 --> 00:00:14,505
+unzipping files using Python,
+
+7
+00:00:14,505 --> 00:00:18,540
+extracting data from tab-separated and comma-separated files,
+
+8
+00:00:18,540 --> 00:00:22,425
+and how to programmatically download data files.
+
+9
+00:00:22,425 --> 00:00:24,615
+In the next few sections of this lesson,
+
+10
+00:00:24,615 --> 00:00:27,930
+we'll talk about alternative methods for obtaining data beyond downloading,
+
+11
+00:00:27,930 --> 00:00:30,875
+and extracting data from some popular data formats.
+
+12
+00:00:30,875 --> 00:00:34,940
+We'll talk about obtaining data through APIs and web scraping,
+
+13
+00:00:34,940 --> 00:00:37,925
+as well as extracting information from text files,
+
+14
+00:00:37,925 --> 00:00:41,200
+json files, and HTML files.
+
+15
+00:00:41,200 --> 00:00:43,445
+In the final few sections of this lesson,
+
+16
+00:00:43,445 --> 00:00:47,875
+we'll talk about how to work with relational and non-relational databases and formats.
+
+17
+00:00:47,875 --> 00:00:50,510
+Non-relational databases can contain data points
+
+18
+00:00:50,510 --> 00:00:53,030
+that are connected to or related to each other,
+
+19
+00:00:53,030 --> 00:00:55,535
+often organized in tables within the database,
+
+20
+00:00:55,535 --> 00:00:59,500
+making it simple to find and organize related pieces of information.
+
+21
+00:00:59,500 --> 00:01:02,270
+Unlike relational databases, data with
+
+22
+00:01:02,270 --> 00:01:06,680
+a non-relational databases doesn't have clearly defined relationships or connections.
+
+23
+00:01:06,680 --> 00:01:08,375
+For example think about text,
+
+24
+00:01:08,375 --> 00:01:10,050
+image and video formats.
+
+25
+00:01:10,050 --> 00:01:13,880
+Here we'll be discussing how to extract data from a SQL database,
+
+26
+00:01:13,880 --> 00:01:17,600
+which is a type of relational database that uses structured query language,
+
+27
+00:01:17,600 --> 00:01:19,385
+often shorten to SQL.
+
+28
+00:01:19,385 --> 00:01:22,505
+Then we'll learn about some concepts about non-relational data,
+
+29
+00:01:22,505 --> 00:01:25,985
+like non-relational databases and image formats.
+
+30
+00:01:25,985 --> 00:01:28,550
+Mastering these skills will set the stage for
+
+31
+00:01:28,550 --> 00:01:33,060
+the next phase of data wrangling assessment, so let's dive in.
+

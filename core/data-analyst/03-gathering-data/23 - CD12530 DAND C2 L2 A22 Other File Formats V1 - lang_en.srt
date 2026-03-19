@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:02,400
+There are many other data storage formats
+
+2
+00:00:02,400 --> 00:00:04,365
+out there that data maybe gathered and stored in,
+
+3
+00:00:04,365 --> 00:00:06,180
+including Excel, Pickle,
+
+4
+00:00:06,180 --> 00:00:09,120
+HDF5, SAS and STATA files.
+
+5
+00:00:09,120 --> 00:00:12,285
+Pandas is helpfully compatible with many of these formats,
+
+6
+00:00:12,285 --> 00:00:15,270
+which helps make data gathering and manipulation easier.
+
+7
+00:00:15,270 --> 00:00:17,790
+But how do you know when to use which file format?
+
+8
+00:00:17,790 --> 00:00:20,930
+Different file formats come in handy for different types of data.
+
+9
+00:00:20,930 --> 00:00:23,930
+For example, flat files are useful for tabular data.
+
+10
+00:00:23,930 --> 00:00:25,300
+But what about images,
+
+11
+00:00:25,300 --> 00:00:27,360
+such as PNGs or JPEGs?
+
+12
+00:00:27,360 --> 00:00:30,915
+Let's take a look at how we can load and modify this data briefly.
+
+13
+00:00:30,915 --> 00:00:35,160
+In this demo I'm going to introduce the Python Pillow library for loading,
+
+14
+00:00:35,160 --> 00:00:37,170
+modifying, and saving image data.
+
+15
+00:00:37,170 --> 00:00:42,070
+It's a very popular image library for use cases like radiology images in healthcare,
+
+16
+00:00:42,070 --> 00:00:45,815
+for images used for interactive shopping experiences and more.
+
+17
+00:00:45,815 --> 00:00:48,320
+Here I've already pulled a goldfish image from
+
+18
+00:00:48,320 --> 00:00:52,160
+a very popular image dataset in the machine learning and AI space called ImageNet,
+
+19
+00:00:52,160 --> 00:00:54,985
+which contains about 14 million images in total.
+
+20
+00:00:54,985 --> 00:00:56,460
+Let's dive in.
+
+21
+00:00:56,460 --> 00:00:58,400
+First I'm going to go ahead and import
+
+22
+00:00:58,400 --> 00:01:01,370
+the image module from the Pillow library, which is called PIL.
+
+23
+00:01:01,370 --> 00:01:06,960
+I'm then going to go ahead and load my image into my notebook using image.open.
+
+24
+00:01:07,340 --> 00:01:10,425
+My image is called goldfish.JPEG,
+
+25
+00:01:10,425 --> 00:01:11,955
+and it's in the JPEG format.
+
+26
+00:01:11,955 --> 00:01:13,510
+I'm then going to use.show,
+
+27
+00:01:13,510 --> 00:01:16,270
+on the image object to show you the image in the notebook.
+
+28
+00:01:16,270 --> 00:01:19,440
+We can now see this image of a goldfish.
+
+29
+00:01:19,790 --> 00:01:22,380
+Let's check out the size of the image.
+
+30
+00:01:22,380 --> 00:01:25,160
+The width of our image is 376 pixels,
+
+31
+00:01:25,160 --> 00:01:27,640
+and the height is 263 pixels.
+
+32
+00:01:27,640 --> 00:01:30,410
+Now let's do a little bit of data manipulation.
+
+33
+00:01:30,410 --> 00:01:33,740
+Note how our goldfish is looking at the bottom-right corner of the image.
+
+34
+00:01:33,740 --> 00:01:35,735
+Let's flip our image upside down.
+
+35
+00:01:35,735 --> 00:01:38,000
+I'm going to use pillows transpose function,
+
+36
+00:01:38,000 --> 00:01:39,800
+and then provide the flip
+
+37
+00:01:39,800 --> 00:01:43,745
+top bottom parameter as input to actually flip our image from top to bottom.
+
+38
+00:01:43,745 --> 00:01:46,460
+I'm thinking use.show on this image,
+
+39
+00:01:46,460 --> 00:01:49,985
+and now running this code we can see that our goldfish image is flipped,
+
+40
+00:01:49,985 --> 00:01:52,810
+and now I'm officially looking at the top-right corner.
+
+41
+00:01:52,810 --> 00:01:54,590
+How do I save my image?
+
+42
+00:01:54,590 --> 00:01:56,570
+I can do this by using.save,
+
+43
+00:01:56,570 --> 00:01:58,700
+on the image object, im.
+
+44
+00:01:58,700 --> 00:02:01,370
+I'm also specifying my file path here.
+
+45
+00:02:01,370 --> 00:02:03,440
+Now if we go ahead and navigate back,
+
+46
+00:02:03,440 --> 00:02:07,435
+we can successfully see that the image would be saved as part of Jupitor.
+
+47
+00:02:07,435 --> 00:02:09,670
+Now as we're talking about complicated kinds of
+
+48
+00:02:09,670 --> 00:02:12,110
+data that don't have clear structure to them,
+
+49
+00:02:12,110 --> 00:02:15,930
+I'd like to introduce you to the idea of non-relational databases.
+
+50
+00:02:15,930 --> 00:02:20,065
+These are databases that can store data that is both structured and unstructured,
+
+51
+00:02:20,065 --> 00:02:22,720
+like text files or emails and media.
+
+52
+00:02:22,720 --> 00:02:25,900
+Let's take a look at MongoDB as an example,
+
+53
+00:02:25,900 --> 00:02:30,335
+which is a no SQL database or a database that doesn't only support SQL.
+
+54
+00:02:30,335 --> 00:02:35,110
+MongoDB as a non-relational database has a few unique features to it.
+
+55
+00:02:35,110 --> 00:02:37,435
+For data points that are related to each other,
+
+56
+00:02:37,435 --> 00:02:40,465
+it allows you to embed documents within other documents,
+
+57
+00:02:40,465 --> 00:02:45,170
+and store relationships between the data by including links within documents.
+
+58
+00:02:45,170 --> 00:02:49,830
+MongoDB also allows you to efficiently store and retrieve unstructured data,
+
+59
+00:02:49,830 --> 00:02:53,660
+like the data on the right taken from one of MongoDB tutorials.
+
+60
+00:02:53,660 --> 00:02:56,375
+If you were to store that in a relational database,
+
+61
+00:02:56,375 --> 00:02:57,850
+we would need multiple tables,
+
+62
+00:02:57,850 --> 00:02:59,990
+and would need to perform a join operation on
+
+63
+00:02:59,990 --> 00:03:03,500
+the tables to see all the information in one view.
+
+64
+00:03:03,500 --> 00:03:08,635
+MongoDB uses an alternative to JSON called BSON, or binary JSON.
+
+65
+00:03:08,635 --> 00:03:11,705
+Take a look at the JSON HelloWorld example here,
+
+66
+00:03:11,705 --> 00:03:16,325
+and BSON, where we see BSON is imposing a binary structure on JSON.
+
+67
+00:03:16,325 --> 00:03:20,360
+Now binary JSON can be traversed much more quickly compared to JSON,
+
+68
+00:03:20,360 --> 00:03:22,680
+and supports advanced types of data.
+
+69
+00:03:22,680 --> 00:03:24,440
+For example, it can differentiate between
+
+70
+00:03:24,440 --> 00:03:27,260
+integers or round numbers and floating point numbers,
+
+71
+00:03:27,260 --> 00:03:28,640
+or numbers with decimals.
+
+72
+00:03:28,640 --> 00:03:31,170
+While JSON cannot.
+

@@ -1,0 +1,476 @@
+1
+00:00:00,000 --> 00:00:04,425
+Time series is another popular data format for storing data over time.
+
+2
+00:00:04,425 --> 00:00:07,515
+It's a sequence of data points collected at regular time intervals,
+
+3
+00:00:07,515 --> 00:00:09,285
+often used to analyze trends,
+
+4
+00:00:09,285 --> 00:00:11,475
+patterns, and forecasting overtime.
+
+5
+00:00:11,475 --> 00:00:13,950
+Let's take a look at the steps data wrangler is used to
+
+6
+00:00:13,950 --> 00:00:16,960
+deal with dates and pandas and clean time-series data.
+
+7
+00:00:16,960 --> 00:00:20,100
+We'll start with importing our Pandas and NumPy packages.
+
+8
+00:00:20,100 --> 00:00:23,700
+For this demo, we'll be using a hypothetical stock dataset that's modeled
+
+9
+00:00:23,700 --> 00:00:27,060
+after the popular Apple stock dataset that contains two columns.
+
+10
+00:00:27,060 --> 00:00:30,000
+The first column is the date for everyday between Jan 1,
+
+11
+00:00:30,000 --> 00:00:32,700
+2018 to March 1, 2021.
+
+12
+00:00:32,700 --> 00:00:36,595
+The date is known in the ear of month and date format.
+
+13
+00:00:36,595 --> 00:00:39,020
+The second column is volume in millions,
+
+14
+00:00:39,020 --> 00:00:41,600
+denoting the number of shares traded during the trading day.
+
+15
+00:00:41,600 --> 00:00:44,480
+Let's start with some simple inspection of this data.
+
+16
+00:00:44,480 --> 00:00:47,285
+As we can see with the results of the describe method,
+
+17
+00:00:47,285 --> 00:00:53,195
+the volume columns values typically range from 10 to about 600 million.
+
+18
+00:00:53,195 --> 00:00:54,770
+Using the info method,
+
+19
+00:00:54,770 --> 00:00:57,080
+we can see that the date column has a date
+
+20
+00:00:57,080 --> 00:01:00,410
+type object because the dates were stored as strings.
+
+21
+00:01:00,410 --> 00:01:05,920
+The datatype of the volume column is into 64 as all the values are numerical.
+
+22
+00:01:05,920 --> 00:01:08,360
+Let's also plot our time series data.
+
+23
+00:01:08,360 --> 00:01:11,210
+We can do this by running df dot plot on our DataFrame,
+
+24
+00:01:11,210 --> 00:01:14,315
+plotting the data as the x-axis and the volume is the y-axis.
+
+25
+00:01:14,315 --> 00:01:16,340
+To visualize our time series data,
+
+26
+00:01:16,340 --> 00:01:19,325
+we can see that the data has a lot of dips and peaks.
+
+27
+00:01:19,325 --> 00:01:21,950
+Now let's get started with the wrangling process.
+
+28
+00:01:21,950 --> 00:01:24,170
+Our first immediate step should be to convert
+
+29
+00:01:24,170 --> 00:01:27,125
+the date column from an object to a pandas date-time.
+
+30
+00:01:27,125 --> 00:01:29,150
+We can easily manipulate the date.
+
+31
+00:01:29,150 --> 00:01:32,840
+We can do this using the two DateTime method on our date column.
+
+32
+00:01:32,840 --> 00:01:35,165
+Looking at the outputs of dot info again,
+
+33
+00:01:35,165 --> 00:01:38,780
+the datatype of date is now a day times 64 ns.
+
+34
+00:01:38,780 --> 00:01:42,140
+Ns means the nanosecond based time format
+
+35
+00:01:42,140 --> 00:01:44,905
+specifying the precision of the datetime object.
+
+36
+00:01:44,905 --> 00:01:47,000
+Now, with this datetime object,
+
+37
+00:01:47,000 --> 00:01:50,585
+we can actually do a lot of interesting operations now on the time.
+
+38
+00:01:50,585 --> 00:01:52,355
+Let's go two examples.
+
+39
+00:01:52,355 --> 00:01:55,565
+First, if I want to know how much time is captured by my dataset,
+
+40
+00:01:55,565 --> 00:01:58,460
+I can use the max and min functions on
+
+41
+00:01:58,460 --> 00:02:03,385
+my date column to see that the data captures 1,155 days.
+
+42
+00:02:03,385 --> 00:02:07,895
+If I want to extract information from the date columns such as the year, for example,
+
+43
+00:02:07,895 --> 00:02:11,990
+for eventually merging this data with another data table that also has a year column,
+
+44
+00:02:11,990 --> 00:02:14,890
+I can actually use this dt oxidizer by
+
+45
+00:02:14,890 --> 00:02:18,435
+denoting dt dot year to get the year of the datetime object.
+
+46
+00:02:18,435 --> 00:02:21,410
+Here I'm assigning it to a new column in our tiny DataFrame.
+
+47
+00:02:21,410 --> 00:02:24,470
+Now know how much easier this is than having to use
+
+48
+00:02:24,470 --> 00:02:27,680
+string manipulations to extract the year from the date.
+
+49
+00:02:27,680 --> 00:02:30,710
+Here I've created a separate year column pretty simply.
+
+50
+00:02:30,710 --> 00:02:34,490
+Now next comes the critical step with manipulating time series data.
+
+51
+00:02:34,490 --> 00:02:36,440
+Setting the index as our date column,
+
+52
+00:02:36,440 --> 00:02:40,400
+which we can typically do right after converting the column to a datetime object.
+
+53
+00:02:40,400 --> 00:02:43,820
+This turns the date column into a date-time index,
+
+54
+00:02:43,820 --> 00:02:48,670
+as we can see with the outputs of the dot info method and the dot index method.
+
+55
+00:02:48,670 --> 00:02:51,185
+Here we use set index and our date column,
+
+56
+00:02:51,185 --> 00:02:52,590
+turning it into an index.
+
+57
+00:02:52,590 --> 00:02:56,110
+We can check the type of the index using dot index.
+
+58
+00:02:56,110 --> 00:02:57,995
+Here we confirm it's a date-time index.
+
+59
+00:02:57,995 --> 00:03:01,340
+If we don't see any index or date variable for this DataFrame,
+
+60
+00:03:01,340 --> 00:03:03,140
+we're going to run into a few limitations.
+
+61
+00:03:03,140 --> 00:03:06,230
+For example, we can do one thing which is called resampling.
+
+62
+00:03:06,230 --> 00:03:09,020
+A very powerful and popular method that's similar to
+
+63
+00:03:09,020 --> 00:03:12,390
+a group by but for time series. Let's look into that.
+
+64
+00:03:12,390 --> 00:03:14,400
+Resampling can do two main things,
+
+65
+00:03:14,400 --> 00:03:19,000
+provide a time-based grouping with a target frequency and aggregate based on that.
+
+66
+00:03:19,000 --> 00:03:22,865
+Let's say I want to get the yearly mean volume in my dataset.
+
+67
+00:03:22,865 --> 00:03:26,990
+We're going to do this by resampling by first using DFS on re-sample Y,
+
+68
+00:03:26,990 --> 00:03:28,180
+where Y is the year.
+
+69
+00:03:28,180 --> 00:03:31,520
+This is the rule parameters specifying our target for the conversion.
+
+70
+00:03:31,520 --> 00:03:37,145
+Then I'll use dot mean on the volume to get the yearly average volume in my dataset.
+
+71
+00:03:37,145 --> 00:03:38,435
+Take a look at the results.
+
+72
+00:03:38,435 --> 00:03:42,815
+I can now see the mean volume from my dataset for each year.
+
+73
+00:03:42,815 --> 00:03:47,300
+We can actually plot these results by simply attaching dotplot to the end of this block,
+
+74
+00:03:47,300 --> 00:03:51,740
+and now we have a line plot of the results and an yearly rather than daily granularity.
+
+75
+00:03:51,740 --> 00:03:53,350
+Here's another handy method.
+
+76
+00:03:53,350 --> 00:03:56,705
+Let's say I'd like to get what day of the week the date falls on.
+
+77
+00:03:56,705 --> 00:04:01,190
+I can use day of week on my index to get whether the day is a Monday,
+
+78
+00:04:01,190 --> 00:04:03,320
+a Tuesday, and so on until Sunday,
+
+79
+00:04:03,320 --> 00:04:05,225
+where Monday is zero, Tuesday one,
+
+80
+00:04:05,225 --> 00:04:09,260
+Sunday is six, then I can do things like get all the rows for the days are
+
+81
+00:04:09,260 --> 00:04:15,160
+a Monday as I can do here with isin function and get the mean volume across all Mondays.
+
+82
+00:04:15,160 --> 00:04:18,560
+Now, what about manipulating our new date-time index further?
+
+83
+00:04:18,560 --> 00:04:22,160
+We can also convert our date variable to a specified format.
+
+84
+00:04:22,160 --> 00:04:24,650
+Here I make a copy of my DataFrame so I don't
+
+85
+00:04:24,650 --> 00:04:27,275
+influence the original date-time index, that's neat.
+
+86
+00:04:27,275 --> 00:04:33,920
+I then use the string F time on my DataFrames index specifying the following format.
+
+87
+00:04:33,920 --> 00:04:35,855
+Percent B means full month name,
+
+88
+00:04:35,855 --> 00:04:37,355
+percent d means day of the month,
+
+89
+00:04:37,355 --> 00:04:38,765
+then followed by a comment.
+
+90
+00:04:38,765 --> 00:04:40,775
+Finally, percent Y means year.
+
+91
+00:04:40,775 --> 00:04:43,580
+For example, we are turning our date format from the year, month,
+
+92
+00:04:43,580 --> 00:04:47,765
+day to the January 1, 2018 format.
+
+93
+00:04:47,765 --> 00:04:51,715
+As we can see here, the index is successfully modified.
+
+94
+00:04:51,715 --> 00:04:53,445
+Here's another cool thing.
+
+95
+00:04:53,445 --> 00:04:56,615
+If we don't set the index as our date variable for this DataFrame,
+
+96
+00:04:56,615 --> 00:05:00,325
+we would have been forced to use the.dt accessor.
+
+97
+00:05:00,325 --> 00:05:03,920
+For example, in order to convert our date variable to a specific format,
+
+98
+00:05:03,920 --> 00:05:09,875
+we would have had to use DFT date indexing on the date column dt dot strip time.
+
+99
+00:05:09,875 --> 00:05:14,090
+Let's talk about one last thing with cleaning time series data, missing data.
+
+100
+00:05:14,090 --> 00:05:16,100
+Take a look at this new DataFrame I loaded.
+
+101
+00:05:16,100 --> 00:05:18,710
+Again, one of the first types of cleaning time series data is
+
+102
+00:05:18,710 --> 00:05:21,860
+converting your day column to datetime objects.
+
+103
+00:05:21,860 --> 00:05:26,495
+We can see that there's a number of NA values by using is na method,
+
+104
+00:05:26,495 --> 00:05:29,410
+and we can actually sum up the number of values as well.
+
+105
+00:05:29,410 --> 00:05:32,090
+If you want, you can investigate this missing data further
+
+106
+00:05:32,090 --> 00:05:34,850
+using few of the methods we discussed above and others,
+
+107
+00:05:34,850 --> 00:05:37,190
+for example using the day of the week method to figure
+
+108
+00:05:37,190 --> 00:05:39,845
+out which days have missing data in your dataset.
+
+109
+00:05:39,845 --> 00:05:42,545
+Let's actually jump to filling these missing values.
+
+110
+00:05:42,545 --> 00:05:44,900
+We can use the fill NA function,
+
+111
+00:05:44,900 --> 00:05:46,210
+as we're familiar with,
+
+112
+00:05:46,210 --> 00:05:48,480
+and specify how we'd like to fill the values.
+
+113
+00:05:48,480 --> 00:05:50,795
+For example, we could use the mean or the median.
+
+114
+00:05:50,795 --> 00:05:53,585
+Here, I use the ffill perimeter,
+
+115
+00:05:53,585 --> 00:05:58,790
+which replaces each missing value with the previous valid value in the same column.
+
+116
+00:05:58,790 --> 00:06:01,505
+After running this, if we check the number of Na's again,
+
+117
+00:06:01,505 --> 00:06:05,870
+notice how the number of Na's have disappeared after our filename.
+
+118
+00:06:05,870 --> 00:06:08,630
+We would typically extend this analysis by then doing
+
+119
+00:06:08,630 --> 00:06:13,200
+a detailed programmatic assessment to confirm that the Na values are gone.
+

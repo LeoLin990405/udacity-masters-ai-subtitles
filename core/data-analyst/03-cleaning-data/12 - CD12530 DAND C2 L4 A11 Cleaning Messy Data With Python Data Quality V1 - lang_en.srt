@@ -1,0 +1,540 @@
+1
+00:00:00,000 --> 00:00:04,125
+During the previous demo while cleaning up the missing data and data tininess issues,
+
+2
+00:00:04,125 --> 00:00:06,345
+we also addressed a few data quality issues.
+
+3
+00:00:06,345 --> 00:00:08,640
+Notably, we handle the completeness issue where
+
+4
+00:00:08,640 --> 00:00:10,980
+we were missing some records in the data set.
+
+5
+00:00:10,980 --> 00:00:15,975
+We also addressed the accuracy and completeness issue with the HPAC 1 change values.
+
+6
+00:00:15,975 --> 00:00:19,290
+We also address the NA values in the Auralin and Novodra columns
+
+7
+00:00:19,290 --> 00:00:22,530
+by creating the three new separate columns in the treatments data frame.
+
+8
+00:00:22,530 --> 00:00:26,385
+Now, let's explore some remaining issues from the data quality side.
+
+9
+00:00:26,385 --> 00:00:28,950
+Let's take a look at validity first.
+
+10
+00:00:28,950 --> 00:00:31,535
+The first validity issue is in the treatments table,
+
+11
+00:00:31,535 --> 00:00:35,255
+the dosage is formatted as two digits plus the character you format.
+
+12
+00:00:35,255 --> 00:00:37,820
+Ideally, as we've previously recognized,
+
+13
+00:00:37,820 --> 00:00:40,100
+we do want the values for both these columns to be
+
+14
+00:00:40,100 --> 00:00:43,520
+formatted as integers to make it easier to access this info.
+
+15
+00:00:43,520 --> 00:00:47,240
+We want to remove you from the texts in each of the columns.
+
+16
+00:00:47,240 --> 00:00:51,215
+We can do this using the string.strip method and then use
+
+17
+00:00:51,215 --> 00:00:55,400
+astype int to ensure that these values are of the integer type.
+
+18
+00:00:55,400 --> 00:00:58,430
+Let's test that this was successful by ensuring that
+
+19
+00:00:58,430 --> 00:01:02,350
+the datatypes for the dose start and dose and columns are integers.
+
+20
+00:01:02,350 --> 00:01:05,290
+We can see this using the dot D types method.
+
+21
+00:01:05,290 --> 00:01:08,300
+We can also actually use a Python assert statement
+
+22
+00:01:08,300 --> 00:01:10,810
+to check programmatically that the datatype is correct.
+
+23
+00:01:10,810 --> 00:01:14,855
+We'll go over more info on how to use Python asserts in a later section.
+
+24
+00:01:14,855 --> 00:01:18,680
+In the patient's table is zip code is a float, not a string.
+
+25
+00:01:18,680 --> 00:01:20,930
+This erroneous datatype causes
+
+26
+00:01:20,930 --> 00:01:24,830
+potential data errors because zip codes are not meant to be treated as numerical values.
+
+27
+00:01:24,830 --> 00:01:27,485
+When stored as a float zip codes with leading zeros,
+
+28
+00:01:27,485 --> 00:01:30,800
+which are common in the Northeastern United States will lose those zero,
+
+29
+00:01:30,800 --> 00:01:34,700
+for example on the row 07095.0,
+
+30
+00:01:34,700 --> 00:01:37,885
+the current zip code should be 07095.
+
+31
+00:01:37,885 --> 00:01:43,970
+Let's convert the zip codes column datatype from a float to a string using astype str.
+
+32
+00:01:43,970 --> 00:01:48,100
+We'll then remove the dots zero using string slicing.
+
+33
+00:01:48,100 --> 00:01:51,410
+Then we're going to use the third method in order to add
+
+34
+00:01:51,410 --> 00:01:55,565
+leading zeros to any zip codes with less than five digits.
+
+35
+00:01:55,565 --> 00:01:59,780
+However, this will also convert missing values 000n.
+
+36
+00:01:59,780 --> 00:02:03,355
+We'll want to replace this with np.nan.
+
+37
+00:02:03,355 --> 00:02:07,280
+Now we only have zip codes that are five digits in our data frame.
+
+38
+00:02:07,280 --> 00:02:09,770
+Let's look at another issue in our patient's table,
+
+39
+00:02:09,770 --> 00:02:11,600
+we have a few erroneous datatypes,
+
+40
+00:02:11,600 --> 00:02:12,980
+assigned sex date,
+
+41
+00:02:12,980 --> 00:02:14,285
+and birth date columns.
+
+42
+00:02:14,285 --> 00:02:15,680
+We can ensure that
+
+43
+00:02:15,680 --> 00:02:21,080
+the assigned sex and state variables are represented as categorical variables using
+
+44
+00:02:21,080 --> 00:02:27,815
+the astype method will also convert the birth date variable to date time object.
+
+45
+00:02:27,815 --> 00:02:30,860
+We'll discuss more about daytime type later.
+
+46
+00:02:30,860 --> 00:02:33,500
+As we can see here, we use the astype method
+
+47
+00:02:33,500 --> 00:02:36,080
+for converting these brambles to categories to_today
+
+48
+00:02:36,080 --> 00:02:39,335
+time to convert our birthday column to_datetime type
+
+49
+00:02:39,335 --> 00:02:42,025
+that we can confirm using the deed types method.
+
+50
+00:02:42,025 --> 00:02:45,600
+Let's now turn to accuracy issues with the patient's table.
+
+51
+00:02:45,600 --> 00:02:48,560
+One of the issues that we encountered previously is that a patient
+
+52
+00:02:48,560 --> 00:02:52,265
+Tim Neudorf height is 27 inches instead of 72 inches.
+
+53
+00:02:52,265 --> 00:02:56,480
+Let's do a quick replace of height for rows in the patient's table that have a height of
+
+54
+00:02:56,480 --> 00:03:00,915
+27 with 72 using dot replace on archived column.
+
+55
+00:03:00,915 --> 00:03:03,860
+Let's do a check in our dataset visually to make sure we don't have
+
+56
+00:03:03,860 --> 00:03:07,940
+any heights below 30 inches to also help us catch any similar issues.
+
+57
+00:03:07,940 --> 00:03:10,955
+We see that there are no issues after doing the indexing.
+
+58
+00:03:10,955 --> 00:03:15,500
+No rows essentially that are showing a height of less than 30 inches, which is great.
+
+59
+00:03:15,500 --> 00:03:21,005
+We can also pull up team's record by indexing using his surname and see that it worked.
+
+60
+00:03:21,005 --> 00:03:23,095
+Our height is now corrected.
+
+61
+00:03:23,095 --> 00:03:26,000
+Here's another simple issue where we have
+
+62
+00:03:26,000 --> 00:03:29,435
+an issue of a name Dsvid, which should be David.
+
+63
+00:03:29,435 --> 00:03:31,580
+Similarly, we can use the replace method and check
+
+64
+00:03:31,580 --> 00:03:34,310
+the road to make sure that it went correct.
+
+65
+00:03:34,310 --> 00:03:37,100
+Let's now briefly go over a consistency issue.
+
+66
+00:03:37,100 --> 00:03:40,055
+Here we identified an issue where one of the patients reported weight
+
+67
+00:03:40,055 --> 00:03:43,085
+was actually reported in kilograms is 48.8,
+
+68
+00:03:43,085 --> 00:03:44,885
+but it should be reported in pounds.
+
+69
+00:03:44,885 --> 00:03:47,880
+Let's first describe a indexing mask.
+
+70
+00:03:47,880 --> 00:03:51,755
+During the assessment step we identified the patient's name is Zaitseva,
+
+71
+00:03:51,755 --> 00:03:54,410
+will use the mask to get the weight of the patient.
+
+72
+00:03:54,410 --> 00:03:57,095
+Next, we'll use a dot loc to access this row.
+
+73
+00:03:57,095 --> 00:03:58,495
+In the weight column,
+
+74
+00:03:58,495 --> 00:04:01,370
+we're going to go ahead and replace the value with the value times
+
+75
+00:04:01,370 --> 00:04:04,835
+the conversion factor to convert the value to pounds from kilograms.
+
+76
+00:04:04,835 --> 00:04:08,120
+Now using sort values, we check 48.8.
+
+77
+00:04:08,120 --> 00:04:09,770
+Shouldn't be the lowest value anymore.
+
+78
+00:04:09,770 --> 00:04:11,635
+It's not appearing, which is fantastic.
+
+79
+00:04:11,635 --> 00:04:14,370
+Knowing that none of our patients are below 100 pounds.
+
+80
+00:04:14,370 --> 00:04:17,150
+We can also use a Python assert statement to check
+
+81
+00:04:17,150 --> 00:04:21,695
+the minimum value in the dataset for the weight column is greater than 100.
+
+82
+00:04:21,695 --> 00:04:24,170
+Let's take a look at our final two issues.
+
+83
+00:04:24,170 --> 00:04:27,995
+Here we'll look at uniqueness and validity issues on the patient's data frame.
+
+84
+00:04:27,995 --> 00:04:30,410
+In the assessment stage for our patients' table,
+
+85
+00:04:30,410 --> 00:04:35,255
+we identified six duplicates for the last name Doe and 123 Main Street as the address.
+
+86
+00:04:35,255 --> 00:04:38,510
+Let's assume a scenario where we communicated with our data provider and they
+
+87
+00:04:38,510 --> 00:04:42,005
+confirm that John Doe is accurate records are simply non-recoverable,
+
+88
+00:04:42,005 --> 00:04:44,675
+so we have to delete them all from the patient's table.
+
+89
+00:04:44,675 --> 00:04:47,540
+Here we're specifying that the rows in which surname is
+
+90
+00:04:47,540 --> 00:04:51,065
+Doe and the given name is John shouldn't be deleted.
+
+91
+00:04:51,065 --> 00:04:54,290
+Now, after doing the indexing here accordingly,
+
+92
+00:04:54,290 --> 00:04:56,720
+and then going ahead and deleting them using
+
+93
+00:04:56,720 --> 00:04:59,600
+the not equal sign or not including them Essentially.
+
+94
+00:04:59,600 --> 00:05:01,580
+When we use the value counts function,
+
+95
+00:05:01,580 --> 00:05:03,050
+we can confirm that John Doe,
+
+96
+00:05:03,050 --> 00:05:04,760
+his name isn't coming up.
+
+97
+00:05:04,760 --> 00:05:06,950
+We can also check that his addresses and popping up
+
+98
+00:05:06,950 --> 00:05:10,445
+anymore by running value counts on the address variable.
+
+99
+00:05:10,445 --> 00:05:13,310
+Now let's take a look at the final issue.
+
+100
+00:05:13,310 --> 00:05:16,730
+We have a few records and our patient's table that are nicknames.
+
+101
+00:05:16,730 --> 00:05:18,510
+These are Jake Jacobson,
+
+102
+00:05:18,510 --> 00:05:22,220
+Pakistan, and Sandy Taylor rows from the patient's table.
+
+103
+00:05:22,220 --> 00:05:25,790
+This is an issue because for example Jake and Jakob are
+
+104
+00:05:25,790 --> 00:05:27,740
+the same person and Pat and Patrick is
+
+105
+00:05:27,740 --> 00:05:30,395
+the same person because they share the same address.
+
+106
+00:05:30,395 --> 00:05:33,050
+These nicknames are not in the treatments table and
+
+107
+00:05:33,050 --> 00:05:35,915
+so we need to be careful when removing the duplicate rows.
+
+108
+00:05:35,915 --> 00:05:37,550
+Removing the wrong name would create
+
+109
+00:05:37,550 --> 00:05:40,865
+a consistency issue between the patients and treatments tables.
+
+110
+00:05:40,865 --> 00:05:43,465
+There's a couple of things that we need to note here.
+
+111
+00:05:43,465 --> 00:05:47,855
+These records with patients' nicknames are all the second occurrence,
+
+112
+00:05:47,855 --> 00:05:50,150
+as we can see here, for example,
+
+113
+00:05:50,150 --> 00:05:51,965
+see here with Jacobson's records where
+
+114
+00:05:51,965 --> 00:05:55,190
+Jake Jacobson happens after Jake Jacobson's record.
+
+115
+00:05:55,190 --> 00:06:01,295
+These are also the only occurrences of non null duplicate addresses as well.
+
+116
+00:06:01,295 --> 00:06:05,000
+Let's retrieve the rows with nicknames by
+
+117
+00:06:05,000 --> 00:06:09,095
+finding all the rows within duplicated and non null addresses.
+
+118
+00:06:09,095 --> 00:06:11,150
+We first use the duplicated methods on
+
+119
+00:06:11,150 --> 00:06:14,200
+the address column to find all rows with a duplicated address.
+
+120
+00:06:14,200 --> 00:06:18,235
+Then we use the not null method defined rows with nonmetal addresses.
+
+121
+00:06:18,235 --> 00:06:21,170
+We're using the ampersand operator here to connect
+
+122
+00:06:21,170 --> 00:06:24,140
+the two methods and ensure that the results meet both conditions,
+
+123
+00:06:24,140 --> 00:06:27,305
+duplicate address, and a non null address.
+
+124
+00:06:27,305 --> 00:06:31,325
+We can successfully locate this rows after running this block of code.
+
+125
+00:06:31,325 --> 00:06:34,250
+Now we want to remove these rows so we can go
+
+126
+00:06:34,250 --> 00:06:37,310
+ahead and add the Tilda operator that represents the inverse,
+
+127
+00:06:37,310 --> 00:06:41,795
+meaning we don't want to have these rows with the not null duplicate addresses,
+
+128
+00:06:41,795 --> 00:06:43,625
+which are the rows that we're seeing above.
+
+129
+00:06:43,625 --> 00:06:46,980
+Then we assign the results to our patients cleaned data frame.
+
+130
+00:06:46,980 --> 00:06:49,430
+Now we have excluded all of the rows that have
+
+131
+00:06:49,430 --> 00:06:52,280
+these types of duplicate values that we don't want.
+
+132
+00:06:52,280 --> 00:06:55,145
+Using visual assessment and programmatic indexing,
+
+133
+00:06:55,145 --> 00:06:59,270
+we can see there's no more presence of names in the given name column for Jacobson.
+
+134
+00:06:59,270 --> 00:07:04,340
+No more Jake here or Pat for Brixton and similarly for the surname Taylor,
+
+135
+00:07:04,340 --> 00:07:06,990
+we also see no more nicknames.
+

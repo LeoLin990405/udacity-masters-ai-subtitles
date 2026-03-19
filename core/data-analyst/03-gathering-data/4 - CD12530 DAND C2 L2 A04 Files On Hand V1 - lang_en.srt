@@ -1,0 +1,56 @@
+1
+00:00:00,000 --> 00:00:04,290
+First, let's talk about the easiest way to get data files on hand.
+
+2
+00:00:04,290 --> 00:00:08,040
+This is the case where an individual or an organization gathers the data
+
+3
+00:00:08,040 --> 00:00:11,835
+for you and simply hands over data files to you, the data wrangler.
+
+4
+00:00:11,835 --> 00:00:13,860
+They may do this by, for example,
+
+5
+00:00:13,860 --> 00:00:17,640
+sending the files via email or posting it on a Cloud storage service,
+
+6
+00:00:17,640 --> 00:00:20,430
+like Google Drive or Dropbox for you to download.
+
+7
+00:00:20,430 --> 00:00:23,220
+They may also host the data on a website or
+
+8
+00:00:23,220 --> 00:00:26,610
+a portal available to specific users or the general public.
+
+9
+00:00:26,610 --> 00:00:29,445
+When opening data files that were provided to you,
+
+10
+00:00:29,445 --> 00:00:33,375
+ensure that you know that the final is safe to open by checking this source
+
+11
+00:00:33,375 --> 00:00:37,975
+whether or not the file size seems accurate and potentially using a virus scanner.
+
+12
+00:00:37,975 --> 00:00:41,795
+Check the file extension as well and open it via the right application,
+
+13
+00:00:41,795 --> 00:00:44,945
+whether that's your operating systems notepad application,
+
+14
+00:00:44,945 --> 00:00:48,990
+Microsoft Excel, Google Sheets, or another application.
+

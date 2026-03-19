@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:02,985
+In this demo, we'll be looking at a synthetic dataset of
+
+2
+00:00:02,985 --> 00:00:07,800
+Phase 2 clinical trial data for a new innovative oral insulin called Auralin,
+
+3
+00:00:07,800 --> 00:00:11,430
+a proprietary capsule that can solve stomach lining issues.
+
+4
+00:00:11,430 --> 00:00:14,925
+Three hundred and fifty patients are participating in this trial.
+
+5
+00:00:14,925 --> 00:00:17,790
+Half of the patients are being treated with Auralin and the other
+
+6
+00:00:17,790 --> 00:00:21,825
+175 being treated with a popular injectable insulin called Novodra.
+
+7
+00:00:21,825 --> 00:00:24,585
+By comparing key metrics between these two drugs,
+
+8
+00:00:24,585 --> 00:00:26,850
+we can determine if Auralin is effective.
+
+9
+00:00:26,850 --> 00:00:30,690
+Now note that Auralin and Novodra are not real insulin products.
+
+10
+00:00:30,690 --> 00:00:35,220
+This clinical trial data was fabricated with the consultation of real doctors to ensure
+
+11
+00:00:35,220 --> 00:00:37,815
+plausibility and reflecting real data issues
+
+12
+00:00:37,815 --> 00:00:40,650
+in the healthcare domain for the purposes of this course.
+
+13
+00:00:40,650 --> 00:00:43,910
+Phase 2 trials are intended to test the efficacy and
+
+14
+00:00:43,910 --> 00:00:47,680
+the dose-response of a drug and identify adverse reactions.
+
+15
+00:00:47,680 --> 00:00:52,250
+We have three data tables as part of this dataset, the patient's table,
+
+16
+00:00:52,250 --> 00:00:55,325
+which is giving us important information about our hypothetical patients,
+
+17
+00:00:55,325 --> 00:00:56,675
+like their gender, name,
+
+18
+00:00:56,675 --> 00:00:59,695
+height, weight, address, etc,
+
+19
+00:00:59,695 --> 00:01:02,570
+the treatments table, which is providing us with
+
+20
+00:01:02,570 --> 00:01:05,675
+information on the detailed treatment information.
+
+21
+00:01:05,675 --> 00:01:09,830
+This table includes the names of patients who participated in clinical trials,
+
+22
+00:01:09,830 --> 00:01:12,980
+the dosage of Auralin and Novodra and the patient's blood
+
+23
+00:01:12,980 --> 00:01:17,155
+sugar or hemoglobin levels indicated by HbA1c.
+
+24
+00:01:17,155 --> 00:01:21,740
+The Auralin and Novodra columns contain many useful information points.
+
+25
+00:01:21,740 --> 00:01:24,770
+The first number before the dash in this column is
+
+26
+00:01:24,770 --> 00:01:27,020
+the baseline median daily dose of
+
+27
+00:01:27,020 --> 00:01:31,370
+insulin from the week prior to switching to Auralin or Novodra.
+
+28
+00:01:31,370 --> 00:01:33,920
+The second number after the dash is
+
+29
+00:01:33,920 --> 00:01:38,510
+the ending median daily dose of insulin at the end of the 24 weeks of treatment.
+
+30
+00:01:38,510 --> 00:01:41,660
+Now both are measured in units, short-form u,
+
+31
+00:01:41,660 --> 00:01:45,740
+which is the international unit of measurement and the standard measurement for insulin.
+
+32
+00:01:45,740 --> 00:01:48,690
+TheHbA1c start column is
+
+33
+00:01:48,690 --> 00:01:52,750
+the patient's HbA1c level at the beginning of the first week of treatment.
+
+34
+00:01:52,750 --> 00:01:55,910
+Similarly, theHbA1c end column is
+
+35
+00:01:55,910 --> 00:02:00,400
+the patient's hemoglobin level at the end of the last week of the treatment.
+
+36
+00:02:00,400 --> 00:02:03,620
+Here our HbA1C change column is
+
+37
+00:02:03,620 --> 00:02:07,475
+the change in patient's hemoglobin levels from the start of the treatment to the end,
+
+38
+00:02:07,475 --> 00:02:12,650
+ie, it's theHbA1c start column minus HbA1c end.
+
+39
+00:02:12,650 --> 00:02:16,600
+This variable is determining the effectiveness of our insulin.
+
+40
+00:02:16,600 --> 00:02:20,330
+Finally, we have our adverse reactions table which is telling us
+
+41
+00:02:20,330 --> 00:02:24,050
+the name of the patient and whether or not they had an adverse reaction.
+
+42
+00:02:24,050 --> 00:02:27,485
+In this demo, we'll look at programmatic assessment of data quality,
+
+43
+00:02:27,485 --> 00:02:29,210
+where we will use pandas, functions,
+
+44
+00:02:29,210 --> 00:02:31,655
+and methods to reveal our data's quality.
+
+45
+00:02:31,655 --> 00:02:35,700
+Here I'm going to start off this demo by importing the pandas library and loading
+
+46
+00:02:35,700 --> 00:02:38,060
+in the synthetic Phase 2 clinical trial data
+
+47
+00:02:38,060 --> 00:02:41,275
+set for the hypothetical oral insulin called Auralin.
+
+48
+00:02:41,275 --> 00:02:44,480
+Here I'm loading our patients and treatments data tables
+
+49
+00:02:44,480 --> 00:02:47,860
+using read CSV into a pandas DataFrames.
+
+50
+00:02:47,860 --> 00:02:50,540
+In practice, programmatic assessment is often
+
+51
+00:02:50,540 --> 00:02:53,120
+a combination of programming and visual inspection.
+
+52
+00:02:53,120 --> 00:02:56,540
+Let's go ahead and kick-start this by looking at the treatments DataFrame,
+
+53
+00:02:56,540 --> 00:02:59,810
+which has a number of variables that are corresponding to patient treatment.
+
+54
+00:02:59,810 --> 00:03:02,435
+To take a look at the first few rows of our data,
+
+55
+00:03:02,435 --> 00:03:05,435
+we can use the.head method that we're now familiar with,
+
+56
+00:03:05,435 --> 00:03:08,155
+which by default prints the first five rows.
+
+57
+00:03:08,155 --> 00:03:12,200
+Now, if we want to look at the last few rows of our data to validate it was
+
+58
+00:03:12,200 --> 00:03:16,430
+loaded correctly and get a glimpse of how the data is at the end of the DataFrame,
+
+59
+00:03:16,430 --> 00:03:18,500
+we can use the.tail method in
+
+60
+00:03:18,500 --> 00:03:22,325
+a similar way which is displaying the last few rows of our data.
+
+61
+00:03:22,325 --> 00:03:27,110
+Here's one other method for looking at rows in the DataFrame,.sample.
+
+62
+00:03:27,110 --> 00:03:31,550
+Dot sample is an example method of non-directed programmatic assessment,
+
+63
+00:03:31,550 --> 00:03:33,230
+which means randomly leveraging
+
+64
+00:03:33,230 --> 00:03:36,730
+programmatic assessments without any directed goal in mind.
+
+65
+00:03:36,730 --> 00:03:41,015
+Dot sample returns, a random sample of records from the table.
+
+66
+00:03:41,015 --> 00:03:44,345
+In this case, for example df.sample returns
+
+67
+00:03:44,345 --> 00:03:48,530
+one entry randomly from the dataset and df.sample 5,
+
+68
+00:03:48,530 --> 00:03:50,710
+returns five random entries.
+
+69
+00:03:50,710 --> 00:03:53,210
+It's easy to make incorrect assumptions
+
+70
+00:03:53,210 --> 00:03:55,775
+from just viewing the head and tail of the dataset.
+
+71
+00:03:55,775 --> 00:03:58,655
+Plugging samples randomly from everywhere
+
+72
+00:03:58,655 --> 00:04:02,050
+helps you get a good understanding of the inners of datasets.
+
+73
+00:04:02,050 --> 00:04:06,920
+Additionally, using programmatic assessments to view random samples of data can help you
+
+74
+00:04:06,920 --> 00:04:12,085
+decide what to look for with more pinpointed visual and programmatic assessments.
+
+75
+00:04:12,085 --> 00:04:14,450
+One issue with.sample is that
+
+76
+00:04:14,450 --> 00:04:17,240
+random rows are picked each time that you run the function,
+
+77
+00:04:17,240 --> 00:04:19,825
+so the rows are different every time.
+
+78
+00:04:19,825 --> 00:04:23,255
+If you would like to ensure your implementation is reproducible,
+
+79
+00:04:23,255 --> 00:04:27,995
+you can use random seeds with.sample and sending the random state to an integer.
+
+80
+00:04:27,995 --> 00:04:30,830
+For example here I set the random state to two.
+
+81
+00:04:30,830 --> 00:04:33,455
+If you run this code block multiple times,
+
+82
+00:04:33,455 --> 00:04:37,650
+the row selected randomly do not change after each run.
+

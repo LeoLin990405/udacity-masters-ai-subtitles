@@ -1,0 +1,364 @@
+1
+00:00:00,000 --> 00:00:02,865
+There are some common issues that make data messy.
+
+2
+00:00:02,865 --> 00:00:06,180
+Column header is being values rather than variable names.
+
+3
+00:00:06,180 --> 00:00:09,030
+Multiple variables being stored in one column,
+
+4
+00:00:09,030 --> 00:00:12,300
+variables being stored in both rows and columns.
+
+5
+00:00:12,300 --> 00:00:16,110
+Multiple types of observational units being stored in the same table,
+
+6
+00:00:16,110 --> 00:00:20,250
+and a single observational unit being stored in multiple tables.
+
+7
+00:00:20,250 --> 00:00:22,170
+Data wranglers can use them as
+
+8
+00:00:22,170 --> 00:00:25,215
+a basic guidance to figure out whether their data is messy.
+
+9
+00:00:25,215 --> 00:00:28,440
+In this section, we'll leverage the same concepts of directed and
+
+10
+00:00:28,440 --> 00:00:32,550
+non-directive visual assessment for data quality to identify issues with data structure.
+
+11
+00:00:32,550 --> 00:00:35,100
+Now, let's dive into these problems.
+
+12
+00:00:35,100 --> 00:00:38,145
+Take a look at this first example of untidy data.
+
+13
+00:00:38,145 --> 00:00:41,490
+Here, we have the score data for students who took
+
+14
+00:00:41,490 --> 00:00:44,920
+five tests with the scores ranging from 0-100.
+
+15
+00:00:44,920 --> 00:00:47,450
+We have the names of the students as the first column
+
+16
+00:00:47,450 --> 00:00:50,440
+and different ranges of test scores as part of the header.
+
+17
+00:00:50,440 --> 00:00:53,610
+Within the table, we have how many tests taken by
+
+18
+00:00:53,610 --> 00:00:57,645
+a student falling within each score range for example,
+
+19
+00:00:57,645 --> 00:01:01,250
+Amy scored less than 50 marks on one of her tests and scored
+
+20
+00:01:01,250 --> 00:01:05,170
+between 50-70 marks on four of her other tests.
+
+21
+00:01:05,170 --> 00:01:08,165
+Notice how the column headers at this dataset are values,
+
+22
+00:01:08,165 --> 00:01:10,430
+which makes it complicated to understand the data.
+
+23
+00:01:10,430 --> 00:01:12,635
+Nevertheless, programmatically parse it.
+
+24
+00:01:12,635 --> 00:01:16,520
+This can easily be detected visually by looking at the header of the table.
+
+25
+00:01:16,520 --> 00:01:19,700
+Take a look at the right table where the data has been restructured.
+
+26
+00:01:19,700 --> 00:01:22,550
+We now have three columns: one for the name of the student,
+
+27
+00:01:22,550 --> 00:01:24,500
+one for each of the test score categories,
+
+28
+00:01:24,500 --> 00:01:26,420
+and one for the frequency.
+
+29
+00:01:26,420 --> 00:01:28,895
+Now, take a look at the example on the left,
+
+30
+00:01:28,895 --> 00:01:31,100
+where we have two columns in our data set that are
+
+31
+00:01:31,100 --> 00:01:34,555
+supposed to correspond to a student's names and their test scores.
+
+32
+00:01:34,555 --> 00:01:37,940
+However, notice how in the name column the values
+
+33
+00:01:37,940 --> 00:01:40,970
+are structured and students names hyphen their age.
+
+34
+00:01:40,970 --> 00:01:43,340
+Here, we actually have two variables,
+
+35
+00:01:43,340 --> 00:01:46,105
+name and age, that are being stored in a single column.
+
+36
+00:01:46,105 --> 00:01:48,215
+If we wanted to access students age,
+
+37
+00:01:48,215 --> 00:01:52,955
+we would have to do unnecessary parsing of the name column just to get to these values.
+
+38
+00:01:52,955 --> 00:01:56,810
+We can instead separate out these columns as we see in the right,
+
+39
+00:01:56,810 --> 00:02:00,050
+so multiple variables are stored in separate columns.
+
+40
+00:02:00,050 --> 00:02:02,060
+Here's a very simple example of
+
+41
+00:02:02,060 --> 00:02:07,060
+another common data tidiness issue variables being stored in both rows and columns.
+
+42
+00:02:07,060 --> 00:02:09,815
+Here we have the student's name, their age,
+
+43
+00:02:09,815 --> 00:02:12,200
+and some optional tests that they can opt into,
+
+44
+00:02:12,200 --> 00:02:13,775
+and their test scores.
+
+45
+00:02:13,775 --> 00:02:17,570
+Notice how the category of tests A, B, C,
+
+46
+00:02:17,570 --> 00:02:23,450
+or D is stored across the column and the test scores are being stored across rows.
+
+47
+00:02:23,450 --> 00:02:26,540
+We can also see that there's a number of NA values for
+
+48
+00:02:26,540 --> 00:02:30,115
+students who decided not to take some of the optional tasks.
+
+49
+00:02:30,115 --> 00:02:32,025
+Overall pretty confusing.
+
+50
+00:02:32,025 --> 00:02:34,820
+Let's see one way that we can consolidate this data.
+
+51
+00:02:34,820 --> 00:02:37,415
+Take a look at the new DataFrame on the bottom.
+
+52
+00:02:37,415 --> 00:02:40,280
+Now we have student's name and age,
+
+53
+00:02:40,280 --> 00:02:43,925
+and we now have the test category as a separate column.
+
+54
+00:02:43,925 --> 00:02:47,950
+We also have the test score for the cases where students did take the test.
+
+55
+00:02:47,950 --> 00:02:52,090
+We can avoid unnecessary NA values with the score column.
+
+56
+00:02:52,090 --> 00:02:55,220
+We do see some duplicated grows, for example,
+
+57
+00:02:55,220 --> 00:02:58,340
+Marc and Naima's name and age are repeated multiple times,
+
+58
+00:02:58,340 --> 00:03:01,745
+which we may also need to clean during the cleaning stage.
+
+59
+00:03:01,745 --> 00:03:04,715
+I'd like to introduce a new movie ratings dataset to you,
+
+60
+00:03:04,715 --> 00:03:06,440
+where we have a couple of columns.
+
+61
+00:03:06,440 --> 00:03:10,070
+The movie ID corresponding to an ID associated with the movie,
+
+62
+00:03:10,070 --> 00:03:12,110
+the movie title of a viewer score,
+
+63
+00:03:12,110 --> 00:03:13,370
+the viewer or in other words,
+
+64
+00:03:13,370 --> 00:03:16,510
+the reviewer's name, their income, and their age.
+
+65
+00:03:16,510 --> 00:03:20,030
+Now, the context of this dataset may immediately appear to be confusing.
+
+66
+00:03:20,030 --> 00:03:24,305
+Here, we're defining the observational unit as an individual movie,
+
+67
+00:03:24,305 --> 00:03:27,500
+which includes data on its ID, title, and score.
+
+68
+00:03:27,500 --> 00:03:31,060
+Where is the viewers income and age coming into the picture?
+
+69
+00:03:31,060 --> 00:03:35,420
+This is a case of multiple types of observational units stored in the same table.
+
+70
+00:03:35,420 --> 00:03:37,565
+In this case, the viewer's information is
+
+71
+00:03:37,565 --> 00:03:40,690
+a separate observational unit, the individual viewer.
+
+72
+00:03:40,690 --> 00:03:43,650
+Let's separate this information into two tables.
+
+73
+00:03:43,650 --> 00:03:45,380
+On the table on the bottom left,
+
+74
+00:03:45,380 --> 00:03:47,885
+you can see we kept intact the movie ID,
+
+75
+00:03:47,885 --> 00:03:49,960
+title, and reviewers core columns.
+
+76
+00:03:49,960 --> 00:03:54,005
+On the right table, we have information about our viewer as the observational unit,
+
+77
+00:03:54,005 --> 00:03:56,555
+including their name, income, and age.
+
+78
+00:03:56,555 --> 00:04:00,965
+If we ever want to merge the two tables again for easier access to this information,
+
+79
+00:04:00,965 --> 00:04:03,745
+we can do so using the movie ID key.
+
+80
+00:04:03,745 --> 00:04:06,190
+Take a look at the two data tables on the screen.
+
+81
+00:04:06,190 --> 00:04:08,705
+The left one contains information on a movie,
+
+82
+00:04:08,705 --> 00:04:10,565
+it's ID and the viewer's name.
+
+83
+00:04:10,565 --> 00:04:12,140
+The table on the right,
+
+84
+00:04:12,140 --> 00:04:13,760
+also contains the movies ID,
+
+85
+00:04:13,760 --> 00:04:16,640
+but with columns corresponding to the review and rating.
+
+86
+00:04:16,640 --> 00:04:18,485
+At times when gathering data,
+
+87
+00:04:18,485 --> 00:04:20,855
+data may be split into many tables.
+
+88
+00:04:20,855 --> 00:04:23,900
+Just visually we can see here then we would be much more
+
+89
+00:04:23,900 --> 00:04:27,490
+simpler if both tables were combined using the ID key.
+
+90
+00:04:27,490 --> 00:04:29,750
+We could get all the information about
+
+91
+00:04:29,750 --> 00:04:35,580
+the individual movies i. e our observational unit in a single table.
+

@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:02,160
+What is analytical data?
+
+2
+00:00:02,160 --> 00:00:04,980
+As you start to encounter more data in the real world,
+
+3
+00:00:04,980 --> 00:00:08,955
+you'll come across a popular form of data called analytical datasets.
+
+4
+00:00:08,955 --> 00:00:11,940
+While the definition of analytical data can be quite broad,
+
+5
+00:00:11,940 --> 00:00:15,570
+it boils down to datasets that help us perform analyses,
+
+6
+00:00:15,570 --> 00:00:18,750
+such as data used for visualization and storytelling,
+
+7
+00:00:18,750 --> 00:00:21,930
+exploratory data analysis, statistical analysis,
+
+8
+00:00:21,930 --> 00:00:26,040
+descriptive or inferential, and training machine learning models.
+
+9
+00:00:26,040 --> 00:00:29,570
+Analytical data is sometimes created on top of master data,
+
+10
+00:00:29,570 --> 00:00:32,670
+where master data represents the core data across an enterprise.
+
+11
+00:00:32,670 --> 00:00:36,525
+For example, a product's revenue data might be master data and
+
+12
+00:00:36,525 --> 00:00:41,225
+analytical data may be looking at aggregations or trends of that data over time.
+
+13
+00:00:41,225 --> 00:00:45,300
+Data tidiness is particularly important for analytical data sets.
+
+14
+00:00:45,300 --> 00:00:47,915
+Since analytical data is typically used to
+
+15
+00:00:47,915 --> 00:00:51,080
+power business workflows and involves big data,
+
+16
+00:00:51,080 --> 00:00:54,905
+having consistent data structure across different tables can
+
+17
+00:00:54,905 --> 00:00:59,210
+therefore be a crucial element of having good analytical data.
+
+18
+00:00:59,210 --> 00:01:04,175
+Let's talk about a few other concerns outside of tidiness that apply in analytical data,
+
+19
+00:01:04,175 --> 00:01:07,220
+starting with merging different data sources together.
+
+20
+00:01:07,220 --> 00:01:10,430
+Let's say we're data analysts at a software vendor and have
+
+21
+00:01:10,430 --> 00:01:14,020
+gathered data around the revenue and customer base at the company's products.
+
+22
+00:01:14,020 --> 00:01:18,920
+This data is in three tables corresponding to customers, sales, and products.
+
+23
+00:01:18,920 --> 00:01:21,875
+Let's say we want to merge these three data sources
+
+24
+00:01:21,875 --> 00:01:25,255
+so we can have a single data store that's easier to keep track of.
+
+25
+00:01:25,255 --> 00:01:26,775
+When we're merging this data,
+
+26
+00:01:26,775 --> 00:01:30,955
+what entity or object should be the focus of our final merge to the data source?
+
+27
+00:01:30,955 --> 00:01:35,360
+For example, are we trying to focus specifically on groups of customers asking,
+
+28
+00:01:35,360 --> 00:01:39,140
+do customers in the US prefer these products over customers in Malaysia?
+
+29
+00:01:39,140 --> 00:01:40,930
+And what are the sales look like?
+
+30
+00:01:40,930 --> 00:01:44,420
+Or are we focusing primarily on individual products,
+
+31
+00:01:44,420 --> 00:01:46,340
+asking which products are more likely to
+
+32
+00:01:46,340 --> 00:01:49,150
+generate higher sales based on the customer data?
+
+33
+00:01:49,150 --> 00:01:54,770
+Unit of analysis refers to the primary entity or object being focused in the analysis.
+
+34
+00:01:54,770 --> 00:01:58,825
+It is the basic element that's being measured, observed, or analyzed.
+
+35
+00:01:58,825 --> 00:02:03,455
+A unit of analysis can vary depending on a problem or question statement.
+
+36
+00:02:03,455 --> 00:02:05,120
+It typically constitutes,
+
+37
+00:02:05,120 --> 00:02:08,735
+what is a single record of our analysis?
+
+38
+00:02:08,735 --> 00:02:11,930
+Now, defining a unit of analysis can be critical because it allows
+
+39
+00:02:11,930 --> 00:02:15,260
+you to structure and organize your data wrangling workflows,
+
+40
+00:02:15,260 --> 00:02:18,230
+but also the individual units between your data and across
+
+41
+00:02:18,230 --> 00:02:21,320
+different data tables in a neat and easier manner,
+
+42
+00:02:21,320 --> 00:02:25,875
+allowing you to form more accurate investigations as a result of that data.
+
+43
+00:02:25,875 --> 00:02:28,055
+When designing an analytical dataset,
+
+44
+00:02:28,055 --> 00:02:30,050
+you may also consider opportunities for
+
+45
+00:02:30,050 --> 00:02:33,190
+enriching your dataset by merging in additional data.
+
+46
+00:02:33,190 --> 00:02:36,095
+For example, if your dataset has zip codes in it,
+
+47
+00:02:36,095 --> 00:02:38,840
+you can find rich public data about that zip code,
+
+48
+00:02:38,840 --> 00:02:41,405
+like the population or average age.
+
+49
+00:02:41,405 --> 00:02:43,535
+How do you connect different tables together?
+
+50
+00:02:43,535 --> 00:02:45,800
+You can do this by defining unique keys
+
+51
+00:02:45,800 --> 00:02:48,545
+or unique identifiers when creating your database.
+
+52
+00:02:48,545 --> 00:02:52,130
+A unique key is some type of identifier that is held in common
+
+53
+00:02:52,130 --> 00:02:56,435
+across all the different tables that will allow you to tie the different data together.
+
+54
+00:02:56,435 --> 00:02:59,615
+Finally, when designing analytical dataset,
+
+55
+00:02:59,615 --> 00:03:02,120
+particularly data such as time series data,
+
+56
+00:03:02,120 --> 00:03:05,705
+you may consider the resolution or granularity of data.
+
+57
+00:03:05,705 --> 00:03:08,180
+For example, do you want to collect data from
+
+58
+00:03:08,180 --> 00:03:12,300
+your temperature sensor every day, week, or month?
+
+59
+00:03:12,300 --> 00:03:15,680
+You may also consider the level of aggregation, for example,
+
+60
+00:03:15,680 --> 00:03:18,350
+high-level data about populations and their trends can be
+
+61
+00:03:18,350 --> 00:03:22,770
+aggregated based on states, countries, and continents.
+

@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:04,380
+Data cleaning is centered around strategizing and decision-making
+
+2
+00:00:04,380 --> 00:00:06,750
+around how you're going to deal with the issues that you
+
+3
+00:00:06,750 --> 00:00:09,300
+just identified and go about fixing them.
+
+4
+00:00:09,300 --> 00:00:10,740
+As part of this process,
+
+5
+00:00:10,740 --> 00:00:13,530
+it's very useful and completely normal to be able
+
+6
+00:00:13,530 --> 00:00:16,890
+to reuse your documentation from the assessment stage and
+
+7
+00:00:16,890 --> 00:00:19,830
+continued to add to that so that you have a documentation of
+
+8
+00:00:19,830 --> 00:00:23,745
+your thought process as you're approaching cleaning some of these issues.
+
+9
+00:00:23,745 --> 00:00:26,040
+Now let's go ahead and take a look at a couple of
+
+10
+00:00:26,040 --> 00:00:29,730
+complex issues that data wranglers deal with when they have to clean data.
+
+11
+00:00:29,730 --> 00:00:33,660
+Sometimes it can be more complicated to strategize data.
+
+12
+00:00:33,660 --> 00:00:37,695
+Let's talk about a few complex cleaning tasks that you would need to make a decision
+
+13
+00:00:37,695 --> 00:00:42,240
+on based on your assessment and your experience around the domain and problem statement.
+
+14
+00:00:42,240 --> 00:00:44,825
+These issues are dealing with outliers,
+
+15
+00:00:44,825 --> 00:00:47,750
+dealing with duplicates, and dealing with missing data.
+
+16
+00:00:47,750 --> 00:00:49,565
+Let's start with outliers.
+
+17
+00:00:49,565 --> 00:00:52,100
+An outlier is a data point that is considerably
+
+18
+00:00:52,100 --> 00:00:55,430
+distinct and somewhat of an anomaly from other data samples.
+
+19
+00:00:55,430 --> 00:00:58,345
+For example, take a look at this bar plot on the screen.
+
+20
+00:00:58,345 --> 00:01:00,890
+Notice how the bar to the right of the plot at a value
+
+21
+00:01:00,890 --> 00:01:03,245
+of 120 is distinct from the other data points,
+
+22
+00:01:03,245 --> 00:01:04,670
+which makes it an outlier.
+
+23
+00:01:04,670 --> 00:01:09,080
+We define outliers as points that are lying beyond the range that we determine.
+
+24
+00:01:09,080 --> 00:01:12,630
+Some outliers are a result of mistakes and should be removed.
+
+25
+00:01:12,630 --> 00:01:17,390
+For example, a student's age being 120 is impossible and should be removed.
+
+26
+00:01:17,390 --> 00:01:23,115
+Notice how the typical range of students ages for this data set is between 12-15.
+
+27
+00:01:23,115 --> 00:01:26,870
+But what is this data set was reflecting overall human age.
+
+28
+00:01:26,870 --> 00:01:29,430
+It's possible for a person to live up to 120,
+
+29
+00:01:29,430 --> 00:01:32,575
+so the outlier would actually be a correct data point.
+
+30
+00:01:32,575 --> 00:01:35,765
+If you consider outliers as part of your analysis,
+
+31
+00:01:35,765 --> 00:01:40,735
+it can often skew summary statistics like your mean and prolong your visualizations.
+
+32
+00:01:40,735 --> 00:01:44,540
+However, outliers can also represent valuable information
+
+33
+00:01:44,540 --> 00:01:48,245
+about certain groups of your data that just aren't like the rest of the data,
+
+34
+00:01:48,245 --> 00:01:50,720
+which may be worth further investigation.
+
+35
+00:01:50,720 --> 00:01:55,190
+Data wranglers deal with outliers by defining the range that they care about.
+
+36
+00:01:55,190 --> 00:01:57,470
+They may use information such as the results of
+
+37
+00:01:57,470 --> 00:02:00,940
+the dot info function from pandas to quickly diagnose issues.
+
+38
+00:02:00,940 --> 00:02:02,750
+For example, from this information,
+
+39
+00:02:02,750 --> 00:02:05,750
+we can quickly pinpoint that a min-weight of 48 pounds and
+
+40
+00:02:05,750 --> 00:02:09,095
+a height of 27 inches does not immediately make sense.
+
+41
+00:02:09,095 --> 00:02:12,290
+We can then use the min function and sort values functions in
+
+42
+00:02:12,290 --> 00:02:16,465
+pandas to pinpoint which row is causing this issue and take action.
+
+43
+00:02:16,465 --> 00:02:19,505
+In order to detect outliers programmatically,
+
+44
+00:02:19,505 --> 00:02:23,160
+data wranglers can establish boundaries of the typical range of data points,
+
+45
+00:02:23,160 --> 00:02:26,990
+so any points that fall out of that boundaries are outliers.
+
+46
+00:02:26,990 --> 00:02:29,910
+There are two common methods to detect outliers.
+
+47
+00:02:29,910 --> 00:02:32,475
+The first approach is using standard deviation.
+
+48
+00:02:32,475 --> 00:02:34,775
+For example saying mean plus or minus
+
+49
+00:02:34,775 --> 00:02:37,910
+one standard deviation are the upper and lower outlier boundaries.
+
+50
+00:02:37,910 --> 00:02:42,145
+Any data points that are falling outside of this range will be outliers.
+
+51
+00:02:42,145 --> 00:02:45,455
+Second, using the interquartile range method,
+
+52
+00:02:45,455 --> 00:02:47,180
+we can also detect outliers.
+
+53
+00:02:47,180 --> 00:02:49,805
+Let me briefly describe how we can use this method
+
+54
+00:02:49,805 --> 00:02:52,895
+both visually and programmatically through a boxplot.
+
+55
+00:02:52,895 --> 00:02:56,180
+We can first calculate the interquartile range value by
+
+56
+00:02:56,180 --> 00:03:00,820
+subtracting the upper quartile or Q3 from the lower quartile or Q1.
+
+57
+00:03:00,820 --> 00:03:05,750
+We then calculate the lower bound by subtracting Q1 with 1.5,
+
+58
+00:03:05,750 --> 00:03:07,820
+multiply it by the IQR, and similarly,
+
+59
+00:03:07,820 --> 00:03:11,845
+the upper bound is Q3 plus 1.5 times the IQR.
+
+60
+00:03:11,845 --> 00:03:16,790
+Any values that lie outside the range of our lower to upper bound are outliers.
+
+61
+00:03:16,790 --> 00:03:20,015
+Visually, box plots can help us quickly grasp whether
+
+62
+00:03:20,015 --> 00:03:24,355
+outliers are beyond the minimum or the maximum values in the range.
+
+63
+00:03:24,355 --> 00:03:26,570
+Then data wrangler is may remove
+
+64
+00:03:26,570 --> 00:03:29,255
+the outliers they have determined to be inaccurate completely,
+
+65
+00:03:29,255 --> 00:03:32,150
+or remove the outliers temporarily in order to get
+
+66
+00:03:32,150 --> 00:03:35,315
+summary statistics and keep these outliers separate,
+
+67
+00:03:35,315 --> 00:03:41,010
+or keep the outliers in the analysis and treat them as regular data points.
+

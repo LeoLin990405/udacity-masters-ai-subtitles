@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:02,610
+In this short demo, let's go over a couple of
+
+2
+00:00:02,610 --> 00:00:05,685
+Pandas' methods for programmatically accessing data structure,
+
+3
+00:00:05,685 --> 00:00:09,765
+which often involves a combination of visual and programmatic assessment.
+
+4
+00:00:09,765 --> 00:00:12,825
+Again, we're picking on our synthetic clinical trial data,
+
+5
+00:00:12,825 --> 00:00:15,015
+this time looking at a couple of tables.
+
+6
+00:00:15,015 --> 00:00:19,500
+Here, the new table that we're adding in is our adverse reactions table that's centered
+
+7
+00:00:19,500 --> 00:00:24,295
+around telling us the adverse reactions that patients had as a result of the treatment.
+
+8
+00:00:24,295 --> 00:00:28,700
+In this demo, focusing on the patient's treatments and adverse reactions tables,
+
+9
+00:00:28,700 --> 00:00:30,140
+let's go ahead and take a look at
+
+10
+00:00:30,140 --> 00:00:33,925
+the first few rows of the tables using the dot head function.
+
+11
+00:00:33,925 --> 00:00:36,680
+Note how the adverse reactions tables,
+
+12
+00:00:36,680 --> 00:00:38,195
+including the name of patients,
+
+13
+00:00:38,195 --> 00:00:40,250
+their first name and their last name essentially,
+
+14
+00:00:40,250 --> 00:00:43,300
+as two individual columns and the adverse reaction.
+
+15
+00:00:43,300 --> 00:00:47,675
+We also have the visual inspection for the treatments DataFrame here as well.
+
+16
+00:00:47,675 --> 00:00:50,995
+Let's use one of the functions we're familiar with,.info.
+
+17
+00:00:50,995 --> 00:00:54,945
+We're going to start using.info to inspect our two tables.
+
+18
+00:00:54,945 --> 00:00:58,790
+Let's go ahead and skip over to the adverse reactions inspection.
+
+19
+00:00:58,790 --> 00:01:03,745
+Notice how there are only 34 entries in the adverse reactions DataFrame.
+
+20
+00:01:03,745 --> 00:01:06,010
+We can use a few other methods to closely
+
+21
+00:01:06,010 --> 00:01:08,410
+inspect some of the columns and shape information.
+
+22
+00:01:08,410 --> 00:01:11,200
+For example, let's get the.shape using
+
+23
+00:01:11,200 --> 00:01:15,185
+the.shape method on the adverse reactions DataFrame.
+
+24
+00:01:15,185 --> 00:01:18,310
+Here we're getting the dimensionality of the DataFrame showing us
+
+25
+00:01:18,310 --> 00:01:21,445
+that the table has 34 rows and three columns.
+
+26
+00:01:21,445 --> 00:01:24,160
+We can also use the columns method to get
+
+27
+00:01:24,160 --> 00:01:27,050
+all of the column labels in our dataset programmatically.
+
+28
+00:01:27,050 --> 00:01:29,860
+Finally, we can also use the.index method to
+
+29
+00:01:29,860 --> 00:01:32,515
+understand the index of the adverse reactions table,
+
+30
+00:01:32,515 --> 00:01:35,005
+in this case ranging from 0-34.
+
+31
+00:01:35,005 --> 00:01:39,220
+While this doesn't seem particularly useful for this dataset right now,
+
+32
+00:01:39,220 --> 00:01:44,185
+for datasets with more complex indexes and for operations like dropping duplicate rows,
+
+33
+00:01:44,185 --> 00:01:47,630
+it can be helpful to quickly access the index.
+
+34
+00:01:47,810 --> 00:01:51,020
+Now with all of this information that we've gathered,
+
+35
+00:01:51,020 --> 00:01:54,155
+we can start to make some assessments around the data structure.
+
+36
+00:01:54,155 --> 00:01:58,100
+We can start to determine that the adverse reaction column of
+
+37
+00:01:58,100 --> 00:02:00,200
+the adverse reactions table should actually be
+
+38
+00:02:00,200 --> 00:02:03,275
+included in the treatments table through visual assessment.
+
+39
+00:02:03,275 --> 00:02:06,770
+Why? Well, when looking at the treatments table here below,
+
+40
+00:02:06,770 --> 00:02:10,040
+we can see that the adverse reaction for that treatment
+
+41
+00:02:10,040 --> 00:02:13,490
+has same observational unit as the treatments table,
+
+42
+00:02:13,490 --> 00:02:16,655
+which is the treatment data for an individual patient.
+
+43
+00:02:16,655 --> 00:02:19,280
+Since the given name and surname columns are
+
+44
+00:02:19,280 --> 00:02:22,430
+present in both the adverse reactions and treatments tables,
+
+45
+00:02:22,430 --> 00:02:23,645
+when cleaning the dataset,
+
+46
+00:02:23,645 --> 00:02:28,565
+we can use these two variables to combine the two tables into a single table.
+
+47
+00:02:28,565 --> 00:02:30,615
+This is a case of an issue,
+
+48
+00:02:30,615 --> 00:02:34,210
+a single observational unit is being stored in multiple tables.
+
+49
+00:02:34,210 --> 00:02:36,405
+Here are a few additional issues.
+
+50
+00:02:36,405 --> 00:02:41,165
+We can visually see a case where variables are stored in both rows and columns.
+
+51
+00:02:41,165 --> 00:02:45,020
+In the treatment table, the Auralin and Novodra columns contain three variables.
+
+52
+00:02:45,020 --> 00:02:47,000
+Which treatment the patient is using,
+
+53
+00:02:47,000 --> 00:02:48,605
+Auralin or Novodra,
+
+54
+00:02:48,605 --> 00:02:50,360
+which is stored in the header row,
+
+55
+00:02:50,360 --> 00:02:54,530
+and the start dose and the end dose separated by the dash.
+
+56
+00:02:54,530 --> 00:02:58,430
+Let's use programmatic assessment to supplement our visual assessment.
+
+57
+00:02:58,430 --> 00:03:02,480
+We can programmatically verify that an individual patient is recorded as
+
+58
+00:03:02,480 --> 00:03:04,760
+taking only one drug by
+
+59
+00:03:04,760 --> 00:03:07,520
+checking that the corresponding column for the other drug is empty.
+
+60
+00:03:07,520 --> 00:03:10,135
+For instance, if a patient is taking Novodra,
+
+61
+00:03:10,135 --> 00:03:14,660
+their record should have values in the Novodra column and be empty in the Auralin column.
+
+62
+00:03:14,660 --> 00:03:18,230
+In other words, no patients should be taking both drugs simultaneously.
+
+63
+00:03:18,230 --> 00:03:23,600
+The Auralin and Novodra columns can both have values at the same time. Let's check this.
+
+64
+00:03:23,600 --> 00:03:25,460
+We can do this by getting the rows where
+
+65
+00:03:25,460 --> 00:03:30,275
+both the Auralin and Novodra columns are not empty in our treatments' DataFrame.
+
+66
+00:03:30,275 --> 00:03:35,880
+We can see that there are no cases of rows that are applying to this case.
+
+67
+00:03:35,880 --> 00:03:37,190
+In the cleaning stage,
+
+68
+00:03:37,190 --> 00:03:39,320
+we can actually simplify our data structure and
+
+69
+00:03:39,320 --> 00:03:42,050
+solve this issue by creating three new columns.
+
+70
+00:03:42,050 --> 00:03:44,780
+One for the treatment specifying Auralin or Novodra,
+
+71
+00:03:44,780 --> 00:03:46,220
+another for the starting dose,
+
+72
+00:03:46,220 --> 00:03:47,870
+and a third for the ending dose.
+
+73
+00:03:47,870 --> 00:03:52,130
+This updated structure will make it easier to analyze and work with the data while
+
+74
+00:03:52,130 --> 00:03:54,215
+ensuring that there are no inconsistencies
+
+75
+00:03:54,215 --> 00:03:57,235
+regarding patients taking both drugs simultaneously.
+
+76
+00:03:57,235 --> 00:04:01,640
+Let's take a look at the patient's DataFrame and actually turn to another issue.
+
+77
+00:04:01,640 --> 00:04:04,220
+We can visually see through the.head function and
+
+78
+00:04:04,220 --> 00:04:07,100
+issue of multiple variables being stored in one column.
+
+79
+00:04:07,100 --> 00:04:10,775
+The contact column in the patient's table contains two variables,
+
+80
+00:04:10,775 --> 00:04:13,995
+phone number, and email.
+
+81
+00:04:13,995 --> 00:04:18,560
+Let's investigate this further programmatically from a validity standpoint.
+
+82
+00:04:18,560 --> 00:04:22,325
+Are all the values in our data following the format of email,
+
+83
+00:04:22,325 --> 00:04:26,150
+no space by immediately followed by a phone number?
+
+84
+00:04:26,150 --> 00:04:28,910
+Using value counts, we can actually see
+
+85
+00:04:28,910 --> 00:04:31,315
+that one of the values in our dataset for example,
+
+86
+00:04:31,315 --> 00:04:36,145
+is actually violating this with the phone number first followed by the email.
+
+87
+00:04:36,145 --> 00:04:38,720
+Because of this, it's going to be challenging to use
+
+88
+00:04:38,720 --> 00:04:40,950
+string manipulation to parse and separate these.
+
+89
+00:04:40,950 --> 00:04:46,280
+Because there isn't any standard format that these combined data points are following.
+
+90
+00:04:46,280 --> 00:04:48,410
+We need to make sure that this issue is solved in
+
+91
+00:04:48,410 --> 00:04:50,630
+the cleaning stage by creating two columns,
+
+92
+00:04:50,630 --> 00:04:54,420
+one for the email address and the other for phone number.
+

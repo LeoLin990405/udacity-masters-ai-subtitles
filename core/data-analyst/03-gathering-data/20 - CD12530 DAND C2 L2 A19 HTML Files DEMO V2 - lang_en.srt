@@ -1,0 +1,424 @@
+1
+00:00:00,000 --> 00:00:02,940
+For this demo, I'd like to introduce you to Beautiful Soup,
+
+2
+00:00:02,940 --> 00:00:06,165
+an HTML parser written in the Python programming language.
+
+3
+00:00:06,165 --> 00:00:09,000
+Beautiful Soup makes it easy to parse, navigate,
+
+4
+00:00:09,000 --> 00:00:11,865
+and extract information from HTML documents.
+
+5
+00:00:11,865 --> 00:00:13,815
+The name is derived from the Tag Soup,
+
+6
+00:00:13,815 --> 00:00:16,230
+which refers to the unstructured and difficult to parse
+
+7
+00:00:16,230 --> 00:00:19,260
+HTML found on a couple of websites.
+
+8
+00:00:19,260 --> 00:00:20,940
+Let's take a look at how to use
+
+9
+00:00:20,940 --> 00:00:24,315
+the Beautiful Soup library to extract data from an HTML file.
+
+10
+00:00:24,315 --> 00:00:27,060
+Here I'm using our HTML page on the book,
+
+11
+00:00:27,060 --> 00:00:29,250
+the language_of_flowers from archive.org
+
+12
+00:00:29,250 --> 00:00:32,790
+downloaded as an HTML file that we'll use for this demo.
+
+13
+00:00:32,790 --> 00:00:36,110
+I'm going to start by importing the Beautiful Soup library.
+
+14
+00:00:36,110 --> 00:00:41,515
+I'll then try to open the language_of_flowers_html page as the file object fp,
+
+15
+00:00:41,515 --> 00:00:46,040
+I'm then going to past this file object and the type of parser that I want to use,
+
+16
+00:00:46,040 --> 00:00:47,960
+which in this case it's an HTML parser to
+
+17
+00:00:47,960 --> 00:00:53,035
+the Beautiful Soup constructor assigning the result to the flower_soup variable.
+
+18
+00:00:53,035 --> 00:00:57,890
+Let's actually go ahead and look at Beautiful Soup's parsed output, flower_soup.
+
+19
+00:00:57,890 --> 00:01:02,570
+Note that we have a large HTML file here filled with many tags.
+
+20
+00:01:02,570 --> 00:01:05,150
+We'll be inspecting this in detail in a bit.
+
+21
+00:01:05,150 --> 00:01:07,790
+I would like to make this output a bit cleaner though,
+
+22
+00:01:07,790 --> 00:01:10,070
+by having a separate line for each tab.
+
+23
+00:01:10,070 --> 00:01:14,990
+Here what I can use is the pre-defined method that Beautiful Soup is offering that
+
+24
+00:01:14,990 --> 00:01:20,085
+prints the format in Unicode string of the HTML just for viewing purposes.
+
+25
+00:01:20,085 --> 00:01:23,105
+For example, although it's not obvious to see right away,
+
+26
+00:01:23,105 --> 00:01:26,000
+notice how in the original version before using predefine,
+
+27
+00:01:26,000 --> 00:01:30,695
+the title tags and the content are really all smushed in one line.
+
+28
+00:01:30,695 --> 00:01:32,210
+In the prettified version,
+
+29
+00:01:32,210 --> 00:01:36,575
+the title tags and the content between them is actually separated on different lines,
+
+30
+00:01:36,575 --> 00:01:38,450
+which makes it easier to understand what are
+
+31
+00:01:38,450 --> 00:01:41,590
+these tag being used for and what's going on between the tag.
+
+32
+00:01:41,590 --> 00:01:43,820
+Now, I could also switch over to
+
+33
+00:01:43,820 --> 00:01:47,470
+my text editor for a better way of viewing the HTML if I wanted to.
+
+34
+00:01:47,470 --> 00:01:49,815
+Let's now navigate the website.
+
+35
+00:01:49,815 --> 00:01:52,055
+Looking at the HTML of the webpage,
+
+36
+00:01:52,055 --> 00:01:54,200
+one of the first things that we may want to do is
+
+37
+00:01:54,200 --> 00:01:57,455
+programmatically extract the title of the webpage.
+
+38
+00:01:57,455 --> 00:02:00,470
+We can see that the title is neatly nestled within
+
+39
+00:02:00,470 --> 00:02:04,480
+the title tags in the first few lines of the HTML file.
+
+40
+00:02:04,480 --> 00:02:09,290
+We can use Beautiful Soup's find method to iterate over tags and
+
+41
+00:02:09,290 --> 00:02:14,110
+strings in the HTML document and find the first result where the title tag is used.
+
+42
+00:02:14,110 --> 00:02:17,555
+Let's go ahead and do this right now by using.find on
+
+43
+00:02:17,555 --> 00:02:20,945
+our flower_soup variable with the title text.
+
+44
+00:02:20,945 --> 00:02:23,330
+Now let's go ahead and print the output and we're able to
+
+45
+00:02:23,330 --> 00:02:26,720
+actually see the title along with the actual title tags.
+
+46
+00:02:26,720 --> 00:02:29,270
+But what is I only want to see the content between
+
+47
+00:02:29,270 --> 00:02:32,555
+the tags and not the actual HTML tags themselves?
+
+48
+00:02:32,555 --> 00:02:37,550
+Here I can use.text on the outputs of the final result
+
+49
+00:02:37,550 --> 00:02:42,965
+and then.strip to remove any leading and trailing spaces of the text.
+
+50
+00:02:42,965 --> 00:02:47,915
+Now we can actually see the content of the title without the HTML tags.
+
+51
+00:02:47,915 --> 00:02:50,365
+Let's try again on a different tag.
+
+52
+00:02:50,365 --> 00:02:54,695
+Here I want to look at the username of the person who uploaded the book on archive.
+
+53
+00:02:54,695 --> 00:02:59,210
+Now, there are multiple a tags that we're going to find as part of this HTML,
+
+54
+00:02:59,210 --> 00:03:03,100
+where an a tag is actually defining a hyperlink.
+
+55
+00:03:03,100 --> 00:03:07,220
+Now, what I'm going to go ahead and do is specify the specific class of
+
+56
+00:03:07,220 --> 00:03:11,075
+tag that I want to search for so that I can narrow down the results.
+
+57
+00:03:11,075 --> 00:03:14,015
+Assuming that I've already identified this beforehand,
+
+58
+00:03:14,015 --> 00:03:18,515
+I'm going to go ahead and specify to the find function my tag type as a
+
+59
+00:03:18,515 --> 00:03:23,735
+and the class of this tag as class = item-upload-info_uploader-name.
+
+60
+00:03:23,735 --> 00:03:27,815
+I've done just that here and provided it as input to the find function.
+
+61
+00:03:27,815 --> 00:03:31,210
+Now, take a look at the results after using.text on the output,
+
+62
+00:03:31,210 --> 00:03:36,220
+we see hank_b is the username of the uploader of the book, which is correct.
+
+63
+00:03:36,220 --> 00:03:40,940
+Let's look at an example of using one other function in Beautiful Soup, find all.
+
+64
+00:03:40,940 --> 00:03:44,380
+What happens if we have multiple items that we want to retrieve at once?
+
+65
+00:03:44,380 --> 00:03:48,710
+As an example, there are different collection items that this book is a part of.
+
+66
+00:03:48,710 --> 00:03:49,790
+Here in our case,
+
+67
+00:03:49,790 --> 00:03:51,140
+we actually have two;
+
+68
+00:03:51,140 --> 00:03:53,720
+Cornell University Library and American Libraries.
+
+69
+00:03:53,720 --> 00:03:58,825
+I want to get the texts nestled between the a tags with the class collection item.
+
+70
+00:03:58,825 --> 00:04:02,480
+As you can see here, the Cornell University Library and American
+
+71
+00:04:02,480 --> 00:04:06,590
+Library is pretty neatly nestled within this big a tag.
+
+72
+00:04:06,590 --> 00:04:10,700
+What I'm going to do is use Beautiful Soup to find all method specify
+
+73
+00:04:10,700 --> 00:04:15,035
+the tag that I want to search for as an a and the class as collection item.
+
+74
+00:04:15,035 --> 00:04:17,135
+Now what is this going to do is return
+
+75
+00:04:17,135 --> 00:04:19,670
+all results in the HTML that match these conditions,
+
+76
+00:04:19,670 --> 00:04:21,620
+assigning it to collection items.
+
+77
+00:04:21,620 --> 00:04:25,010
+As we can see, collection items is output is a list.
+
+78
+00:04:25,010 --> 00:04:27,500
+Let's actually iteratively print the items in
+
+79
+00:04:27,500 --> 00:04:29,780
+the list and we'll use.text on each of them.
+
+80
+00:04:29,780 --> 00:04:32,420
+We can now see that we programmatically extracted
+
+81
+00:04:32,420 --> 00:04:36,490
+the two collections that the book belongs to from the a tag.
+
+82
+00:04:36,490 --> 00:04:40,895
+Now, if we want to use the.find function on the same use case,
+
+83
+00:04:40,895 --> 00:04:42,965
+it will only return the first result,
+
+84
+00:04:42,965 --> 00:04:44,105
+as we can see below,
+
+85
+00:04:44,105 --> 00:04:47,030
+which is why we do need to use the find all function.
+
+86
+00:04:47,030 --> 00:04:50,390
+A tool like Beautiful Soup is really useful for
+
+87
+00:04:50,390 --> 00:04:54,830
+reproducible workflows when you may need to extract the same data in the future again,
+
+88
+00:04:54,830 --> 00:05:00,365
+or if you need to use the same functions on HTML files with similar tags and structures.
+
+89
+00:05:00,365 --> 00:05:04,070
+However, sometimes if you're performing a one-off analysis,
+
+90
+00:05:04,070 --> 00:05:06,995
+you don't necessarily need to use Beautiful Soup.
+
+91
+00:05:06,995 --> 00:05:09,980
+In some cases, you may just copy the data in your browser
+
+92
+00:05:09,980 --> 00:05:13,670
+manually and just paste it into your data application, like Google Sheets.
+
+93
+00:05:13,670 --> 00:05:18,260
+For certain applications, you can also use special functions to make this easier.
+
+94
+00:05:18,260 --> 00:05:20,330
+For example, Google Sheets has
+
+95
+00:05:20,330 --> 00:05:24,880
+an import HTML function that can pull a list or a table from the HTML page.
+
+96
+00:05:24,880 --> 00:05:29,030
+We'll be looking how to pull a table from a particular Wikipedia article looking at
+
+97
+00:05:29,030 --> 00:05:33,830
+total fertility rate in India from the late 19th century to the earliest 20th century.
+
+98
+00:05:33,830 --> 00:05:36,380
+You're wearing Google Sheets and we're going to go ahead and use
+
+99
+00:05:36,380 --> 00:05:39,815
+the import HTML function, specifying the URL,
+
+100
+00:05:39,815 --> 00:05:41,600
+the type of objects that we want to pull,
+
+101
+00:05:41,600 --> 00:05:44,390
+which is a table actually that's on this Wikipedia page,
+
+102
+00:05:44,390 --> 00:05:45,780
+and the index of the table.
+
+103
+00:05:45,780 --> 00:05:49,670
+This particular table that we're trying to pull is the fourth table in the page.
+
+104
+00:05:49,670 --> 00:05:51,665
+Going ahead and running the function,
+
+105
+00:05:51,665 --> 00:05:54,080
+we can see after a couple of moments that it is
+
+106
+00:05:54,080 --> 00:05:58,440
+successfully loading the data into Google Sheets for us.
+

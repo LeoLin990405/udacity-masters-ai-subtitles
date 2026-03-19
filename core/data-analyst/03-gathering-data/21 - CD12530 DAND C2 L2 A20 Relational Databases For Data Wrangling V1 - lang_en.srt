@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:02,610
+Throughout this lesson, we've talked about ways you can
+
+2
+00:00:02,610 --> 00:00:05,085
+download and store data on your local system,
+
+3
+00:00:05,085 --> 00:00:07,950
+such as by using basic Python file handling,
+
+4
+00:00:07,950 --> 00:00:12,150
+pandas to CSV function, json.dumps, etc.
+
+5
+00:00:12,150 --> 00:00:14,940
+But these methods and data storage don't always match up to
+
+6
+00:00:14,940 --> 00:00:19,325
+industry production grade means because they are problematic for large datasets.
+
+7
+00:00:19,325 --> 00:00:22,080
+Don't have clear cut standards on how the data is
+
+8
+00:00:22,080 --> 00:00:26,160
+structured and can make sharing data cumbersome for large teams.
+
+9
+00:00:26,160 --> 00:00:28,770
+Let's talk about a popular way of storing data through
+
+10
+00:00:28,770 --> 00:00:31,350
+a much more popular option, databases.
+
+11
+00:00:31,350 --> 00:00:36,125
+A database is organized collection of data that is structured to facilitate the storage,
+
+12
+00:00:36,125 --> 00:00:39,680
+retrieval, modification, and deletion of data.
+
+13
+00:00:39,680 --> 00:00:41,645
+They have a lot of great features,
+
+14
+00:00:41,645 --> 00:00:45,020
+including being very fast for accessing and writing data.
+
+15
+00:00:45,020 --> 00:00:47,840
+Having administrative features like access controls and
+
+16
+00:00:47,840 --> 00:00:51,940
+checks to ensure data is entered in the appropriate format, etc.
+
+17
+00:00:51,940 --> 00:00:54,480
+There are two main types of databases.
+
+18
+00:00:54,480 --> 00:00:57,140
+Relational databases, which store datasets that are
+
+19
+00:00:57,140 --> 00:01:00,445
+related to each other in a structural, tabular manner.
+
+20
+00:01:00,445 --> 00:01:02,810
+SQL or Structured Query Language,
+
+21
+00:01:02,810 --> 00:01:06,050
+is the standard language for communicating with relational databases.
+
+22
+00:01:06,050 --> 00:01:08,525
+We also have non-relational databases,
+
+23
+00:01:08,525 --> 00:01:10,370
+which stores datasets that are complex,
+
+24
+00:01:10,370 --> 00:01:14,305
+and cannot be captured in a tabular format like images or video.
+
+25
+00:01:14,305 --> 00:01:16,600
+Take a look at an example of how
+
+26
+00:01:16,600 --> 00:01:19,795
+the tabular data at the right is stored in a relational database.
+
+27
+00:01:19,795 --> 00:01:23,530
+Very similar to the format we're familiar with in Microsoft Excel.
+
+28
+00:01:23,530 --> 00:01:28,100
+This data is containing IDs for each of the rows in the data, and account ID,
+
+29
+00:01:28,100 --> 00:01:31,600
+and occurred at column capturing the date and time of an interaction event and
+
+30
+00:01:31,600 --> 00:01:35,425
+the channel which contains values like direct, Twitter, etc.
+
+31
+00:01:35,425 --> 00:01:37,975
+This dataset can help us answer questions like
+
+32
+00:01:37,975 --> 00:01:40,960
+how many viewers access to my site in a particular time period,
+
+33
+00:01:40,960 --> 00:01:42,590
+and by what channel?
+
+34
+00:01:42,590 --> 00:01:46,180
+Now, let's take a look at an example of using a SQL query where I only
+
+35
+00:01:46,180 --> 00:01:49,955
+want to get the rows in this dataset where the channel is Twitter.
+
+36
+00:01:49,955 --> 00:01:52,030
+We can use the select clause to
+
+37
+00:01:52,030 --> 00:01:54,770
+identify which elements from the database we want to pull.
+
+38
+00:01:54,770 --> 00:01:56,895
+In this case, we use the asterisk
+
+39
+00:01:56,895 --> 00:02:00,235
+indicating all of them meeting the following conditions.
+
+40
+00:02:00,235 --> 00:02:02,955
+Next, we specify from.
+
+41
+00:02:02,955 --> 00:02:05,825
+Here we want to pull data from a table called web events,
+
+42
+00:02:05,825 --> 00:02:07,760
+which is the table depicted on the right.
+
+43
+00:02:07,760 --> 00:02:13,165
+Next, we specify where to filter our results to indicate the channel as Twitter.
+
+44
+00:02:13,165 --> 00:02:15,740
+Now, take a look at the results on the screen where we see
+
+45
+00:02:15,740 --> 00:02:19,820
+the filter results showing all the rows where the channel is Twitter.
+
+46
+00:02:19,820 --> 00:02:22,340
+In the context of data wrangling, databases,
+
+47
+00:02:22,340 --> 00:02:26,280
+and SQL come into play typically when gathering data, or storing data.
+
+48
+00:02:26,280 --> 00:02:29,660
+That is connecting to a database and importing data into
+
+49
+00:02:29,660 --> 00:02:31,010
+a pandas DataFrame or
+
+50
+00:02:31,010 --> 00:02:34,055
+the analagous data structure in your preferred programming language.
+
+51
+00:02:34,055 --> 00:02:39,440
+Or storing data onto a database after you gather the data or clean the data.
+
+52
+00:02:39,440 --> 00:02:43,805
+These tasks are especially necessary when you have large amounts of data,
+
+53
+00:02:43,805 --> 00:02:48,450
+which is where SQL and other databases Excel over flat files.
+

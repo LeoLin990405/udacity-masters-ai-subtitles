@@ -1,0 +1,440 @@
+1
+00:00:00,000 --> 00:00:02,880
+Every dataset can be dirty in its own way.
+
+2
+00:00:02,880 --> 00:00:06,540
+It's impossible to list all of the issues that you may encounter with
+
+3
+00:00:06,540 --> 00:00:10,485
+datasets that are out there in the wild after we've gathered them.
+
+4
+00:00:10,485 --> 00:00:13,260
+But we can attempt to categorize them into issues so
+
+5
+00:00:13,260 --> 00:00:16,050
+that we can more easily understand and identify them.
+
+6
+00:00:16,050 --> 00:00:19,560
+Here, I'm going to be showing you five different attributes or
+
+7
+00:00:19,560 --> 00:00:23,370
+dimensions of data quality corresponding to dirty datasets.
+
+8
+00:00:23,370 --> 00:00:26,445
+These are accuracy, completeness,
+
+9
+00:00:26,445 --> 00:00:29,550
+validity, consistency, and uniqueness.
+
+10
+00:00:29,550 --> 00:00:33,470
+How do you know when your data contains all the info you need?
+
+11
+00:00:33,470 --> 00:00:37,220
+Completeness is a metric that helps you understand whether your data is
+
+12
+00:00:37,220 --> 00:00:41,555
+sufficient for you to answer interesting questions or solve your problem.
+
+13
+00:00:41,555 --> 00:00:44,900
+Lack of completeness is typically shown in missing data.
+
+14
+00:00:44,900 --> 00:00:48,290
+For example, if you are assessing data gathered in a survey,
+
+15
+00:00:48,290 --> 00:00:50,495
+you might encounter missing values.
+
+16
+00:00:50,495 --> 00:00:53,930
+This could resolve from participants that didn't want to share their information,
+
+17
+00:00:53,930 --> 00:00:56,350
+so they skipped certain fields in your survey.
+
+18
+00:00:56,350 --> 00:01:00,845
+In your dataset, this missing data may be represented as NaN values,
+
+19
+00:01:00,845 --> 00:01:04,580
+signifying the absence of information in specific fields.
+
+20
+00:01:04,580 --> 00:01:09,245
+One common way to fix completeness issues is removing the missing data.
+
+21
+00:01:09,245 --> 00:01:12,110
+Alternatively, you can replace the missing values
+
+22
+00:01:12,110 --> 00:01:15,335
+with default values or non-zero replacements.
+
+23
+00:01:15,335 --> 00:01:19,265
+For example, when dealing with missing values in participants' age fields,
+
+24
+00:01:19,265 --> 00:01:21,395
+you could fill in the gaps with the average age of
+
+25
+00:01:21,395 --> 00:01:23,750
+all the participants who provided their age,
+
+26
+00:01:23,750 --> 00:01:26,705
+rather than having the missing data points as NANs.
+
+27
+00:01:26,705 --> 00:01:29,900
+This method helps maintain the integrity of your dataset while
+
+28
+00:01:29,900 --> 00:01:34,055
+minimizing the impact of missing data on urinalysis.
+
+29
+00:01:34,055 --> 00:01:37,235
+How well does your data meet certain constraints?
+
+30
+00:01:37,235 --> 00:01:40,400
+Validity is a metric helping you understand how well
+
+31
+00:01:40,400 --> 00:01:43,310
+your data conforms to a defined set of rules for data,
+
+32
+00:01:43,310 --> 00:01:45,185
+which is also known as a schema.
+
+33
+00:01:45,185 --> 00:01:48,290
+These rules can be based on real-world constraints.
+
+34
+00:01:48,290 --> 00:01:52,835
+For example, if you are a health care practitioner gathering logs from a medical device,
+
+35
+00:01:52,835 --> 00:01:56,015
+are there certain invalid values that are not within the right range,
+
+36
+00:01:56,015 --> 00:01:58,260
+like 300 heartbeats per minute?
+
+37
+00:01:58,260 --> 00:02:01,315
+They can also be rules specific to your data.
+
+38
+00:02:01,315 --> 00:02:03,865
+For example, zip codes should be five integers,
+
+39
+00:02:03,865 --> 00:02:08,950
+like 12345, but not in a float format, 12345.0.
+
+40
+00:02:08,950 --> 00:02:12,310
+If data is not valid, it's not usable.
+
+41
+00:02:12,310 --> 00:02:15,460
+In some cases, if a data point doesn't meet the rules of your data,
+
+42
+00:02:15,460 --> 00:02:18,850
+you may even miss that it's there in the first place during assessment,
+
+43
+00:02:18,850 --> 00:02:22,315
+only to discover it during the later stage, like cleaning.
+
+44
+00:02:22,315 --> 00:02:25,990
+You can fix the validity issues by checking whether your data lies within
+
+45
+00:02:25,990 --> 00:02:30,295
+the right range and checking the data types of your variables.
+
+46
+00:02:30,295 --> 00:02:34,085
+How good is your data accurately representing the real world?
+
+47
+00:02:34,085 --> 00:02:37,645
+Accuracy is a metric that helps you understand whether your data
+
+48
+00:02:37,645 --> 00:02:41,130
+is accurately representing the reality that it aims to depict.
+
+49
+00:02:41,130 --> 00:02:45,800
+The danger with inaccurate data is that it can still pass validity tests.
+
+50
+00:02:45,800 --> 00:02:47,315
+But if you base your assumptions on it,
+
+51
+00:02:47,315 --> 00:02:49,655
+your findings could be completely wrong.
+
+52
+00:02:49,655 --> 00:02:53,405
+Consider the example where we're reporting data on patients' weights.
+
+53
+00:02:53,405 --> 00:02:54,845
+Due to a faulty scale,
+
+54
+00:02:54,845 --> 00:02:56,960
+all patients' weights in a given time period is
+
+55
+00:02:56,960 --> 00:03:00,365
+recorded as five lbs heavier than their true weight.
+
+56
+00:03:00,365 --> 00:03:03,380
+Although the values of the individual's weight will adhere to
+
+57
+00:03:03,380 --> 00:03:08,495
+the defined schema and perform well on the validity metric, it's still inaccurate.
+
+58
+00:03:08,495 --> 00:03:11,420
+It can be challenging to fix accuracy issues,
+
+59
+00:03:11,420 --> 00:03:13,130
+but there are two ways to do this.
+
+60
+00:03:13,130 --> 00:03:15,230
+One way is to keep checking the accuracy of
+
+61
+00:03:15,230 --> 00:03:17,890
+your data source to ensure the data isn't faulty.
+
+62
+00:03:17,890 --> 00:03:21,470
+The second approach is to cross-reference your data with other sources.
+
+63
+00:03:21,470 --> 00:03:24,620
+For example, you may confirm an email address is accurate by
+
+64
+00:03:24,620 --> 00:03:28,405
+associating it with the correct person on a subscription mail list.
+
+65
+00:03:28,405 --> 00:03:33,230
+How good is your data at matching data across sources and following standard rules?
+
+66
+00:03:33,230 --> 00:03:37,310
+Consistency is a metric that helps you understand two things.
+
+67
+00:03:37,310 --> 00:03:40,400
+Whether your data is following a standard format and whether
+
+68
+00:03:40,400 --> 00:03:44,150
+your data is info matches with information from other data sources.
+
+69
+00:03:44,150 --> 00:03:47,735
+Inconsistency also poses a unique danger because
+
+70
+00:03:47,735 --> 00:03:51,245
+inconsistent data can pass the validity and accuracy tests.
+
+71
+00:03:51,245 --> 00:03:54,035
+Consider two examples of inconsistency.
+
+72
+00:03:54,035 --> 00:03:57,575
+Let's talk about a tabular dataset where one column in your data
+
+73
+00:03:57,575 --> 00:04:01,425
+represents birth dates of patients in the month, date, year format.
+
+74
+00:04:01,425 --> 00:04:07,225
+Now another column represents sign-up dates of clients in the day, month, year format.
+
+75
+00:04:07,225 --> 00:04:10,780
+These columns are both valid and accurate individually.
+
+76
+00:04:10,780 --> 00:04:13,750
+But because of the lack of consistency in the format,
+
+77
+00:04:13,750 --> 00:04:16,210
+you cannot reuse the same assessment and cleaning
+
+78
+00:04:16,210 --> 00:04:19,015
+code to handle the date times for both columns,
+
+79
+00:04:19,015 --> 00:04:22,015
+even though they represent the same type of data.
+
+80
+00:04:22,015 --> 00:04:25,585
+Let's say now that the data within your dataset is consistent,
+
+81
+00:04:25,585 --> 00:04:29,365
+it denotes all data recordings coming from the year 2023.
+
+82
+00:04:29,365 --> 00:04:32,650
+However, another dataset stored elsewhere shows
+
+83
+00:04:32,650 --> 00:04:37,145
+the data recordings coming from year 2022. Which one is correct?
+
+84
+00:04:37,145 --> 00:04:40,675
+This data is both inconsistent and inaccurate.
+
+85
+00:04:40,675 --> 00:04:44,030
+Consistency can sometimes be easy to address.
+
+86
+00:04:44,030 --> 00:04:46,400
+In the first example, we would simply need to adopt
+
+87
+00:04:46,400 --> 00:04:49,580
+the same standard format within the data across the columns.
+
+88
+00:04:49,580 --> 00:04:54,260
+But fixing consistency issues can become challenging if the data is also inaccurate.
+
+89
+00:04:54,260 --> 00:04:56,780
+In such cases, ensuring accuracy and
+
+90
+00:04:56,780 --> 00:05:01,880
+cross-referencing data may be necessary before addressing consistency concerns.
+
+91
+00:05:01,880 --> 00:05:05,480
+How good is your data in not containing duplicate values?
+
+92
+00:05:05,480 --> 00:05:08,540
+Uniqueness is a metric that helps you understand whether
+
+93
+00:05:08,540 --> 00:05:11,735
+there is duplicate or overlapping values in your data.
+
+94
+00:05:11,735 --> 00:05:16,070
+Let's say you're collecting survey participant data on your marketing campaign.
+
+95
+00:05:16,070 --> 00:05:18,170
+In particular, your data has two rows.
+
+96
+00:05:18,170 --> 00:05:21,875
+One corresponds to the participant John K. Smith and other to John Smith,
+
+97
+00:05:21,875 --> 00:05:24,410
+but these are actually the same person.
+
+98
+00:05:24,410 --> 00:05:27,710
+Now you have two rows of data relating back to the same person.
+
+99
+00:05:27,710 --> 00:05:31,090
+Which row has the right information and which can be deleted?
+
+100
+00:05:31,090 --> 00:05:34,220
+Duplicated data can also unnecessarily
+
+101
+00:05:34,220 --> 00:05:37,535
+increase the size of your data, consuming valuable resources.
+
+102
+00:05:37,535 --> 00:05:40,610
+Additionally, it can cause downstream accuracy problems.
+
+103
+00:05:40,610 --> 00:05:43,490
+Detecting and removing duplicate data is crucial to
+
+104
+00:05:43,490 --> 00:05:46,775
+maintaining data quality and ensuring accurate insights.
+
+105
+00:05:46,775 --> 00:05:50,145
+Now there are some ways to prevent data duplication and overlaps,
+
+106
+00:05:50,145 --> 00:05:53,480
+including creating unique identifiers for each row,
+
+107
+00:05:53,480 --> 00:05:56,000
+line, or the equivalent in your data.
+
+108
+00:05:56,000 --> 00:05:58,430
+Other times, to fix uniqueness issues,
+
+109
+00:05:58,430 --> 00:06:01,010
+you can programmatically catch duplicate values and
+
+110
+00:06:01,010 --> 00:06:05,100
+remove the ones that are inaccurate or not needed regularly.
+

@@ -1,0 +1,252 @@
+1
+00:00:00,000 --> 00:00:01,815
+If you're an avid computer user,
+
+2
+00:00:01,815 --> 00:00:07,395
+you've most probably already encountered flat files through.txt and.csv files.
+
+3
+00:00:07,395 --> 00:00:11,250
+Flat files are simple data files that have a uniform format.
+
+4
+00:00:11,250 --> 00:00:14,130
+There are a number of different types of files that fall
+
+5
+00:00:14,130 --> 00:00:17,100
+under the flat files category including text files,
+
+6
+00:00:17,100 --> 00:00:19,890
+comma separated values or.csv files,
+
+7
+00:00:19,890 --> 00:00:23,130
+and tab-separated values or.tsv files.
+
+8
+00:00:23,130 --> 00:00:26,655
+All of these types of files typically have a few things in common.
+
+9
+00:00:26,655 --> 00:00:29,640
+They are tabular data in plain text.
+
+10
+00:00:29,640 --> 00:00:32,610
+Each line is a single date record.
+
+11
+00:00:32,610 --> 00:00:37,495
+Each record has one or more values or fields.
+
+12
+00:00:37,495 --> 00:00:41,330
+These values or fields are separated by delimiters or
+
+13
+00:00:41,330 --> 00:00:45,905
+some character like tab spaces, comments, or semi-colons.
+
+14
+00:00:45,905 --> 00:00:49,295
+Let's look at an example flat file from Rotten Tomatoes.
+
+15
+00:00:49,295 --> 00:00:53,525
+Rotten Tomatoes is a popular website that provides reviews for movies and television.
+
+16
+00:00:53,525 --> 00:00:56,495
+They also provide rankings and additional metrics from critics,
+
+17
+00:00:56,495 --> 00:01:00,070
+such as the score that a critic attributed to a movie or a show.
+
+18
+00:01:00,070 --> 00:01:04,055
+Unfortunately, Rotten Tomatoes isn't providing a file to download,
+
+19
+00:01:04,055 --> 00:01:06,680
+so we're going to give it to you for this part of the lesson.
+
+20
+00:01:06,680 --> 00:01:08,605
+Now let's take a look at the data.
+
+21
+00:01:08,605 --> 00:01:11,735
+On the screen, you can see a small preview of our data.
+
+22
+00:01:11,735 --> 00:01:17,030
+We've pre-gathered the Rotten Tomatoes dataset on the top 100 movies with four columns.
+
+23
+00:01:17,030 --> 00:01:18,860
+The ranking of the movie,
+
+24
+00:01:18,860 --> 00:01:21,425
+the critic score attributed to the film,
+
+25
+00:01:21,425 --> 00:01:22,850
+the title of the movie,
+
+26
+00:01:22,850 --> 00:01:24,920
+and the number of critic ratings.
+
+27
+00:01:24,920 --> 00:01:28,850
+This dataset has 101 data records or rows,
+
+28
+00:01:28,850 --> 00:01:30,560
+each on a different line,
+
+29
+00:01:30,560 --> 00:01:33,395
+but I'm only showing you the first 11 rows here.
+
+30
+00:01:33,395 --> 00:01:35,540
+Why 11 and not 10?
+
+31
+00:01:35,540 --> 00:01:40,010
+Well, the first row is for the headers and the rest are the data records.
+
+32
+00:01:40,010 --> 00:01:42,545
+This file is a tsv file,
+
+33
+00:01:42,545 --> 00:01:45,065
+which stands for tab separated values,
+
+34
+00:01:45,065 --> 00:01:49,940
+meaning that it uses spaces to separate the different values within a single data record.
+
+35
+00:01:49,940 --> 00:01:53,990
+Take a brief look at how two different flat files look in a text editor.
+
+36
+00:01:53,990 --> 00:01:57,605
+On the left, we have the tsv file with the tab-separated values.
+
+37
+00:01:57,605 --> 00:02:01,460
+On the right, we've got the comma separated values or the csv file.
+
+38
+00:02:01,460 --> 00:02:03,140
+Again, with this file,
+
+39
+00:02:03,140 --> 00:02:04,610
+the first row represents
+
+40
+00:02:04,610 --> 00:02:08,555
+the header variable names and the subsequent lines are the data records,
+
+41
+00:02:08,555 --> 00:02:10,925
+with each line being one data record.
+
+42
+00:02:10,925 --> 00:02:16,225
+The data values within a record are delimited by tabs spaces or commas.
+
+43
+00:02:16,225 --> 00:02:19,670
+We know that.txt files can be a type of flat file,
+
+44
+00:02:19,670 --> 00:02:24,130
+for example they can contain data with a tabular structure and with delimiters.
+
+45
+00:02:24,130 --> 00:02:26,490
+The file to the left, for example,
+
+46
+00:02:26,490 --> 00:02:28,625
+looks very similar to a csv file,
+
+47
+00:02:28,625 --> 00:02:30,260
+but with the semicolon delimiter,
+
+48
+00:02:30,260 --> 00:02:32,405
+and it's a flat.txt file.
+
+49
+00:02:32,405 --> 00:02:36,530
+However,.txt files do not have to be flat files.
+
+50
+00:02:36,530 --> 00:02:38,690
+Here's an example to the right where we see
+
+51
+00:02:38,690 --> 00:02:42,470
+unstructured text content which is not a flat file.
+
+52
+00:02:42,470 --> 00:02:46,400
+Stay with us to learn more about how to wrangle this type of unstructured data.
+
+53
+00:02:46,400 --> 00:02:50,270
+It's also important to note that in.xls or
+
+54
+00:02:50,270 --> 00:02:53,780
+Microsoft Excel file contains much more advanced features like
+
+55
+00:02:53,780 --> 00:02:57,290
+multiple sheets and different types of formatting that make it different from
+
+56
+00:02:57,290 --> 00:03:01,180
+flat files that are storing data as part of a tabular structured.
+
+57
+00:03:01,180 --> 00:03:02,955
+Take a look at this example.
+
+58
+00:03:02,955 --> 00:03:07,040
+When you open a.xlxx file in Microsoft Excel,
+
+59
+00:03:07,040 --> 00:03:09,155
+the data appears in a tabular format.
+
+60
+00:03:09,155 --> 00:03:12,410
+However, the files are actually in a binary format,
+
+61
+00:03:12,410 --> 00:03:15,110
+specifically designed for Microsoft Excel.
+
+62
+00:03:15,110 --> 00:03:16,955
+If you attempt to load them in a text editor,
+
+63
+00:03:16,955 --> 00:03:20,550
+you will find that the content is not human-readable.
+

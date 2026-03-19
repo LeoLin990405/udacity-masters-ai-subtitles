@@ -1,0 +1,144 @@
+1
+00:00:00,000 --> 00:00:01,965
+Once you've resolved the data issue,
+
+2
+00:00:01,965 --> 00:00:05,715
+it's important to immediately assess either visually or programmatically,
+
+3
+00:00:05,715 --> 00:00:07,350
+that the cleaning was successful.
+
+4
+00:00:07,350 --> 00:00:09,780
+Only after confirming the cleaning work is as
+
+5
+00:00:09,780 --> 00:00:12,840
+intended should you move on to address the next issue.
+
+6
+00:00:12,840 --> 00:00:16,310
+To streamline the data cleaning process and improve efficiency,
+
+7
+00:00:16,310 --> 00:00:19,740
+it's a good idea to establish a well-organized workflow
+
+8
+00:00:19,740 --> 00:00:24,075
+for the assessments or tests that follow each cleaning step.
+
+9
+00:00:24,075 --> 00:00:27,855
+This approach is related to the concept of test-driven development,
+
+10
+00:00:27,855 --> 00:00:32,460
+where before fully developing your software or in our case here, data cleaning code,
+
+11
+00:00:32,460 --> 00:00:34,770
+you think about and write tests ahead of
+
+12
+00:00:34,770 --> 00:00:37,680
+time to continuously validate their effectiveness.
+
+13
+00:00:37,680 --> 00:00:42,920
+This proactive strategy ensures that the cleaning process is accurate and thorough,
+
+14
+00:00:42,920 --> 00:00:46,010
+preventing errors from slipping through unnoticed.
+
+15
+00:00:46,010 --> 00:00:50,330
+What's the difference between data assessment before cleaning and data testing,
+
+16
+00:00:50,330 --> 00:00:52,495
+which is assessment after cleaning?
+
+17
+00:00:52,495 --> 00:00:55,505
+With the data assessment before cleaning,
+
+18
+00:00:55,505 --> 00:01:00,170
+you typically use a combination of directed and non-directed assessment to find issues.
+
+19
+00:01:00,170 --> 00:01:02,060
+But you're typically flexible,
+
+20
+00:01:02,060 --> 00:01:06,295
+keeping your eyes and implementations open to catch different types of issues.
+
+21
+00:01:06,295 --> 00:01:08,090
+For example maybe in one column,
+
+22
+00:01:08,090 --> 00:01:09,660
+you detected NA values.
+
+23
+00:01:09,660 --> 00:01:14,120
+But while doing so, you realize that NA values are also marked as hashtags,
+
+24
+00:01:14,120 --> 00:01:15,880
+not just as NANs.
+
+25
+00:01:15,880 --> 00:01:18,695
+You may search around to see if there are other characters like
+
+26
+00:01:18,695 --> 00:01:21,955
+Asterix that are also placeholders for these NANs.
+
+27
+00:01:21,955 --> 00:01:24,080
+During the data testing stage,
+
+28
+00:01:24,080 --> 00:01:26,825
+which is data assessment after cleaning, by this time though,
+
+29
+00:01:26,825 --> 00:01:29,480
+you already know the exact issues you're targeting with
+
+30
+00:01:29,480 --> 00:01:33,410
+the data cleaning so you can define very specific test cases.
+
+31
+00:01:33,410 --> 00:01:36,350
+For example, you test directly that the number of
+
+32
+00:01:36,350 --> 00:01:40,090
+hashtags and NAN values in your data after cleaning are zero.
+
+33
+00:01:40,090 --> 00:01:42,680
+It's helpful to start thinking about and even writing
+
+34
+00:01:42,680 --> 00:01:47,225
+some basic testing code during data assessment so that you can get a head start on it.
+
+35
+00:01:47,225 --> 00:01:50,600
+Let's go over a couple of fundamental strategies on how to
+
+36
+00:01:50,600 --> 00:01:55,230
+efficiently test if the data cleaning works visually and programmatically.
+

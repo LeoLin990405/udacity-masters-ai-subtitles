@@ -1,0 +1,388 @@
+1
+00:00:00,000 --> 00:00:03,780
+There are some common issues that make data messy or untidy.
+
+2
+00:00:03,780 --> 00:00:05,790
+Let's recap these. One,
+
+3
+00:00:05,790 --> 00:00:08,640
+column headers being values rather than variable names.
+
+4
+00:00:08,640 --> 00:00:11,850
+Two, multiple variables being stored in one column.
+
+5
+00:00:11,850 --> 00:00:15,660
+Three, variables being stored in both rows and columns.
+
+6
+00:00:15,660 --> 00:00:19,890
+Four, multiple types of observational units being stored in the same table,
+
+7
+00:00:19,890 --> 00:00:24,465
+and five, a single observational unit being stored in multiple tables.
+
+8
+00:00:24,465 --> 00:00:25,950
+To solve these issues,
+
+9
+00:00:25,950 --> 00:00:28,485
+we need to know some data structuring and techniques.
+
+10
+00:00:28,485 --> 00:00:32,940
+Column headers are values not variable names is a common data structure issue.
+
+11
+00:00:32,940 --> 00:00:34,365
+Let's briefly visit it.
+
+12
+00:00:34,365 --> 00:00:36,350
+In the dataset on the top we can see
+
+13
+00:00:36,350 --> 00:00:39,560
+how different ranges of test scores are part of the header.
+
+14
+00:00:39,560 --> 00:00:43,730
+These should ideally be placed in a single column as values.
+
+15
+00:00:43,730 --> 00:00:47,450
+What do we do? We can use a function called unpivoting,
+
+16
+00:00:47,450 --> 00:00:48,620
+also known as melting,
+
+17
+00:00:48,620 --> 00:00:51,860
+to transform data across columns into a single column.
+
+18
+00:00:51,860 --> 00:00:54,185
+See the bottom table after unpivoting,
+
+19
+00:00:54,185 --> 00:00:57,500
+we can now see that the different ranges are now stored in
+
+20
+00:00:57,500 --> 00:01:01,300
+one column and the frequency values are also in a single column.
+
+21
+00:01:01,300 --> 00:01:05,540
+Unpivoting is really useful when you need to convert a wide dataset with
+
+22
+00:01:05,540 --> 00:01:09,950
+many columns into a long format with fewer columns and more rows.
+
+23
+00:01:09,950 --> 00:01:12,650
+This transformation is helpful for certain types of
+
+24
+00:01:12,650 --> 00:01:15,475
+data analysis that required data in long format.
+
+25
+00:01:15,475 --> 00:01:18,135
+What if we'd like to do the opposite?
+
+26
+00:01:18,135 --> 00:01:20,590
+Pivoting is the opposite of unpivoting and is
+
+27
+00:01:20,590 --> 00:01:24,685
+a very popular method for being able to get a clearer understanding of data.
+
+28
+00:01:24,685 --> 00:01:26,765
+Let's take a look at how and why.
+
+29
+00:01:26,765 --> 00:01:30,715
+Here we have an example dataset of hypothetical products and revenue.
+
+30
+00:01:30,715 --> 00:01:33,040
+Our simple dataset has four columns.
+
+31
+00:01:33,040 --> 00:01:37,615
+Product classification, whether the product is an early prototype pilot work product,
+
+32
+00:01:37,615 --> 00:01:42,730
+the products A, B, and C. The year when the product is built and the revenue in dollars.
+
+33
+00:01:42,730 --> 00:01:45,670
+Notice how it's challenging to get an idea of the revenue for
+
+34
+00:01:45,670 --> 00:01:49,655
+the three products over the years since the rows are intermixed.
+
+35
+00:01:49,655 --> 00:01:52,630
+We can use a function called pivoting to convert
+
+36
+00:01:52,630 --> 00:01:56,695
+a long dataset into a wide dataset and create useful groupings.
+
+37
+00:01:56,695 --> 00:02:00,935
+For example here we can now clearly see that products A and C
+
+38
+00:02:00,935 --> 00:02:05,495
+were an early prototype stage in 2021 and made it $0 in revenue.
+
+39
+00:02:05,495 --> 00:02:11,140
+The early prototype version of these two products were not continued into 2022 and 2023.
+
+40
+00:02:11,140 --> 00:02:14,220
+Now, Products A and B were both pilots.
+
+41
+00:02:14,220 --> 00:02:18,665
+Product B made $3,885 in revenue in 2021,
+
+42
+00:02:18,665 --> 00:02:22,160
+whereas Product A made $2,193 in revenue in
+
+43
+00:02:22,160 --> 00:02:27,710
+2022 because it was still an early prototype stage in 2021, and so on.
+
+44
+00:02:27,710 --> 00:02:30,315
+When you use unpivoting versus pivoting,
+
+45
+00:02:30,315 --> 00:02:35,420
+use unpivoting to turn a dataset into a standard format for performing analyses.
+
+46
+00:02:35,420 --> 00:02:40,145
+Use pivoting to turn data tables into easier to understand representations of the data,
+
+47
+00:02:40,145 --> 00:02:42,070
+for example for presentations.
+
+48
+00:02:42,070 --> 00:02:46,165
+Transposing is another popular operation that's used for data structuring.
+
+49
+00:02:46,165 --> 00:02:48,410
+Take a look at the example on the screen where we
+
+50
+00:02:48,410 --> 00:02:50,645
+have student IDs that are part of the header.
+
+51
+00:02:50,645 --> 00:02:52,505
+The first row is the student's names.
+
+52
+00:02:52,505 --> 00:02:54,805
+In the second row is the student's test score.
+
+53
+00:02:54,805 --> 00:02:57,320
+We see the common issue of column headers being
+
+54
+00:02:57,320 --> 00:02:59,870
+values not variable names in this DataFrame,
+
+55
+00:02:59,870 --> 00:03:01,550
+it can be challenging to access
+
+56
+00:03:01,550 --> 00:03:04,700
+a specific students test score when the DataFrame is in this format.
+
+57
+00:03:04,700 --> 00:03:09,145
+It's overall a somewhat challenging format for manipulating and navigating the data.
+
+58
+00:03:09,145 --> 00:03:12,170
+We can transpose this into the DataFrame on the bottom,
+
+59
+00:03:12,170 --> 00:03:14,420
+which has neat columns for each variable,
+
+60
+00:03:14,420 --> 00:03:15,770
+for example the ID,
+
+61
+00:03:15,770 --> 00:03:17,210
+the students, and the test score.
+
+62
+00:03:17,210 --> 00:03:19,745
+We can also transpose the DataFrame on the bottom,
+
+63
+00:03:19,745 --> 00:03:21,365
+back into the DataFrame on the top,
+
+64
+00:03:21,365 --> 00:03:23,890
+if we would like to follow that format instead.
+
+65
+00:03:23,890 --> 00:03:27,065
+Data merging is another technique for data structuring.
+
+66
+00:03:27,065 --> 00:03:30,940
+Consider the two separate data tables on the screen that were stored separately,
+
+67
+00:03:30,940 --> 00:03:33,230
+do separate data collection and poor planning.
+
+68
+00:03:33,230 --> 00:03:36,335
+The DataTable on the left contains the ID of the movie,
+
+69
+00:03:36,335 --> 00:03:39,425
+and movie title, and the viewers as part of her viewers dataset.
+
+70
+00:03:39,425 --> 00:03:42,635
+Similarly, the table on the right contains the ID of the movie,
+
+71
+00:03:42,635 --> 00:03:45,335
+a review, and an associated rating.
+
+72
+00:03:45,335 --> 00:03:47,270
+Here we're seeing the common issue of
+
+73
+00:03:47,270 --> 00:03:50,320
+a single observational unit being stored in multiple tables.
+
+74
+00:03:50,320 --> 00:03:54,380
+Since the two tables have the same observational unit of an individual movie,
+
+75
+00:03:54,380 --> 00:03:58,185
+they should ideally be one table with the same observational unit.
+
+76
+00:03:58,185 --> 00:04:01,850
+We can merge these two tables side-by-side using
+
+77
+00:04:01,850 --> 00:04:06,970
+the ID column as our key to get one table with all of the required information.
+
+78
+00:04:06,970 --> 00:04:09,230
+This is a straightforward example of merge,
+
+79
+00:04:09,230 --> 00:04:12,100
+although there can be various types of merges.
+
+80
+00:04:12,100 --> 00:04:14,885
+Data appending, also known as concatenating,
+
+81
+00:04:14,885 --> 00:04:17,000
+is a similar technique today merging.
+
+82
+00:04:17,000 --> 00:04:19,565
+While merging is joining two tables together
+
+83
+00:04:19,565 --> 00:04:22,340
+side-by-side by a unique key to align the data.
+
+84
+00:04:22,340 --> 00:04:24,560
+Appending means taking two tables with
+
+85
+00:04:24,560 --> 00:04:28,600
+the same variables and adding the data points from one table to another table.
+
+86
+00:04:28,600 --> 00:04:30,845
+For example take a look at the table on top.
+
+87
+00:04:30,845 --> 00:04:34,970
+If I wanted to append the second table to it as part of a simple append operation,
+
+88
+00:04:34,970 --> 00:04:38,755
+I could just add the rows from the second table to the end of the top table.
+
+89
+00:04:38,755 --> 00:04:44,270
+Group-bys and aggregations are handy Pandas functions to get a summary table of the data.
+
+90
+00:04:44,270 --> 00:04:47,630
+Group-by allows you to group categorical data together,
+
+91
+00:04:47,630 --> 00:04:50,210
+and aggregating the values associated with them can be
+
+92
+00:04:50,210 --> 00:04:53,305
+done using aggregate functions like a sell more amine.
+
+93
+00:04:53,305 --> 00:04:55,490
+Let's take a look at an example of this.
+
+94
+00:04:55,490 --> 00:05:00,515
+On the left, I have a simple dataset with a date column listing months, and score column.
+
+95
+00:05:00,515 --> 00:05:04,310
+If I were to perform a Group-by on this DataFrame to get the sum
+
+96
+00:05:04,310 --> 00:05:08,360
+of the score and the mean of the score for each month.
+
+97
+00:05:08,360 --> 00:05:12,570
+The result of the group-by would look like the output on the right.
+

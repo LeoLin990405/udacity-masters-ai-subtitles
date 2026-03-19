@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:03,780
+Let's take a look at this webpage now to learn more about APIs.
+
+2
+00:00:03,780 --> 00:00:07,950
+First, I'd like to show you how I can manually get the metadata of a particular book.
+
+3
+00:00:07,950 --> 00:00:12,180
+Right now I just navigated to the webpage I shared earlier in my browser.
+
+4
+00:00:12,180 --> 00:00:14,640
+Take a look at a small snippet of
+
+5
+00:00:14,640 --> 00:00:18,075
+the JSON file containing the metadata we can get from these pages.
+
+6
+00:00:18,075 --> 00:00:20,190
+We have some great info available,
+
+7
+00:00:20,190 --> 00:00:22,545
+including when the book was created,
+
+8
+00:00:22,545 --> 00:00:24,660
+the different files available, etc.
+
+9
+00:00:24,660 --> 00:00:25,920
+At the end of the file,
+
+10
+00:00:25,920 --> 00:00:30,495
+we can actually see information including the reviews, etc.
+
+11
+00:00:30,495 --> 00:00:33,375
+Now, there are two primary ways to use APIs,
+
+12
+00:00:33,375 --> 00:00:35,040
+and they're nicely illustrated by
+
+13
+00:00:35,040 --> 00:00:38,230
+the developer tools that the Internet Archive has put out there.
+
+14
+00:00:38,230 --> 00:00:40,160
+Let's go ahead and switch over to
+
+15
+00:00:40,160 --> 00:00:43,180
+a Jupyter Notebook to figure out how to wrangle this data.
+
+16
+00:00:43,180 --> 00:00:47,765
+One approach to use APIs is similar to what we've done with the request library,
+
+17
+00:00:47,765 --> 00:00:49,820
+where we make an HTTP GET request.
+
+18
+00:00:49,820 --> 00:00:53,540
+This method enables us to retrieve the desired data directly from
+
+19
+00:00:53,540 --> 00:00:55,700
+the API by sending a request and
+
+20
+00:00:55,700 --> 00:00:58,700
+receiving a response containing the relevant information.
+
+21
+00:00:58,700 --> 00:01:01,775
+First, let's go ahead and import our requests and
+
+22
+00:01:01,775 --> 00:01:05,815
+Python's inbuilt JSON library to save the JSON file we're going to get.
+
+23
+00:01:05,815 --> 00:01:08,510
+Let's create a HTTP GET request with
+
+24
+00:01:08,510 --> 00:01:12,020
+the request library to retrieve metadata from this particular books URL.
+
+25
+00:01:12,020 --> 00:01:16,780
+The books unique identifier is specified after the metadata tag.
+
+26
+00:01:16,780 --> 00:01:20,810
+The retrieved information is stored in an object called Book.
+
+27
+00:01:20,810 --> 00:01:22,430
+Now, if we run this code,
+
+28
+00:01:22,430 --> 00:01:26,465
+we see that Book is primarily containing the response code,
+
+29
+00:01:26,465 --> 00:01:29,670
+amongst other data and methods.
+
+30
+00:01:29,720 --> 00:01:36,925
+We then check for any exceptions that requests is raising using raise for status.
+
+31
+00:01:36,925 --> 00:01:40,280
+See, we're seeing here that it doesn't really raise any exceptions,
+
+32
+00:01:40,280 --> 00:01:41,900
+so we can go ahead and proceed.
+
+33
+00:01:41,900 --> 00:01:44,420
+Next, we convert the JSON formatted data from
+
+34
+00:01:44,420 --> 00:01:48,590
+the API response into a native Python data structure using dot-json.
+
+35
+00:01:48,590 --> 00:01:51,560
+The convert data is then assigned to a variable,
+
+36
+00:01:51,560 --> 00:01:53,820
+in this case, JSON data.
+
+37
+00:01:53,830 --> 00:01:56,870
+Now, here we can see that the JSON data
+
+38
+00:01:56,870 --> 00:01:59,840
+variable is containing the metadata of the book we selected,
+
+39
+00:01:59,840 --> 00:02:02,710
+which we previously saw as part of the webpage.
+
+40
+00:02:02,710 --> 00:02:05,060
+Now that we have all of this great data,
+
+41
+00:02:05,060 --> 00:02:07,445
+let's go ahead and save our JSON file.
+
+42
+00:02:07,445 --> 00:02:11,480
+We'll open the file path in book.json in write mode and define
+
+43
+00:02:11,480 --> 00:02:16,250
+the file object as f. We're then going to use the json.dump
+
+44
+00:02:16,250 --> 00:02:18,890
+function to save the data into the
+
+45
+00:02:18,890 --> 00:02:23,135
+book.json file by specifying the JSON data variable in the file object
+
+46
+00:02:23,135 --> 00:02:26,840
+f. Note that the Internet Archive
+
+47
+00:02:26,840 --> 00:02:31,055
+API does not require any authentication for users to retrieve metadata.
+
+48
+00:02:31,055 --> 00:02:35,410
+But some APIs may require authentication through an HTTP post method.
+
+49
+00:02:35,410 --> 00:02:37,055
+In that case, in addition to this,
+
+50
+00:02:37,055 --> 00:02:40,700
+you're actually required to provide your username and password for an account
+
+51
+00:02:40,700 --> 00:02:45,235
+you created with the website in order to be able to make a GET request for the data.
+
+52
+00:02:45,235 --> 00:02:47,850
+Let's talk about a second approach.
+
+53
+00:02:47,850 --> 00:02:50,315
+Now, the second approach to use APIs is using
+
+54
+00:02:50,315 --> 00:02:54,350
+a customized developer library for that particular data source if available.
+
+55
+00:02:54,350 --> 00:02:56,825
+For example, the Internet Archive has created
+
+56
+00:02:56,825 --> 00:02:59,890
+an Internet Archive library for using its API.
+
+57
+00:02:59,890 --> 00:03:02,265
+Here's a small snippet from their tutorials.
+
+58
+00:03:02,265 --> 00:03:04,330
+Here you can import get_item,
+
+59
+00:03:04,330 --> 00:03:07,760
+to retrieve the metadata of the item associated with the identifier,
+
+60
+00:03:07,760 --> 00:03:09,860
+and then store it in an object called book,
+
+61
+00:03:09,860 --> 00:03:12,505
+as we're doing here with our Language of Flowers book.
+
+62
+00:03:12,505 --> 00:03:14,900
+Then we can go ahead and iterate through
+
+63
+00:03:14,900 --> 00:03:18,320
+the key value pairs in the metadata attribute of the book object.
+
+64
+00:03:18,320 --> 00:03:22,520
+We can use dot items on the book's metadata because that is what contains
+
+65
+00:03:22,520 --> 00:03:26,765
+the key value pair as tuples in a list that we can then iterate through.
+
+66
+00:03:26,765 --> 00:03:31,580
+We can then print each key value pair to get the metadata of the book in a neat format.
+
+67
+00:03:31,580 --> 00:03:34,225
+How do you decide which option to use?
+
+68
+00:03:34,225 --> 00:03:36,890
+HTTP GET request is not always available,
+
+69
+00:03:36,890 --> 00:03:38,390
+particularly when a website or
+
+70
+00:03:38,390 --> 00:03:41,630
+a data source provider prohibits gathering through these means,
+
+71
+00:03:41,630 --> 00:03:44,420
+due to concerns like an overload of requests being sent to
+
+72
+00:03:44,420 --> 00:03:47,585
+the website or the website simply doesn't respond.
+
+73
+00:03:47,585 --> 00:03:51,440
+Using customized libraries is typically a more popular option,
+
+74
+00:03:51,440 --> 00:03:55,550
+as popular websites typically have their own library to work with their API,
+
+75
+00:03:55,550 --> 00:03:57,710
+as we saw with the Internet Archive.
+
+76
+00:03:57,710 --> 00:04:01,370
+Some other providers who have customized libraries are Wikipedia,
+
+77
+00:04:01,370 --> 00:04:04,170
+Twitter, or Spotify, and more.
+
