@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:04,860
+Hi there. I hope you're ready to start using Python to visualize your data.
+
+2
+00:00:04,860 --> 00:00:09,285
+In this course, we will use NumPy and pandas to store our data.
+
+3
+00:00:09,285 --> 00:00:14,490
+We will also use Matplotlib and Seaborn to create our visualizations.
+
+4
+00:00:14,490 --> 00:00:19,845
+Now, you might see the abbreviation SB for Seaborn,
+
+5
+00:00:19,845 --> 00:00:22,920
+but SNS is considered best practice.
+
+6
+00:00:22,920 --> 00:00:24,780
+I'll be using that.
+
+7
+00:00:24,780 --> 00:00:30,280
+We will also write and run all of our code using Jupyter Notebooks.
+
+8
+00:00:30,280 --> 00:00:36,580
+Let's start by importing our normal Python libraries.
+
+9
+00:00:36,580 --> 00:00:40,495
+Let's introduce our dataset. We're going to load it.
+
+10
+00:00:40,495 --> 00:00:42,665
+It's called the diamonds dataset,
+
+11
+00:00:42,665 --> 00:00:47,825
+and it consists of 53 or 54,000 rows by 10 columns,
+
+12
+00:00:47,825 --> 00:00:50,735
+and each column represents a feature.
+
+13
+00:00:50,735 --> 00:00:55,620
+Some are categorical and some are quantitative.
+
+14
+00:00:55,620 --> 00:00:58,625
+They could be things like carat size,
+
+15
+00:00:58,625 --> 00:01:01,855
+diamond cut, color, or clarity.
+
+16
+00:01:01,855 --> 00:01:07,985
+Could also include numerical data such as price or table width.
+
+17
+00:01:07,985 --> 00:01:15,325
+Let's start by creating a bar chart on the diamond cut variable and let's use Seaborn.
+
+18
+00:01:15,325 --> 00:01:17,820
+To start of with, to create a bar chart,
+
+19
+00:01:17,820 --> 00:01:22,460
+we want to make sure or we want to make use of the Seaborn function count plot.
+
+20
+00:01:22,460 --> 00:01:28,115
+Here, we set the data source as our DataFrame and we list that we want
+
+21
+00:01:28,115 --> 00:01:34,270
+an x-axis variable and it's going to be the variable in the DataFrame called cut.
+
+22
+00:01:34,270 --> 00:01:36,045
+When we run this cell,
+
+23
+00:01:36,045 --> 00:01:37,665
+this is what we see.
+
+24
+00:01:37,665 --> 00:01:40,440
+Now, it's not strictly necessary,
+
+25
+00:01:40,440 --> 00:01:46,405
+but this semicolon here suppresses printing of plotting object information.
+
+26
+00:01:46,405 --> 00:01:51,470
+From this plot, we can see that most of the diamonds are ideal cut,
+
+27
+00:01:51,470 --> 00:01:55,375
+while good and fair are the least common.
+
+28
+00:01:55,375 --> 00:01:58,595
+One thing that bothers me about the default settings here
+
+29
+00:01:58,595 --> 00:02:01,975
+is that each bar is illustrated using a different color.
+
+30
+00:02:01,975 --> 00:02:05,400
+The cut is already encoded by position on the x-axis,
+
+31
+00:02:05,400 --> 00:02:07,670
+we don't have a good reason right now to
+
+32
+00:02:07,670 --> 00:02:10,595
+associate each generation with a different color.
+
+33
+00:02:10,595 --> 00:02:16,585
+It's much better to start by plotting everything in one color to avoid any distractions.
+
+34
+00:02:16,585 --> 00:02:18,890
+There are several ways to do this.
+
+35
+00:02:18,890 --> 00:02:20,660
+I'm going to show you two.
+
+36
+00:02:20,660 --> 00:02:26,185
+One is to choose a color value using Seaborn's color palette function.
+
+37
+00:02:26,185 --> 00:02:29,285
+This function returns a list of tuples
+
+38
+00:02:29,285 --> 00:02:32,800
+corresponding to the color palette set in the function's argument.
+
+39
+00:02:32,800 --> 00:02:36,080
+In this case, I'm just going to use the default.
+
+40
+00:02:36,080 --> 00:02:43,790
+You can see here, that this is the array or list of the default colors.
+
+41
+00:02:43,790 --> 00:02:46,870
+Let's just take the first element from this list.
+
+42
+00:02:46,870 --> 00:02:49,320
+We're going to index of zero.
+
+43
+00:02:49,320 --> 00:02:53,635
+We're now going to set that into a variable called color.
+
+44
+00:02:53,635 --> 00:02:55,565
+Now when our count plot,
+
+45
+00:02:55,565 --> 00:03:00,515
+if we add the parameter color and set that to our variable,
+
+46
+00:03:00,515 --> 00:03:05,735
+we now see this much better.
+
+47
+00:03:05,735 --> 00:03:11,195
+Another way to specify the color we want is to just name it.
+
+48
+00:03:11,195 --> 00:03:14,915
+Here, I select a very common color palette,
+
+49
+00:03:14,915 --> 00:03:17,060
+the Tableau of a color palette.
+
+50
+00:03:17,060 --> 00:03:19,960
+Here we set Tableau blue.
+
+51
+00:03:19,960 --> 00:03:23,210
+Now, one thing we might want to do with the plot is to
+
+52
+00:03:23,210 --> 00:03:26,555
+sort the chart in decreasing order of prevalence.
+
+53
+00:03:26,555 --> 00:03:32,025
+This can be done by introducing a new parameter in the count plot function, order.
+
+54
+00:03:32,025 --> 00:03:38,570
+This parameter takes a list as an argument with the order in which bar should be plotted.
+
+55
+00:03:38,570 --> 00:03:43,180
+We could hardcode the values into a specific list.
+
+56
+00:03:43,180 --> 00:03:45,980
+For example, we could create a list that starts with
+
+57
+00:03:45,980 --> 00:03:49,535
+ideal and premium and then very good, etc.
+
+58
+00:03:49,535 --> 00:03:51,785
+But this is tedious and we might have
+
+59
+00:03:51,785 --> 00:03:55,735
+a large number of different categories for the x value.
+
+60
+00:03:55,735 --> 00:03:59,280
+Instead, it's better to automate this.
+
+61
+00:03:59,280 --> 00:04:05,470
+We can do that by using the pandas function value counts.
+
+62
+00:04:05,470 --> 00:04:09,680
+This operates on a series or a column from a DataFrame.
+
+63
+00:04:09,680 --> 00:04:19,670
+Value counts summarizes the total number of counts for each category of variable.
+
+64
+00:04:19,670 --> 00:04:25,415
+It does this and produces this list in descending order of prevalence.
+
+65
+00:04:25,415 --> 00:04:27,170
+In order to get the bar order,
+
+66
+00:04:27,170 --> 00:04:32,195
+we just want the index and here we set it to a variable called order,
+
+67
+00:04:32,195 --> 00:04:36,495
+and pass that into our count plot with a parameter called order.
+
+68
+00:04:36,495 --> 00:04:41,450
+Voila. Now we have a decreasing bar chart.
+
+69
+00:04:41,450 --> 00:04:49,355
+Now, one thing we might also be interested in is making these x labels be rotated.
+
+70
+00:04:49,355 --> 00:04:52,715
+For instance, maybe we're looking to catch somebody's eye,
+
+71
+00:04:52,715 --> 00:04:54,200
+or maybe we have very,
+
+72
+00:04:54,200 --> 00:04:56,785
+very long x labels.
+
+73
+00:04:56,785 --> 00:05:02,475
+In order to do that, we can use Matplotlib's x text function.
+
+74
+00:05:02,475 --> 00:05:06,740
+All we do is pass in the parameter that we're interested in,
+
+75
+00:05:06,740 --> 00:05:09,535
+which could be like 15 degrees.
+
+76
+00:05:09,535 --> 00:05:11,750
+We see that here.
+
+77
+00:05:11,750 --> 00:05:14,960
+Alternatively, we could also just switch
+
+78
+00:05:14,960 --> 00:05:19,165
+this to a horizontal bar chart instead of a vertical,
+
+79
+00:05:19,165 --> 00:05:21,295
+and that is very simple.
+
+80
+00:05:21,295 --> 00:05:26,095
+We just switch the perimeter x to parameter y,
+
+81
+00:05:26,095 --> 00:05:27,810
+and once again,
+
+82
+00:05:27,810 --> 00:05:31,120
+Seaborn knows how to plot that.
+

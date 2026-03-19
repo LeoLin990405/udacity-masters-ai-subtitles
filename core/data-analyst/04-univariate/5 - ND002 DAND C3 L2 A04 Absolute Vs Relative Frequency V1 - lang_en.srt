@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:06,705
+In this video, we're going to look at both absolute and relative frequency plots.
+
+2
+00:00:06,705 --> 00:00:12,720
+We're going to start by importing the necessary libraries, numpy, pandas,
+
+3
+00:00:12,720 --> 00:00:19,200
+matplotlib, and Seaborn, and also read in our dataset, the diamonds dataset.
+
+4
+00:00:19,200 --> 00:00:21,840
+Now, if we're interested in plotting
+
+5
+00:00:21,840 --> 00:00:27,420
+absolute values or the total number of counts for a variable,
+
+6
+00:00:27,420 --> 00:00:31,170
+we can use a count plot, for instance,
+
+7
+00:00:31,170 --> 00:00:34,520
+we can use value counts to look at
+
+8
+00:00:34,520 --> 00:00:39,370
+the total number of counts for each diamond clarity grade.
+
+9
+00:00:39,370 --> 00:00:46,000
+We can use value counts to get the order in decreasing prevalence.
+
+10
+00:00:46,000 --> 00:00:53,060
+We can use a count plot to make a vertical or horizontal absolute frequency plot.
+
+11
+00:00:53,060 --> 00:00:57,505
+Here we're using a horizontal frequency plot.
+
+12
+00:00:57,505 --> 00:01:00,530
+However, if we want to answer the question,
+
+13
+00:01:00,530 --> 00:01:05,105
+what percentage of diamonds are internally flawless?
+
+14
+00:01:05,105 --> 00:01:06,860
+That's the IF grade.
+
+15
+00:01:06,860 --> 00:01:11,180
+Well, here would have to do some mental math and estimate.
+
+16
+00:01:11,180 --> 00:01:16,375
+Now instead, we could create a relative frequency plot.
+
+17
+00:01:16,375 --> 00:01:20,260
+In order to do that, we can't use a count plot,
+
+18
+00:01:20,260 --> 00:01:26,170
+because a count plot requires integer values and we're looking to plot a proportion,
+
+19
+00:01:26,170 --> 00:01:29,200
+so instead we must use a bar plot.
+
+20
+00:01:29,200 --> 00:01:32,650
+The first thing we need to do is normalize the data.
+
+21
+00:01:32,650 --> 00:01:34,585
+There are two ways to do this.
+
+22
+00:01:34,585 --> 00:01:38,200
+We can still use value counts, except instead,
+
+23
+00:01:38,200 --> 00:01:42,150
+we can just pass in normalize equals true.
+
+24
+00:01:42,150 --> 00:01:47,470
+This will provide the normalized values where the total number of
+
+25
+00:01:47,470 --> 00:01:53,110
+counts for each type is divided by the total number of counts in the dataset.
+
+26
+00:01:53,110 --> 00:01:58,810
+Then we can convert this series into a full DataFrame,
+
+27
+00:01:58,810 --> 00:02:01,505
+which is what we're doing right here.
+
+28
+00:02:01,505 --> 00:02:06,700
+Then we can pass this into the bar plot, just like before.
+
+29
+00:02:06,700 --> 00:02:10,090
+Now we see the total number of diamonds that are internally
+
+30
+00:02:10,090 --> 00:02:14,255
+flawless is around 3 and a 1/2 or 4%.
+
+31
+00:02:14,255 --> 00:02:18,985
+The SI1, which is the most frequent grade,
+
+32
+00:02:18,985 --> 00:02:21,395
+is almost a quarter of the data.
+
+33
+00:02:21,395 --> 00:02:24,985
+Alternatively, maybe we could combine
+
+34
+00:02:24,985 --> 00:02:28,870
+an absolute frequency plot with a relative frequency plot.
+
+35
+00:02:28,870 --> 00:02:33,085
+This is where matplotlib shines,
+
+36
+00:02:33,085 --> 00:02:35,330
+because it is so flexible.
+
+37
+00:02:35,330 --> 00:02:41,635
+Here what we're going to do is we're going to go back to using a count plot,
+
+38
+00:02:41,635 --> 00:02:46,250
+except we are then going to iterate over
+
+39
+00:02:46,250 --> 00:02:51,500
+each bar and then we're going to convert it into a percentage.
+
+40
+00:02:51,500 --> 00:02:58,400
+What we're going to end up doing is creating a string where we look at
+
+41
+00:02:58,400 --> 00:03:02,870
+the count of that quality grade divided by
+
+42
+00:03:02,870 --> 00:03:08,530
+the total number of counts in the entire dataset.
+
+43
+00:03:08,530 --> 00:03:13,130
+Here we see that now we have both access to
+
+44
+00:03:13,130 --> 00:03:15,140
+the absolute number of
+
+45
+00:03:15,140 --> 00:03:19,710
+each clarity grade in our dataset as well as the relative proportion.
+

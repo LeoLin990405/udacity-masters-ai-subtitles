@@ -1,0 +1,156 @@
+1
+00:00:04,290 --> 00:00:07,390
+In certain circumstances, you may find
+
+2
+00:00:07,390 --> 00:00:10,215
+that your scatter plots are difficult to interpret.
+
+3
+00:00:10,215 --> 00:00:15,065
+You might have an extremely large number of data points such that a standard scatter plot
+
+4
+00:00:15,065 --> 00:00:19,920
+is an undetailed blob or your numeric data might be discrete in nature,
+
+5
+00:00:19,920 --> 00:00:23,120
+making it difficult to see the distribution of data.
+
+6
+00:00:23,120 --> 00:00:27,985
+Can you tell what's going on in either of these plots? Me either.
+
+7
+00:00:27,985 --> 00:00:30,940
+Conditions like this where you have too many points in
+
+8
+00:00:30,940 --> 00:00:34,140
+a small area are called over plotting.
+
+9
+00:00:34,140 --> 00:00:38,410
+In these cases, techniques like sampling, transparency,
+
+10
+00:00:38,410 --> 00:00:41,205
+and jitter can allow you to build scatter plots
+
+11
+00:00:41,205 --> 00:00:45,250
+where you can better detect patterns and relationships.
+
+12
+00:00:45,260 --> 00:00:49,200
+Take for example, this plot of 10,000 data points
+
+13
+00:00:49,200 --> 00:00:52,885
+generated from a couple of bivariate normal distributions.
+
+14
+00:00:52,885 --> 00:00:56,190
+It's hard to tell where the drop off in density is from
+
+15
+00:00:56,190 --> 00:00:59,840
+the distribution's peaks and how fast it occurs.
+
+16
+00:00:59,840 --> 00:01:05,030
+One way of solving this is to use random sampling to plot a smaller number of points.
+
+17
+00:01:05,030 --> 00:01:07,025
+Let's say 800.
+
+18
+00:01:07,025 --> 00:01:11,425
+We can clearly see the gap in peaks where fewer points are plotted.
+
+19
+00:01:11,425 --> 00:01:14,150
+The random selection of points still gives us
+
+20
+00:01:14,150 --> 00:01:17,375
+a good intuition for the general distribution of data.
+
+21
+00:01:17,375 --> 00:01:19,400
+As an alternative strategy,
+
+22
+00:01:19,400 --> 00:01:21,820
+we can still plot our original 10,000
+
+23
+00:01:21,820 --> 00:01:25,705
+points but plot each point with some transparency instead.
+
+24
+00:01:25,705 --> 00:01:30,185
+Each individual point will be lighter in color but when points overlap,
+
+25
+00:01:30,185 --> 00:01:32,715
+the overlapped region becomes darker.
+
+26
+00:01:32,715 --> 00:01:35,930
+The two darkest regions are those with the highest number of
+
+27
+00:01:35,930 --> 00:01:39,740
+points indicating the peaks of the distributions.
+
+28
+00:01:39,740 --> 00:01:43,770
+Since a higher density results in a darker color,
+
+29
+00:01:43,770 --> 00:01:45,790
+we have in an implied way,
+
+30
+00:01:45,790 --> 00:01:51,185
+used color to augment what would have been obscured from using position alone.
+
+31
+00:01:51,185 --> 00:01:55,250
+But what if one or both of our variables are discrete?
+
+32
+00:01:55,250 --> 00:02:00,705
+Sampling doesn't help at all because any number of overlapping points all look the same.
+
+33
+00:02:00,705 --> 00:02:04,000
+Transparency allows us to make density judgments based on
+
+34
+00:02:04,000 --> 00:02:08,970
+color but this loses some of the power available in positional encodings.
+
+35
+00:02:08,970 --> 00:02:12,990
+This is one case where we will want to add some jitter.
+
+36
+00:02:12,990 --> 00:02:17,540
+Jittering adds a small amount of random noise to the position of each point
+
+37
+00:02:17,540 --> 00:02:23,125
+so that multiple data points that have the same values are now spread over a small area.
+
+38
+00:02:23,125 --> 00:02:28,420
+As long as the jitter keeps each of the discrete values in distinct bands,
+
+39
+00:02:28,420 --> 00:02:34,020
+this can be a big help in the identification and interpretation of trends.
+

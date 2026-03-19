@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:05,025
+In this lesson, we're going to talk about adding color as an encoding.
+
+2
+00:00:05,025 --> 00:00:09,000
+Now, color is a natural encoding regime for additional variables
+
+3
+00:00:09,000 --> 00:00:13,065
+and it's easily supported by both Matplotlib and Seaborn.
+
+4
+00:00:13,065 --> 00:00:20,805
+To get started, let's begin by doing our normal imports and also importing our data set.
+
+5
+00:00:20,805 --> 00:00:26,250
+There are many ways to add color to Seaborn plots and this lesson we're going to use
+
+6
+00:00:26,250 --> 00:00:32,520
+facet grid and we're going to specifically set for our facet grid a hue parameter.
+
+7
+00:00:32,520 --> 00:00:36,820
+In this case, we're going to set it to be transmission type.
+
+8
+00:00:36,820 --> 00:00:41,300
+We're going to plot specifically regression plot
+
+9
+00:00:41,300 --> 00:00:46,630
+looking at fuel efficiency versus engine size.
+
+10
+00:00:46,630 --> 00:00:53,690
+Note that the hue parameter sets the transmission type that we're interested in.
+
+11
+00:00:53,690 --> 00:00:59,590
+Also, hue order allows us to specify the order that would like to use.
+
+12
+00:00:59,590 --> 00:01:02,855
+Note also that because we only have a single plot,
+
+13
+00:01:02,855 --> 00:01:07,535
+I decided to set the aspect ratio to 1.5,
+
+14
+00:01:07,535 --> 00:01:09,500
+which gives us a larger plot,
+
+15
+00:01:09,500 --> 00:01:12,385
+50% longer than it is tall.
+
+16
+00:01:12,385 --> 00:01:15,930
+Now, let's look at vehicle class instead.
+
+17
+00:01:15,930 --> 00:01:18,600
+Vehicle class is an ordered variable so
+
+18
+00:01:18,600 --> 00:01:23,410
+the qualitative palette doesn't work quite as well instead,
+
+19
+00:01:23,410 --> 00:01:26,165
+we should specify a sequential palette.
+
+20
+00:01:26,165 --> 00:01:30,265
+This can be set through facet grids with the palette parameter.
+
+21
+00:01:30,265 --> 00:01:35,135
+Also note that we can use the same strings as in Matplotlib in this case,
+
+22
+00:01:35,135 --> 00:01:37,465
+I'll use verity reverse.
+
+23
+00:01:37,465 --> 00:01:40,685
+This palette not only goes from light to dark,
+
+24
+00:01:40,685 --> 00:01:43,490
+but it also has a good range of hues to further
+
+25
+00:01:43,490 --> 00:01:47,860
+discriminate between the various vehicle classes.
+
+26
+00:01:47,860 --> 00:01:50,795
+If instead we have a numeric variable,
+
+27
+00:01:50,795 --> 00:01:52,820
+such as CO_2 emissions,
+
+28
+00:01:52,820 --> 00:01:56,105
+we should not just set the variable and the hue parameter,
+
+29
+00:01:56,105 --> 00:02:01,745
+since facet grids only expect to facet across categorical variables.
+
+30
+00:02:01,745 --> 00:02:04,595
+If we do that, we're going to get a messy legend with
+
+31
+00:02:04,595 --> 00:02:07,960
+one color for every unique CO_2 value.
+
+32
+00:02:07,960 --> 00:02:13,955
+Instead, we should just use the basic Matplotlib scatter function to create our plot.
+
+33
+00:02:13,955 --> 00:02:16,730
+We lose the convenient jitter in this case,
+
+34
+00:02:16,730 --> 00:02:18,770
+but there's an interaction in
+
+35
+00:02:18,770 --> 00:02:22,820
+the color parameters that make coloring by value hard to do.
+
+36
+00:02:22,820 --> 00:02:29,180
+With scatter adding a third numeric variable is as simple as setting the C parameter,
+
+37
+00:02:29,180 --> 00:02:30,875
+which stands for color.
+
+38
+00:02:30,875 --> 00:02:36,380
+We can also set our own color palette using the CMAP parameter.
+
+39
+00:02:36,380 --> 00:02:39,275
+Finally, for the color bar,
+
+40
+00:02:39,275 --> 00:02:46,260
+we wanted to add a label to that also to make it clear what we are seeing on this axis.
+

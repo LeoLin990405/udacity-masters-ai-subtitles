@@ -1,0 +1,88 @@
+1
+00:00:04,280 --> 00:00:09,074
+If we want to look at the relationship between two categorical variables,
+
+2
+00:00:09,074 --> 00:00:12,720
+then we have to go beyond simple positional encodings.
+
+3
+00:00:12,720 --> 00:00:14,475
+Earlier in this lesson,
+
+4
+00:00:14,475 --> 00:00:19,635
+you saw how heat maps depict a 2D histogram across two numeric variables.
+
+5
+00:00:19,635 --> 00:00:23,535
+A similar strategy can be used for two categorical variables,
+
+6
+00:00:23,535 --> 00:00:26,400
+analogous to creating a 2D bar chart.
+
+7
+00:00:26,400 --> 00:00:31,555
+However, if we want to avoid the imprecision of using color to encode numbers,
+
+8
+00:00:31,555 --> 00:00:35,345
+then the standard plot choice is the clustered bar chart.
+
+9
+00:00:35,345 --> 00:00:39,860
+A clustered bar chart starts out the same as the univariate bar chart with
+
+10
+00:00:39,860 --> 00:00:44,810
+the levels of one variable on the x-axis and counts to be plotted on the y-axis.
+
+11
+00:00:44,810 --> 00:00:49,220
+However, instead of just one bar being plotted at each exposition,
+
+12
+00:00:49,220 --> 00:00:51,290
+we instead have multiple bars,
+
+13
+00:00:51,290 --> 00:00:55,265
+one for each level of the second variable we want to plot.
+
+14
+00:00:55,265 --> 00:00:59,630
+Typically, we apply a color or texture encoding to each bar
+
+15
+00:00:59,630 --> 00:01:04,295
+in each cluster to distinguish between the levels of the second variable.
+
+16
+00:01:04,295 --> 00:01:08,810
+Thus, the counts depicted by the height of each bar are associated with
+
+17
+00:01:08,810 --> 00:01:14,060
+the general exposition for the first variable and the color for the second variable.
+
+18
+00:01:14,060 --> 00:01:16,970
+This correspondence is easier to see when we
+
+19
+00:01:16,970 --> 00:01:19,895
+put the heat map next to the clustered bar chart.
+
+20
+00:01:19,895 --> 00:01:22,280
+Comparing the two visualizations,
+
+21
+00:01:22,280 --> 00:01:25,670
+you can see the increased precision and understanding the ranking and
+
+22
+00:01:25,670 --> 00:01:31,050
+differences in frequency counts when you look at the bar chart compared to the heat map.
+

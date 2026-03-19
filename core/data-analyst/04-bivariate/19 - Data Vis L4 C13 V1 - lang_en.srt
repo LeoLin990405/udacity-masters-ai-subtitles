@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:02,530
+The point plot function you saw previously,
+
+2
+00:00:02,530 --> 00:00:06,855
+was good for summarizing a quantitative variable against a qualitative variable.
+
+3
+00:00:06,855 --> 00:00:09,130
+We need a different function for summarizing
+
+4
+00:00:09,130 --> 00:00:12,395
+a quantitative variable against a second quantitative variable,
+
+5
+00:00:12,395 --> 00:00:15,885
+such as with fuel efficiency by engine displacement.
+
+6
+00:00:15,885 --> 00:00:19,625
+In this case, we'll make use of Matplotlib's error bar function,
+
+7
+00:00:19,625 --> 00:00:24,170
+which plots a line between points with an optional setting for adding error bars.
+
+8
+00:00:24,170 --> 00:00:29,195
+We can set the data X and Y arguments just like we've done before.
+
+9
+00:00:29,195 --> 00:00:33,150
+Unfortunately, the plot we get out is uninformative.
+
+10
+00:00:33,150 --> 00:00:36,950
+All that Matplotlib is doing is connecting each pair of X and Y
+
+11
+00:00:36,950 --> 00:00:41,365
+values in order as they appear in the data frame without any sorting.
+
+12
+00:00:41,365 --> 00:00:43,360
+A scatter plot is basically this plot,
+
+13
+00:00:43,360 --> 00:00:47,500
+but without any connecting lines and distinct points at each value pair.
+
+14
+00:00:47,500 --> 00:00:50,825
+We'll be fine to use error bar if all of our data is sorted by
+
+15
+00:00:50,825 --> 00:00:55,325
+the X variable and we only have one Y value for each X value.
+
+16
+00:00:55,325 --> 00:00:58,795
+So, let's do some work to get a data frame with those qualities.
+
+17
+00:00:58,795 --> 00:01:01,310
+First of all, I'm going to set bin edges and
+
+18
+00:01:01,310 --> 00:01:04,775
+centers for summarizing the data on the displacement value.
+
+19
+00:01:04,775 --> 00:01:10,125
+I need these center-values so that the points are plotted in their accurate positions.
+
+20
+00:01:10,125 --> 00:01:12,540
+I'm leaving out the last value of the bin edges,
+
+21
+00:01:12,540 --> 00:01:15,580
+since that won't correspond to an actual bin center.
+
+22
+00:01:15,580 --> 00:01:18,440
+Next, I'll use Panda's cut function to
+
+23
+00:01:18,440 --> 00:01:21,535
+figure out which bin each data points should be used in.
+
+24
+00:01:21,535 --> 00:01:24,315
+The first argument is the series I'm slicing,
+
+25
+00:01:24,315 --> 00:01:27,150
+the second argument is the set of bins,
+
+26
+00:01:27,150 --> 00:01:30,315
+and the third argument makes sure that the values that are
+
+27
+00:01:30,315 --> 00:01:33,960
+equal to the mean get included into the bins.
+
+28
+00:01:33,960 --> 00:01:36,290
+Now, I'm going to use groupby to group-by
+
+29
+00:01:36,290 --> 00:01:40,960
+those displacement bins and then take the mean of points that fall in each bin.
+
+30
+00:01:40,960 --> 00:01:44,095
+Finally, we're ready to plot again.
+
+31
+00:01:44,095 --> 00:01:46,915
+Since we're no longer using the original data frame,
+
+32
+00:01:46,915 --> 00:01:48,850
+we need to change our arguments.
+
+33
+00:01:48,850 --> 00:01:51,800
+The bin centers are going to go with the X parameter and
+
+34
+00:01:51,800 --> 00:01:55,435
+the Panda series with the fuel efficiency for the Y parameter.
+
+35
+00:01:55,435 --> 00:01:57,705
+The line plot looks like this,
+
+36
+00:01:57,705 --> 00:02:01,755
+showing a general decrease in fuel efficiency with engine size.
+
+37
+00:02:01,755 --> 00:02:05,445
+There is a gap in the line where there is no data available.
+
+38
+00:02:05,445 --> 00:02:07,435
+With the error bar function,
+
+39
+00:02:07,435 --> 00:02:10,485
+we can also compute the standard deviation of the fuel efficiencies in
+
+40
+00:02:10,485 --> 00:02:14,500
+each bin and then plot them through the Y air parameter.
+
+41
+00:02:14,500 --> 00:02:16,620
+This plot shows that while the cars with
+
+42
+00:02:16,620 --> 00:02:20,010
+smaller engine sizes have generally higher fuel efficiency,
+
+43
+00:02:20,010 --> 00:02:24,160
+there's also a lot more variability in those efficiencies.
+

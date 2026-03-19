@@ -1,0 +1,140 @@
+1
+00:00:00,000 --> 00:00:02,760
+In this lesson, we're going to look at
+
+2
+00:00:02,760 --> 00:00:09,000
+another numerical slash categorical plotting type called a box plot.
+
+3
+00:00:09,000 --> 00:00:11,880
+These are very similar to violin plots,
+
+4
+00:00:11,880 --> 00:00:14,055
+but a little bit easier to interpret.
+
+5
+00:00:14,055 --> 00:00:16,530
+Let's start by as always,
+
+6
+00:00:16,530 --> 00:00:20,710
+importing our libraries and our dataset.
+
+7
+00:00:21,170 --> 00:00:24,015
+Just like violin plots,
+
+8
+00:00:24,015 --> 00:00:26,940
+box plots are used to depict
+
+9
+00:00:26,940 --> 00:00:31,125
+a relationship between a quantitative and a qualitative variable.
+
+10
+00:00:31,125 --> 00:00:35,925
+Both matplotlib and seaborn have a method boxplot.
+
+11
+00:00:35,925 --> 00:00:38,890
+Here we're going to use seaborns.
+
+12
+00:00:38,890 --> 00:00:41,315
+It takes for the data parameter,
+
+13
+00:00:41,315 --> 00:00:43,390
+the data frame we're interested in.
+
+14
+00:00:43,390 --> 00:00:46,710
+Our x-variable is going to be vehicle class,
+
+15
+00:00:46,710 --> 00:00:50,060
+our y parameter is going to be combined
+
+16
+00:00:50,060 --> 00:00:55,205
+fuel efficiency and the color I'm setting to tableau blue.
+
+17
+00:00:55,205 --> 00:01:01,595
+I'm also rotating our x ticks to make our x-label easier to read.
+
+18
+00:01:01,595 --> 00:01:08,720
+In a boxplot each distribution includes descriptive statistics for each category.
+
+19
+00:01:08,720 --> 00:01:14,900
+For instance, each line of a box denotes a quartile range.
+
+20
+00:01:14,900 --> 00:01:22,865
+For instance, this line on the box for sub-compact cars is the first quartile,
+
+21
+00:01:22,865 --> 00:01:28,310
+meaning 25% of the data falls below that line.
+
+22
+00:01:28,310 --> 00:01:30,935
+This middle line here is the median,
+
+23
+00:01:30,935 --> 00:01:36,025
+50% of the data lives below that line, 50% above.
+
+24
+00:01:36,025 --> 00:01:41,165
+Up here we have the third quartile, or 75th percentile.
+
+25
+00:01:41,165 --> 00:01:45,335
+Seventy five percent of the distribution falls below that line.
+
+26
+00:01:45,335 --> 00:01:48,860
+Whiskers are extended from the top and bottom of
+
+27
+00:01:48,860 --> 00:01:52,895
+the boxes to indicate the largest and smallest values.
+
+28
+00:01:52,895 --> 00:01:58,180
+Any outliers are indicated by these black diamonds.
+
+29
+00:01:58,180 --> 00:02:04,295
+One thing to remember is that while boxplots do a fine job of summarizing the data,
+
+30
+00:02:04,295 --> 00:02:08,335
+there are some distributional details that can get lost.
+
+31
+00:02:08,335 --> 00:02:12,800
+In some instances, violin plots might provide more information,
+
+32
+00:02:12,800 --> 00:02:17,485
+such as if distributions are bimodal or multimodal in general.
+
+33
+00:02:17,485 --> 00:02:23,035
+However, filling plots can be deceiving or confusing to those not familiar with them,
+
+34
+00:02:23,035 --> 00:02:26,660
+so when it comes to explanatory data visualization,
+
+35
+00:02:26,660 --> 00:02:32,220
+you might want to choose a box plot for simplicity and focus.
+

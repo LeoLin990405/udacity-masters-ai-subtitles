@@ -1,0 +1,344 @@
+1
+00:00:00,000 --> 00:00:03,930
+This lesson will focus on a few aspects of feature engineering,
+
+2
+00:00:03,930 --> 00:00:08,605
+which is similar to things you may be familiar with from data wrangling.
+
+3
+00:00:08,605 --> 00:00:15,135
+In particular, we're going to look at the feature cross and also one-hot encoding.
+
+4
+00:00:15,135 --> 00:00:19,260
+We're also going to start by looking at a new dataset that
+
+5
+00:00:19,260 --> 00:00:23,130
+looks at a subsample of taxi rides in New York City.
+
+6
+00:00:23,130 --> 00:00:28,140
+This dataset comes from the New York City taxi and Limousine Commission and
+
+7
+00:00:28,140 --> 00:00:33,375
+it's packaged as part of seaborne and can be loaded directly from Jupiter.
+
+8
+00:00:33,375 --> 00:00:37,035
+You can find all of the other seaborne provided datasets
+
+9
+00:00:37,035 --> 00:00:41,245
+on seaborne GitHub page. Let's take a look.
+
+10
+00:00:41,245 --> 00:00:49,710
+We can start by doing our normal imports and then by using seaborne load dataset method.
+
+11
+00:00:50,110 --> 00:00:54,635
+We see here that this dataset has
+
+12
+00:00:54,635 --> 00:01:02,105
+6,400 different taxi rides split between 14 different feature columns.
+
+13
+00:01:02,105 --> 00:01:04,130
+Before we get too far into this,
+
+14
+00:01:04,130 --> 00:01:08,675
+you may like to take a minute and explore this dataset to get a feel for it.
+
+15
+00:01:08,675 --> 00:01:12,170
+Now, the feature crosses a broad category of
+
+16
+00:01:12,170 --> 00:01:15,710
+feature engineering where you combine multiple features.
+
+17
+00:01:15,710 --> 00:01:18,815
+Often these features are numeric.
+
+18
+00:01:18,815 --> 00:01:21,395
+For instance, in this case,
+
+19
+00:01:21,395 --> 00:01:24,545
+we may want to determine the distribution of trips.
+
+20
+00:01:24,545 --> 00:01:30,490
+We can do that by subtracting the pickup and drop-off times.
+
+21
+00:01:30,490 --> 00:01:34,640
+Since these are datetime objects will have to convert them to seconds.
+
+22
+00:01:34,640 --> 00:01:39,995
+We can use the DataFrame d-types method to see that indeed,
+
+23
+00:01:39,995 --> 00:01:43,630
+pickup and drop-off are both datetime methods.
+
+24
+00:01:43,630 --> 00:01:49,640
+Here, I'm going to take the difference between the drop-off and pick-up times,
+
+25
+00:01:49,640 --> 00:01:51,350
+and then I'm going to use
+
+26
+00:01:51,350 --> 00:01:55,610
+a Lambda function to convert them to the total number of seconds.
+
+27
+00:01:55,610 --> 00:02:01,470
+Then I'm going to use seaborne to create a histogram of travel time.
+
+28
+00:02:03,410 --> 00:02:08,735
+Now another thing we might like to do is see how this changes for different boroughs.
+
+29
+00:02:08,735 --> 00:02:12,085
+Customers can of course go from one borough to another,
+
+30
+00:02:12,085 --> 00:02:17,075
+so we really only want to look at those that start and stop in the same borough.
+
+31
+00:02:17,075 --> 00:02:21,530
+Here, I'm going to create a simple series of
+
+32
+00:02:21,530 --> 00:02:27,395
+true-false values to see if the pickup and drop-off borough are the same.
+
+33
+00:02:27,395 --> 00:02:30,800
+First, I create a series where I say,
+
+34
+00:02:30,800 --> 00:02:34,235
+is the drop-off borough the same as the pickup borough.
+
+35
+00:02:34,235 --> 00:02:37,760
+This will create a series of true and false values that
+
+36
+00:02:37,760 --> 00:02:42,035
+I then used to create a new feature.
+
+37
+00:02:42,035 --> 00:02:47,630
+Then I look at only the subset of data with true,
+
+38
+00:02:47,630 --> 00:02:49,655
+and then look at travel time.
+
+39
+00:02:49,655 --> 00:02:54,560
+Note, I only use the dataset where trip stayed in the same borough and
+
+40
+00:02:54,560 --> 00:03:00,380
+then I used hue to look at different ones by color.
+
+41
+00:03:00,380 --> 00:03:05,315
+Now, although I'm not using the specific feature cross to draw conclusions,
+
+42
+00:03:05,315 --> 00:03:11,510
+it did help me plot intro-borough travel times very quickly with only two lines of code.
+
+43
+00:03:11,510 --> 00:03:15,470
+Also, we see that we have a lot more trips in
+
+44
+00:03:15,470 --> 00:03:20,075
+Manhattan so we should probably look at relative frequencies between them.
+
+45
+00:03:20,075 --> 00:03:26,630
+We can do this by using the statistics parameter and setting it equal to percent,
+
+46
+00:03:26,630 --> 00:03:30,770
+and then setting the common norm parameter to false,
+
+47
+00:03:30,770 --> 00:03:35,255
+meaning that each borough will have its own normalization.
+
+48
+00:03:35,255 --> 00:03:39,740
+We see here that the distributions look fairly similar.
+
+49
+00:03:39,740 --> 00:03:44,450
+However, there are very few trips from the Bronx,
+
+50
+00:03:44,450 --> 00:03:47,905
+so the statistics just to have a lot of outliers.
+
+51
+00:03:47,905 --> 00:03:53,975
+Lastly, another example of a feature cross is to numerically manipulate features.
+
+52
+00:03:53,975 --> 00:03:56,540
+For instance, we might want to know if rides with
+
+53
+00:03:56,540 --> 00:03:59,975
+multiple passengers have different costs or simply,
+
+54
+00:03:59,975 --> 00:04:02,185
+what is the cost per passenger?
+
+55
+00:04:02,185 --> 00:04:05,840
+For instance, we can just take the total cost and
+
+56
+00:04:05,840 --> 00:04:09,635
+divide that by the number of passengers to get the cost per passenger.
+
+57
+00:04:09,635 --> 00:04:11,960
+Then we can plot this.
+
+58
+00:04:11,960 --> 00:04:15,410
+Or we might also create a new feature
+
+59
+00:04:15,410 --> 00:04:19,325
+specifying whether the ride was solo or multi passenger.
+
+60
+00:04:19,325 --> 00:04:25,685
+Once again, I can use a Lambda function to say if the number of passengers was one,
+
+61
+00:04:25,685 --> 00:04:29,690
+call it solo, otherwise call it multi passenger.
+
+62
+00:04:29,690 --> 00:04:37,145
+I can save this into its own series and then quickly use a box plot to show that indeed,
+
+63
+00:04:37,145 --> 00:04:39,245
+we see that if you travel with friends,
+
+64
+00:04:39,245 --> 00:04:43,735
+the total cost per person is advantageous on average.
+
+65
+00:04:43,735 --> 00:04:47,150
+Finally, I would like to introduce one-hot encoding,
+
+66
+00:04:47,150 --> 00:04:51,355
+which turns a categorical variable into a binary variable.
+
+67
+00:04:51,355 --> 00:04:54,335
+This means it turns it into a one or zero,
+
+68
+00:04:54,335 --> 00:04:56,575
+a true or a false.
+
+69
+00:04:56,575 --> 00:05:00,485
+This is often useful in machine learning contexts,
+
+70
+00:05:00,485 --> 00:05:03,815
+but you also might see it in data visualization.
+
+71
+00:05:03,815 --> 00:05:06,335
+To one-hot encode features,
+
+72
+00:05:06,335 --> 00:05:11,425
+you can use the pandas get dummies method.
+
+73
+00:05:11,425 --> 00:05:13,460
+If you don't specify a column,
+
+74
+00:05:13,460 --> 00:05:16,685
+it will operate on all categorical variables.
+
+75
+00:05:16,685 --> 00:05:21,125
+For instance, if we look at our DataFrame,
+
+76
+00:05:21,125 --> 00:05:28,130
+will notice that our starting DataFrame has 6,400 rows and 18 features.
+
+77
+00:05:28,130 --> 00:05:32,855
+But if we just apply get_dummies to the entire DataFrame,
+
+78
+00:05:32,855 --> 00:05:38,305
+it blows up to now 423 columns.
+
+79
+00:05:38,305 --> 00:05:41,150
+To get a better idea of what this looks like,
+
+80
+00:05:41,150 --> 00:05:44,225
+let's just specify the payment column.
+
+81
+00:05:44,225 --> 00:05:50,230
+Here we see when we pass and get_dummies with our DataFrame and specify that column,
+
+82
+00:05:50,230 --> 00:05:55,815
+it goes from 18 columns to 19 columns.
+
+83
+00:05:55,815 --> 00:05:59,900
+Basically, it goes from
+
+84
+00:05:59,900 --> 00:06:04,535
+payment and then converts it to payment cash or payment credit card,
+
+85
+00:06:04,535 --> 00:06:07,520
+where if that ride was paid with a credit card,
+
+86
+00:06:07,520 --> 00:06:13,020
+it will have a zero for cash and a one for credit card, and vice versa.
+

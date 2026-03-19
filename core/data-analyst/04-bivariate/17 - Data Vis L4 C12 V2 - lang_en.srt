@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:03,925
+One additional option that we have for plotting one quantitative variable
+
+2
+00:00:03,925 --> 00:00:08,440
+against one qualitative variable is the adaptation of bar charts.
+
+3
+00:00:08,440 --> 00:00:10,910
+Instead of showing counts on the vertical axis,
+
+4
+00:00:10,910 --> 00:00:13,240
+we can show the mean of a second variable.
+
+5
+00:00:13,240 --> 00:00:15,030
+To do this, we need to make use of
+
+6
+00:00:15,030 --> 00:00:18,245
+a different function than the count plot function that we had before.
+
+7
+00:00:18,245 --> 00:00:22,125
+Instead, Seaborn's bar plot function will be what we want.
+
+8
+00:00:22,125 --> 00:00:24,670
+I'll add a label to the y-axis so that it's
+
+9
+00:00:24,670 --> 00:00:27,620
+clear that we're plotting the means on the y-axis.
+
+10
+00:00:27,620 --> 00:00:29,440
+Since we have a bar plot,
+
+11
+00:00:29,440 --> 00:00:32,760
+the bottom limit of the y-axis has been set to zero.
+
+12
+00:00:32,760 --> 00:00:37,425
+The black lines on each bar indicate uncertainty about the mean as a confidence info.
+
+13
+00:00:37,425 --> 00:00:39,615
+Since we have a lot of data available,
+
+14
+00:00:39,615 --> 00:00:42,030
+the uncertainty whiskers are quite small.
+
+15
+00:00:42,030 --> 00:00:44,545
+If we want to leave these whiskers out of the plot,
+
+16
+00:00:44,545 --> 00:00:47,900
+we can do so by setting air width equals zero.
+
+17
+00:00:47,900 --> 00:00:51,740
+Alternatively, we could change the bars to represent the standard deviation of
+
+18
+00:00:51,740 --> 00:00:55,995
+data points by setting the parameter ci equals sd.
+
+19
+00:00:55,995 --> 00:00:58,920
+If having the zero lower bound isn't of interest,
+
+20
+00:00:58,920 --> 00:01:02,950
+then you can choose the point plot function instead of the bar plot function.
+
+21
+00:01:02,950 --> 00:01:05,360
+We actually don't need to set the base color in
+
+22
+00:01:05,360 --> 00:01:08,610
+this case for everything to show up as the same color.
+
+23
+00:01:08,610 --> 00:01:10,215
+Note that by default,
+
+24
+00:01:10,215 --> 00:01:12,575
+the points are connected by a line.
+
+25
+00:01:12,575 --> 00:01:17,810
+This isn't a problem in this case since vehicle classes ordered from smallest to largest.
+
+26
+00:01:17,810 --> 00:01:20,675
+But if we were plotting a nominal variable instead,
+
+27
+00:01:20,675 --> 00:01:25,600
+we could turn off the line by setting line styles to an empty string.
+

@@ -1,0 +1,356 @@
+1
+00:00:00,000 --> 00:00:04,380
+This lesson goes into a bit more detail about the concepts of figures,
+
+2
+00:00:04,380 --> 00:00:07,440
+axes and subplots in matplotlib.
+
+3
+00:00:07,440 --> 00:00:09,630
+This is an area of much confusion with
+
+4
+00:00:09,630 --> 00:00:12,450
+new analyst because it's not always made clear what
+
+5
+00:00:12,450 --> 00:00:17,895
+the difference between a figure object and an axis is and how to interact with each.
+
+6
+00:00:17,895 --> 00:00:21,000
+But don't worry, it really isn't confusing.
+
+7
+00:00:21,000 --> 00:00:24,135
+We'll start simple and build up from there.
+
+8
+00:00:24,135 --> 00:00:29,715
+This is also a good time to note that seaborne is actually built on-top of matplotlib.
+
+9
+00:00:29,715 --> 00:00:32,340
+These concepts apply to it as well.
+
+10
+00:00:32,340 --> 00:00:35,490
+Remember, anything you can do with matplotlib,
+
+11
+00:00:35,490 --> 00:00:38,835
+you can also do to seaborne with a little work.
+
+12
+00:00:38,835 --> 00:00:42,590
+Let's start by importing our typical libraries and
+
+13
+00:00:42,590 --> 00:00:46,980
+also the diamond dataset to give us something to play with.
+
+14
+00:00:49,850 --> 00:00:54,050
+Now, the normal way most people interact with pyplot,
+
+15
+00:00:54,050 --> 00:00:56,600
+that's the main library of matplotlib,
+
+16
+00:00:56,600 --> 00:00:59,440
+is through pyplot functions.
+
+17
+00:00:59,440 --> 00:01:03,150
+Remember, we import these as PLT.
+
+18
+00:01:03,150 --> 00:01:05,840
+When you begin plotting anything,
+
+19
+00:01:05,840 --> 00:01:09,500
+the first thing that happens is a figure object is created.
+
+20
+00:01:09,500 --> 00:01:12,230
+For instance, when plotting a histogram,
+
+21
+00:01:12,230 --> 00:01:17,255
+it creates a figure that's the canvas that this is drawn on.
+
+22
+00:01:17,255 --> 00:01:19,640
+Then it draws a set of axes,
+
+23
+00:01:19,640 --> 00:01:22,880
+and then finally, the histogram on that axis.
+
+24
+00:01:22,880 --> 00:01:27,505
+It does all of this at once under the hood, so to speak.
+
+25
+00:01:27,505 --> 00:01:32,450
+We can start just by plotting or creating a figure directly.
+
+26
+00:01:32,450 --> 00:01:36,400
+Notice I am not plotting the trailing semicolon here,
+
+27
+00:01:36,400 --> 00:01:38,775
+so we get the plotting artifacts.
+
+28
+00:01:38,775 --> 00:01:46,910
+We see that it creates a figure of size 400 by 300 pixels with zero axes on top.
+
+29
+00:01:46,910 --> 00:01:48,830
+If we want to go further,
+
+30
+00:01:48,830 --> 00:01:54,305
+we can take this figure object and specifically set the access locations.
+
+31
+00:01:54,305 --> 00:01:57,485
+For instance, when we create a figure,
+
+32
+00:01:57,485 --> 00:02:00,680
+we can save it into a figure object,
+
+33
+00:02:00,680 --> 00:02:06,500
+and then we can add the axes locations specifically here.
+
+34
+00:02:06,500 --> 00:02:08,810
+Then on top of that axes,
+
+35
+00:02:08,810 --> 00:02:11,420
+we can then plot our histogram.
+
+36
+00:02:11,420 --> 00:02:16,835
+The Add Axes function is useful if you really want to get into customizing your plots.
+
+37
+00:02:16,835 --> 00:02:20,210
+Typically during explanatory analysis.
+
+38
+00:02:20,210 --> 00:02:23,660
+Often though, the default locations suffice.
+
+39
+00:02:23,660 --> 00:02:27,260
+But it's really worth experimenting with passing in
+
+40
+00:02:27,260 --> 00:02:32,705
+various locations to get a feel for how this works and what it looks like when you do.
+
+41
+00:02:32,705 --> 00:02:36,560
+Now, if you want to create two subplots within a figure,
+
+42
+00:02:36,560 --> 00:02:40,900
+you can use the pyplot method subplot.
+
+43
+00:02:40,900 --> 00:02:44,960
+This specifies n rows and m columns,
+
+44
+00:02:44,960 --> 00:02:48,265
+and then you can use it to iterate through each.
+
+45
+00:02:48,265 --> 00:02:53,300
+For instance, if we'd like to plot a grid of four histograms,
+
+46
+00:02:53,300 --> 00:02:59,270
+we can do that by creating our figure and then calling subplot.
+
+47
+00:02:59,270 --> 00:03:03,140
+Here, we'll have two rows and two columns,
+
+48
+00:03:03,140 --> 00:03:06,805
+and we want to take just subplot number 1.
+
+49
+00:03:06,805 --> 00:03:08,765
+Now, in this example,
+
+50
+00:03:08,765 --> 00:03:13,280
+I actually skipped Subplots 2 and 3 to show you what it looks like.
+
+51
+00:03:13,280 --> 00:03:15,065
+You don't have to plot them all.
+
+52
+00:03:15,065 --> 00:03:18,745
+Here. I just plot Subplot 1,
+
+53
+00:03:18,745 --> 00:03:20,060
+which is the upper left,
+
+54
+00:03:20,060 --> 00:03:23,015
+and subplot four, which is the lower right.
+
+55
+00:03:23,015 --> 00:03:28,295
+You can see here we created our canvas with four subplots,
+
+56
+00:03:28,295 --> 00:03:30,580
+but we're only using two currently.
+
+57
+00:03:30,580 --> 00:03:33,350
+That said, there is another way to interact with
+
+58
+00:03:33,350 --> 00:03:37,715
+plots and that's interacting with a specific access object.
+
+59
+00:03:37,715 --> 00:03:43,015
+Let's start by comparing what happens when you call pyplot directly.
+
+60
+00:03:43,015 --> 00:03:47,510
+Here we call pyplot directly calling the histogram function,
+
+61
+00:03:47,510 --> 00:03:55,830
+and then we want to set the x-axis label and also call pyplot directly.
+
+62
+00:03:56,940 --> 00:04:01,975
+Alternatively, we can use the pyplot function,
+
+63
+00:04:01,975 --> 00:04:08,005
+get current access or GCA to retrieve the axes object,
+
+64
+00:04:08,005 --> 00:04:12,415
+and then we can use the access function set
+
+65
+00:04:12,415 --> 00:04:17,745
+underscore x-label to set the x-label directly.
+
+66
+00:04:17,745 --> 00:04:23,185
+Note the difference is only a slightly different calling syntax.
+
+67
+00:04:23,185 --> 00:04:29,455
+One can interact with the figure directly using the pyplot functions.
+
+68
+00:04:29,455 --> 00:04:32,470
+If there were multiple subplots in the figure and
+
+69
+00:04:32,470 --> 00:04:35,965
+axon whatever the current active subplot is.
+
+70
+00:04:35,965 --> 00:04:38,980
+Or if you have a specific axis,
+
+71
+00:04:38,980 --> 00:04:45,650
+like this example, you can just interact or operate directly on it.
+
+72
+00:04:45,650 --> 00:04:51,310
+I find the axis notation to be convenient for two reasons.
+
+73
+00:04:51,310 --> 00:04:54,130
+One, if you want to create subplots,
+
+74
+00:04:54,130 --> 00:04:56,155
+you can act on them individually.
+
+75
+00:04:56,155 --> 00:04:58,415
+You don't have to iterate through them.
+
+76
+00:04:58,415 --> 00:05:03,745
+For example, if you use the pyplot function subplots.
+
+77
+00:05:03,745 --> 00:05:07,570
+Notice this is subplots with an S. You can
+
+78
+00:05:07,570 --> 00:05:11,005
+specify the number of rows and the number of columns,
+
+79
+00:05:11,005 --> 00:05:13,360
+and also the figure size directly.
+
+80
+00:05:13,360 --> 00:05:21,090
+This returns both the figure object and an array of axes objects.
+
+81
+00:05:21,090 --> 00:05:25,025
+If you want to plot two subplots next to each other,
+
+82
+00:05:25,025 --> 00:05:28,100
+you can just pass those directly to
+
+83
+00:05:28,100 --> 00:05:32,620
+seaborne or to matplotlib to operate directly on them.
+
+84
+00:05:32,620 --> 00:05:34,535
+Just like this.
+
+85
+00:05:34,535 --> 00:05:40,775
+Alternatively, seaborne typically returns axes objects.
+
+86
+00:05:40,775 --> 00:05:43,160
+if you don't specify the axes,
+
+87
+00:05:43,160 --> 00:05:45,365
+when you create a seaborne plot,
+
+88
+00:05:45,365 --> 00:05:50,975
+you can just retrieve the axis from the function call and then
+
+89
+00:05:50,975 --> 00:05:57,960
+operate directly on it to set whatever labels or adjustments you feel are necessary.
+

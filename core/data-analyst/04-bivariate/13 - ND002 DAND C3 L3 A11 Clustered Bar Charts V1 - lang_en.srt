@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:02,580
+In this lesson, we're going to now look at
+
+2
+00:00:02,580 --> 00:00:06,090
+relationships between two qualitative variables,
+
+3
+00:00:06,090 --> 00:00:09,540
+vehicle class and vehicle transmission.
+
+4
+00:00:09,540 --> 00:00:13,800
+We're going to do this by using a clustered bar chart.
+
+5
+00:00:13,800 --> 00:00:17,985
+To get started, let's load our Python libraries and
+
+6
+00:00:17,985 --> 00:00:22,955
+Visualization libraries as normal and our fuel economy dataset.
+
+7
+00:00:22,955 --> 00:00:27,990
+Now, the first thing we're going to do is a little bit of feature engineering.
+
+8
+00:00:27,990 --> 00:00:31,095
+We need to extract the transmission type.
+
+9
+00:00:31,095 --> 00:00:35,710
+Now, there are many different kinds of transmission types that our dataset looks at.
+
+10
+00:00:35,710 --> 00:00:42,975
+But we're really only interested in the broad categories of automatic and manual.
+
+11
+00:00:42,975 --> 00:00:47,960
+To do that, we're going to extract that by using
+
+12
+00:00:47,960 --> 00:00:56,030
+a Lambda function where we just look at the first word of each transmission type.
+
+13
+00:00:56,030 --> 00:01:02,195
+For instance, you can see here that in the original DataFrame,
+
+14
+00:01:02,195 --> 00:01:05,930
+the trans variable includes many types of
+
+15
+00:01:05,930 --> 00:01:11,540
+automatics and we only want to take the first word in our Lambda function.
+
+16
+00:01:11,540 --> 00:01:13,145
+We go all the way to the end.
+
+17
+00:01:13,145 --> 00:01:16,655
+We now see we have a new feature called trans type,
+
+18
+00:01:16,655 --> 00:01:21,690
+which includes automatic, but also manual cars.
+
+19
+00:01:22,040 --> 00:01:28,540
+One way of depicting this relationship could be with a 2D Histogram Heatmap,
+
+20
+00:01:28,540 --> 00:01:30,140
+like we saw before.
+
+21
+00:01:30,140 --> 00:01:35,270
+However, there's actually a Seaborne function for this type of categorical heatmap.
+
+22
+00:01:35,270 --> 00:01:38,215
+It's called the heatmap function.
+
+23
+00:01:38,215 --> 00:01:41,330
+However, this function takes as an argument,
+
+24
+00:01:41,330 --> 00:01:45,920
+a 2D array or DataFrame with the values to be depicted.
+
+25
+00:01:45,920 --> 00:01:49,000
+The calling syntax is slightly different.
+
+26
+00:01:49,000 --> 00:01:55,625
+This means we have to do some summarization work ourselves before we can create our plot.
+
+27
+00:01:55,625 --> 00:01:57,815
+To strike the summary process.
+
+28
+00:01:57,815 --> 00:02:01,955
+First, I use group by to take our DataFrame
+
+29
+00:02:01,955 --> 00:02:07,505
+and group by vehicle class and transmission type.
+
+30
+00:02:07,505 --> 00:02:12,380
+I want to know how many of each are in combined categories.
+
+31
+00:02:12,380 --> 00:02:14,900
+I use the size method.
+
+32
+00:02:14,900 --> 00:02:16,575
+We can see here,
+
+33
+00:02:16,575 --> 00:02:19,940
+our DataFrame has now broken down by vehicle class and
+
+34
+00:02:19,940 --> 00:02:24,900
+transmission type with a total number of count in each of these.
+
+35
+00:02:24,900 --> 00:02:33,255
+Now, this group by object is technically a series and we want to make it a DataFrame.
+
+36
+00:02:33,255 --> 00:02:43,040
+To do that, we're going to use a reset index and then rename this last column to count.
+
+37
+00:02:43,040 --> 00:02:48,740
+Finally, we're going to use this pivot function,
+
+38
+00:02:48,740 --> 00:02:52,945
+this DataFrame pivot method to rearrange the data.
+
+39
+00:02:52,945 --> 00:02:56,330
+We're going to pass it in the index that we're looking for,
+
+40
+00:02:56,330 --> 00:02:58,415
+which is the V Class column.
+
+41
+00:02:58,415 --> 00:03:01,805
+The column is going to be transmission type
+
+42
+00:03:01,805 --> 00:03:05,960
+in the values for each cell is going to be count.
+
+43
+00:03:05,960 --> 00:03:11,900
+Then we can put this directly in to our Seaborne heatmap object.
+
+44
+00:03:11,900 --> 00:03:15,250
+This looks cool, but it's disappointing.
+
+45
+00:03:15,250 --> 00:03:20,630
+It's really hard to compare the counts and transmission ratios from the colors alone.
+
+46
+00:03:20,630 --> 00:03:25,535
+You can see that manual tends to be less popular than automatic,
+
+47
+00:03:25,535 --> 00:03:28,870
+but beyond that, it's really hard to tell.
+
+48
+00:03:28,870 --> 00:03:34,730
+One option we have is to add annotations with the cell counts in each cell.
+
+49
+00:03:34,730 --> 00:03:38,185
+This will make the representation more tabular in nature.
+
+50
+00:03:38,185 --> 00:03:41,145
+Let's do that. Here,
+
+51
+00:03:41,145 --> 00:03:44,465
+we have a parameter called annot for annotation.
+
+52
+00:03:44,465 --> 00:03:46,390
+We're going to put that to be true.
+
+53
+00:03:46,390 --> 00:03:51,320
+The fm 't' is a formatter parameter and we're
+
+54
+00:03:51,320 --> 00:03:56,500
+going to put d to ensure that all of the counts are listed as decimal values.
+
+55
+00:03:56,500 --> 00:03:58,545
+This is much better.
+
+56
+00:03:58,545 --> 00:04:01,445
+We still get the interpretation that we had before
+
+57
+00:04:01,445 --> 00:04:04,895
+that there tend to be fewer manual cars than automatic.
+
+58
+00:04:04,895 --> 00:04:10,920
+But now we can see quantitative variation much easier.
+

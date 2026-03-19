@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:03,140
+In this lesson, we're going to look at plot matrices.
+
+2
+00:00:03,140 --> 00:00:06,335
+Let's start by doing our normal imports.
+
+3
+00:00:06,335 --> 00:00:08,845
+What is a plot matrix?
+
+4
+00:00:08,845 --> 00:00:11,490
+Well, let's say we're interested in looking at
+
+5
+00:00:11,490 --> 00:00:15,750
+the pairwise relationships between all of our numeric variables.
+
+6
+00:00:15,750 --> 00:00:18,600
+Instead of plotting scatter plots one by one,
+
+7
+00:00:18,600 --> 00:00:21,840
+we might want to just inspect them all at once.
+
+8
+00:00:21,840 --> 00:00:25,500
+That is the subject of this lesson.
+
+9
+00:00:25,500 --> 00:00:29,565
+That's using what's called plot matrices.
+
+10
+00:00:29,565 --> 00:00:35,090
+Let's start by importing our normal functions for data analysis and visualization,
+
+11
+00:00:35,090 --> 00:00:38,875
+as well as loading our fuel economy dataset.
+
+12
+00:00:38,875 --> 00:00:41,315
+To create a plot matrix,
+
+13
+00:00:41,315 --> 00:00:44,405
+we can just use seaborns pair grid function.
+
+14
+00:00:44,405 --> 00:00:51,305
+Note that I'm only focusing on four specific variables here: highway efficiency,
+
+15
+00:00:51,305 --> 00:00:56,320
+city efficiency, engine size, and CO_2 emissions.
+
+16
+00:00:56,320 --> 00:01:01,325
+If we do not specify the variables parameter,
+
+17
+00:01:01,325 --> 00:01:03,785
+the V-A-R-S or vars parameter.
+
+18
+00:01:03,785 --> 00:01:08,615
+We will plot then a matrix of all numeric variables.
+
+19
+00:01:08,615 --> 00:01:14,645
+It's going to take a very long time to generate and it'll just be a lot to read.
+
+20
+00:01:14,645 --> 00:01:18,385
+Instead, I just want to focus on these here.
+
+21
+00:01:18,385 --> 00:01:26,270
+Also please note that I specify both the off-diagonal and diagonal elements.
+
+22
+00:01:26,270 --> 00:01:28,505
+For the off-diagonal elements,
+
+23
+00:01:28,505 --> 00:01:31,795
+I'm requesting seaborn to use scatter plots.
+
+24
+00:01:31,795 --> 00:01:35,835
+For the diagonal elements I'm going to use histograms.
+
+25
+00:01:35,835 --> 00:01:40,490
+For instance, if we look all of the rows and all of
+
+26
+00:01:40,490 --> 00:01:45,385
+the columns are in the same order as the order that we gave.
+
+27
+00:01:45,385 --> 00:01:47,810
+If we look along the diagonal,
+
+28
+00:01:47,810 --> 00:01:52,100
+we will see in this first row and column, highway efficiency.
+
+29
+00:01:52,100 --> 00:01:54,710
+This is a histogram of highway efficiency.
+
+30
+00:01:54,710 --> 00:01:59,995
+Then the next diagonal element is city efficiency and so on.
+
+31
+00:01:59,995 --> 00:02:03,065
+Looking at the first row and second column,
+
+32
+00:02:03,065 --> 00:02:07,220
+we see that highway is our y axis,
+
+33
+00:02:07,220 --> 00:02:10,085
+while city is our x-axis,
+
+34
+00:02:10,085 --> 00:02:12,590
+and if we scroll down here,
+
+35
+00:02:12,590 --> 00:02:16,525
+we see that the x label is correct.
+
+36
+00:02:16,525 --> 00:02:20,465
+Likewise, for the third column and first row,
+
+37
+00:02:20,465 --> 00:02:23,495
+we have highway versus engine displacement,
+
+38
+00:02:23,495 --> 00:02:27,155
+so we see the bivariate plot there.
+
+39
+00:02:27,155 --> 00:02:31,130
+Each row and each column works with a variable.
+
+40
+00:02:31,130 --> 00:02:33,620
+For the diagonals as I said,
+
+41
+00:02:33,620 --> 00:02:36,060
+we're only plotting one variable.
+
+42
+00:02:36,060 --> 00:02:39,275
+I chose to display a histogram but
+
+43
+00:02:39,275 --> 00:02:43,975
+a KDE or any other univariate plot would probably work well.
+
+44
+00:02:43,975 --> 00:02:47,030
+Note also that there's a symmetry in a pair grid
+
+45
+00:02:47,030 --> 00:02:50,600
+with x and y axes are flipped across the diagonal.
+
+46
+00:02:50,600 --> 00:02:54,875
+In this way, by looking at the first row and second column,
+
+47
+00:02:54,875 --> 00:02:58,480
+we see highway versus city efficiency.
+
+48
+00:02:58,480 --> 00:03:02,585
+But if we then go to the opposite cell or the symmetric cell,
+
+49
+00:03:02,585 --> 00:03:06,715
+we get city versus highway efficiency.
+
+50
+00:03:06,715 --> 00:03:09,315
+The bivariate plot is flipped.
+
+51
+00:03:09,315 --> 00:03:12,830
+For the diagonals, we only plot one variable.
+
+52
+00:03:12,830 --> 00:03:15,830
+In this case, I chose to display a histogram but
+
+53
+00:03:15,830 --> 00:03:20,065
+a KDE or other univariate plot would probably work well.
+
+54
+00:03:20,065 --> 00:03:24,500
+Another useful thing common in analysis is plotting a correlation matrix.
+
+55
+00:03:24,500 --> 00:03:27,620
+We do this by first extracting the correlation from
+
+56
+00:03:27,620 --> 00:03:31,270
+the data frame and then dropping this into a heatmap.
+
+57
+00:03:31,270 --> 00:03:38,160
+Here, we use the seaborn heatmap method and we just toss in the correlation.
+
+58
+00:03:38,160 --> 00:03:44,275
+In this case, I'm only selecting the columns that we used earlier.
+
+59
+00:03:44,275 --> 00:03:47,120
+Right here, this shows that city and
+
+60
+00:03:47,120 --> 00:03:51,065
+highway efficiency are highly correlated, which is not shocking.
+
+61
+00:03:51,065 --> 00:03:56,675
+It also shows that engine size and emissions are highly correlated,
+
+62
+00:03:56,675 --> 00:03:59,035
+which is also expected.
+
+63
+00:03:59,035 --> 00:04:01,550
+Fuel efficiency and engine size,
+
+64
+00:04:01,550 --> 00:04:05,660
+and therefore CO_2 emissions are highly anti-correlated.
+
+65
+00:04:05,660 --> 00:04:12,290
+One thing to note is I added a vmin which is a vertical minimum of negative 1.
+
+66
+00:04:12,290 --> 00:04:16,700
+This sets the minimum value of the color bar and seaborn.
+
+67
+00:04:16,700 --> 00:04:19,400
+Also for correlation matrix,
+
+68
+00:04:19,400 --> 00:04:23,150
+typically you want to make sure that they're square because they are
+
+69
+00:04:23,150 --> 00:04:29,040
+symmetric and so you can pass in the parameter square equals true.
+

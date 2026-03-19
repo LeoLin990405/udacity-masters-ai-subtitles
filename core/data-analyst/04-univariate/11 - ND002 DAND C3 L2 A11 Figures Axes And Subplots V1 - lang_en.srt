@@ -1,0 +1,88 @@
+1
+00:00:00,000 --> 00:00:05,070
+In this video, we're going to look at how to change access limits and also
+
+2
+00:00:05,070 --> 00:00:10,845
+examine outliers in our distributions using Matplotlib functions.
+
+3
+00:00:10,845 --> 00:00:16,320
+As always, the first thing we're going to do is import the libraries we need,
+
+4
+00:00:16,320 --> 00:00:18,630
+as well as import our dataset.
+
+5
+00:00:18,630 --> 00:00:22,380
+We'll continue working with the diamonds dataset here.
+
+6
+00:00:22,380 --> 00:00:26,565
+We're going to start by looking at the diamond price,
+
+7
+00:00:26,565 --> 00:00:29,655
+the units for this variable are in US dollars.
+
+8
+00:00:29,655 --> 00:00:33,300
+Let's zoom in around the $2,000
+
+9
+00:00:33,300 --> 00:00:38,615
+mark because here we see the distribution has a discontinuity,
+
+10
+00:00:38,615 --> 00:00:41,975
+and I'm curious what might be going on.
+
+11
+00:00:41,975 --> 00:00:44,900
+In order to zoom in at this area,
+
+12
+00:00:44,900 --> 00:00:46,160
+we can use the x
+
+13
+00:00:46,160 --> 00:00:51,685
+limit function xlim to set the upper and lower bounds of displaying bins.
+
+14
+00:00:51,685 --> 00:00:59,475
+Here, I'm setting the bins or the upper limits to the bins, from $1000-$5,000.
+
+15
+00:00:59,475 --> 00:01:02,540
+Anticipation of this reduced access limit have
+
+16
+00:01:02,540 --> 00:01:06,755
+also altered the bin range from what I showed earlier,
+
+17
+00:01:06,755 --> 00:01:10,250
+from going from $100 step size to 50.
+
+18
+00:01:10,250 --> 00:01:16,045
+Here, we can see that there tends to be this dip right around $1,500,
+
+19
+00:01:16,045 --> 00:01:20,690
+and I'm wondering if this might be for some psychological sales pitch.
+
+20
+00:01:20,690 --> 00:01:24,230
+The reason I think this is a psychological or sales pitch,
+
+21
+00:01:24,230 --> 00:01:31,535
+is because $1,500 might be a limit between certain grades of diamonds,
+
+22
+00:01:31,535 --> 00:01:39,540
+and people might feel they're getting a good deal if it's $1,499 versus 1,500.
+

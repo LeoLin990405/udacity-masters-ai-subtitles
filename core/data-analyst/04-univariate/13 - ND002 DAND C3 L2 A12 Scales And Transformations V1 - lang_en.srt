@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:06,950
+In this video, we're going to look at how to scale and transform our axis.
+
+2
+00:00:06,950 --> 00:00:09,015
+We're going to start as always,
+
+3
+00:00:09,015 --> 00:00:13,845
+by importing the necessary libraries and our dataset.
+
+4
+00:00:13,845 --> 00:00:19,200
+In this exercise, we'll be focused on the diamonds dataset.
+
+5
+00:00:19,200 --> 00:00:23,385
+We're going to look specifically at diamond price.
+
+6
+00:00:23,385 --> 00:00:27,585
+This variable is quite skewed.
+
+7
+00:00:27,585 --> 00:00:32,570
+One thing we might want to do is we might consider that
+
+8
+00:00:32,570 --> 00:00:39,515
+this price is logarithmically distributed and not distributed in a base 10 system.
+
+9
+00:00:39,515 --> 00:00:43,925
+So we're going to transform the axis and take a look.
+
+10
+00:00:43,925 --> 00:00:48,670
+To do this, we're going to be using the matplotlib xscale function.
+
+11
+00:00:48,670 --> 00:00:53,445
+This takes a string such as log or semi-log.
+
+12
+00:00:53,445 --> 00:00:57,170
+In this case, for our histogram,
+
+13
+00:00:57,170 --> 00:01:04,895
+I am going to collect the axis object and then use the same function set_xscale.
+
+14
+00:01:04,895 --> 00:01:08,725
+Notice, this plot looks pretty weird.
+
+15
+00:01:08,725 --> 00:01:13,835
+The x limits themselves are not changed, but they're scaled.
+
+16
+00:01:13,835 --> 00:01:16,625
+In order to get a more interpretable plot,
+
+17
+00:01:16,625 --> 00:01:19,370
+we're going to need to modify the bin boundaries
+
+18
+00:01:19,370 --> 00:01:22,715
+and generate more informative access texts.
+
+19
+00:01:22,715 --> 00:01:25,970
+Let's start by looking at the bin boundaries.
+
+20
+00:01:25,970 --> 00:01:29,930
+If we look at the price and do a describe on that column,
+
+21
+00:01:29,930 --> 00:01:34,210
+we will see that the minimum price is a little over $300.
+
+22
+00:01:34,210 --> 00:01:38,685
+The maximum price is almost $20,000.
+
+23
+00:01:38,685 --> 00:01:43,370
+If we're going to assume that price is logarithmically distributed,
+
+24
+00:01:43,370 --> 00:01:46,355
+we then have to look at the logarithm of this,
+
+25
+00:01:46,355 --> 00:01:49,285
+which we can use the NumPy.
+
+26
+00:01:49,285 --> 00:01:52,545
+Now we see the log of these values.
+
+27
+00:01:52,545 --> 00:01:54,935
+The minimum is two-and-a-half,
+
+28
+00:01:54,935 --> 00:01:58,235
+whereas the maximum is almost four-and-a-half.
+
+29
+00:01:58,235 --> 00:02:01,015
+These give us the limits for our bins.
+
+30
+00:02:01,015 --> 00:02:05,710
+Our bin edges will be 10 to the power values between two and five,
+
+31
+00:02:05,710 --> 00:02:08,165
+so that they're evenly spaced.
+
+32
+00:02:08,165 --> 00:02:10,340
+Just what we have right here.
+
+33
+00:02:10,340 --> 00:02:12,995
+These are now our bins.
+
+34
+00:02:12,995 --> 00:02:14,975
+This plot looks a lot better.
+
+35
+00:02:14,975 --> 00:02:17,435
+It shows that in a logarithmic space,
+
+36
+00:02:17,435 --> 00:02:20,465
+we have almost a unimodal distribution.
+
+37
+00:02:20,465 --> 00:02:25,465
+However, the tick marks are very hard to see and not quite interpretable.
+
+38
+00:02:25,465 --> 00:02:28,475
+We can start by writing out the given ticks,
+
+39
+00:02:28,475 --> 00:02:31,340
+but really, we just want to add a few more.
+
+40
+00:02:31,340 --> 00:02:33,695
+Here's where we need to do some hardcoding.
+
+41
+00:02:33,695 --> 00:02:35,990
+Because of the powers of 10,
+
+42
+00:02:35,990 --> 00:02:40,640
+things aren't nice and evenly spaced as they would be normally.
+
+43
+00:02:40,640 --> 00:02:47,470
+A three is about halfway between consecutive powers of 10 on a log scale.
+
+44
+00:02:47,470 --> 00:02:53,285
+Adding these values to a ticks list will complete this exploratory plot.
+
+45
+00:02:53,285 --> 00:02:55,700
+For example, the x ticks,
+
+46
+00:02:55,700 --> 00:02:58,640
+ticks we're interested in are a 100,
+
+47
+00:02:58,640 --> 00:03:03,075
+300, a 1,000 and likewise 3,000,
+
+48
+00:03:03,075 --> 00:03:04,830
+and ending at 30.
+
+49
+00:03:04,830 --> 00:03:08,930
+We then also, we'll create our list of
+
+50
+00:03:08,930 --> 00:03:13,510
+labels by taking each of these ticks and converting them to a string.
+
+51
+00:03:13,510 --> 00:03:17,885
+Then after we plot the histogram and scale the axis,
+
+52
+00:03:17,885 --> 00:03:20,125
+we apply the x ticks.
+
+53
+00:03:20,125 --> 00:03:23,385
+This is much easier to read.
+
+54
+00:03:23,385 --> 00:03:31,310
+One thing I would like to caution you is if you add the x ticks before scaling the axis,
+
+55
+00:03:31,310 --> 00:03:32,705
+they will get overwritten.
+
+56
+00:03:32,705 --> 00:03:35,160
+That's a common mistake.
+

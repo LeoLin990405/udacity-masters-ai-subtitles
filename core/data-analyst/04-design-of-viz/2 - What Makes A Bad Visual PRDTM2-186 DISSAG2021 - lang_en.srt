@@ -1,0 +1,160 @@
+1
+00:00:01,010 --> 00:00:06,850
+Bad data visualizations can be summed up as visuals that don't convey your message well.
+
+2
+00:00:06,850 --> 00:00:11,475
+If a visualization is misleading or hides and distracts your message,
+
+3
+00:00:11,475 --> 00:00:14,580
+you need to consider changes to your visualization.
+
+4
+00:00:14,580 --> 00:00:17,280
+Let's look at some misleading examples.
+
+5
+00:00:17,280 --> 00:00:21,420
+This is a popular image for showing bad visualizations.
+
+6
+00:00:21,420 --> 00:00:25,220
+Here, you can see that this plot is misleading by making
+
+7
+00:00:25,220 --> 00:00:31,090
+a small difference seem much larger than it actually is by zooming in on the difference.
+
+8
+00:00:31,090 --> 00:00:35,505
+This is a poor visualization due to the fact that it's misleading.
+
+9
+00:00:35,505 --> 00:00:38,750
+A second example was made popular by Cole.
+
+10
+00:00:38,750 --> 00:00:42,110
+Consider these two pie charts for understanding how
+
+11
+00:00:42,110 --> 00:00:47,170
+a summer science camp for kids impacts their interests on learning about science.
+
+12
+00:00:47,170 --> 00:00:52,060
+Can you tell if the camp was effective in raising the interest rates in science?
+
+13
+00:00:52,060 --> 00:00:57,075
+This is an example of a visual that hides or distracts from the message.
+
+14
+00:00:57,075 --> 00:01:00,020
+Comparing the areas of the pie charts and
+
+15
+00:01:00,020 --> 00:01:03,640
+all the colors make it difficult to see the message.
+
+16
+00:01:03,640 --> 00:01:07,220
+Another plot from Cole's book is this pie chart.
+
+17
+00:01:07,220 --> 00:01:12,650
+You might guess that this piece of the pie is the largest in terms of the suppliers.
+
+18
+00:01:12,650 --> 00:01:15,800
+You would be wrong, it's actually this piece.
+
+19
+00:01:15,800 --> 00:01:18,840
+The 3D aspect of the chart is misleading.
+
+20
+00:01:18,840 --> 00:01:25,085
+Again, humans are not great at identifying differences based on these areas.
+
+21
+00:01:25,085 --> 00:01:29,270
+Here is an example of a racetrack chart.
+
+22
+00:01:29,270 --> 00:01:32,720
+Though one bar is clearly longer than the other,
+
+23
+00:01:32,720 --> 00:01:34,895
+they represent the same percentage.
+
+24
+00:01:34,895 --> 00:01:37,010
+This makes for some confusion.
+
+25
+00:01:37,010 --> 00:01:39,665
+Additionally, the bright red here,
+
+26
+00:01:39,665 --> 00:01:42,175
+suggests that this group is more important.
+
+27
+00:01:42,175 --> 00:01:43,910
+If this isn't the case,
+
+28
+00:01:43,910 --> 00:01:45,935
+then this coloring seems misleading.
+
+29
+00:01:45,935 --> 00:01:47,645
+With just two bars,
+
+30
+00:01:47,645 --> 00:01:49,580
+we might not even need a chart,
+
+31
+00:01:49,580 --> 00:01:52,325
+but rather just a statement of the message.
+
+32
+00:01:52,325 --> 00:01:55,100
+Visualizations become more useful as
+
+33
+00:01:55,100 --> 00:01:58,235
+the amount of information we need to convey increases.
+
+34
+00:01:58,235 --> 00:01:59,675
+At the same time,
+
+35
+00:01:59,675 --> 00:02:02,240
+adding extra elements to the visuals that do
+
+36
+00:02:02,240 --> 00:02:05,075
+not convey the message in your data should be avoided.
+
+37
+00:02:05,075 --> 00:02:09,430
+I urge you to strive for elegance and simplicity in your visuals.
+
+38
+00:02:09,430 --> 00:02:13,070
+Here, you saw some examples of poor visuals.
+
+39
+00:02:13,070 --> 00:02:16,520
+You might have some ideas of how to improve these already.
+
+40
+00:02:16,520 --> 00:02:21,150
+We will look at some improved visuals in the upcoming concepts.
+

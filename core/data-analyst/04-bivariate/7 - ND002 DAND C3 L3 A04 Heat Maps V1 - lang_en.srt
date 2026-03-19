@@ -1,0 +1,260 @@
+1
+00:00:00,000 --> 00:00:03,585
+In this lesson, we're going to look at heatmaps.
+
+2
+00:00:03,585 --> 00:00:09,015
+These can be thought of as a two-dimensional histogram or even color-coded table.
+
+3
+00:00:09,015 --> 00:00:14,520
+In fact, hist2d is the calling syntax.
+
+4
+00:00:14,520 --> 00:00:21,230
+Let's start by doing our normal imports and also loading in our data.
+
+5
+00:00:21,230 --> 00:00:26,300
+This is the car fuel economy dataset and a heatmap.
+
+6
+00:00:26,300 --> 00:00:29,510
+The field is divided into grids of cells,
+
+7
+00:00:29,510 --> 00:00:32,090
+much like a two-dimensional histogram.
+
+8
+00:00:32,090 --> 00:00:35,890
+The number of data points in each cell is counted up.
+
+9
+00:00:35,890 --> 00:00:40,450
+Now, each cell is given a color based on the counter values.
+
+10
+00:00:40,450 --> 00:00:43,715
+In this example, we're going to use matplotlib.
+
+11
+00:00:43,715 --> 00:00:50,150
+We're going to pass in the dataframe and specify we want engine displacement and
+
+12
+00:00:50,150 --> 00:00:56,720
+liters on the x axis and y to be the combined efficiency.
+
+13
+00:00:56,720 --> 00:01:01,970
+That's a combination of highway miles per gallon and city miles per gallon.
+
+14
+00:01:01,970 --> 00:01:05,840
+We're also going to add a color bar because we're
+
+15
+00:01:05,840 --> 00:01:10,190
+leaving this empty will just be the counts in each bin.
+
+16
+00:01:10,190 --> 00:01:15,650
+Then finally, we're going to add labels for the x and y axis.
+
+17
+00:01:15,650 --> 00:01:18,170
+You can think of a basic heatmap like
+
+18
+00:01:18,170 --> 00:01:21,290
+this like a two-dimensional version of a histogram,
+
+19
+00:01:21,290 --> 00:01:24,370
+looking at the data from a top-down perspective.
+
+20
+00:01:24,370 --> 00:01:27,870
+We can't see bar heights in this case,
+
+21
+00:01:27,870 --> 00:01:30,765
+so color is the best way to really encoded.
+
+22
+00:01:30,765 --> 00:01:34,730
+What we can see here is that the cell with
+
+23
+00:01:34,730 --> 00:01:40,760
+the largest value has a combined fuel efficiency a little under 25 miles per gallon,
+
+24
+00:01:40,760 --> 00:01:44,195
+and has about a two liter displacement.
+
+25
+00:01:44,195 --> 00:01:47,525
+We can assign bin widths to heatmaps.
+
+26
+00:01:47,525 --> 00:01:50,450
+Just like histograms, you need to be aware of
+
+27
+00:01:50,450 --> 00:01:54,005
+the impact of bin size on the interpretation of data.
+
+28
+00:01:54,005 --> 00:01:55,730
+Too large of bin size,
+
+29
+00:01:55,730 --> 00:01:59,870
+you may fail to see a major trend and too small a bin size,
+
+30
+00:01:59,870 --> 00:02:02,435
+you may just end up distracted by noise.
+
+31
+00:02:02,435 --> 00:02:06,275
+Here, I found a bin size that looks about right to me.
+
+32
+00:02:06,275 --> 00:02:14,125
+We set the bin size just like we did in the univariate case using numpy.arange.
+
+33
+00:02:14,125 --> 00:02:17,115
+For the two-dimensional histogram,
+
+34
+00:02:17,115 --> 00:02:22,670
+I also added a color minimum perimeter cmin that
+
+35
+00:02:22,670 --> 00:02:28,430
+says any cell with less than this value is not plotted with a color,
+
+36
+00:02:28,430 --> 00:02:30,145
+it's just left blank.
+
+37
+00:02:30,145 --> 00:02:33,515
+I also passed in a color palette,
+
+38
+00:02:33,515 --> 00:02:38,885
+viridis reversed, and the bins that I'm interested in.
+
+39
+00:02:38,885 --> 00:02:41,105
+Here we find this plot,
+
+40
+00:02:41,105 --> 00:02:44,315
+which is just so much cleaner, easier to read.
+
+41
+00:02:44,315 --> 00:02:48,065
+Since assigning values based on colors imprecise,
+
+42
+00:02:48,065 --> 00:02:52,820
+you should consider adding count annotations on top of each grid cell,
+
+43
+00:02:52,820 --> 00:02:56,330
+especially if you only have a limited number of cells.
+
+44
+00:02:56,330 --> 00:03:02,705
+In this view, the heatmap is a lot like a table with additional coloring for emphasis.
+
+45
+00:03:02,705 --> 00:03:05,585
+For annotated 2D histograms,
+
+46
+00:03:05,585 --> 00:03:08,825
+you'll have to loop through each cell to display the value.
+
+47
+00:03:08,825 --> 00:03:11,780
+This can be quite tedious, but that's okay.
+
+48
+00:03:11,780 --> 00:03:15,580
+You can reuse this code when making other similar plots.
+
+49
+00:03:15,580 --> 00:03:20,840
+Here, after assigning and plotting the histogram,
+
+50
+00:03:20,840 --> 00:03:23,870
+we are then going to go through,
+
+51
+00:03:23,870 --> 00:03:26,975
+look at the counts for the entire histogram,
+
+52
+00:03:26,975 --> 00:03:31,380
+and then loop through starting on the x axis and
+
+53
+00:03:31,380 --> 00:03:39,155
+then the y axis and plotting on top the actual text that we want to see in each bin.
+
+54
+00:03:39,155 --> 00:03:42,455
+Here, for the text function,
+
+55
+00:03:42,455 --> 00:03:45,770
+I also include horizontal alignment,
+
+56
+00:03:45,770 --> 00:03:47,570
+meaning the center of the bin,
+
+57
+00:03:47,570 --> 00:03:49,490
+and the vertical alignment,
+
+58
+00:03:49,490 --> 00:03:51,095
+and also plot,
+
+59
+00:03:51,095 --> 00:03:53,680
+choose the color for the text.
+
+60
+00:03:53,680 --> 00:03:59,465
+Notice, if the number of counts is greater than 100,
+
+61
+00:03:59,465 --> 00:04:04,670
+we put the text color is white and if it's just greater than 0,
+
+62
+00:04:04,670 --> 00:04:06,140
+we put it as black.
+
+63
+00:04:06,140 --> 00:04:09,520
+This makes it much easier for us to read.
+
+64
+00:04:09,520 --> 00:04:14,630
+Now, a heatmap is favored over a scatter plot if you have two discrete variables
+
+65
+00:04:14,630 --> 00:04:20,550
+since the associated jitter can be imprecise in a scatter plot.
+

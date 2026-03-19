@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:02,025
+Welcome to Lesson 7.
+
+2
+00:00:02,025 --> 00:00:07,275
+In this lesson, we're going to look at other adaptations of bivariate plots.
+
+3
+00:00:07,275 --> 00:00:12,000
+Let's start by importing the libraries we're going to need,
+
+4
+00:00:12,000 --> 00:00:17,295
+as well as our fuel economy dataset and extracting our transmission type.
+
+5
+00:00:17,295 --> 00:00:20,580
+To add color to most seaborne plots,
+
+6
+00:00:20,580 --> 00:00:24,375
+we can just provide this new parameter called hue.
+
+7
+00:00:24,375 --> 00:00:27,780
+For example, if we look at a point plot and plot
+
+8
+00:00:27,780 --> 00:00:32,790
+the combined vehicle highway city efficiency versus vehicle class,
+
+9
+00:00:32,790 --> 00:00:36,655
+we can then also segment by transmission type.
+
+10
+00:00:36,655 --> 00:00:38,210
+Using this point plot,
+
+11
+00:00:38,210 --> 00:00:40,865
+we can end up getting something like this.
+
+12
+00:00:40,865 --> 00:00:44,180
+This hue parameter is common for most seaborne plots.
+
+13
+00:00:44,180 --> 00:00:49,270
+We can create similar plots for a clustered bar chart.
+
+14
+00:00:49,270 --> 00:00:51,875
+This is an adapted cluster bar chart.
+
+15
+00:00:51,875 --> 00:00:55,010
+The only difference is now instead of a point plot,
+
+16
+00:00:55,010 --> 00:00:58,775
+we're passing in bar plot with the hue parameter.
+
+17
+00:00:58,775 --> 00:01:03,185
+Similarly, we can create a similar comparison using
+
+18
+00:01:03,185 --> 00:01:07,490
+the box plot function to create a clustered box chart.
+
+19
+00:01:07,490 --> 00:01:10,850
+Once again, our x-variable is vehicle class,
+
+20
+00:01:10,850 --> 00:01:13,550
+our y is combined fuel efficiency,
+
+21
+00:01:13,550 --> 00:01:16,535
+and our hue is transmission type.
+
+22
+00:01:16,535 --> 00:01:20,945
+I have also added rotation for the x-label,
+
+23
+00:01:20,945 --> 00:01:24,755
+15 degrees to make it easier to view.
+
+24
+00:01:24,755 --> 00:01:27,710
+We can also adapt heatmaps,
+
+25
+00:01:27,710 --> 00:01:29,675
+that is 2D histograms,
+
+26
+00:01:29,675 --> 00:01:32,840
+so that instead of color being based on count,
+
+27
+00:01:32,840 --> 00:01:37,160
+color is based on the average of a third variable.
+
+28
+00:01:37,160 --> 00:01:44,555
+Let's start by plotting a 2D histogram of combined efficiency versus engine displacement.
+
+29
+00:01:44,555 --> 00:01:47,900
+Color is going to be the total number of counts.
+
+30
+00:01:47,900 --> 00:01:52,580
+I'm going to set a minimum threshold for a cell to be colored to
+
+31
+00:01:52,580 --> 00:01:57,450
+be 0.5 and I'm going to choose my color palette.
+
+32
+00:01:57,450 --> 00:02:00,530
+Here we have our 2D histogram of
+
+33
+00:02:00,530 --> 00:02:05,390
+a fuel efficiency versus displacement where each bin shows the number of counts.
+
+34
+00:02:05,390 --> 00:02:12,200
+Let's now change this so that color shows the average CO2 output for each bin.
+
+35
+00:02:12,200 --> 00:02:16,595
+This uses the weight parameter of the hist 2D function.
+
+36
+00:02:16,595 --> 00:02:23,420
+By default, each points weight is worth one so that the colors reflect the total counts.
+
+37
+00:02:23,420 --> 00:02:26,270
+If we change it so that each points weight is equal to
+
+38
+00:02:26,270 --> 00:02:30,380
+its CO2 emissions divided by the number of cars in that bin,
+
+39
+00:02:30,380 --> 00:02:34,145
+then the total within each bin will be the average.
+
+40
+00:02:34,145 --> 00:02:36,635
+Let's break this into steps.
+
+41
+00:02:36,635 --> 00:02:41,270
+Our first step is to figure out in which bin each point falls.
+
+42
+00:02:41,270 --> 00:02:45,035
+We compute this using the pandas cut function.
+
+43
+00:02:45,035 --> 00:02:50,255
+We pass in the series or the array from the DataFrame,
+
+44
+00:02:50,255 --> 00:02:57,385
+the bin sizes and then we have to recast that to ensure it's an integer.
+
+45
+00:02:57,385 --> 00:03:01,940
+Next, we count up the points that fall in each bin.
+
+46
+00:03:01,940 --> 00:03:05,090
+We do this by using a group by statement over
+
+47
+00:03:05,090 --> 00:03:10,685
+both the engine size and efficiency bin sizes.
+
+48
+00:03:10,685 --> 00:03:19,160
+Then we use the pivot method to then group that into one, two-dimensional array.
+
+49
+00:03:19,160 --> 00:03:25,540
+Finally, we use the values attribute to get the number of points as an array.
+
+50
+00:03:25,540 --> 00:03:29,150
+Now, we can get our point weights using all of these values.
+
+51
+00:03:29,150 --> 00:03:33,485
+We take the CO2 series and divide each element
+
+52
+00:03:33,485 --> 00:03:38,590
+by the number of points in each bin just right here.
+
+53
+00:03:38,590 --> 00:03:45,640
+We can now pass this to the weights parameter of our 2D hist function.
+
+54
+00:03:45,640 --> 00:03:51,065
+What we see here is pretty clear that as engine size gets larger,
+
+55
+00:03:51,065 --> 00:03:58,320
+efficiency goes down, which also means the emissions go up drastically.
+

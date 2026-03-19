@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:04,830
+Stories have the power of captivating in a way that facts just cannot compete.
+
+2
+00:00:04,830 --> 00:00:06,630
+When you're presenting your findings,
+
+3
+00:00:06,630 --> 00:00:08,295
+make sure to tell a story.
+
+4
+00:00:08,295 --> 00:00:10,275
+When telling a story about data,
+
+5
+00:00:10,275 --> 00:00:12,660
+you should start with a compelling question.
+
+6
+00:00:12,660 --> 00:00:15,375
+If you are providing in entire presentation,
+
+7
+00:00:15,375 --> 00:00:18,615
+supplement your question with engaging visuals.
+
+8
+00:00:18,615 --> 00:00:22,480
+Continue to motivate your question with additional examples or
+
+9
+00:00:22,480 --> 00:00:24,810
+deeper questions to help your audience further
+
+10
+00:00:24,810 --> 00:00:28,215
+engage and understand the context of your question.
+
+11
+00:00:28,215 --> 00:00:32,010
+Repetition of the problem is a good thing,
+
+12
+00:00:32,010 --> 00:00:35,100
+it can be simple and clearly explicit.
+
+13
+00:00:35,100 --> 00:00:37,890
+Repetition in visuals and audio cues
+
+14
+00:00:37,890 --> 00:00:41,040
+helps your audience move your question to long-term memory.
+
+15
+00:00:41,040 --> 00:00:45,530
+Now provide the data that supports an answer to the question.
+
+16
+00:00:45,530 --> 00:00:48,670
+Highlight the answers so that no one can miss it.
+
+17
+00:00:48,670 --> 00:00:51,975
+Conclude with a call to action for your audience.
+
+18
+00:00:51,975 --> 00:00:55,370
+Data by itself does not move people to take action.
+
+19
+00:00:55,370 --> 00:00:57,295
+You must motivate the action.
+
+20
+00:00:57,295 --> 00:00:59,675
+Data can assist in your conclusion,
+
+21
+00:00:59,675 --> 00:01:04,390
+but you must provide the context for the next steps for your audience to take.
+
+22
+00:01:04,390 --> 00:01:06,125
+In the next concept,
+
+23
+00:01:06,125 --> 00:01:09,500
+you will see two versions of the same presentation with
+
+24
+00:01:09,500 --> 00:01:14,190
+the same information and you can decide who tells a better story.
+

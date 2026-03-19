@@ -1,0 +1,104 @@
+1
+00:00:04,440 --> 00:00:09,395
+When we looked at the impact of jittering and transparency on scatter plots,
+
+2
+00:00:09,395 --> 00:00:13,695
+we saw an implied relationship between color, and density of data.
+
+3
+00:00:13,695 --> 00:00:19,965
+There is a bivariate plot type that uses this relationship explicitly, a heatmap.
+
+4
+00:00:19,965 --> 00:00:24,575
+In a heatmap, the field is divided into a grid of cells like this,
+
+5
+00:00:24,575 --> 00:00:28,165
+and the number of data points in each cell is counted up.
+
+6
+00:00:28,165 --> 00:00:32,260
+Each cell is done given a color based on the counter values.
+
+7
+00:00:32,260 --> 00:00:37,725
+In this example, the more data points in a grid cell, the darker the color.
+
+8
+00:00:37,725 --> 00:00:41,295
+A heatmap is like a 2D version of a histogram,
+
+9
+00:00:41,295 --> 00:00:44,210
+looking at the data from a top-down perspective.
+
+10
+00:00:44,210 --> 00:00:46,705
+We can't use bar heights in this case,
+
+11
+00:00:46,705 --> 00:00:49,585
+so color is our next best encoding.
+
+12
+00:00:49,585 --> 00:00:53,225
+Since assigning values based on color is imprecise,
+
+13
+00:00:53,225 --> 00:00:57,145
+you should consider adding count annotations on top of each grid cell,
+
+14
+00:00:57,145 --> 00:01:00,580
+especially if you only have a limited number of cells.
+
+15
+00:01:00,580 --> 00:01:03,915
+In this way, the heatmap is also like a table,
+
+16
+00:01:03,915 --> 00:01:06,950
+with additional coloring coding for emphasis.
+
+17
+00:01:06,950 --> 00:01:11,820
+A heatmap is favored over a scatter plot when you have two discrete variables,
+
+18
+00:01:11,820 --> 00:01:16,140
+since the associated jittered scatter plot can already be imprecise.
+
+19
+00:01:16,140 --> 00:01:19,370
+It's also an alternative to adding transparency to
+
+20
+00:01:19,370 --> 00:01:22,965
+a scatter plot when you have a very large amount of data.
+
+21
+00:01:22,965 --> 00:01:26,350
+However, like histograms, you need to be aware of
+
+22
+00:01:26,350 --> 00:01:29,990
+the impact of bin size on the interpretation of the data.
+
+23
+00:01:29,990 --> 00:01:31,715
+Too large a bin size,
+
+24
+00:01:31,715 --> 00:01:34,155
+and you may fail to see the major trends in the data,
+
+25
+00:01:34,155 --> 00:01:35,995
+and with too small a bin size,
+
+26
+00:01:35,995 --> 00:01:39,020
+you may end up distracted by noise.
+

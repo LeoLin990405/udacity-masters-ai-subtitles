@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:05,385
+In this lesson, we're going to look at a new type of plot called a Violin Plot.
+
+2
+00:00:05,385 --> 00:00:09,930
+Violin plots look at numerical data or
+
+3
+00:00:09,930 --> 00:00:14,700
+numerical distributions for a set of different categories.
+
+4
+00:00:14,700 --> 00:00:21,555
+Let's start this lesson by importing our required libraries for analysis and plotting,
+
+5
+00:00:21,555 --> 00:00:25,320
+as well as our fuel economy dataset.
+
+6
+00:00:25,320 --> 00:00:29,610
+In this lesson, we're going to look at the relationship between our fuel efficiency
+
+7
+00:00:29,610 --> 00:00:34,750
+variable against a qualitative variable vehicle class.
+
+8
+00:00:34,750 --> 00:00:37,865
+We're going to start by defining a new datatype.
+
+9
+00:00:37,865 --> 00:00:39,755
+For categorical data.
+
+10
+00:00:39,755 --> 00:00:41,675
+This is an ordered datatype,
+
+11
+00:00:41,675 --> 00:00:46,390
+meaning that our plots should hopefully plot them in order.
+
+12
+00:00:46,390 --> 00:00:49,490
+For instance, we're interested in
+
+13
+00:00:49,490 --> 00:00:54,575
+the Sedan classes from mini compact cars to sub-compact cars,
+
+14
+00:00:54,575 --> 00:00:57,035
+all the way to large cars.
+
+15
+00:00:57,035 --> 00:01:02,630
+Then we're going to define a categorical datatype and that
+
+16
+00:01:02,630 --> 00:01:08,285
+datatype we can put ordered equals true and our categories are defined up here.
+
+17
+00:01:08,285 --> 00:01:13,730
+Then we can use a Pandas method called as type to
+
+18
+00:01:13,730 --> 00:01:19,755
+re-interpret vehicle class has these data class variable types.
+
+19
+00:01:19,755 --> 00:01:23,450
+We do this, so that way seaborne should be able to
+
+20
+00:01:23,450 --> 00:01:28,030
+interpret that ordered parameter and recognize that these are ordered.
+
+21
+00:01:28,030 --> 00:01:30,185
+To plot a violin plot,
+
+22
+00:01:30,185 --> 00:01:32,780
+we use the seaborne function, violin plot.
+
+23
+00:01:32,780 --> 00:01:34,865
+Like most seaborne plots,
+
+24
+00:01:34,865 --> 00:01:39,395
+we hand in the data looking specifically at our Data-Frame.
+
+25
+00:01:39,395 --> 00:01:43,010
+We also define the x-variable is v class and
+
+26
+00:01:43,010 --> 00:01:47,360
+the y vehicle as our combined fuel efficiency.
+
+27
+00:01:47,360 --> 00:01:50,245
+We end up getting something like this.
+
+28
+00:01:50,245 --> 00:01:52,640
+Now, we should really clean this up a little bit.
+
+29
+00:01:52,640 --> 00:01:54,110
+As seen before,
+
+30
+00:01:54,110 --> 00:01:56,480
+we're going to make all the colors the same.
+
+31
+00:01:56,480 --> 00:02:00,080
+The x-axis labels are also overlapping.
+
+32
+00:02:00,080 --> 00:02:02,270
+It's very difficult to read,
+
+33
+00:02:02,270 --> 00:02:06,740
+so we need to rotate them slightly and additionally,
+
+34
+00:02:06,740 --> 00:02:11,080
+violin plots have these busy internal sections here.
+
+35
+00:02:11,080 --> 00:02:16,100
+I'm going to set them to none and make them disappear for now.
+
+36
+00:02:16,100 --> 00:02:19,010
+I'll make them reappear in just a moment.
+
+37
+00:02:19,010 --> 00:02:20,825
+Doing all these things.
+
+38
+00:02:20,825 --> 00:02:22,625
+We add the color.
+
+39
+00:02:22,625 --> 00:02:26,555
+We set the inner perimeter of the plot to none,
+
+40
+00:02:26,555 --> 00:02:28,745
+and we rotate our x-ticks,
+
+41
+00:02:28,745 --> 00:02:31,310
+we end up seeing something like this,
+
+42
+00:02:31,310 --> 00:02:34,770
+this is so much better.
+
+43
+00:02:36,460 --> 00:02:41,010
+How do we interpret a violin plot?
+
+44
+00:02:41,390 --> 00:02:45,830
+For each vehicle class and area is plotted that shows
+
+45
+00:02:45,830 --> 00:02:49,625
+the approximate density of each value.
+
+46
+00:02:49,625 --> 00:02:54,755
+For example, let's look at sub-compact cars.
+
+47
+00:02:54,755 --> 00:02:57,455
+What we see here is essentially
+
+48
+00:02:57,455 --> 00:03:03,315
+a probability density function or PDF that turned on its side.
+
+49
+00:03:03,315 --> 00:03:07,520
+This tells you that most of the data is plotted right
+
+50
+00:03:07,520 --> 00:03:13,120
+around 23 or 24 miles per gallon for sub-compact cars.
+
+51
+00:03:13,120 --> 00:03:15,575
+Comparing to large cars,
+
+52
+00:03:15,575 --> 00:03:22,880
+we see that large cars are on average much lower than sub-compact cars.
+
+53
+00:03:22,880 --> 00:03:25,550
+But we have a very large number of outliers.
+
+54
+00:03:25,550 --> 00:03:27,470
+For mini compact cars.
+
+55
+00:03:27,470 --> 00:03:29,710
+We have a bimodal distribution.
+
+56
+00:03:29,710 --> 00:03:33,600
+Many are around 20 or 21 miles per gallon.
+
+57
+00:03:33,600 --> 00:03:37,760
+But we have another common mode right under 30.
+
+58
+00:03:37,760 --> 00:03:41,675
+Going back to that inner plotting artifact,
+
+59
+00:03:41,675 --> 00:03:44,075
+what is going on there?
+
+60
+00:03:44,075 --> 00:03:46,565
+Now instead of inner equals none,
+
+61
+00:03:46,565 --> 00:03:49,675
+Let's set the parameter to quartile.
+
+62
+00:03:49,675 --> 00:03:51,815
+When we do that,
+
+63
+00:03:51,815 --> 00:03:58,975
+we see that are plotted the three quartiles for each of these classes.
+
+64
+00:03:58,975 --> 00:04:02,225
+The lowest is the 25th percentile,
+
+65
+00:04:02,225 --> 00:04:04,790
+the middle is the median,
+
+66
+00:04:04,790 --> 00:04:11,245
+or 50th percentile, and the top is the 75th percentile or third quartile.
+
+67
+00:04:11,245 --> 00:04:14,570
+This gives us a better idea of how
+
+68
+00:04:14,570 --> 00:04:19,085
+the distribution is changing in the center of the distribution.
+
+69
+00:04:19,085 --> 00:04:21,140
+For example, for large cars,
+
+70
+00:04:21,140 --> 00:04:24,080
+we have a very few number of outliers
+
+71
+00:04:24,080 --> 00:04:28,020
+that are really pulling the distribution away from the center.
+

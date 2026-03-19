@@ -1,0 +1,84 @@
+1
+00:00:04,309 --> 00:00:06,569
+In the previous lessons,
+
+2
+00:00:06,570 --> 00:00:10,980
+you learned how to use univariate and bivariate plots to visualize your data,
+
+3
+00:00:10,980 --> 00:00:13,040
+one or two variables at a time.
+
+4
+00:00:13,039 --> 00:00:14,764
+In most of these cases,
+
+5
+00:00:14,765 --> 00:00:16,929
+you use position like in scatter plots,
+
+6
+00:00:16,929 --> 00:00:20,410
+or length like in bar charts for encoding your variables.
+
+7
+00:00:20,410 --> 00:00:25,379
+This is because our perception for values is most precise with these encodings.
+
+8
+00:00:25,379 --> 00:00:29,769
+This presents an issue for when we want to move on to multi-variate plots,
+
+9
+00:00:29,769 --> 00:00:32,469
+or plots of three, or more variables.
+
+10
+00:00:32,469 --> 00:00:34,734
+There will be ambiguity in value,
+
+11
+00:00:34,734 --> 00:00:39,994
+if we try to embed three positional dimensions into a flat, two-dimensional image.
+
+12
+00:00:39,994 --> 00:00:44,449
+Take for example this point on the three-dimensional axes here.
+
+13
+00:00:44,450 --> 00:00:48,600
+What does that point's value on x, y, and z?
+
+14
+00:00:48,600 --> 00:00:53,164
+Due to perspective, there are multiple possible values it could take.
+
+15
+00:00:53,164 --> 00:00:56,554
+We can resolve the ambiguity with additional markings,
+
+16
+00:00:56,554 --> 00:01:00,034
+but this is unreasonable if we have lots of data.
+
+17
+00:01:00,034 --> 00:01:03,379
+In this lesson, you will learn about encodings that can be
+
+18
+00:01:03,380 --> 00:01:06,575
+used to create effective multi-variate plots.
+
+19
+00:01:06,575 --> 00:01:09,650
+You will also see other techniques like fastening
+
+20
+00:01:09,650 --> 00:01:13,370
+that can expand on bivariate plots to make them multivariate.
+
+21
+00:01:13,370 --> 00:01:18,640
+You will also learn about additional techniques that will help you in your analysis.
+
