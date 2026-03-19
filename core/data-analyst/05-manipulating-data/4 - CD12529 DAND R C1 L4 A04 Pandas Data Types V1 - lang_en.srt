@@ -1,0 +1,76 @@
+1
+00:00:00,000 --> 00:00:02,955
+Pandas supports a wide array of data types,
+
+2
+00:00:02,955 --> 00:00:06,600
+but the difficult types you will encounter include objects.
+
+3
+00:00:06,600 --> 00:00:08,655
+These are typically strings,
+
+4
+00:00:08,655 --> 00:00:12,060
+integers, whole numbers like zero, one,
+
+5
+00:00:12,060 --> 00:00:15,105
+and two, floats,
+
+6
+00:00:15,105 --> 00:00:18,255
+which are floating point numbers with high precision.
+
+7
+00:00:18,255 --> 00:00:22,905
+Booleans, you'll see these as true or false.
+
+8
+00:00:22,905 --> 00:00:27,675
+Datetimes, these include the date and the time into a single value.
+
+9
+00:00:27,675 --> 00:00:31,305
+Sometimes you'll see these as timestamps.
+
+10
+00:00:31,305 --> 00:00:33,720
+Finally, categorical.
+
+11
+00:00:33,720 --> 00:00:35,970
+We'll use these later in the lesson,
+
+12
+00:00:35,970 --> 00:00:40,210
+but these data types help organize string representations in your DataFrame.
+
+13
+00:00:40,210 --> 00:00:42,860
+There are many more, and I suggest you look
+
+14
+00:00:42,860 --> 00:00:45,665
+at the pandas documentation to review them all.
+
+15
+00:00:45,665 --> 00:00:47,855
+To change a column's datatype,
+
+16
+00:00:47,855 --> 00:00:50,135
+you can use the astype method.
+
+17
+00:00:50,135 --> 00:00:52,790
+This works with either a dictionary mapping on
+
+18
+00:00:52,790 --> 00:00:57,680
+the entire DataFrame or converting the column by accessing the series.
+
+19
+00:00:57,680 --> 00:01:02,970
+You will still need to assign it back to the DataFrame for the conversion to persist.
+

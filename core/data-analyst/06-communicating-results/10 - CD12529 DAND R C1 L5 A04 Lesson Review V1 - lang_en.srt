@@ -1,0 +1,56 @@
+1
+00:00:00,000 --> 00:00:04,680
+During this lesson, we explored various techniques to summarize our data.
+
+2
+00:00:04,680 --> 00:00:06,540
+Techniques including groupby,
+
+3
+00:00:06,540 --> 00:00:10,080
+summation, measurements, etc, and spread.
+
+4
+00:00:10,080 --> 00:00:14,085
+These helped us understand how our data operates.
+
+5
+00:00:14,085 --> 00:00:17,010
+We use the pandas plot method to learn
+
+6
+00:00:17,010 --> 00:00:20,175
+different visualization techniques for data plotting.
+
+7
+00:00:20,175 --> 00:00:22,155
+Building on these objectives,
+
+8
+00:00:22,155 --> 00:00:23,940
+we highlighted the significance of drawing
+
+9
+00:00:23,940 --> 00:00:27,555
+conclusions with our statistics and visualizations.
+
+10
+00:00:27,555 --> 00:00:30,840
+By tailoring our visuals for better communication,
+
+11
+00:00:30,840 --> 00:00:34,485
+we were able to effectively communicate a cohesive story.
+
+12
+00:00:34,485 --> 00:00:36,300
+Hey, great job.
+
+13
+00:00:36,300 --> 00:00:39,370
+You now should be comfortable communicating with your data.
+
+14
+00:00:39,370 --> 00:00:44,100
+In fact, it may be the most important part about being a data analyst.
+

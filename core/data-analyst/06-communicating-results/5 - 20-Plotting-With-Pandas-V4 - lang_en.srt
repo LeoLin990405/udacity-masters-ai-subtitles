@@ -1,0 +1,152 @@
+1
+00:00:00,000 --> 00:00:02,400
+In this video, we'll go through some of
+
+2
+00:00:02,400 --> 00:00:06,090
+the most common and useful plots you can create with pandas.
+
+3
+00:00:06,090 --> 00:00:08,670
+Note that the plot methods on a series or
+
+4
+00:00:08,670 --> 00:00:12,480
+DataFrame are just simple wrappers around matplotlib functions.
+
+5
+00:00:12,480 --> 00:00:15,675
+This is why you might see them used interchangeably,
+
+6
+00:00:15,675 --> 00:00:18,120
+pandas is nice for quick insights,
+
+7
+00:00:18,120 --> 00:00:20,790
+but you'll need to use matplotlib to really dive into
+
+8
+00:00:20,790 --> 00:00:23,775
+details and customize your visualizations.
+
+9
+00:00:23,775 --> 00:00:25,890
+We'll get into this more later on.
+
+10
+00:00:25,890 --> 00:00:29,550
+Let's first use census income data to practice plotting histograms,
+
+11
+00:00:29,550 --> 00:00:32,175
+bar charts, and pie charts in pandas.
+
+12
+00:00:32,175 --> 00:00:35,670
+A really useful line to include when visualizing in
+
+13
+00:00:35,670 --> 00:00:39,015
+Jupyter Notebooks is the matplotlib in-line statement.
+
+14
+00:00:39,015 --> 00:00:42,340
+This lets you view your plots in the notebook.
+
+15
+00:00:46,330 --> 00:00:49,100
+A quick way to view histograms for
+
+16
+00:00:49,100 --> 00:00:52,850
+all numerical columns in a DataFrame is the hist function,
+
+17
+00:00:52,850 --> 00:00:55,945
+which we could call directly on the pandas DataFrame.
+
+18
+00:00:55,945 --> 00:00:57,710
+That was way too crowded.
+
+19
+00:00:57,710 --> 00:01:00,150
+Let's make our figure size bigger.
+
+20
+00:01:00,910 --> 00:01:06,180
+Also, we can use a semicolon to suppress this unwanted output.
+
+21
+00:01:09,470 --> 00:01:13,880
+The hist function can also be called on a pandas series object.
+
+22
+00:01:13,880 --> 00:01:18,380
+We can plot a histogram for one specific column like this.
+
+23
+00:01:19,700 --> 00:01:22,480
+Or instead of using hist,
+
+24
+00:01:22,480 --> 00:01:28,080
+the more general plot function and specify the type of plot in a parameter.
+
+25
+00:01:29,780 --> 00:01:34,055
+Next, let's plot a bar chart for the education column.
+
+26
+00:01:34,055 --> 00:01:38,940
+For this, we need counts for each distinct value or bar.
+
+27
+00:01:39,560 --> 00:01:45,635
+This value counts function aggregates counts for each unique value in a column.
+
+28
+00:01:45,635 --> 00:01:50,125
+We can call the plot function on this result to create a bar chart.
+
+29
+00:01:50,125 --> 00:01:54,185
+Similarly, we also need value counts to plot pie charts.
+
+30
+00:01:54,185 --> 00:01:57,110
+Let's create a pie chart for the workclass column.
+
+31
+00:01:57,110 --> 00:01:59,240
+Awesome. Let's switch to
+
+32
+00:01:59,240 --> 00:02:03,990
+our cancer dataset to practice plotting scatter plots and box plots.
+
+33
+00:02:04,100 --> 00:02:08,240
+This next function is really cool for getting quick insight
+
+34
+00:02:08,240 --> 00:02:12,035
+into the relationships among numerical variables with scatter plots.
+
+35
+00:02:12,035 --> 00:02:16,020
+It also displays a histogram for each variable.
+
+36
+00:02:16,360 --> 00:02:20,900
+We can create a single scatter plot using this standard plot function,
+
+37
+00:02:20,900 --> 00:02:25,420
+with parameters to specify the columns to be used for the x and y-axis.
+
+38
+00:02:25,420 --> 00:02:30,270
+Finally, the plot function can also be used to create a boxplot.
+

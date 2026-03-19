@@ -1,0 +1,224 @@
+1
+00:00:13,220 --> 00:00:16,080
+My name is Golois Mouelet.
+
+2
+00:00:16,080 --> 00:00:18,195
+I'm a field engineer at Microsoft.
+
+3
+00:00:18,195 --> 00:00:23,130
+Hi, my name is Ann Hoang and I currently work at Raytheon Technologies.
+
+4
+00:00:23,130 --> 00:00:24,435
+I'm Nathan Anderson.
+
+5
+00:00:24,435 --> 00:00:28,020
+I work at the Goodyear Tire and Rubber Company as a DevOps engineer.
+
+6
+00:00:28,020 --> 00:00:32,770
+I'm Chris Vazquez and I work at Udacity as a Curriculum Manager.
+
+7
+00:00:38,000 --> 00:00:43,340
+What I love most about my job is not only interacting with customers,
+
+8
+00:00:43,340 --> 00:00:46,440
+but also designing and architecting
+
+9
+00:00:46,440 --> 00:00:50,380
+scalable applications using the latest Azure services.
+
+10
+00:00:50,380 --> 00:00:54,380
+What I like most about my job is the opportunities to automate things,
+
+11
+00:00:54,380 --> 00:00:58,610
+and then a typical day of work for me is interacting with my team
+
+12
+00:00:58,610 --> 00:01:02,885
+and consulting other teams on automating processes that could be automated.
+
+13
+00:01:02,885 --> 00:01:06,155
+I love my job because it's challenging.
+
+14
+00:01:06,155 --> 00:01:07,670
+It's not easy.
+
+15
+00:01:07,670 --> 00:01:14,450
+I'm looking and I'm surrounded by co-workers who are really good and that pushes me
+
+16
+00:01:14,450 --> 00:01:21,770
+to work hard to write clean code and also as a coder,
+
+17
+00:01:21,770 --> 00:01:26,250
+has some value to society.
+
+18
+00:01:31,750 --> 00:01:37,505
+I believe that everyone should take this ND because it allows you to
+
+19
+00:01:37,505 --> 00:01:43,175
+gain hands-on experience from topics ranging from Azure services,
+
+20
+00:01:43,175 --> 00:01:49,955
+a service bus, storage queue and so it just allows everyone depending on your level,
+
+21
+00:01:49,955 --> 00:01:52,220
+whether you're just entry, or are you advanced?
+
+22
+00:01:52,220 --> 00:01:57,660
+So everyone should take it to broaden their knowledge on Azure and Azure services.
+
+23
+00:02:03,160 --> 00:02:06,650
+I think one thing that students will love about this course is
+
+24
+00:02:06,650 --> 00:02:09,290
+just how easy it is to work with Azure,
+
+25
+00:02:09,290 --> 00:02:11,930
+as well as the hands-on experience that they'll get
+
+26
+00:02:11,930 --> 00:02:15,260
+while working through all the exercises as well as the project.
+
+27
+00:02:15,260 --> 00:02:23,745
+You can build something that takes a lot less time than it used to.
+
+28
+00:02:23,745 --> 00:02:25,625
+Everything is decouple.
+
+29
+00:02:25,625 --> 00:02:28,790
+Instead of creating an API,
+
+30
+00:02:28,790 --> 00:02:33,100
+you have a model that serves an endpoint,
+
+31
+00:02:33,100 --> 00:02:35,535
+all in one program.
+
+32
+00:02:35,535 --> 00:02:38,969
+Each endpoint, each service like getNote,
+
+33
+00:02:38,969 --> 00:02:46,379
+that is his own decoupled code that's running and it makes it very easy to debug.
+
+34
+00:02:55,580 --> 00:02:58,160
+You're going to find that the market is very
+
+35
+00:02:58,160 --> 00:03:00,440
+starved for people with these skills right now.
+
+36
+00:03:00,440 --> 00:03:03,875
+So you're gonna be getting a lot of phone calls and a lot of emails.
+
+37
+00:03:03,875 --> 00:03:07,100
+Or if you take this back to your current position,
+
+38
+00:03:07,100 --> 00:03:09,410
+you're going to begin to want more responsibilities.
+
+39
+00:03:09,410 --> 00:03:14,605
+It actually can be very fun to do and to implement a solution like this,
+
+40
+00:03:14,605 --> 00:03:15,980
+because at the end of the day,
+
+41
+00:03:15,980 --> 00:03:18,470
+once that's done and working how you want it,
+
+42
+00:03:18,470 --> 00:03:22,040
+everyone's going to love it and problems are just going to go away
+
+43
+00:03:22,040 --> 00:03:26,665
+and know that you've solved a lot of different problems.
+
+44
+00:03:26,665 --> 00:03:29,690
+It's not just my field that is using this.
+
+45
+00:03:29,690 --> 00:03:33,240
+I've learned that the person,
+
+46
+00:03:33,240 --> 00:03:40,865
+the government is really interested in using the same microservice and implementation.
+
+47
+00:03:40,865 --> 00:03:44,000
+It's very cross-discipline.
+
+48
+00:03:44,000 --> 00:03:47,780
+This course is awesome because it shows you how to implement a monitoring solution,
+
+49
+00:03:47,780 --> 00:03:49,885
+as well as hand-off your work to the robots.
+
+50
+00:03:49,885 --> 00:03:53,750
+As soon as you take this course because it provides the foundational knowledge
+
+51
+00:03:53,750 --> 00:03:58,025
+of Azure as well as hands-on experience with working with Azure's platform.
+
+52
+00:03:58,025 --> 00:03:59,450
+If you take this course,
+
+53
+00:03:59,450 --> 00:04:01,640
+you should be able to implement
+
+54
+00:04:01,640 --> 00:04:06,230
+all the serverless function and go out and build your own service.
+
+55
+00:04:06,230 --> 00:04:11,100
+I'm looking forward to you learning about Azure Batch, Azure function, WebJob,
+
+56
+00:04:11,100 --> 00:04:17,070
+Java services so that you can go back and deploy scalable services to Azure.
+

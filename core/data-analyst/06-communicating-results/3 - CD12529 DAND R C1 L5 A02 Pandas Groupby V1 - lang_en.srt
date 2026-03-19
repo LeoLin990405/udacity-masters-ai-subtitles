@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:03,285
+Groupby is one of my favorite functions in pandas.
+
+2
+00:00:03,285 --> 00:00:06,180
+It lets you group your data and aggregate information about
+
+3
+00:00:06,180 --> 00:00:10,350
+those groups or perform group-specific transformations.
+
+4
+00:00:10,350 --> 00:00:13,380
+In this section, we'll focus on using groupby
+
+5
+00:00:13,380 --> 00:00:16,410
+to get summary statistics about different groups of data.
+
+6
+00:00:16,410 --> 00:00:21,250
+This notebook I read in the CSV for census income data.
+
+7
+00:00:21,770 --> 00:00:25,335
+Previously, we learned that we can get summary statistics
+
+8
+00:00:25,335 --> 00:00:28,860
+on the whole dataset with functions like describe and mean.
+
+9
+00:00:28,860 --> 00:00:32,415
+From this, I can find the mean of the whole dataset.
+
+10
+00:00:32,415 --> 00:00:36,285
+But what if I wanted to find the mean for each work class in the data?
+
+11
+00:00:36,285 --> 00:00:41,110
+You can use the groupby function combined with a mean function to do this.
+
+12
+00:00:41,110 --> 00:00:43,100
+We can even split the data by
+
+13
+00:00:43,100 --> 00:00:47,375
+multiple columns by using a list of the columns we want to group by.
+
+14
+00:00:47,375 --> 00:00:54,125
+Here we are grouping by work class and race to visualize how groups have different means.
+
+15
+00:00:54,125 --> 00:00:57,890
+If we want to keep the columns we grouped by in the DataFrame,
+
+16
+00:00:57,890 --> 00:01:02,510
+we can specify the as index parameter to false.
+
+17
+00:01:02,510 --> 00:01:05,330
+In this example, we are keeping the columns and only
+
+18
+00:01:05,330 --> 00:01:09,310
+selecting the capital gains to derive the mean values from each group.
+
+19
+00:01:09,310 --> 00:01:14,300
+Experiment with this notebook provided to better understand how groupby works.
+
+20
+00:01:14,300 --> 00:01:19,200
+We'll be spending time working on our datasets to draw a conclusion soon.
+

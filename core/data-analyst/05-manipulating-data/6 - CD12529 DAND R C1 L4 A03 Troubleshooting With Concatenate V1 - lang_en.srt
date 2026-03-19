@@ -1,0 +1,20 @@
+1
+00:00:00,000 --> 00:00:04,150
+In this scenario, I made a mistake in labeling the years column.
+
+2
+00:00:04,150 --> 00:00:07,755
+You may have noticed that although the data was concatenated,
+
+3
+00:00:07,755 --> 00:00:10,605
+something strange happened with the column.
+
+4
+00:00:10,605 --> 00:00:12,930
+Why do you think these columns failed to merge
+
+5
+00:00:12,930 --> 00:00:16,060
+together when the DataFrames were concatenated?
+

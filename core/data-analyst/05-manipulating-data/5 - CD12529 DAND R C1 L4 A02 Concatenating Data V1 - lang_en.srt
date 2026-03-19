@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:03,310
+When combining two or more data sets together,
+
+2
+00:00:03,310 --> 00:00:07,035
+pandas provides an incredible tool called concat.
+
+3
+00:00:07,035 --> 00:00:13,260
+Concat takes a list of one or more DataFrames and joins them vertically or horizontally.
+
+4
+00:00:13,260 --> 00:00:15,930
+Here you can see them vertically.
+
+5
+00:00:15,930 --> 00:00:20,475
+Think of this as stacking one DataFrame on top of another.
+
+6
+00:00:20,475 --> 00:00:23,250
+Pandas tries to align all of the columns
+
+7
+00:00:23,250 --> 00:00:27,675
+together by joining and matching on the column names.
+
+8
+00:00:27,675 --> 00:00:33,560
+The return value of concat is a new DataFrame from the joint results.
+
+9
+00:00:33,560 --> 00:00:36,665
+By default, concat joins vertically.
+
+10
+00:00:36,665 --> 00:00:41,330
+Or you can explicitly state it by using the axis equal to zero.
+
+11
+00:00:41,330 --> 00:00:45,985
+To join horizontally, one must set axis equal to one.
+
+12
+00:00:45,985 --> 00:00:48,920
+Concat includes additional parameters allowing
+
+13
+00:00:48,920 --> 00:00:51,725
+you to combine your DataFrames in different ways.
+
+14
+00:00:51,725 --> 00:00:53,585
+Let's go through the Jupyter Notebook,
+
+15
+00:00:53,585 --> 00:00:56,220
+and practice using this amazing tool.
+

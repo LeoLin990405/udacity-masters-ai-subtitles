@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:03,540
+Let's learn about NumPy and how we can use it to do this.
+
+2
+00:00:03,540 --> 00:00:09,390
+NumPy is short for numerical Python and is designed for efficient scientific computation.
+
+3
+00:00:09,390 --> 00:00:12,135
+It's built on top of the programming language C,
+
+4
+00:00:12,135 --> 00:00:14,850
+which works at a lower-level on our computer.
+
+5
+00:00:14,850 --> 00:00:17,850
+To understand what this means for the speed of our code,
+
+6
+00:00:17,850 --> 00:00:20,040
+see the link in the instructor notes.
+
+7
+00:00:20,040 --> 00:00:22,575
+Pandas is built on top of NumPy,
+
+8
+00:00:22,575 --> 00:00:27,195
+which is why it's so fast with all its computations for functions like describe.
+
+9
+00:00:27,195 --> 00:00:31,895
+If you try doing these computations in plain Python, it's much slower.
+
+10
+00:00:31,895 --> 00:00:37,280
+Here's an example, calculating the mean for an array of 100 million values.
+
+11
+00:00:37,280 --> 00:00:41,945
+This generates an array of 100 million random floats zero and one.
+
+12
+00:00:41,945 --> 00:00:45,775
+We could also type in 1e8 to make this clearer.
+
+13
+00:00:45,775 --> 00:00:49,430
+Looks like that provides a float when it requires an int.
+
+14
+00:00:49,430 --> 00:00:53,880
+Let's see how long it takes standard Python to compute the mean of this array.
+
+15
+00:00:55,540 --> 00:00:58,380
+A little more than nine seconds.
+
+16
+00:00:58,380 --> 00:01:01,420
+Now, let's see how long it takes NumPy.
+
+17
+00:01:02,270 --> 00:01:05,660
+That was almost instant. Isn't that cool?
+
+18
+00:01:05,660 --> 00:01:09,830
+Imagine how much it speeds up the process when there's much more computation happening.
+
+19
+00:01:09,830 --> 00:01:13,850
+For example, let's say we're engineering a whole new feature or column,
+
+20
+00:01:13,850 --> 00:01:16,550
+which you compute by multiplying the values and two columns
+
+21
+00:01:16,550 --> 00:01:20,270
+together and divide by the values in another for each row.
+
+22
+00:01:20,270 --> 00:01:23,030
+Unlike NumPy, plain Python would require
+
+23
+00:01:23,030 --> 00:01:27,505
+a massively long loop through all the rows to compute the new value for each row.
+
+24
+00:01:27,505 --> 00:01:30,260
+The main object we work with in NumPy is
+
+25
+00:01:30,260 --> 00:01:33,785
+a multi-dimensional array of values of all the same datatype.
+
+26
+00:01:33,785 --> 00:01:37,100
+These arrays, along with many useful functions in NumPy,
+
+27
+00:01:37,100 --> 00:01:40,890
+optimize and simplify operations on data.
+

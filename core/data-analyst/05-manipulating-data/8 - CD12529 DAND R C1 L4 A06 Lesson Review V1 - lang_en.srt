@@ -1,0 +1,48 @@
+1
+00:00:00,000 --> 00:00:03,210
+In this lesson, we learned how to use pandas and
+
+2
+00:00:03,210 --> 00:00:06,660
+NumPy to manipulate data into formatted forms.
+
+3
+00:00:06,660 --> 00:00:09,540
+This includes performing data cleaning such as
+
+4
+00:00:09,540 --> 00:00:12,850
+dropping and renaming columns and fixing data types.
+
+5
+00:00:12,850 --> 00:00:16,860
+Filtering data with SQL like syntax by using
+
+6
+00:00:16,860 --> 00:00:21,075
+the query method to sub-select specific parts of the data.
+
+7
+00:00:21,075 --> 00:00:26,700
+Joining and merging data using concatenation in SQL like operations,
+
+8
+00:00:26,700 --> 00:00:33,690
+and expanding nested list data to separate rows and columns using explode processing.
+
+9
+00:00:33,690 --> 00:00:36,330
+While these are the high-level key points,
+
+10
+00:00:36,330 --> 00:00:38,070
+you learned a tremendous amount of
+
+11
+00:00:38,070 --> 00:00:41,880
+pandas functionality to utilize in your data analysts to belts.
+
+12
+00:00:41,880 --> 00:00:44,880
+Take a second to congratulate yourself.
+

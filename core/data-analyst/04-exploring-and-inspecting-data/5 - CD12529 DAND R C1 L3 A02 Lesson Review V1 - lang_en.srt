@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:03,030
+The skills you've learned in this lesson will prepare
+
+2
+00:00:03,030 --> 00:00:06,270
+you for many future encounters with new data sets.
+
+3
+00:00:06,270 --> 00:00:12,105
+In this lesson, we built our core skills in forming and asking questions about data.
+
+4
+00:00:12,105 --> 00:00:15,370
+Data wrangling and EDA,
+
+5
+00:00:15,410 --> 00:00:21,045
+gathering data, reading CSV files,
+
+6
+00:00:21,045 --> 00:00:24,945
+and inspecting and assessing data with pandas.
+
+7
+00:00:24,945 --> 00:00:27,420
+It is important that you understand and feel
+
+8
+00:00:27,420 --> 00:00:30,870
+comfortable with all methods and techniques from this lesson,
+
+9
+00:00:30,870 --> 00:00:34,695
+as every data analysis starts with these early steps,
+
+10
+00:00:34,695 --> 00:00:36,825
+continue to master these skills,
+
+11
+00:00:36,825 --> 00:00:40,540
+and you'll be set up to excel. Keep up the great work.
+

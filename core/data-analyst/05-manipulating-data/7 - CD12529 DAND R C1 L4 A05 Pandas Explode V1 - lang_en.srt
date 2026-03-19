@@ -1,0 +1,56 @@
+1
+00:00:00,000 --> 00:00:04,590
+One of the many problems faced when manipulating data using pandas is
+
+2
+00:00:04,590 --> 00:00:09,715
+converting nested lists so they each have a value represented in a row or column.
+
+3
+00:00:09,715 --> 00:00:14,670
+To solve this, we use the explode method provided by pandas.
+
+4
+00:00:14,670 --> 00:00:20,400
+The explode method will convert a list of values into a row representing each value.
+
+5
+00:00:20,400 --> 00:00:22,845
+For every row that has a list,
+
+6
+00:00:22,845 --> 00:00:25,305
+the result will be a singular column.
+
+7
+00:00:25,305 --> 00:00:30,595
+We stacked row values representing all of the list values from every row it transform.
+
+8
+00:00:30,595 --> 00:00:35,090
+Expanding a list into columns does not use the method we just mentioned,
+
+9
+00:00:35,090 --> 00:00:39,500
+but can be achieved by creating a list of values while defining a new DataFrame,
+
+10
+00:00:39,500 --> 00:00:43,215
+effectively transforming the list into columns.
+
+11
+00:00:43,215 --> 00:00:44,750
+It is important to mention
+
+12
+00:00:44,750 --> 00:00:48,425
+these two transformations as they solve the same problem differently.
+
+13
+00:00:48,425 --> 00:00:50,420
+Let's go through the notebook to practice
+
+14
+00:00:50,420 --> 00:00:54,600
+the two techniques and visually understand their distinctions.
+

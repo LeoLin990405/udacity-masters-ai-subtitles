@@ -1,0 +1,352 @@
+1
+00:00:00,000 --> 00:00:03,825
+Let's explore ways of fixing some common issues and data.
+
+2
+00:00:03,825 --> 00:00:07,025
+Here's a toy dataset I created for this lesson.
+
+3
+00:00:07,025 --> 00:00:09,240
+It has 11 instances of
+
+4
+00:00:09,240 --> 00:00:14,805
+user product Interactions recording whether the user liked the product,
+
+5
+00:00:14,805 --> 00:00:17,565
+how long they viewed the product,
+
+6
+00:00:17,565 --> 00:00:21,270
+whether it was on a website or through a mobile app,
+
+7
+00:00:21,270 --> 00:00:24,300
+and what time they started viewing the product.
+
+8
+00:00:24,300 --> 00:00:29,590
+Pause the video and see if you can spot any potential issues in this data.
+
+9
+00:00:31,520 --> 00:00:36,900
+Let's address three issues in this dataset that are quite common in the real-world.
+
+10
+00:00:36,900 --> 00:00:39,075
+The first one is missing data,
+
+11
+00:00:39,075 --> 00:00:41,970
+which we find in the view_duration column.
+
+12
+00:00:41,970 --> 00:00:46,295
+There are a total of 11 entries or rows in this dataset,
+
+13
+00:00:46,295 --> 00:00:50,155
+but only eight non-null values in view_duration.
+
+14
+00:00:50,155 --> 00:00:52,880
+That means there are three no values,
+
+15
+00:00:52,880 --> 00:00:54,740
+which we can also see here.
+
+16
+00:00:54,740 --> 00:00:57,125
+This is a small toy dataset.
+
+17
+00:00:57,125 --> 00:00:59,645
+So we're able to see all the null values here.
+
+18
+00:00:59,645 --> 00:01:04,280
+But normally you check these values for bigger datasets.
+
+19
+00:01:04,280 --> 00:01:07,340
+The second issue we'll address is duplicates,
+
+20
+00:01:07,340 --> 00:01:10,205
+which we find in rows 3 and 4.
+
+21
+00:01:10,205 --> 00:01:15,365
+Again, we only notice this here because this is a small toy dataset.
+
+22
+00:01:15,365 --> 00:01:18,895
+I'll show you a better way to check for duplicates in a little bit.
+
+23
+00:01:18,895 --> 00:01:22,795
+The third issue we'll tackle is incorrect data types.
+
+24
+00:01:22,795 --> 00:01:25,790
+Here timestamp is represented as
+
+25
+00:01:25,790 --> 00:01:30,290
+a string when ideally it should be represented as a datetime object.
+
+26
+00:01:30,290 --> 00:01:33,320
+Remember it says object instead of string here because
+
+27
+00:01:33,320 --> 00:01:37,740
+pandas stores pointers to strings instead of the strings themselves.
+
+28
+00:01:38,060 --> 00:01:42,065
+Let's start with the first problem, missing data.
+
+29
+00:01:42,065 --> 00:01:47,060
+Missing data is an issue that should be handled differently depending on several factors,
+
+30
+00:01:47,060 --> 00:01:52,310
+such as the reason those values are missing and whether their occurrences seem random.
+
+31
+00:01:52,310 --> 00:01:55,850
+One way of handling them is imputing them with the mean.
+
+32
+00:01:55,850 --> 00:02:00,625
+You can do this quickly and efficiently with a convenient function from pandas.
+
+33
+00:02:00,625 --> 00:02:04,605
+First, let's get the mean of the view_duration column.
+
+34
+00:02:04,605 --> 00:02:10,090
+Now, let's use pandas fillna function to fill null values with this mean.
+
+35
+00:02:10,090 --> 00:02:12,440
+Take a look at the DataFrame now.
+
+36
+00:02:12,440 --> 00:02:14,345
+Does that this fix the problem?
+
+37
+00:02:14,345 --> 00:02:17,585
+Instead of making changes to the original column,
+
+38
+00:02:17,585 --> 00:02:20,510
+it actually just returned a new column with the changes,
+
+39
+00:02:20,510 --> 00:02:22,195
+which we didn't store anywhere.
+
+40
+00:02:22,195 --> 00:02:23,630
+To keep the changes,
+
+41
+00:02:23,630 --> 00:02:26,860
+make sure to assign it to the original like this.
+
+42
+00:02:26,860 --> 00:02:34,270
+Alternatively, you can use a parameter called inplace to make the changes in place.
+
+43
+00:02:34,270 --> 00:02:37,625
+Awesome, we just fixed our missing data issue.
+
+44
+00:02:37,625 --> 00:02:41,195
+Next, let's deal with the problem of duplicate data.
+
+45
+00:02:41,195 --> 00:02:44,810
+There are multiple reasons you may end up with duplicated data,
+
+46
+00:02:44,810 --> 00:02:47,890
+like combined data sources or human error.
+
+47
+00:02:47,890 --> 00:02:50,930
+This is a simple scenario where two rows,
+
+48
+00:02:50,930 --> 00:02:53,330
+3 and 4, are identical.
+
+49
+00:02:53,330 --> 00:02:57,290
+This toy dataset is small enough for us to count visually.
+
+50
+00:02:57,290 --> 00:02:59,180
+For bigger datasets, you can use
+
+51
+00:02:59,180 --> 00:03:02,330
+the duplicated function to see which rows are duplicates.
+
+52
+00:03:02,330 --> 00:03:05,300
+By default, this marks duplicates as true,
+
+53
+00:03:05,300 --> 00:03:07,160
+excluding the first instance.
+
+54
+00:03:07,160 --> 00:03:12,125
+It considers a row to be a duplicate only if the values in all the columns match.
+
+55
+00:03:12,125 --> 00:03:15,785
+You can change both of these with different parameters.
+
+56
+00:03:15,785 --> 00:03:19,010
+For larger datasets, it would probably be more
+
+57
+00:03:19,010 --> 00:03:22,430
+helpful to get a count of the duplicates in the dataset like this.
+
+58
+00:03:22,430 --> 00:03:26,690
+To drop duplicates, we can use pandas' drop_duplicates function.
+
+59
+00:03:26,690 --> 00:03:29,960
+Again, we have to use the in-place parameter or assign
+
+60
+00:03:29,960 --> 00:03:33,145
+the output to the original DataFrame when using this function.
+
+61
+00:03:33,145 --> 00:03:35,080
+You can see we've dropped ow 4,
+
+62
+00:03:35,080 --> 00:03:37,055
+the row marked as a duplicate.
+
+63
+00:03:37,055 --> 00:03:41,555
+Now, this was a simple situation where the entire row was identical.
+
+64
+00:03:41,555 --> 00:03:45,910
+You can imagine duplicated data scenarios that are a bit more complicated.
+
+65
+00:03:45,910 --> 00:03:50,240
+For example, let's say we had data on patients from a hospital.
+
+66
+00:03:50,240 --> 00:03:53,090
+What happens when you come across two rows with
+
+67
+00:03:53,090 --> 00:03:57,410
+the same patient ID but different data on medical exam results?
+
+68
+00:03:57,410 --> 00:03:59,120
+Do you combine them,
+
+69
+00:03:59,120 --> 00:04:01,380
+only keep the latest one?
+
+70
+00:04:01,380 --> 00:04:05,045
+This is a situation you'd have to investigate more.
+
+71
+00:04:05,045 --> 00:04:07,700
+For this scenario, you'd likely identify
+
+72
+00:04:07,700 --> 00:04:11,525
+duplicates only based on the column recording the patients' ID.
+
+73
+00:04:11,525 --> 00:04:14,390
+You can use a subset parameter in the
+
+74
+00:04:14,390 --> 00:04:17,780
+duplicated and drop duplicates functions to do this.
+
+75
+00:04:17,780 --> 00:04:22,235
+Finally, let's address the last issue, incorrect data types.
+
+76
+00:04:22,235 --> 00:04:26,720
+Incorrect data types is also a problem data analysts frequently come across.
+
+77
+00:04:26,720 --> 00:04:31,730
+In this case, timestamps are represented as strings instead of date times.
+
+78
+00:04:31,730 --> 00:04:34,025
+This isn't a critical issue,
+
+79
+00:04:34,025 --> 00:04:37,220
+but date times are much more convenient to work with if you want to
+
+80
+00:04:37,220 --> 00:04:41,060
+extract specific information from them or filter them more easily.
+
+81
+00:04:41,060 --> 00:04:46,440
+Let's use the pandas function to_datetime to convert this column to datetime.
+
+82
+00:04:46,990 --> 00:04:51,605
+Now we can see timestamp is represented as a date time.
+
+83
+00:04:51,605 --> 00:04:56,675
+By the way, even if you save this to a CSV file after making this change,
+
+84
+00:04:56,675 --> 00:05:00,445
+it will also be read as a string by default the next time you open it.
+
+85
+00:05:00,445 --> 00:05:02,990
+You'd have to convert it again after opening
+
+86
+00:05:02,990 --> 00:05:08,450
+the CSV file or use parameters like parse dates in the read CSV function.
+
+87
+00:05:08,450 --> 00:05:13,040
+Although if the strings you have to parse are formatted unconventionally,
+
+88
+00:05:13,040 --> 00:05:18,420
+the function to_datetime provides more options than the parameters in the read CSV.
+

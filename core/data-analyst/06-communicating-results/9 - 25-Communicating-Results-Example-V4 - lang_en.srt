@@ -1,0 +1,76 @@
+1
+00:00:00,000 --> 00:00:03,360
+Let's see how we can communicate findings using
+
+2
+00:00:03,360 --> 00:00:07,060
+visualizations with the census income data.
+
+3
+00:00:07,100 --> 00:00:14,040
+Let's create two DataFrames to separate people who make above and below $50,000.
+
+4
+00:00:14,040 --> 00:00:19,990
+We can use bar graphs to compare the education levels reached in both groups.
+
+5
+00:00:22,880 --> 00:00:27,405
+Since value counts returns to counts in order by size,
+
+6
+00:00:27,405 --> 00:00:31,350
+we don't have consistent x-axis labels for these graphs.
+
+7
+00:00:31,350 --> 00:00:36,345
+It's ideal to have the labels in the same order if we want to make a clear comparison.
+
+8
+00:00:36,345 --> 00:00:40,990
+Let's order both results from value counts with the same index.
+
+9
+00:00:47,880 --> 00:00:50,260
+That's much better.
+
+10
+00:00:50,260 --> 00:00:55,495
+Next, let's plot pie charts to compare what were classes dominated in each group.
+
+11
+00:00:55,495 --> 00:01:01,160
+Let's use the same indexing technique to keep the order of both results consistent.
+
+12
+00:01:01,800 --> 00:01:08,030
+Lastly, let's use histograms to plot the distribution of ages for each group.
+
+13
+00:01:12,540 --> 00:01:18,275
+Interesting, the people who make more than 50,000 seemed to be older.
+
+14
+00:01:18,275 --> 00:01:20,875
+If we look at the summary statistics,
+
+15
+00:01:20,875 --> 00:01:23,860
+we can see that the mean age for those making less is about
+
+16
+00:01:23,860 --> 00:01:27,520
+37 and 44 for those making more.
+
+17
+00:01:27,520 --> 00:01:31,040
+This shows us that people making more are generally older,
+
+18
+00:01:31,040 --> 00:01:33,830
+but these visualizations give us
+
+19
+00:01:33,830 --> 00:01:38,670
+a much better idea of how those ages are distributed in these examples.
+

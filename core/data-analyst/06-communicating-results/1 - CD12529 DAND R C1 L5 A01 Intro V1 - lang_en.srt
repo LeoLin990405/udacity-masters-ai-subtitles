@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:02,520
+When you are finished manipulating your data,
+
+2
+00:00:02,520 --> 00:00:04,815
+it is time to communicate your results.
+
+3
+00:00:04,815 --> 00:00:08,250
+In order to do so, we'll need some additional techniques.
+
+4
+00:00:08,250 --> 00:00:13,065
+Descriptive statistics can provide us with concise and comprehensive insights.
+
+5
+00:00:13,065 --> 00:00:18,375
+We'll start by using the group-by functionality to aggregate our data in different ways.
+
+6
+00:00:18,375 --> 00:00:21,855
+Then we'll practice summarizing our data through summation,
+
+7
+00:00:21,855 --> 00:00:25,665
+measures of center, and measures of spread.
+
+8
+00:00:25,665 --> 00:00:28,920
+Next, we'll spend time learning the functionality within
+
+9
+00:00:28,920 --> 00:00:32,265
+pandas to create quick and robust visualizations.
+
+10
+00:00:32,265 --> 00:00:36,105
+These include but are not limited to histograms,
+
+11
+00:00:36,105 --> 00:00:40,530
+scatter plots, box plots,
+
+12
+00:00:40,530 --> 00:00:44,575
+bar plots, and pie charts.
+
+13
+00:00:44,575 --> 00:00:47,690
+With those descriptive statistics and visualizations,
+
+14
+00:00:47,690 --> 00:00:51,305
+we'll start to think about what conclusions we can draw from them.
+
+15
+00:00:51,305 --> 00:00:56,060
+Conclusions are generally derived by asking questions about the summary statistics,
+
+16
+00:00:56,060 --> 00:00:59,905
+which are further explored and answered with visualizations.
+
+17
+00:00:59,905 --> 00:01:03,125
+Finally, we will learn about the ways to change
+
+18
+00:01:03,125 --> 00:01:06,125
+our visualizations to help build effective conclusions,
+
+19
+00:01:06,125 --> 00:01:09,530
+including altering visualizations by figure size,
+
+20
+00:01:09,530 --> 00:01:14,485
+labeling, color, and visualization type.
+
+21
+00:01:14,485 --> 00:01:16,640
+Visualization is such a fun and
+
+22
+00:01:16,640 --> 00:01:19,790
+exciting area because it brings out the creative spark in you.
+
+23
+00:01:19,790 --> 00:01:22,740
+Let's dive right in and get started.
+
