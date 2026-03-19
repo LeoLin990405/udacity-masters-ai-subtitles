@@ -1,0 +1,89 @@
+1
+
+00:00:02,069  -->  00:00:07,584
+You now have learned about how you can use categorical variables and regression models.
+
+2
+
+00:00:07,585  -->  00:00:09,910
+You saw not only how to fit models using
+
+3
+
+00:00:09,910  -->  00:00:13,775
+these categorical variables but also how to interpret the results.
+
+4
+
+00:00:13,775  -->  00:00:17,140
+At this point, you are familiar with the most common method that's
+
+5
+
+00:00:17,140  -->  00:00:21,339
+used in programming languages like Python and R. However,
+
+6
+
+00:00:21,339  -->  00:00:23,530
+there's one additional method for encoding
+
+7
+
+00:00:23,530  -->  00:00:27,905
+dummy variables that's really common in a programming language called SAS.
+
+8
+
+00:00:27,905  -->  00:00:32,410
+For SAS, the default encoding is one zero negative one.
+
+9
+
+00:00:32,409  -->  00:00:37,509
+SAS is an extremely popular programming language used in health related fields.
+
+10
+
+00:00:37,509  -->  00:00:40,899
+The biggest reason for noting this difference is that it changes
+
+11
+
+00:00:40,899  -->  00:00:42,640
+your coefficients that you get back from
+
+12
+
+00:00:42,640  -->  00:00:46,410
+the model as well as how you interpret those coefficients.
+
+13
+
+00:00:46,409  -->  00:00:48,744
+You solve it using one zero encoding,
+
+14
+
+00:00:48,744  -->  00:00:53,024
+your interpreter coefficients as a comparison to a baseline category.
+
+15
+
+00:00:53,024  -->  00:00:56,289
+However, if use one zero negative one encoding,
+
+16
+
+00:00:56,289  -->  00:01:00,820
+your coefficients are in comparison to the average regardless of the group.
+
+17
+
+00:01:00,820  -->  00:01:04,780
+Just so you can see how this will work and how the results will change,
+
+18
+
+00:01:04,780  -->  00:01:08,000
+I've added a notebook and a couple of quizzes in the next concept.

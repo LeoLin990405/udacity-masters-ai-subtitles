@@ -1,0 +1,179 @@
+1
+
+00:00:02,480  -->  00:00:07,220
+Each time you add these higher order or interaction terms to the model,
+
+2
+
+00:00:07,220  -->  00:00:10,500
+you should be sure to add each of the lower order terms as well.
+
+3
+
+00:00:10,500  -->  00:00:14,720
+We saw how you might be able to identify a quadratic like relationship,
+
+4
+
+00:00:14,720  -->  00:00:17,640
+and even higher order terms might be useful when we see
+
+5
+
+00:00:17,640  -->  00:00:21,880
+many curves in the relationship between the response and explanatory variables.
+
+6
+
+00:00:21,880  -->  00:00:24,760
+But how do you know if you should add an interaction term?
+
+7
+
+00:00:24,760  -->  00:00:28,380
+Why would we add something that looks like this into our model?
+
+8
+
+00:00:28,380  -->  00:00:31,720
+Let's consider a small example to illustrate this idea.
+
+9
+
+00:00:31,720  -->  00:00:33,700
+When adding interaction terms,
+
+10
+
+00:00:33,700  -->  00:00:37,080
+you're considering if the way that a variable x1 is related to
+
+11
+
+00:00:37,080  -->  00:00:41,070
+your response y is dependent on another variable x2.
+
+12
+
+00:00:41,070  -->  00:00:44,300
+As an example, consider that for neighborhood A,
+
+13
+
+00:00:44,300  -->  00:00:49,440
+the relationship between the square footage of a house and its price looks like this.
+
+14
+
+00:00:49,440  -->  00:00:51,080
+And for neighborhood B,
+
+15
+
+00:00:51,080  -->  00:00:55,460
+the relationship between the square footage of a house and the price looks like this.
+
+16
+
+00:00:55,460  -->  00:00:58,600
+Here, you can see that the slopes of the lines that
+
+17
+
+00:00:58,600  -->  00:01:01,780
+best fit each set of points are the same.
+
+18
+
+00:01:01,780  -->  00:01:06,700
+Even though this neighborhood has more expensive homes for the same square footage,
+
+19
+
+00:01:06,700  -->  00:01:09,120
+this would be accounted for by the dummy variable,
+
+20
+
+00:01:09,120  -->  00:01:12,205
+as this space between the two lines is consistent.
+
+21
+
+00:01:12,205  -->  00:01:14,020
+Regardless of the neighborhood,
+
+22
+
+00:01:14,020  -->  00:01:19,535
+the increase would be the exact same accounted for by this coefficient here in our model.
+
+23
+
+00:01:19,535  -->  00:01:24,570
+However, imagine if the relationship actually looked like this for neighborhood B.
+
+24
+
+00:01:24,570  -->  00:01:28,990
+Here, we can see that the slopes of these two lines no longer match.
+
+25
+
+00:01:28,990  -->  00:01:30,750
+In order to account for this,
+
+26
+
+00:01:30,750  -->  00:01:33,190
+we would want to add an interaction term between
+
+27
+
+00:01:33,190  -->  00:01:36,190
+neighborhood and square footage to our model like this.
+
+28
+
+00:01:36,190  -->  00:01:39,670
+Here, you can see that the way square footage is related to
+
+29
+
+00:01:39,670  -->  00:01:43,390
+the home price is dependent on which neighborhood the home is in,
+
+30
+
+00:01:43,390  -->  00:01:48,990
+or the way that x1 is related to y is dependent on the value of x2.
+
+31
+
+00:01:48,990  -->  00:01:51,670
+The question of adding an interaction is a question
+
+32
+
+00:01:51,670  -->  00:01:54,390
+about these slopes being close enough to equal.
+
+33
+
+00:01:54,390  -->  00:01:56,410
+If the slopes are close to equal,
+
+34
+
+00:01:56,410  -->  00:01:58,350
+then we don't add an interaction.
+
+35
+
+00:01:58,350  -->  00:02:01,150
+However, if these slopes are not equal,
+
+36
+
+00:02:01,150  -->  00:02:05,470
+this is an indication that we should add an interaction to our model.

@@ -1,0 +1,119 @@
+1
+
+00:00:00,000  -->  00:00:03,840
+We talk about confusion matrices in different contexts where we looked at
+
+2
+
+00:00:03,840  -->  00:00:08,595
+seven different male politicians from George Bush to Gerhard Schroeder,
+
+3
+
+00:00:08,595  -->  00:00:11,175
+and we ran an eigenface analysis,
+
+4
+
+00:00:11,175  -->  00:00:14,430
+extracting the principal components of the dataset,
+
+5
+
+00:00:14,430  -->  00:00:21,990
+and then reuse the eigenfaces to remap new faces to names in order to identify people.
+
+6
+
+00:00:21,990  -->  00:00:23,460
+I'll give you a typical output,
+
+7
+
+00:00:23,460  -->  00:00:27,060
+and we're going to study the output using confusion matrices.
+
+8
+
+00:00:27,060  -->  00:00:28,619
+Take the resulting features,
+
+9
+
+00:00:28,619  -->  00:00:30,670
+put it into a support vector machine,
+
+10
+
+00:00:30,670  -->  00:00:34,430
+and then go through the data and count how often any of
+
+11
+
+00:00:34,430  -->  00:00:38,210
+those people were predicted correctly or misclassified.
+
+12
+
+00:00:38,210  -->  00:00:40,730
+Just to [inaudible] everybody, in this example,
+
+13
+
+00:00:40,730  -->  00:00:43,340
+we follow the convention of putting the true names,
+
+14
+
+00:00:43,340  -->  00:00:46,530
+the true class labels on the left and the predicted runs on top.
+
+15
+
+00:00:46,530  -->  00:00:51,120
+For example, this number one over here was truly Donald Rumsfeld,
+
+16
+
+00:00:51,120  -->  00:00:53,790
+but was mistaken to be Colin Powell.
+
+17
+
+00:00:53,790  -->  00:00:57,300
+We know its Colin Powell because the same name is over here,
+
+18
+
+00:00:57,300  -->  00:00:59,355
+from Ariel Sharon to Tony Blair,
+
+19
+
+00:00:59,355  -->  00:01:01,185
+apply to the columns over here.
+
+20
+
+00:01:01,185  -->  00:01:02,610
+Ariel Sharon is on the left,
+
+21
+
+00:01:02,610  -->  00:01:04,275
+and Tony Blair is on the right.
+
+22
+
+00:01:04,275  -->  00:01:05,925
+We'll ask you a few questions now.
+
+23
+
+00:01:05,925  -->  00:01:07,440
+First, a simple one.
+
+24
+
+00:01:07,440  -->  00:01:12,750
+Which of those seven politicians was most frequent in our dataset?

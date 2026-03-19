@@ -1,0 +1,99 @@
+1
+
+00:00:00,000  -->  00:00:03,720
+Now that we've looked at how linear regression works,
+
+2
+
+00:00:03,720  -->  00:00:07,300
+let's look at how we can do linear regression in Python.
+
+3
+
+00:00:07,300  -->  00:00:11,960
+There are two main libraries that are used to perform linear aggression in Python.
+
+4
+
+00:00:11,960  -->  00:00:14,340
+The first is statsmodels,
+
+5
+
+00:00:14,340  -->  00:00:16,240
+which we'll use in this lesson.
+
+6
+
+00:00:16,240  -->  00:00:18,715
+The second is scikit-learn.
+
+7
+
+00:00:18,715  -->  00:00:23,680
+Statsmodels is used in many cases due to the way that it resembles stats
+
+8
+
+00:00:23,680  -->  00:00:26,220
+output that you might see in languages more commonly
+
+9
+
+00:00:26,220  -->  00:00:29,460
+used by statisticians like R and SAS.
+
+10
+
+00:00:29,460  -->  00:00:35,520
+Alternatively, scikit-learn is very popular for lots of machine learning algorithms
+
+11
+
+00:00:35,520  -->  00:00:38,180
+because of its ease of making predictions
+
+12
+
+00:00:38,180  -->  00:00:41,825
+and quickly fitting many types of models to compare.
+
+13
+
+00:00:41,825  -->  00:00:46,130
+Because we are focused not only on creating our linear models in this course,
+
+14
+
+00:00:46,130  -->  00:00:52,170
+but also analyzing the coefficients and statistical significance of those coefficients,
+
+15
+
+00:00:52,170  -->  00:00:54,690
+we'll be using statsmodels for this course.
+
+16
+
+00:00:54,690  -->  00:00:58,130
+On the next page, we'll look at exactly how we might use
+
+17
+
+00:00:58,130  -->  00:01:02,130
+statsmodels to fit and analyze a linear model in Python.
+
+18
+
+00:01:02,130  -->  00:01:05,950
+We'll write code very similar to the documentation that you see here,
+
+19
+
+00:01:05,950  -->  00:01:08,430
+and we'll get output that looks just like this.
+
+20
+
+00:01:08,430  -->  00:01:12,930
+Lots of output that we can use to better understand our models.

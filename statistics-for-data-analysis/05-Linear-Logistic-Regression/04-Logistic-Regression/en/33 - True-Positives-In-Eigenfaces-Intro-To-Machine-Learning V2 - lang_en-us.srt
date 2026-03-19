@@ -1,0 +1,44 @@
+1
+
+00:00:00,000  -->  00:00:02,460
+Just to make life a little more complicated,
+
+2
+
+00:00:02,460  -->  00:00:06,210
+let's recall that we've talked about things like true positives,
+
+3
+
+00:00:06,210  -->  00:00:09,705
+false positives, and false negatives.
+
+4
+
+00:00:09,705  -->  00:00:13,200
+But we can generalize at least these three words, these three expressions,
+
+5
+
+00:00:13,200  -->  00:00:15,870
+to a confusing matrix with more than two concepts;
+
+6
+
+00:00:15,870  -->  00:00:18,510
+positive and negative, where we have seven different concepts,
+
+7
+
+00:00:18,510  -->  00:00:20,190
+as in this example over here.
+
+8
+
+00:00:20,190  -->  00:00:22,870
+Tell me, for the concept Tony Blair,
+
+9
+
+00:00:22,870  -->  00:00:27,610
+what do you think is the number of true positives?

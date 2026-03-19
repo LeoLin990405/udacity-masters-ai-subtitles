@@ -1,0 +1,134 @@
+1
+
+00:00:04,930  -->  00:00:07,570
+When solving data problems,
+
+2
+
+00:00:07,570  -->  00:00:10,150
+you likely do many complex things.
+
+3
+
+00:00:10,150  -->  00:00:11,610
+But at the end of the day,
+
+4
+
+00:00:11,610  -->  00:00:16,450
+you want to give your audience what they need to make your results actionable.
+
+5
+
+00:00:16,450  -->  00:00:19,750
+Here are a couple of tips for showing off your results.
+
+6
+
+00:00:19,750  -->  00:00:21,910
+First, know your audience.
+
+7
+
+00:00:21,910  -->  00:00:26,590
+If you're too technical with your presentation when your audience is non-technical,
+
+8
+
+00:00:26,590  -->  00:00:28,390
+you'll lose that audience.
+
+9
+
+00:00:28,390  -->  00:00:32,340
+This won't lead to a great experience for them or you.
+
+10
+
+00:00:32,340  -->  00:00:35,630
+Second, use pictures where possible.
+
+11
+
+00:00:35,630  -->  00:00:40,130
+Often a graphic can display an idea better than words or numbers.
+
+12
+
+00:00:40,130  -->  00:00:43,010
+When I'm presenting my work to my colleagues who
+
+13
+
+00:00:43,010  -->  00:00:45,990
+work with data all day and who are very technical,
+
+14
+
+00:00:45,990  -->  00:00:48,425
+I might present code, formulas,
+
+15
+
+00:00:48,425  -->  00:00:51,870
+and rough sketches of ideas in a document or Jupyter Notebook.
+
+16
+
+00:00:51,870  -->  00:00:54,630
+Alternatively, if I'm meeting with product managers
+
+17
+
+00:00:54,630  -->  00:00:57,750
+and designers or presenting to the company executives,
+
+18
+
+00:00:57,750  -->  00:01:03,150
+this same topic will likely live in slides with concise, clear ideas.
+
+19
+
+00:01:03,150  -->  00:01:06,255
+Plots that clearly show the point of my ideas.
+
+20
+
+00:01:06,255  -->  00:01:11,145
+Finally, I would share conclusions and recommendations of how to use the results.
+
+21
+
+00:01:11,145  -->  00:01:17,080
+Many times, these conversations are less exploratory and more persuasive in nature.
+
+22
+
+00:01:17,080  -->  00:01:19,640
+We should implement this product change
+
+23
+
+00:01:19,640  -->  00:01:22,840
+and this is why should come from this conversation.
+
+24
+
+00:01:22,840  -->  00:01:25,460
+In the first situation with my data peers,
+
+25
+
+00:01:25,460  -->  00:01:30,280
+we might discuss the difficulties and different methods we could use to analyze the data.
+
+26
+
+00:01:30,280  -->  00:01:32,960
+We discuss the pros and cons of each method,
+
+27
+
+00:01:32,960  -->  00:01:38,160
+but these details aren't necessary for your final stakeholders in most cases.

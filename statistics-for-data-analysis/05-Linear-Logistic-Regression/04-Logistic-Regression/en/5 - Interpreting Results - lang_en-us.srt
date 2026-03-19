@@ -1,0 +1,119 @@
+1
+
+00:00:01,590  -->  00:00:05,169
+In the last video you saw some output that had
+
+2
+
+00:00:05,169  -->  00:00:09,309
+the following information regarding the coefficients and our logistic regression model.
+
+3
+
+00:00:09,310  -->  00:00:11,350
+Similar to in the regression case,
+
+4
+
+00:00:11,349  -->  00:00:14,500
+we might use the p values here to help us understand if
+
+5
+
+00:00:14,500  -->  00:00:15,879
+a particular variable was
+
+6
+
+00:00:15,880  -->  00:00:19,810
+significant in helping us predict if a transaction was fraud or not.
+
+7
+
+00:00:19,809  -->  00:00:21,879
+Furthermore, we can interpret
+
+8
+
+00:00:21,879  -->  00:00:26,349
+these coefficients but not exactly in the way that you've seen before.
+
+9
+
+00:00:26,350  -->  00:00:29,995
+First, we need to exponentiation each of the coefficients.
+
+10
+
+00:00:29,995  -->  00:00:33,325
+Then, with quantitative variables we would say,
+
+11
+
+00:00:33,325  -->  00:00:36,295
+for a one unit increase in your explanatory variable,
+
+12
+
+00:00:36,295  -->  00:00:39,670
+we expect a multiplicative change in the odds of
+
+13
+
+00:00:39,670  -->  00:00:43,810
+being in the one category to be the exponential of your coefficient,
+
+14
+
+00:00:43,810  -->  00:00:46,164
+holding all other variables constant.
+
+15
+
+00:00:46,164  -->  00:00:48,490
+The way you encode dummy variables in
+
+16
+
+00:00:48,490  -->  00:00:52,960
+logistic regression is exactly the same as in multiple linear regression.
+
+17
+
+00:00:52,960  -->  00:00:56,380
+So interpreting the dummy variable coefficients is only
+
+18
+
+00:00:56,380  -->  00:01:00,300
+changed again by exponentiating the coefficient.
+
+19
+
+00:01:00,299  -->  00:01:03,309
+You can then interpret the exponentiated coefficient
+
+20
+
+00:01:03,310  -->  00:01:07,420
+attached to your dummy variable in a similar way as before.
+
+21
+
+00:01:07,420  -->  00:01:10,075
+In this category as compared to the baseline,
+
+22
+
+00:01:10,075  -->  00:01:15,655
+we expect a multiplicative change in the odds of being in the one category of this value,
+
+23
+
+00:01:15,655  -->  00:01:18,450
+holding all other variables constant.
+
+24
+
+00:01:18,450  -->  00:01:23,000
+This might seem confusing now but let's try it out and you'll see that it isn't so bad.

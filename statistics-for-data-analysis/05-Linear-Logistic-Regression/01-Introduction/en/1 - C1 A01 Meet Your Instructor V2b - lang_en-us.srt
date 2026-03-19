@@ -1,0 +1,54 @@
+1
+
+00:00:00,000  -->  00:00:04,700
+Hi. I'm Josh, and I'm so excited to be here as your instructor.
+
+2
+
+00:00:04,700  -->  00:00:09,280
+I've been teaching data science and statistics courses for more than a decade.
+
+3
+
+00:00:09,280  -->  00:00:12,920
+I've always enjoyed sharing my passion for data science.
+
+4
+
+00:00:12,920  -->  00:00:16,440
+Being able to use data to answer questions and tell
+
+5
+
+00:00:16,440  -->  00:00:20,120
+a story is one of my favorite parts of working with data.
+
+6
+
+00:00:20,120  -->  00:00:22,160
+Besides teaching data science,
+
+7
+
+00:00:22,160  -->  00:00:24,580
+I'm also a practicing data scientist.
+
+8
+
+00:00:24,580  -->  00:00:28,280
+I've worked in a number of industries from consulting to
+
+9
+
+00:00:28,280  -->  00:00:32,500
+marketing and cancer research to financial tech companies.
+
+10
+
+00:00:32,500  -->  00:00:36,200
+My experiences have shaped me as a data scientist,
+
+11
+
+00:00:36,200  -->  00:00:39,560
+and I'll share them with you in the course ahead.

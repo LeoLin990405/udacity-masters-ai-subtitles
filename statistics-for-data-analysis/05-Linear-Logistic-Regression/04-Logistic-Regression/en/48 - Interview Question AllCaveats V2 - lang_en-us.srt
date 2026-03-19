@@ -1,0 +1,149 @@
+1
+
+00:00:00,000  -->  00:00:02,300
+I think it's really important,
+
+2
+
+00:00:02,300  -->  00:00:05,160
+and this is common with not just linear regression,
+
+3
+
+00:00:05,160  -->  00:00:08,140
+but with any statistical technique that you do.
+
+4
+
+00:00:08,140  -->  00:00:12,980
+Being very hyper aware of all
+
+5
+
+00:00:12,980  -->  00:00:17,980
+of the possible caveats of the analysis that you're doing is super important.
+
+6
+
+00:00:17,980  -->  00:00:20,360
+Almost everything that we do in the real-world is
+
+7
+
+00:00:20,360  -->  00:00:23,740
+just an estimation process with statistics, and therefore,
+
+8
+
+00:00:23,740  -->  00:00:29,340
+there are plenty of ways that you can answer things incorrectly or do
+
+9
+
+00:00:29,340  -->  00:00:32,240
+things wrong if you aren't aware of the assumptions or
+
+10
+
+00:00:32,240  -->  00:00:35,600
+some of the things that are associated with whatever technique you use,
+
+11
+
+00:00:35,600  -->  00:00:37,260
+whether that's a linear regression model,
+
+12
+
+00:00:37,260  -->  00:00:39,160
+whether it's hypothesis testing,
+
+13
+
+00:00:39,160  -->  00:00:40,860
+whether you're building confidence intervals,
+
+14
+
+00:00:40,860  -->  00:00:44,260
+whether you're using really complex methods like Monte Carlo methods,
+
+15
+
+00:00:44,260  -->  00:00:46,405
+or you're building really complex models like
+
+16
+
+00:00:46,405  -->  00:00:49,930
+ensemble-based methods or deep neural networks,
+
+17
+
+00:00:49,930  -->  00:00:52,270
+there are always assumptions being made.
+
+18
+
+00:00:52,270  -->  00:00:56,020
+So being hyper aware of what those assumptions are,
+
+19
+
+00:00:56,020  -->  00:00:59,420
+or some of the things that can go wrong with your analysis are
+
+20
+
+00:00:59,420  -->  00:01:02,855
+super important to make sure that you don't just drive
+
+21
+
+00:01:02,855  -->  00:01:05,380
+100% into some decision that has
+
+22
+
+00:01:05,380  -->  00:01:10,635
+this loophole that you weren't aware of or has this assumption that you weren't aware of.
+
+23
+
+00:01:10,635  -->  00:01:15,620
+I think, with really complex models,
+
+24
+
+00:01:15,620  -->  00:01:20,660
+you almost need to be more afraid of overfitting into certain situations,
+
+25
+
+00:01:20,660  -->  00:01:24,085
+and then thinking that's going to drive the right answer in every situation.
+
+26
+
+00:01:24,085  -->  00:01:27,780
+Then with simpler modeling techniques like linear regression,
+
+27
+
+00:01:27,780  -->  00:01:31,460
+you need to be more aware that the model is very simple,
+
+28
+
+00:01:31,460  -->  00:01:35,480
+and therefore, might drive to conclusions that are oversimplified and that
+
+29
+
+00:01:35,480  -->  00:01:39,720
+are not necessarily taking into account all of the complexities of the world.
+
+30
+
+00:01:39,720  -->  00:01:42,490
+They're on the two extremes.

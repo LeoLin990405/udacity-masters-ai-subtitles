@@ -1,0 +1,149 @@
+1
+
+00:00:01,760  -->  00:00:05,325
+Let's imagine you're looking to invest in a home.
+
+2
+
+00:00:05,325  -->  00:00:08,100
+In particular, you would like to purchase a home
+
+3
+
+00:00:08,100  -->  00:00:11,115
+where you think it's worth more than the listed price.
+
+4
+
+00:00:11,115  -->  00:00:15,475
+We collect information on recently sold homes to use in your pursuit.
+
+5
+
+00:00:15,475  -->  00:00:18,185
+Here's a table of the information you collect;
+
+6
+
+00:00:18,185  -->  00:00:20,779
+the price of the home, the neighborhood,
+
+7
+
+00:00:20,779  -->  00:00:24,080
+which has three categories of neighborhoods, A, B,
+
+8
+
+00:00:24,080  -->  00:00:26,960
+or C, the square footage of the house,
+
+9
+
+00:00:26,960  -->  00:00:28,475
+the number of bedrooms,
+
+10
+
+00:00:28,475  -->  00:00:29,870
+the number of bathrooms,
+
+11
+
+00:00:29,870  -->  00:00:33,520
+and the style, either ranch, Victorian or lodge.
+
+12
+
+00:00:33,520  -->  00:00:34,970
+In the last lesson,
+
+13
+
+00:00:34,970  -->  00:00:36,200
+you learned how to use one of
+
+14
+
+00:00:36,200  -->  00:00:39,410
+these quantitative columns to predict the price of the house.
+
+15
+
+00:00:39,410  -->  00:00:41,800
+But what if we wanted to use all of these?
+
+16
+
+00:00:41,800  -->  00:00:44,900
+What about these columns multiplying a slope of
+
+17
+
+00:00:44,900  -->  00:00:48,650
+seven by neighborhood A or home style Victorian,
+
+18
+
+00:00:48,650  -->  00:00:50,510
+what would that even mean?
+
+19
+
+00:00:50,510  -->  00:00:54,140
+It turns out that we can use linear algebra to predict
+
+20
+
+00:00:54,140  -->  00:00:57,760
+the y value using all of these inputs at the same time.
+
+21
+
+00:00:57,760  -->  00:01:01,070
+The way we do this is by creating a matrix of inputs,
+
+22
+
+00:01:01,070  -->  00:01:02,555
+so these values here,
+
+23
+
+00:01:02,555  -->  00:01:05,900
+and we create a vector of the response that we want to predict.
+
+24
+
+00:01:05,900  -->  00:01:09,980
+This matrix is often denoted as X,
+
+25
+
+00:01:09,980  -->  00:01:13,640
+while this vector for the response is denoted with y.
+
+26
+
+00:01:13,640  -->  00:01:16,610
+To differentiate from the notation you saw earlier,
+
+27
+
+00:01:16,610  -->  00:01:19,310
+each of these generally is notated as bold.
+
+28
+
+00:01:19,310  -->  00:01:21,950
+In order to really grasp all of what's
+
+29
+
+00:01:21,950  -->  00:01:24,770
+happening with multiple linear regression and how it works,
+
+30
+
+00:01:24,770  -->  00:01:30,210
+you need to understand how these vectors and matrices work together.
