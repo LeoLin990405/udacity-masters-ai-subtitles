@@ -1,0 +1,48 @@
+1
+00:00:00,000 --> 00:00:03,300
+We'll be taking all of our learnings throughout this course to build
+
+2
+00:00:03,300 --> 00:00:07,455
+a full end-to-end project with datasets that have real-world importance.
+
+3
+00:00:07,455 --> 00:00:11,130
+This project will test you on your data analysis process,
+
+4
+00:00:11,130 --> 00:00:12,840
+how to post questions,
+
+5
+00:00:12,840 --> 00:00:16,395
+investigate problems, and communicate results.
+
+6
+00:00:16,395 --> 00:00:18,915
+To get started, you will be provided
+
+7
+00:00:18,915 --> 00:00:22,275
+a workspace which will contain the dataset and then Jupiter notebook.
+
+8
+00:00:22,275 --> 00:00:25,725
+You can conduct all of your project work in this workspace,
+
+9
+00:00:25,725 --> 00:00:28,755
+which will make it easier for you to submit your work directly.
+
+10
+00:00:28,755 --> 00:00:31,275
+If you prefer to do your project locally,
+
+11
+00:00:31,275 --> 00:00:34,710
+you can download your project files and work on your local machine.
+
+12
+00:00:34,710 --> 00:00:38,050
+Best of luck, on your project adventures.
+
